@@ -71,16 +71,8 @@ const Page: NextPage<PropsWithChildren<HomepageMeta>> = memo(({children, title, 
         <meta content={ogImageUrl} name="twitter:image" />
         <meta content={imageAlt} name="twitter:image:alt" />
 
-        <script
-          dangerouslySetInnerHTML={{__html: personSchemaJson}}
-          key="ld-person"
-          type="application/ld+json"
-        />
-        <script
-          dangerouslySetInnerHTML={{__html: websiteSchemaJson}}
-          key="ld-website"
-          type="application/ld+json"
-        />
+        <script dangerouslySetInnerHTML={{__html: personSchemaJson}} key="ld-person" type="application/ld+json" />
+        <script dangerouslySetInnerHTML={{__html: websiteSchemaJson}} key="ld-website" type="application/ld+json" />
       </Head>
       {children}
     </>
