@@ -47,8 +47,9 @@ import {
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
-  title: "Andrew's Resume",
-  description: 'Resume website built with Next.js, and hosted on AWS.',
+  title: 'Andrew Malvani — Lead AI/ML Engineer',
+  description:
+    'Andrew Malvani is a San Diego-based Lead AI/ML Engineer specializing in generative AI, LLM agents, cloud architecture, and DevOps across AWS and Azure.',
 };
 
 /**

@@ -71,6 +71,7 @@ const ItemOverlay: FC<{item: PortfolioItem}> = memo(({item: {url, title, descrip
       href={url}
       onClick={handleItemClick}
       ref={linkRef}
+      rel="noopener noreferrer"
       target="_blank">
       <div className="relative h-full w-full p-4">
         <div className="flex h-full w-full flex-col gap-y-2 overflow-y-auto overscroll-contain">

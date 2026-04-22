@@ -8,6 +8,7 @@
     "compile": "yarn run -T tsc --build --verbose",
     "dev": "yarn compile && yarn next dev",
     "lint": "yarn run -T prettier --write './src/**/*.{js,jsx,json,ts,tsx}' && eslint './src/**/*.{js,jsx,ts,tsx}' --fix --max-warnings=0",
+    "postbuild": "yarn next-sitemap",
     "start": "yarn next start",
     "sitemap": "yarn next-sitemap"
   },
@@ -46,6 +47,7 @@
     "eslint-plugin-react-native": "^4.0.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-sort-keys-fix": "^1.1.2",
+    "next-sitemap": "^4.2.3",
     "postcss": "^8.4.27",
     "postcss-preset-env": "^9.1.0",
     "prettier": "^3.0.0",

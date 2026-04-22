@@ -1,0 +1,32 @@
+export const siteConfig = {
+  siteUrl: 'https://andrewmalvani.com',
+  siteName: "Andrew Malvani",
+  ogImagePath: '/og-image.jpg',
+  person: {
+    name: 'Andrew Malvani',
+    jobTitle: 'Lead AI/ML Engineer',
+    location: 'San Diego, CA',
+    email: 'andrewrmalvani@gmail.com',
+    alumniOf: 'University of California, Santa Barbara',
+    worksFor: 'General Atomics',
+    sameAs: [
+      'https://github.com/manwithaplandy',
+      'https://www.linkedin.com/in/andrewmalvani',
+    ],
+    knowsAbout: [
+      'Artificial Intelligence',
+      'Machine Learning',
+      'Large Language Models',
+      'LangChain',
+      'LangGraph',
+      'Retrieval-Augmented Generation',
+      'DevOps',
+      'Amazon Web Services',
+      'Microsoft Azure',
+      'Terraform',
+      'Docker',
+      'Kubernetes',
+      'Python',
+    ],
+  },
+} as const;
