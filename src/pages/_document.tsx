@@ -10,7 +10,6 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <meta charSet="utf-8" />
-        {/* viewport & theme-color live in next/head (Page.tsx); Next.js disallows them in _document */}
         {/* google translate breaks react:
           - https://github.com/facebook/react/issues/11538
           - https://bugs.chromium.org/p/chromium/issues/detail?id=872770 */}

@@ -6,34 +6,36 @@ import {memo, PropsWithChildren} from 'react';
 import {HomepageMeta} from '../../data/dataDef';
 import {siteConfig} from '../../data/siteConfig';
 
+const {siteUrl, siteName, ogImagePath, ogImageWidth, ogImageHeight, person} = siteConfig;
+const ogImageUrl = `${siteUrl}${ogImagePath}`;
+const imageAlt = `${person.name} — ${person.jobTitle}`;
+
+const personSchemaJson = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: person.name,
+  url: siteUrl,
+  image: ogImageUrl,
+  jobTitle: person.jobTitle,
+  email: `mailto:${person.email}`,
+  worksFor: {'@type': 'Organization', name: person.worksFor},
+  alumniOf: {'@type': 'CollegeOrUniversity', name: person.alumniOf},
+  address: {'@type': 'PostalAddress', addressLocality: person.location},
+  knowsAbout: person.knowsAbout,
+  sameAs: person.sameAs,
+});
+
+const websiteSchemaJson = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: siteName,
+  url: siteUrl,
+  author: {'@type': 'Person', name: person.name},
+});
+
 const Page: NextPage<PropsWithChildren<HomepageMeta>> = memo(({children, title, description}) => {
   const {asPath: pathname} = useRouter();
-  const {siteUrl, siteName, ogImagePath, person} = siteConfig;
   const canonical = `${siteUrl}${pathname}`;
-  const ogImageUrl = `${siteUrl}${ogImagePath}`;
-
-  const personSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: person.name,
-    url: siteUrl,
-    image: ogImageUrl,
-    jobTitle: person.jobTitle,
-    email: `mailto:${person.email}`,
-    worksFor: {'@type': 'Organization', name: person.worksFor},
-    alumniOf: {'@type': 'CollegeOrUniversity', name: person.alumniOf},
-    address: {'@type': 'PostalAddress', addressLocality: person.location},
-    knowsAbout: person.knowsAbout,
-    sameAs: person.sameAs,
-  };
-
-  const websiteSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: siteName,
-    url: siteUrl,
-    author: {'@type': 'Person', name: person.name},
-  };
 
   return (
     <>
@@ -58,25 +60,24 @@ const Page: NextPage<PropsWithChildren<HomepageMeta>> = memo(({children, title, 
         <meta content={description} property="og:description" />
         <meta content={canonical} property="og:url" />
         <meta content={ogImageUrl} property="og:image" />
-        <meta content="1200" property="og:image:width" />
-        <meta content="630" property="og:image:height" />
-        <meta content={`${person.name} — ${person.jobTitle}`} property="og:image:alt" />
+        <meta content={String(ogImageWidth)} property="og:image:width" />
+        <meta content={String(ogImageHeight)} property="og:image:height" />
+        <meta content={imageAlt} property="og:image:alt" />
 
         {/* Twitter: https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup */}
         <meta content="summary_large_image" name="twitter:card" />
         <meta content={title} name="twitter:title" />
         <meta content={description} name="twitter:description" />
         <meta content={ogImageUrl} name="twitter:image" />
-        <meta content={`${person.name} — ${person.jobTitle}`} name="twitter:image:alt" />
+        <meta content={imageAlt} name="twitter:image:alt" />
 
-        {/* Structured data */}
         <script
-          dangerouslySetInnerHTML={{__html: JSON.stringify(personSchema)}}
+          dangerouslySetInnerHTML={{__html: personSchemaJson}}
           key="ld-person"
           type="application/ld+json"
         />
         <script
-          dangerouslySetInnerHTML={{__html: JSON.stringify(websiteSchema)}}
+          dangerouslySetInnerHTML={{__html: websiteSchemaJson}}
           key="ld-website"
           type="application/ld+json"
         />
