@@ -1,4 +1,5 @@
 import {BoltIcon, ChevronUpIcon} from '@heroicons/react/24/solid';
+import Link from 'next/link';
 import {FC, memo} from 'react';
 
 import {SectionId} from '../../data/data';
@@ -28,6 +29,9 @@ const Footer: FC = memo(() => (
           <span className="italic text-yellow">Resume</span>
         </span>
       </a>
+      <Link className="text-sm text-neutral-500 hover:text-neutral-300" href="/stats">
+        Site analytics
+      </Link>
       <span className="text-sm text-neutral-700">© Copyright {currentYear} Tim Baker</span>
     </div>
   </footer>

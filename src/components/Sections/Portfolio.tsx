@@ -1,6 +1,7 @@
 import {ArrowTopRightOnSquareIcon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import Image from 'next/image';
+import Link from 'next/link';
 import {FC, memo, MouseEvent, useCallback, useEffect, useRef, useState} from 'react';
 
 import {isMobile} from '../../config';
@@ -30,6 +31,9 @@ const Portfolio: FC = memo(() => {
             );
           })}
         </div>
+        <Link className="self-center text-sm text-neutral-400 hover:text-orange-400" href="/stats">
+          Curious how many people visit this page? I built the analytics pipeline myself →
+        </Link>
       </div>
     </Section>
   );

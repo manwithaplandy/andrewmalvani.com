@@ -16,8 +16,11 @@ jobs:
     runs-on: ubuntu-latest
     environment: "AWS General"
     # email_address has no default (kept out of source); supply it via secret.
+    # cloudflare_zone_id comes from a repo var; if unset, the stats aggregator
+    # simply skips the Cloudflare uniques/countries query.
     env:
       TF_VAR_email_address: ${{ secrets.EMAIL_ADDRESS }}
+      TF_VAR_cloudflare_zone_id: ${{ vars.CLOUDFLARE_ZONE_ID }}
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -75,8 +78,11 @@ jobs:
     runs-on: ubuntu-latest
     environment: "prod"
     # email_address has no default (kept out of source); supply it via secret.
+    # cloudflare_zone_id comes from a repo var; if unset, the stats aggregator
+    # simply skips the Cloudflare uniques/countries query.
     env:
       TF_VAR_email_address: ${{ secrets.EMAIL_ADDRESS }}
+      TF_VAR_cloudflare_zone_id: ${{ vars.CLOUDFLARE_ZONE_ID }}
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -107,6 +113,15 @@ jobs:
           name: plan
           path: terraform/plan
 
+      # data.archive_file writes these zips at *plan* time (previous job's
+      # workspace), but the provider reads them from disk when creating a
+      # Lambda at *apply* time — recreate them here so a first-time function
+      # create doesn't fail. Code updates still flow through update-lambda-code.
+      - name: Prepare Lambda bootstrap zips
+        run: |
+          (cd sns_publish_lambda && zip ../terraform/lambda_function.zip lambda_function.py)
+          (cd stats_aggregator && zip ../terraform/stats_aggregator.zip lambda_function.py)
+
       - name: Terraform Apply
         run: terraform -chdir=terraform apply "plan/plan.tfplan"
 
@@ -131,8 +146,10 @@ jobs:
             name: out
             path: out
 
+        # stats.json is produced by the statsAggregator Lambda, not the build —
+        # exclude it so --delete doesn't wipe the data file on every deploy.
         - name: Sync S3 bucket
-          run: aws s3 sync out/ s3://$S3_BUCKET_NAME --delete
+          run: aws s3 sync out/ s3://$S3_BUCKET_NAME --delete --exclude "stats.json"
           env:
             S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
 
@@ -141,6 +158,13 @@ jobs:
       needs: terraform-apply
       runs-on: ubuntu-latest
       environment: "AWS General"
+      strategy:
+        matrix:
+          include:
+            - dir: sns_publish_lambda
+              function_var: LAMBDA_FUNCTION_NAME
+            - dir: stats_aggregator
+              function_var: STATS_AGGREGATOR_FUNCTION_NAME
       steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -153,16 +177,13 @@ jobs:
 
       - name: Zip Lambda Code
         run: |
-          cd sns_publish_lambda
-          zip ../sns_publish_lambda.zip lambda_function.py
-
-      - name: ls 2
-        run: ls
+          cd ${{ matrix.dir }}
+          zip ../lambda_code.zip lambda_function.py
 
       - name: Update Lambda Code
-        run: aws lambda update-function-code --function-name $LAMBDA_FUNCTION_NAME --zip-file fileb://sns_publish_lambda.zip
+        run: aws lambda update-function-code --function-name $LAMBDA_FUNCTION_NAME --zip-file fileb://lambda_code.zip
         env:
-          LAMBDA_FUNCTION_NAME: ${{ vars.LAMBDA_FUNCTION_NAME }}
+          LAMBDA_FUNCTION_NAME: ${{ vars[matrix.function_var] }}
 
   cloudfront-invalidation:
       name: Invalidate CloudFront Distribution

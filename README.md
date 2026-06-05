@@ -14,9 +14,24 @@ This project hosts an interactive resume website built with React and hosted on 
 - AWS S3: For hosting static assets.
 - AWS CloudFront: To provide a fast global content delivery network (CDN).
 - AWS WAF: To track & prevent malicious traffic (disabled because it's not free)
-- DynamoDB: To track user metrics for user statistics page (not implemented yet)
-- AWS Lambda: Triggered by the Contact section, sends request to SNS (not implemented yet)
-- SNS: To deliver emails from the Contact section (not implemented yet)
+- DynamoDB: Durable store for the anonymous aggregates behind the public [/stats](https://andrewmalvani.com/stats) page
+- AWS Lambda: Contact-form handler (API Gateway → SNS) and the daily stats aggregator (EventBridge → CloudFront logs + Cloudflare analytics → stats.json)
+- SNS: To deliver emails from the Contact section
+- EventBridge: Daily 00:00 UTC schedule for the stats aggregator
+
+## Stats pipeline setup (one-time manual steps)
+
+The `/stats` page is fed by `stats_aggregator/lambda_function.py`. Three things live outside Terraform on purpose:
+
+1. Cloudflare API token (Analytics:Read, zone-scoped) stored in SSM so it never touches TF state or GitHub:
+   `aws ssm put-parameter --name /resume/cloudflare-analytics-token --type SecureString --value <token>`
+2. GitHub repo variable `STATS_AGGREGATOR_FUNCTION_NAME` (set to `statsAggregator`) for the CI lambda-code update job.
+3. GitHub repo variable `CLOUDFLARE_ZONE_ID` (zone ID for andrewmalvani.com) — until set, the aggregator skips the
+   Cloudflare uniques/countries query and publishes CloudFront-derived metrics only.
+
+First run: invoke `statsAggregator` manually a few times to chew through the historical log backlog (it processes as
+much as fits in one 300 s run, marks progress in DynamoDB `marker#` items, and is safe to re-invoke — reprocessing can
+never double-count).
 
 ## Contributing
 

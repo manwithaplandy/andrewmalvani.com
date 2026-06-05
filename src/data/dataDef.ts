@@ -59,6 +59,32 @@ export interface Stat {
 }
 
 /**
+ * Stats page payload (the shape of /stats.json published by the
+ * statsAggregator Lambda). Everything in here is an anonymous aggregate —
+ * see stats_aggregator/lambda_function.py for the privacy rules.
+ */
+export interface StatsDatum {
+  label: string;
+  value: number;
+}
+
+export interface StatsDailyPoint {
+  date: string;
+  views: number;
+}
+
+export interface StatsPayload {
+  totalViews: number;
+  lastUpdated: string;
+  since: string;
+  dailySeries: StatsDailyPoint[];
+  topPages: StatsDatum[];
+  topReferrers: StatsDatum[];
+  uniqueVisitors: number;
+  countries: StatsDatum[];
+}
+
+/**
  * Skills section
  */
 

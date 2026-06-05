@@ -170,6 +170,56 @@ resource "aws_s3_bucket_policy" "allow_cloudfront_logs" {
   })
 }
 
+# Lifecycle rules for the log bucket: access logs accumulate forever
+# otherwise (they had been since 2024). 90 days is plenty — the stats
+# aggregator folds each log object into DynamoDB within a day of delivery,
+# and its marker# items prevent any reprocessing window issues.
+resource "aws_s3_bucket_lifecycle_configuration" "log_bucket_lifecycle" {
+  bucket = aws_s3_bucket.log_bucket.id
+
+  rule {
+    id     = "expire-cloudfront-logs"
+    status = "Enabled"
+    filter {
+      prefix = "cloudfront-logs/"
+    }
+    expiration {
+      days = 90
+    }
+    noncurrent_version_expiration {
+      noncurrent_days = 30
+    }
+  }
+
+  rule {
+    id     = "expire-website-access-logs"
+    status = "Enabled"
+    filter {
+      prefix = "website-log/"
+    }
+    expiration {
+      days = 90
+    }
+    noncurrent_version_expiration {
+      noncurrent_days = 30
+    }
+  }
+
+  rule {
+    id     = "expire-self-logs"
+    status = "Enabled"
+    filter {
+      prefix = "this-bucket-log/"
+    }
+    expiration {
+      days = 90
+    }
+    noncurrent_version_expiration {
+      noncurrent_days = 30
+    }
+  }
+}
+
 resource "aws_cloudfront_origin_access_identity" "oai" {
   comment = "OAI for accessing S3 bucket from CloudFront"
 }
@@ -250,6 +300,14 @@ resource "aws_cloudfront_distribution" "website_distribution" {
     # min_ttl                = 0
     # default_ttl            = 3600
     # max_ttl                = 86400
+
+    # OAC-to-S3 origins do not resolve index documents, so extensionless
+    # paths like /stats would 404 (only default_root_object covers "/").
+    # Rewrite them to their .html objects at the viewer-request edge.
+    function_association {
+      event_type   = "viewer-request"
+      function_arn = aws_cloudfront_function.rewrite_extensionless.arn
+    }
   }
 
   restrictions {
@@ -273,6 +331,27 @@ resource "aws_cloudfront_distribution" "website_distribution" {
 
   # F1: associate the CloudFront-scope WAF (rate limiting) with the distribution.
   web_acl_id = aws_wafv2_web_acl.website_waf.arn
+}
+
+# Viewer-request rewrite so Next.js static-export pages resolve without their
+# .html extension (S3-via-OAC has no index-document support).
+resource "aws_cloudfront_function" "rewrite_extensionless" {
+  name    = "rewrite-extensionless-to-html"
+  runtime = "cloudfront-js-2.0"
+  comment = "Map / -> /index.html and extensionless paths -> .html for the S3 origin"
+  publish = true
+  code    = <<-EOT
+    function handler(event) {
+      var request = event.request;
+      var uri = request.uri;
+      if (uri.endsWith('/')) {
+        request.uri = uri + 'index.html';
+      } else if (!uri.split('/').pop().includes('.')) {
+        request.uri = uri + '.html';
+      }
+      return request;
+    }
+  EOT
 }
 
 # F6: response-headers policy adding HSTS (and a few hardening headers) to every
@@ -310,6 +389,14 @@ resource "aws_dynamodb_table" "data_table" {
   attribute {
     name = "id"
     type = "S"
+  }
+
+  # Used by the stats aggregator's marker# items (one per processed CloudFront
+  # log object) so they age out alongside the log objects themselves. Items
+  # without expires_at (the aggregate counters) are untouched.
+  ttl {
+    attribute_name = "expires_at"
+    enabled        = true
   }
 }
 
