@@ -1,346 +1,95 @@
-# resource "aws_wafv2_web_acl" "website_waf" {
-#   provider    = aws.us_east_1
-#   name        = "${random_pet.bucket_name.id}-website-waf"
-#   scope       = "CLOUDFRONT"
-#   description = "A Web ACL to protect the website"
-#   default_action {
-#     allow {}
-#   }
+# ---------------------------------------------------------------------------
+# F1 — Per-client rate limiting.
+#
+# The email-bomb / cost-amplification vector is the *API Gateway* contact
+# endpoint, which is REGIONAL (us-west-1). A regional WAFv2 web ACL with a
+# rate-based rule is associated directly to the API stage so a single IP can
+# only make a bounded number of requests in the 5-minute WAF window.
+#
+# A separate CLOUDFRONT-scope web ACL (us-east-1) protects the static site
+# distribution and is wired in via main.tf's `web_acl_id`.
+# ---------------------------------------------------------------------------
 
-#   rule {
-#     name     = "SQLInjectionRule"
-#     priority = 1
-#     action {
-#       block {}
-#     }
-#     statement {
-#       sqli_match_statement {
-#         field_to_match {
-#           query_string {}
-#         }
-#         text_transformation {
-#           priority = 0
-#           type     = "URL_DECODE"
-#         }
-#       }
-#     }
-#     visibility_config {
-#       cloudwatch_metrics_enabled = true
-#       metric_name                = "SQLInjection"
-#       sampled_requests_enabled   = true
-#     }
-#   }
+# Regional WAF for the contact API Gateway (the actual abuse surface).
+resource "aws_wafv2_web_acl" "contact_api_waf" {
+  name        = "${random_pet.bucket_name.id}-contact-api-waf"
+  scope       = "REGIONAL"
+  description = "Rate limiting for the public contact API Gateway endpoint"
 
-#   rule {
-#     name     = "XSSMatchRule"
-#     priority = 2
-#     action {
-#       block {}
-#     }
-#     statement {
-#       xss_match_statement {
-#         field_to_match {
-#           query_string {}
-#         }
-#         text_transformation {
-#           priority = 0
-#           type     = "URL_DECODE"
-#         }
-#       }
-#     }
-#     visibility_config {
-#       cloudwatch_metrics_enabled = true
-#       metric_name                = "XSSMatch"
-#       sampled_requests_enabled   = true
-#     }
-#   }
+  default_action {
+    allow {}
+  }
 
-#   rule {
-#     name     = "HTTPMethodRule"
-#     priority = 3
-#     action {
-#       block {}
-#     }
-#     statement {
-#       or_statement {
-#         statement {
-#           byte_match_statement {
-#             field_to_match {
-#               method {}
-#             }
-#             positional_constraint = "EXACTLY"
-#             search_string         = "PUT"
-#             text_transformation {
-#               priority = 0
-#               type     = "LOWERCASE"
-#             }
-#           }
-#         }
-#         statement {
-#           byte_match_statement {
-#             field_to_match {
-#               method {}
-#             }
-#             positional_constraint = "EXACTLY"
-#             search_string         = "DELETE"
-#             text_transformation {
-#               priority = 0
-#               type     = "LOWERCASE"
-#             }
-#           }
-#         }
-#         statement {
-#           byte_match_statement {
-#             field_to_match {
-#               method {}
-#             }
-#             positional_constraint = "EXACTLY"
-#             search_string         = "CONNECT"
-#             text_transformation {
-#               priority = 0
-#               type     = "LOWERCASE"
-#             }
-#           }
-#         }
-#       }
-#     }
-#     visibility_config {
-#       cloudwatch_metrics_enabled = true
-#       metric_name                = "HTTPMethod"
-#       sampled_requests_enabled   = true
-#     }
-#   }
+  rule {
+    name     = "rate-limit-per-ip"
+    priority = 1
 
-#   rule {
-#     name     = "RateLimitRule"
-#     priority = 4
-#     action {
-#       block {}
-#     }
-#     statement {
-#       rate_based_statement {
-#         limit              = 1000
-#         aggregate_key_type = "IP"
-#       }
-#     }
-#     visibility_config {
-#       cloudwatch_metrics_enabled = true
-#       metric_name                = "RateLimit"
-#       sampled_requests_enabled   = true
-#     }
-#   }
+    action {
+      block {}
+    }
 
-#   visibility_config {
-#     cloudwatch_metrics_enabled = true
-#     metric_name                = "WebsiteWAF"
-#     sampled_requests_enabled   = true
-#   }
-# }
+    statement {
+      rate_based_statement {
+        # Max requests from a single IP over a 5-minute sliding window.
+        # 100 is far above any legitimate human use of a contact form while
+        # still stopping automated flooding.
+        limit              = 100
+        aggregate_key_type = "IP"
+      }
+    }
 
-# resource "aws_wafv2_web_acl" "sql_injection_rule" {
-#   provider    = aws.us_east_1
-#   name        = "${random_pet.bucket_name.id}-sql-injection-rule"
-#   scope       = "REGIONAL"
-#   description = "SQL Injection Rule"
+    visibility_config {
+      cloudwatch_metrics_enabled = true
+      metric_name                = "ContactApiRateLimit"
+      sampled_requests_enabled   = true
+    }
+  }
 
-#   default_action {
-#     allow {}
-#   }
+  visibility_config {
+    cloudwatch_metrics_enabled = true
+    metric_name                = "ContactApiWAF"
+    sampled_requests_enabled   = true
+  }
+}
 
-#   rule {
-#     name     = "SQLInjectionRule"
-#     priority = 1
+resource "aws_wafv2_web_acl_association" "contact_api" {
+  resource_arn = aws_api_gateway_stage.api.arn
+  web_acl_arn  = aws_wafv2_web_acl.contact_api_waf.arn
+}
 
-#     action {
-#       block {}
-#     }
+# CloudFront-scope WAF for the static site distribution (defense in depth).
+resource "aws_wafv2_web_acl" "website_waf" {
+  provider    = aws.us_east_1
+  name        = "${random_pet.bucket_name.id}-website-waf"
+  scope       = "CLOUDFRONT"
+  description = "A Web ACL to protect the website distribution"
 
-#     statement {
-#       sqli_match_statement {
-#         field_to_match {
-#           query_string {}
-#         }
+  default_action {
+    allow {}
+  }
 
-#         text_transformation {
-#           priority = 0
-#           type     = "URL_DECODE"
-#         }
-#       }
-#     }
+  rule {
+    name     = "RateLimitRule"
+    priority = 1
+    action {
+      block {}
+    }
+    statement {
+      rate_based_statement {
+        limit              = 2000
+        aggregate_key_type = "IP"
+      }
+    }
+    visibility_config {
+      cloudwatch_metrics_enabled = true
+      metric_name                = "WebsiteRateLimit"
+      sampled_requests_enabled   = true
+    }
+  }
 
-#     visibility_config {
-#       cloudwatch_metrics_enabled = true
-#       metric_name                = "SQLInjectionRule"
-#       sampled_requests_enabled   = true
-#     }
-#   }
-
-#   visibility_config {
-#     cloudwatch_metrics_enabled = true
-#     metric_name                = "SQLInjectionRuleWebACL"
-#     sampled_requests_enabled   = true
-#   }
-# }
-
-# resource "aws_wafv2_web_acl" "xss_rule" {
-#   provider    = aws.us_east_1
-#   name        = "${random_pet.bucket_name.id}-xss-rule"
-#   scope       = "REGIONAL"
-#   description = "XSS protection rule"
-
-#   default_action {
-#     allow {}
-#   }
-
-#   rule {
-#     name     = "XSSMatchRule"
-#     priority = 1
-
-#     action {
-#       block {}
-#     }
-
-#     statement {
-#       xss_match_statement {
-#         field_to_match {
-#           query_string {}
-#         }
-
-#         text_transformation {
-#           priority = 0
-#           type     = "URL_DECODE"
-#         }
-#       }
-#     }
-
-#     visibility_config {
-#       cloudwatch_metrics_enabled = true
-#       metric_name                = "XSSMatchRule"
-#       sampled_requests_enabled   = true
-#     }
-#   }
-
-#   visibility_config {
-#     cloudwatch_metrics_enabled = true
-#     metric_name                = "XSSRuleWebACL"
-#     sampled_requests_enabled   = true
-#   }
-# }
-
-# resource "aws_wafv2_web_acl" "http_method_rule" {
-#   provider    = aws.us_east_1
-#   name        = "${random_pet.bucket_name.id}-http-method-rule"
-#   scope       = "REGIONAL"
-#   description = "HTTP Method Rule"
-
-#   default_action {
-#     allow {}
-#   }
-
-#   rule {
-#     name     = "HTTPMethodRule"
-#     priority = 1
-
-#     action {
-#       block {}
-#     }
-
-#     statement {
-#       or_statement {
-#         statement {
-#           byte_match_statement {
-#             field_to_match {
-#               method {}
-#             }
-#             positional_constraint = "EXACTLY"
-#             search_string         = "PUT"
-#             text_transformation {
-#               priority = 0
-#               type     = "LOWERCASE"
-#             }
-#           }
-#         }
-
-#         statement {
-#           byte_match_statement {
-#             field_to_match {
-#               method {}
-#             }
-#             positional_constraint = "EXACTLY"
-#             search_string         = "DELETE"
-#             text_transformation {
-#               priority = 0
-#               type     = "LOWERCASE"
-#             }
-#           }
-#         }
-
-#         statement {
-#           byte_match_statement {
-#             field_to_match {
-#               method {}
-#             }
-#             positional_constraint = "EXACTLY"
-#             search_string         = "CONNECT"
-#             text_transformation {
-#               priority = 0
-#               type     = "LOWERCASE"
-#             }
-#           }
-#         }
-#       }
-#     }
-
-#     visibility_config {
-#       cloudwatch_metrics_enabled = true
-#       metric_name                = "HTTPMethodRule"
-#       sampled_requests_enabled   = true
-#     }
-#   }
-
-#   visibility_config {
-#     cloudwatch_metrics_enabled = true
-#     metric_name                = "HTTPMethodRuleWebACL"
-#     sampled_requests_enabled   = true
-#   }
-# }
-
-# # Rate limiting rule
-# resource "aws_wafv2_web_acl" "rate_based_rule" {
-#   provider    = aws.us_east_1
-#   name        = "${random_pet.bucket_name.id}-rate-limit-waf-acl"
-#   description = "WAF ACL for rate limiting by IP"
-#   scope       = "REGIONAL"
-
-#   default_action {
-#     allow {}
-#   }
-
-#   rule {
-#     name     = "rate-limit-rule"
-#     priority = 1
-
-#     action {
-#       block {}
-#     }
-
-#     statement {
-#       rate_based_statement {
-#         limit              = 1000
-#         aggregate_key_type = "IP"
-#       }
-#     }
-
-#     visibility_config {
-#       cloudwatch_metrics_enabled = true
-#       metric_name                = "RateLimitRule"
-#       sampled_requests_enabled   = true
-#     }
-#   }
-
-#   visibility_config {
-#     cloudwatch_metrics_enabled = true
-#     metric_name                = "ExampleWebACL"
-#     sampled_requests_enabled   = true
-#   }
-# }
+  visibility_config {
+    cloudwatch_metrics_enabled = true
+    metric_name                = "WebsiteWAF"
+    sampled_requests_enabled   = true
+  }
+}

@@ -20,7 +20,8 @@ resource "aws_lambda_function" "form_submission" {
 
   environment {
     variables = {
-      SNS_TOPIC_ARN = aws_sns_topic.website-contact-us.arn
+      SNS_TOPIC_ARN  = aws_sns_topic.website-contact-us.arn
+      ALLOWED_ORIGIN = local.allowed_cors_origin
     }
   }
 }
@@ -112,11 +113,14 @@ resource "aws_api_gateway_method_settings" "api_method_settings" {
   stage_name  = aws_api_gateway_stage.api.stage_name
   method_path = "*/*"
   settings {
-    logging_level          = "INFO"
-    metrics_enabled        = true
-    data_trace_enabled     = true
-    throttling_burst_limit = 500
-    throttling_rate_limit  = 1000
+    # F5: do not log full request/response payloads (submitter PII).
+    logging_level      = "ERROR"
+    metrics_enabled    = true
+    data_trace_enabled = false
+    # F1: sane stage-wide ceiling for a personal contact form. Per-IP limiting
+    # is enforced by the WAFv2 rate-based rule (see waf.tf / main.tf web_acl_id).
+    throttling_burst_limit = 10
+    throttling_rate_limit  = 5
   }
 }
 
@@ -163,7 +167,8 @@ resource "aws_api_gateway_integration_response" "post_200" {
   status_code = aws_api_gateway_method_response.post_200.status_code
 
   response_parameters = {
-    "method.response.header.Access-Control-Allow-Origin" = "'*'",
+    # F4: match the OPTIONS preflight allow-list instead of '*'.
+    "method.response.header.Access-Control-Allow-Origin" = "'${local.allowed_cors_origin}'",
   }
 
   depends_on = [aws_api_gateway_integration.post_integration]
@@ -215,7 +220,7 @@ resource "aws_api_gateway_integration_response" "http_200_options" {
   response_parameters = {
     "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
     "method.response.header.Access-Control-Allow-Methods" = "'OPTIONS,POST'",
-    "method.response.header.Access-Control-Allow-Origin"  = "'https://andrewmalvani.com'",
+    "method.response.header.Access-Control-Allow-Origin"  = "'${local.allowed_cors_origin}'",
   }
 
   response_templates = {

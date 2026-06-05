@@ -7,6 +7,15 @@ interface FormData {
   message: string;
 }
 
+// Public contact API endpoint. Overridable via env for cleanliness; falls back
+// to the deployed endpoint so static builds work without extra config.
+const CONTACT_API_URL =
+  process.env.NEXT_PUBLIC_CONTACT_API_URL ??
+  'https://vs7dthj3vb.execute-api.us-west-1.amazonaws.com/api/contact';
+
+// Client-side guard only — the Lambda performs authoritative validation.
+const MAX_MESSAGE_LENGTH = 250;
+
 const ContactForm: FC = memo(() => {
   const defaultData = useMemo(
     () => ({
@@ -36,19 +45,15 @@ const ContactForm: FC = memo(() => {
       setIsError(false);
 
       event.preventDefault();
-      console.log('Sending message: ', data);
 
       try {
-        // TODO: Change the URL to your own endpoint
-        const response = await axios.post('https://vs7dthj3vb.execute-api.us-west-1.amazonaws.com/api/contact', data);
-        console.log('Response: ', response);
+        const response = await axios.post(CONTACT_API_URL, data);
 
         if (response.status === 200) {
           setData(defaultData);
           setIsSuccess(true);
         }
-      } catch (error) {
-        console.error('Error sending message: ', error);
+      } catch {
         setIsError(true);
       }
     },
@@ -81,7 +86,7 @@ const ContactForm: FC = memo(() => {
       />
       <textarea
         className={inputClasses}
-        maxLength={250}
+        maxLength={MAX_MESSAGE_LENGTH}
         name="message"
         onChange={onChange}
         placeholder="Message"

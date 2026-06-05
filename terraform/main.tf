@@ -24,6 +24,9 @@ locals {
   build_trigger = sha1("${path.module}/../src")
   file_paths    = { for f in fileset("${path.module}/../../out/", "**") : f => f }
 
+  # Single source of truth for the CORS origin: consumed by the Lambda (env
+  # var) and the API Gateway POST/OPTIONS responses in contactLambda.tf.
+  allowed_cors_origin = "https://andrewmalvani.com"
 }
 
 # S3 bucket for static website hosting
@@ -197,9 +200,10 @@ resource "aws_cloudfront_distribution" "website_distribution" {
       http_port                = 80
       https_port               = 443
       origin_keepalive_timeout = 5
-      origin_protocol_policy   = "match-viewer"
-      origin_read_timeout      = 30
-      origin_ssl_protocols     = ["TLSv1.2"]
+      # F6: always fetch the origin over HTTPS (no plaintext downgrade).
+      origin_protocol_policy = "https-only"
+      origin_read_timeout    = 30
+      origin_ssl_protocols   = ["TLSv1.2"]
     }
   }
 
@@ -212,9 +216,10 @@ resource "aws_cloudfront_distribution" "website_distribution" {
       http_port                = 80
       https_port               = 443
       origin_keepalive_timeout = 5
-      origin_protocol_policy   = "match-viewer"
-      origin_read_timeout      = 30
-      origin_ssl_protocols     = ["TLSv1.2"]
+      # F6: always fetch the origin over HTTPS (no plaintext downgrade).
+      origin_protocol_policy = "https-only"
+      origin_read_timeout    = 30
+      origin_ssl_protocols   = ["TLSv1.2"]
     }
   }
 
@@ -224,13 +229,16 @@ resource "aws_cloudfront_distribution" "website_distribution" {
   default_root_object = "index.html"
 
   default_cache_behavior {
-    allowed_methods          = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
-    cached_methods           = ["GET", "HEAD"]
-    target_origin_id         = "S3-${aws_s3_bucket.website.id}"
-    cache_policy_id          = "4135ea2d-6df8-44a3-9df3-4b5a84be39ad"
-    origin_request_policy_id = "88a5eaf4-2fd4-4709-b370-b4c650ea3fcf"
+    # F7: a static read-only site only needs read methods.
+    allowed_methods            = ["GET", "HEAD", "OPTIONS"]
+    cached_methods             = ["GET", "HEAD"]
+    target_origin_id           = "S3-${aws_s3_bucket.website.id}"
+    cache_policy_id            = "4135ea2d-6df8-44a3-9df3-4b5a84be39ad"
+    origin_request_policy_id   = "88a5eaf4-2fd4-4709-b370-b4c650ea3fcf"
+    response_headers_policy_id = aws_cloudfront_response_headers_policy.security_headers.id
 
-    viewer_protocol_policy = "allow-all"
+    # F6: force HTTPS for viewers (redirect plaintext HTTP -> HTTPS).
+    viewer_protocol_policy = "redirect-to-https"
     # min_ttl                = 0
     # default_ttl            = 3600
     # max_ttl                = 86400
@@ -255,7 +263,34 @@ resource "aws_cloudfront_distribution" "website_distribution" {
     prefix          = "cloudfront-logs/"
   }
 
-  # web_acl_id = aws_wafv2_web_acl.website_waf.arn
+  # F1: associate the CloudFront-scope WAF (rate limiting) with the distribution.
+  web_acl_id = aws_wafv2_web_acl.website_waf.arn
+}
+
+# F6: response-headers policy adding HSTS (and a few hardening headers) to every
+# CloudFront response for the static site.
+resource "aws_cloudfront_response_headers_policy" "security_headers" {
+  name = "${random_pet.bucket_name.id}-security-headers"
+
+  security_headers_config {
+    strict_transport_security {
+      access_control_max_age_sec = 63072000 # 2 years
+      include_subdomains         = true
+      preload                    = true
+      override                   = true
+    }
+    content_type_options {
+      override = true
+    }
+    frame_options {
+      frame_option = "DENY"
+      override     = true
+    }
+    referrer_policy {
+      referrer_policy = "strict-origin-when-cross-origin"
+      override        = true
+    }
+  }
 }
 
 # DynamoDB table for data storage
