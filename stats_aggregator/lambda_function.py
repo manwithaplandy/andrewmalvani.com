@@ -80,6 +80,9 @@ BOT_UA_SUBSTRINGS = (
 # Strict hostname shape — referrer labels must match this before they can be
 # stored, and the frontend re-validates before rendering.
 DOMAIN_RE = re.compile(r"^[a-z0-9](?:[a-z0-9-]{0,62}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,62}[a-z0-9])?)+$")
+# Bare IPv4 hosts match DOMAIN_RE but must never be published ("no IPs in the
+# payload" — even server IPs sent as referrers by scrapers look like a leak).
+IPV4_RE = re.compile(r"^\d{1,3}(?:\.\d{1,3}){3}$")
 ISO_COUNTRY_RE = re.compile(r"^[A-Z]{2}$")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 # Page labels: normalized URI stems only — conservative charset, bounded length.
@@ -177,7 +180,7 @@ def _referrer_domain(raw_referrer):
     if not host:
         return None
     host = host.lower().removeprefix("www.")
-    if host in OWN_DOMAINS or not DOMAIN_RE.match(host):
+    if host in OWN_DOMAINS or not DOMAIN_RE.match(host) or IPV4_RE.match(host):
         return None
     return host
 
@@ -429,7 +432,7 @@ def _render_payload(items, today):
         "since": min(daily) if daily else today.isoformat(),
         "dailySeries": daily_series,
         "topPages": _top_with_other(pages, lambda k: bool(PAGE_STEM_RE.match(k))),
-        "topReferrers": _top_with_other(referrers, lambda k: bool(DOMAIN_RE.match(k))),
+        "topReferrers": _top_with_other(referrers, lambda k: bool(DOMAIN_RE.match(k)) and not IPV4_RE.match(k)),
         "uniqueVisitors": cf_uniques,
         "countries": _top_with_other(cf_countries, lambda k: bool(ISO_COUNTRY_RE.match(k))),
     }

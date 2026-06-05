@@ -13,6 +13,8 @@ export type StatsState =
 // unexpected can reach the DOM even if the payload is stale or corrupted.
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const DOMAIN_RE = /^[a-z0-9](?:[a-z0-9-]{0,62}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,62}[a-z0-9])?)+$/;
+// Bare IPv4 hosts match DOMAIN_RE but must never render ("no IPs on the page").
+const IPV4_RE = /^\d{1,3}(?:\.\d{1,3}){3}$/;
 const ISO_COUNTRY_RE = /^[A-Z]{2}$/;
 const PAGE_RE = /^\/[A-Za-z0-9/_.-]{0,99}$/;
 
@@ -66,7 +68,7 @@ const sanitizePayload = (raw: unknown): StatsPayload | null => {
     lastUpdated,
     since,
     topPages: sanitizeList(candidate.topPages, label => PAGE_RE.test(label)),
-    topReferrers: sanitizeList(candidate.topReferrers, label => DOMAIN_RE.test(label)),
+    topReferrers: sanitizeList(candidate.topReferrers, label => DOMAIN_RE.test(label) && !IPV4_RE.test(label)),
     totalViews: clampCount(candidate.totalViews),
     uniqueVisitors: clampCount(candidate.uniqueVisitors),
   };
