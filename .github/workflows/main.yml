@@ -57,6 +57,12 @@ jobs:
       - name: Terraform Init
         run: terraform -chdir=terraform init -input=false
 
+      # TEMP one-off: clear the stale state lock left by a cancelled run.
+      # Remove this step once the pipeline is green again.
+      - name: Force-unlock stale state (one-off)
+        run: terraform -chdir=terraform force-unlock -force 99095418-a99c-6a59-9daf-446fbafcc000
+        continue-on-error: true
+
       - name: Terraform refresh
         run: terraform -chdir=terraform refresh -input=false
 
