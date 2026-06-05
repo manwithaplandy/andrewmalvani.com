@@ -25,7 +25,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from collections import Counter
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 
 import boto3
 
@@ -87,6 +87,16 @@ PAGE_STEM_RE = re.compile(r"^/[A-Za-z0-9/_.-]{0,99}$")
 
 OWN_DOMAINS = {"andrewmalvani.com"}
 
+# Listing cursor: log keys (cloudfront-logs/<dist>.YYYY-MM-DD-HH.<hash>.gz)
+# sort chronologically, so each run can resume listing just before where the
+# previous one stopped instead of re-checking every historical marker# item.
+# The cursor is purely an optimization — marker# items remain the
+# idempotency/correctness guarantee. Rewinding two days covers CloudFront's
+# occasionally late-delivered log objects.
+CURSOR_ID = "cursor#cloudfront-logs"
+CURSOR_REWIND_DAYS = 2
+KEY_DATE_RE = re.compile(r"^(.*\.)(\d{4}-\d{2}-\d{2})-\d{2}\.")
+
 CLOUDFLARE_GRAPHQL_URL = "https://api.cloudflare.com/client/v4/graphql"
 CLOUDFLARE_QUERY = """
 query ($zone: String!, $since: String!, $until: String!) {
@@ -134,6 +144,21 @@ def _claim_log_object(key):
     except dynamodb.exceptions.ConditionalCheckFailedException:
         return False
     return True
+
+
+def _read_cursor_start_after():
+    """Compute the S3 StartAfter position from the stored cursor (or '')."""
+    item = dynamodb.get_item(TableName=TABLE_NAME, Key=_ddb_id(CURSOR_ID)).get("Item")
+    last_key = item.get("last_key", {}).get("S", "") if item else ""
+    match = KEY_DATE_RE.match(last_key)
+    if not match:
+        return ""
+    rewound = date.fromisoformat(match.group(2)) - timedelta(days=CURSOR_REWIND_DAYS)
+    return f"{match.group(1)}{rewound.isoformat()}"
+
+
+def _write_cursor(last_key):
+    dynamodb.put_item(TableName=TABLE_NAME, Item={**_ddb_id(CURSOR_ID), "last_key": {"S": last_key}})
 
 
 def _looks_like_bot(raw_user_agent):
@@ -234,13 +259,21 @@ def _ingest_cloudfront_logs(context):
     pending = Counter()
     processed = 0
     truncated = False
+    last_seen = ""
+    list_kwargs = {"Bucket": LOG_BUCKET, "Prefix": LOG_PREFIX}
+    start_after = _read_cursor_start_after()
+    if start_after:
+        list_kwargs["StartAfter"] = start_after
     paginator = s3.get_paginator("list_objects_v2")
-    for page in paginator.paginate(Bucket=LOG_BUCKET, Prefix=LOG_PREFIX):
+    for page in paginator.paginate(**list_kwargs):
         for obj in page.get("Contents", []):
             if context.get_remaining_time_in_millis() < TIME_BUDGET_FLOOR_MS:
                 truncated = True
                 break
             key = obj["Key"]
+            # Everything up to and including this key has a marker (either
+            # pre-existing or written below), so the cursor may advance here.
+            last_seen = key
             if not key.endswith(".gz") or not _claim_log_object(key):
                 continue
             try:
@@ -253,9 +286,12 @@ def _ingest_cloudfront_logs(context):
             processed += 1
             if processed % FLUSH_EVERY_N_OBJECTS == 0:
                 _flush(pending)
+                _write_cursor(last_seen)
         if truncated:
             break
     _flush(pending)
+    if last_seen:
+        _write_cursor(last_seen)
     return processed, truncated
 
 
