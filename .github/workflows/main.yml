@@ -15,6 +15,9 @@ jobs:
     name: 'Terraform plan'
     runs-on: ubuntu-latest
     environment: "AWS General"
+    # email_address has no default (kept out of source); supply it via secret.
+    env:
+      TF_VAR_email_address: ${{ secrets.EMAIL_ADDRESS }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -52,13 +55,13 @@ jobs:
         run: terraform -chdir=terraform fmt -check
 
       - name: Terraform Init
-        run: terraform -chdir=terraform init
+        run: terraform -chdir=terraform init -input=false
 
       - name: Terraform refresh
-        run: terraform -chdir=terraform refresh
+        run: terraform -chdir=terraform refresh -input=false
 
       - name: Terraform Plan
-        run: terraform -chdir=terraform plan -out=plan.tfplan
+        run: terraform -chdir=terraform plan -input=false -out=plan.tfplan
 
       - name: Upload Plan
         uses: actions/upload-artifact@v4
@@ -71,6 +74,9 @@ jobs:
     needs: terraform-plan
     runs-on: ubuntu-latest
     environment: "prod"
+    # email_address has no default (kept out of source); supply it via secret.
+    env:
+      TF_VAR_email_address: ${{ secrets.EMAIL_ADDRESS }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -93,7 +99,7 @@ jobs:
         run: npm ci
 
       - name: Terraform Init
-        run: terraform -chdir=terraform init
+        run: terraform -chdir=terraform init -input=false
 
       - name: Download Plan
         uses: actions/download-artifact@v4
