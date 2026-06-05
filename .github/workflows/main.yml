@@ -5,6 +5,11 @@ on:
     branches:
       - 'main'
 
+# Required for OIDC: jobs request a short-lived token to assume the AWS role.
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   terraform-plan:
     name: 'Terraform plan'
@@ -20,21 +25,20 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          role-to-assume: arn:aws:iam::870140981796:role/github-deploy
           aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-    
+
       - name: Install dependencies
         run: npm ci
 
       - name: Lint npm
         run: npm run lint
-      
+
       - name: Build
         run: npm run build
 
@@ -55,7 +59,7 @@ jobs:
 
       - name: Terraform Plan
         run: terraform -chdir=terraform plan -out=plan.tfplan
-      
+
       - name: Upload Plan
         uses: actions/upload-artifact@v4
         with:
@@ -77,15 +81,14 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          role-to-assume: arn:aws:iam::870140981796:role/github-deploy
           aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
-      
+
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-        
+
       - name: Install dependencies
         run: npm ci
 
@@ -113,8 +116,7 @@ jobs:
         - name: Configure AWS Credentials
           uses: aws-actions/configure-aws-credentials@v4
           with:
-            aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-            aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            role-to-assume: arn:aws:iam::870140981796:role/github-deploy
             aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
 
         - name: Download build artifacts
@@ -140,10 +142,9 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          role-to-assume: arn:aws:iam::870140981796:role/github-deploy
           aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
-      
+
       - name: Zip Lambda Code
         run: |
           cd sns_publish_lambda
@@ -162,22 +163,21 @@ jobs:
       needs: update-s3-contents
       runs-on: ubuntu-latest
       environment: "AWS General"
-      steps:        
+      steps:
         - name: Checkout
           uses: actions/checkout@v4
 
         - name: Configure AWS Credentials
           uses: aws-actions/configure-aws-credentials@v4
           with:
-            aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-            aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            role-to-assume: arn:aws:iam::870140981796:role/github-deploy
             aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
 
         - name: Setup Node.js environment
           uses: actions/setup-node@v4
           with:
             node-version: '22'
-        
+
         - name: Install dependencies
           run: npm ci
 
