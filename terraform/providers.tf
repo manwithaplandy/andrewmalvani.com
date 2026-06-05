@@ -1,10 +1,10 @@
 terraform {
   backend "s3" {
-    bucket         = "terraform-backend-bucket-blindly-joint-moth"
-    key            = "terraform.tfstate"
-    region         = "us-west-1"
-    dynamodb_table = "terraform-state-lock"
-    encrypt        = true
+    bucket       = "terraform-backend-bucket-blindly-joint-moth"
+    key          = "terraform.tfstate"
+    region       = "us-west-1"
+    use_lockfile = true
+    encrypt      = true
   }
 }
 

@@ -20,19 +20,19 @@ jobs:
       TF_VAR_email_address: ${{ secrets.EMAIL_ADDRESS }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
+        uses: hashicorp/setup-terraform@v4
 
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: arn:aws:iam::870140981796:role/github-deploy
           aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '22'
 
@@ -46,7 +46,7 @@ jobs:
         run: npm run build
 
       - name: Upload web assets
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: out
           path: out
@@ -64,7 +64,7 @@ jobs:
         run: terraform -chdir=terraform plan -input=false -out=plan.tfplan
 
       - name: Upload Plan
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: plan
           path: terraform/plan.tfplan
@@ -79,19 +79,19 @@ jobs:
       TF_VAR_email_address: ${{ secrets.EMAIL_ADDRESS }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
+        uses: hashicorp/setup-terraform@v4
 
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: arn:aws:iam::870140981796:role/github-deploy
           aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '22'
 
@@ -102,7 +102,7 @@ jobs:
         run: terraform -chdir=terraform init -input=false
 
       - name: Download Plan
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: plan
           path: terraform/plan
@@ -117,16 +117,16 @@ jobs:
       environment: "AWS General"
       steps:
         - name: Checkout
-          uses: actions/checkout@v4
+          uses: actions/checkout@v6
 
         - name: Configure AWS Credentials
-          uses: aws-actions/configure-aws-credentials@v4
+          uses: aws-actions/configure-aws-credentials@v6
           with:
             role-to-assume: arn:aws:iam::870140981796:role/github-deploy
             aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
 
         - name: Download build artifacts
-          uses: actions/download-artifact@v4
+          uses: actions/download-artifact@v8
           with:
             name: out
             path: out
@@ -143,10 +143,10 @@ jobs:
       environment: "AWS General"
       steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: arn:aws:iam::870140981796:role/github-deploy
           aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
@@ -171,16 +171,16 @@ jobs:
       environment: "AWS General"
       steps:
         - name: Checkout
-          uses: actions/checkout@v4
+          uses: actions/checkout@v6
 
         - name: Configure AWS Credentials
-          uses: aws-actions/configure-aws-credentials@v4
+          uses: aws-actions/configure-aws-credentials@v6
           with:
             role-to-assume: arn:aws:iam::870140981796:role/github-deploy
             aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
 
         - name: Setup Node.js environment
-          uses: actions/setup-node@v4
+          uses: actions/setup-node@v6
           with:
             node-version: '22'
 

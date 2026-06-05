@@ -42,3 +42,6 @@ yarn-error.log*
 
 # Build artifact
 **/lambda_function.zip
+
+# Python
+__pycache__/

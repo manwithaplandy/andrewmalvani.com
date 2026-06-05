@@ -10,8 +10,7 @@ interface FormData {
 // Public contact API endpoint. Overridable via env for cleanliness; falls back
 // to the deployed endpoint so static builds work without extra config.
 const CONTACT_API_URL =
-  process.env.NEXT_PUBLIC_CONTACT_API_URL ??
-  'https://vs7dthj3vb.execute-api.us-west-1.amazonaws.com/api/contact';
+  process.env.NEXT_PUBLIC_CONTACT_API_URL ?? 'https://vs7dthj3vb.execute-api.us-west-1.amazonaws.com/api/contact';
 
 // Client-side guard only — the Lambda performs authoritative validation.
 const MAX_MESSAGE_LENGTH = 250;
