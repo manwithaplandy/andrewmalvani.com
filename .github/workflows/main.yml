@@ -76,7 +76,7 @@ jobs:
     name: 'Terraform Apply'
     needs: terraform-plan
     runs-on: ubuntu-latest
-    environment: "prod"
+    environment: "AWS General"
     # email_address has no default (kept out of source); supply it via secret.
     # cloudflare_zone_id comes from a repo var; if unset, the stats aggregator
     # simply skips the Cloudflare uniques/countries query.
