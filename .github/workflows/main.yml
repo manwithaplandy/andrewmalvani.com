@@ -38,15 +38,16 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: '22'
+          cache: 'yarn'
 
       - name: Install dependencies
-        run: npm ci
+        run: yarn install --frozen-lockfile
 
-      - name: Lint npm
-        run: npm run lint
+      - name: Lint
+        run: yarn lint
 
       - name: Build
-        run: npm run build
+        run: yarn build
 
       - name: Upload web assets
         uses: actions/upload-artifact@v7
@@ -95,14 +96,6 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::870140981796:role/github-deploy
           aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
-
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v6
-        with:
-          node-version: '22'
-
-      - name: Install dependencies
-        run: npm ci
 
       - name: Terraform Init
         run: terraform -chdir=terraform init -input=false
@@ -199,14 +192,6 @@ jobs:
           with:
             role-to-assume: arn:aws:iam::870140981796:role/github-deploy
             aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
-
-        - name: Setup Node.js environment
-          uses: actions/setup-node@v6
-          with:
-            node-version: '22'
-
-        - name: Install dependencies
-          run: npm ci
 
         - name: Invalidate CloudFront cache
           run: |
