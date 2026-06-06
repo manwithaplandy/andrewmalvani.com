@@ -10,6 +10,9 @@ import {GraphNavAction, GraphNavState} from './graphReducer';
 
 const SWIPE_THRESHOLD_PX = 40;
 
+const ARROW_BUTTON_CLASS =
+  'rounded-md border border-neutral-600 p-2 text-neutral-200 hover:border-orange-500 hover:text-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500';
+
 /**
  * Screen-pinned glass card for the focused node: name, evidence copy, meta,
  * the ←/→ connection cursor and (on touch) the Prev/Next/Dive controls the
@@ -130,16 +133,12 @@ const FocusPanel: FC<{state: GraphNavState; dispatch: Dispatch<GraphNavAction>}>
               <div className="mt-2 flex items-center gap-x-2">
                 <button
                   aria-label="Previous connection"
-                  className="rounded-md border border-neutral-600 p-2 text-neutral-200 hover:border-orange-500 hover:text-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+                  className={ARROW_BUTTON_CLASS}
                   onClick={handlePrev}
                   type="button">
                   <ArrowLeftIcon className="h-4 w-4" />
                 </button>
-                <button
-                  aria-label="Next connection"
-                  className="rounded-md border border-neutral-600 p-2 text-neutral-200 hover:border-orange-500 hover:text-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
-                  onClick={handleNext}
-                  type="button">
+                <button aria-label="Next connection" className={ARROW_BUTTON_CLASS} onClick={handleNext} type="button">
                   <ArrowRightIcon className="h-4 w-4" />
                 </button>
                 <button

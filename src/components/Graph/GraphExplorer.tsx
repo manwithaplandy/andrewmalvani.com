@@ -22,6 +22,9 @@ type RenderMode = 'detecting' | '3d' | 'list';
 
 const HINT_DISMISSED_KEY = 'graphHintDismissed';
 
+const PILL_BUTTON_CLASS =
+  'pointer-events-auto rounded-full border border-neutral-700 bg-neutral-900/70 px-3 py-1 text-xs text-neutral-300 backdrop-blur-md hover:border-orange-500 hover:text-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500';
+
 const detectWebGL = (): boolean => {
   try {
     const canvas = document.createElement('canvas');
@@ -235,7 +238,7 @@ const GraphExplorer: FC = memo(() => {
             <div className="absolute right-3 top-16 z-20 flex flex-col items-end gap-y-2 sm:right-6 sm:top-20">
               <button
                 aria-expanded={legendOpen}
-                className="pointer-events-auto rounded-full border border-neutral-700 bg-neutral-900/70 px-3 py-1 text-xs text-neutral-300 backdrop-blur-md hover:border-orange-500 hover:text-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+                className={PILL_BUTTON_CLASS}
                 onClick={handleToggleLegend}
                 type="button">
                 {legendOpen ? 'Hide legend' : 'Legend'}
@@ -253,7 +256,7 @@ const GraphExplorer: FC = memo(() => {
               )}
               <button
                 aria-pressed={manualReducedMotion}
-                className="pointer-events-auto rounded-full border border-neutral-700 bg-neutral-900/70 px-3 py-1 text-xs text-neutral-300 backdrop-blur-md hover:border-orange-500 hover:text-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+                className={PILL_BUTTON_CLASS}
                 onClick={handleToggleMotion}
                 type="button">
                 {reducedMotion ? 'Motion: reduced' : 'Reduce motion'}

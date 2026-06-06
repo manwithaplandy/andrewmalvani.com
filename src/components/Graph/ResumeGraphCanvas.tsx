@@ -108,6 +108,10 @@ const LINK_BASE_COLOR: Record<GraphEdgeKind, string> = {
 const ORANGE = '#fb923c';
 const CAMERA_DISTANCE: Partial<Record<GraphNodeKind, number>> = {job: 110, skillGroup: 140};
 const DEFAULT_CAMERA_DISTANCE = 80;
+// Preserved-zoom clamp: min keeps the camera out of the node itself; beyond
+// the max the target is fog-invisible anyway.
+const MIN_FLIGHT_DISTANCE = 30;
+const MAX_FLIGHT_DISTANCE = 900;
 
 // Chronological spine: jobs (and education) pinned along the x axis so the
 // career always reads oldest → newest, with skill "galaxies" clustered around
@@ -152,8 +156,14 @@ const canvasData: {nodes: FGNode[]; links: FGLink[]} = {
   }),
 };
 
+const canvasNodeById = new Map(canvasData.nodes.map(node => [String(node.id), node]));
+
 const linkEndId = (end: FGLink['source']): string =>
   typeof end === 'object' && end !== null ? String(end.id) : String(end);
+
+/** True once the force layout has assigned real coordinates to the node. */
+const hasLayoutCoords = (node: FGNode): node is FGNode & {x: number; y: number; z: number} =>
+  typeof node.x === 'number' && typeof node.y === 'number' && typeof node.z === 'number';
 
 const makeStarfield = (): Points => {
   const starCount = 300;
@@ -278,6 +288,32 @@ const applyVisualState = (visual: NodeVisual, state: NodeVisualState): void => {
   visual.haloMaterial.visible = haloMaterial.opacity > 0;
 };
 
+/** Single source of truth for the visual-state priority order. */
+const resolveVisualState = (
+  id: string,
+  focusedId: string | null,
+  highlightedId: string | null,
+  hoveredId: string | null,
+  isLinked: boolean,
+): NodeVisualState =>
+  focusedId === id
+    ? 'selected'
+    : highlightedId === id
+      ? 'candidate'
+      : hoveredId === id
+        ? 'hovered'
+        : focusedId === null
+          ? 'normal'
+          : isLinked
+            ? 'linked'
+            : 'dimmed';
+
+// Hover preview card geometry, used to clamp it inside the canvas.
+const PREVIEW_OFFSET = 16; // gap from the projected node point
+const PREVIEW_EDGE = 8; // minimum gap from the canvas edges
+const PREVIEW_WIDTH = 256; // matches max-w-[16rem] on the card
+const PREVIEW_HEIGHT = 96; // estimate: badge + name + two clamped lines
+
 /**
  * Small glass card shown after ~1s of continuous hover over a non-focused
  * node. pointer-events-none so it never steals the raycast or orbit drag;
@@ -288,8 +324,8 @@ const HoverPreview: FC<{node: GraphNode; x: number; y: number; width: number; he
     const style = useMemo(
       () => ({
         // Offset from the projected node point, clamped inside the canvas.
-        left: Math.max(8, Math.min(x + 16, width - 264)),
-        top: Math.max(8, Math.min(y + 16, height - 104)),
+        left: Math.max(PREVIEW_EDGE, Math.min(x + PREVIEW_OFFSET, width - PREVIEW_WIDTH - PREVIEW_EDGE)),
+        top: Math.max(PREVIEW_EDGE, Math.min(y + PREVIEW_OFFSET, height - PREVIEW_HEIGHT - PREVIEW_EDGE)),
       }),
       [x, y, width, height],
     );
@@ -521,19 +557,10 @@ const ResumeGraphCanvas: FC<{
   );
   useEffect(() => {
     for (const [id, visual] of objectsRef.current) {
-      const visualState: NodeVisualState =
-        state.focusedId === id
-          ? 'selected'
-          : state.highlightedId === id
-            ? 'candidate'
-            : hoveredId === id
-              ? 'hovered'
-              : state.focusedId === null
-                ? 'normal'
-                : focusNeighbors.has(id)
-                  ? 'linked'
-                  : 'dimmed';
-      applyVisualState(visual, visualState);
+      applyVisualState(
+        visual,
+        resolveVisualState(id, state.focusedId, state.highlightedId, hoveredId, focusNeighbors.has(id)),
+      );
     }
   }, [state.focusedId, state.highlightedId, hoveredId, focusNeighbors, ready, canvasKey]);
 
@@ -543,7 +570,7 @@ const ResumeGraphCanvas: FC<{
     if (!ready || !fg || !state.focusedId) {
       return;
     }
-    const node = canvasData.nodes.find(candidate => candidate.id === state.focusedId);
+    const node = canvasNodeById.get(state.focusedId);
     if (!node) {
       return;
     }
@@ -553,22 +580,21 @@ const ResumeGraphCanvas: FC<{
       if (cancelled) {
         return;
       }
-      const {x, y, z} = node;
-      if (typeof x !== 'number' || typeof y !== 'number' || typeof z !== 'number' || (x === 0 && y === 0 && z === 0)) {
+      if (!hasLayoutCoords(node) || (node.x === 0 && node.y === 0 && node.z === 0)) {
         // Layout not warmed up yet — retry briefly (initial page load).
         if (attempts++ < 20) {
           window.setTimeout(fly, 150);
         }
         return;
       }
+      const {x, y, z} = node;
       // First flight frames per-kind; afterwards preserve the user's zoom,
-      // lightly clamped (min: never inside a node; max: beyond ~900 the
-      // target is fog-invisible anyway).
+      // lightly clamped.
       let distance = CAMERA_DISTANCE[node.kind] ?? DEFAULT_CAMERA_DISTANCE;
       if (hasFlownRef.current) {
         const controls = fg.controls() as {target: Vector3};
         const currentDistance = fg.camera().position.distanceTo(controls.target);
-        distance = Math.min(Math.max(currentDistance, 30), 900);
+        distance = Math.min(Math.max(currentDistance, MIN_FLIGHT_DISTANCE), MAX_FLIGHT_DISTANCE);
       }
       const norm = Math.hypot(x, y, z) || 1;
       const ratio = 1 + distance / norm;
@@ -587,18 +613,9 @@ const ResumeGraphCanvas: FC<{
     if (!ready || !fg || !state.focusedId || !state.highlightedId) {
       return;
     }
-    const focused = canvasData.nodes.find(node => node.id === state.focusedId);
-    const candidate = canvasData.nodes.find(node => node.id === state.highlightedId);
-    if (
-      !focused ||
-      !candidate ||
-      typeof focused.x !== 'number' ||
-      typeof candidate.x !== 'number' ||
-      typeof focused.y !== 'number' ||
-      typeof candidate.y !== 'number' ||
-      typeof focused.z !== 'number' ||
-      typeof candidate.z !== 'number'
-    ) {
+    const focused = canvasNodeById.get(state.focusedId);
+    const candidate = canvasNodeById.get(state.highlightedId);
+    if (!focused || !candidate || !hasLayoutCoords(focused) || !hasLayoutCoords(candidate)) {
       return;
     }
     const camera = fg.camera();
@@ -622,8 +639,8 @@ const ResumeGraphCanvas: FC<{
     }
     const timer = window.setTimeout(() => {
       const fg = fgRef.current;
-      const node = canvasData.nodes.find(candidate => candidate.id === hoveredId);
-      if (!fg || !node || typeof node.x !== 'number' || typeof node.y !== 'number' || typeof node.z !== 'number') {
+      const node = canvasNodeById.get(hoveredId);
+      if (!fg || !node || !hasLayoutCoords(node)) {
         return;
       }
       const {x, y} = fg.graph2ScreenCoords(node.x, node.y, node.z);
@@ -662,24 +679,17 @@ const ResumeGraphCanvas: FC<{
     const neighbors = current.focusedId ? resumeGraph.adjacency.get(current.focusedId) ?? [] : [];
     applyVisualState(
       visual,
-      current.focusedId === id
-        ? 'selected'
-        : current.highlightedId === id
-          ? 'candidate'
-          : hoveredIdRef.current === id
-            ? 'hovered'
-            : current.focusedId === null
-              ? 'normal'
-              : neighbors.includes(id)
-                ? 'linked'
-                : 'dimmed',
+      resolveVisualState(id, current.focusedId, current.highlightedId, hoveredIdRef.current, neighbors.includes(id)),
     );
     return object;
   }, []);
 
+  // Depend on the two ids only: a fresh accessor identity makes the engine
+  // restyle every link, so unrelated state changes (expand, wrap) must not
+  // recreate these.
+  const {focusedId, highlightedId} = state;
   const linkColor = useCallback(
     (link: FGLink): string => {
-      const {focusedId, highlightedId} = state;
       if (!focusedId) {
         return LINK_BASE_COLOR[link.kind ?? 'related'];
       }
@@ -694,18 +704,17 @@ const ResumeGraphCanvas: FC<{
       }
       return 'rgba(125,125,130,0.12)';
     },
-    [state],
+    [focusedId, highlightedId],
   );
 
   const linkWidth = useCallback(
     (link: FGLink): number => {
-      const {focusedId} = state;
       if (!focusedId) {
         return 0;
       }
       return linkEndId(link.source) === focusedId || linkEndId(link.target) === focusedId ? 1 : 0;
     },
-    [state],
+    [focusedId],
   );
 
   const handleNodeClick = useCallback(
