@@ -3,6 +3,7 @@ import {
   ArrowDownTrayIcon,
   BuildingOffice2Icon,
   // CalendarIcon,
+  CubeTransparentIcon,
   FlagIcon,
   MapIcon,
   SparklesIcon,
@@ -95,6 +96,12 @@ export const heroData: Hero = {
       text: 'Resume',
       primary: true,
       Icon: ArrowDownTrayIcon,
+    },
+    {
+      href: '/graph',
+      text: 'Career Graph',
+      primary: false,
+      Icon: CubeTransparentIcon,
     },
     {
       href: `#${SectionId.Contact}`,

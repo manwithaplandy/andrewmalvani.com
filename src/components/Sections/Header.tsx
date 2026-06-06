@@ -48,6 +48,9 @@ const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null
               section={section}
             />
           ))}
+          <Link className={inactiveClass} href="/graph">
+            graph
+          </Link>
         </nav>
       </header>
     );
@@ -107,6 +110,9 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}
                       section={section}
                     />
                   ))}
+                  <Link className={inactiveClass} href="/graph" onClick={toggleOpen}>
+                    graph
+                  </Link>
                 </nav>
               </div>
             </Transition.Child>
