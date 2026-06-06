@@ -26,11 +26,11 @@ const ContactValueMap: Record<ContactType, ContactValue> = {
 const Contact: FC = memo(() => {
   const {headerText, description, items} = contact;
   return (
-    <Section className="bg-neutral-800" sectionId={SectionId.Contact}>
-      <div className="flex flex-col gap-y-6">
-        <div className="flex flex-col gap-6 md:flex-row md:items-center">
-          <EnvelopeIcon className="hidden h-16 w-16 text-white md:block" />
-          <h2 className="text-2xl font-bold text-white">{headerText}</h2>
+    <Section sectionId={SectionId.Contact}>
+      <div className="flex flex-col gap-y-8">
+        <div className="flex flex-col gap-y-2">
+          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-400">Contact</span>
+          <h2 className="text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl">{headerText}</h2>
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <div className="order-2 col-span-1 md:order-1 ">

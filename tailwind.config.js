@@ -10,6 +10,9 @@ module.exports = {
       colors: {
         yellow: themeTokens.yellow,
       },
+      fontFamily: {
+        sans: ['var(--font-sans)', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+      },
       keyframes: {
         typing: {
           '0%, 100%': {width: '0%'},

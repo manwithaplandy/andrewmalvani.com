@@ -31,6 +31,7 @@ interface HeroActionItem {
   href: string;
   text: string;
   primary?: boolean;
+  download?: boolean;
   Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
 }
 
@@ -125,20 +126,6 @@ export interface Certification {
   date: string;
   credentialId?: string;
   image?: string | StaticImageData;
-}
-
-/**
- * Testimonial section
- */
-export interface TestimonialSection {
-  imageSrc?: string | StaticImageData;
-  testimonials: Testimonial[];
-}
-
-export interface Testimonial {
-  image?: string;
-  name: string;
-  text: string;
 }
 
 /**

@@ -23,10 +23,7 @@ interface NavEntry {
 const Header: FC = memo(() => {
   const router = useRouter();
   const [currentSection, setCurrentSection] = useState<SectionId | null>(null);
-  const navSections = useMemo(
-    () => [SectionId.About, SectionId.Resume, SectionId.Portfolio, SectionId.Testimonials, SectionId.Contact],
-    [],
-  );
+  const navSections = useMemo(() => [SectionId.About, SectionId.Resume, SectionId.Portfolio, SectionId.Contact], []);
 
   const intersectionHandler = useCallback((section: SectionId | null) => {
     section && setCurrentSection(section);
@@ -60,7 +57,9 @@ const DesktopNav: FC<{navEntries: NavEntry[]}> = memo(({navEntries}) => {
   const activeClass = classNames(baseClass, 'text-orange-500');
   const inactiveClass = classNames(baseClass, 'text-neutral-100');
   return (
-    <header className="fixed top-0 z-50 hidden w-full bg-neutral-900/50 p-4 backdrop-blur sm:block" id={headerID}>
+    <header
+      className="fixed top-0 z-50 hidden w-full border-b border-neutral-800/60 bg-neutral-950/70 p-4 backdrop-blur-md sm:block"
+      id={headerID}>
       <nav className="flex justify-center gap-x-8">
         {navEntries.map(entry => (
           <NavItem activeClass={activeClass} entry={entry} inactiveClass={inactiveClass} key={entry.href} />
@@ -100,7 +99,7 @@ const MobileNav: FC<{navEntries: NavEntry[]}> = memo(({navEntries}) => {
             leave="transition-opacity ease-linear duration-300"
             leaveFrom="opacity-100"
             leaveTo="opacity-0">
-            <Dialog.Overlay className="fixed inset-0 bg-stone-900 bg-opacity-75" />
+            <Dialog.Overlay className="fixed inset-0 bg-neutral-950 bg-opacity-75" />
           </Transition.Child>
           <Transition.Child
             as={Fragment}
@@ -110,7 +109,7 @@ const MobileNav: FC<{navEntries: NavEntry[]}> = memo(({navEntries}) => {
             leave="transition ease-in-out duration-300 transform"
             leaveFrom="translate-x-0"
             leaveTo="-translate-x-full">
-            <div className="relative w-4/5 bg-stone-800">
+            <div className="relative w-4/5 border-r border-neutral-800 bg-neutral-900">
               <nav className="mt-5 flex flex-col gap-y-2 px-2">
                 {navEntries.map(entry => (
                   <NavItem
