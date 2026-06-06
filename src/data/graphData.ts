@@ -61,9 +61,15 @@ const JOB_DETAILS: Record<string, DerivedDetails> = {
 const EDUCATION_DETAILS: Record<string, DerivedDetails> = {
   "Bachelor's - Psychology": {
     description:
-      "B.A. in Psychology from UC Santa Barbara (2017) — the people-first foundation behind a self-taught engineering career; currently pursuing a Master's degree in Computer Science.",
+      'B.A. in Psychology from UC Santa Barbara (2017) — the people-first foundation behind a self-taught engineering career.',
     id: 'education:ucsb-psychology',
     label: 'B.A. Psychology, UCSB',
+  },
+  "Master's - Computer Science": {
+    description:
+      'M.S. in Computer Science at Georgia Tech, in progress — formalizing the theory behind the production AI engineering practiced daily at General Atomics.',
+    id: 'education:gatech-ms-cs',
+    label: 'M.S. Computer Science, Georgia Tech',
   },
 };
 
@@ -182,12 +188,6 @@ const SKILL_DETAILS: Record<string, DerivedDetails> = {
       'Orchestration frameworks of choice for production agents at General Atomics; also fluent in Semantic Kernel, LlamaIndex, AutoGen and CrewAI.',
     id: 'skill:langchain-langgraph',
     label: 'LangChain & LangGraph',
-  },
-  Learning: {
-    description:
-      "Psychology B.A. to Lead AI/ML Engineer in seven years — and still compounding, with a Master's in Computer Science in progress.",
-    id: 'skill:learning',
-    label: 'Learning',
   },
   LiteLLM: {
     description:
@@ -519,7 +519,6 @@ const AUTHORED_EDGES: GraphEdge[] = [
   {kind: 'uses', source: 'responsibility:dev-assistant-rollout', target: 'skill:claude-code-sdk'},
   {kind: 'uses', source: 'responsibility:llm-sme', target: 'skill:rag'},
   {kind: 'uses', source: 'responsibility:llm-sme', target: 'skill:agents'},
-  {kind: 'uses', source: 'responsibility:llm-sme', target: 'skill:learning'},
   {kind: 'uses', source: 'responsibility:it-modernization', target: 'skill:powershell'},
   {kind: 'uses', source: 'responsibility:it-modernization', target: 'skill:bash'},
   {kind: 'uses', source: 'responsibility:it-modernization', target: 'tool:ci-cd'},
@@ -557,7 +556,7 @@ const AUTHORED_EDGES: GraphEdge[] = [
   {kind: 'related', source: 'skill:litellm', target: 'skill:aws-bedrock'},
   {kind: 'related', source: 'skill:aws', target: 'skill:cloudflare'},
   {kind: 'related', source: 'certification:comptia-cysa', target: 'certification:tenable-sc'},
-  {kind: 'related', source: 'skill:learning', target: 'education:ucsb-psychology'},
+  {kind: 'related', source: 'education:gatech-ms-cs', target: 'job:ga-lead-ai-ml-engineer'},
 ];
 
 /**

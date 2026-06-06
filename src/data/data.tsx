@@ -142,7 +142,7 @@ export const skills: SkillGroup[] = [
       },
       {
         name: 'CI/CD',
-        level: 7,
+        level: 9,
       },
       {
         name: 'Terragrunt',
@@ -184,7 +184,7 @@ export const skills: SkillGroup[] = [
       },
       {
         name: 'LangChain & LangGraph',
-        level: 9,
+        level: 7,
       },
       {
         name: 'MCP',
@@ -192,7 +192,7 @@ export const skills: SkillGroup[] = [
       },
       {
         name: 'GraphRAG',
-        level: 8,
+        level: 6,
       },
       {
         name: 'Semantic Kernel',
@@ -206,10 +206,6 @@ export const skills: SkillGroup[] = [
         name: 'Claude Code & SDK',
         level: 9,
       },
-      {
-        name: 'Learning',
-        level: 10,
-      },
     ],
   },
   {
@@ -217,11 +213,11 @@ export const skills: SkillGroup[] = [
     skills: [
       {
         name: 'AWS',
-        level: 6,
+        level: 7,
       },
       {
         name: 'Azure',
-        level: 7,
+        level: 8,
       },
       {
         name: 'AWS Bedrock',
@@ -278,6 +274,12 @@ export const portfolioItems: PortfolioItem[] = [
  * Resume section
  */
 export const education: TimelineItem[] = [
+  {
+    date: 'In Progress',
+    location: 'Georgia Tech',
+    title: "Master's - Computer Science",
+    content: <p></p>,
+  },
   {
     date: 'September 2017',
     location: 'UC Santa Barbara',

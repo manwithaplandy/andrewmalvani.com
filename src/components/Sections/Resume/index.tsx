@@ -11,22 +11,24 @@ import TimelineItem from './TimelineItem';
 const Resume: FC = memo(() => {
   return (
     <Section sectionId={SectionId.Resume}>
+      {/* Section padding lives on the Reveal wrappers: they are the divide-y
+          siblings, so first:/last: variants resolve correctly there. */}
       <div className="flex flex-col divide-y divide-neutral-800">
-        <Reveal>
+        <Reveal className="py-12 first:pt-0 last:pb-0">
           <ResumeSection title="Work">
             {experience.map((item, index) => (
               <TimelineItem item={item} key={`${item.title}-${index}`} />
             ))}
           </ResumeSection>
         </Reveal>
-        <Reveal>
+        <Reveal className="py-12 first:pt-0 last:pb-0">
           <ResumeSection title="Education">
             {education.map((item, index) => (
               <TimelineItem item={item} key={`${item.title}-${index}`} />
             ))}
           </ResumeSection>
         </Reveal>
-        <Reveal>
+        <Reveal className="py-12 first:pt-0 last:pb-0">
           <ResumeSection title="Skills">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               {skills.map((skillgroup, index) => (
@@ -35,7 +37,7 @@ const Resume: FC = memo(() => {
             </div>
           </ResumeSection>
         </Reveal>
-        <Reveal>
+        <Reveal className="py-12 first:pt-0 last:pb-0">
           <ResumeSection title="Certifications">
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               {certifications.map((certification, index) => (
