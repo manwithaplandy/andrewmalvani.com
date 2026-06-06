@@ -34,19 +34,19 @@ interface GroupDetails extends DerivedDetails {
 const JOB_DETAILS: Record<string, DerivedDetails> = {
   'Compliance & Marketing Consultant': {
     description:
-      'Audited car dealerships across the country for compliance with local, state, federal and corporate authorities — resolving violations quickly and advising clients on prevention, while supporting marketing strategy and content.',
+      'Managed a territory of 100+ car-dealership clients generating $1M+ in annual sales — auditing compliance with local, state, federal and corporate authorities, resolving violations quickly, and supporting marketing strategy and content.',
     id: 'job:reynolds-compliance-marketing-consultant',
     label: 'Compliance & Marketing Consultant',
   },
   'IT Strategic Analyst': {
     description:
-      'Tier-1 helpdesk, systems administrator and automation engineer in one. Anticipated end-user needs and built internal tools with Python, JavaScript/jQuery and Mulesoft that significantly improved team efficiency.',
+      'Tier-1 helpdesk, systems administrator and automation engineer in one. Cut onboarding/offboarding time 90% with automated account provisioning, stood up a centralized MuleSoft API management system, and built internal tools with Python and JavaScript.',
     id: 'job:tillster-it-strategic-analyst',
     label: 'IT Strategic Analyst',
   },
   'Lead AI/ML Engineer': {
     description:
-      "Leads General Atomics' AI agent program as the organization's LLM SME: a secure internal RAG chatbot for self-service assistants, an agent that cut technical-order authoring time by 40%, and AI dev assistants that raised development velocity by 50%.",
+      "Leads General Atomics' enterprise AI program as the organization's LLM SME: a DoD-compliant enterprise AI chatbot avoiding $15M/yr in spend, a self-service RAG platform delivering 4x efficiency for 10,000+ users, a $50M-ROI agent platform built on MCP, and AI dev assistants that raised developer productivity by 30%.",
     id: 'job:ga-lead-ai-ml-engineer',
     label: 'Lead AI/ML Engineer',
   },
@@ -102,6 +102,12 @@ const SKILL_DETAILS: Record<string, DerivedDetails> = {
     id: 'skill:aws',
     label: 'AWS',
   },
+  'AWS Bedrock': {
+    description:
+      "Model backbone of General Atomics' DoD-compliant enterprise AI chatbot ($15M/yr spend avoided) and the GraphRAG technical-order pipeline alongside OpenSearch and Neptune.",
+    id: 'skill:aws-bedrock',
+    label: 'AWS Bedrock',
+  },
   Agents: {
     description:
       'Designed and shipped the autonomous agent that cut technical-order authoring time by 40% at General Atomics by searching a massive corpus of supporting documents.',
@@ -114,6 +120,12 @@ const SKILL_DETAILS: Record<string, DerivedDetails> = {
     id: 'skill:azure',
     label: 'Azure',
   },
+  'Azure AI Foundry': {
+    description:
+      'Azure-side model platform behind the DoD-compliant enterprise AI chatbot at General Atomics — paired with AWS Bedrock and LiteLLM for multi-cloud model access.',
+    id: 'skill:azure-ai-foundry',
+    label: 'Azure AI Foundry',
+  },
   Bash: {
     description: 'Day-to-day automation glue across Linux servers, CI pipelines and developer tooling.',
     id: 'skill:bash',
@@ -124,6 +136,12 @@ const SKILL_DETAILS: Record<string, DerivedDetails> = {
       'GitHub Actions deploys this site to S3/CloudFront on every merge — the same automation mindset brought to enterprise IT at General Atomics.',
     id: 'tool:ci-cd',
     label: 'CI/CD',
+  },
+  'Claude Code & SDK': {
+    description:
+      'Built autonomous multi-agent automation on the Claude SDK at General Atomics and led the AI dev-tools rollout — Claude Code included — that raised developer productivity by 30%.',
+    id: 'skill:claude-code-sdk',
+    label: 'Claude Code & SDK',
   },
   Cloudflare: {
     description:
@@ -141,6 +159,12 @@ const SKILL_DETAILS: Record<string, DerivedDetails> = {
     description: 'Working familiarity from cross-cloud comparisons and smaller side projects.',
     id: 'skill:gcp',
     label: 'GCP',
+  },
+  GraphRAG: {
+    description:
+      'Graph-augmented retrieval over Amazon OpenSearch and Neptune powering agentic technical-order search and generation at General Atomics — a 40% cut in TO development time.',
+    id: 'skill:graphrag',
+    label: 'GraphRAG',
   },
   'Javascript & Typescript (Node, React)': {
     description:
@@ -165,6 +189,18 @@ const SKILL_DETAILS: Record<string, DerivedDetails> = {
     id: 'skill:learning',
     label: 'Learning',
   },
+  LiteLLM: {
+    description:
+      "Unified model-routing layer of General Atomics' enterprise AI chatbot — one gateway across AWS Bedrock and Azure AI Foundry, keeping the $15M/yr in-house platform provider-agnostic.",
+    id: 'skill:litellm',
+    label: 'LiteLLM',
+  },
+  MCP: {
+    description:
+      'Built the $50M-ROI self-service agent platform at General Atomics on the Model Context Protocol, with a centralized authn/authz framework connecting agents to internal systems.',
+    id: 'skill:mcp',
+    label: 'MCP',
+  },
   Powershell: {
     description: 'Windows-fleet automation from the Systems Administrator years at General Atomics.',
     id: 'skill:powershell',
@@ -182,11 +218,23 @@ const SKILL_DETAILS: Record<string, DerivedDetails> = {
     id: 'skill:rag',
     label: 'RAG',
   },
+  'Semantic Kernel': {
+    description:
+      'Orchestration framework used alongside LangGraph and the Claude SDK in the autonomous multi-agent systems that eliminated 90% of manual processing across key workflows at General Atomics.',
+    id: 'skill:semantic-kernel',
+    label: 'Semantic Kernel',
+  },
   Terraform: {
     description:
       "HashiCorp-certified. Defines this site's entire AWS footprint — CloudFront, Lambda, DynamoDB, IAM — as reviewable code in the site's public repo.",
     id: 'tool:terraform',
     label: 'Terraform',
+  },
+  Terragrunt: {
+    description:
+      'Layered on Terraform to keep enterprise IaC DRY across environments at General Atomics — part of the pipeline that cut deployment time by 90% with GitHub Actions CI/CD.',
+    id: 'tool:terragrunt',
+    label: 'Terragrunt',
   },
 };
 
@@ -238,15 +286,31 @@ const CERT_DETAILS: Record<string, CertDetails> = {
 const RESPONSIBILITY_NODES: GraphNode[] = [
   {
     description:
-      'Led the team that shipped a secure internal chatbot where users self-service their own AI assistants over their own data using RAG.',
+      'Led the team that built an in-house, DoD-compliant enterprise AI chatbot on AWS Bedrock, Azure AI Foundry and LiteLLM — avoiding $15M/yr in external spend.',
     id: 'responsibility:internal-rag-chatbot',
     kind: 'responsibility',
-    label: 'Secure internal RAG chatbot',
+    label: 'Enterprise AI chatbot (−$15M/yr)',
     meta: {location: 'General Atomics'},
   },
   {
     description:
-      'Designed and implemented an AI agent that searches a massive corpus of supporting documents to generate technical-order data — a 40% reduction in TO authoring time.',
+      'Shipped a self-service RAG platform for 10,000+ users on Azure AI Search, AWS RDS PostgreSQL and Python — a 4x improvement in workflow efficiency.',
+    id: 'responsibility:self-service-rag-platform',
+    kind: 'responsibility',
+    label: 'Self-service RAG platform (4x, 10k+ users)',
+    meta: {location: 'General Atomics'},
+  },
+  {
+    description:
+      'Built a self-service agent platform on MCP with a centralized authentication/authorization framework integrated with internal systems — delivering $50M in ROI.',
+    id: 'responsibility:agent-platform',
+    kind: 'responsibility',
+    label: 'Self-service agent platform ($50M ROI)',
+    meta: {location: 'General Atomics'},
+  },
+  {
+    description:
+      'Designed and implemented agentic search and generation with GraphRAG over Amazon OpenSearch, Amazon Neptune and AWS Bedrock — a 40% reduction in technical-order development time.',
     id: 'responsibility:to-authoring-agent',
     kind: 'responsibility',
     label: 'TO-authoring agent (−40% time)',
@@ -254,10 +318,26 @@ const RESPONSIBILITY_NODES: GraphNode[] = [
   },
   {
     description:
-      'Rolled out and supported AI software-development assistants, accelerating development velocity by 50% while maintaining security and trustworthiness.',
+      'Cut deployment time by 90% with infrastructure-as-code on Terraform and Terragrunt, deployed through GitHub Actions CI/CD pipelines.',
+    id: 'responsibility:iac-cicd',
+    kind: 'responsibility',
+    label: 'IaC + CI/CD (−90% deploy time)',
+    meta: {location: 'General Atomics'},
+  },
+  {
+    description:
+      'Eliminated 90% of manual processing across key workflows with autonomous multi-agent systems built on Azure Durable Functions, Python, LangGraph, Semantic Kernel and the Claude SDK.',
+    id: 'responsibility:multi-agent-automation',
+    kind: 'responsibility',
+    label: 'Multi-agent automation (−90% manual work)',
+    meta: {location: 'General Atomics'},
+  },
+  {
+    description:
+      'Rolled out AI software-development tools and integrated them into the SDLC — a 30% boost in developer productivity while maintaining security and trustworthiness.',
     id: 'responsibility:dev-assistant-rollout',
     kind: 'responsibility',
-    label: 'AI dev assistants (+50% velocity)',
+    label: 'AI dev assistants (+30% productivity)',
     meta: {location: 'General Atomics'},
   },
   {
@@ -294,7 +374,23 @@ const RESPONSIBILITY_NODES: GraphNode[] = [
   },
   {
     description:
-      'Helped develop new internal tools using Python, JavaScript/jQuery and Mulesoft that significantly improved operational efficiency.',
+      'Automated account provisioning across all company applications — cutting onboarding and offboarding time by 90%.',
+    id: 'responsibility:onboarding-automation',
+    kind: 'responsibility',
+    label: 'Onboarding automation (−90% time)',
+    meta: {location: 'Tillster, Inc.'},
+  },
+  {
+    description:
+      'Implemented a centralized MuleSoft API management system, improving API discoverability, security and auditability across the company.',
+    id: 'responsibility:api-management',
+    kind: 'responsibility',
+    label: 'MuleSoft API management',
+    meta: {location: 'Tillster, Inc.'},
+  },
+  {
+    description:
+      'Helped develop new internal tools using Python and JavaScript/jQuery that significantly improved operational efficiency.',
     id: 'responsibility:internal-tooling',
     kind: 'responsibility',
     label: 'Internal tooling in Python & JS',
@@ -310,10 +406,10 @@ const RESPONSIBILITY_NODES: GraphNode[] = [
   },
   {
     description:
-      'Audited dealership compliance across local, state, federal and corporate authorities — resolving failures quickly and advising clients on preventing future violations.',
+      'Managed a territory of 100+ dealership clients generating $1M+ in annual sales — auditing compliance across local, state, federal and corporate authorities, resolving failures quickly and advising on prevention.',
     id: 'responsibility:compliance-audits',
     kind: 'responsibility',
-    label: 'Nationwide compliance audits',
+    label: 'Compliance audits (100+ clients, $1M+ sales)',
     meta: {location: 'Reynolds & Reynolds'},
   },
   {
@@ -343,9 +439,15 @@ const AUTHORED_EDGES: GraphEdge[] = [
 
   // Responsibilities → the role they belong to.
   {kind: 'part-of', source: 'responsibility:internal-rag-chatbot', target: 'job:ga-lead-ai-ml-engineer'},
+  {kind: 'part-of', source: 'responsibility:self-service-rag-platform', target: 'job:ga-lead-ai-ml-engineer'},
+  {kind: 'part-of', source: 'responsibility:agent-platform', target: 'job:ga-lead-ai-ml-engineer'},
   {kind: 'part-of', source: 'responsibility:to-authoring-agent', target: 'job:ga-lead-ai-ml-engineer'},
+  {kind: 'part-of', source: 'responsibility:iac-cicd', target: 'job:ga-lead-ai-ml-engineer'},
+  {kind: 'part-of', source: 'responsibility:multi-agent-automation', target: 'job:ga-lead-ai-ml-engineer'},
   {kind: 'part-of', source: 'responsibility:dev-assistant-rollout', target: 'job:ga-lead-ai-ml-engineer'},
   {kind: 'part-of', source: 'responsibility:llm-sme', target: 'job:ga-lead-ai-ml-engineer'},
+  {kind: 'part-of', source: 'responsibility:onboarding-automation', target: 'job:tillster-it-strategic-analyst'},
+  {kind: 'part-of', source: 'responsibility:api-management', target: 'job:tillster-it-strategic-analyst'},
   {kind: 'part-of', source: 'responsibility:it-modernization', target: 'job:ga-systems-administrator'},
   {kind: 'part-of', source: 'responsibility:genai-enablement', target: 'job:ga-systems-administrator'},
   {kind: 'part-of', source: 'responsibility:genai-apps', target: 'job:ga-systems-administrator'},
@@ -360,6 +462,17 @@ const AUTHORED_EDGES: GraphEdge[] = [
   {kind: 'uses', source: 'job:ga-lead-ai-ml-engineer', target: 'skill:langchain-langgraph'},
   {kind: 'uses', source: 'job:ga-lead-ai-ml-engineer', target: 'skill:python'},
   {kind: 'uses', source: 'job:ga-lead-ai-ml-engineer', target: 'skill:azure'},
+  {kind: 'uses', source: 'job:ga-lead-ai-ml-engineer', target: 'skill:aws'},
+  {kind: 'uses', source: 'job:ga-lead-ai-ml-engineer', target: 'skill:mcp'},
+  {kind: 'uses', source: 'job:ga-lead-ai-ml-engineer', target: 'skill:graphrag'},
+  {kind: 'uses', source: 'job:ga-lead-ai-ml-engineer', target: 'skill:aws-bedrock'},
+  {kind: 'uses', source: 'job:ga-lead-ai-ml-engineer', target: 'skill:azure-ai-foundry'},
+  {kind: 'uses', source: 'job:ga-lead-ai-ml-engineer', target: 'skill:litellm'},
+  {kind: 'uses', source: 'job:ga-lead-ai-ml-engineer', target: 'skill:semantic-kernel'},
+  {kind: 'uses', source: 'job:ga-lead-ai-ml-engineer', target: 'skill:claude-code-sdk'},
+  {kind: 'uses', source: 'job:ga-lead-ai-ml-engineer', target: 'tool:terraform'},
+  {kind: 'uses', source: 'job:ga-lead-ai-ml-engineer', target: 'tool:terragrunt'},
+  {kind: 'uses', source: 'job:ga-lead-ai-ml-engineer', target: 'tool:ci-cd'},
   {kind: 'uses', source: 'job:ga-lead-ai-ml-engineer', target: 'tool:docker'},
   {kind: 'uses', source: 'job:ga-systems-administrator', target: 'skill:powershell'},
   {kind: 'uses', source: 'job:ga-systems-administrator', target: 'skill:python'},
@@ -376,12 +489,34 @@ const AUTHORED_EDGES: GraphEdge[] = [
   {kind: 'uses', source: 'responsibility:internal-rag-chatbot', target: 'skill:langchain-langgraph'},
   {kind: 'uses', source: 'responsibility:internal-rag-chatbot', target: 'skill:python'},
   {kind: 'uses', source: 'responsibility:internal-rag-chatbot', target: 'skill:azure'},
+  {kind: 'uses', source: 'responsibility:internal-rag-chatbot', target: 'skill:aws-bedrock'},
+  {kind: 'uses', source: 'responsibility:internal-rag-chatbot', target: 'skill:azure-ai-foundry'},
+  {kind: 'uses', source: 'responsibility:internal-rag-chatbot', target: 'skill:litellm'},
+  {kind: 'uses', source: 'responsibility:self-service-rag-platform', target: 'skill:rag'},
+  {kind: 'uses', source: 'responsibility:self-service-rag-platform', target: 'skill:python'},
+  {kind: 'uses', source: 'responsibility:self-service-rag-platform', target: 'skill:azure'},
+  {kind: 'uses', source: 'responsibility:self-service-rag-platform', target: 'skill:aws'},
+  {kind: 'uses', source: 'responsibility:agent-platform', target: 'skill:mcp'},
+  {kind: 'uses', source: 'responsibility:agent-platform', target: 'skill:agents'},
+  {kind: 'uses', source: 'responsibility:agent-platform', target: 'skill:python'},
   {kind: 'uses', source: 'responsibility:to-authoring-agent', target: 'skill:agents'},
   {kind: 'uses', source: 'responsibility:to-authoring-agent', target: 'skill:rag'},
   {kind: 'uses', source: 'responsibility:to-authoring-agent', target: 'skill:langchain-langgraph'},
   {kind: 'uses', source: 'responsibility:to-authoring-agent', target: 'skill:python'},
+  {kind: 'uses', source: 'responsibility:to-authoring-agent', target: 'skill:graphrag'},
+  {kind: 'uses', source: 'responsibility:to-authoring-agent', target: 'skill:aws-bedrock'},
+  {kind: 'uses', source: 'responsibility:to-authoring-agent', target: 'skill:aws'},
+  {kind: 'uses', source: 'responsibility:iac-cicd', target: 'tool:terraform'},
+  {kind: 'uses', source: 'responsibility:iac-cicd', target: 'tool:terragrunt'},
+  {kind: 'uses', source: 'responsibility:iac-cicd', target: 'tool:ci-cd'},
+  {kind: 'uses', source: 'responsibility:multi-agent-automation', target: 'skill:langchain-langgraph'},
+  {kind: 'uses', source: 'responsibility:multi-agent-automation', target: 'skill:semantic-kernel'},
+  {kind: 'uses', source: 'responsibility:multi-agent-automation', target: 'skill:claude-code-sdk'},
+  {kind: 'uses', source: 'responsibility:multi-agent-automation', target: 'skill:python'},
+  {kind: 'uses', source: 'responsibility:multi-agent-automation', target: 'skill:azure'},
   {kind: 'uses', source: 'responsibility:dev-assistant-rollout', target: 'skill:agents'},
   {kind: 'uses', source: 'responsibility:dev-assistant-rollout', target: 'tool:ci-cd'},
+  {kind: 'uses', source: 'responsibility:dev-assistant-rollout', target: 'skill:claude-code-sdk'},
   {kind: 'uses', source: 'responsibility:llm-sme', target: 'skill:rag'},
   {kind: 'uses', source: 'responsibility:llm-sme', target: 'skill:agents'},
   {kind: 'uses', source: 'responsibility:llm-sme', target: 'skill:learning'},
@@ -393,6 +528,9 @@ const AUTHORED_EDGES: GraphEdge[] = [
   {kind: 'uses', source: 'responsibility:genai-enablement', target: 'skill:agents'},
   {kind: 'uses', source: 'responsibility:genai-apps', target: 'skill:python'},
   {kind: 'uses', source: 'responsibility:genai-apps', target: 'skill:rag'},
+  {kind: 'uses', source: 'responsibility:onboarding-automation', target: 'skill:python'},
+  {kind: 'uses', source: 'responsibility:onboarding-automation', target: 'tool:ci-cd'},
+  {kind: 'uses', source: 'responsibility:api-management', target: 'skill:javascript-typescript'},
   {kind: 'uses', source: 'responsibility:internal-tooling', target: 'skill:python'},
   {kind: 'uses', source: 'responsibility:internal-tooling', target: 'skill:javascript-typescript'},
   {kind: 'uses', source: 'responsibility:frontline-it', target: 'skill:bash'},
@@ -411,6 +549,12 @@ const AUTHORED_EDGES: GraphEdge[] = [
   {kind: 'related', source: 'tool:terraform', target: 'tool:ci-cd'},
   {kind: 'related', source: 'skill:rag', target: 'skill:agents'},
   {kind: 'related', source: 'skill:langchain-langgraph', target: 'skill:agents'},
+  {kind: 'related', source: 'skill:graphrag', target: 'skill:rag'},
+  {kind: 'related', source: 'skill:mcp', target: 'skill:agents'},
+  {kind: 'related', source: 'skill:aws-bedrock', target: 'skill:aws'},
+  {kind: 'related', source: 'skill:azure-ai-foundry', target: 'skill:azure'},
+  {kind: 'related', source: 'tool:terragrunt', target: 'tool:terraform'},
+  {kind: 'related', source: 'skill:litellm', target: 'skill:aws-bedrock'},
   {kind: 'related', source: 'skill:aws', target: 'skill:cloudflare'},
   {kind: 'related', source: 'certification:comptia-cysa', target: 'certification:tenable-sc'},
   {kind: 'related', source: 'skill:learning', target: 'education:ucsb-psychology'},

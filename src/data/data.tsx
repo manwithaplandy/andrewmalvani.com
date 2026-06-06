@@ -144,6 +144,10 @@ export const skills: SkillGroup[] = [
         name: 'CI/CD',
         level: 7,
       },
+      {
+        name: 'Terragrunt',
+        level: 7,
+      },
     ],
   },
   {
@@ -183,6 +187,26 @@ export const skills: SkillGroup[] = [
         level: 9,
       },
       {
+        name: 'MCP',
+        level: 9,
+      },
+      {
+        name: 'GraphRAG',
+        level: 8,
+      },
+      {
+        name: 'Semantic Kernel',
+        level: 7,
+      },
+      {
+        name: 'LiteLLM',
+        level: 8,
+      },
+      {
+        name: 'Claude Code & SDK',
+        level: 9,
+      },
+      {
         name: 'Learning',
         level: 10,
       },
@@ -198,6 +222,14 @@ export const skills: SkillGroup[] = [
       {
         name: 'Azure',
         level: 7,
+      },
+      {
+        name: 'AWS Bedrock',
+        level: 8,
+      },
+      {
+        name: 'Azure AI Foundry',
+        level: 8,
       },
       {
         name: 'GCP',
@@ -260,15 +292,43 @@ export const experience: TimelineItem[] = [
     location: 'General Atomics',
     title: 'Lead AI/ML Engineer',
     content: (
-      <p>
-        As the Lead AI/ML Engineer at General Atomics, I spearhead the development and deployment of advanced AI agents
-        to revolutionize company operations. In this role, I served as the SME on LLMs for the organization, and I lead
-        the team that developed a secure internal chatbot, allowing users to self-service AI assistants using RAG with
-        their own data. Additionally, I designed and implemented an AI agent to reduce time spent on writing engineering
-        technical orders by 40% by using AI agents to search a massive corpus of supporting documents and generate TO
-        data. I also rolled out and supported AI software development assistants to accelerate software development
-        velocity by 50% while maintaining security and trustworthiness.
-      </p>
+      <>
+        <p>
+          As the Lead AI/ML Engineer at General Atomics, I lead the enterprise AI program and serve as the
+          organization's subject-matter expert on LLMs — designing, building, and shipping secure generative-AI
+          platforms that transform company operations.
+        </p>
+        <ul className="mt-3 list-disc space-y-2 pl-5 text-left">
+          <li>
+            Avoided <strong>$15M/yr</strong> in spend by developing an in-house, DoD-compliant enterprise AI chatbot
+            using AWS Bedrock, Azure AI Foundry, and LiteLLM.
+          </li>
+          <li>
+            Achieved <strong>4x workflow efficiency</strong> for 10,000+ users with a self-service RAG platform built on
+            Azure AI Search, AWS RDS PostgreSQL, and Python.
+          </li>
+          <li>
+            Delivered <strong>$50M ROI</strong> with a self-service agent platform using MCP and a centralized
+            authentication/authorization framework integrated with internal systems.
+          </li>
+          <li>
+            Cut technical-order development time by <strong>40%</strong> with agentic search and generation powered by
+            GraphRAG on Amazon OpenSearch, Amazon Neptune, and AWS Bedrock.
+          </li>
+          <li>
+            Reduced deployment time by <strong>90%</strong> through infrastructure-as-code with Terraform/Terragrunt and
+            GitHub Actions CI/CD.
+          </li>
+          <li>
+            Eliminated <strong>90%</strong> of manual processing across key workflows with autonomous multi-agent
+            systems built on Azure Durable Functions, Python, LangGraph, Semantic Kernel, and the Claude SDK.
+          </li>
+          <li>
+            Boosted developer productivity by <strong>30%</strong> by rolling out AI development tools and integrating
+            them into the SDLC while maintaining security and trustworthiness.
+          </li>
+        </ul>
+      </>
     ),
   },
   {
@@ -276,13 +336,23 @@ export const experience: TimelineItem[] = [
     location: 'General Atomics',
     title: 'Systems Administrator',
     content: (
-      <p>
-        Working as a Systems Administrator, I am tasked with improving and modernizing the company's IT infrastructure.
-        I brought concepts of DevOps and Agile development to automate, innovate, and quickly generate value for the
-        over 15000 end users. Additionally, I have spearheaded the team to implement generative AI to enable its use
-        throughout the enterprise. I have also personally developed a number of generative AI-powered applications to
-        improve access to information for technicians and executives.
-      </p>
+      <>
+        <p>
+          Working as a Systems Administrator, I was tasked with improving and modernizing the company's IT
+          infrastructure — bringing concepts of DevOps and Agile development to automate, innovate, and quickly generate
+          value for over 15,000 end users.
+        </p>
+        <ul className="mt-3 list-disc space-y-2 pl-5 text-left">
+          <li>
+            Spearheaded the team that implemented generative AI across the enterprise — the groundwork for the company's
+            AI agent program.
+          </li>
+          <li>
+            Personally developed generative AI-powered applications that improved access to information for technicians
+            and executives.
+          </li>
+        </ul>
+      </>
     ),
   },
   {
@@ -290,12 +360,24 @@ export const experience: TimelineItem[] = [
     location: 'Tillster, Inc.',
     title: 'IT Strategic Analyst',
     content: (
-      <p>
-        As an IT strategic analyst, it was my job to be tier 1 helpdesk, systems administrator, and automation engineer
-        all at once. I had to anticipate the needs of the end user, respond to them, and then work to implement
-        solutions that met their needs. I helped in the development of new internal tools using Python, js/jquery,
-        Mulesoft, and others which significantly improved our efficiency.
-      </p>
+      <>
+        <p>
+          As an IT strategic analyst, it was my job to be tier 1 helpdesk, systems administrator, and automation
+          engineer all at once — anticipating the needs of end users, responding to them, and implementing durable
+          solutions.
+        </p>
+        <ul className="mt-3 list-disc space-y-2 pl-5 text-left">
+          <li>
+            Reduced onboarding and offboarding time by <strong>90%</strong> by automating account provisioning across
+            all company applications.
+          </li>
+          <li>
+            Implemented a centralized MuleSoft API management system, improving API discoverability, security, and
+            auditability.
+          </li>
+          <li>Developed internal tools using Python and JavaScript that significantly improved team efficiency.</li>
+        </ul>
+      </>
     ),
   },
   {
@@ -303,12 +385,22 @@ export const experience: TimelineItem[] = [
     location: 'Reynolds & Reynolds',
     title: 'Compliance & Marketing Consultant',
     content: (
-      <p>
-        At Reynolds & Reynolds, our clients were car dealerships across the country. I was tasked with auditing their
-        compliance with all of the relevant authorities, including local, state, federal, and corporate. Where there
-        were inconsistencies or compliance failures, it was my job to resolve them quickly, and advise the client on
-        preventing any future violations. I also helped with marketing strategy and content creation.
-      </p>
+      <>
+        <p>
+          At Reynolds & Reynolds, our clients were car dealerships across the country. I was tasked with auditing their
+          compliance with all relevant authorities and advising them on marketing strategy.
+        </p>
+        <ul className="mt-3 list-disc space-y-2 pl-5 text-left">
+          <li>
+            Managed a territory of <strong>100+ clients</strong> generating <strong>$1M+</strong> in annual sales.
+          </li>
+          <li>
+            Performed compliance audits across local, state, federal, and corporate authorities — resolving failures
+            quickly and advising clients on preventing future violations.
+          </li>
+          <li>Supported client marketing strategy and content creation alongside the compliance practice.</li>
+        </ul>
+      </>
     ),
   },
 ];
