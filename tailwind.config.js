@@ -1,11 +1,14 @@
 // eslint-disable-next-line no-undef
+const themeTokens = require('./src/data/themeTokens');
+
+// eslint-disable-next-line no-undef
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,css,scss}'],
   // darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
-        yellow: '#efc603',
+        yellow: themeTokens.yellow,
       },
       keyframes: {
         typing: {

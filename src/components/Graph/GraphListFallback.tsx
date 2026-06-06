@@ -40,7 +40,16 @@ const GraphListFallback: FC<{
           </h2>
           <ul role="group">
             {nodes.map(node => (
-              <TreeNode dispatch={dispatch} key={node.id} node={node} state={state} visible={visible} />
+              <TreeNode
+                dispatch={dispatch}
+                // Derived primitives (not the whole state object) so memo
+                // actually short-circuits the rows a dispatch didn't affect.
+                highlightedId={state.focusedId === node.id ? state.highlightedId : null}
+                isFocused={state.focusedId === node.id}
+                key={node.id}
+                node={node}
+                visible={visible}
+              />
             ))}
           </ul>
         </li>
@@ -51,11 +60,12 @@ const GraphListFallback: FC<{
 
 const TreeNode: FC<{
   node: GraphNode;
-  state: GraphNavState;
+  isFocused: boolean;
+  /** The ←/→ candidate — only ever non-null for the focused node's row. */
+  highlightedId: string | null;
   dispatch: Dispatch<GraphNavAction>;
   visible: boolean;
-}> = memo(({node, state, dispatch, visible}) => {
-  const isFocused = state.focusedId === node.id;
+}> = memo(({node, isFocused, highlightedId, dispatch, visible}) => {
   const neighbors = resumeGraph.adjacency.get(node.id) ?? [];
 
   const handleFocus = useCallback(() => {
@@ -83,7 +93,7 @@ const TreeNode: FC<{
                 <NeighborLink
                   dispatch={dispatch}
                   index={index}
-                  isHighlighted={state.highlightedId === neighborId}
+                  isHighlighted={highlightedId === neighborId}
                   key={neighborId}
                   neighborId={neighborId}
                   total={neighbors.length}

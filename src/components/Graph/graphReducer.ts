@@ -24,7 +24,6 @@ export interface GraphNavState {
 export type GraphNavAction =
   | {type: 'focusNode'; id: string}
   | {type: 'cycleSibling'; direction: 1 | -1}
-  | {type: 'highlightNode'; id: string}
   | {type: 'enter'}
   | {type: 'back'}
   | {type: 'expand'}
@@ -41,8 +40,19 @@ export const initialGraphNavState = (focusedId: string | null): GraphNavState =>
 
 const neighborsOf = (id: string | null): string[] => (id ? resumeGraph.adjacency.get(id) ?? [] : []);
 
-const pushHistory = (history: string[], id: string | null): string[] =>
-  id && history[history.length - 1] !== id ? [...history, id] : history;
+/**
+ * Step the focus trail for a move from `from` to `to`. Focusing a node that
+ * is already on the trail unwinds back to it (breadcrumb clicks, browser
+ * Back) instead of appending — otherwise revisits would grow the trail
+ * without bound; any other move appends `from`.
+ */
+const advanceHistory = (history: string[], from: string | null, to: string): string[] => {
+  const unwindIndex = history.indexOf(to);
+  if (unwindIndex !== -1) {
+    return history.slice(0, unwindIndex);
+  }
+  return from && history[history.length - 1] !== from ? [...history, from] : history;
+};
 
 export const graphNavReducer = (state: GraphNavState, action: GraphNavAction): GraphNavState => {
   switch (action.type) {
@@ -54,16 +64,9 @@ export const graphNavReducer = (state: GraphNavState, action: GraphNavAction): G
         expanded: false,
         focusedId: action.id,
         highlightedId: null,
-        history: pushHistory(state.history, state.focusedId),
+        history: advanceHistory(state.history, state.focusedId, action.id),
         wrapped: false,
       };
-    }
-    case 'highlightNode': {
-      const neighbors = neighborsOf(state.focusedId);
-      if (!neighbors.includes(action.id)) {
-        return state;
-      }
-      return {...state, highlightedId: action.id, wrapped: false};
     }
     case 'cycleSibling': {
       const neighbors = neighborsOf(state.focusedId);
@@ -94,7 +97,7 @@ export const graphNavReducer = (state: GraphNavState, action: GraphNavAction): G
         // Pre-highlight the node we came from so ←/→ continues naturally
         // and ↑↓ feel symmetric.
         highlightedId: state.focusedId,
-        history: pushHistory(state.history, state.focusedId),
+        history: advanceHistory(state.history, state.focusedId, state.highlightedId),
         wrapped: false,
       };
     }
@@ -122,7 +125,8 @@ export const graphNavReducer = (state: GraphNavState, action: GraphNavAction): G
       if (state.highlightedId) {
         return {...state, highlightedId: null, wrapped: false};
       }
-      return {...state, expanded: false, focusedId: null, highlightedId: null, wrapped: false};
+      // Nothing narrower to dismiss — same as a deselect.
+      return graphNavReducer(state, {type: 'deselect'});
     }
     case 'deselect': {
       return {...state, expanded: false, focusedId: null, highlightedId: null, wrapped: false};

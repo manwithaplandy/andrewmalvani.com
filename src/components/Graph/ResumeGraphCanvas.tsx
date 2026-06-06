@@ -29,8 +29,10 @@ import {
 } from 'three';
 import SpriteText from 'three-spritetext';
 
-import {initialFocusId, resumeGraph} from '../../data/graphData';
+import {isMobile} from '../../config';
+import {initialFocusId, resumeGraph, timelineChain} from '../../data/graphData';
 import {GraphEdgeKind, GraphNode, GraphNodeKind, KIND_LABELS} from '../../data/graphDef';
+import themeTokens from '../../data/themeTokens';
 import {GraphNavAction, GraphNavState} from './graphReducer';
 
 interface CanvasNode {
@@ -73,18 +75,13 @@ const NODE_RADIUS: Record<GraphNodeKind, number> = {
 // Desaturated neutrals; certs carry the site's secondary yellow, and the two
 // most recent roles read slightly warmer (recency → warmth).
 const NODE_COLOR: Record<GraphNodeKind, string> = {
-  certification: '#efc603',
+  certification: themeTokens.yellow,
   education: '#8f9bb3',
   job: '#a8a29e',
   responsibility: '#8d99ae',
   skill: '#aab2bd',
   skillGroup: '#7d8a99',
   tool: '#979ea8',
-};
-
-const WARM_JOB_COLOR: Record<string, string> = {
-  'job:ga-lead-ai-ml-engineer': '#cfa183',
-  'job:ga-systems-administrator': '#bda393',
 };
 
 const ALWAYS_LABELED: ReadonlySet<GraphNodeKind> = new Set<GraphNodeKind>(['job', 'skillGroup', 'education']);
@@ -105,7 +102,14 @@ const LINK_BASE_COLOR: Record<GraphEdgeKind, string> = {
   uses: 'rgba(125,125,130,0.35)',
 };
 
-const ORANGE = '#fb923c';
+/** themeTokens hex (#rrggbb) → rgba() string at the given alpha. */
+const withAlpha = (hex: string, alpha: number): string => {
+  const value = parseInt(hex.slice(1), 16);
+  return `rgba(${(value >> 16) & 255},${(value >> 8) & 255},${value & 255},${alpha})`;
+};
+
+const ORANGE = themeTokens.orange400;
+const ORANGE_FADED = withAlpha(ORANGE, 0.5);
 const CAMERA_DISTANCE: Partial<Record<GraphNodeKind, number>> = {job: 110, skillGroup: 140};
 const DEFAULT_CAMERA_DISTANCE = 80;
 // Preserved-zoom clamp: min keeps the camera out of the node itself; beyond
@@ -115,33 +119,67 @@ const MAX_FLIGHT_DISTANCE = 900;
 
 // Chronological spine: jobs (and education) pinned along the x axis so the
 // career always reads oldest → newest, with skill "galaxies" clustered around
-// per-group anchors instead of a uniform force hairball.
-const SPINE_POSITIONS: Record<string, number> = {
-  'education:ucsb-psychology': -280,
-  'job:ga-lead-ai-ml-engineer': 180,
-  'job:ga-systems-administrator': 60,
-  'job:reynolds-compliance-marketing-consultant': -180,
-  'job:tillster-it-strategic-analyst': -60,
-};
+// per-group anchors instead of a uniform force hairball. Everything here is
+// derived from the graph data — new roles and groups place themselves.
+const SPINE_X_MIN = -280;
+const SPINE_X_MAX = 180;
 
-const GROUP_ANCHORS: Record<string, {x: number; y: number; z: number}> = {
+/** Spine member id → pinned x position, spread evenly oldest → newest. */
+const spinePositions = new Map<string, number>(
+  timelineChain.map((id, index) => [
+    id,
+    timelineChain.length > 1
+      ? SPINE_X_MIN + (index * (SPINE_X_MAX - SPINE_X_MIN)) / (timelineChain.length - 1)
+      : SPINE_X_MIN,
+  ]),
+);
+
+// Recency → warmth: the newest roles on the spine read slightly warmer,
+// derived from the timeline order (newest first).
+const WARM_COLORS = ['#cfa183', '#bda393'];
+const warmJobColor = new Map<string, string>(
+  timelineChain
+    .filter(id => resumeGraph.nodeById.get(id)?.kind === 'job')
+    .slice(-WARM_COLORS.length)
+    .reverse()
+    .map((id, index) => [id, WARM_COLORS[index]]),
+);
+
+// Hand-tuned anchors for the current skill areas; any group not listed gets a
+// derived ring slot so a new group never collapses into the hairball.
+const TUNED_GROUP_ANCHORS: Record<string, {x: number; y: number; z: number}> = {
   'skillGroup:cloud-services': {x: 60, y: -130, z: 80},
   'skillGroup:coding-languages': {x: -120, y: -110, z: -60},
   'skillGroup:devops-tools': {x: -20, y: 120, z: -110},
   'skillGroup:generative-ai': {x: 150, y: 120, z: 70},
 };
 
+const ringAnchor = (index: number, count: number): {x: number; y: number; z: number} => {
+  const angle = (2 * Math.PI * index) / count + Math.PI / 5;
+  return {
+    x: Math.round(Math.cos(angle) * 140),
+    y: Math.round(Math.sin(angle) * 125),
+    z: Math.round(Math.cos(angle * 2) * 90),
+  };
+};
+
+const groupAnchors = new Map<string, {x: number; y: number; z: number}>();
+const skillGroupIds = resumeGraph.nodes.filter(node => node.kind === 'skillGroup').map(node => node.id);
+skillGroupIds.forEach((id, index) => {
+  groupAnchors.set(id, TUNED_GROUP_ANCHORS[id] ?? ringAnchor(index, skillGroupIds.length));
+});
+
 /** skill/tool node id → the group anchor that attracts it. */
 const memberAnchor = new Map<string, {x: number; y: number; z: number}>();
 for (const edge of resumeGraph.edges) {
-  if (edge.kind === 'part-of' && edge.target.startsWith('skillGroup:')) {
-    const anchor = GROUP_ANCHORS[edge.target];
+  if (edge.kind === 'part-of') {
+    const anchor = groupAnchors.get(edge.target);
     if (anchor) {
       memberAnchor.set(edge.source, anchor);
     }
   }
 }
-for (const [groupId, anchor] of Object.entries(GROUP_ANCHORS)) {
+for (const [groupId, anchor] of groupAnchors) {
   memberAnchor.set(groupId, anchor);
 }
 
@@ -150,7 +188,7 @@ for (const [groupId, anchor] of Object.entries(GROUP_ANCHORS)) {
 const canvasData: {nodes: FGNode[]; links: FGLink[]} = {
   links: resumeGraph.edges.map(edge => ({kind: edge.kind, source: edge.source, target: edge.target})),
   nodes: resumeGraph.nodes.map(node => {
-    const spineX = SPINE_POSITIONS[node.id];
+    const spineX = spinePositions.get(node.id);
     const pinned: Partial<FGNode> = spineX !== undefined ? {fx: spineX, fy: 0, fz: 0} : {};
     return {id: node.id, kind: node.kind, label: node.label, level: node.level, ...pinned};
   }),
@@ -185,12 +223,20 @@ const makeStarfield = (): Points => {
   return new Points(geometry, material);
 };
 
+const WHITE = new Color('#ffffff');
+
+// Halos and pick proxies are always plain spheres differing only by radius —
+// share one unit geometry per detail level and size each mesh via its scale.
+const UNIT_SPHERE = new SphereGeometry(1, 16, 16);
+const UNIT_SPHERE_COARSE = new SphereGeometry(1, 8, 8);
+const SHARED_GEOMETRIES = new Set<BufferGeometry>([UNIT_SPHERE, UNIT_SPHERE_COARSE]);
+
 const buildNodeVisual = (node: FGNode): {visual: NodeVisual; object: Group} => {
   const radius = NODE_RADIUS[node.kind];
   const level = node.level ?? 6;
-  const baseColor = new Color(WARM_JOB_COLOR[node.id] ?? NODE_COLOR[node.kind]);
+  const baseColor = new Color(warmJobColor.get(node.id) ?? NODE_COLOR[node.kind]);
   // Skill level → luminosity, never a printed number.
-  baseColor.lerp(new Color('#ffffff'), (level / 10) * 0.35);
+  baseColor.lerp(WHITE, (level / 10) * 0.35);
   const baseOpacity = node.kind === 'skillGroup' ? 0.3 : 1;
 
   const material = new MeshLambertMaterial({
@@ -215,13 +261,15 @@ const buildNodeVisual = (node: FGNode): {visual: NodeVisual; object: Group} => {
   const haloMaterial = new MeshBasicMaterial({depthWrite: false, opacity: 0, transparent: true});
   haloMaterial.color.set(ORANGE);
   haloMaterial.visible = false;
-  const halo = new Mesh(new SphereGeometry(radius * 1.45, 16, 16), haloMaterial);
+  const halo = new Mesh(UNIT_SPHERE, haloMaterial);
+  halo.scale.setScalar(radius * 1.45);
 
   // Enlarged invisible pick proxy: easier hit target, especially on touch.
   // Sized with a floor + modest scale (NOT a large multiple) so big hubs'
   // proxies don't swallow clicks aimed at the small nodes orbiting them.
   const pickMaterial = new MeshBasicMaterial({depthWrite: false, opacity: 0, transparent: true});
-  const pick = new Mesh(new SphereGeometry(Math.max(radius * 1.25, 8), 8, 8), pickMaterial);
+  const pick = new Mesh(UNIT_SPHERE_COARSE, pickMaterial);
+  pick.scale.setScalar(Math.max(radius * 1.25, 8));
 
   const label = new SpriteText(node.label, node.kind === 'skillGroup' ? 6 : node.kind === 'job' ? 5.5 : 4, '#d4d4d4');
   label.material.depthWrite = false;
@@ -238,12 +286,14 @@ const buildNodeVisual = (node: FGNode): {visual: NodeVisual; object: Group} => {
 
 const applyVisualState = (visual: NodeVisual, state: NodeVisualState): void => {
   const {material, haloMaterial, label, baseColor, baseOpacity, kind} = visual;
+  // Emphasized states stay fully opaque except for the translucent skill
+  // groups, which fade to the given fraction instead.
+  const emphasizedOpacity = (fraction: number): number => (baseOpacity === 1 ? 1 : fraction);
   material.color.copy(baseColor);
   material.emissive.set('#000000');
-  haloMaterial.visible = true;
   switch (state) {
     case 'selected':
-      material.opacity = baseOpacity === 1 ? 1 : 0.6;
+      material.opacity = emphasizedOpacity(0.6);
       material.emissive.set('#7c2d12');
       haloMaterial.color.set(ORANGE);
       haloMaterial.opacity = 0.4;
@@ -251,7 +301,7 @@ const applyVisualState = (visual: NodeVisual, state: NodeVisualState): void => {
       label.color = ORANGE;
       break;
     case 'candidate':
-      material.opacity = baseOpacity === 1 ? 1 : 0.55;
+      material.opacity = emphasizedOpacity(0.55);
       haloMaterial.color.set('#e7e5e4');
       haloMaterial.opacity = 0.28;
       label.visible = true;
@@ -259,7 +309,7 @@ const applyVisualState = (visual: NodeVisual, state: NodeVisualState): void => {
       break;
     case 'hovered':
       // Visibly weaker than the ←/→ candidate ring (0.28) — hover ≠ candidate.
-      material.opacity = baseOpacity === 1 ? 1 : 0.5;
+      material.opacity = emphasizedOpacity(0.5);
       haloMaterial.color.set('#e7e5e4');
       haloMaterial.opacity = 0.16;
       label.visible = true;
@@ -348,7 +398,9 @@ const ResumeGraphCanvas: FC<{
   state: GraphNavState;
   dispatch: Dispatch<GraphNavAction>;
   reducedMotion: boolean;
-}> = memo(({state, dispatch, reducedMotion}) => {
+  /** Called when the FPS probe finds the device too slow for the 3D view at all. */
+  onPerformanceFallback: () => void;
+}> = memo(({state, dispatch, reducedMotion, onPerformanceFallback}) => {
   const fgRef = useRef<FGMethods>();
   const containerRef = useRef<HTMLDivElement>(null);
   const objectsRef = useRef(new Map<string, NodeVisual>());
@@ -363,7 +415,7 @@ const ResumeGraphCanvas: FC<{
   const [contextLost, setContextLost] = useState(false);
   const [canvasKey, setCanvasKey] = useState(0);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
-  const [previewNode, setPreviewNode] = useState<{id: string; x: number; y: number} | null>(null);
+  const [previewNode, setPreviewNode] = useState<{node: GraphNode; x: number; y: number} | null>(null);
   const ready = size.width > 0;
 
   stateRef.current = state;
@@ -424,13 +476,13 @@ const ResumeGraphCanvas: FC<{
     const starfield = makeStarfield();
     scene.add(starfield);
 
-    // Mobile perf tier: clamp DPR, then drop further if the probe fails.
-    const coarse = window.matchMedia('(pointer: coarse)').matches;
+    // Mobile perf tier: clamp DPR, then drop further if the probe fails —
+    // and hand the page back to the list view when even that can't help.
     const renderer = fg.renderer();
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, coarse ? 1.5 : 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, isMobile ? 1.5 : 2));
 
     let probeFrame: number | undefined;
-    if (coarse) {
+    if (isMobile) {
       let frames = 0;
       const probeStart = performance.now();
       const probe = () => {
@@ -440,7 +492,11 @@ const ResumeGraphCanvas: FC<{
           return;
         }
         const fps = (frames * 1000) / (performance.now() - probeStart);
-        if (fps < 40) {
+        if (fps < 15) {
+          // WebGL exists but is unusable — no DPR tweak fixes a sub-15fps
+          // device, so fall back to the list view.
+          onPerformanceFallback();
+        } else if (fps < 40) {
           renderer.setPixelRatio(1);
           starfield.visible = false;
         }
@@ -456,7 +512,7 @@ const ResumeGraphCanvas: FC<{
       starfield.geometry.dispose();
       (starfield.material as PointsMaterial).dispose();
     };
-  }, [ready, canvasKey]);
+  }, [ready, canvasKey, onPerformanceFallback]);
 
   // --- WebGL context loss (real iOS Safari failure mode) ---------------------
   useEffect(() => {
@@ -555,6 +611,8 @@ const ResumeGraphCanvas: FC<{
     () => new Set(state.focusedId ? resumeGraph.adjacency.get(state.focusedId) ?? [] : []),
     [state.focusedId],
   );
+  const focusNeighborsRef = useRef(focusNeighbors);
+  focusNeighborsRef.current = focusNeighbors;
   useEffect(() => {
     for (const [id, visual] of objectsRef.current) {
       applyVisualState(
@@ -580,11 +638,14 @@ const ResumeGraphCanvas: FC<{
       if (cancelled) {
         return;
       }
-      if (!hasLayoutCoords(node) || (node.x === 0 && node.y === 0 && node.z === 0)) {
-        // Layout not warmed up yet — retry briefly (initial page load).
-        if (attempts++ < 20) {
-          window.setTimeout(fly, 150);
-        }
+      // Layout not warmed up yet — keep retrying until the focus changes or
+      // we unmount (a slow device must still get its flight, just later).
+      // Exact (0,0,0) is almost certainly the same pre-layout transient, but
+      // a node could legitimately settle there, so it only gets a short grace
+      // period rather than being unframeable forever.
+      if (!hasLayoutCoords(node) || (node.x === 0 && node.y === 0 && node.z === 0 && attempts < 5)) {
+        attempts++;
+        window.setTimeout(fly, 150);
         return;
       }
       const {x, y, z} = node;
@@ -596,9 +657,11 @@ const ResumeGraphCanvas: FC<{
         const currentDistance = fg.camera().position.distanceTo(controls.target);
         distance = Math.min(Math.max(currentDistance, MIN_FLIGHT_DISTANCE), MAX_FLIGHT_DISTANCE);
       }
-      const norm = Math.hypot(x, y, z) || 1;
-      const ratio = 1 + distance / norm;
-      fg.cameraPosition({x: x * ratio, y: y * ratio, z: z * ratio}, {x, y, z}, reducedMotionRef.current ? 0 : 700);
+      const norm = Math.hypot(x, y, z);
+      const ratio = 1 + distance / (norm || 1);
+      // A node at the exact origin has no outward direction — pick one.
+      const position = norm === 0 ? {x: 0, y: 0, z: distance} : {x: x * ratio, y: y * ratio, z: z * ratio};
+      fg.cameraPosition(position, {x, y, z}, reducedMotionRef.current ? 0 : 700);
       hasFlownRef.current = true;
     };
     fly();
@@ -640,11 +703,12 @@ const ResumeGraphCanvas: FC<{
     const timer = window.setTimeout(() => {
       const fg = fgRef.current;
       const node = canvasNodeById.get(hoveredId);
-      if (!fg || !node || !hasLayoutCoords(node)) {
+      const graphNode = resumeGraph.nodeById.get(hoveredId);
+      if (!fg || !node || !graphNode || !hasLayoutCoords(node)) {
         return;
       }
       const {x, y} = fg.graph2ScreenCoords(node.x, node.y, node.z);
-      setPreviewNode({id: hoveredId, x, y});
+      setPreviewNode({node: graphNode, x, y});
     }, 1000);
     return () => window.clearTimeout(timer);
   }, [hoveredId]);
@@ -662,24 +726,24 @@ const ResumeGraphCanvas: FC<{
 
   // Once a node is focused, the FocusPanel supersedes its preview.
   useEffect(() => {
-    setPreviewNode(previous => (previous && previous.id === state.focusedId ? null : previous));
+    setPreviewNode(previous => (previous && previous.node.id === state.focusedId ? null : previous));
   }, [state.focusedId]);
-
-  const previewGraphNode = useMemo(
-    () => (previewNode ? resumeGraph.nodeById.get(previewNode.id) : undefined),
-    [previewNode],
-  );
 
   // --- graph accessors (memoized: a fresh identity re-inits the engine) ------
   const nodeThreeObject = useCallback((node: FGNode) => {
     const {visual, object} = buildNodeVisual(node);
-    objectsRef.current.set(String(node.id), visual);
-    const current = stateRef.current;
     const id = String(node.id);
-    const neighbors = current.focusedId ? resumeGraph.adjacency.get(current.focusedId) ?? [] : [];
+    objectsRef.current.set(id, visual);
+    const current = stateRef.current;
     applyVisualState(
       visual,
-      resolveVisualState(id, current.focusedId, current.highlightedId, hoveredIdRef.current, neighbors.includes(id)),
+      resolveVisualState(
+        id,
+        current.focusedId,
+        current.highlightedId,
+        hoveredIdRef.current,
+        focusNeighborsRef.current.has(id),
+      ),
     );
     return object;
   }, []);
@@ -700,7 +764,7 @@ const ResumeGraphCanvas: FC<{
         return ORANGE;
       }
       if (touchesFocus) {
-        return 'rgba(251,146,60,0.5)';
+        return ORANGE_FADED;
       }
       return 'rgba(125,125,130,0.12)';
     },
@@ -737,14 +801,10 @@ const ResumeGraphCanvas: FC<{
     setHoveredId(node ? String(node.id) : null);
   }, []);
 
-  const handleBackgroundClick = useCallback(() => {
-    interactedRef.current = true;
-    dispatch({type: 'deselect'});
-  }, [dispatch]);
-
-  // Clicks that land on an edge would otherwise be swallowed (no background
-  // fallback fires) — treat them like background so there are no dead zones.
-  const handleLinkClick = useCallback(() => {
+  // Shared by background AND link clicks: clicks that land on an edge would
+  // otherwise be swallowed (no background fallback fires) — treat them like
+  // background so there are no dead zones.
+  const handleDeselectClick = useCallback(() => {
     interactedRef.current = true;
     dispatch({type: 'deselect'});
   }, [dispatch]);
@@ -764,7 +824,11 @@ const ResumeGraphCanvas: FC<{
       for (const visual of objects.values()) {
         visual.group.traverse(child => {
           if (child instanceof Mesh) {
-            child.geometry.dispose();
+            // Unit halo/pick spheres are module-level singletons reused
+            // across remounts — only per-node geometries are ours to free.
+            if (!SHARED_GEOMETRIES.has(child.geometry)) {
+              child.geometry.dispose();
+            }
             (child.material as MeshBasicMaterial).dispose();
           }
         });
@@ -792,8 +856,8 @@ const ResumeGraphCanvas: FC<{
           linkColor={linkColor}
           linkWidth={linkWidth}
           nodeThreeObject={nodeThreeObject}
-          onBackgroundClick={handleBackgroundClick}
-          onLinkClick={handleLinkClick}
+          onBackgroundClick={handleDeselectClick}
+          onLinkClick={handleDeselectClick}
           onNodeClick={handleNodeClick}
           onNodeHover={handleNodeHover}
           ref={fgRef}
@@ -804,10 +868,10 @@ const ResumeGraphCanvas: FC<{
       )}
       {/* Vignette to #0d0d0d, cheaper than post-processing. */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0" style={vignetteStyle} />
-      {previewNode && previewGraphNode && !contextLost && (
+      {previewNode && !contextLost && (
         <HoverPreview
           height={size.height}
-          node={previewGraphNode}
+          node={previewNode.node}
           width={size.width}
           x={previewNode.x}
           y={previewNode.y}

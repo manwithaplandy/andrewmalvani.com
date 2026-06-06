@@ -26,6 +26,11 @@ interface DerivedDetails {
   description: string;
 }
 
+interface GroupDetails extends DerivedDetails {
+  /** Node kind the group's members render as; defaults to `skill`. */
+  memberKind?: 'skill' | 'tool';
+}
+
 const JOB_DETAILS: Record<string, DerivedDetails> = {
   'Compliance & Marketing Consultant': {
     description:
@@ -62,7 +67,7 @@ const EDUCATION_DETAILS: Record<string, DerivedDetails> = {
   },
 };
 
-const GROUP_DETAILS: Record<string, DerivedDetails> = {
+const GROUP_DETAILS: Record<string, GroupDetails> = {
   'Cloud Services': {
     description:
       'Certified on AWS and Azure, with real workloads shipped on both — plus Cloudflare at the edge for analytics and side projects.',
@@ -80,6 +85,7 @@ const GROUP_DETAILS: Record<string, DerivedDetails> = {
       'Containers, infrastructure-as-code and pipelines: the operational backbone behind both enterprise platforms and this site.',
     id: 'skillGroup:devops-tools',
     label: 'DevOps Tools',
+    memberKind: 'tool',
   },
   'Generative AI Skills': {
     description:
@@ -88,9 +94,6 @@ const GROUP_DETAILS: Record<string, DerivedDetails> = {
     label: 'Generative AI',
   },
 };
-
-/** Skill groups whose members are rendered as `tool` nodes rather than `skill`. */
-const TOOL_GROUPS = new Set(['DevOps Tools']);
 
 const SKILL_DETAILS: Record<string, DerivedDetails> = {
   AWS: {
@@ -413,7 +416,36 @@ const AUTHORED_EDGES: GraphEdge[] = [
   {kind: 'related', source: 'skill:learning', target: 'education:ucsb-psychology'},
 ];
 
+/**
+ * Every hand-authored details key must still match its data.tsx source item.
+ * Without this, rewording a name/title in data.tsx would silently regenerate
+ * the node from the slug fallback — dropping its curated id and description.
+ * Throws at module init, which surfaces as a build failure during static
+ * export (same contract as a dangling edge).
+ */
+const assertDetailKeysMatch = (mapName: string, keys: Iterable<string>, sourceNames: ReadonlySet<string>): void => {
+  for (const key of keys) {
+    if (!sourceNames.has(key)) {
+      throw new Error(`graphData ${mapName} key "${key}" matches no entry in data.tsx — was the source renamed?`);
+    }
+  }
+};
+
 const buildDerivedNodes = (): {nodes: GraphNode[]; partOfEdges: GraphEdge[]} => {
+  assertDetailKeysMatch('JOB_DETAILS', Object.keys(JOB_DETAILS), new Set(experience.map(item => item.title)));
+  assertDetailKeysMatch(
+    'EDUCATION_DETAILS',
+    Object.keys(EDUCATION_DETAILS),
+    new Set(education.map(item => item.title)),
+  );
+  assertDetailKeysMatch('GROUP_DETAILS', Object.keys(GROUP_DETAILS), new Set(skills.map(group => group.name)));
+  assertDetailKeysMatch(
+    'SKILL_DETAILS',
+    Object.keys(SKILL_DETAILS),
+    new Set(skills.flatMap(group => group.skills.map(skill => skill.name))),
+  );
+  assertDetailKeysMatch('CERT_DETAILS', Object.keys(CERT_DETAILS), new Set(certifications.map(cert => cert.name)));
+
   const nodes: GraphNode[] = [];
   const partOfEdges: GraphEdge[] = [];
 
@@ -446,7 +478,7 @@ const buildDerivedNodes = (): {nodes: GraphNode[]; partOfEdges: GraphEdge[]} => 
   }
 
   for (const group of skills) {
-    const groupDetails = GROUP_DETAILS[group.name] ?? {
+    const groupDetails: GroupDetails = GROUP_DETAILS[group.name] ?? {
       description: group.name,
       id: `skillGroup:${slugify(group.name)}`,
     };
@@ -456,7 +488,7 @@ const buildDerivedNodes = (): {nodes: GraphNode[]; partOfEdges: GraphEdge[]} => 
       kind: 'skillGroup',
       label: groupDetails.label ?? group.name,
     });
-    const memberKind = TOOL_GROUPS.has(group.name) ? 'tool' : 'skill';
+    const memberKind = groupDetails.memberKind ?? 'skill';
     for (const skill of group.skills) {
       const details = SKILL_DETAILS[skill.name] ?? {
         description: skill.name,
@@ -546,5 +578,25 @@ export const buildGraph = (): ResumeGraph => {
 /** Module-level singleton — the memoized graph every renderer shares. */
 export const resumeGraph: ResumeGraph = buildGraph();
 
-/** The current role is pre-focused when /graph loads. */
-export const initialFocusId = 'job:ga-lead-ai-ml-engineer';
+/** The career timeline (oldest → newest), walked from the hand-authored `timeline` edges. */
+export const timelineChain: string[] = (() => {
+  const next = new Map<string, string>();
+  const hasIncoming = new Set<string>();
+  for (const edge of resumeGraph.edges) {
+    if (edge.kind === 'timeline') {
+      next.set(edge.source, edge.target);
+      hasIncoming.add(edge.target);
+    }
+  }
+  const start = [...next.keys()].find(id => !hasIncoming.has(id));
+  const chain: string[] = [];
+  // The length bound keeps an accidental timeline cycle from hanging the build.
+  for (let id = start; id !== undefined && chain.length <= next.size; id = next.get(id)) {
+    chain.push(id);
+  }
+  return chain;
+})();
+
+/** The newest job on the timeline — the current role — is pre-focused when /graph loads. */
+export const initialFocusId =
+  [...timelineChain].reverse().find(id => resumeGraph.nodeById.get(id)?.kind === 'job') ?? resumeGraph.nodes[0].id;

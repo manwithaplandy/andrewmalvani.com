@@ -124,6 +124,12 @@ const GraphExplorer: FC = memo(() => {
     if (window.location.hash === desired) {
       return;
     }
+    // A deep-link hash whose focusNode dispatch (mount effect) hasn't
+    // committed yet must not be clobbered by the initial replaceState — once
+    // it commits, this effect re-runs and finds hash === desired above.
+    if (firstSync && parseNodeHash(window.location.hash)) {
+      return;
+    }
     const base = window.location.pathname + window.location.search;
     const url = desired ? `${base}${desired}` : base;
     // The pre-focused initial node replaces (not pushes) so the first Back
@@ -181,6 +187,9 @@ const GraphExplorer: FC = memo(() => {
     setHintDismissed(true);
     window.localStorage.setItem(HINT_DISMISSED_KEY, 'true');
   }, []);
+  // WebGL existing isn't the same as WebGL being usable — the canvas's FPS
+  // probe reports back so a too-slow device falls back to the list view.
+  const handlePerformanceFallback = useCallback(() => setMode('list'), []);
   const handleToggleLegend = useCallback(() => setLegendOpen(open => !open), []);
   const handleToggleMotion = useCallback(() => setManualReducedMotion(value => !value), []);
 
@@ -213,7 +222,12 @@ const GraphExplorer: FC = memo(() => {
               className="absolute inset-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-orange-500"
               role="application"
               tabIndex={0}>
-              <ResumeGraphCanvas dispatch={dispatch} reducedMotion={reducedMotion} state={state} />
+              <ResumeGraphCanvas
+                dispatch={dispatch}
+                onPerformanceFallback={handlePerformanceFallback}
+                reducedMotion={reducedMotion}
+                state={state}
+              />
             </div>
 
             {/* Breadcrumb trail of focus history (last 3 crumbs). */}
