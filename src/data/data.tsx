@@ -22,6 +22,7 @@ import comptiaSpec from '../images/portfolio/certs/cysa.png';
 import tenableSpec from '../images/portfolio/certs/tenablesc.webp';
 import terraformCert from '../images/portfolio/certs/terraform-badge-mini-associate.svg';
 import porfolioImage1 from '../images/portfolio/GitHub__headpic.jpg';
+import porfolioImage5 from '../images/portfolio/polyscannr.jpg';
 // import porfolioImage3 from '../images/portfolio/portfolio-10.jpg';
 import porfolioImage4 from '../images/portfolio/retirement_site.png';
 import porfolioImage2 from '../images/portfolio/website-diagram.png';
@@ -267,6 +268,13 @@ export const portfolioItems: PortfolioItem[] = [
       'A retirement planning website built using a React frontend and Node.js backend, hosted using Cloudflare.',
     url: 'https://retire.andrewmalvani.com',
     image: porfolioImage4,
+  },
+  {
+    title: 'Polyscannr',
+    description:
+      'An AI-powered analysis platform for Polymarket prediction markets, with real-time monitoring, sentiment analysis, and trading signals backed by a transparent track record.',
+    url: 'https://polyscannr.com',
+    image: porfolioImage5,
   },
 ];
 
