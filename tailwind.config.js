@@ -4,8 +4,9 @@ module.exports = {
   // darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
-      colors: {
-        yellow: '#efc603',
+      fontFamily: {
+        // eslint-disable-next-line no-undef
+        sans: ['var(--font-sans)', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
       },
       keyframes: {
         typing: {

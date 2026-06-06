@@ -11,8 +11,6 @@ import {
 import GithubIcon from '../components/Icon/GithubIcon';
 // import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
-import darwin from '../images/darwin.jpg';
-import downeyjr from '../images/downeyjr.jpg';
 // import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
 // import TwitterIcon from '../components/Icon/TwitterIcon';
 import heroImage from '../images/header-background.webp';
@@ -27,8 +25,6 @@ import porfolioImage1 from '../images/portfolio/GitHub__headpic.jpg';
 import porfolioImage4 from '../images/portfolio/retirement_site.png';
 import porfolioImage2 from '../images/portfolio/website-diagram.png';
 import profilepic from '../images/profilepic.jpg';
-import stevejobs from '../images/stevejobs.jpg';
-import testimonialImage from '../images/testimonial.webp';
 import {
   About,
   Certification,
@@ -39,7 +35,6 @@ import {
   PortfolioItem,
   SkillGroup,
   Social,
-  TestimonialSection,
   TimelineItem,
 } from './dataDef';
 
@@ -63,7 +58,6 @@ export const SectionId = {
   Resume: 'resume',
   Skills: 'skills',
   Stats: 'stats',
-  Testimonials: 'testimonials',
 } as const;
 
 export type SectionId = (typeof SectionId)[keyof typeof SectionId];
@@ -82,7 +76,7 @@ export const heroData: Hero = {
         optimize and transform company operations, enhancing efficiency and delivering actionable insights.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, you can catch me improving my{' '}
+        In my free time, you can catch me improving my{' '}
         <strong className="text-stone-100">engineering skills</strong>, playing with my{' '}
         <strong className="text-stone-100">cats</strong>, exploring nature, or{' '}
         <strong className="text-stone-100">golfing</strong>.
@@ -94,6 +88,7 @@ export const heroData: Hero = {
       href: '/assets/resume.pdf',
       text: 'Resume',
       primary: true,
+      download: true,
       Icon: ArrowDownTrayIcon,
     },
     {
@@ -344,30 +339,6 @@ export const certifications: Certification[] = [
     image: tenableSpec,
   },
 ];
-
-/**
- * Testimonial section
- */
-export const testimonial: TestimonialSection = {
-  imageSrc: testimonialImage,
-  testimonials: [
-    {
-      name: 'Steve Jobs',
-      text: "This guy is an absolute revolutionary. The smartest guy I've ever worked with. He really understands what it means to think different",
-      image: stevejobs,
-    },
-    {
-      name: 'Charles Darwin',
-      text: 'Having ventured to the far reaches of the Galápagos, I thought I had seen the pinnacle of evolution. Yet, upon my return, I encountered a marvel beyond natural selection: the technological prowess of Andrew. His ability to adapt and innovate in the digital ecosystem rivals that of the finches of my studies. Truly, Andrew is the missing link between chaos and digital enlightenment. His services come highly recommended for any species striving to evolve in the digital age.',
-      image: darwin,
-    },
-    {
-      name: 'Robert Downey Jr.',
-      text: 'How did you get in here? What is this?! Where is my security? And why are you wearing my hat?',
-      image: downeyjr,
-    },
-  ],
-};
 
 /**
  * Contact section
