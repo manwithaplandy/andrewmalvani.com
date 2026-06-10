@@ -1,4 +1,4 @@
-import {ChevronDownIcon, EnvelopeIcon} from '@heroicons/react/24/outline';
+import {ChevronDownIcon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import Image from 'next/image';
 import {FC, memo} from 'react';
@@ -33,36 +33,22 @@ const Hero: FC = memo(() => {
             <div className="flex gap-x-4 text-neutral-100">
               <Socials />
             </div>
-            <div className="flex w-full flex-wrap justify-center gap-4">
-              {actions.map(({href, text, primary, download, Icon}) => {
-                const isContact = href === `#${SectionId.Contact}`;
-                // Contact lacks a data-side icon; the envelope makes the primary
-                // conversion legible. (Add `Icon: EnvelopeIcon` to the action in
-                // data.tsx to drop this fallback.)
-                const ActionIcon = Icon ?? (isContact ? EnvelopeIcon : undefined);
-                return (
-                  <a
-                    className={classNames(
-                      'flex items-center gap-x-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-neutral-950 sm:text-base',
-                      primary &&
-                        'bg-orange-500 text-neutral-950 ring-orange-400 hover:bg-orange-400 hover:shadow-[0_0_28px_rgba(251,146,60,0.45)]',
-                      // Contact: weighted secondary — accent border invites the click.
-                      !primary &&
-                        isContact &&
-                        'border border-orange-400/50 text-orange-300 hover:border-orange-400 hover:bg-orange-400/10 hover:text-orange-400',
-                      // Career Graph: quiet tertiary — present but clearly novelty.
-                      !primary &&
-                        !isContact &&
-                        'border border-neutral-700 text-neutral-300 hover:border-orange-400/60 hover:text-orange-400',
-                    )}
-                    download={download ? 'Andrew-Malvani-Resume.pdf' : undefined}
-                    href={href}
-                    key={text}>
-                    {text}
-                    {ActionIcon && <ActionIcon className="h-5 w-5 sm:h-6 sm:w-6" />}
-                  </a>
-                );
-              })}
+            <div className="flex w-full justify-center gap-x-4">
+              {actions.map(({href, text, primary, download, Icon}) => (
+                <a
+                  className={classNames(
+                    'flex gap-x-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-neutral-950 sm:text-base',
+                    primary
+                      ? 'bg-orange-500 text-neutral-950 ring-orange-400 hover:bg-orange-400 hover:shadow-[0_0_28px_rgba(251,146,60,0.45)]'
+                      : 'border border-neutral-500 text-white ring-white hover:border-white hover:bg-white/10',
+                  )}
+                  download={download ? 'Andrew-Malvani-Resume.pdf' : undefined}
+                  href={href}
+                  key={text}>
+                  {text}
+                  {Icon && <Icon className="h-5 w-5 sm:h-6 sm:w-6" />}
+                </a>
+              ))}
             </div>
           </div>
         </div>

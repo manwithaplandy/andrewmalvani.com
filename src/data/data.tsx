@@ -4,6 +4,7 @@ import {
   BuildingOffice2Icon,
   // CalendarIcon,
   CubeTransparentIcon,
+  FlagIcon,
   MapIcon,
   SparklesIcon,
 } from '@heroicons/react/24/outline';
@@ -70,19 +71,18 @@ export const heroData: Hero = {
   imageSrc: heroImage,
   name: `I'm Andrew.`,
   description: (
-    <div className="space-y-3">
-      <p className="prose-sm text-neutral-300 sm:prose-base">
-        I build secure enterprise AI platforms at <strong className="text-neutral-100">General Atomics</strong> — LLM
-        agents and RAG systems that have avoided <strong className="text-neutral-100">$15M/yr</strong> in spend,
-        delivered <strong className="text-neutral-100">$50M</strong> in ROI, and serve{' '}
-        <strong className="text-neutral-100">10,000+</strong> users.
+    <>
+      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
+        I'm a San Diego based <strong className="text-stone-100">AI/ML Engineer</strong>, currently working at{' '}
+        <strong className="text-stone-100">General Atomics</strong> driving innovation by harnessing data and AI to
+        optimize and transform company operations, enhancing efficiency and delivering actionable insights.
       </p>
-      <p className="prose-sm text-neutral-300 sm:prose-base">
-        Off the clock, you'll catch me sharpening my <strong className="text-neutral-100">engineering skills</strong>,
-        playing with my <strong className="text-neutral-100">cats</strong>, exploring nature, or{' '}
-        <strong className="text-neutral-100">golfing</strong>.
+      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
+        In my free time, you can catch me improving my <strong className="text-stone-100">engineering skills</strong>,
+        playing with my <strong className="text-stone-100">cats</strong>, exploring nature, or{' '}
+        <strong className="text-stone-100">golfing</strong>.
       </p>
-    </div>
+    </>
   ),
   actions: [
     {
@@ -111,12 +111,13 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `I'm a Lead AI/ML Engineer with 5+ years across DevOps and AI, currently pursuing a Master's in Computer Science at Georgia Tech. I design and ship secure, cost-effective AI agents and RAG systems on AWS and Azure — the kind of platforms that have cut spend, sped up workflows, and reached thousands of users. I care about building this stuff to be trustworthy and transparent, not just impressive in a demo.`,
+  description: `I'm a Software Engineer currently pursuing a Master's degree in Computer Science with over 5 years of experience in the IT industry, with a focus on DevOps and AI. My expertise lies in designing, implementing, and managing cloud-based and self-hosted AI Agents to optimize company operations in a trustworthy, transparent, and cost-effective manner. I am proficient in AWS and Azure services, with certifications in both. I have experience using LLM orchestration frameworks like LangChain, LangGraph, Semantic Kernel, LlamaIndex, AutoGen, and CrewAI to orchestrate AI-powered workflows and autonomous AI agents. I also have experience with LLM protocols like MCP and A2A enabling agents to use external tools, and coordinate with other agents to complete tasks on behalf of users.`,
   aboutItems: [
     {label: 'Location', text: 'San Diego, CA', Icon: MapIcon},
     // {label: 'Age', text: '29', Icon: CalendarIcon},
+    {label: 'Nationality', text: 'American', Icon: FlagIcon},
     {label: 'Interests', text: 'Camping, Motorsports, Golf', Icon: SparklesIcon},
-    {label: 'Study', text: 'Georgia Tech (M.S. CS, in progress)', Icon: AcademicCapIcon},
+    {label: 'Study', text: 'University of California, Santa Barbara', Icon: AcademicCapIcon},
     {label: 'Employment', text: 'General Atomics', Icon: BuildingOffice2Icon},
   ],
 };
