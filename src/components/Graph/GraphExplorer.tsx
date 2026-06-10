@@ -57,6 +57,9 @@ const GraphExplorer: FC = memo(() => {
   const [legendOpen, setLegendOpen] = useState(false);
   const [announcement, setAnnouncement] = useState('');
   const reducedMotion = systemReducedMotion || manualReducedMotion;
+  // The role="application" container; the keyboard model only acts while focus
+  // lives inside it, so arrows/Backspace stay free everywhere else.
+  const applicationRef = useRef<HTMLDivElement>(null);
 
   // --- WebGL detect + hash deep link + hint state, once on mount ------------
   useEffect(() => {
@@ -80,6 +83,15 @@ const GraphExplorer: FC = memo(() => {
   // --- keyboard model: ←/→ scan, ↑ dive, ↓/Backspace back, Esc, Enter --------
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
+      // Only act when focus is within the 3D application region; otherwise the
+      // global arrow/Backspace capture would steal keys from the rest of the
+      // page (and from the reducer-driven list fallback, which has its own
+      // focusable tree). The container is focusable (tabIndex=0), so focusing
+      // it or any child counts.
+      const container = applicationRef.current;
+      if (!container || !(document.activeElement && container.contains(document.activeElement))) {
+        return;
+      }
       // Let buttons, links and form fields keep their native keyboard behavior.
       if (event.target instanceof Element && event.target.closest('button, a, input, textarea, select')) {
         return;
@@ -187,6 +199,12 @@ const GraphExplorer: FC = memo(() => {
     setHintDismissed(true);
     window.localStorage.setItem(HINT_DISMISSED_KEY, 'true');
   }, []);
+  // Reopen the one-shot onboarding hint; the "Controls / ?" pill makes the
+  // dismissed-forever hint recoverable.
+  const handleShowHint = useCallback(() => {
+    setHintDismissed(false);
+    window.localStorage.removeItem(HINT_DISMISSED_KEY);
+  }, []);
   // WebGL existing isn't the same as WebGL being usable — the canvas's FPS
   // probe reports back so a too-slow device falls back to the list view.
   const handlePerformanceFallback = useCallback(() => setMode('list'), []);
@@ -220,6 +238,7 @@ const GraphExplorer: FC = memo(() => {
               aria-label="Interactive 3D career graph. Use left and right arrows to scan connections, up arrow to dive in, down arrow to go back, Escape to deselect."
               aria-roledescription="3D career graph"
               className="absolute inset-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-orange-500"
+              ref={applicationRef}
               role="application"
               tabIndex={0}>
               <ResumeGraphCanvas
@@ -250,13 +269,24 @@ const GraphExplorer: FC = memo(() => {
 
             {/* Collapsible legend, top-right. */}
             <div className="absolute right-3 top-16 z-20 flex flex-col items-end gap-y-2 sm:right-6 sm:top-20">
-              <button
-                aria-expanded={legendOpen}
-                className={PILL_BUTTON_CLASS}
-                onClick={handleToggleLegend}
-                type="button">
-                {legendOpen ? 'Hide legend' : 'Legend'}
-              </button>
+              <div className="flex items-center gap-x-2">
+                {hintDismissed && (
+                  <button
+                    aria-label="Show controls hint"
+                    className={PILL_BUTTON_CLASS}
+                    onClick={handleShowHint}
+                    type="button">
+                    Controls ?
+                  </button>
+                )}
+                <button
+                  aria-expanded={legendOpen}
+                  className={PILL_BUTTON_CLASS}
+                  onClick={handleToggleLegend}
+                  type="button">
+                  {legendOpen ? 'Hide legend' : 'Legend'}
+                </button>
+              </div>
               {legendOpen && (
                 <dl className="pointer-events-auto flex flex-col gap-y-1 rounded-xl border border-neutral-700 bg-neutral-900/80 p-4 text-xs text-neutral-300 backdrop-blur-md">
                   <LegendRow shape="●" text="Role (large sphere) · warm = recent" />

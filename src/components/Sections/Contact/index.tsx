@@ -10,6 +10,7 @@ import InstagramIcon from '../../Icon/InstagramIcon';
 import LinkedInIcon from '../../Icon/LinkedInIcon';
 import TwitterIcon from '../../Icon/TwitterIcon';
 import Section from '../../Layout/Section';
+import SectionHeading from '../../SectionHeading';
 import ContactForm from './ContactForm';
 
 const ContactValueMap: Record<ContactType, ContactValue> = {
@@ -28,10 +29,7 @@ const Contact: FC = memo(() => {
   return (
     <Section sectionId={SectionId.Contact}>
       <div className="flex flex-col gap-y-8">
-        <div className="flex flex-col gap-y-2">
-          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-400">Contact</span>
-          <h2 className="text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl">{headerText}</h2>
-        </div>
+        <SectionHeading eyebrow="Contact" title={headerText ?? 'Get in touch.'} />
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <div className="order-2 col-span-1 md:order-1 ">
             <ContactForm />
@@ -47,7 +45,7 @@ const Contact: FC = memo(() => {
                     <dd className="flex items-center">
                       <a
                         className={classNames(
-                          '-m-2 flex rounded-md p-2 text-neutral-300 hover:text-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500',
+                          '-m-2 flex rounded-md p-2 text-neutral-300 transition-colors duration-300 hover:text-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400',
                           {'hover:text-white': href},
                         )}
                         href={href}

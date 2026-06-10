@@ -15,8 +15,9 @@ export const siteConfig = {
     jobTitle: experience[0].title,
     location: aboutItem('Location'),
     email: contactItem(ContactType.Email)?.text ?? '',
-    alumniOf: aboutItem('Study'),
+    alumniOf: ['Georgia Institute of Technology', 'University of California, Santa Barbara'],
     worksFor: aboutItem('Employment'),
+    worksForUrl: 'https://www.ga.com',
     sameAs: socialLinks.map(s => s.href),
     // SEO-expanded keyword list; kept separate from data.tsx `skills` so the
     // on-page skill names can stay user-facing ("AWS") while search engines

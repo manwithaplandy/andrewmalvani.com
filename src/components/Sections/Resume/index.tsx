@@ -11,6 +11,9 @@ import TimelineItem from './TimelineItem';
 const Resume: FC = memo(() => {
   return (
     <Section sectionId={SectionId.Resume}>
+      {/* The visible structure is the category eyebrows; this heading keeps the
+          document outline coherent (one h2 per section, items are h3). */}
+      <h2 className="sr-only">Resume</h2>
       {/* Section padding lives on the Reveal wrappers: they are the divide-y
           siblings, so first:/last: variants resolve correctly there. */}
       <div className="flex flex-col divide-y divide-neutral-800">

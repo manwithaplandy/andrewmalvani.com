@@ -18,10 +18,6 @@ module.exports = {
         userAgent: '*',
         allow: '/',
       },
-      {
-        userAgent: '*',
-        disallow: ['/404', '/500'],
-      },
     ],
   },
 };

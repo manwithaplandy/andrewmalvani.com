@@ -18,8 +18,8 @@ const personSchemaJson = JSON.stringify({
   image: ogImageUrl,
   jobTitle: person.jobTitle,
   email: `mailto:${person.email}`,
-  worksFor: {'@type': 'Organization', name: person.worksFor},
-  alumniOf: {'@type': 'CollegeOrUniversity', name: person.alumniOf},
+  worksFor: {'@type': 'Organization', name: person.worksFor, url: person.worksForUrl},
+  alumniOf: person.alumniOf.map(name => ({'@type': 'CollegeOrUniversity', name})),
   address: {'@type': 'PostalAddress', addressLocality: person.location},
   knowsAbout: person.knowsAbout,
   sameAs: person.sameAs,
@@ -43,7 +43,7 @@ const Page: NextPage<PropsWithChildren<HomepageMeta>> = memo(({children, title, 
         <title>{title}</title>
         <meta content={description} name="description" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <meta content="#171717" name="theme-color" />
+        <meta content="#0a0a0a" name="theme-color" />
 
         {/* several domains list the same content, make sure google knows we mean this one. */}
         <link href={canonical} key="canonical" rel="canonical" />

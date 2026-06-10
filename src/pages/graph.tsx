@@ -30,7 +30,7 @@ const Graph: FC = memo(() => {
         {/* The bottom sheet pads with safe-area insets; cover the notch on this route only. */}
         <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport" />
       </Head>
-      <main className="relative min-h-[100svh] bg-neutral-900 text-white">
+      <main className="relative min-h-[100svh] bg-neutral-950 text-white">
         <Link
           className="sr-only z-50 rounded-md bg-neutral-900 px-3 py-2 text-sm text-white ring-orange-500 focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:ring-2"
           href="/">
@@ -43,6 +43,9 @@ const Graph: FC = memo(() => {
             <h1 className="text-lg font-bold leading-tight sm:text-xl">{person.name}</h1>
             <p className="text-xs text-neutral-400 sm:text-sm">
               {currentRole.title}, {currentRole.location} · since {careerStartYear}
+            </p>
+            <p className="text-xs text-neutral-500 sm:text-sm">
+              Each node is a role, skill, or certification — explore how they connect.
             </p>
             <div className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs sm:text-sm">
               <Link

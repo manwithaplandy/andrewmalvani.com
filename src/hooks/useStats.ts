@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {useCallback, useEffect, useState} from 'react';
 
 import {StatsDailyPoint, StatsDatum, StatsPayload} from '../data/dataDef';
 
@@ -74,8 +74,15 @@ const sanitizePayload = (raw: unknown): StatsPayload | null => {
   };
 };
 
-const useStats = (): StatsState => {
+const useStats = (): {state: StatsState; refetch: () => void} => {
   const [state, setState] = useState<StatsState>({status: 'loading'});
+  // Bump to re-run the fetch effect; lets the error state offer a Retry.
+  const [attempt, setAttempt] = useState(0);
+
+  const refetch = useCallback(() => {
+    setState({status: 'loading'});
+    setAttempt(value => value + 1);
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -104,9 +111,9 @@ const useStats = (): StatsState => {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [attempt]);
 
-  return state;
+  return {refetch, state};
 };
 
 export default useStats;

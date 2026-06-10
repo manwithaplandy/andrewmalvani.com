@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import Image from 'next/image';
 import {FC, memo} from 'react';
 
@@ -8,8 +9,13 @@ const CertificationItem: FC<{certification: Certification}> = memo(({certificati
   const {name, issuer, date, image} = certification;
   return (
     <SpotlightCard className="flex items-center p-4">
-      {/* Image container */}
-      <div className="mr-4 flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-lg bg-neutral-100">
+      {/* Image container: light well for real badge art (most badges assume a
+          white backing), dark well for the letter fallback so it sits in-theme. */}
+      <div
+        className={classNames(
+          'mr-4 flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-lg',
+          image ? 'bg-neutral-100' : 'bg-neutral-800',
+        )}>
         {image ? (
           <Image
             alt={`${name} certification badge`}
@@ -19,9 +25,7 @@ const CertificationItem: FC<{certification: Certification}> = memo(({certificati
             width={64}
           />
         ) : (
-          <div className="flex h-full w-full items-center justify-center rounded-lg bg-neutral-200">
-            <span className="text-2xl font-bold text-neutral-500">{issuer.charAt(0)}</span>
-          </div>
+          <span className="text-2xl font-bold text-neutral-400">{issuer.charAt(0)}</span>
         )}
       </div>
 

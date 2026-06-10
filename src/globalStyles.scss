@@ -14,12 +14,6 @@
   }
 }
 
-@supports (-webkit-touch-callout: none) {
-  .h-screen {
-    height: -webkit-fill-available;
-  }
-}
-
 /* Global styles */
 * {
   -webkit-font-smoothing: antialiased;
@@ -30,6 +24,12 @@ html {
   -webkit-tap-highlight-color: transparent;
   scroll-behavior: smooth;
   height: 100vh;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {

@@ -8,7 +8,7 @@ const BarList: FC<{items: StatsDatum[]; title: string}> = memo(({items, title}) 
   return (
     <div className="flex flex-col gap-y-2">
       <span className="text-lg font-bold text-white">{title}</span>
-      {items.length === 0 && <span className="ml-2 text-sm text-neutral-500">Not enough data yet.</span>}
+      {items.length === 0 && <span className="ml-2 text-sm text-neutral-400">Not enough data yet.</span>}
       {items.map(({label, value}) => (
         <BarListRow key={label} label={label} max={max} value={value} />
       ))}

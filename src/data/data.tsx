@@ -4,7 +4,6 @@ import {
   BuildingOffice2Icon,
   // CalendarIcon,
   CubeTransparentIcon,
-  FlagIcon,
   MapIcon,
   SparklesIcon,
 } from '@heroicons/react/24/outline';
@@ -21,12 +20,12 @@ import azureCert from '../images/portfolio/certs/azure_ai_eng.svg';
 import comptiaSpec from '../images/portfolio/certs/cysa.png';
 import tenableSpec from '../images/portfolio/certs/tenablesc.webp';
 import terraformCert from '../images/portfolio/certs/terraform-badge-mini-associate.svg';
-import porfolioImage1 from '../images/portfolio/GitHub__headpic.jpg';
-import porfolioImage5 from '../images/portfolio/polyscannr.jpg';
+import porfolioImage1 from '../images/portfolio/GitHub__headpic.webp';
+import porfolioImage5 from '../images/portfolio/polyscannr.webp';
 // import porfolioImage3 from '../images/portfolio/portfolio-10.jpg';
-import porfolioImage4 from '../images/portfolio/retirement_site.png';
-import porfolioImage2 from '../images/portfolio/website-diagram.png';
-import profilepic from '../images/profilepic.jpg';
+import porfolioImage4 from '../images/portfolio/retirement_site.webp';
+import porfolioImage2 from '../images/portfolio/website-diagram.webp';
+import profilepic from '../images/profilepic.webp';
 import {
   About,
   Certification,
@@ -71,18 +70,19 @@ export const heroData: Hero = {
   imageSrc: heroImage,
   name: `I'm Andrew.`,
   description: (
-    <>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a San Diego based <strong className="text-stone-100">AI/ML Engineer</strong>, currently working at{' '}
-        <strong className="text-stone-100">General Atomics</strong> driving innovation by harnessing data and AI to
-        optimize and transform company operations, enhancing efficiency and delivering actionable insights.
+    <div className="space-y-3">
+      <p className="prose-sm text-neutral-300 sm:prose-base">
+        I build secure enterprise AI platforms at <strong className="text-neutral-100">General Atomics</strong> — LLM
+        agents and RAG systems that have avoided <strong className="text-neutral-100">$15M/yr</strong> in spend,
+        delivered <strong className="text-neutral-100">$50M</strong> in ROI, and serve{' '}
+        <strong className="text-neutral-100">10,000+</strong> users.
       </p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time, you can catch me improving my <strong className="text-stone-100">engineering skills</strong>,
-        playing with my <strong className="text-stone-100">cats</strong>, exploring nature, or{' '}
-        <strong className="text-stone-100">golfing</strong>.
+      <p className="prose-sm text-neutral-300 sm:prose-base">
+        Off the clock, you'll catch me sharpening my <strong className="text-neutral-100">engineering skills</strong>,
+        playing with my <strong className="text-neutral-100">cats</strong>, exploring nature, or{' '}
+        <strong className="text-neutral-100">golfing</strong>.
       </p>
-    </>
+    </div>
   ),
   actions: [
     {
@@ -111,13 +111,12 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `I'm a Software Engineer currently pursuing a Master's degree in Computer Science with over 5 years of experience in the IT industry, with a focus on DevOps and AI. My expertise lies in designing, implementing, and managing cloud-based and self-hosted AI Agents to optimize company operations in a trustworthy, transparent, and cost-effective manner. I am proficient in AWS and Azure services, with certifications in both. I have experience using LLM orchestration frameworks like LangChain, LangGraph, Semantic Kernel, LlamaIndex, AutoGen, and CrewAI to orchestrate AI-powered workfows and autonomous AI agents. I also have experience with LLM protocols like MCP and A2A enabling agents to use external tools, and coordinate with other agents to complete tasks on behalf of users.`,
+  description: `I'm a Lead AI/ML Engineer with 5+ years across DevOps and AI, currently pursuing a Master's in Computer Science at Georgia Tech. I design and ship secure, cost-effective AI agents and RAG systems on AWS and Azure — the kind of platforms that have cut spend, sped up workflows, and reached thousands of users. I care about building this stuff to be trustworthy and transparent, not just impressive in a demo.`,
   aboutItems: [
     {label: 'Location', text: 'San Diego, CA', Icon: MapIcon},
     // {label: 'Age', text: '29', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'American', Icon: FlagIcon},
     {label: 'Interests', text: 'Camping, Motorsports, Golf', Icon: SparklesIcon},
-    {label: 'Study', text: 'University of California, Santa Barbara', Icon: AcademicCapIcon},
+    {label: 'Study', text: 'Georgia Tech (M.S. CS, in progress)', Icon: AcademicCapIcon},
     {label: 'Employment', text: 'General Atomics', Icon: BuildingOffice2Icon},
   ],
 };
@@ -245,15 +244,16 @@ export const skills: SkillGroup[] = [
  */
 export const portfolioItems: PortfolioItem[] = [
   {
-    title: 'Github',
-    description: 'View my code projects, including this website, on Github.',
+    title: 'GitHub',
+    description:
+      'Where my code lives, including the source for this site. A look at how I build and ship things in the open.',
     url: 'https://github.com/manwithaplandy/react-resume',
     image: porfolioImage1,
   },
   {
     title: 'andrewmalvani.com',
-    description: 'This website, fully hosted on AWS, built with Next.js. Click for an architecture diagram.',
-    url: 'https://drive.google.com/file/d/1L__W0DVnXuihCFFZveYC-0zdts5VnorR/view?usp=sharing',
+    description: 'This site — a Next.js static export on AWS. Click for the architecture diagram.',
+    url: porfolioImage2,
     image: porfolioImage2,
   },
   // {
@@ -265,7 +265,7 @@ export const portfolioItems: PortfolioItem[] = [
   {
     title: 'Retirement Simulations',
     description:
-      'A retirement planning website built using a React frontend and Node.js backend, hosted using Cloudflare.',
+      'A retirement planner that runs Monte Carlo simulations so people can stress-test their savings — React, Node.js, and Cloudflare.',
     url: 'https://retire.andrewmalvani.com',
     image: porfolioImage4,
   },
@@ -286,13 +286,13 @@ export const education: TimelineItem[] = [
     date: 'In Progress',
     location: 'Georgia Tech',
     title: "Master's - Computer Science",
-    content: <p></p>,
+    content: <p>Machine learning and computing systems specialization.</p>,
   },
   {
     date: 'September 2017',
     location: 'UC Santa Barbara',
     title: "Bachelor's - Psychology",
-    content: <p></p>,
+    content: <p>Coursework in research methods, statistics, and cognition.</p>,
   },
 ];
 
@@ -455,7 +455,7 @@ export const certifications: Certification[] = [
 export const contact: ContactSection = {
   headerText: 'Get in touch.',
   description:
-    'For further inquiries or if you have any questions about my services, please feel free to contact me using this form or the information below. I look forward to hearing from you soon.',
+    'Open to interesting problems in AI and infrastructure — reach out through the form or directly by email.',
   items: [
     {
       type: ContactType.Email,

@@ -23,7 +23,7 @@ const Portfolio: FC = memo(() => {
               <Reveal delayMs={index * 120} key={`${title}-${index}`}>
                 <SpotlightCard className="h-full">
                   <a
-                    className="flex h-full flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400"
+                    className="group flex h-full flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400"
                     href={url}
                     rel="noopener noreferrer"
                     target="_blank">

@@ -22,18 +22,33 @@ const Reveal: FC<PropsWithChildren<{className?: string; delayMs?: number}>> = me
       if (rect.top < window.innerHeight * 0.9) return;
 
       setIsVisible(false);
+
+      const reveal = () => {
+        setIsAnimated(true);
+        setIsVisible(true);
+      };
+
       const observer = new IntersectionObserver(
         entries => {
           if (entries.some(entry => entry.isIntersecting)) {
-            setIsAnimated(true);
-            setIsVisible(true);
+            reveal();
             observer.disconnect();
           }
         },
-        {rootMargin: '0px 0px -10% 0px'},
+        // Generous positive bottom margin so content reveals a third of a
+        // viewport before it scrolls in — fast scrolling never outruns it.
+        {rootMargin: '0px 0px 33% 0px'},
       );
       observer.observe(node);
-      return () => observer.disconnect();
+
+      // Safety net: a missed/lagging observer callback (fast scroll, throttled
+      // mobile IO) must never leave content hidden indefinitely.
+      const safety = window.setTimeout(reveal, 1200);
+
+      return () => {
+        observer.disconnect();
+        window.clearTimeout(safety);
+      };
     }, []);
 
     const style: CSSProperties | undefined = delayMs ? {transitionDelay: `${delayMs}ms`} : undefined;

@@ -9,6 +9,10 @@ interface Particle {
 
 const LINK_DISTANCE = 110;
 const POINTER_DISTANCE = 170;
+const MAX_DPR = 1.5;
+// Ignore tiny height-only resizes (mobile URL-bar show/hide) so we don't
+// re-seed the whole field mid-scroll.
+const RESIZE_HEIGHT_THRESHOLD = 120;
 
 /**
  * A lightweight canvas "neural network" particle field: drifting nodes that
@@ -26,14 +30,22 @@ const ParticleField: FC<{className?: string}> = memo(({className}) => {
     if (!context) return;
 
     let particles: Particle[] = [];
-    let frame = 0;
+    let frame: number | undefined;
+    let lastWidth = 0;
+    let lastHeight = 0;
+    // Pause gating: the loop only runs when both visible (tab + on-screen).
+    let documentVisible = !document.hidden;
+    let onScreen = true;
     const pointer = {active: false, x: 0, y: 0};
+    const dpr = Math.min(window.devicePixelRatio || 1, MAX_DPR);
 
-    const resize = () => {
-      const {width, height} = canvas.getBoundingClientRect();
-      canvas.width = width * window.devicePixelRatio;
-      canvas.height = height * window.devicePixelRatio;
-      context.setTransform(window.devicePixelRatio, 0, 0, window.devicePixelRatio, 0, 0);
+    const applyCanvasSize = (width: number, height: number) => {
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      context.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+
+    const seed = (width: number, height: number) => {
       const count = Math.min(90, Math.floor(width / 16));
       particles = Array.from({length: count}, () => ({
         x: Math.random() * width,
@@ -41,6 +53,42 @@ const ParticleField: FC<{className?: string}> = memo(({className}) => {
         vx: (Math.random() - 0.5) * 0.35,
         vy: (Math.random() - 0.5) * 0.35,
       }));
+    };
+
+    const resize = () => {
+      const {width, height} = canvas.getBoundingClientRect();
+      const widthChanged = width !== lastWidth;
+      const heightDelta = Math.abs(height - lastHeight);
+      // Skip small height-only changes (mobile URL-bar) to avoid re-seeding.
+      if (!widthChanged && heightDelta < RESIZE_HEIGHT_THRESHOLD && lastWidth !== 0) {
+        return;
+      }
+      applyCanvasSize(width, height);
+      // Re-seed only when the width changes; otherwise keep existing particles
+      // and just rescale them into the new height.
+      if (widthChanged || lastWidth === 0) {
+        seed(width, height);
+      } else if (lastHeight > 0) {
+        const scaleY = height / lastHeight;
+        for (const particle of particles) {
+          particle.y *= scaleY;
+        }
+      }
+      lastWidth = width;
+      lastHeight = height;
+    };
+
+    const isRunning = () => frame !== undefined;
+    const start = () => {
+      if (!isRunning() && documentVisible && onScreen) {
+        frame = requestAnimationFrame(step);
+      }
+    };
+    const stop = () => {
+      if (frame !== undefined) {
+        cancelAnimationFrame(frame);
+        frame = undefined;
+      }
     };
 
     const onPointerMove = (event: PointerEvent) => {
@@ -104,13 +152,26 @@ const ParticleField: FC<{className?: string}> = memo(({className}) => {
       frame = requestAnimationFrame(step);
     };
 
+    const onVisibilityChange = () => {
+      documentVisible = !document.hidden;
+      documentVisible ? start() : stop();
+    };
+    const observer = new IntersectionObserver(entries => {
+      onScreen = entries[0]?.isIntersecting ?? true;
+      onScreen ? start() : stop();
+    });
+
     resize();
-    frame = requestAnimationFrame(step);
+    observer.observe(canvas);
+    document.addEventListener('visibilitychange', onVisibilityChange);
     window.addEventListener('resize', resize);
     window.addEventListener('pointermove', onPointerMove);
     window.addEventListener('pointerleave', onPointerLeave);
+    start();
     return () => {
-      cancelAnimationFrame(frame);
+      stop();
+      observer.disconnect();
+      document.removeEventListener('visibilitychange', onVisibilityChange);
       window.removeEventListener('resize', resize);
       window.removeEventListener('pointermove', onPointerMove);
       window.removeEventListener('pointerleave', onPointerLeave);

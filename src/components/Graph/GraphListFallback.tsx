@@ -77,7 +77,7 @@ const TreeNode: FC<{
       <button
         aria-current={isFocused ? 'true' : undefined}
         className={classNames(
-          'rounded-md px-2 py-1 text-left text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500',
+          'block w-full rounded-md px-2 py-2 text-left text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500',
           isFocused ? 'font-bold text-orange-400' : 'text-neutral-200 hover:text-orange-400',
         )}
         onClick={handleFocus}
@@ -127,7 +127,7 @@ const NeighborLink: FC<{
     <li role="treeitem">
       <button
         className={classNames(
-          'rounded-md px-2 py-0.5 text-left text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500',
+          'block w-full rounded-md px-2 py-2 text-left text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500',
           isHighlighted ? 'text-orange-400' : 'text-neutral-300 hover:text-orange-400',
         )}
         onClick={handleClick}
