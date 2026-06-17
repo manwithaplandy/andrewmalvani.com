@@ -46,13 +46,13 @@ const JOB_DETAILS: Record<string, DerivedDetails> = {
   },
   'Lead AI/ML Engineer': {
     description:
-      "Leads General Atomics' enterprise AI program as the organization's LLM SME: a DoD-compliant enterprise AI chatbot avoiding $15M/yr in spend, a self-service RAG platform delivering 4x efficiency for 10,000+ users, a $50M-ROI agent platform built on MCP, and AI dev assistants that raised developer productivity by 30%.",
+      "Leads General Atomics' enterprise AI program as the organization's LLM SME: a DoD-compliant enterprise AI chatbot avoiding $15M/yr in spend, a self-service RAG platform delivering 4x efficiency for 10,000+ users, a self-service agent platform built on MCP, and AI dev assistants that raised developer productivity by 30%.",
     id: 'job:ga-lead-ai-ml-engineer',
     label: 'Lead AI/ML Engineer',
   },
   'Systems Administrator': {
     description:
-      'Modernized IT infrastructure for 15,000+ end users by bringing DevOps and Agile automation to the enterprise, and spearheaded the first generative-AI rollout across General Atomics.',
+      'Modernized IT infrastructure for 15,000+ end users with DevOps and Agile automation — automating software request and deployment for endpoints with JFrog Artifactory and replacing a manual iOS build/signing process with GitLab CI/CD.',
     id: 'job:ga-systems-administrator',
     label: 'Systems Administrator',
   },
@@ -67,7 +67,7 @@ const EDUCATION_DETAILS: Record<string, DerivedDetails> = {
   },
   "Master's - Computer Science": {
     description:
-      'M.S. in Computer Science at Georgia Tech, in progress — formalizing the theory behind the production AI engineering practiced daily at General Atomics.',
+      'M.S. in Computer Science at Georgia Tech (expected 2028) — formalizing the theory behind the production AI engineering practiced daily at General Atomics.',
     id: 'education:gatech-ms-cs',
     label: 'M.S. Computer Science, Georgia Tech',
   },
@@ -110,13 +110,13 @@ const SKILL_DETAILS: Record<string, DerivedDetails> = {
   },
   'AWS Bedrock': {
     description:
-      "Model backbone of General Atomics' DoD-compliant enterprise AI chatbot ($15M/yr spend avoided) and the GraphRAG technical-order pipeline alongside OpenSearch and Neptune.",
+      "Model backbone of General Atomics' DoD-compliant enterprise AI chatbot ($15M/yr spend avoided) and the GraphRAG technical order pipeline alongside OpenSearch and Neptune.",
     id: 'skill:aws-bedrock',
     label: 'AWS Bedrock',
   },
   Agents: {
     description:
-      'Designed and shipped the autonomous agent that cut technical-order authoring time by 40% at General Atomics by searching a massive corpus of supporting documents.',
+      'Designed and shipped the autonomous agent that cut technical order authoring time by 40% at General Atomics by searching a massive corpus of supporting documents.',
     id: 'skill:agents',
     label: 'AI Agents',
   },
@@ -168,7 +168,7 @@ const SKILL_DETAILS: Record<string, DerivedDetails> = {
   },
   GraphRAG: {
     description:
-      'Graph-augmented retrieval over Amazon OpenSearch and Neptune powering agentic technical-order search and generation at General Atomics — a 40% cut in TO development time.',
+      'Graph-augmented retrieval over Amazon OpenSearch and Neptune powering agentic technical order search and generation at General Atomics — a 40% cut in TO development time.',
     id: 'skill:graphrag',
     label: 'GraphRAG',
   },
@@ -197,7 +197,7 @@ const SKILL_DETAILS: Record<string, DerivedDetails> = {
   },
   MCP: {
     description:
-      'Built the $50M-ROI self-service agent platform at General Atomics on the Model Context Protocol, with a centralized authn/authz framework connecting agents to internal systems.',
+      'Powers the self-service agent platform at General Atomics, built on the Model Context Protocol with a centralized authn/authz framework connecting agents to internal systems.',
     id: 'skill:mcp',
     label: 'MCP',
   },
@@ -232,7 +232,7 @@ const SKILL_DETAILS: Record<string, DerivedDetails> = {
   },
   Terragrunt: {
     description:
-      'Layered on Terraform to keep enterprise IaC DRY across environments at General Atomics — part of the pipeline that cut deployment time by 90% with GitHub Actions CI/CD.',
+      'Layered on Terraform to keep enterprise IaC DRY across environments at General Atomics — part of the pipeline that cut deployment time from days to minutes with GitHub Actions CI/CD.',
     id: 'tool:terragrunt',
     label: 'Terragrunt',
   },
@@ -258,24 +258,12 @@ const CERT_DETAILS: Record<string, CertDetails> = {
     label: 'Azure AI Engineer',
     validates: 'skill:azure',
   },
-  'CompTIA CySA+': {
-    description:
-      'CompTIA, 2022. Security analytics certification underpinning the security-first approach taken to every AI rollout.',
-    id: 'certification:comptia-cysa',
-    label: 'CompTIA CySA+',
-  },
   'HashiCorp Terraform Associate': {
     description:
       "HashiCorp, 2023. Backed by production IaC: this site's entire AWS pipeline — including the stats aggregator — is defined in Terraform.",
     id: 'certification:terraform-associate',
     label: 'HashiCorp Terraform Associate',
     validates: 'tool:terraform',
-  },
-  'Tenable.sc Specialist': {
-    description:
-      'Tenable, 2023. Vulnerability-management platform specialty from enterprise systems administration at General Atomics.',
-    id: 'certification:tenable-sc',
-    label: 'Tenable.sc Specialist',
   },
 };
 
@@ -286,7 +274,7 @@ const CERT_DETAILS: Record<string, CertDetails> = {
 const RESPONSIBILITY_NODES: GraphNode[] = [
   {
     description:
-      'Led the team that built an in-house, DoD-compliant enterprise AI chatbot on AWS Bedrock, Azure AI Foundry and LiteLLM — avoiding $15M/yr in external spend.',
+      'Built an in-house, DoD-compliant enterprise AI chatbot on AWS Bedrock, Azure AI Foundry and LiteLLM — avoiding $15M/yr in external spend and now serving 5,000+ monthly and 1,000+ daily active users.',
     id: 'responsibility:internal-rag-chatbot',
     kind: 'responsibility',
     label: 'Enterprise AI chatbot (−$15M/yr)',
@@ -302,15 +290,15 @@ const RESPONSIBILITY_NODES: GraphNode[] = [
   },
   {
     description:
-      'Built a self-service agent platform on MCP with a centralized authentication/authorization framework integrated with internal systems — delivering $50M in ROI.',
+      'Built a self-service agent platform on MCP with a centralized authentication/authorization framework integrated with internal systems — letting teams stand up governed agents against company data.',
     id: 'responsibility:agent-platform',
     kind: 'responsibility',
-    label: 'Self-service agent platform ($50M ROI)',
+    label: 'Self-service agent platform (MCP)',
     meta: {location: 'General Atomics'},
   },
   {
     description:
-      'Designed and implemented agentic search and generation with GraphRAG over Amazon OpenSearch, Amazon Neptune and AWS Bedrock — a 40% reduction in technical-order development time.',
+      'Designed and implemented agentic search and generation with GraphRAG over Amazon OpenSearch, Amazon Neptune and AWS Bedrock — a 40% reduction in technical order development time.',
     id: 'responsibility:to-authoring-agent',
     kind: 'responsibility',
     label: 'TO-authoring agent (−40% time)',
@@ -318,10 +306,10 @@ const RESPONSIBILITY_NODES: GraphNode[] = [
   },
   {
     description:
-      'Cut deployment time by 90% with infrastructure-as-code on Terraform and Terragrunt, deployed through GitHub Actions CI/CD pipelines.',
+      'Cut deployment time from days to minutes with infrastructure-as-code on Terraform and Terragrunt, deployed through GitHub Actions CI/CD pipelines.',
     id: 'responsibility:iac-cicd',
     kind: 'responsibility',
-    label: 'IaC + CI/CD (−90% deploy time)',
+    label: 'IaC + CI/CD (days→minutes)',
     meta: {location: 'General Atomics'},
   },
   {
@@ -358,18 +346,18 @@ const RESPONSIBILITY_NODES: GraphNode[] = [
   },
   {
     description:
-      'Spearheaded the team that implemented generative AI for use throughout the enterprise — the groundwork for the later AI agent program.',
-    id: 'responsibility:genai-enablement',
+      'Automated software request and deployment processes for endpoints using JFrog Artifactory — replacing manual handling with self-service distribution.',
+    id: 'responsibility:software-deployment-automation',
     kind: 'responsibility',
-    label: 'Enterprise GenAI enablement',
+    label: 'Endpoint software deployment automation',
     meta: {location: 'General Atomics'},
   },
   {
     description:
-      'Personally developed generative-AI applications that improved access to information for technicians and executives.',
-    id: 'responsibility:genai-apps',
+      'Replaced a manual iOS app build and signing process with GitLab CI/CD — cutting build and signing time from hours to minutes.',
+    id: 'responsibility:ios-cicd',
     kind: 'responsibility',
-    label: 'GenAI apps for technicians & execs',
+    label: 'iOS build/sign CI/CD (hours→minutes)',
     meta: {location: 'General Atomics'},
   },
   {
@@ -449,8 +437,8 @@ const AUTHORED_EDGES: GraphEdge[] = [
   {kind: 'part-of', source: 'responsibility:onboarding-automation', target: 'job:tillster-it-strategic-analyst'},
   {kind: 'part-of', source: 'responsibility:api-management', target: 'job:tillster-it-strategic-analyst'},
   {kind: 'part-of', source: 'responsibility:it-modernization', target: 'job:ga-systems-administrator'},
-  {kind: 'part-of', source: 'responsibility:genai-enablement', target: 'job:ga-systems-administrator'},
-  {kind: 'part-of', source: 'responsibility:genai-apps', target: 'job:ga-systems-administrator'},
+  {kind: 'part-of', source: 'responsibility:software-deployment-automation', target: 'job:ga-systems-administrator'},
+  {kind: 'part-of', source: 'responsibility:ios-cicd', target: 'job:ga-systems-administrator'},
   {kind: 'part-of', source: 'responsibility:internal-tooling', target: 'job:tillster-it-strategic-analyst'},
   {kind: 'part-of', source: 'responsibility:frontline-it', target: 'job:tillster-it-strategic-analyst'},
   {kind: 'part-of', source: 'responsibility:compliance-audits', target: 'job:reynolds-compliance-marketing-consultant'},
@@ -523,10 +511,10 @@ const AUTHORED_EDGES: GraphEdge[] = [
   {kind: 'uses', source: 'responsibility:it-modernization', target: 'skill:bash'},
   {kind: 'uses', source: 'responsibility:it-modernization', target: 'tool:ci-cd'},
   {kind: 'uses', source: 'responsibility:it-modernization', target: 'tool:docker'},
-  {kind: 'uses', source: 'responsibility:genai-enablement', target: 'skill:azure'},
-  {kind: 'uses', source: 'responsibility:genai-enablement', target: 'skill:agents'},
-  {kind: 'uses', source: 'responsibility:genai-apps', target: 'skill:python'},
-  {kind: 'uses', source: 'responsibility:genai-apps', target: 'skill:rag'},
+  {kind: 'uses', source: 'responsibility:software-deployment-automation', target: 'tool:ci-cd'},
+  {kind: 'uses', source: 'responsibility:software-deployment-automation', target: 'skill:powershell'},
+  {kind: 'uses', source: 'responsibility:ios-cicd', target: 'tool:ci-cd'},
+  {kind: 'uses', source: 'responsibility:ios-cicd', target: 'skill:bash'},
   {kind: 'uses', source: 'responsibility:onboarding-automation', target: 'skill:python'},
   {kind: 'uses', source: 'responsibility:onboarding-automation', target: 'tool:ci-cd'},
   {kind: 'uses', source: 'responsibility:api-management', target: 'skill:javascript-typescript'},
@@ -536,9 +524,7 @@ const AUTHORED_EDGES: GraphEdge[] = [
   {kind: 'uses', source: 'responsibility:frontline-it', target: 'skill:powershell'},
 
   // Certifications → the era they were earned in (by year).
-  {kind: 'related', source: 'certification:comptia-cysa', target: 'job:tillster-it-strategic-analyst'},
   {kind: 'related', source: 'certification:terraform-associate', target: 'job:ga-systems-administrator'},
-  {kind: 'related', source: 'certification:tenable-sc', target: 'job:ga-systems-administrator'},
   {kind: 'related', source: 'certification:aws-saa', target: 'job:ga-lead-ai-ml-engineer'},
   {kind: 'related', source: 'certification:azure-ai-engineer', target: 'job:ga-lead-ai-ml-engineer'},
 
@@ -555,7 +541,6 @@ const AUTHORED_EDGES: GraphEdge[] = [
   {kind: 'related', source: 'tool:terragrunt', target: 'tool:terraform'},
   {kind: 'related', source: 'skill:litellm', target: 'skill:aws-bedrock'},
   {kind: 'related', source: 'skill:aws', target: 'skill:cloudflare'},
-  {kind: 'related', source: 'certification:comptia-cysa', target: 'certification:tenable-sc'},
   {kind: 'related', source: 'education:gatech-ms-cs', target: 'job:ga-lead-ai-ml-engineer'},
 ];
 

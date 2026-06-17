@@ -18,8 +18,6 @@ import heroImage from '../images/header-background.webp';
 // Certification images
 import awsCert from '../images/portfolio/certs/aws_saa.webp';
 import azureCert from '../images/portfolio/certs/azure_ai_eng.svg';
-import comptiaSpec from '../images/portfolio/certs/cysa.png';
-import tenableSpec from '../images/portfolio/certs/tenablesc.webp';
 import terraformCert from '../images/portfolio/certs/terraform-badge-mini-associate.svg';
 import porfolioImage1 from '../images/portfolio/GitHub__headpic.webp';
 import porfolioImage5 from '../images/portfolio/polyscannr.webp';
@@ -46,7 +44,7 @@ import {
 export const homePageMeta: HomepageMeta = {
   title: 'Andrew Malvani — Lead AI/ML Engineer',
   description:
-    'Andrew Malvani is a San Diego-based Lead AI/ML Engineer specializing in generative AI, LLM agents, cloud architecture, and DevOps across AWS and Azure.',
+    'Andrew Malvani is an Arizona-based Lead AI/ML Engineer specializing in generative AI and LLM agent platforms, with deep AWS and Azure cloud and DevOps experience.',
 };
 
 /**
@@ -73,14 +71,13 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a San Diego based <strong className="text-stone-100">AI/ML Engineer</strong>, currently working at{' '}
-        <strong className="text-stone-100">General Atomics</strong> driving innovation by harnessing data and AI to
-        optimize and transform company operations, enhancing efficiency and delivering actionable insights.
+        I'm an <strong className="text-stone-100">Arizona based Lead AI/ML Engineer</strong> at{' '}
+        <strong className="text-stone-100">General Atomics</strong>, where I lead the enterprise AI program — building
+        secure LLM and agent platforms used by 10,000+ employees.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time, you can catch me improving my <strong className="text-stone-100">engineering skills</strong>,
-        playing with my <strong className="text-stone-100">cats</strong>, exploring nature, or{' '}
-        <strong className="text-stone-100">golfing</strong>.
+        In my free time, you can catch me playing with my <strong className="text-stone-100">cats</strong>, exploring
+        nature, or <strong className="text-stone-100">golfing</strong>.
       </p>
     </>
   ),
@@ -111,13 +108,13 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `I'm a Software Engineer currently pursuing a Master's degree in Computer Science with over 5 years of experience in the IT industry, with a focus on DevOps and AI. My expertise lies in designing, implementing, and managing cloud-based and self-hosted AI Agents to optimize company operations in a trustworthy, transparent, and cost-effective manner. I am proficient in AWS and Azure services, with certifications in both. I have experience using LLM orchestration frameworks like LangChain, LangGraph, Semantic Kernel, LlamaIndex, AutoGen, and CrewAI to orchestrate AI-powered workflows and autonomous AI agents. I also have experience with LLM protocols like MCP and A2A enabling agents to use external tools, and coordinate with other agents to complete tasks on behalf of users.`,
+  description: `I'm an Arizona-based Lead AI/ML Engineer at General Atomics, where I lead the enterprise AI program for a defense company — a long way from the psychology degree I started with at UC Santa Barbara. Over the past five years I've worked across technology and infrastructure, and I'm finishing a Master's in Computer Science at Georgia Tech along the way. Today I design and ship secure, cost-effective LLM agent platforms on AWS and Azure (certified in both), using orchestration frameworks like LangGraph and Semantic Kernel and agent protocols like MCP and A2A.`,
   aboutItems: [
-    {label: 'Location', text: 'San Diego, CA', Icon: MapIcon},
+    {label: 'Location', text: 'Arizona', Icon: MapIcon},
     // {label: 'Age', text: '29', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'American', Icon: FlagIcon},
+    {label: 'Nationality', text: 'American (US Citizen)', Icon: FlagIcon},
     {label: 'Interests', text: 'Camping, Motorsports, Golf', Icon: SparklesIcon},
-    {label: 'Study', text: 'University of California, Santa Barbara', Icon: AcademicCapIcon},
+    {label: 'Study', text: 'Georgia Tech & University of California, Santa Barbara', Icon: AcademicCapIcon},
     {label: 'Employment', text: 'General Atomics', Icon: BuildingOffice2Icon},
   ],
 };
@@ -160,7 +157,7 @@ export const skills: SkillGroup[] = [
       },
       {
         name: 'Javascript & Typescript (Node, React)',
-        level: 5,
+        level: 6,
       },
       {
         name: 'Bash',
@@ -284,16 +281,16 @@ export const portfolioItems: PortfolioItem[] = [
  */
 export const education: TimelineItem[] = [
   {
-    date: 'In Progress',
+    date: 'Expected 2028',
     location: 'Georgia Tech',
     title: "Master's - Computer Science",
-    content: <p>Machine learning and computing systems specialization.</p>,
+    content: <p />,
   },
   {
     date: 'September 2017',
     location: 'UC Santa Barbara',
     title: "Bachelor's - Psychology",
-    content: <p>Coursework in research methods, statistics, and cognition.</p>,
+    content: <p />,
   },
 ];
 
@@ -311,24 +308,21 @@ export const experience: TimelineItem[] = [
         </p>
         <ul className="mt-3 list-disc space-y-2 pl-5 text-left">
           <li>
-            Avoided <strong>$15M/yr</strong> in spend by developing an in-house, DoD-compliant enterprise AI chatbot
-            using AWS Bedrock, Azure AI Foundry, and LiteLLM.
+            Avoided <strong>$15M/yr</strong> in spend with an in-house, DoD-compliant enterprise AI chatbot (AWS
+            Bedrock, Azure AI Foundry, LiteLLM) — now serving{' '}
+            <strong>5,000+ monthly and 1,000+ daily active users</strong>.
           </li>
           <li>
             Achieved <strong>4x workflow efficiency</strong> for 10,000+ users with a self-service RAG platform built on
             Azure AI Search, AWS RDS PostgreSQL, and Python.
           </li>
           <li>
-            Delivered <strong>$50M ROI</strong> with a self-service agent platform using MCP and a centralized
-            authentication/authorization framework integrated with internal systems.
-          </li>
-          <li>
-            Cut technical-order development time by <strong>40%</strong> with agentic search and generation powered by
+            Cut technical order development time by <strong>40%</strong> with agentic search and generation powered by
             GraphRAG on Amazon OpenSearch, Amazon Neptune, and AWS Bedrock.
           </li>
           <li>
-            Reduced deployment time by <strong>90%</strong> through infrastructure-as-code with Terraform/Terragrunt and
-            GitHub Actions CI/CD.
+            Cut deployment time <strong>from days to minutes</strong> through infrastructure-as-code with
+            Terraform/Terragrunt and GitHub Actions CI/CD.
           </li>
           <li>
             Eliminated <strong>90%</strong> of manual processing across key workflows with autonomous multi-agent
@@ -349,18 +343,14 @@ export const experience: TimelineItem[] = [
     content: (
       <>
         <p>
-          Working as a Systems Administrator, I was tasked with improving and modernizing the company's IT
-          infrastructure — bringing concepts of DevOps and Agile development to automate, innovate, and quickly generate
-          value for over 15,000 end users.
+          As a Systems Administrator, I modernized the company's IT infrastructure — bringing DevOps and Agile practices
+          to automate, innovate, and quickly generate value for 15,000+ end users.
         </p>
         <ul className="mt-3 list-disc space-y-2 pl-5 text-left">
+          <li>Automated software request and deployment processes for endpoints using JFrog Artifactory.</li>
           <li>
-            Spearheaded the team that implemented generative AI across the enterprise — the groundwork for the company's
-            AI agent program.
-          </li>
-          <li>
-            Personally developed generative AI-powered applications that improved access to information for technicians
-            and executives.
+            Replaced a manual iOS app build and signing process with GitLab CI/CD, cutting build and signing time{' '}
+            <strong>from hours to minutes</strong>.
           </li>
         </ul>
       </>
@@ -373,9 +363,8 @@ export const experience: TimelineItem[] = [
     content: (
       <>
         <p>
-          As an IT strategic analyst, it was my job to be tier 1 helpdesk, systems administrator, and automation
-          engineer all at once — anticipating the needs of end users, responding to them, and implementing durable
-          solutions.
+          As an IT Strategic Analyst, I wore three hats — helpdesk, systems administrator, and automation engineer —
+          anticipating end-user needs and shipping durable solutions that automated the IT function from the inside.
         </p>
         <ul className="mt-3 list-disc space-y-2 pl-5 text-left">
           <li>
@@ -398,17 +387,14 @@ export const experience: TimelineItem[] = [
     content: (
       <>
         <p>
-          At Reynolds & Reynolds, our clients were car dealerships across the country. I was tasked with auditing their
-          compliance with all relevant authorities and advising them on marketing strategy.
+          At Reynolds & Reynolds, our clients were car dealerships across the country. I audited dealership compliance
+          across local, state, federal, and corporate authorities and advised clients on marketing strategy.
         </p>
         <ul className="mt-3 list-disc space-y-2 pl-5 text-left">
           <li>
             Managed a territory of <strong>100+ clients</strong> generating <strong>$1M+</strong> in annual sales.
           </li>
-          <li>
-            Performed compliance audits across local, state, federal, and corporate authorities — resolving failures
-            quickly and advising clients on preventing future violations.
-          </li>
+          <li>Resolved compliance failures quickly and advised clients on preventing future violations.</li>
           <li>Supported client marketing strategy and content creation alongside the compliance practice.</li>
         </ul>
       </>
@@ -435,18 +421,6 @@ export const certifications: Certification[] = [
     date: '2025',
     image: azureCert,
   },
-  {
-    name: 'CompTIA CySA+',
-    issuer: 'CompTIA',
-    date: '2022',
-    image: comptiaSpec,
-  },
-  {
-    name: 'Tenable.sc Specialist',
-    issuer: 'Tenable',
-    date: '2023',
-    image: tenableSpec,
-  },
 ];
 
 /**
@@ -462,11 +436,6 @@ export const contact: ContactSection = {
       type: ContactType.Email,
       text: 'andrewrmalvani@gmail.com',
       href: 'mailto:andrewrmalvani@gmail.com',
-    },
-    {
-      type: ContactType.Location,
-      text: 'San Diego, CA',
-      href: 'https://maps.app.goo.gl/MsKa7QkkztT6s22u7',
     },
     {
       type: ContactType.Github,

@@ -4,23 +4,23 @@ import {FC, memo} from 'react';
 
 import {aboutData, SectionId} from '../../data/data';
 import Section from '../Layout/Section';
-import SectionHeading from '../SectionHeading';
 
 const About: FC = memo(() => {
   const {profileImageSrc, description, aboutItems} = aboutData;
   return (
     <Section sectionId={SectionId.About}>
       <div className={classNames('grid grid-cols-1 gap-y-8', {'md:grid-cols-4': !!profileImageSrc})}>
-        {!!profileImageSrc && (
-          <div className="col-span-1 flex justify-center md:justify-start">
+        <div className="col-span-1 flex flex-col items-center gap-y-4 md:items-start">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-400">About</p>
+          {!!profileImageSrc && (
             <div className="relative h-24 w-24 overflow-hidden rounded-2xl border border-neutral-800 md:h-32 md:w-32">
               <Image alt="Andrew Malvani" className="h-full w-full object-cover" src={profileImageSrc} />
             </div>
-          </div>
-        )}
+          )}
+        </div>
         <div className={classNames('col-span-1 flex flex-col gap-y-6', {'md:col-span-3': !!profileImageSrc})}>
           <div className="flex flex-col gap-y-4">
-            <SectionHeading eyebrow="About" title="About me" />
+            <h2 className="text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl">About me</h2>
             <p className="prose prose-sm leading-relaxed text-neutral-300 sm:prose-base">{description}</p>
           </div>
           <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
