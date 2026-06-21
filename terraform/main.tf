@@ -330,7 +330,9 @@ resource "aws_cloudfront_distribution" "website_distribution" {
   }
 
   # F1: associate the CloudFront-scope WAF (rate limiting) with the distribution.
-  web_acl_id = aws_wafv2_web_acl.website_waf.arn
+  # DISABLED 2026-06-21 to cut cost — see waf.tf header for the full rationale.
+  # Re-enable this line together with the website_waf resource in waf.tf.
+  # web_acl_id = aws_wafv2_web_acl.website_waf.arn
 }
 
 # Viewer-request rewrite so Next.js static-export pages resolve without their
