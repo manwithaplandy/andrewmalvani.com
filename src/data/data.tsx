@@ -23,6 +23,7 @@ import porfolioImage1 from '../images/portfolio/GitHub__headpic.webp';
 import porfolioImage5 from '../images/portfolio/polyscannr.webp';
 // import porfolioImage3 from '../images/portfolio/portfolio-10.jpg';
 import porfolioImage4 from '../images/portfolio/retirement_site.webp';
+import rolefitImage from '../images/portfolio/rolefit.webp';
 import porfolioImage2 from '../images/portfolio/website-diagram.webp';
 import profilepic from '../images/profilepic.webp';
 import {
@@ -273,6 +274,13 @@ export const portfolioItems: PortfolioItem[] = [
       'An AI-powered analysis platform for Polymarket prediction markets, with real-time monitoring, sentiment analysis, and trading signals backed by a transparent track record.',
     url: 'https://polyscannr.com',
     image: porfolioImage5,
+  },
+  {
+    title: 'Personalized AI-driven job board',
+    description:
+      'Rolefit — an AI-powered job search that scores every role against your background, explains the fit, and generates a résumé tailored to each posting.',
+    url: 'https://jobs.andrewmalvani.com',
+    image: rolefitImage,
   },
 ];
 
