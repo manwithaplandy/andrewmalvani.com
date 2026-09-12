@@ -57,6 +57,67 @@ test('stale asset bytes block release even if appended bytes still render correc
   await assert.rejects(verifyPublicReader({origin, artifactDirectory, browser, allowLocal: true}), /asset differs/);
 });
 
+// Deliver recorded response metadata through the real verifier's response
+// listener while the actual checked reader/browser exercises all contracts.
+function browserWithAssetResponses({extra = [], hidePath} = {}) {
+  return {async newContext(options) {
+    const context = await browser.newContext(options);
+    const newPage = context.newPage.bind(context);
+    context.newPage = async () => {
+      const page = await newPage();
+      const on = page.on.bind(page);
+      page.on = (event, listener) => {
+        if (event !== 'response') return on(event, listener);
+        page.once('domcontentloaded', () => extra.forEach(listener));
+        return on(event, response => {
+          if (new URL(response.url()).pathname !== hidePath) listener(response);
+        });
+      };
+      return page;
+    };
+    return context;
+  }};
+}
+
+function assetResponse({pathname = '/_next/static/chunks/optional.js', status = 503,
+  purpose = 'prefetch', resourceType = 'other', bytes = Buffer.alloc(0)} = {}) {
+  return {
+    url: () => origin + pathname,
+    status: () => status,
+    headers: () => ({'cf-speculation-refused': 'prefetch refused: not eligible'}),
+    request: () => ({method: () => 'GET', resourceType: () => resourceType,
+      isNavigationRequest: () => false, headerValue: async name => name === 'sec-purpose' ? purpose : null}),
+    body: async () => bytes,
+  };
+}
+
+test('proven optional prefetch refusal and canceled empty response do not block actual reader assets', async () => {
+  mode = 'valid';
+  const result = await verifyPublicReader({origin, artifactDirectory, allowLocal: true,
+    browser: browserWithAssetResponses({extra: [assetResponse(), assetResponse({status: 200})]})});
+  assert.deepEqual(result.contracts, ['live', 'v1', 'v2']);
+  assert.ok(!result.assets.some(asset => asset.url.endsWith('/optional.js')));
+});
+
+test('prefetch headers never waive script, stylesheet or unproven other-request failures', async () => {
+  mode = 'valid';
+  for (const metadata of [{resourceType: 'script'}, {resourceType: 'stylesheet'}, {purpose: null}]) {
+    await assert.rejects(verifyPublicReader({origin, artifactDirectory, allowLocal: true,
+      browser: browserWithAssetResponses({extra: [assetResponse(metadata)]})}), /asset not available/);
+  }
+});
+
+test('a speculative-only expected script cannot satisfy required asset accounting', async () => {
+  mode = 'valid';
+  const html = await readFile(path.join(artifactDirectory, 'stats.html'), 'utf8');
+  const pathname = [...html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"[^>]*>/g)]
+    .find(match => !/\bnomodule\b/i.test(match[0]))[1];
+  const bytes = await readFile(path.join(artifactDirectory, pathname.slice(1)));
+  await assert.rejects(verifyPublicReader({origin, artifactDirectory, allowLocal: true,
+    browser: browserWithAssetResponses({hidePath: pathname,
+      extra: [assetResponse({pathname, status: 200, bytes})]})}), /script was not loaded and verified/);
+});
+
 test('release endpoints require HTTPS and an origin without path/query/credentials', async () => {
   for (const invalid of ['http://example.com', 'https://example.com/stats', 'https://a:b@example.com', 'https://example.com/?bypass=1']) {
     await assert.rejects(verifyPublicReader({origin: invalid, artifactDirectory, browser}), /origin/);

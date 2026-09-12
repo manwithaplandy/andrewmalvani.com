@@ -66,6 +66,16 @@ Publish the compatible reader before any v2 producer. The workflow's code-update
 
 Preserve the existing historical aggregate baseline and legacy markers. Never erase counts or automatically replay marked objects to repair uncertain history. New inputs use the durable ingestion protocol described above; this does not reconcile uncertain counts from historical marker-first processing. D4 owns reviewed migration/release checks, including verification of the existing daily schedule and the configured single-writer limit. Keep these later gates before production use of the combined remediation. A failed refresh can be retried by existing scheduling, but an uncertain transaction outcome must never be treated as proof it did not commit.
 
+Optional speculation is not a required reader execution. The verifier excludes
+only GET, non-navigation requests classified as `other` with explicit
+`sec-purpose: prefetch`; they never count toward required script coverage.
+[Cloudflare documents prefetch 503 refusals](https://developers.cloudflare.com/speed/optimization/content/speed-brain/#how-speed-brain-works).
+Actual script/stylesheet responses and requests without that proof retain status
+and exact-byte checks, while every expected reader script must still be loaded
+and verified. Browser headers/configuration and Cloudflare settings are not
+changed. This verifier correction can validate existing checked artifacts; it
+does not require another frontend deployment.
+
 ## Migration preparation record — September 8, 2026
 
 This is a locally prepared release procedure, not a record of deployment. The D1 reader, D2 producer/checkpoint and D3 recovery protocol have local test evidence and task review. The production checks below remain open until an approved release records their results. Do not close F10–F13 live behavior from source inspection, local tests or this document.

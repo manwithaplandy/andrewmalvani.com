@@ -111,6 +111,12 @@ export async function verifyPublicReader({origin, artifactDirectory, browser, al
         const url = new URL(response.url());
         if (url.origin !== origin || !url.pathname.startsWith('/_next/static/')) return;
         pending.push((async () => {
+          const request = response.request();
+          // Browser speculation can be refused or canceled without executing an
+          // asset. Never let it fail verification or satisfy required scripts.
+          if (request.method() === 'GET' && request.resourceType() === 'other' &&
+              !request.isNavigationRequest() &&
+              (await request.headerValue('sec-purpose'))?.trim().toLowerCase() === 'prefetch') return;
           assert.equal(response.status(), 200, 'Public reader asset not available');
           const actual = await response.body();
           assert.ok(actual.length < MAX_BYTES, 'Public asset exceeds verification bound');
