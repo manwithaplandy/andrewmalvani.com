@@ -49,3 +49,27 @@
 - [ ] Apply the reviewed plan/install checked packages through an auditable controlled release. Verify API GET health, both allowed preflights and invalid-message responses without sending SNS messages. Correct further confirmed blockers only through scoped tested review.
 - [ ] Verify controlled analytics completion, repeated processing without duplicate effects, public v2 display and effective scheduling. Observe the next scheduled completion if possible in this run; otherwise report that explicit remaining observation without claiming full acceptance.
 - [ ] Preserve nonsecret artifacts/review evidence, update the PR and release report, and state exact completed actions, open gates and any user action. Refresh the local review only if frontend artifact changes materially; keep its demo boundaries.
+
+
+## Reviewed release-transition gates — September 12 follow-up
+
+- Contact: privately preserve/read-merge all existing Lambda environment keys;
+  add exact `ALLOWED_ORIGINS` JSON before installing checked code, wait/read back
+  both updates, then prepare the existing OPTIONS tuple in place with the
+  reviewed `PutIntegration` settings, guarded by expected-old/exact-new
+  configuration and unchanged stage deployment ID. A fresh refreshed plan must reject any
+  OPTIONS replacement/deletion and preserve stage/API/Lambda identities before
+  API deployment and obsolete singular-key cleanup. The earlier replacement
+  plan is not releasable. See [the contact cutover sequence](../../operations/delivery.md#contact-api-release-boundary).
+- Analytics: the approved conditional short route requires fresh successful
+  daily-delivery/clean-retry evidence, a proven schedule/operator freeze, the
+  later of last async receipt plus six hours and concurrency-zero observation
+  plus full timeout, and observation margins. Preserve backup and public-reader
+  gates; install checked code at concurrency zero, test with direct concurrency
+  one while scheduling remains disabled, resume scheduling, then create a fresh
+  Terraform reconciliation plan. No Terraform during the stopped interval.
+  This is operational inference, not proof that pre-update queued events rebind
+  to new code. See [the full conditions and stop rules](../../operations/analytics.md#conditional-short-stopteststart-handover).
+- These are required release procedures, not a record of completed cloud
+  actions. Controller-owned live evidence and independent remedy review remain
+  authoritative; worker documentation preparation performs no cloud action.

@@ -44,29 +44,65 @@ before the old one is retired; `aws_api_gateway_stage.api` is the sole stage
 owner. Local native Terraform mock tests check real configuration mutations and
 no-op fingerprint stability, not the live stage transition.
 
-Before the controller releases this change:
+Before the controller releases this change, use this one-time compatibility
+sequence. The current live function has only the singular `ALLOWED_ORIGIN`;
+installing the new handler first would grant no browser origins.
 
-1. Review the real state-backed plan. An immutable deployment replacement and an
-   in-place stage deployment pointer update are expected; stage/API/Lambda
-   replacement, resource renaming, or unrelated changes fail this task's scope.
-   In particular, verify that removing `deployment.stage_name` preserves the
-   existing stage. Preserve the analytics release and exact checked-artifact
-   gates in [the analytics runbook](analytics.md).
-2. Publish the checked contact archive with the Terraform-provided
-   `ALLOWED_ORIGINS` environment and deploy the API configuration as one
-   coordinated release. The old handler only understands `ALLOWED_ORIGIN`;
-   partial code/config rollout does not establish two-host support. The main
-   workflow applies infrastructure before updating existing Lambda code, so
-   two-host acceptance starts only after both steps complete.
-3. Verify live health status and the active stage's new deployment ID. Exercise
+1. Privately preserve the current Lambda configuration and every environment
+   key/value. Read/merge through the SDK without printing secrets, add
+   `ALLOWED_ORIGINS` with the exact JSON value
+   `["https://andrewmalvani.com","https://www.andrewmalvani.com"]`, and retain the
+   singular key and all other keys. Use the current revision as a concurrency
+   guard. Wait for `State=Active` and `LastUpdateStatus=Successful`, then read
+   back and verify the full merge. The old handler ignores the additional key.
+2. Install the exact checked contact ZIP using the refreshed revision. Wait for
+   successful completion and verify deployed code digest, runtime, handler and
+   preserved environment. The new code can now serve POST and OPTIONS with the
+   allow-list already present. Do not proceed on partial update/readback.
+3. Prepare the existing OPTIONS integration **in place**, only after the checked
+   code is ready. The real preflight plan showed create-then-delete replacement:
+   in [locked AWS provider 5.50.0](https://github.com/hashicorp/terraform-provider-aws/blob/v5.50.0/internal/service/apigateway/integration.go),
+   type and integration method are ForceNew, creation uses `PutIntegration`, and
+   deletion uses `DeleteIntegration` for the same REST API/resource/HTTP-method
+   tuple. That ordering can delete the just-written integration. The reviewed
+   one-time remedy is a controller-owned `PutIntegration` on the existing API
+   `vs7dthj3vb`, existing contact resource, HTTP method `OPTIONS`, with type
+   `AWS_PROXY`, integration HTTP method `POST`, and the exact reviewed
+   `formSubmission` Lambda invoke URI from Terraform. Before writing, require
+   the tuple/configuration to match the privately preserved expected old MOCK
+   configuration or the exact reviewed new proxy configuration; abort any
+   unexpected tuple, URI or setting. An exact-new match is already prepared,
+   not grounds for another migration. Preserve/read back the tuple and approved
+   settings privately. Record the stage deployment ID before preparation and
+   require it to remain unchanged through environment, code and integration
+   preparation. Do not call `DeleteIntegration`,
+   replace the resource, or deploy a stage in this preparation step. The live
+   stage retains its old API snapshot until the later deployment; both-host
+   OPTIONS acceptance is not established by this write alone.
+4. Produce a **fresh refreshed state-backed Terraform plan after preparation**.
+   Reject any OPTIONS integration replacement or deletion, in either action
+   order. An immutable deployment replacement and in-place stage deployment
+   pointer update are expected; stage/API/Lambda replacement, resource renaming,
+   unrelated changes, or loss of other environment keys fail scope. Verify
+   removal of `deployment.stage_name` preserves the explicit existing stage.
+   Terraform may now remove the obsolete singular origin key, retaining the
+   exact plural list. Apply only the newly reviewed plan; never reuse the plan
+   with the unsafe OPTIONS replacement. Preserve all analytics/exact-artifact
+   gates. If using the [short analytics handover](analytics.md#conditional-short-stopteststart-handover),
+   keep Terraform out of its stopped interval.
+5. Verify live health and the active stage's new deployment ID. Exercise
    preflight and invalid POST from both exact public origins, inspect matching
    CORS and `Vary` headers, and confirm unknown origins receive no browser grant.
    Invalid input and OPTIONS must not send a notification. Observe the real
    browser on both hosts; local source/ZIP and mock tests are not API Gateway or
    Cloudflare runtime evidence.
-4. Any valid synthetic delivery probe is controller-owned and separately
+6. Any valid synthetic delivery probe is controller-owned and separately
    authorized because it sends a notification. A Lambda 200 confirms SNS publish
    acceptance, not recipient delivery. Record the actual observed boundary.
+
+The existing main workflow applies Terraform before updating existing Lambda
+code. That generic order does not perform this one-time migration preparation;
+it must not be used to bypass the environment/code/integration gates above.
 
 No production configuration, invocation, or public request was performed for
 this local implementation. The controller owns the live plan/release checks.

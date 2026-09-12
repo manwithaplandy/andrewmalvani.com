@@ -87,7 +87,7 @@ The following commands describe future release work. They have **not** been exec
 
 1. **Approve the concrete release record and plan.** Record the consumer and producer commits, checked website artifact, checked three-module archive and SHA-256, real state-backed Terraform plan and its digest, private backup destination, invoker inventory, quiescence evidence and rollback operator. Expected analytics infrastructure change is reserved concurrency 1 and the three-module package, with no table replacement, resource rename, new collection, historical rewrite or IAM expansion. Inspect the consolidated plan for other tasks' intended changes. E1 must upload and verify the checked `404.html` before applying its CloudFront error policy. E5 must retain both reader prerequisites while consolidating artifact provenance and testing; the current gate alone does not prove the downloaded build was the final checked E5 artifact.
 
-2. **Establish a proven no-writer window before backup or configuration apply.** Freeze deployment jobs and every other aggregate writer/invoker; disable `stats-aggregator-daily` and prevent new event admission through the agreed release procedure. Record the effective freeze time and evidence, rather than equating an API success with immediate propagation. Wait for in-flight executions, upstream delivery/retry and Lambda internal async work to resolve or expire, then establish there are no remaining writers. Setting reserved concurrency to zero is a temporary execution stop, not evidence that all queues are empty. Applying Terraform's desired concurrency 1 can reopen execution of the still-old code before the later code-update job; therefore this proof must precede apply and remain valid until the checked new package is installed. Do not add temporary Terraform flags or change resource identities to evade that boundary.
+2. **Establish a proven no-writer window before backup or configuration apply.** The qualifying daily schedule may use the [conditional short handover](#conditional-short-stopteststart-handover) below instead of the generic rollout ordering; that alternative forbids Terraform during the stopped interval. Freeze deployment jobs and every other aggregate writer/invoker; disable `stats-aggregator-daily` and prevent new event admission through the agreed release procedure. Record the effective freeze time and evidence, rather than equating an API success with immediate propagation. Wait for in-flight executions, upstream delivery/retry and Lambda internal async work to resolve or expire, then establish there are no remaining writers. Setting reserved concurrency to zero is a temporary execution stop, not evidence that all queues are empty. Applying Terraform's desired concurrency 1 can reopen execution of the still-old code before the later code-update job; therefore this proof must precede apply and remain valid until the checked new package is installed. Do not add temporary Terraform flags or change resource identities to evade that boundary.
 
    The September 8 read-only preflight found no `$LATEST` EventInvokeConfig and no target RetryPolicy or DeadLetterConfig override. AWS defaults allow Lambda async event age up to 21,600 seconds with two function-error retries, and EventBridge delivery up to 86,400 seconds with up to 185 retries. Disabling a rule has an unspecified short propagation delay. These defaults are not proof that a particular event has drained: a conservative time argument must start after a **proven effective admission freeze**, cover both sequential queues plus the verified maximum running duration, and include every other invoker. New async events at concurrency zero go directly to a configured failure destination/DLQ without retries; do not assume they all enter a six-hour queue. Revalidate effective settings and destinations at release. If admission/queued work cannot be bounded or excluded with evidence, quiescence is an explicit unmet release gate and backup/apply must wait. See [Lambda settings](https://docs.aws.amazon.com/lambda/latest/api/API_PutFunctionEventInvokeConfig.html), [EventBridge retries](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-rule-retry-policy.html), [DisableRule propagation](https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DisableRule.html), and [zero-concurrency async handling](https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html).
 
@@ -129,6 +129,96 @@ The following commands describe future release work. They have **not** been exec
    Invoke again only as an approved controlled verification, using no synthetic production traffic or induced failure. Confirm no duplicate counts for already completed inputs and no new legacy markers. If upstream logs arrive between invocations, explain any delta with completed-input/aggregate evidence; identical totals are expected only when the input set is unchanged. Preserve the new proofs and accepted checkpoint for both runs. Re-run the ordinary public reader gate against the actual v2 payload and inspect the public consumer's displayed measurements/coverage. None of these live invocations or confirmations has occurred yet.
 
 7. **Resume and observe scheduling.** Re-enable the existing daily rule only after the above checks pass and the no-writer restriction can safely end. Record its effective state/target and the next expected 00:00 UTC execution. Observe the next actual scheduled completion and public consumer: fresh source dates when that source succeeds, honest stale/unavailable status otherwise, and no current-day zero plunge. Record publication time, source coverage/success dates and consistent totals. This next-run observation remains pending; create a reminder/automation only if the owner requests one.
+
+## Conditional short stop/test/start handover
+
+This independently reviewed alternative uses the successful daily-delivery
+record to exclude an outstanding upstream retry backlog, then waits out the
+last Lambda async admission. It is an **operational inference with fail-closed
+conditions**, not an AWS queue-empty guarantee or a generic five-minute pause.
+It does not relax the backup, compatible reader, ledger/checkpoint preservation,
+controlled/repeated verification, or scheduled-observation requirements above.
+The September 12 read-only review observed one unqualified midnight-UTC target,
+only `$LATEST`, no aliases/numbered versions, eight successful daily deliveries
+and no retry/failure evidence. Refresh those facts; historical observations do
+not authorize a later stop by themselves. No step below is claimed executed.
+
+1. Record the release ID, exact checked website/producer digests, current Lambda
+   revision/digest, and recovery operator. Freeze deployment jobs and obtain
+   explicit holds from every manual/identity-policy invoker. Refresh more than
+   24 hours of EventBridge `InvocationAttempts`, `SuccessfulInvocationAttempts`,
+   `RetryInvocationAttempts`, `FailedInvocations` and Lambda `AsyncEventsReceived`,
+   `Invocations`, `Errors`, `Throttles`, `AsyncEventsDropped`,
+   `ConcurrentExecutions`. Require the expected successful latest daily run and
+   no retry, failed delivery, unexplained admission or other invoker. Ambiguous or delayed evidence, or missing necessary delivery evidence,
+   blocks the short route.
+2. Disable `stats-aggregator-daily` well away from 00:00 UTC. Repeatedly read back
+   `DISABLED`, allow five minutes of propagation observation, and require no new
+   EventBridge attempt/retry or Lambda async receipt/invocation. Disable before
+   setting concurrency zero: otherwise a delivery during propagation can create
+   an upstream retry backlog. AWS specifies a short propagation delay without
+   an exact SLA; five minutes is the reviewed operational margin, not a service
+   guarantee. See [DisableRule](https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DisableRule.html).
+3. Set reserved concurrency to 0 and read back 0. Backup readiness is the later
+   of that observation plus the full configured timeout (currently 300 seconds)
+   and the latest `AsyncEventsReceived` timestamp plus the current maximum async
+   age (six hours), **then at least one minute of metric-publication margin**.
+   Continue observing no invocation/concurrency/error/throttle or unaccounted
+   DynamoDB write activity, with all holds active. Revalidate timeout/async age;
+   use any longer effective setting. An already-running execution is not
+   canceled by concurrency zero. For a last admission at 00:00 UTC, the reviewed
+   illustrative earliest point was about 06:05 UTC if all other checks had
+   completed; recompute from actual evidence rather than reusing that time.
+4. Create the on-demand DynamoDB backup and wait for `AVAILABLE`. Preserve the
+   strongly consistent complete record-family export, prior public `stats.json`
+   bytes/metadata/version, old investigation package and exact new package,
+   including hashes and readback verification required above. Use the approved
+   private encrypted, versioned release prefix outside the served website; the
+   September 12 choice is in the existing private Terraform backend bucket,
+   superseding the earlier proposed log-bucket example. Revalidate access,
+   versioning, encryption, lifecycle and recovery controls. Preserve all source
+   checkpoints, `ingestion#active`, chunk/completion proofs, cursors, markers and
+   counters. `AVAILABLE` alone does not establish application consistency.
+5. Publish the exact checked reader, invalidate through the reviewed path, and
+   pass the public reader verifier on apex and `www` against the real existing
+   legacy payload and synthetic v1/v2 contracts. With the rule disabled and
+   concurrency still 0, install the checked producer using its recorded
+   revision guard. Wait for `State=Active` and `LastUpdateStatus=Successful`;
+   verify deployed CodeSha256/size, runtime, handler, role, environment and
+   concurrency. Do not assume a pre-update queued event will rebind to new
+   `$LATEST` code: AWS does not guarantee that. The gate requires newly initiated
+   controlled work after the verified update, with prior admissions aged out.
+6. **Do not run Terraform during this stopped interval.** Current desired rule
+   state defaults to `ENABLED`; a refreshed apply would reopen scheduled
+   admission. Set reserved concurrency directly to 1 and confirm it while the
+   rule remains disabled. Watch the first several minutes for an unexpected
+   async invocation before issuing the approved synchronous controlled test.
+   If one appears, stop and investigate. Verify handler and transport success,
+   code digest, source/checkpoint/active-completion consistency, truthful public
+   v2 measurements and no current-day false zero. After the first settles, run
+   the approved repeat and require no duplicate input effects. Verify the real
+   public v2 reader again.
+7. Enable the daily rule, read back `ENABLED`, confirm its target and next
+   00:00 UTC expectation, and monitor for unexpected retries. Only when the
+   schedule is enabled and concurrency is 1 again, create a fresh refreshed
+   Terraform plan. Reject schedule/concurrency rollback, checked-code overwrite,
+   or any unreviewed analytics action. Apply only the accepted reconciliation
+   and recheck rule/target/concurrency/digest. If Terraform must precede testing,
+   a separately reviewed explicit-disabled two-phase design is required; do not
+   use `-target`, ignore drift, or race a re-disable after apply. Observe the next
+   actual scheduled completion and public reader before claiming full handover.
+
+Any late upstream retry, async receipt, invocation, unaccounted write, newly
+found invoker, failed update, backup inconsistency, or unexpected event after
+restoring concurrency invalidates the short-path premise. Stop for investigation
+or use the full effective admission/retention bound above; never infer that
+queued old work is safe because the new ledger tolerates duplicates. Preserve
+the ledger-aware recovery path below. The six-hour admission bound and timeout
+are distinct from the chosen propagation/observation margins. Relevant AWS
+boundaries are [async handling](https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html),
+[update states](https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html),
+[async retries](https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-error-handling.html),
+and [concurrency metrics](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-concurrency.html).
 
 ## Rollback and release closure
 
