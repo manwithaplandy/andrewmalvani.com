@@ -1,0 +1,10 @@
+{
+  "requestedAt": "2026-09-12T15:56:16.337537+00:00",
+  "id": "IDZ7OXU2WIXHS2BP3SMDF9GUK8",
+  "status": "InProgress",
+  "paths": [
+    "/*"
+  ],
+  "monthlyAccountPathsAfterThisRequest": 3,
+  "withinFreeAllowance": true
+}

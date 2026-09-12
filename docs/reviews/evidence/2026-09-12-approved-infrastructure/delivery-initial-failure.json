@@ -1,0 +1,642 @@
+{
+  "status": "FAIL",
+  "startedAt": "2026-09-12T15:59:40.062Z",
+  "candidate": "e2f891a5f189bc9ead9cefa0491d2e7cb9eaa2b3",
+  "ciRun": 34679848934,
+  "manifestSha256": "26d3eacb9ddfe549d7c5b077e2f5ecdb25324631502ff71a39c526cdb9510579",
+  "helperSha256": "97441371881f09eb579c56a032fa2ec2e52f28bd3596afe725adb4682390a5fc",
+  "checks": [
+    {
+      "name": "https://andrewmalvani.com/stats/",
+      "status": "PASS",
+      "responses": [
+        {
+          "url": "https://andrewmalvani.com/stats",
+          "status": 200,
+          "bytes": 12256,
+          "sha256": "b8525ae6d451c1316df4beb3471c925ed16a9a6ad08c22e9e426741c6094036e",
+          "headers": {
+            "content-type": "text/html; charset=utf-8",
+            "cache-control": "public, max-age=60, s-maxage=300, no-transform",
+            "content-length": "12256",
+            "age": "153",
+            "x-cache": "Miss from cloudfront",
+            "via": "1.1 98415771fac40952d79fe03ad178f54c.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SEA900-P2",
+            "cf-cache-status": "HIT"
+          }
+        }
+      ],
+      "redirects": [
+        {
+          "url": "https://andrewmalvani.com/stats/",
+          "method": "GET",
+          "status": 308,
+          "headers": {
+            "content-length": "0",
+            "x-cache": "FunctionGeneratedResponse from cloudfront",
+            "via": "1.1 a9b50852e198f506f036f962723ada50.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SEA900-P2",
+            "cf-cache-status": "BYPASS",
+            "location": "/stats"
+          }
+        }
+      ]
+    },
+    {
+      "name": "https://andrewmalvani.com/graph/?view=list&tag=a&tag=b",
+      "status": "FAIL",
+      "responses": [
+        {
+          "url": "https://andrewmalvani.com/graph?tag=a&tag=b&view=list",
+          "status": 200,
+          "bytes": 12133,
+          "sha256": "67a7a15be86ad9cb5cd892c40a6e9e3326617c8fbeffa513b7dd3b4fa475be31",
+          "headers": {
+            "content-type": "text/html; charset=utf-8",
+            "cache-control": "public, max-age=60, s-maxage=300, no-transform",
+            "content-encoding": "br",
+            "x-cache": "Miss from cloudfront",
+            "via": "1.1 761782808760d046e9ac00786dcb53c6.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SEA900-P2",
+            "cf-cache-status": "MISS"
+          }
+        }
+      ],
+      "redirects": [
+        {
+          "url": "https://andrewmalvani.com/graph/?view=list&tag=a&tag=b",
+          "method": "GET",
+          "status": 308,
+          "headers": {
+            "content-length": "0",
+            "x-cache": "FunctionGeneratedResponse from cloudfront",
+            "via": "1.1 97bc018596ec6eea95bb5c59cf872884.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SEA900-P2",
+            "cf-cache-status": "BYPASS",
+            "location": "/graph?tag=a&tag=b&view=list"
+          }
+        }
+      ],
+      "error": "same-host Location and exact query\n+ actual - expected\n\n+ 'https://andrewmalvani.com/graph?tag=a&tag=b&view=list'\n- 'https://andrewmalvani.com/graph?view=list&tag=a&tag=b'\n"
+    },
+    {
+      "name": "https://andrewmalvani.com/",
+      "status": "PASS",
+      "responses": [
+        {
+          "url": "https://andrewmalvani.com/",
+          "status": 200,
+          "bytes": 77207,
+          "sha256": "f256fba5d2020a0126cdc87c67b47996bea67c61b5a57233292ee50c217db786",
+          "headers": {
+            "content-type": "text/html; charset=utf-8",
+            "cache-control": "public, max-age=60, s-maxage=300, no-transform",
+            "content-length": "77207",
+            "age": "157",
+            "x-cache": "Miss from cloudfront",
+            "via": "1.1 44e82525c613ef192153f7e6e465977a.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SEA900-P2",
+            "cf-cache-status": "HIT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "https://andrewmalvani.com/stats",
+      "status": "PASS",
+      "responses": [
+        {
+          "url": "https://andrewmalvani.com/stats",
+          "status": 200,
+          "bytes": 12256,
+          "sha256": "b8525ae6d451c1316df4beb3471c925ed16a9a6ad08c22e9e426741c6094036e",
+          "headers": {
+            "content-type": "text/html; charset=utf-8",
+            "cache-control": "public, max-age=60, s-maxage=300, no-transform",
+            "content-length": "12256",
+            "age": "154",
+            "x-cache": "Miss from cloudfront",
+            "via": "1.1 98415771fac40952d79fe03ad178f54c.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SEA900-P2",
+            "cf-cache-status": "HIT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "https://andrewmalvani.com/graph",
+      "status": "PASS",
+      "responses": [
+        {
+          "url": "https://andrewmalvani.com/graph",
+          "status": 200,
+          "bytes": 12133,
+          "sha256": "67a7a15be86ad9cb5cd892c40a6e9e3326617c8fbeffa513b7dd3b4fa475be31",
+          "headers": {
+            "content-type": "text/html; charset=utf-8",
+            "cache-control": "public, max-age=60, s-maxage=300, no-transform",
+            "content-encoding": "br",
+            "x-cache": "Hit from cloudfront",
+            "via": "1.1 a1934be6541d4023759e20f079a0f5c6.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SEA900-P2",
+            "cf-cache-status": "MISS"
+          }
+        }
+      ]
+    },
+    {
+      "name": "https://andrewmalvani.com/assets/resume.pdf",
+      "status": "PASS",
+      "responses": [
+        {
+          "url": "https://andrewmalvani.com/assets/resume.pdf",
+          "status": 200,
+          "bytes": 4489,
+          "sha256": "246239dc0c28c26121734ad9780ecb1caad83e1f6564c549b51b89db4a024fa5",
+          "headers": {
+            "content-type": "application/pdf",
+            "cache-control": "public, max-age=60, s-maxage=300",
+            "content-encoding": "br",
+            "x-cache": "Miss from cloudfront",
+            "via": "1.1 345ac40e43857b24ab85c7affa4ec84c.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SEA900-P2",
+            "cf-cache-status": "MISS"
+          },
+          "robots": null
+        }
+      ]
+    },
+    {
+      "name": "https://andrewmalvani.com/_next/static/chunks/103-e67a79d533151b0a.js",
+      "status": "FAIL",
+      "responses": [
+        {
+          "url": "https://andrewmalvani.com/_next/static/chunks/103-e67a79d533151b0a.js",
+          "status": 200,
+          "bytes": 11785,
+          "sha256": "cc2359ef09d2ddeb178c8100a1e8c1e1d770e2bd936135550f294ce4a2da7acb",
+          "headers": {
+            "content-type": "text/javascript",
+            "cache-control": "public, max-age=31536000, s-maxage=31536000, immutable",
+            "content-encoding": "zstd",
+            "age": "28950",
+            "x-cache": "Miss from cloudfront",
+            "via": "1.1 f9901b257e7117ad9d6c331954cb762c.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SEA900-P2",
+            "cf-cache-status": "REVALIDATED"
+          },
+          "robots": null
+        }
+      ],
+      "error": "MIME type\n+ actual - expected\n\n+ 'text/javascript'\n- 'application/javascript'\n"
+    },
+    {
+      "name": "https://andrewmalvani.com/_next/static/css/1b939f25ecdc5b1c.css",
+      "status": "PASS",
+      "responses": [
+        {
+          "url": "https://andrewmalvani.com/_next/static/css/1b939f25ecdc5b1c.css",
+          "status": 200,
+          "bytes": 78210,
+          "sha256": "6f663efa45f45cf57ca8ab98ff8a68282bd4de691145c9fdf495a80ff6d41e31",
+          "headers": {
+            "content-type": "text/css; charset=utf-8",
+            "cache-control": "public, max-age=31536000, s-maxage=31536000, immutable",
+            "content-encoding": "zstd",
+            "age": "34912",
+            "x-cache": "Miss from cloudfront",
+            "via": "1.1 3bf1261a2d16c532cd06b9b94420b93a.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SEA900-P2",
+            "cf-cache-status": "MISS"
+          },
+          "robots": null
+        }
+      ]
+    },
+    {
+      "name": "https://andrewmalvani.com/missing-delivery-87e7bfdc-8db9-487f-ab09-b8daa12aba3d",
+      "status": "PASS",
+      "responses": [
+        {
+          "url": "https://andrewmalvani.com/missing-delivery-87e7bfdc-8db9-487f-ab09-b8daa12aba3d",
+          "status": 404,
+          "bytes": 10887,
+          "sha256": "888707f6c127371ee7d601e11e789d3ab8a21b4950f8cad0173c91b8b56271a0",
+          "headers": {
+            "content-type": "text/html; charset=utf-8",
+            "cache-control": "public, max-age=60, s-maxage=300, no-transform",
+            "content-encoding": "br",
+            "age": "154",
+            "x-cache": "Error from cloudfront",
+            "via": "1.1 44e82525c613ef192153f7e6e465977a.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SEA900-P2",
+            "cf-cache-status": "MISS"
+          },
+          "robots": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "name": "https://andrewmalvani.com/_next/static/chunks/missing-delivery-87e7bfdc-8db9-487f-ab09-b8daa12aba3d.js",
+      "status": "PASS",
+      "responses": [
+        {
+          "url": "https://andrewmalvani.com/_next/static/chunks/missing-delivery-87e7bfdc-8db9-487f-ab09-b8daa12aba3d.js",
+          "status": 404,
+          "bytes": 10887,
+          "sha256": "888707f6c127371ee7d601e11e789d3ab8a21b4950f8cad0173c91b8b56271a0",
+          "headers": {
+            "content-type": "text/html; charset=utf-8",
+            "cache-control": "public, max-age=60, s-maxage=300, no-transform",
+            "content-encoding": "br",
+            "age": "155",
+            "x-cache": "Error from cloudfront",
+            "via": "1.1 2432b4d1cfec4303c2b1569a7002314c.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SEA900-P2",
+            "cf-cache-status": "MISS"
+          },
+          "robots": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "name": "https://www.andrewmalvani.com/stats/",
+      "status": "PASS",
+      "responses": [
+        {
+          "url": "https://www.andrewmalvani.com/stats",
+          "status": 200,
+          "bytes": 12256,
+          "sha256": "b8525ae6d451c1316df4beb3471c925ed16a9a6ad08c22e9e426741c6094036e",
+          "headers": {
+            "content-type": "text/html; charset=utf-8",
+            "cache-control": "public, max-age=60, s-maxage=300, no-transform",
+            "content-length": "12256",
+            "age": "151",
+            "x-cache": "Miss from cloudfront",
+            "via": "1.1 62886e38f9d62226fee895f5ec76d97e.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SEA900-P2",
+            "cf-cache-status": "HIT"
+          }
+        }
+      ],
+      "redirects": [
+        {
+          "url": "https://www.andrewmalvani.com/stats/",
+          "method": "GET",
+          "status": 308,
+          "headers": {
+            "content-length": "0",
+            "x-cache": "FunctionGeneratedResponse from cloudfront",
+            "via": "1.1 703726084e0cfc81a23767d359e1972e.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SEA900-P2",
+            "cf-cache-status": "BYPASS",
+            "location": "/stats"
+          }
+        }
+      ]
+    },
+    {
+      "name": "https://www.andrewmalvani.com/graph/?view=list&tag=a&tag=b",
+      "status": "FAIL",
+      "responses": [
+        {
+          "url": "https://www.andrewmalvani.com/graph?tag=a&tag=b&view=list",
+          "status": 200,
+          "bytes": 12133,
+          "sha256": "67a7a15be86ad9cb5cd892c40a6e9e3326617c8fbeffa513b7dd3b4fa475be31",
+          "headers": {
+            "content-type": "text/html; charset=utf-8",
+            "cache-control": "public, max-age=60, s-maxage=300, no-transform",
+            "content-encoding": "br",
+            "age": "3",
+            "x-cache": "Hit from cloudfront",
+            "via": "1.1 62886e38f9d62226fee895f5ec76d97e.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SEA900-P2",
+            "cf-cache-status": "MISS"
+          }
+        }
+      ],
+      "redirects": [
+        {
+          "url": "https://www.andrewmalvani.com/graph/?view=list&tag=a&tag=b",
+          "method": "GET",
+          "status": 308,
+          "headers": {
+            "content-length": "0",
+            "x-cache": "FunctionGeneratedResponse from cloudfront",
+            "via": "1.1 4759de193c7dcd4b2027bf84cdc1f180.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SEA900-P2",
+            "cf-cache-status": "BYPASS",
+            "location": "/graph?tag=a&tag=b&view=list"
+          }
+        }
+      ],
+      "error": "same-host Location and exact query\n+ actual - expected\n\n+ 'https://www.andrewmalvani.com/graph?tag=a&tag=b&view=list'\n- 'https://www.andrewmalvani.com/graph?view=list&tag=a&tag=b'\n"
+    },
+    {
+      "name": "https://www.andrewmalvani.com/",
+      "status": "PASS",
+      "responses": [
+        {
+          "url": "https://www.andrewmalvani.com/",
+          "status": 200,
+          "bytes": 77207,
+          "sha256": "f256fba5d2020a0126cdc87c67b47996bea67c61b5a57233292ee50c217db786",
+          "headers": {
+            "content-type": "text/html; charset=utf-8",
+            "cache-control": "public, max-age=60, s-maxage=300, no-transform",
+            "content-length": "77207",
+            "age": "154",
+            "x-cache": "Miss from cloudfront",
+            "via": "1.1 09a1a54fdbf13d19927a903f4a7d5186.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SEA900-P2",
+            "cf-cache-status": "HIT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "https://www.andrewmalvani.com/stats",
+      "status": "PASS",
+      "responses": [
+        {
+          "url": "https://www.andrewmalvani.com/stats",
+          "status": 200,
+          "bytes": 12256,
+          "sha256": "b8525ae6d451c1316df4beb3471c925ed16a9a6ad08c22e9e426741c6094036e",
+          "headers": {
+            "content-type": "text/html; charset=utf-8",
+            "cache-control": "public, max-age=60, s-maxage=300, no-transform",
+            "content-length": "12256",
+            "age": "151",
+            "x-cache": "Miss from cloudfront",
+            "via": "1.1 62886e38f9d62226fee895f5ec76d97e.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SEA900-P2",
+            "cf-cache-status": "HIT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "https://www.andrewmalvani.com/graph",
+      "status": "PASS",
+      "responses": [
+        {
+          "url": "https://www.andrewmalvani.com/graph",
+          "status": 200,
+          "bytes": 12133,
+          "sha256": "67a7a15be86ad9cb5cd892c40a6e9e3326617c8fbeffa513b7dd3b4fa475be31",
+          "headers": {
+            "content-type": "text/html; charset=utf-8",
+            "cache-control": "public, max-age=60, s-maxage=300, no-transform",
+            "content-encoding": "br",
+            "age": "3",
+            "x-cache": "Hit from cloudfront",
+            "via": "1.1 ac370ad904507e73e6d3c71919b4efa6.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SEA900-P2",
+            "cf-cache-status": "MISS"
+          }
+        }
+      ]
+    },
+    {
+      "name": "https://www.andrewmalvani.com/assets/resume.pdf",
+      "status": "PASS",
+      "responses": [
+        {
+          "url": "https://www.andrewmalvani.com/assets/resume.pdf",
+          "status": 200,
+          "bytes": 4489,
+          "sha256": "246239dc0c28c26121734ad9780ecb1caad83e1f6564c549b51b89db4a024fa5",
+          "headers": {
+            "content-type": "application/pdf",
+            "cache-control": "public, max-age=60, s-maxage=300",
+            "content-encoding": "br",
+            "age": "3",
+            "x-cache": "Hit from cloudfront",
+            "via": "1.1 d01be925ecc2caf4899e93fdf5bfc16a.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SEA900-P2",
+            "cf-cache-status": "MISS"
+          },
+          "robots": null
+        }
+      ]
+    },
+    {
+      "name": "https://www.andrewmalvani.com/_next/static/chunks/103-e67a79d533151b0a.js",
+      "status": "FAIL",
+      "responses": [
+        {
+          "url": "https://www.andrewmalvani.com/_next/static/chunks/103-e67a79d533151b0a.js",
+          "status": 200,
+          "bytes": 11785,
+          "sha256": "cc2359ef09d2ddeb178c8100a1e8c1e1d770e2bd936135550f294ce4a2da7acb",
+          "headers": {
+            "content-type": "text/javascript",
+            "cache-control": "public, max-age=31536000, s-maxage=31536000, immutable",
+            "content-encoding": "zstd",
+            "age": "28313",
+            "x-cache": "Miss from cloudfront",
+            "via": "1.1 e543eb941691f230f8b77f2fa0206dc2.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SEA900-P2",
+            "cf-cache-status": "MISS"
+          },
+          "robots": null
+        }
+      ],
+      "error": "MIME type\n+ actual - expected\n\n+ 'text/javascript'\n- 'application/javascript'\n"
+    },
+    {
+      "name": "https://www.andrewmalvani.com/_next/static/css/1b939f25ecdc5b1c.css",
+      "status": "PASS",
+      "responses": [
+        {
+          "url": "https://www.andrewmalvani.com/_next/static/css/1b939f25ecdc5b1c.css",
+          "status": 200,
+          "bytes": 78210,
+          "sha256": "6f663efa45f45cf57ca8ab98ff8a68282bd4de691145c9fdf495a80ff6d41e31",
+          "headers": {
+            "content-type": "text/css; charset=utf-8",
+            "cache-control": "public, max-age=31536000, s-maxage=31536000, immutable",
+            "content-encoding": "zstd",
+            "age": "3",
+            "x-cache": "Hit from cloudfront",
+            "via": "1.1 ac370ad904507e73e6d3c71919b4efa6.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SEA900-P2",
+            "cf-cache-status": "MISS"
+          },
+          "robots": null
+        }
+      ]
+    },
+    {
+      "name": "https://www.andrewmalvani.com/missing-delivery-42e3b803-f67e-4dea-b9d8-0a1c1cd7fe0b",
+      "status": "PASS",
+      "responses": [
+        {
+          "url": "https://www.andrewmalvani.com/missing-delivery-42e3b803-f67e-4dea-b9d8-0a1c1cd7fe0b",
+          "status": 404,
+          "bytes": 10887,
+          "sha256": "888707f6c127371ee7d601e11e789d3ab8a21b4950f8cad0173c91b8b56271a0",
+          "headers": {
+            "content-type": "text/html; charset=utf-8",
+            "cache-control": "public, max-age=60, s-maxage=300, no-transform",
+            "content-encoding": "br",
+            "age": "157",
+            "x-cache": "Error from cloudfront",
+            "via": "1.1 0d07c64d85b9f0560eabd0b323a4bf58.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SEA900-P2",
+            "cf-cache-status": "MISS"
+          },
+          "robots": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "name": "https://www.andrewmalvani.com/_next/static/chunks/missing-delivery-42e3b803-f67e-4dea-b9d8-0a1c1cd7fe0b.js",
+      "status": "PASS",
+      "responses": [
+        {
+          "url": "https://www.andrewmalvani.com/_next/static/chunks/missing-delivery-42e3b803-f67e-4dea-b9d8-0a1c1cd7fe0b.js",
+          "status": 404,
+          "bytes": 10887,
+          "sha256": "888707f6c127371ee7d601e11e789d3ab8a21b4950f8cad0173c91b8b56271a0",
+          "headers": {
+            "content-type": "text/html; charset=utf-8",
+            "cache-control": "public, max-age=60, s-maxage=300, no-transform",
+            "content-encoding": "br",
+            "age": "158",
+            "x-cache": "Error from cloudfront",
+            "via": "1.1 44e82525c613ef192153f7e6e465977a.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SEA900-P2",
+            "cf-cache-status": "MISS"
+          },
+          "robots": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "name": "https://d2v6o77xftr5if.cloudfront.net/stats repeated GET",
+      "status": "PASS",
+      "responses": [
+        {
+          "url": "https://d2v6o77xftr5if.cloudfront.net/stats",
+          "status": 200,
+          "bytes": 12256,
+          "wireBytes": 4197,
+          "sha256": "b8525ae6d451c1316df4beb3471c925ed16a9a6ad08c22e9e426741c6094036e",
+          "headers": {
+            "content-type": "text/html; charset=utf-8",
+            "cache-control": "public, max-age=60, s-maxage=300, no-transform",
+            "content-encoding": "br",
+            "x-cache": "Miss from cloudfront",
+            "via": "1.1 303e9638f61afd414412e354b027eda6.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SFO53-P8"
+          }
+        },
+        {
+          "url": "https://d2v6o77xftr5if.cloudfront.net/stats",
+          "status": 200,
+          "bytes": 12256,
+          "wireBytes": 4197,
+          "sha256": "b8525ae6d451c1316df4beb3471c925ed16a9a6ad08c22e9e426741c6094036e",
+          "headers": {
+            "content-type": "text/html; charset=utf-8",
+            "cache-control": "public, max-age=60, s-maxage=300, no-transform",
+            "content-encoding": "br",
+            "x-cache": "Miss from cloudfront",
+            "via": "1.1 303e9638f61afd414412e354b027eda6.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SFO53-P8"
+          }
+        },
+        {
+          "url": "https://d2v6o77xftr5if.cloudfront.net/stats",
+          "status": 200,
+          "bytes": 12256,
+          "wireBytes": 4197,
+          "sha256": "b8525ae6d451c1316df4beb3471c925ed16a9a6ad08c22e9e426741c6094036e",
+          "headers": {
+            "content-type": "text/html; charset=utf-8",
+            "cache-control": "public, max-age=60, s-maxage=300, no-transform",
+            "content-encoding": "br",
+            "x-cache": "Hit from cloudfront",
+            "via": "1.1 303e9638f61afd414412e354b027eda6.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SFO53-P8"
+          }
+        }
+      ]
+    },
+    {
+      "name": "https://d2v6o77xftr5if.cloudfront.net/_next/static/chunks/103-e67a79d533151b0a.js repeated GET",
+      "status": "PASS",
+      "responses": [
+        {
+          "url": "https://d2v6o77xftr5if.cloudfront.net/_next/static/chunks/103-e67a79d533151b0a.js",
+          "status": 200,
+          "bytes": 11785,
+          "wireBytes": 3521,
+          "sha256": "cc2359ef09d2ddeb178c8100a1e8c1e1d770e2bd936135550f294ce4a2da7acb",
+          "headers": {
+            "content-type": "application/javascript",
+            "cache-control": "public, max-age=31536000, s-maxage=31536000, immutable",
+            "content-encoding": "br",
+            "x-cache": "Miss from cloudfront",
+            "via": "1.1 303e9638f61afd414412e354b027eda6.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SFO53-P8"
+          }
+        },
+        {
+          "url": "https://d2v6o77xftr5if.cloudfront.net/_next/static/chunks/103-e67a79d533151b0a.js",
+          "status": 200,
+          "bytes": 11785,
+          "wireBytes": 3521,
+          "sha256": "cc2359ef09d2ddeb178c8100a1e8c1e1d770e2bd936135550f294ce4a2da7acb",
+          "headers": {
+            "content-type": "application/javascript",
+            "cache-control": "public, max-age=31536000, s-maxage=31536000, immutable",
+            "content-encoding": "br",
+            "x-cache": "Miss from cloudfront",
+            "via": "1.1 303e9638f61afd414412e354b027eda6.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SFO53-P8"
+          }
+        },
+        {
+          "url": "https://d2v6o77xftr5if.cloudfront.net/_next/static/chunks/103-e67a79d533151b0a.js",
+          "status": 200,
+          "bytes": 11785,
+          "wireBytes": 3521,
+          "sha256": "cc2359ef09d2ddeb178c8100a1e8c1e1d770e2bd936135550f294ce4a2da7acb",
+          "headers": {
+            "content-type": "application/javascript",
+            "cache-control": "public, max-age=31536000, s-maxage=31536000, immutable",
+            "content-encoding": "br",
+            "x-cache": "Hit from cloudfront",
+            "via": "1.1 303e9638f61afd414412e354b027eda6.cloudfront.net (CloudFront)",
+            "x-amz-cf-pop": "SFO53-P8"
+          }
+        }
+      ]
+    }
+  ],
+  "failures": [
+    {
+      "name": "https://andrewmalvani.com/graph/?view=list&tag=a&tag=b",
+      "error": "same-host Location and exact query\n+ actual - expected\n\n+ 'https://andrewmalvani.com/graph?tag=a&tag=b&view=list'\n- 'https://andrewmalvani.com/graph?view=list&tag=a&tag=b'\n"
+    },
+    {
+      "name": "https://andrewmalvani.com/_next/static/chunks/103-e67a79d533151b0a.js",
+      "error": "MIME type\n+ actual - expected\n\n+ 'text/javascript'\n- 'application/javascript'\n"
+    },
+    {
+      "name": "https://www.andrewmalvani.com/graph/?view=list&tag=a&tag=b",
+      "error": "same-host Location and exact query\n+ actual - expected\n\n+ 'https://www.andrewmalvani.com/graph?tag=a&tag=b&view=list'\n- 'https://www.andrewmalvani.com/graph?view=list&tag=a&tag=b'\n"
+    },
+    {
+      "name": "https://www.andrewmalvani.com/_next/static/chunks/103-e67a79d533151b0a.js",
+      "error": "MIME type\n+ actual - expected\n\n+ 'text/javascript'\n- 'application/javascript'\n"
+    }
+  ],
+  "finishedAt": "2026-09-12T15:59:48.395Z"
+}

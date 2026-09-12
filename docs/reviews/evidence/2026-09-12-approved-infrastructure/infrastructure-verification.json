@@ -1,0 +1,47 @@
+{
+  "alarmConfigPreserved": true,
+  "alarmConfigSha256": "734d0bb2cd3e1ec34e698bc86bcf5a8b8abb79488abacccd159aad373672a237",
+  "alarmDescriptionConvergenceRequired": false,
+  "analytics": {
+    "code": "restored-legacy",
+    "reservedConcurrency": null,
+    "rule": "ENABLED",
+    "targetUnchanged": true
+  },
+  "analyticsMigrationComplete": false,
+  "apiDeployment": "xpyhk9",
+  "baselineSha256": "1b06820579693e2bb68abc05a1c6b8dbdf0b77c16822069c5bbf97db7e455a0a",
+  "cachePolicies": {
+    "immutable": "41782c2d-5577-4c3c-8ad8-c47b41c056bc",
+    "stable": "1c0753ee-cbbb-4728-807c-36bce8455519"
+  },
+  "checkedCode": {
+    "contact": "4031b6f438e55a6547db3ea390b4292328652e67212a78865d617ffe0a515902",
+    "stats": "e3f30b13d0335aa5d898d2c21f71ef9153d769f96e07510e9be137f2254eee51"
+  },
+  "correctedSdkChecks": {
+    "apiIntegrationMethodField": "httpMethod",
+    "edgeStatus": "DEPLOYED",
+    "exactContactInvokeUri": true
+  },
+  "deferredFinalAnalyticsChecks": [
+    "STATS_CODE_DIGEST_MISMATCH",
+    "STATS_CONCURRENCY_NOT_ONE",
+    "ANALYTICS_ALARM_MISMATCH"
+  ],
+  "distribution": "EDHU4C51HW4BG",
+  "edgeFunction": "rewrite-extensionless-to-html",
+  "evidenceLimit": "selected read-only configuration after approved infra apply; no analytics invocation, quota mutation, environment output, logs or table rows",
+  "logging": {
+    "cloudfront": "cloudfront-logs/",
+    "selfLogging": false,
+    "website": "website-log/"
+  },
+  "quotaUnchanged": {
+    "ConcurrentExecutions": 10,
+    "UnreservedConcurrentExecutions": 10
+  },
+  "scope": "approved-partial-infrastructure",
+  "status": "PASS",
+  "verifiedAt": "2026-09-12T16:14:18.394735+00:00"
+}

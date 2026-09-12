@@ -1,0 +1,86 @@
+{
+  "verdict": "CONVERGED_APPROVED_INFRA_ONLY_TWO_EXCLUDED_ANALYTICS_DIFFS_REMAIN",
+  "plan": {
+    "path": "/private/tmp/react-resume-release-20260911/private/approved-infra-20260912-final-full.tfplan",
+    "sha256": "a1bd37d2f0731b25fb1c28b788aec7d1fcae9664c1dad89efb29258041819744",
+    "jsonSha256": "291c49f1a1b0aeda7c0837255d34776faadb8911733b267fc17c74ce96d1cea2",
+    "timestamp": "2026-09-12T16:09:14Z",
+    "terraformVersion": "1.14.7",
+    "complete": true,
+    "applyable": true,
+    "errored": false,
+    "mustNotApply": true
+  },
+  "changes": [
+    {
+      "address": "aws_cloudwatch_metric_alarm.stats_aggregator_errors",
+      "deposed": null,
+      "actions": [
+        "update"
+      ]
+    },
+    {
+      "address": "aws_lambda_function.stats_aggregator",
+      "deposed": null,
+      "actions": [
+        "update"
+      ]
+    }
+  ],
+  "excludedAnalytics": [
+    {
+      "address": "aws_cloudwatch_metric_alarm.stats_aggregator_errors",
+      "changedFields": [
+        "alarm_description"
+      ]
+    },
+    {
+      "address": "aws_lambda_function.stats_aggregator",
+      "changedFields": [
+        "reserved_concurrent_executions"
+      ],
+      "before": -1,
+      "after": 1,
+      "filenameChanged": false
+    }
+  ],
+  "approvedInfra": {
+    "currentApiDeployment": {
+      "id": "xpyhk9",
+      "actions": [
+        "no-op"
+      ],
+      "deposedInstances": 0
+    },
+    "apiStage": {
+      "deploymentId": "xpyhk9",
+      "actions": [
+        "no-op"
+      ]
+    },
+    "stableCachePolicy": [
+      "no-op"
+    ],
+    "immutableCachePolicy": [
+      "no-op"
+    ],
+    "cloudFrontDistribution": [
+      "no-op"
+    ],
+    "routingFunction": [
+      "no-op"
+    ],
+    "recursiveLoggingResource": "absent"
+  },
+  "analyticsPreserved": {
+    "dailyRuleEnabledBefore": true,
+    "dailyRuleEnabledAfter": true,
+    "dailyRuleActions": [
+      "no-op"
+    ],
+    "dailyTargetActions": [
+      "no-op"
+    ],
+    "currentConcurrency": -1
+  }
+}

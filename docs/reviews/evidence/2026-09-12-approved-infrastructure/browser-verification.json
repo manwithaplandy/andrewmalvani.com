@@ -1,0 +1,91 @@
+{
+  "observedAt": "2026-09-12T15:57:04.225Z",
+  "origins": [
+    {
+      "origin": "https://andrewmalvani.com",
+      "errors": [],
+      "cspViolations": [],
+      "checks": [
+        "homepage and client validation",
+        "real browser preflight and invalid POST readable without sending notification",
+        "direct graph route, fragment, text search and mobile width",
+        "statistics route and display",
+        "real 404 status, recovery content and narrow layout"
+      ],
+      "apiResponses": [
+        {
+          "status": 400,
+          "method": "POST",
+          "headers": {
+            "access-control-allow-methods": "OPTIONS,POST",
+            "via": "1.1 9a37c3b15cf7c2d1301d0c1341e4d47a.cloudfront.net (CloudFront)",
+            "access-control-allow-origin": "https://andrewmalvani.com",
+            "x-cache": "Error from cloudfront",
+            "content-length": "28",
+            "content-type": "application/json",
+            "vary": "Origin",
+            "x-amz-cf-pop": "SFO53-P10",
+            "access-control-allow-headers": "Content-Type"
+          }
+        }
+      ],
+      "statsPayloadSha256": "6efd7283d1cd8b5969acfad78552e84ed368b10b427604b2a77a293a0b6dd973",
+      "statsCacheHeaders": {
+        "content-encoding": "zstd",
+        "cf-cache-status": "REVALIDATED",
+        "x-content-type-options": "nosniff",
+        "x-cache": "Miss from cloudfront",
+        "content-type": "application/json",
+        "x-frame-options": "DENY",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "cache-control": "max-age=3600",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "via": "1.1 44e82525c613ef192153f7e6e465977a.cloudfront.net (CloudFront)",
+        "x-amz-cf-pop": "SEA900-P2"
+      }
+    },
+    {
+      "origin": "https://www.andrewmalvani.com",
+      "errors": [],
+      "cspViolations": [],
+      "checks": [
+        "homepage and client validation",
+        "real browser preflight and invalid POST readable without sending notification",
+        "direct graph route, fragment, text search and mobile width",
+        "statistics route and display",
+        "real 404 status, recovery content and narrow layout"
+      ],
+      "apiResponses": [
+        {
+          "status": 400,
+          "method": "POST",
+          "headers": {
+            "access-control-allow-methods": "OPTIONS,POST",
+            "via": "1.1 61bc5c2437da1cb95629df175a99fca2.cloudfront.net (CloudFront)",
+            "access-control-allow-origin": "https://www.andrewmalvani.com",
+            "x-cache": "Error from cloudfront",
+            "content-length": "28",
+            "content-type": "application/json",
+            "vary": "Origin",
+            "x-amz-cf-pop": "SFO53-P10",
+            "access-control-allow-headers": "Content-Type"
+          }
+        }
+      ],
+      "statsPayloadSha256": "6efd7283d1cd8b5969acfad78552e84ed368b10b427604b2a77a293a0b6dd973",
+      "statsCacheHeaders": {
+        "content-encoding": "zstd",
+        "cf-cache-status": "REVALIDATED",
+        "x-content-type-options": "nosniff",
+        "x-cache": "Miss from cloudfront",
+        "content-type": "application/json",
+        "x-frame-options": "DENY",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "cache-control": "max-age=3600",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "via": "1.1 a9b50852e198f506f036f962723ada50.cloudfront.net (CloudFront)",
+        "x-amz-cf-pop": "SEA900-P2"
+      }
+    }
+  ]
+}

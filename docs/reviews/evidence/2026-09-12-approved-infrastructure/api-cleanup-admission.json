@@ -1,0 +1,40 @@
+{
+  "verdict": "APPROVE_EXACT_SAVED_API_CLEANUP_PLAN_ONLY",
+  "plan": {
+    "path": "/private/tmp/react-resume-release-20260911/private/approved-infra-20260912-api-cleanup.tfplan",
+    "sha256": "7166117432fade1858e1deeef8d266475609a1fac95aa15ff98fcbf108e40c98",
+    "jsonSha256": "55abb5708131cc22deacb53f8b2821ed32996606ae4d5b2ab28b063f738d19c0",
+    "timestamp": "2026-09-12T15:59:30Z",
+    "terraformVersion": "1.14.7",
+    "complete": false,
+    "applyable": true,
+    "errored": false
+  },
+  "soleChange": {
+    "address": "aws_api_gateway_deployment.api",
+    "deposedKey": "8f884593",
+    "oldDeploymentId": "11hxml",
+    "actions": [
+      "delete"
+    ]
+  },
+  "currentApi": {
+    "deploymentId": "xpyhk9",
+    "deploymentActions": [
+      "no-op"
+    ],
+    "stageName": "api",
+    "stageDeploymentId": "xpyhk9",
+    "stageActions": [
+      "no-op"
+    ]
+  },
+  "stageReferenceCheck": {
+    "path": "/private/tmp/react-resume-release-20260911/approved-infra-20260912-api-stage-reference-check.json",
+    "observedAt": "2026-09-12T15:59:08Z",
+    "stageCount": 1,
+    "oldDeploymentReferenced": false
+  },
+  "excludedScopeChangedAddresses": [],
+  "mustApplyOnlySavedBinary": true
+}

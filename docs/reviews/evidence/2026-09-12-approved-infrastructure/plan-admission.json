@@ -1,0 +1,256 @@
+{
+  "verdict": "APPROVE_EXACT_SAVED_TARGETED_PLAN_ONLY",
+  "source": {
+    "head": "d86538525c6c5f420a010bc182b7b041f93857fd",
+    "clean": true,
+    "candidateTerraformMatchesTrackedHead": true,
+    "matchedFiles": [
+      ".terraform.lock.hcl",
+      "contactLambda.tf",
+      "data.tf",
+      "functions/rewrite-extensionless.js",
+      "main.tf",
+      "outputs.tf",
+      "providers.tf",
+      "statsLambda.tf",
+      "variables.tf",
+      "waf.tf"
+    ],
+    "contactArchiveSha256": "4031b6f438e55a6547db3ea390b4292328652e67212a78865d617ffe0a515902",
+    "statsArchiveSha256": "b68c47a7774b1d575b910a60d7ceded54cf9d2b9a398334f00476113cbc945ca",
+    "archivesByteMatchCheckedCi34679848934": true
+  },
+  "fullPlan": {
+    "path": "/private/tmp/react-resume-release-20260911/private/approved-infra-20260912-full.tfplan",
+    "sha256": "3bcd114f06ab1587faff69d4476b04587ebed5ceb01606ca40adf88052c06a16",
+    "timestamp": "2026-09-12T15:48:32Z",
+    "terraformVersion": "1.14.7",
+    "changes": [
+      {
+        "address": "aws_api_gateway_deployment.api",
+        "actions": [
+          "create",
+          "delete"
+        ]
+      },
+      {
+        "address": "aws_api_gateway_stage.api",
+        "actions": [
+          "update"
+        ]
+      },
+      {
+        "address": "aws_cloudfront_cache_policy.site[\"immutable\"]",
+        "actions": [
+          "create"
+        ]
+      },
+      {
+        "address": "aws_cloudfront_cache_policy.site[\"stable\"]",
+        "actions": [
+          "create"
+        ]
+      },
+      {
+        "address": "aws_cloudfront_distribution.website_distribution",
+        "actions": [
+          "update"
+        ]
+      },
+      {
+        "address": "aws_cloudfront_function.rewrite_extensionless",
+        "actions": [
+          "update"
+        ]
+      },
+      {
+        "address": "aws_cloudwatch_metric_alarm.stats_aggregator_errors",
+        "actions": [
+          "update"
+        ]
+      },
+      {
+        "address": "aws_lambda_function.stats_aggregator",
+        "actions": [
+          "update"
+        ]
+      },
+      {
+        "address": "aws_s3_bucket_logging.log_bucket_logs",
+        "actions": [
+          "delete"
+        ]
+      }
+    ],
+    "excludedChanges": [
+      {
+        "address": "aws_cloudwatch_metric_alarm.stats_aggregator_errors",
+        "changedFields": [
+          "alarm_description"
+        ]
+      },
+      {
+        "address": "aws_lambda_function.stats_aggregator",
+        "changedFields": [
+          "reserved_concurrent_executions"
+        ],
+        "before": -1,
+        "after": 1
+      }
+    ],
+    "dailyRule": {
+      "actions": [
+        "no-op"
+      ],
+      "enabledBefore": true,
+      "enabledAfter": true
+    },
+    "dailyTarget": {
+      "actions": [
+        "no-op"
+      ]
+    },
+    "mustNotApply": true
+  },
+  "targetedPlan": {
+    "path": "/private/tmp/react-resume-release-20260911/private/approved-infra-20260912-targeted.tfplan",
+    "sha256": "b0db3c653d0be847b01a17d45cfe8baa5c6fd0e3a58099b5992beb5bd424eaf2",
+    "timestamp": "2026-09-12T15:50:02Z",
+    "terraformVersion": "1.14.7",
+    "complete": false,
+    "changes": [
+      {
+        "address": "aws_api_gateway_deployment.api",
+        "actions": [
+          "create",
+          "delete"
+        ]
+      },
+      {
+        "address": "aws_api_gateway_stage.api",
+        "actions": [
+          "update"
+        ]
+      },
+      {
+        "address": "aws_cloudfront_cache_policy.site[\"immutable\"]",
+        "actions": [
+          "create"
+        ]
+      },
+      {
+        "address": "aws_cloudfront_cache_policy.site[\"stable\"]",
+        "actions": [
+          "create"
+        ]
+      },
+      {
+        "address": "aws_cloudfront_distribution.website_distribution",
+        "actions": [
+          "update"
+        ]
+      },
+      {
+        "address": "aws_cloudfront_function.rewrite_extensionless",
+        "actions": [
+          "update"
+        ]
+      },
+      {
+        "address": "aws_s3_bucket_logging.log_bucket_logs",
+        "actions": [
+          "delete"
+        ]
+      }
+    ],
+    "analyticsChangedAddresses": [],
+    "approvedValues": {
+      "stableCache": {
+        "name": "mostly-upward-lion-stable",
+        "minTtl": 0,
+        "defaultTtl": 300,
+        "maxTtl": 300,
+        "gzip": true,
+        "brotli": true
+      },
+      "immutableCache": {
+        "name": "mostly-upward-lion-immutable",
+        "minTtl": 0,
+        "defaultTtl": 31536000,
+        "maxTtl": 31536000,
+        "gzip": true,
+        "brotli": true
+      },
+      "distribution": {
+        "changedFields": [
+          "custom_error_response",
+          "default_cache_behavior",
+          "ordered_cache_behavior"
+        ],
+        "customErrors": [
+          {
+            "error_code": 403,
+            "response_code": 404,
+            "response_page_path": "/404.html",
+            "error_caching_min_ttl": 10
+          },
+          {
+            "error_code": 404,
+            "response_code": 404,
+            "response_page_path": "/404.html",
+            "error_caching_min_ttl": 10
+          }
+        ],
+        "defaultCompression": true,
+        "immutablePath": "_next/static/*",
+        "immutableCompression": true,
+        "aliasesPreserved": true,
+        "originsPreserved": true,
+        "loggingPreserved": true,
+        "certificatePreserved": true
+      },
+      "routingFunction": {
+        "changedFields": [
+          "code",
+          "comment"
+        ],
+        "statusCode": 308,
+        "identityRuntimePublishPreserved": true
+      },
+      "apiConvergence": {
+        "deploymentActions": [
+          "create",
+          "delete"
+        ],
+        "stageChangedFields": [
+          "deployment_id"
+        ],
+        "stageAndRestApiIdentityPreserved": true,
+        "triggerBefore": "1b44eff443c5dabf8b7b6a3e9edd52f9c1aeed46",
+        "triggerAfter": "9f66d73ce4fda7484a3e86cce61a5224351c30c7"
+      },
+      "recursiveLogging": {
+        "deletedAddress": "aws_s3_bucket_logging.log_bucket_logs",
+        "otherLogResourcesChanged": false
+      }
+    }
+  },
+  "applyEnvironment": {
+    "cwd": "/Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation",
+    "tfDataDir": "/private/tmp/react-resume-release-20260911/private/tf-data",
+    "terraformChdir": "/private/tmp/react-resume-release-20260911/private/candidate-plan/terraform",
+    "awsEnvironmentOverrides": [],
+    "configuredRegions": {
+      "backendAndDefault": "us-west-1",
+      "aliasedCertificate": "us-east-1"
+    }
+  },
+  "checks": [
+    "exact action-set assertion",
+    "field-level approved-value assertions",
+    "no analytics target actions",
+    "candidate source byte equality",
+    "checked archive byte equality",
+    "private artifact mode 0600"
+  ]
+}
