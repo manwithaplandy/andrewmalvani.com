@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "observedAt": "2026-09-12T07:54:41.888307+00:00",
+  "notificationSendingRequests": 0,
+  "checks": [
+    {
+      "method": "GET",
+      "path": "/healthcheck",
+      "origin": null,
+      "status": 200,
+      "allowOrigin": null,
+      "vary": null,
+      "allowMethods": null,
+      "allowHeaders": null
+    },
+    {
+      "method": "OPTIONS",
+      "path": "/contact",
+      "origin": "https://andrewmalvani.com",
+      "status": 200,
+      "allowOrigin": "https://andrewmalvani.com",
+      "vary": "Origin",
+      "allowMethods": "OPTIONS,POST",
+      "allowHeaders": "Content-Type"
+    },
+    {
+      "method": "POST",
+      "path": "/contact",
+      "origin": "https://andrewmalvani.com",
+      "status": 400,
+      "allowOrigin": "https://andrewmalvani.com",
+      "vary": "Origin",
+      "allowMethods": "OPTIONS,POST",
+      "allowHeaders": "Content-Type"
+    },
+    {
+      "method": "OPTIONS",
+      "path": "/contact",
+      "origin": "https://www.andrewmalvani.com",
+      "status": 200,
+      "allowOrigin": "https://www.andrewmalvani.com",
+      "vary": "Origin",
+      "allowMethods": "OPTIONS,POST",
+      "allowHeaders": "Content-Type"
+    },
+    {
+      "method": "POST",
+      "path": "/contact",
+      "origin": "https://www.andrewmalvani.com",
+      "status": 400,
+      "allowOrigin": "https://www.andrewmalvani.com",
+      "vary": "Origin",
+      "allowMethods": "OPTIONS,POST",
+      "allowHeaders": "Content-Type"
+    },
+    {
+      "method": "OPTIONS",
+      "path": "/contact",
+      "origin": "https://unapproved.invalid",
+      "status": 403,
+      "allowOrigin": null,
+      "vary": "Origin",
+      "allowMethods": "OPTIONS,POST",
+      "allowHeaders": "Content-Type"
+    },
+    {
+      "method": "POST",
+      "path": "/contact",
+      "origin": "https://unapproved.invalid",
+      "status": 403,
+      "allowOrigin": null,
+      "vary": "Origin",
+      "allowMethods": "OPTIONS,POST",
+      "allowHeaders": "Content-Type"
+    }
+  ]
+}

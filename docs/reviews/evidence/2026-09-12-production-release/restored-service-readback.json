@@ -1,0 +1,13 @@
+{
+  "status": "PREVIOUS_SERVICE_CONFIRMED",
+  "observedAt": "2026-09-12T12:38:05.393819+00:00",
+  "oldCodeSha256": "e3f30b13d0335aa5d898d2c21f71ef9153d769f96e07510e9be137f2254eee51",
+  "state": "Active",
+  "updateStatus": "Successful",
+  "reservation": "absent (original)",
+  "rule": "ENABLED",
+  "schedule": "cron(0 0 * * ? *)",
+  "soleTarget": "arn:aws:lambda:us-west-1:870140981796:function:statsAggregator",
+  "accountConcurrency": 10,
+  "unreservedConcurrency": 10
+}

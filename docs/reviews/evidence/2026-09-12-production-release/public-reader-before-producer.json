@@ -1,0 +1,145 @@
+{
+  "candidateCommit": "e2f891a5f189bc9ead9cefa0491d2e7cb9eaa2b3",
+  "results": [
+    {
+      "origin": "https://andrewmalvani.com",
+      "observedAt": "2026-09-12T08:07:47.271Z",
+      "htmlSha256": "b8525ae6d451c1316df4beb3471c925ed16a9a6ad08c22e9e426741c6094036e",
+      "assets": [
+        {
+          "url": "/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+          "sha256": "c940764593d0fe5d596be327ca7558855e018039fb78509aa21921fd3644c3e4"
+        },
+        {
+          "url": "/_next/static/fXB4IzIC4IclWzVP2q6oF/_buildManifest.js",
+          "sha256": "86e9d98fb0b613ffaf82b455f7251a71767a2fe17aa64f6217d02554bc8071d2"
+        },
+        {
+          "url": "/_next/static/css/1b939f25ecdc5b1c.css",
+          "sha256": "6f663efa45f45cf57ca8ab98ff8a68282bd4de691145c9fdf495a80ff6d41e31"
+        },
+        {
+          "url": "/_next/static/chunks/252-beaeed46666a31b9.js",
+          "sha256": "701703ea8f43f83d3f8af7a6641f75dea9ba24b07d7653f231b46e956d73d0f7"
+        },
+        {
+          "url": "/_next/static/chunks/webpack-d53b640be244d040.js",
+          "sha256": "be38b41fba7e51982d8900ce80c7f7e544edfa56ad02285c5ed0acfb9144e818"
+        },
+        {
+          "url": "/_next/static/chunks/103-e67a79d533151b0a.js",
+          "sha256": "cc2359ef09d2ddeb178c8100a1e8c1e1d770e2bd936135550f294ce4a2da7acb"
+        },
+        {
+          "url": "/_next/static/chunks/pages/_app-45be56fe50b3f6bb.js",
+          "sha256": "8eaea473e21aced9283b63c20589d39943a589776c599f7356b5dae20a269383"
+        },
+        {
+          "url": "/_next/static/chunks/framework-66d32731bdd20e83.js",
+          "sha256": "365722b88937784a58b6f5bb017c82aaf62b3f145b498232722efa17ecb7bb23"
+        },
+        {
+          "url": "/_next/static/fXB4IzIC4IclWzVP2q6oF/_ssgManifest.js",
+          "sha256": "6f5b4aa00d2f8d6aed9935b471806bf7acef464d0c1d390260e5fe27f800c67e"
+        },
+        {
+          "url": "/_next/static/chunks/main-5d77cecfe18a5947.js",
+          "sha256": "f24b8b286d280db0ff080b290fecebafcf41cb0ff911ce8179b38ea93b393234"
+        },
+        {
+          "url": "/_next/static/chunks/pages/stats-12130aa00bf791aa.js",
+          "sha256": "5829d3724105557b442bd6842638ee243f5d67787e85b6e5c8e43ee640ad3199"
+        },
+        {
+          "url": "/_next/static/chunks/pages/index-d970b3465c2179bb.js",
+          "sha256": "c1ea30dbf13590acaaf82db374349832f89bd43c92a644e64af932219c6affbf"
+        },
+        {
+          "url": "/_next/static/chunks/143-f628994157963907.js",
+          "sha256": "2c96c321feeeb682342743b572eb0f24ad18615bf808a734335087314ddf38ac"
+        }
+      ],
+      "contracts": [
+        "live",
+        "v1",
+        "v2"
+      ],
+      "livePayloadVersion": 1,
+      "cacheHeaders": {
+        "cache-control": "public, max-age=60, s-maxage=300, no-transform",
+        "cf-cache-status": "REVALIDATED",
+        "x-cache": "Miss from cloudfront"
+      }
+    },
+    {
+      "origin": "https://www.andrewmalvani.com",
+      "observedAt": "2026-09-12T08:07:50.711Z",
+      "htmlSha256": "b8525ae6d451c1316df4beb3471c925ed16a9a6ad08c22e9e426741c6094036e",
+      "assets": [
+        {
+          "url": "/_next/static/css/1b939f25ecdc5b1c.css",
+          "sha256": "6f663efa45f45cf57ca8ab98ff8a68282bd4de691145c9fdf495a80ff6d41e31"
+        },
+        {
+          "url": "/_next/static/chunks/webpack-d53b640be244d040.js",
+          "sha256": "be38b41fba7e51982d8900ce80c7f7e544edfa56ad02285c5ed0acfb9144e818"
+        },
+        {
+          "url": "/_next/static/chunks/252-beaeed46666a31b9.js",
+          "sha256": "701703ea8f43f83d3f8af7a6641f75dea9ba24b07d7653f231b46e956d73d0f7"
+        },
+        {
+          "url": "/_next/static/chunks/pages/stats-12130aa00bf791aa.js",
+          "sha256": "5829d3724105557b442bd6842638ee243f5d67787e85b6e5c8e43ee640ad3199"
+        },
+        {
+          "url": "/_next/static/chunks/pages/_app-45be56fe50b3f6bb.js",
+          "sha256": "8eaea473e21aced9283b63c20589d39943a589776c599f7356b5dae20a269383"
+        },
+        {
+          "url": "/_next/static/fXB4IzIC4IclWzVP2q6oF/_ssgManifest.js",
+          "sha256": "6f5b4aa00d2f8d6aed9935b471806bf7acef464d0c1d390260e5fe27f800c67e"
+        },
+        {
+          "url": "/_next/static/chunks/103-e67a79d533151b0a.js",
+          "sha256": "cc2359ef09d2ddeb178c8100a1e8c1e1d770e2bd936135550f294ce4a2da7acb"
+        },
+        {
+          "url": "/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+          "sha256": "c940764593d0fe5d596be327ca7558855e018039fb78509aa21921fd3644c3e4"
+        },
+        {
+          "url": "/_next/static/chunks/main-5d77cecfe18a5947.js",
+          "sha256": "f24b8b286d280db0ff080b290fecebafcf41cb0ff911ce8179b38ea93b393234"
+        },
+        {
+          "url": "/_next/static/fXB4IzIC4IclWzVP2q6oF/_buildManifest.js",
+          "sha256": "86e9d98fb0b613ffaf82b455f7251a71767a2fe17aa64f6217d02554bc8071d2"
+        },
+        {
+          "url": "/_next/static/chunks/framework-66d32731bdd20e83.js",
+          "sha256": "365722b88937784a58b6f5bb017c82aaf62b3f145b498232722efa17ecb7bb23"
+        },
+        {
+          "url": "/_next/static/chunks/143-f628994157963907.js",
+          "sha256": "2c96c321feeeb682342743b572eb0f24ad18615bf808a734335087314ddf38ac"
+        },
+        {
+          "url": "/_next/static/chunks/pages/index-d970b3465c2179bb.js",
+          "sha256": "c1ea30dbf13590acaaf82db374349832f89bd43c92a644e64af932219c6affbf"
+        }
+      ],
+      "contracts": [
+        "live",
+        "v1",
+        "v2"
+      ],
+      "livePayloadVersion": 1,
+      "cacheHeaders": {
+        "cache-control": "public, max-age=60, s-maxage=300, no-transform",
+        "cf-cache-status": "MISS",
+        "x-cache": "Miss from cloudfront"
+      }
+    }
+  ]
+}

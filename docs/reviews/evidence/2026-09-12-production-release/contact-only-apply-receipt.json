@@ -1,0 +1,18 @@
+{
+  "status": "APPLIED",
+  "observedAt": "2026-09-12T07:52:33.526805+00:00",
+  "apiId": "vs7dthj3vb",
+  "stage": "api",
+  "deploymentId": "11hxml",
+  "changedAddresses": [
+    "aws_api_gateway_deployment.api",
+    "aws_api_gateway_integration.healthcheck",
+    "aws_api_gateway_integration_response.http_200_options",
+    "aws_api_gateway_integration_response.post_200",
+    "aws_api_gateway_stage.api",
+    "aws_lambda_function.form_submission"
+  ],
+  "contactCodePreserved": true,
+  "analyticsRule": "DISABLED",
+  "analyticsConcurrency": 0
+}

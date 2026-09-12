@@ -28,13 +28,13 @@
 
 **Interfaces:** Existing browser posts JSON to /api/contact. Existing API is REST API vs7dthj3vb; named stage api. Existing Lambda formSubmission publishes through SNS. Reader and analytics code/package must remain unchanged. Main and www are both real public website hosts and must be able to read contact responses.
 
-- [ ] Write failing tests for a healthy MOCK response configuration, deployment fingerprint tracking meaningful method/integration/response changes, and no-op stability. Test actual parsed configuration/behavior where feasible rather than arbitrary whitespace/text shape.
-- [ ] Write isolated Python handler tests for both exact allowed origins on success, validation failures and publish failures; preflight if handled there; disallowed/lookalike origins; missing Origin compatibility; no SNS publish for invalid input or preflight; preserved input limits and no data logging. Disable credentials/metadata and fake clients before import. Exercise the checked contact ZIP in at least one test so coverage does not stop at loose source files.
-- [ ] Supply the health MOCK's missing status mapping. Its HTTP200 response is only API reachability, not email-delivery proof; document that limitation.
-- [ ] Replace the empty REST-body deployment fingerprint with meaningful configuration coverage. Ensure all required integrations and responses exist before a new immutable deployment is created. Use create_before_destroy where needed. Keep the existing aws_api_gateway_stage.api as the sole explicit live-stage owner; avoid duplicate stage ownership from deployment.stage_name if removing it safely preserves the stage in the plan. Preserve all resource names and source-controlled endpoint configuration.
-- [ ] Implement consistent exact-origin CORS for both public hosts, including OPTIONS and Lambda responses, with Vary: Origin and no wildcard. Do not add an authentication claim to CORS. Keep an authoritative shared origin list in Terraform. Keep public non-browser/missing-Origin behavior compatible, without granting browser access to unknown origins. Do not add new services or dependencies unnecessarily. Evaluate the simplest correct mock or existing-Lambda approach and explain the choice in the report.
-- [ ] Run the focused regression tests, deterministic archive checks, Terraform formatting and backend-free readonly initialize/validate. Existing affected release/workflow tests must pass; do not rerun unrelated browser suites locally without a reason. No production read or write by implementer.
-- [ ] Self-review, commit only Task1 files (including this plan if controller requests), and report changes, exact commands/output, design choices, test red/green evidence and remaining live verification. No worker subagents.
+- [x] Write failing tests for a healthy MOCK response configuration, deployment fingerprint tracking meaningful method/integration/response changes, and no-op stability. Test actual parsed configuration/behavior where feasible rather than arbitrary whitespace/text shape.
+- [x] Write isolated Python handler tests for both exact allowed origins on success, validation failures and publish failures; preflight if handled there; disallowed/lookalike origins; missing Origin compatibility; no SNS publish for invalid input or preflight; preserved input limits and no data logging. Disable credentials/metadata and fake clients before import. Exercise the checked contact ZIP in at least one test so coverage does not stop at loose source files.
+- [x] Supply the health MOCK's missing status mapping. Its HTTP200 response is only API reachability, not email-delivery proof; document that limitation.
+- [x] Replace the empty REST-body deployment fingerprint with meaningful configuration coverage. Ensure all required integrations and responses exist before a new immutable deployment is created. Use create_before_destroy where needed. Keep the existing aws_api_gateway_stage.api as the sole explicit live-stage owner; avoid duplicate stage ownership from deployment.stage_name if removing it safely preserves the stage in the plan. Preserve all resource names and source-controlled endpoint configuration.
+- [x] Implement consistent exact-origin CORS for both public hosts, including OPTIONS and Lambda responses, with Vary: Origin and no wildcard. Do not add an authentication claim to CORS. Keep an authoritative shared origin list in Terraform. Keep public non-browser/missing-Origin behavior compatible, without granting browser access to unknown origins. Do not add new services or dependencies unnecessarily. Evaluate the simplest correct mock or existing-Lambda approach and explain the choice in the report.
+- [x] Run the focused regression tests, deterministic archive checks, Terraform formatting and backend-free readonly initialize/validate. Existing affected release/workflow tests must pass; do not rerun unrelated browser suites locally without a reason. No production read or write by implementer.
+- [x] Self-review, commit only Task1 files (including this plan if controller requests), and report changes, exact commands/output, design choices, test red/green evidence and remaining live verification. No worker subagents.
 
 ### Task 2: Verify production prerequisites and carry out the guarded release
 
@@ -42,10 +42,10 @@
 
 **Interfaces:** Consume reviewed Task1 commit and actual passing GitHub checked artifacts. Root coordinates all cloud changes. Read-only preflight agent supplies effective invokers/retry timing, backup controls and a practical no-writer proof. Cloudflare zone b844ace401855c2f2141ee560430c0c7 in account9ec06f036c045c91e97ba1ec08a87251 is authoritative for apex/www.
 
-- [ ] Refresh AWS identity, deployment configuration, invokers/retries, backup capability and Cloudflare settings. Record exact selected facts and permitted scope.
-- [ ] Review Task1 independently, push the PR branch and require successful CI artifact production. Create and inspect a private state-backed plan; classify replacements and prerequisites before any apply.
-- [ ] Complete verified no-writer and durable recovery checkpoint requirements from analytics.md before an apply that can reopen old code. Do not substitute an API success or a zero-concurrency setting for queue drainage. If a required wall-clock bound cannot be closed now, keep remaining dependent mutations blocked and report the exact earliest safe continuation; complete independent API work only through a reviewed isolated plan with no analytics side effects.
-- [ ] Publish and verify the compatible checked website before activating the new analytics producer. Retain producer ownership of stats.json, old hashed assets and all stored history. Make only necessary scoped Cloudflare cache changes, preserving other subdomains and security controls.
+- [x] Refresh AWS identity, deployment configuration, invokers/retries, backup capability and Cloudflare settings. Record exact selected facts and permitted scope.
+- [x] Review Task1 independently, push the PR branch and require successful CI artifact production. Create and inspect a private state-backed plan; classify replacements and prerequisites before any apply.
+- [x] Complete verified no-writer and durable recovery checkpoint requirements from analytics.md before an apply that can reopen old code. Do not substitute an API success or a zero-concurrency setting for queue drainage. If a required wall-clock bound cannot be closed now, keep remaining dependent mutations blocked and report the exact earliest safe continuation; complete independent API work only through a reviewed isolated plan with no analytics side effects.
+- [x] Publish and verify the compatible checked website before activating the new analytics producer. Retain producer ownership of stats.json, old hashed assets and all stored history. Make only necessary scoped Cloudflare cache changes, preserving other subdomains and security controls.
 - [ ] Apply the reviewed plan/install checked packages through an auditable controlled release. Verify API GET health, both allowed preflights and invalid-message responses without sending SNS messages. Correct further confirmed blockers only through scoped tested review.
 - [ ] Verify controlled analytics completion, repeated processing without duplicate effects, public v2 display and effective scheduling. Observe the next scheduled completion if possible in this run; otherwise report that explicit remaining observation without claiming full acceptance.
 - [ ] Preserve nonsecret artifacts/review evidence, update the PR and release report, and state exact completed actions, open gates and any user action. Refresh the local review only if frontend artifact changes materially; keep its demo boundaries.
@@ -77,16 +77,16 @@
 
 ### Task 2 blocker: preserve checked HTML through Cloudflare
 
-- [ ] Append `no-transform` only to candidate `.html` cache metadata, including
+- [x] Append `no-transform` only to candidate `.html` cache metadata, including
   404, retaining stable TTLs, all non-HTML directives, producer ownership of
   stats.json and the exact public reader hash gate.
-- [ ] Capture failing then passing manifest/actual-upload metadata regressions;
+- [x] Capture failing then passing manifest/actual-upload metadata regressions;
   run affected static-publication/workflow tests. No frontend/producer/provider
   changes or broad unrelated suites.
-- [ ] Document suppressed RUM/JSD injection and the missing JSD browser signal,
+- [x] Document suppressed RUM/JSD injection and the missing JSD browser signal,
   with existing BIC/WAF/Bot Fight Mode settings retained and possible HTML
   compression pass-through. Do not claim all bot signals are unchanged.
-- [ ] Obtain independent review and actual new passing CI artifacts before
+- [x] Obtain independent review and actual new passing CI artifacts before
   controller-owned metadata publication/cache actions. Verify ordinary public
   HTML identity and absence of both scripts on apex/www before resuming the
   analytics reader-before-producer gate.
@@ -105,3 +105,8 @@
   under the documented no-new-execution/write, exact snapshot/public-identity
   guards. Otherwise retain new code and stop. Record the new handover as blocked,
   not completed, until controlled/repeated/scheduled verification succeeds.
+
+
+## Recorded outcome — September 12
+
+Task1 is implemented, independently reviewed and live-verified. Task2 remains blocked: the new analytics producer never acquired execution capacity, never ran and wrote no data; exact pre-write guards permitted restoration of the previous code and original enabled daily schedule. The public compatible reader and contact repair are live. The account-wide quota request and remaining website/API infrastructure apply are held by automatic approval review pending the owner’s specific approvals. See the current [production release report](../../reviews/2026-09-12-production-release.md). Completed recovery evidence belongs to this attempt and must be refreshed for a later handover. No new controlled/repeated/scheduled producer result is claimed.
