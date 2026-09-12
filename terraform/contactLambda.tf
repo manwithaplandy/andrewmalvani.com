@@ -20,8 +20,8 @@ resource "aws_lambda_function" "form_submission" {
 
   environment {
     variables = {
-      SNS_TOPIC_ARN  = aws_sns_topic.website-contact-us.arn
-      ALLOWED_ORIGIN = local.allowed_cors_origin
+      SNS_TOPIC_ARN   = aws_sns_topic.website-contact-us.arn
+      ALLOWED_ORIGINS = jsonencode(local.allowed_cors_origins)
     }
   }
 }
@@ -87,15 +87,41 @@ resource "aws_api_gateway_deployment" "api" {
     aws_api_gateway_integration.post_integration,
     aws_api_gateway_integration.http_200_options,
     aws_api_gateway_integration.healthcheck,
+    aws_api_gateway_integration_response.post_200,
+    aws_api_gateway_integration_response.http_200_options,
+    aws_api_gateway_integration_response.healthcheck_200,
+    aws_lambda_permission.apigw,
   ]
   rest_api_id = aws_api_gateway_rest_api.api.id
-  stage_name  = "api"
 
   triggers = {
-    redeployment = sha1(jsonencode(aws_api_gateway_rest_api.api.body))
+    # REST API body is unset: snapshot the configured routes and their full
+    # methods/integrations/responses, so an in-place change creates a deployment.
+    redeployment = sha1(jsonencode([
+      aws_api_gateway_resource.contact.path_part,
+      aws_api_gateway_resource.healthcheck.path_part,
+      aws_api_gateway_method.post_method,
+      aws_api_gateway_method.options_method,
+      aws_api_gateway_method.healthcheck_get,
+      aws_api_gateway_integration.post_integration,
+      aws_api_gateway_integration.http_200_options,
+      aws_api_gateway_integration.healthcheck,
+      aws_api_gateway_method_response.post_200,
+      aws_api_gateway_method_response.http_200_options,
+      aws_api_gateway_method_response.healthcheck_200,
+      aws_api_gateway_integration_response.post_200,
+      aws_api_gateway_integration_response.http_200_options,
+      aws_api_gateway_integration_response.healthcheck_200,
+      local.allowed_cors_origins,
+    ]))
+  }
+
+  lifecycle {
+    create_before_destroy = true
   }
 }
 
+# Sole owner of the existing api stage; deployment creation does not create it.
 resource "aws_api_gateway_stage" "api" {
   stage_name    = "api"
   rest_api_id   = aws_api_gateway_rest_api.api.id
@@ -160,10 +186,8 @@ resource "aws_api_gateway_integration_response" "post_200" {
   http_method = aws_api_gateway_method.post_method.http_method
   status_code = aws_api_gateway_method_response.post_200.status_code
 
-  response_parameters = {
-    # F4: match the OPTIONS preflight allow-list instead of '*'.
-    "method.response.header.Access-Control-Allow-Origin" = "'${local.allowed_cors_origin}'",
-  }
+  # Retain the existing response resource identity. AWS_PROXY response headers
+  # come from Lambda; there is deliberately no static origin mapping here.
 
   depends_on = [aws_api_gateway_integration.post_integration]
 }
@@ -194,15 +218,10 @@ resource "aws_api_gateway_integration" "http_200_options" {
   resource_id = aws_api_gateway_resource.contact.id
   http_method = aws_api_gateway_method.options_method.http_method
 
-  type = "MOCK"
-
-  request_templates = {
-    "application/json" = jsonencode(
-      {
-        statusCode = 200
-      }
-    )
-  }
+  # Reuse the same exact-origin boundary; OPTIONS exits before body/SNS work.
+  type                    = "AWS_PROXY"
+  integration_http_method = "POST"
+  uri                     = aws_lambda_function.form_submission.invoke_arn
 }
 
 resource "aws_api_gateway_integration_response" "http_200_options" {
@@ -211,19 +230,7 @@ resource "aws_api_gateway_integration_response" "http_200_options" {
   http_method = aws_api_gateway_method.options_method.http_method
   status_code = aws_api_gateway_method_response.http_200_options.status_code
 
-  response_parameters = {
-    "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
-    "method.response.header.Access-Control-Allow-Methods" = "'OPTIONS,POST'",
-    "method.response.header.Access-Control-Allow-Origin"  = "'${local.allowed_cors_origin}'",
-  }
-
-  response_templates = {
-    "application/json" = jsonencode(
-      {
-        statusCode = 200
-      }
-    )
-  }
+  # Existing identity retained; proxy preflight headers/body come from Lambda.
 
   depends_on = [aws_api_gateway_integration.http_200_options]
 }
@@ -255,6 +262,9 @@ resource "aws_api_gateway_integration" "healthcheck" {
   http_method = aws_api_gateway_method.healthcheck_get.http_method
 
   type = "MOCK"
+  request_templates = {
+    "application/json" = jsonencode({ statusCode = 200 })
+  }
 }
 
 resource "aws_api_gateway_integration_response" "healthcheck_200" {

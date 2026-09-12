@@ -65,6 +65,14 @@ jobs:
       - name: Run backend tests against checked archives
         run: python -m unittest discover -s tests/stats -p 'test_*.py' -v 2>&1 | tee check-logs/backend-tests.log
 
+      - name: Run isolated contact tests against checked archive
+        run: python -m unittest discover -s tests/contact -p 'test_*.py' -v 2>&1 | tee check-logs/contact-tests.log
+
+      - name: Run contact Terraform contract with native mocks
+        env:
+          CONTACT_TEST_EVIDENCE_DIR: check-logs/contact-infra
+        run: python -m unittest discover -s tests/infra -p 'test_contact_api.py' -v 2>&1 | tee check-logs/contact-infra-tests.log
+
       - name: Run nonmutating static checks
         run: |
           yarn typecheck 2>&1 | tee check-logs/typecheck.log

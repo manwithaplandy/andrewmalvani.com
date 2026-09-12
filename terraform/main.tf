@@ -24,9 +24,12 @@ locals {
   build_trigger = sha1("${path.module}/../src")
   file_paths    = { for f in fileset("${path.module}/../../out/", "**") : f => f }
 
-  # Single source of truth for the CORS origin: consumed by the Lambda (env
-  # var) and the API Gateway POST/OPTIONS responses in contactLambda.tf.
-  allowed_cors_origin = "https://andrewmalvani.com"
+  # One exact browser allow-list, consumed by the contact Lambda for both
+  # POST responses and OPTIONS preflight. CORS is not authentication.
+  allowed_cors_origins = [
+    "https://andrewmalvani.com",
+    "https://www.andrewmalvani.com",
+  ]
 }
 
 # S3 bucket for static website hosting

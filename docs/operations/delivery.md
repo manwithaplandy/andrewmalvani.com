@@ -12,6 +12,65 @@ The checked CloudFront viewer-request function is `terraform/functions/rewrite-e
 
 The local tests include event fields containing `%20`, `%2B`, `%26`, `%25`, and repeated values. Their VM round trip follows AWS's published event-shape and normalization example, but it does not prove how every viewer request becomes a live CloudFront event. Before rollout, use an actual CloudFront test invocation and then send real public trailing-slash requests containing those encoded values and repeats. Inspect `Location`, follow it, and confirm the values retain their intended meaning. This runtime/viewer-to-event evidence has not yet been collected.
 
+## Contact API release boundary
+
+The REST API remains `vs7dthj3vb`, with the existing named `api` stage and
+`formSubmission` Lambda. `GET /api/healthcheck` uses an API Gateway MOCK with an
+explicit `{"statusCode":200}` request mapping. A 200 demonstrates API reachability
+only; it does not invoke Lambda or prove SNS/email delivery.
+
+Terraform owns one exact browser origin list: `https://andrewmalvani.com` and
+`https://www.andrewmalvani.com`. Both `OPTIONS /api/contact` and POST use the
+existing Lambda proxy integration. The handler selects a matching origin and
+returns `Vary: Origin` on success, validation failure, publish failure, and
+preflight. It permits `Content-Type` and `OPTIONS,POST`. OPTIONS returns before
+body parsing or SNS publication. The retained integration-response resource
+identities do not provide a second static origin policy: [AWS proxy integrations
+obtain CORS headers from the backend](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-cors.html).
+
+Unknown, lookalike, empty, and `null` Origin values receive 403 without
+`Access-Control-Allow-Origin` or notification. Requests without an Origin remain
+compatible with public non-browser clients, without a browser origin grant.
+CORS is not authentication; clients can omit or forge Origin. Existing server
+validation, sanitization, name/email/message limits of 100/254/2000, clean errors,
+and the SNS destination remain in force. Tests use only synthetic clients and
+never send contact notifications.
+
+The deployment trigger now fingerprints the evaluated route paths, methods,
+integrations, method responses, integration responses, and origin list instead
+of the unset REST API body. Required responses and Lambda invocation permission
+are dependencies. `create_before_destroy` creates the replacement deployment
+before the old one is retired; `aws_api_gateway_stage.api` is the sole stage
+owner. Local native Terraform mock tests check real configuration mutations and
+no-op fingerprint stability, not the live stage transition.
+
+Before the controller releases this change:
+
+1. Review the real state-backed plan. An immutable deployment replacement and an
+   in-place stage deployment pointer update are expected; stage/API/Lambda
+   replacement, resource renaming, or unrelated changes fail this task's scope.
+   In particular, verify that removing `deployment.stage_name` preserves the
+   existing stage. Preserve the analytics release and exact checked-artifact
+   gates in [the analytics runbook](analytics.md).
+2. Publish the checked contact archive with the Terraform-provided
+   `ALLOWED_ORIGINS` environment and deploy the API configuration as one
+   coordinated release. The old handler only understands `ALLOWED_ORIGIN`;
+   partial code/config rollout does not establish two-host support. The main
+   workflow applies infrastructure before updating existing Lambda code, so
+   two-host acceptance starts only after both steps complete.
+3. Verify live health status and the active stage's new deployment ID. Exercise
+   preflight and invalid POST from both exact public origins, inspect matching
+   CORS and `Vary` headers, and confirm unknown origins receive no browser grant.
+   Invalid input and OPTIONS must not send a notification. Observe the real
+   browser on both hosts; local source/ZIP and mock tests are not API Gateway or
+   Cloudflare runtime evidence.
+4. Any valid synthetic delivery probe is controller-owned and separately
+   authorized because it sends a notification. A Lambda 200 confirms SNS publish
+   acceptance, not recipient delivery. Record the actual observed boundary.
+
+No production configuration, invocation, or public request was performed for
+this local implementation. The controller owns the live plan/release checks.
+
 ## Missing-page recovery
 
 The static export contains a dark/orange `404.html` with a clear `Page not found` heading, links to the résumé and contact section, a specific document title, and `noindex, nofollow` robots metadata. Local preview checks require an actual HTTP 404 and 320-pixel fit.
