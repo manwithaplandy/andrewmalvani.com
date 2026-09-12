@@ -234,13 +234,40 @@ This contract is implemented locally and has not been activated or publicly veri
 
 | Object class | Origin `Cache-Control` | CloudFront default / maximum TTL | Minimum TTL |
 | --- | --- | --- | --- |
-| HTML, PDF and other stable candidate addresses | `public, max-age=60, s-maxage=300` | 300 / 300 seconds | 0 |
+| HTML, including `404.html` | `public, max-age=60, s-maxage=300, no-transform` | 300 / 300 seconds | 0 |
+| PDF and other stable candidate addresses | `public, max-age=60, s-maxage=300` | 300 / 300 seconds | 0 |
 | Content-hashed `/_next/static/*`, including build-specific manifests, CSS and fonts | `public, max-age=31536000, s-maxage=31536000, immutable` | 31,536,000 / 31,536,000 seconds | 0 |
 | Independently published `stats.json` | `public, max-age=60, s-maxage=300` | Same stable policy, 300 / 300 seconds | 0 |
 
 Two new CloudFront cache policies replace CachingDisabled for the existing default behavior and add the hashed-path behavior, both targeting the same S3 origin/OAC. Gzip/Brotli cache variants and automatic compression are enabled for eligible responses; compression is not promised for every MIME type/size or already compressed object. Neither policy keys on cookies, arbitrary viewer headers or query strings. The existing CORS origin-request policy is retained; normalized compression negotiation is the deliberate cache variation. Query values remain in the browser URL for client navigation and in E1 slash redirects; excluding them from static origin/cache selection does not clear the URL.
 
 Both cache minima remain zero so explicit origin cache restrictions can work and a one-year minimum cannot prolong missing hashed-asset errors. E1's origin 403/404 mappings retain viewer status 404 and error minimum 10 seconds. Error headers can independently affect CloudFront error duration; verify missing stable and hashed paths after release, not merely successful assets. See [AWS error-cache behavior](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages-expiration.html). The local policy does not promise Cloudflare's error caching or override its unknown rules.
+
+### Preserve checked HTML through the proxy
+
+The September 12 release check found that S3/CloudFront HTML matched the checked
+artifact while Cloudflare added JavaScript Detections and a Web Analytics
+beacon. Candidate `.html` objects now append `no-transform` to their existing
+cache directives, including `404.html`. Cloudflare documents that this suppresses
+[JSD injection](https://developers.cloudflare.com/cloudflare-challenges/challenge-types/javascript-detections/#if-your-origin-sends-a-no-transform-header)
+and [automatic Web Analytics injection](https://developers.cloudflare.com/web-analytics/faq/#my-website-is-proxied-through-cloudflare-but-web-analytics-automatic-setup-is-not-working).
+This preserves exact public reader bytes and prevents automatic RUM collection
+on this static website. The JSD browser signal becomes missing on these HTML
+responses; do not claim all bot signals remain unchanged. Browser Integrity
+Check, WAF and Bot Fight Mode zone settings remain configured as before. Other
+hosts and unrelated media receive no metadata or zone-setting change from this
+fix. JS/CSS/images/fonts/PDF keep their prior cache directives; `stats.json`
+remains producer-owned.
+
+`no-transform` may cause intermediaries to pass through the origin's existing
+content encoding instead of recompressing HTML. Keep the configured compression
+policies, but verify actual encoding after release. Require new successful CI
+artifacts and their matching publication manifest before refreshing metadata;
+do not hand-edit an old manifest to bypass its checks. Republish through the
+reviewed uploader, complete approved cache invalidation/purge, then rerun the
+unchanged ordinary public reader exact-hash gate on apex and `www`, checking
+absence of both injected scripts. Local metadata tests alone do not prove the
+public fix or clear already-open tabs/browser caches.
 
 ### Candidate ownership and metadata refresh
 

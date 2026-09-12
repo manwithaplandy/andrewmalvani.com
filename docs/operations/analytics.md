@@ -8,6 +8,16 @@ Source records use the existing table under `source#cloudfront` and `source#clou
 
 Cloudflare configuration, token retrieval, HTTP, API, malformed/empty response and daily-write errors are handled as one source outcome. Valid CloudFront aggregates can publish before an error is raised for a configured Cloudflare failure. Fully absent optional Cloudflare configuration is visible without a recurring alarm; partial configuration is an error. Responses are fully validated before any daily write. Storage failure after some daily writes can leave partial stored rows; publication continues using the last accepted bounded Cloudflare checkpoint, so those rows cannot silently change the failed source’s public measurements, availability or coverage. CloudFront truncation/object errors also prevent its success date advancing. Metadata/scan/publication failures may prevent publication entirely: the Lambda error alarm does not promise partial publication for those failures.
 
+The source reader does not add client analytics. The September 12 release
+inspection nevertheless found a proxy-injected Web Analytics beacon and JSD
+script in public HTML. The [HTML metadata correction](delivery.md#preserve-checked-html-through-the-proxy)
+uses `no-transform` to suppress those automatic injections while retaining the
+exact reader hash gate. Public absence must be verified after publishing new
+checked CI artifacts; it is not established by unchanged source bytes alone.
+This removes the JSD browser signal for those HTML responses, while existing
+zone security settings remain in place. Aggregate source scopes and producer
+ownership of `stats.json` are unchanged.
+
 ## Accepted Cloudflare checkpoint
 
 The internal `source#cloudflare` record adds `checkpointVersion` (DynamoDB N, currently 1) and `publicProjection` (JSON string containing only bounded `uniqueVisitors` and privacy-filtered `countries`). The five source metadata attributes and that projection are accepted in one item write. These internal fields never enter the public schema. The record represents the last accepted dataset; a failed attempt presents its status as stale/unavailable without advancing the stored accepted success date.

@@ -23,6 +23,8 @@ function fixture() {
   writeFileSync(path.join(artifact, '_next/static/css/style-a123.css'), '@font-face{src:url(../media/font-a123.woff2)}');
   writeFileSync(path.join(artifact, '_next/static/media/font-a123.woff2'), 'dummy-font');
   writeFileSync(path.join(artifact, 'assets/resume.pdf'), 'dummy-pdf');
+  writeFileSync(path.join(artifact, 'assets/avatar.png'), 'dummy-stable-image');
+  writeFileSync(path.join(artifact, '_next/static/media/portrait-b234.webp'), 'dummy-hashed-image');
   writeFileSync(path.join(artifact, 'stats.json'), 'must never publish this frontend copy');
   return {directory, artifact};
 }
@@ -31,12 +33,18 @@ test('manifest classifies candidate bytes, includes HTML/CSS dependencies and ex
   const {artifact} = fixture();
   const manifest = createManifest(artifact);
   assert.equal(manifest.version, 1);
-  assert.equal(manifest.files.length, 8);
+  assert.equal(manifest.files.length, 10);
   assert.ok(!manifest.files.some(file => file.key === 'stats.json'));
   const byKey = Object.fromEntries(manifest.files.map(file => [file.key, file]));
-  assert.equal(byKey['index.html'].cacheControl, 'public, max-age=60, s-maxage=300');
-  assert.equal(byKey['assets/resume.pdf'].cacheControl, 'public, max-age=60, s-maxage=300');
-  assert.equal(byKey['_next/static/chunks/app-a123.js'].cacheControl, 'public, max-age=31536000, s-maxage=31536000, immutable');
+  for (const key of ['index.html', 'graph.html', 'stats.html', '404.html']) {
+    assert.equal(byKey[key].cacheControl, 'public, max-age=60, s-maxage=300, no-transform');
+  }
+  for (const key of ['assets/resume.pdf', 'assets/avatar.png']) {
+    assert.equal(byKey[key].cacheControl, 'public, max-age=60, s-maxage=300');
+  }
+  for (const key of ['_next/static/chunks/app-a123.js', '_next/static/css/style-a123.css', '_next/static/media/portrait-b234.webp']) {
+    assert.equal(byKey[key].cacheControl, 'public, max-age=31536000, s-maxage=31536000, immutable');
+  }
   assert.equal(byKey['_next/static/media/font-a123.woff2'].contentType, 'font/woff2');
   assert.match(byKey['404.html'].sha256, /^[a-f0-9]{64}$/);
 });
@@ -95,12 +103,21 @@ test('actual CLI refreshes unchanged metadata, preserves old hashes/stats/unrela
   assert.equal(result.calls.at(-1), '404.html');
   assert.ok(result.calls.slice(0, -1).every(key => key.startsWith('_next/static/')));
   assert.equal(result.objects['index.html'].cache, 'max-age=3600');
+  assert.equal(result.objects['404.html'].cache, 'public, max-age=60, s-maxage=300, no-transform');
   const priorCalls = result.calls.length;
   result = run('all');
   const fullCalls = result.calls.slice(priorCalls);
-  assert.ok(fullCalls.slice(0, 3).every(key => key.startsWith('_next/static/')));
-  assert.ok(fullCalls.slice(3).every(key => !key.startsWith('_next/static/')));
-  assert.equal(result.objects['index.html'].cache, 'public, max-age=60, s-maxage=300');
+  assert.ok(fullCalls.slice(0, 4).every(key => key.startsWith('_next/static/')));
+  assert.ok(fullCalls.slice(4).every(key => !key.startsWith('_next/static/')));
+  for (const key of ['index.html', 'graph.html', 'stats.html', '404.html']) {
+    assert.equal(result.objects[key].cache, 'public, max-age=60, s-maxage=300, no-transform');
+  }
+  for (const key of ['assets/resume.pdf', 'assets/avatar.png']) {
+    assert.equal(result.objects[key].cache, 'public, max-age=60, s-maxage=300');
+  }
+  for (const key of ['_next/static/css/style-a123.css', '_next/static/media/portrait-b234.webp']) {
+    assert.equal(result.objects[key].cache, 'public, max-age=31536000, s-maxage=31536000, immutable');
+  }
   assert.equal(result.objects['assets/resume.pdf'].type, 'application/pdf');
   assert.equal(result.objects['_next/static/chunks/app-a123.js'].cache, 'public, max-age=31536000, s-maxage=31536000, immutable');
   for (const key of ['stats.json', '_next/static/chunks/old-hash.js', 'unrelated.txt']) assert.deepEqual(result.objects[key], existing[key]);

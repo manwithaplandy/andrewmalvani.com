@@ -39,7 +39,8 @@ export function createManifest(artifactDirectory) {
       assert.ok(stat.size <= MAX_FILE_BYTES && totalBytes <= MAX_TOTAL_BYTES, 'Candidate exceeds byte bound');
       const bytes = readFileSync(filename), extension = path.extname(key);
       files.push({key, bytes: bytes.length, sha256: sha256(bytes),
-        cacheControl: hashed(key) ? HASHED_CACHE : STABLE_CACHE,
+        // Prevent intermediary script injection into checked HTML.
+        cacheControl: (hashed(key) ? HASHED_CACHE : STABLE_CACHE) + (extension === '.html' ? ', no-transform' : ''),
         contentType: TYPES[extension] ?? 'application/octet-stream'});
       const text = ['.html', '.css'].includes(extension) ? bytes.toString('utf8') : '';
       const urls = extension === '.html'

@@ -73,3 +73,20 @@
 - These are required release procedures, not a record of completed cloud
   actions. Controller-owned live evidence and independent remedy review remain
   authoritative; worker documentation preparation performs no cloud action.
+
+
+### Task 2 blocker: preserve checked HTML through Cloudflare
+
+- [ ] Append `no-transform` only to candidate `.html` cache metadata, including
+  404, retaining stable TTLs, all non-HTML directives, producer ownership of
+  stats.json and the exact public reader hash gate.
+- [ ] Capture failing then passing manifest/actual-upload metadata regressions;
+  run affected static-publication/workflow tests. No frontend/producer/provider
+  changes or broad unrelated suites.
+- [ ] Document suppressed RUM/JSD injection and the missing JSD browser signal,
+  with existing BIC/WAF/Bot Fight Mode settings retained and possible HTML
+  compression pass-through. Do not claim all bot signals are unchanged.
+- [ ] Obtain independent review and actual new passing CI artifacts before
+  controller-owned metadata publication/cache actions. Verify ordinary public
+  HTML identity and absence of both scripts on apex/www before resuming the
+  analytics reader-before-producer gate.
