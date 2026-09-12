@@ -192,6 +192,16 @@ If the bucket does not exist, the pre-apply upload stops the release. Use the se
 
 The analytics release gates remain load-bearing:
 
+Before pausing or releasing analytics, pass the [regional concurrency
+preflight](analytics.md#regional-concurrency-preflight): regional account limits
+and the current function reservation must support reserved concurrency 1 while
+preserving AWS's unreserved minimum. A Terraform plan or local test does not
+establish that capacity. Insufficient capacity blocks the pause; regional quota
+changes require separate owner approval and possibly AWS Support. API/frontend
+readiness does not establish producer readiness. If already stopped, restoration
+of old code is limited to the [verified pre-write exception](analytics.md#rollback-and-release-closure);
+otherwise retain new code and stop admission.
+
 - A first creation or replacement of the analytics producer requires the public compatible reader check before apply.
 - Ordinary analytics code updates remain downstream of website publication, CloudFront invalidation, and the public reader check.
 - Follow the no-writer, durable-backup, and historical-preservation prerequisites in [analytics operations](./analytics.md) for an analytics cutover. Staging recovery assets does not satisfy or bypass them.

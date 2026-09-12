@@ -90,3 +90,18 @@
   controller-owned metadata publication/cache actions. Verify ordinary public
   HTML identity and absence of both scripts on apex/www before resuming the
   analytics reader-before-producer gate.
+
+
+### Task 2 preflight correction: allocatable reserved concurrency
+
+- [ ] Before either producer handover route pauses admission, read regional
+  GetAccountSettings and current function reservation; verify capacity for 1
+  while preserving AWS's unreserved minimum (normally 100). Total/unreserved
+  quota 10 cannot support this reservation; quota 11 is not presumed enough.
+  Terraform plans/local tests do not prove availability.
+- [ ] Stop before pause if insufficient. Any regional quota request, including
+  1001, needs separate scope/owner approval and may require AWS Support.
+- [ ] If a stopped release cannot proceed, restore prior code/admission only
+  under the documented no-new-execution/write, exact snapshot/public-identity
+  guards. Otherwise retain new code and stop. Record the new handover as blocked,
+  not completed, until controlled/repeated/scheduled verification succeeds.

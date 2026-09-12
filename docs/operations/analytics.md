@@ -101,6 +101,28 @@ The D4 local review archive uses producer source commit `99b0a4e`. Its three mem
 
 The local E5 full check at `3408657` produced `stats-aggregator.zip` (40,351 bytes), SHA256 `b68c47a7774b1d575b910a60d7ceded54cf9d2b9a398334f00476113cbc945ca`, and `contact-lambda.zip` (4,277 bytes), SHA256 `3998f18a127c13ab8292af7100ab5fc36e84c5a069c2b9b16e7b0d7da3b80ce3`. The source/package inputs remain unchanged through E5 fix `7eb35b4` and E6's frontend-only reflow correction. These are **locally checked candidates**, not artifacts from an executed GitHub release. See the [manifest](../reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-release-artifact-manifest.json), [E5 report](../reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-E5-report.md) and [read-only plan review](../reviews/remediation-evidence/2026-09-07-design-ux-remediation/terraform-final-read-only-plan-report.md). A later authorized release must record its own checked run identity and revalidate deployed state.
 
+## Regional concurrency preflight
+
+**Before pausing or releasing the producer**, read regional
+[GetAccountSettings](https://docs.aws.amazon.com/lambda/latest/api/API_GetAccountSettings.html)
+and `GetFunctionConcurrency` for `statsAggregator`. Record
+`AccountLimit.ConcurrentExecutions`, `UnreservedConcurrentExecutions` and its
+current reservation (absent means unreserved). Ensure the required reservation
+of 1 can be allocated while preserving AWS's unreserved minimum, documented as
+[100 units](https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html).
+Account for the function's existing reservation being returned to the pool
+when paused, and other functions' reservations; recheck before transition.
+A region reporting total 10/unreserved 10 cannot reserve one. Do not assume a
+quota of 11 would suffice, or infer capacity from Terraform planning/local tests.
+Service acceptance and reservation readback are still required at activation.
+
+If capacity or applicable limits cannot be established, stop **before pause**.
+Any regional quota increase requires its own scope/owner approval and may need
+AWS Support; requesting 1001 is an account-wide capacity change, not an
+automatically safe site-local remedy. Preserve API/frontend availability and
+report the producer handover blocked rather than completed. This preflight
+applies to both the general and short handover routes below.
+
 ## Approved-release gates
 
 The following commands describe future release work. They have **not** been executed as part of this migration preparation. Use the established authorized AWS environment and keep private outputs out of CI logs and source. Stop on a failed gate; do not rename resources, discard processing records, or substitute fabricated history to proceed.
@@ -163,7 +185,8 @@ only `$LATEST`, no aliases/numbered versions, eight successful daily deliveries
 and no retry/failure evidence. Refresh those facts; historical observations do
 not authorize a later stop by themselves. No step below is claimed executed.
 
-1. Record the release ID, exact checked website/producer digests, current Lambda
+1. First pass the [regional concurrency preflight](#regional-concurrency-preflight).
+   Record the release ID, exact checked website/producer digests, current Lambda
    revision/digest, and recovery operator. Freeze deployment jobs and obtain
    explicit holds from every manual/identity-policy invoker. Refresh more than
    24 hours of EventBridge `InvocationAttempts`, `SuccessfulInvocationAttempts`,
@@ -253,9 +276,24 @@ and [concurrency metrics](https://docs.aws.amazon.com/lambda/latest/dg/monitorin
 
 ## Rollback and release closure
 
+A narrow **pre-write restore** is permitted only before any new producer
+execution/writes: keep admission frozen and concurrency zero; verify exact
+strong full-table snapshot equality and unchanged public payload bytes/version
+against the quiesced checkpoint, no new source/active/chunk/completion records,
+and no new invocation evidence. Stable reads corroborate the retained no-writer
+proof; they do not replace it. Only after those guards pass may the controller
+restore the exact privately preserved old package/configuration, wait for
+successful update and verify its digest, then restore the recorded prior
+reservation/admission state. Recheck snapshot/public identity before reopening.
+Do not change counters or overwrite the table to make equality pass. This
+restores the prior baseline service, not completion of the new handover. If any
+new execution/write or uncertainty exists, retain the new code and keep
+admission stopped; use the ledger-aware repair-forward procedure below.
+
+
 On a failed release, pause new admissions and establish the same proven no-writer window before recovery. Preserve all counters, legacy markers, source metadata/accepted Cloudflare projection, active guard, cursor and chunk/completion proofs, including records created after cutover. Do not reset the table or restore an older table snapshot over new ledger-era counts. A pre-cutover backup supports investigation and evidence-backed recovery planning; it is not permission to erase legitimate subsequent writes.
 
-If necessary, restore only the privately preserved last-good public payload through the approved S3/cache-metadata procedure and approved invalidation/purge, recording its digest and historical observation date. That restores display availability, not ingestion freshness. The reader will age its source status. Keep ingestion paused, repair forward, or deploy a tested version that understands the existing ledger, active guard and source checkpoint. The old marker-first one-file package can duplicate or lose counts against new processing state and must not be re-enabled as a rollback. Missing active input or mismatched proofs require evidence-backed recovery; do not delete the guard, invent completion, reset counts or blanket replay history.
+If necessary, restore only the privately preserved last-good public payload through the approved S3/cache-metadata procedure and approved invalidation/purge, recording its digest and historical observation date. That restores display availability, not ingestion freshness. The reader will age its source status. Keep ingestion paused, repair forward, or deploy a tested version that understands the existing ledger, active guard and source checkpoint. The old marker-first one-file package can duplicate or lose counts against new processing state and must not be re-enabled after new producer writes (the strictly guarded pre-write exception above does not apply). Missing active input or mismatched proofs require evidence-backed recovery; do not delete the guard, invent completion, reset counts or blanket replay history.
 
 | Finding scope | Local status | Required live closure evidence |
 | --- | --- | --- |
