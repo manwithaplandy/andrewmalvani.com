@@ -188,11 +188,17 @@ not authorize a later stop by themselves. No step below is claimed executed.
    concurrency. Do not assume a pre-update queued event will rebind to new
    `$LATEST` code: AWS does not guarantee that. The gate requires newly initiated
    controlled work after the verified update, with prior admissions aged out.
-6. **Do not run Terraform during this stopped interval.** Current desired rule
-   state defaults to `ENABLED`; a refreshed apply would reopen scheduled
-   admission. Set reserved concurrency directly to 1 and confirm it while the
-   rule remains disabled. Watch the first several minutes for an unexpected
-   async invocation before issuing the approved synchronous controlled test.
+6. **Do not run Terraform during this stopped interval.** The pinned AWS 5.50
+   provider preserves the refreshed state of this existing rule when both
+   `state` and `is_enabled` are omitted. The September 12 paused-state plan
+   confirmed a rule no-op with `state=DISABLED` and `is_enabled=false`; do not
+   infer that result from the latest registry text or reuse it without a fresh
+   state-backed plan. The same paused plan changed reserved concurrency from 0
+   to 1, which would reopen execution of the old producer if applied before the
+   checked package is installed. Set reserved concurrency directly to 1 and
+   confirm it while the rule remains disabled. Watch the first several minutes
+   for an unexpected async invocation before issuing the approved synchronous
+   controlled test.
    If one appears, stop and investigate. Verify handler and transport success,
    code digest, source/checkpoint/active-completion consistency, truthful public
    v2 measurements and no current-day false zero. After the first settles, run
@@ -204,9 +210,14 @@ not authorize a later stop by themselves. No step below is claimed executed.
    Terraform plan. Reject schedule/concurrency rollback, checked-code overwrite,
    or any unreviewed analytics action. Apply only the accepted reconciliation
    and recheck rule/target/concurrency/digest. If Terraform must precede testing,
-   a separately reviewed explicit-disabled two-phase design is required; do not
-   use `-target`, ignore drift, or race a re-disable after apply. Observe the next
-   actual scheduled completion and public reader before claiming full handover.
+   install and verify the checked producer first while concurrency remains 0,
+   then require a fresh reviewed plan that keeps the rule disabled and changes
+   no unapproved admission/code boundary. Do not use `-target`, ignore drift,
+   or race a re-disable after apply. The pinned behavior is visible in the
+   provider's [`state`/`is_enabled` schema and diff suppression](https://github.com/hashicorp/terraform-provider-aws/blob/v5.50.0/internal/service/events/rule.go#L83-L136).
+   The latest registry's creation-default wording is not a substitute for the
+   actual refreshed plan. Observe the next actual scheduled completion and
+   public reader before claiming full handover.
 
 Any late upstream retry, async receipt, invocation, unaccounted write, newly
 found invoker, failed update, backup inconsistency, or unexpected event after
