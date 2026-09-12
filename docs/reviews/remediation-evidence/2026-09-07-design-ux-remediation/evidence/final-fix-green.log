@@ -1,0 +1,52 @@
+yarn run v1.22.22
+$ playwright test tests/e2e/graph-access.spec.ts --project=chromium --grep 'cross-page history'
+
+Running 3 tests using 1 worker
+
+  ✓  1 [chromium] › tests/e2e/graph-access.spec.ts:305:7 › cross-page history restores graph after initial selection (1.0s)
+  ✘  2 [chromium] › tests/e2e/graph-access.spec.ts:305:7 › cross-page history restores graph after changed selection (5.7s)
+  ✓  3 [chromium] › tests/e2e/graph-access.spec.ts:305:7 › cross-page history restores graph after changed view (2.5s)
+
+
+  1) [chromium] › tests/e2e/graph-access.spec.ts:305:7 › cross-page history restores graph after changed selection 
+
+    Error: expect(page).toHaveURL(expected) failed
+
+    Expected: "http://127.0.0.1:3100/graph?view=list#node=job%3Aga-lead-ai-ml-engineer"
+    Received: "http://127.0.0.1:3100/graph?view=list"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveURL" with timeout 5000ms
+        14 × locator resolved to <html lang="en" data-history-journey="graph-resume">…</html>
+           - unexpected value "http://127.0.0.1:3100/graph?view=list"
+
+
+      352 |         await expect(list(page)).toHaveCount(0);
+      353 |       } else {
+    > 354 |         await expect(page).toHaveURL(initial);
+          |                            ^
+      355 |         await expect(list(page).getByRole('button', {name: 'Lead AI/ML Engineer', exact: true})).toHaveAttribute(
+      356 |           'aria-expanded',
+      357 |           'true',
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/graph-access.spec.ts:354:28
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-graph-access-cross-pag-40b0b-aph-after-changed-selection-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-graph-access-cross-pag-40b0b-aph-after-changed-selection-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-graph-access-cross-pag-40b0b-aph-after-changed-selection-chromium/trace.zip
+    Usage:
+
+        yarn playwright show-trace test-results/e2e-graph-access-cross-pag-40b0b-aph-after-changed-selection-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/e2e/graph-access.spec.ts:305:7 › cross-page history restores graph after changed selection 
+  2 passed (11.2s)
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

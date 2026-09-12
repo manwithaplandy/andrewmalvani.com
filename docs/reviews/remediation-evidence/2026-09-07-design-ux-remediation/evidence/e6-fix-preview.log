@@ -1,0 +1,833 @@
+ INFO  Accepting connections at http://127.0.0.1:3104
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 GET /
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 Returned 200 in 10 ms
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 GET /_next/static/media/header-background.ecd47f74.webp
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 GET /_next/static/css/ccca05f628764c6b.css
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 GET /_next/static/media/e4af272ccee01ff0-s.p.woff2
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 Returned 200 in 3 ms
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 Returned 200 in 3 ms
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 GET /_next/static/chunks/webpack-a64457ed7099ea9f.js
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 GET /_next/static/chunks/framework-66d32731bdd20e83.js
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 GET /_next/static/chunks/main-5d77cecfe18a5947.js
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 GET /_next/static/chunks/pages/_app-45be56fe50b3f6bb.js
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 GET /_next/static/chunks/103-e67a79d533151b0a.js
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 GET /_next/static/chunks/252-beaeed46666a31b9.js
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 GET /_next/static/chunks/143-f628994157963907.js
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 Returned 200 in 3 ms
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 GET /_next/static/chunks/pages/index-7aac1198a921f751.js
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 GET /_next/static/4n8gkWviStBUmGAyAH63i/_buildManifest.js
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 GET /_next/static/4n8gkWviStBUmGAyAH63i/_ssgManifest.js
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 GET /_next/static/media/profilepic.5a215497.webp
+ HTTP  9/8/2026 7:25:30 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:25:31 AM 127.0.0.1 GET /_next/static/media/polyscannr.7161f1e0.webp
+ HTTP  9/8/2026 7:25:31 AM 127.0.0.1 GET /_next/static/media/rolefit.6f221277.webp
+ HTTP  9/8/2026 7:25:31 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:25:31 AM 127.0.0.1 GET /_next/static/chunks/pages/stats-12130aa00bf791aa.js
+ HTTP  9/8/2026 7:25:31 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:25:31 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:25:31 AM 127.0.0.1 GET /_next/static/chunks/pages/stats-12130aa00bf791aa.js
+ HTTP  9/8/2026 7:25:31 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:25:33 AM 127.0.0.1 GET /_next/static/media/retirement_site.a64e0c3d.webp
+ HTTP  9/8/2026 7:25:33 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 GET /
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 GET /_next/static/media/header-background.ecd47f74.webp
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 GET /_next/static/css/ccca05f628764c6b.css
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 GET /_next/static/media/e4af272ccee01ff0-s.p.woff2
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 GET /_next/static/chunks/webpack-a64457ed7099ea9f.js
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 GET /_next/static/chunks/framework-66d32731bdd20e83.js
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 GET /_next/static/chunks/main-5d77cecfe18a5947.js
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 GET /_next/static/chunks/pages/_app-45be56fe50b3f6bb.js
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 GET /_next/static/chunks/103-e67a79d533151b0a.js
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 GET /_next/static/chunks/143-f628994157963907.js
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 GET /_next/static/chunks/252-beaeed46666a31b9.js
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 GET /_next/static/chunks/pages/index-7aac1198a921f751.js
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 GET /_next/static/4n8gkWviStBUmGAyAH63i/_buildManifest.js
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 GET /_next/static/4n8gkWviStBUmGAyAH63i/_ssgManifest.js
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 GET /_next/static/media/profilepic.5a215497.webp
+ HTTP  9/8/2026 7:27:30 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 GET /
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 Returned 200 in 13 ms
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 GET /_next/static/media/header-background.ecd47f74.webp
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 GET /_next/static/css/1b939f25ecdc5b1c.css
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 GET /_next/static/media/e4af272ccee01ff0-s.p.woff2
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 Returned 200 in 3 ms
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 Returned 200 in 3 ms
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 Returned 200 in 5 ms
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 GET /_next/static/chunks/webpack-d53b640be244d040.js
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 GET /_next/static/chunks/framework-66d32731bdd20e83.js
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 GET /_next/static/chunks/main-5d77cecfe18a5947.js
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 GET /_next/static/chunks/pages/_app-45be56fe50b3f6bb.js
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 Returned 200 in 3 ms
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 GET /_next/static/chunks/103-e67a79d533151b0a.js
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 GET /_next/static/chunks/143-f628994157963907.js
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 Returned 200 in 3 ms
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 GET /_next/static/chunks/252-beaeed46666a31b9.js
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 GET /_next/static/chunks/pages/index-d970b3465c2179bb.js
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 Returned 200 in 7 ms
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 Returned 200 in 6 ms
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 Returned 200 in 5 ms
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_buildManifest.js
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_ssgManifest.js
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 Returned 200 in 3 ms
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 GET /_next/static/media/profilepic.5a215497.webp
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 GET /_next/static/chunks/9-7a729d66e2ccf9d2.js
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 GET /_next/static/chunks/pages/graph-efa04f475b761db6.js
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 GET /_next/static/chunks/pages/stats-12130aa00bf791aa.js
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 GET /_next/static/chunks/pages/stats-12130aa00bf791aa.js
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 GET /_next/static/chunks/9-7a729d66e2ccf9d2.js
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 GET /_next/static/chunks/pages/graph-efa04f475b761db6.js
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:32 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:33 AM 127.0.0.1 GET /_next/static/media/aws_saa.f21a9296.webp
+ HTTP  9/8/2026 7:37:33 AM 127.0.0.1 GET /_next/static/media/terraform-badge-mini-associate.1419a397.svg
+ HTTP  9/8/2026 7:37:33 AM 127.0.0.1 GET /_next/static/media/azure_ai_eng.e718d2e4.svg
+ HTTP  9/8/2026 7:37:33 AM 127.0.0.1 GET /_next/static/media/GitHub__headpic.45932886.webp
+ HTTP  9/8/2026 7:37:33 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:33 AM 127.0.0.1 GET /_next/static/media/website-diagram.8738b5b9.webp
+ HTTP  9/8/2026 7:37:33 AM 127.0.0.1 GET /_next/static/media/retirement_site.a64e0c3d.webp
+ HTTP  9/8/2026 7:37:33 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:37:33 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:37:33 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:37:33 AM 127.0.0.1 Returned 200 in 3 ms
+ HTTP  9/8/2026 7:37:33 AM 127.0.0.1 Returned 200 in 3 ms
+ HTTP  9/8/2026 7:37:33 AM 127.0.0.1 GET /_next/static/media/polyscannr.7161f1e0.webp
+ HTTP  9/8/2026 7:37:33 AM 127.0.0.1 GET /_next/static/media/rolefit.6f221277.webp
+ HTTP  9/8/2026 7:37:33 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:37:33 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 GET /
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 GET /_next/static/media/header-background.ecd47f74.webp
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 GET /_next/static/css/1b939f25ecdc5b1c.css
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 GET /_next/static/media/e4af272ccee01ff0-s.p.woff2
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 GET /_next/static/chunks/webpack-d53b640be244d040.js
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 GET /_next/static/chunks/framework-66d32731bdd20e83.js
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 GET /_next/static/chunks/main-5d77cecfe18a5947.js
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 GET /_next/static/chunks/pages/_app-45be56fe50b3f6bb.js
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 GET /_next/static/chunks/103-e67a79d533151b0a.js
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 GET /_next/static/chunks/143-f628994157963907.js
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 GET /_next/static/chunks/252-beaeed46666a31b9.js
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 GET /_next/static/chunks/pages/index-d970b3465c2179bb.js
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_buildManifest.js
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_ssgManifest.js
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 GET /_next/static/media/profilepic.5a215497.webp
+ HTTP  9/8/2026 7:37:34 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 GET /_next/static/media/aws_saa.f21a9296.webp
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 GET /_next/static/media/terraform-badge-mini-associate.1419a397.svg
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 GET /_next/static/media/azure_ai_eng.e718d2e4.svg
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 GET /_next/static/media/GitHub__headpic.45932886.webp
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 GET /_next/static/media/website-diagram.8738b5b9.webp
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 GET /_next/static/media/retirement_site.a64e0c3d.webp
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 GET /_next/static/media/polyscannr.7161f1e0.webp
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 GET /_next/static/media/rolefit.6f221277.webp
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 GET /_next/static/chunks/pages/stats-12130aa00bf791aa.js
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 GET /_next/static/chunks/pages/stats-12130aa00bf791aa.js
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 GET /
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 GET /_next/static/media/header-background.ecd47f74.webp
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 GET /_next/static/css/1b939f25ecdc5b1c.css
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 GET /_next/static/media/e4af272ccee01ff0-s.p.woff2
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 GET /_next/static/chunks/webpack-d53b640be244d040.js
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 GET /_next/static/chunks/framework-66d32731bdd20e83.js
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 GET /_next/static/chunks/main-5d77cecfe18a5947.js
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 GET /_next/static/chunks/pages/_app-45be56fe50b3f6bb.js
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 GET /_next/static/chunks/103-e67a79d533151b0a.js
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 GET /_next/static/chunks/143-f628994157963907.js
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 GET /_next/static/chunks/252-beaeed46666a31b9.js
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 GET /_next/static/chunks/pages/index-d970b3465c2179bb.js
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_buildManifest.js
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_ssgManifest.js
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 GET /_next/static/media/profilepic.5a215497.webp
+ HTTP  9/8/2026 7:37:35 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:36 AM 127.0.0.1 GET /_next/static/media/aws_saa.f21a9296.webp
+ HTTP  9/8/2026 7:37:36 AM 127.0.0.1 GET /_next/static/media/terraform-badge-mini-associate.1419a397.svg
+ HTTP  9/8/2026 7:37:36 AM 127.0.0.1 GET /_next/static/media/azure_ai_eng.e718d2e4.svg
+ HTTP  9/8/2026 7:37:36 AM 127.0.0.1 GET /_next/static/media/GitHub__headpic.45932886.webp
+ HTTP  9/8/2026 7:37:36 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:36 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:36 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:36 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:36 AM 127.0.0.1 GET /_next/static/media/website-diagram.8738b5b9.webp
+ HTTP  9/8/2026 7:37:36 AM 127.0.0.1 GET /_next/static/media/retirement_site.a64e0c3d.webp
+ HTTP  9/8/2026 7:37:36 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:36 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:36 AM 127.0.0.1 GET /_next/static/media/polyscannr.7161f1e0.webp
+ HTTP  9/8/2026 7:37:36 AM 127.0.0.1 GET /_next/static/media/rolefit.6f221277.webp
+ HTTP  9/8/2026 7:37:36 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:36 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:36 AM 127.0.0.1 GET /_next/static/chunks/pages/stats-12130aa00bf791aa.js
+ HTTP  9/8/2026 7:37:36 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 GET /_next/static/chunks/pages/stats-12130aa00bf791aa.js
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 GET /
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 GET /_next/static/media/header-background.ecd47f74.webp
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 GET /_next/static/css/1b939f25ecdc5b1c.css
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 GET /_next/static/media/e4af272ccee01ff0-s.p.woff2
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 GET /_next/static/chunks/webpack-d53b640be244d040.js
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 GET /_next/static/chunks/framework-66d32731bdd20e83.js
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 GET /_next/static/chunks/main-5d77cecfe18a5947.js
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 GET /_next/static/chunks/pages/_app-45be56fe50b3f6bb.js
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 GET /_next/static/chunks/103-e67a79d533151b0a.js
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 GET /_next/static/chunks/143-f628994157963907.js
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 GET /_next/static/chunks/252-beaeed46666a31b9.js
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 GET /_next/static/chunks/pages/index-d970b3465c2179bb.js
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_buildManifest.js
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_ssgManifest.js
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 GET /_next/static/media/profilepic.5a215497.webp
+ HTTP  9/8/2026 7:37:37 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/media/aws_saa.f21a9296.webp
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/media/terraform-badge-mini-associate.1419a397.svg
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/media/azure_ai_eng.e718d2e4.svg
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/media/GitHub__headpic.45932886.webp
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/media/website-diagram.8738b5b9.webp
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/media/retirement_site.a64e0c3d.webp
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/media/polyscannr.7161f1e0.webp
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/media/rolefit.6f221277.webp
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/chunks/pages/stats-12130aa00bf791aa.js
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/chunks/pages/stats-12130aa00bf791aa.js
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/media/header-background.ecd47f74.webp
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/media/e4af272ccee01ff0-s.p.woff2
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/css/1b939f25ecdc5b1c.css
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/chunks/webpack-d53b640be244d040.js
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/chunks/framework-66d32731bdd20e83.js
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/chunks/main-5d77cecfe18a5947.js
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/chunks/pages/_app-45be56fe50b3f6bb.js
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/chunks/103-e67a79d533151b0a.js
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/chunks/143-f628994157963907.js
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/chunks/252-beaeed46666a31b9.js
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/chunks/pages/index-d970b3465c2179bb.js
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_buildManifest.js
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_ssgManifest.js
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/media/profilepic.5a215497.webp
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/chunks/9-7a729d66e2ccf9d2.js
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/chunks/pages/graph-efa04f475b761db6.js
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/chunks/pages/stats-12130aa00bf791aa.js
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/chunks/pages/stats-12130aa00bf791aa.js
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/chunks/9-7a729d66e2ccf9d2.js
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 GET /_next/static/chunks/pages/graph-efa04f475b761db6.js
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:38 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:39 AM 127.0.0.1 GET /_next/static/media/aws_saa.f21a9296.webp
+ HTTP  9/8/2026 7:37:39 AM 127.0.0.1 GET /_next/static/media/terraform-badge-mini-associate.1419a397.svg
+ HTTP  9/8/2026 7:37:39 AM 127.0.0.1 GET /_next/static/media/azure_ai_eng.e718d2e4.svg
+ HTTP  9/8/2026 7:37:39 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:37:39 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:39 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:39 AM 127.0.0.1 GET /_next/static/media/GitHub__headpic.45932886.webp
+ HTTP  9/8/2026 7:37:39 AM 127.0.0.1 GET /_next/static/media/website-diagram.8738b5b9.webp
+ HTTP  9/8/2026 7:37:39 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:39 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:39 AM 127.0.0.1 GET /_next/static/media/retirement_site.a64e0c3d.webp
+ HTTP  9/8/2026 7:37:39 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:39 AM 127.0.0.1 GET /_next/static/media/polyscannr.7161f1e0.webp
+ HTTP  9/8/2026 7:37:39 AM 127.0.0.1 GET /_next/static/media/rolefit.6f221277.webp
+ HTTP  9/8/2026 7:37:39 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:39 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 GET /
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 GET /_next/static/media/header-background.ecd47f74.webp
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 GET /_next/static/css/1b939f25ecdc5b1c.css
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 GET /_next/static/media/e4af272ccee01ff0-s.p.woff2
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 GET /_next/static/chunks/webpack-d53b640be244d040.js
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 GET /_next/static/chunks/framework-66d32731bdd20e83.js
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 GET /_next/static/chunks/main-5d77cecfe18a5947.js
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 GET /_next/static/chunks/pages/_app-45be56fe50b3f6bb.js
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 GET /_next/static/chunks/103-e67a79d533151b0a.js
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 GET /_next/static/chunks/143-f628994157963907.js
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 GET /_next/static/chunks/252-beaeed46666a31b9.js
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 GET /_next/static/chunks/pages/index-d970b3465c2179bb.js
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_buildManifest.js
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_ssgManifest.js
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 GET /_next/static/media/profilepic.5a215497.webp
+ HTTP  9/8/2026 7:37:40 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:41 AM 127.0.0.1 GET /_next/static/media/aws_saa.f21a9296.webp
+ HTTP  9/8/2026 7:37:41 AM 127.0.0.1 GET /_next/static/media/terraform-badge-mini-associate.1419a397.svg
+ HTTP  9/8/2026 7:37:41 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:41 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:41 AM 127.0.0.1 GET /_next/static/media/azure_ai_eng.e718d2e4.svg
+ HTTP  9/8/2026 7:37:41 AM 127.0.0.1 GET /_next/static/media/GitHub__headpic.45932886.webp
+ HTTP  9/8/2026 7:37:41 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:41 AM 127.0.0.1 GET /_next/static/media/website-diagram.8738b5b9.webp
+ HTTP  9/8/2026 7:37:41 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:41 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:41 AM 127.0.0.1 GET /_next/static/media/polyscannr.7161f1e0.webp
+ HTTP  9/8/2026 7:37:41 AM 127.0.0.1 GET /_next/static/media/rolefit.6f221277.webp
+ HTTP  9/8/2026 7:37:41 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:41 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:41 AM 127.0.0.1 GET /_next/static/chunks/pages/stats-12130aa00bf791aa.js
+ HTTP  9/8/2026 7:37:41 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:41 AM 127.0.0.1 GET /_next/static/chunks/pages/stats-12130aa00bf791aa.js
+ HTTP  9/8/2026 7:37:41 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 GET /
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 GET /_next/static/media/header-background.ecd47f74.webp
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 GET /_next/static/media/e4af272ccee01ff0-s.p.woff2
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 GET /_next/static/css/1b939f25ecdc5b1c.css
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 GET /_next/static/chunks/webpack-d53b640be244d040.js
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 GET /_next/static/chunks/framework-66d32731bdd20e83.js
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 GET /_next/static/chunks/main-5d77cecfe18a5947.js
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 GET /_next/static/chunks/pages/_app-45be56fe50b3f6bb.js
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 GET /_next/static/chunks/103-e67a79d533151b0a.js
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 GET /_next/static/chunks/143-f628994157963907.js
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 GET /_next/static/chunks/252-beaeed46666a31b9.js
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 GET /_next/static/chunks/pages/index-d970b3465c2179bb.js
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_buildManifest.js
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_ssgManifest.js
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 GET /_next/static/media/profilepic.5a215497.webp
+ HTTP  9/8/2026 7:37:42 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 GET /_next/static/media/aws_saa.f21a9296.webp
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 GET /_next/static/media/terraform-badge-mini-associate.1419a397.svg
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 GET /_next/static/media/azure_ai_eng.e718d2e4.svg
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 GET /_next/static/media/GitHub__headpic.45932886.webp
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 GET /_next/static/media/website-diagram.8738b5b9.webp
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 GET /_next/static/media/retirement_site.a64e0c3d.webp
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 GET /_next/static/media/polyscannr.7161f1e0.webp
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 GET /_next/static/media/rolefit.6f221277.webp
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 GET /_next/static/chunks/pages/stats-12130aa00bf791aa.js
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 GET /_next/static/chunks/pages/stats-12130aa00bf791aa.js
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 GET /
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 GET /_next/static/media/header-background.ecd47f74.webp
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 GET /_next/static/css/1b939f25ecdc5b1c.css
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 GET /_next/static/media/e4af272ccee01ff0-s.p.woff2
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 GET /_next/static/chunks/webpack-d53b640be244d040.js
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 GET /_next/static/chunks/framework-66d32731bdd20e83.js
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 GET /_next/static/chunks/main-5d77cecfe18a5947.js
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 GET /_next/static/chunks/pages/_app-45be56fe50b3f6bb.js
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 GET /_next/static/chunks/103-e67a79d533151b0a.js
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 GET /_next/static/chunks/143-f628994157963907.js
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 GET /_next/static/chunks/252-beaeed46666a31b9.js
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 GET /_next/static/chunks/pages/index-d970b3465c2179bb.js
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_buildManifest.js
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_ssgManifest.js
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 GET /_next/static/media/profilepic.5a215497.webp
+ HTTP  9/8/2026 7:37:43 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/media/aws_saa.f21a9296.webp
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/media/terraform-badge-mini-associate.1419a397.svg
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/media/azure_ai_eng.e718d2e4.svg
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/media/GitHub__headpic.45932886.webp
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/media/website-diagram.8738b5b9.webp
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/media/retirement_site.a64e0c3d.webp
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/media/polyscannr.7161f1e0.webp
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/media/rolefit.6f221277.webp
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/chunks/pages/stats-12130aa00bf791aa.js
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/chunks/pages/stats-12130aa00bf791aa.js
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/media/header-background.ecd47f74.webp
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/css/1b939f25ecdc5b1c.css
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/media/e4af272ccee01ff0-s.p.woff2
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/chunks/webpack-d53b640be244d040.js
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/chunks/framework-66d32731bdd20e83.js
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/chunks/main-5d77cecfe18a5947.js
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/chunks/pages/_app-45be56fe50b3f6bb.js
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/chunks/103-e67a79d533151b0a.js
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/chunks/143-f628994157963907.js
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/chunks/252-beaeed46666a31b9.js
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/chunks/pages/index-d970b3465c2179bb.js
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_buildManifest.js
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_ssgManifest.js
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/media/profilepic.5a215497.webp
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/media/aws_saa.f21a9296.webp
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/media/terraform-badge-mini-associate.1419a397.svg
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/media/azure_ai_eng.e718d2e4.svg
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/media/GitHub__headpic.45932886.webp
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/media/website-diagram.8738b5b9.webp
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/media/retirement_site.a64e0c3d.webp
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/media/polyscannr.7161f1e0.webp
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 GET /_next/static/media/rolefit.6f221277.webp
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:45 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 GET /graph?view=list
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 GET /_next/static/media/e4af272ccee01ff0-s.p.woff2
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 GET /_next/static/css/1b939f25ecdc5b1c.css
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 GET /_next/static/chunks/webpack-d53b640be244d040.js
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 GET /_next/static/chunks/framework-66d32731bdd20e83.js
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 GET /_next/static/chunks/main-5d77cecfe18a5947.js
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 GET /_next/static/chunks/pages/_app-45be56fe50b3f6bb.js
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 GET /_next/static/chunks/103-e67a79d533151b0a.js
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 GET /_next/static/chunks/9-7a729d66e2ccf9d2.js
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 GET /_next/static/chunks/252-beaeed46666a31b9.js
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 GET /_next/static/chunks/pages/graph-efa04f475b761db6.js
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_buildManifest.js
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_ssgManifest.js
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 GET /_next/static/chunks/143-f628994157963907.js
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 GET /_next/static/chunks/pages/index-d970b3465c2179bb.js
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 GET /_next/static/chunks/143-f628994157963907.js
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 GET /_next/static/chunks/pages/index-d970b3465c2179bb.js
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:46 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:47 AM 127.0.0.1 GET /_next/static/chunks/712565b9.3cc5b1cd1f7ad2d9.js
+ HTTP  9/8/2026 7:37:47 AM 127.0.0.1 GET /_next/static/chunks/fb7d5399.0d7580d66f556a8a.js
+ HTTP  9/8/2026 7:37:47 AM 127.0.0.1 GET /_next/static/chunks/2d36dd80.b6d992c52aa9b34f.js
+ HTTP  9/8/2026 7:37:47 AM 127.0.0.1 GET /_next/static/chunks/14.10252f99444f026a.js
+ HTTP  9/8/2026 7:37:47 AM 127.0.0.1 GET /_next/static/chunks/354.dde059e80c4baaba.js
+ HTTP  9/8/2026 7:37:47 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:47 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:37:47 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:37:47 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:37:47 AM 127.0.0.1 Returned 200 in 3 ms
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 GET /stats
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 Returned 200 in 10 ms
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 GET /_next/static/media/e4af272ccee01ff0-s.p.woff2
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 GET /_next/static/css/1b939f25ecdc5b1c.css
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 GET /_next/static/chunks/webpack-d53b640be244d040.js
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 GET /_next/static/chunks/framework-66d32731bdd20e83.js
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 GET /_next/static/chunks/main-5d77cecfe18a5947.js
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 GET /_next/static/chunks/pages/_app-45be56fe50b3f6bb.js
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 GET /_next/static/chunks/103-e67a79d533151b0a.js
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 GET /_next/static/chunks/252-beaeed46666a31b9.js
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 GET /_next/static/chunks/pages/stats-12130aa00bf791aa.js
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_buildManifest.js
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_ssgManifest.js
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 GET /_next/static/chunks/143-f628994157963907.js
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 GET /_next/static/chunks/pages/index-d970b3465c2179bb.js
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 GET /_next/static/chunks/9-7a729d66e2ccf9d2.js
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 GET /_next/static/chunks/pages/graph-efa04f475b761db6.js
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:57 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 GET /_next/static/chunks/143-f628994157963907.js
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 GET /_next/static/chunks/pages/index-d970b3465c2179bb.js
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 GET /_next/static/chunks/9-7a729d66e2ccf9d2.js
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 GET /_next/static/chunks/pages/graph-efa04f475b761db6.js
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 GET /e6-final-missing
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 Returned 404 in 2 ms
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 GET /_next/static/media/e4af272ccee01ff0-s.p.woff2
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 GET /_next/static/css/1b939f25ecdc5b1c.css
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 GET /_next/static/chunks/webpack-d53b640be244d040.js
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 GET /_next/static/chunks/framework-66d32731bdd20e83.js
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 GET /_next/static/chunks/main-5d77cecfe18a5947.js
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 GET /_next/static/chunks/pages/_app-45be56fe50b3f6bb.js
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 GET /_next/static/chunks/103-e67a79d533151b0a.js
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 GET /_next/static/chunks/252-beaeed46666a31b9.js
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 GET /_next/static/chunks/pages/404-326ca81b3b179ea1.js
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_buildManifest.js
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_ssgManifest.js
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 GET /_next/static/chunks/143-f628994157963907.js
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 GET /_next/static/chunks/pages/index-d970b3465c2179bb.js
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 GET /_next/static/chunks/pages/stats-12130aa00bf791aa.js
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 GET /_next/static/chunks/143-f628994157963907.js
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 GET /_next/static/chunks/pages/index-d970b3465c2179bb.js
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 GET /_next/static/chunks/pages/stats-12130aa00bf791aa.js
+ HTTP  9/8/2026 7:37:58 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 3 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/media/header-background.ecd47f74.webp
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/css/1b939f25ecdc5b1c.css
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/media/e4af272ccee01ff0-s.p.woff2
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/chunks/webpack-d53b640be244d040.js
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/chunks/framework-66d32731bdd20e83.js
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/chunks/main-5d77cecfe18a5947.js
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/chunks/143-f628994157963907.js
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/chunks/pages/_app-45be56fe50b3f6bb.js
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/chunks/103-e67a79d533151b0a.js
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/chunks/252-beaeed46666a31b9.js
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/chunks/pages/index-d970b3465c2179bb.js
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_buildManifest.js
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_ssgManifest.js
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/media/profilepic.5a215497.webp
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/media/polyscannr.7161f1e0.webp
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/media/rolefit.6f221277.webp
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/media/header-background.ecd47f74.webp
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/media/e4af272ccee01ff0-s.p.woff2
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/css/1b939f25ecdc5b1c.css
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/chunks/webpack-d53b640be244d040.js
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/chunks/framework-66d32731bdd20e83.js
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/chunks/main-5d77cecfe18a5947.js
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/chunks/pages/_app-45be56fe50b3f6bb.js
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/chunks/103-e67a79d533151b0a.js
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/chunks/143-f628994157963907.js
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/chunks/252-beaeed46666a31b9.js
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/chunks/pages/index-d970b3465c2179bb.js
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_buildManifest.js
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_ssgManifest.js
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 GET /_next/static/media/profilepic.5a215497.webp
+ HTTP  9/8/2026 7:40:54 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/media/polyscannr.7161f1e0.webp
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/media/rolefit.6f221277.webp
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/media/retirement_site.a64e0c3d.webp
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/media/header-background.ecd47f74.webp
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/css/1b939f25ecdc5b1c.css
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/media/e4af272ccee01ff0-s.p.woff2
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/chunks/webpack-d53b640be244d040.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/chunks/framework-66d32731bdd20e83.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/chunks/main-5d77cecfe18a5947.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/chunks/pages/_app-45be56fe50b3f6bb.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/chunks/103-e67a79d533151b0a.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/chunks/143-f628994157963907.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/chunks/252-beaeed46666a31b9.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/chunks/pages/index-d970b3465c2179bb.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_buildManifest.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_ssgManifest.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/media/profilepic.5a215497.webp
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/media/retirement_site.a64e0c3d.webp
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/media/polyscannr.7161f1e0.webp
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/media/rolefit.6f221277.webp
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /graph?view=list
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/media/e4af272ccee01ff0-s.p.woff2
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/css/1b939f25ecdc5b1c.css
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/chunks/webpack-d53b640be244d040.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/chunks/framework-66d32731bdd20e83.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/chunks/main-5d77cecfe18a5947.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/chunks/pages/_app-45be56fe50b3f6bb.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/chunks/103-e67a79d533151b0a.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/chunks/9-7a729d66e2ccf9d2.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/chunks/252-beaeed46666a31b9.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/chunks/pages/graph-efa04f475b761db6.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_buildManifest.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_ssgManifest.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/chunks/143-f628994157963907.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/chunks/pages/index-d970b3465c2179bb.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/chunks/143-f628994157963907.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/chunks/pages/index-d970b3465c2179bb.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/chunks/712565b9.3cc5b1cd1f7ad2d9.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/chunks/fb7d5399.0d7580d66f556a8a.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/chunks/2d36dd80.b6d992c52aa9b34f.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/chunks/14.10252f99444f026a.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 GET /_next/static/chunks/354.dde059e80c4baaba.js
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:40:55 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 GET /
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 GET /_next/static/media/header-background.ecd47f74.webp
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 GET /_next/static/css/1b939f25ecdc5b1c.css
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 GET /_next/static/media/e4af272ccee01ff0-s.p.woff2
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 GET /_next/static/chunks/webpack-d53b640be244d040.js
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 GET /_next/static/chunks/framework-66d32731bdd20e83.js
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 GET /_next/static/chunks/main-5d77cecfe18a5947.js
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 GET /_next/static/chunks/pages/_app-45be56fe50b3f6bb.js
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 GET /_next/static/chunks/103-e67a79d533151b0a.js
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 GET /_next/static/chunks/143-f628994157963907.js
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 GET /_next/static/chunks/252-beaeed46666a31b9.js
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 GET /_next/static/chunks/pages/index-d970b3465c2179bb.js
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 Returned 200 in 0 ms
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_buildManifest.js
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 GET /_next/static/zaIyqu1cujxH24VhLhgOK/_ssgManifest.js
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 GET /_next/static/media/profilepic.5a215497.webp
+ HTTP  9/8/2026 7:46:13 AM 127.0.0.1 Returned 200 in 0 ms
+
+ INFO  Gracefully shutting down. Please wait...

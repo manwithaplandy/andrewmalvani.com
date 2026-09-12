@@ -3,93 +3,70 @@ name: Plan and Deploy
 on:
   push:
     branches:
-      - 'main'
+      - main
+  workflow_dispatch:
+    inputs:
+      analytics_release_approved:
+        description: No-writer window and durable quiesced backup are verified for this analytics release
+        required: true
+        type: boolean
+        default: false
+      analytics_release_record:
+        description: Nonsecret approved analytics release record identifier
+        required: false
+        type: string
 
-# Required for OIDC: jobs request a short-lived token to assume the AWS role.
 permissions:
-  id-token: write
   contents: read
 
+defaults:
+  run:
+    # Keep command substitutions and diagnostic pipelines fail closed.
+    shell: bash
+
+# A checked artifact belongs to one complete release. Never let two runs mix
+# candidate archives, plans, website bytes or producer versions.
+concurrency:
+  group: production-release
+  cancel-in-progress: false
+
 jobs:
-  terraform-plan:
-    name: 'Terraform plan'
+  verify-release:
+    name: Verify reviewed source and artifacts
+    uses: ./.github/workflows/checks.yml
+    permissions:
+      contents: read
+
+  deploy-infrastructure:
+    name: Plan and apply checked infrastructure
+    needs: verify-release
     runs-on: ubuntu-latest
-    environment: "AWS General"
-    # email_address has no default (kept out of source); supply it via secret.
-    # cloudflare_zone_id comes from a repo var; if unset, the stats aggregator
-    # simply skips the Cloudflare uniques/countries query.
+    environment: AWS General
+    permissions:
+      contents: read
+      id-token: write
+    outputs:
+      stats_code_change: ${{ steps.stats-code.outputs.changed }}
     env:
       TF_VAR_email_address: ${{ secrets.EMAIL_ADDRESS }}
       TF_VAR_cloudflare_zone_id: ${{ vars.CLOUDFLARE_ZONE_ID }}
     steps:
-      - name: Checkout
+      - name: Checkout reviewed source
         uses: actions/checkout@v6
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v4
 
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v6
-        with:
-          role-to-assume: arn:aws:iam::870140981796:role/github-deploy
-          aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
-
-      - name: Setup Node.js environment
+      - name: Setup Node.js 22
         uses: actions/setup-node@v6
         with:
           node-version: '22'
-          cache: 'yarn'
+          cache: yarn
 
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-
-      - name: Lint
-        run: yarn lint
-
-      - name: Build
-        run: yarn build
-
-      - name: Upload web assets
-        uses: actions/upload-artifact@v7
-        with:
-          name: out
-          path: out
-
-      - name: Terraform fmt
-        run: terraform -chdir=terraform fmt -check
-
-      - name: Terraform Init
-        run: terraform -chdir=terraform init -input=false
-
-      - name: Terraform refresh
-        run: terraform -chdir=terraform refresh -input=false
-
-      - name: Terraform Plan
-        run: terraform -chdir=terraform plan -input=false -out=plan.tfplan
-
-      - name: Upload Plan
-        uses: actions/upload-artifact@v7
-        with:
-          name: plan
-          path: terraform/plan.tfplan
-
-  terraform-apply:
-    name: 'Terraform Apply'
-    needs: terraform-plan
-    runs-on: ubuntu-latest
-    environment: "AWS General"
-    # email_address has no default (kept out of source); supply it via secret.
-    # cloudflare_zone_id comes from a repo var; if unset, the stats aggregator
-    # simply skips the Cloudflare uniques/countries query.
-    env:
-      TF_VAR_email_address: ${{ secrets.EMAIL_ADDRESS }}
-      TF_VAR_cloudflare_zone_id: ${{ vars.CLOUDFLARE_ZONE_ID }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v4
+      - name: Install release gate dependencies
+        run: |
+          npm install --global yarn@1.22.22
+          yarn install --frozen-lockfile
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v6
@@ -97,104 +74,280 @@ jobs:
           role-to-assume: arn:aws:iam::870140981796:role/github-deploy
           aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
 
-      - name: Terraform Init
-        run: terraform -chdir=terraform init -input=false
-
-      - name: Download Plan
+      - name: Download checked website
         uses: actions/download-artifact@v8
         with:
-          name: plan
-          path: terraform/plan
+          name: checked-web
+          path: out
 
-      # data.archive_file writes these zips at *plan* time (previous job's
-      # workspace), but the provider reads them from disk when creating a
-      # Lambda at *apply* time — recreate them here so a first-time function
-      # create doesn't fail. Code updates still flow through update-lambda-code.
-      - name: Prepare Lambda bootstrap zips
+      - name: Download checked Lambda archives
+        uses: actions/download-artifact@v8
+        with:
+          name: checked-lambda-archives
+          path: release-artifacts
+
+      - name: Download checked website manifest
+        uses: actions/download-artifact@v8
+        with:
+          name: checked-site-manifest
+          path: checked-manifest
+
+      - name: Verify and stage exact checked artifacts
         run: |
-          (cd sns_publish_lambda && zip ../terraform/lambda_function.zip lambda_function.py)
-          (cd stats_aggregator && zip ../terraform/stats_aggregator.zip lambda_function.py)
+          python3 scripts/package_release_artifacts.py verify --output-dir release-artifacts
+          node scripts/publish_static_site.mjs manifest --artifact-dir out --manifest "$RUNNER_TEMP/site-manifest.json"
+          cmp checked-manifest/checked-site-manifest.json "$RUNNER_TEMP/site-manifest.json"
+          cp release-artifacts/contact-lambda.zip terraform/lambda_function.zip
+          cp release-artifacts/stats-aggregator.zip terraform/stats_aggregator.zip
 
-      - name: Terraform Apply
-        run: terraform -chdir=terraform apply "plan/plan.tfplan"
+      - name: Terraform init
+        run: terraform -chdir=terraform init -input=false -lockfile=readonly -no-color
 
-  update-s3-contents:
-      name: Update S3 Contents
-      needs: terraform-apply
-      runs-on: ubuntu-latest
-      environment: "AWS General"
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v6
+      # Terraform plans can contain private input and state values. Keep both
+      # binary and JSON forms inside this privileged job; never upload them.
+      - name: Create private state-backed plan
+        run: |
+          umask 077
+          mkdir -p "$RUNNER_TEMP/private-plan"
+          if ! terraform -chdir=terraform plan -input=false -lock=false -no-color \
+            -out="$RUNNER_TEMP/private-plan/release.tfplan" \
+            > "$RUNNER_TEMP/private-plan/plan.log" 2>&1; then
+            echo "Terraform plan failed; inspect the privileged deployment job without publishing the private plan."
+            exit 1
+          fi
+          terraform -chdir=terraform show -json "$RUNNER_TEMP/private-plan/release.tfplan" \
+            > "$RUNNER_TEMP/private-plan/release.json"
 
-        - name: Configure AWS Credentials
-          uses: aws-actions/configure-aws-credentials@v6
-          with:
-            role-to-assume: arn:aws:iam::870140981796:role/github-deploy
-            aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
+      - name: Identify analytics plan prerequisites
+        id: analytics-plan
+        run: |
+          node scripts/verify_public_stats_reader.mjs \
+            --plan "$RUNNER_TEMP/private-plan/release.json" >> "$GITHUB_OUTPUT"
 
-        - name: Download build artifacts
-          uses: actions/download-artifact@v8
-          with:
-            name: out
-            path: out
+      - name: Compare checked analytics package with deployed code
+        id: stats-code
+        env:
+          FUNCTION_NAME: ${{ vars.STATS_AGGREGATOR_FUNCTION_NAME }}
+          REQUIRES_READER: ${{ steps.analytics-plan.outputs.requires_reader }}
+        run: |
+          if [ "$REQUIRES_READER" = "true" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          deployed="$(aws lambda get-function --function-name "$FUNCTION_NAME" --query Configuration.CodeSha256 --output text)"
+          checked="$(openssl dgst -sha256 -binary release-artifacts/stats-aggregator.zip | openssl base64 -A)"
+          if [ "$deployed" = "$checked" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
 
-        # stats.json is produced by the statsAggregator Lambda, not the build —
-        # exclude it so --delete doesn't wipe the data file on every deploy.
-        - name: Sync S3 bucket
-          run: aws s3 sync out/ s3://$S3_BUCKET_NAME --delete --exclude "stats.json"
-          env:
-            S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+      - name: Require approved analytics migration boundary
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          ANALYTICS_PLAN_CHANGE: ${{ steps.analytics-plan.outputs.analytics_change }}
+          ANALYTICS_CODE_CHANGE: ${{ steps.stats-code.outputs.changed }}
+          ANALYTICS_RELEASE_APPROVED: ${{ inputs.analytics_release_approved }}
+          ANALYTICS_RELEASE_RECORD: ${{ inputs.analytics_release_record }}
+        run: |
+          if [ "$ANALYTICS_PLAN_CHANGE" != "true" ] && [ "$ANALYTICS_CODE_CHANGE" != "true" ]; then
+            exit 0
+          fi
+          if [ "$EVENT_NAME" != "workflow_dispatch" ] || [ "$ANALYTICS_RELEASE_APPROVED" != "true" ]; then
+            echo "Analytics release blocked: use the reviewed manual release after proving the no-writer window and durable quiesced backup."
+            exit 1
+          fi
+          if ! [[ "$ANALYTICS_RELEASE_RECORD" =~ ^[A-Za-z0-9][A-Za-z0-9._:-]{2,127}$ ]]; then
+            echo "Analytics release blocked: provide a nonsecret approved release record identifier."
+            exit 1
+          fi
 
-  update-lambda-code:
-      name: Update Lambda Code
-      needs: terraform-apply
-      runs-on: ubuntu-latest
-      environment: "AWS General"
-      strategy:
-        matrix:
-          include:
-            - dir: sns_publish_lambda
-              function_var: LAMBDA_FUNCTION_NAME
-            - dir: stats_aggregator
-              function_var: STATS_AGGREGATOR_FUNCTION_NAME
-      steps:
-      - name: Checkout
+      - name: Install browser for producer bootstrap gate
+        if: steps.analytics-plan.outputs.requires_reader == 'true'
+        run: yarn playwright install --with-deps chromium
+
+      - name: Verify public reader before producer bootstrap
+        if: steps.analytics-plan.outputs.requires_reader == 'true'
+        run: |
+          node scripts/verify_public_stats_reader.mjs --artifact-dir out \
+            --origin https://andrewmalvani.com --origin https://www.andrewmalvani.com \
+            --report bootstrap-reader-verification.json
+        # If unavailable or stale, stop for a separately reviewed reader bootstrap.
+
+      - name: Preserve bootstrap reader evidence
+        if: steps.analytics-plan.outputs.requires_reader == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: bootstrap-reader-verification
+          path: bootstrap-reader-verification.json
+          if-no-files-found: error
+          retention-days: 7
+
+      # Upload complete checked static dependencies before 404.html. No key is
+      # deleted and stats.json remains owned by the analytics producer.
+      - name: Stage checked recovery page before CloudFront error policy
+        env:
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+        run: |
+          node scripts/publish_static_site.mjs upload --artifact-dir out \
+            --manifest checked-manifest/checked-site-manifest.json \
+            --bucket "$S3_BUCKET_NAME" --phase recovery
+
+      - name: Apply the private checked plan
+        run: |
+          if ! terraform -chdir=terraform apply -input=false -no-color \
+            "$RUNNER_TEMP/private-plan/release.tfplan" \
+            > "$RUNNER_TEMP/private-plan/apply.log" 2>&1; then
+            echo "Terraform apply failed; the private plan and output were not published."
+            exit 1
+          fi
+          rm -rf "$RUNNER_TEMP/private-plan"
+
+  publish-site:
+    name: Publish checked website
+    needs: deploy-infrastructure
+    runs-on: ubuntu-latest
+    environment: AWS General
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout reviewed source
         uses: actions/checkout@v6
-
-      - name: Configure AWS Credentials
+      - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: arn:aws:iam::870140981796:role/github-deploy
           aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
-
-      - name: Zip Lambda Code
-        run: |
-          cd ${{ matrix.dir }}
-          zip ../lambda_code.zip lambda_function.py
-
-      - name: Update Lambda Code
-        run: aws lambda update-function-code --function-name $LAMBDA_FUNCTION_NAME --zip-file fileb://lambda_code.zip
+      - name: Download checked website
+        uses: actions/download-artifact@v8
+        with:
+          name: checked-web
+          path: out
+      - name: Download checked website manifest
+        uses: actions/download-artifact@v8
+        with:
+          name: checked-site-manifest
+          path: checked-manifest
+      - name: Setup publication runtime
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Publish verified candidate and cache metadata
         env:
-          LAMBDA_FUNCTION_NAME: ${{ vars[matrix.function_var] }}
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+        run: |
+          node scripts/publish_static_site.mjs upload --artifact-dir out \
+            --manifest checked-manifest/checked-site-manifest.json \
+            --bucket "$S3_BUCKET_NAME" --phase all
 
-  cloudfront-invalidation:
-      name: Invalidate CloudFront Distribution
-      needs: update-s3-contents
-      runs-on: ubuntu-latest
-      environment: "AWS General"
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v6
+  invalidate-cloudfront:
+    name: Invalidate CloudFront distribution
+    needs: publish-site
+    runs-on: ubuntu-latest
+    environment: AWS General
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: arn:aws:iam::870140981796:role/github-deploy
+          aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
+      - name: Invalidate CloudFront cache
+        env:
+          CF_DISTRIBUTION_ID: ${{ vars.CF_DISTRIBUTION_ID }}
+        run: aws cloudfront create-invalidation --distribution-id "$CF_DISTRIBUTION_ID" --paths '/*'
 
-        - name: Configure AWS Credentials
-          uses: aws-actions/configure-aws-credentials@v6
-          with:
-            role-to-assume: arn:aws:iam::870140981796:role/github-deploy
-            aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
+  verify-analytics-reader:
+    name: Verify public analytics reader
+    needs: invalidate-cloudfront
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout reviewed source
+        uses: actions/checkout@v6
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: yarn
+      - name: Install release gate dependencies
+        run: |
+          npm install --global yarn@1.22.22
+          yarn install --frozen-lockfile
+          yarn playwright install --with-deps chromium
+      - name: Download checked website
+        uses: actions/download-artifact@v8
+        with:
+          name: checked-web
+          path: out
+      - name: Verify ordinary public reader responses and behavior
+        run: |
+          node scripts/verify_public_stats_reader.mjs --artifact-dir out \
+            --origin https://andrewmalvani.com --origin https://www.andrewmalvani.com \
+            --report public-reader-verification.json
+      - name: Preserve reader release evidence
+        uses: actions/upload-artifact@v7
+        with:
+          name: public-reader-verification
+          path: public-reader-verification.json
+          if-no-files-found: error
+          retention-days: 7
 
-        - name: Invalidate CloudFront cache
-          run: |
-            aws cloudfront create-invalidation --distribution-id $CF_DISTRIBUTION_ID --paths "/*"
-          env:
-            CF_DISTRIBUTION_ID: ${{ vars.CF_DISTRIBUTION_ID }}
+  update-contact-code:
+    name: Install checked contact package
+    needs: deploy-infrastructure
+    runs-on: ubuntu-latest
+    environment: AWS General
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Download checked Lambda archives
+        uses: actions/download-artifact@v8
+        with:
+          name: checked-lambda-archives
+          path: release-artifacts
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: arn:aws:iam::870140981796:role/github-deploy
+          aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
+      - name: Update contact Lambda with exact checked archive
+        env:
+          FUNCTION_NAME: ${{ vars.LAMBDA_FUNCTION_NAME }}
+        run: |
+          aws lambda update-function-code --function-name "$FUNCTION_NAME" \
+            --zip-file fileb://release-artifacts/contact-lambda.zip \
+            --query '{FunctionName:FunctionName,CodeSha256:CodeSha256,LastModified:LastModified}'
+
+  update-analytics-code:
+    name: Install checked analytics package
+    needs: [deploy-infrastructure, verify-analytics-reader]
+    if: needs.deploy-infrastructure.outputs.stats_code_change == 'true'
+    runs-on: ubuntu-latest
+    environment: AWS General
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Download checked Lambda archives
+        uses: actions/download-artifact@v8
+        with:
+          name: checked-lambda-archives
+          path: release-artifacts
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: arn:aws:iam::870140981796:role/github-deploy
+          aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
+      - name: Update analytics Lambda with exact checked archive
+        env:
+          FUNCTION_NAME: ${{ vars.STATS_AGGREGATOR_FUNCTION_NAME }}
+        run: |
+          aws lambda update-function-code --function-name "$FUNCTION_NAME" \
+            --zip-file fileb://release-artifacts/stats-aggregator.zip \
+            --query '{FunctionName:FunctionName,CodeSha256:CodeSha256,LastModified:LastModified}'

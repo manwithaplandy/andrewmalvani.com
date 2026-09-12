@@ -1,0 +1,12 @@
+yarn run v1.22.22
+$ playwright test tests/e2e/graph-access.spec.ts tests/e2e/graph-discovery.spec.ts tests/e2e/motion.spec.ts --project=chromium --grep '3D tab order|animated overview|particles clear'
+
+Running 4 tests using 1 worker
+
+  ✓  1 [chromium] › tests/e2e/graph-access.spec.ts:109:5 › 3D tab order contains visible entry and connection controls, with no hidden list (2.4s)
+  ✓  2 [chromium] › tests/e2e/graph-discovery.spec.ts:58:7 › animated overview clears the trail and repeated requests recover the real camera after orbit and zoom (21.0s)
+  ✓  3 [chromium] › tests/e2e/motion.spec.ts:40:5 › particles clear on live reduction and resume with one draw per frame (1.8s)
+  ✓  4 [chromium] › tests/e2e/motion.spec.ts:95:5 › an initially reduced visit keeps particles clear and menu usable without sliding (578ms)
+
+  4 passed (27.5s)
+Done in 28.04s.

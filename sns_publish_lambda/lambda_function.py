@@ -8,14 +8,12 @@ import boto3
 # rather than rebuilt on every request.
 sns = boto3.client("sns")
 
-# Allowed browser origin for CORS responses. Injected by Terraform (see the
-# Lambda's environment block in terraform/contactLambda.tf) so the origin has a
-# single source of truth; the default keeps local runs working.
-ALLOWED_ORIGIN = os.environ.get("ALLOWED_ORIGIN", "https://andrewmalvani.com")
+# Terraform supplies the exact browser allow-list for both POST and OPTIONS.
+# Missing configuration grants no browser origin; non-browser requests remain
+# compatible. CORS is browser response policy, not authentication.
+ALLOWED_ORIGINS = frozenset(json.loads(os.environ.get("ALLOWED_ORIGINS", "[]")))
 
-# Conservative input limits. The client textarea caps the message at 250 chars,
-# but the server is authoritative — these guard against oversized / abusive
-# payloads regardless of what the client sends.
+# Server-authoritative input limits, independent of client validation.
 MAX_NAME_LEN = 100
 MAX_EMAIL_LEN = 254  # RFC 5321 maximum length of an email address
 MAX_MESSAGE_LEN = 2000
@@ -30,16 +28,19 @@ _CONTROL_CHARS_RE = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]")
 _NEWLINE_COLLAPSE_RE = re.compile(r"\s*[\r\n]+\s*")
 
 CORS_HEADERS = {
-    "Access-Control-Allow-Origin": ALLOWED_ORIGIN,
+    "Vary": "Origin",
     "Access-Control-Allow-Headers": "Content-Type",
     "Access-Control-Allow-Methods": "OPTIONS,POST",
 }
 
 
-def _response(status_code, body):
+def _response(status_code, body, origin):
+    headers = dict(CORS_HEADERS)
+    if origin in ALLOWED_ORIGINS:
+        headers["Access-Control-Allow-Origin"] = origin
     return {
         "statusCode": status_code,
-        "headers": CORS_HEADERS,
+        "headers": headers,
         "body": body,
     }
 
@@ -84,16 +85,24 @@ def _validate(body):
 
 
 def lambda_handler(event, context):
+    origin = next((value for key, value in (event.get("headers") or {}).items()
+                   if key.lower() == "origin"), None)
+    if origin is not None and origin not in ALLOWED_ORIGINS:
+        return _response(403, "Origin is not allowed", None)
+    # Preflight is body-independent and never sends a notification.
+    if event.get("httpMethod") == "OPTIONS":
+        return _response(200, "", origin)
+
     # F3: never let a malformed body raise an uncaught exception (502).
     try:
         eventbody = json.loads(event["body"])
     except (TypeError, KeyError, ValueError):
-        return _response(400, "Request body must be valid JSON")
+        return _response(400, "Request body must be valid JSON", origin)
 
     # F2: enforce types, length caps, email format, and strip injection vectors.
     sanitized, error = _validate(eventbody)
     if error is not None:
-        return _response(400, error)
+        return _response(400, error, origin)
 
     email_body = (
         f"Name: {sanitized['name']}\n\n"
@@ -111,6 +120,6 @@ def lambda_handler(event, context):
             Subject=subject,
         )
     except Exception:  # noqa: BLE001 — surface a clean error, not internals
-        return _response(502, "Failed to send message. Please try again later.")
+        return _response(502, "Failed to send message. Please try again later.", origin)
 
-    return _response(200, "Message sent to SNS topic")
+    return _response(200, "Message sent to SNS topic", origin)

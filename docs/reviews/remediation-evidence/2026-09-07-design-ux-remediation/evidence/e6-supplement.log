@@ -1,0 +1,22 @@
+CAPTURE credential-normal {"width":390,"height":844,"scrollWidth":390,"scrollY":5393}
+CAPTURE credential-hover {"width":390,"height":844,"scrollWidth":390,"scrollY":5393}
+CAPTURE contact-counter-warning {"width":390,"height":844,"scrollWidth":390,"scrollY":8477}
+CAPTURE text200-contact-settled {"width":390,"height":844,"scrollWidth":478,"scrollY":26160}
+CAPTURE arbitrary-resume-320 {"width":320,"height":844,"scrollWidth":320,"scrollY":1675}
+CAPTURE arbitrary-portfolio-320 {"width":320,"height":844,"scrollWidth":320,"scrollY":6918}
+CAPTURE arbitrary-contact-320 {"width":320,"height":844,"scrollWidth":320,"scrollY":8969}
+CAPTURE graph-list-direct-keyboard-focus {"width":320,"height":844,"scrollWidth":320,"scrollY":0}
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: /Legend/ })[22m
+
+    at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/.superpowers/sdd/2026-09-07-design-ux-remediation/e6-supplement.mjs:60:48 {
+  log: [ "  - waiting for getByRole('button', { name: /Legend/ })" ],
+  name: 'TimeoutError'
+}
+
+Node.js v22.16.0

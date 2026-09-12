@@ -1,0 +1,88 @@
+{
+  "reviewStatus": "BLOCKED_NOT_RELEASE_COMPLETE",
+  "terraformPlan": {
+    "timestamp": "2026-09-12T13:39:12Z",
+    "version": "1.14.7",
+    "applyable": true,
+    "complete": true,
+    "errored": false,
+    "binarySha256": "49e0020f10b3812ecfb9d64555786ea70ff12311ab1ee657f84172486d99ffc7",
+    "jsonSha256": "7cafb99804864b1c0b1c42754891654f32f1ce6fc6c5500d472216acfa1d9482",
+    "logSha256": "1f32c14c66c3d46cccfc9b3125b7663f85a6fd070cb7487991049a1af8f26617"
+  },
+  "remainingChangedAddresses": [
+    {
+      "address": "aws_api_gateway_deployment.api",
+      "actions": [
+        "create",
+        "delete"
+      ]
+    },
+    {
+      "address": "aws_api_gateway_stage.api",
+      "actions": [
+        "update"
+      ]
+    },
+    {
+      "address": "aws_cloudfront_cache_policy.site[\"immutable\"]",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_cloudfront_cache_policy.site[\"stable\"]",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_cloudfront_distribution.website_distribution",
+      "actions": [
+        "update"
+      ]
+    },
+    {
+      "address": "aws_cloudfront_function.rewrite_extensionless",
+      "actions": [
+        "update"
+      ]
+    },
+    {
+      "address": "aws_cloudwatch_metric_alarm.stats_aggregator_errors",
+      "actions": [
+        "update"
+      ]
+    },
+    {
+      "address": "aws_lambda_function.stats_aggregator",
+      "actions": [
+        "update"
+      ]
+    },
+    {
+      "address": "aws_s3_bucket_logging.log_bucket_logs",
+      "actions": [
+        "delete"
+      ]
+    }
+  ],
+  "remainingChangedAddressCount": 9,
+  "currentAnalytics": {
+    "codeSha256": "e3f30b13d0335aa5d898d2c21f71ef9153d769f96e07510e9be137f2254eee51",
+    "reservedConcurrency": "unreserved",
+    "schedule": "ENABLED",
+    "target": "sole unqualified"
+  },
+  "plannedAnalytics": {
+    "codeSha256": "unchanged old digest; Terraform installs no code",
+    "reservedConcurrency": 1,
+    "schedule": "ENABLED no-op"
+  },
+  "releaseBlockers": [
+    "Applying this plan would reserve concurrency 1 while the restored old analytics code remains installed.",
+    "The quota needed for the reviewed new-code RC1 path is not approved.",
+    "No remaining infrastructure apply is authorized; later execution requires a fresh reviewed plan and approval."
+  ],
+  "review": "finalremaining-plan-review.md"
+}

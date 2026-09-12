@@ -1,0 +1,12 @@
+{
+  "producer_source_commit": "99b0a4e",
+  "candidate_archive": "/private/tmp/react-resume-d4-candidate-tefwnq13/statsAggregator-candidate.zip",
+  "archive_sha256": "10696a55066614b49ea6f216865cff0c9b3e0faf1d8d23f6d286e5922824c82a",
+  "archive_bytes": 13521,
+  "module_sha256": {
+    "lambda_function.py": "14f170464fc01620051d57c510b5dd7a6de1aff4316bb46c32d88aa800642bc6",
+    "payload.py": "a770481263ed87b94d82ba928f8a4b67790049b3c812b8b6a4ff11968b64467e",
+    "ledger.py": "eb2488abd4b00fce1a2345005ab91d650f5de840c809f73354a02b2ee7622718"
+  },
+  "scope": "Local deterministic review candidate only. Not deployed and not yet the final E5 checked release artifact. Zip timestamps fixed at1980-01-01; files stored with0444 attributes."
+}

@@ -1,0 +1,14 @@
+{
+  "scope": "Local existing export and producer source only; no uploaded artifact or final E5 archive.",
+  "manifest_sha256": "5e13326eede717de03fe8abeadc4cd79543faeae507dc028ddc4231df677ef99",
+  "files": 54,
+  "static_references": 73,
+  "total_bytes": 3040812,
+  "hashed_files": 39,
+  "stable_files": 15,
+  "producer_modules_sha256": {
+    "lambda_function.py": "468c882dc2a1702955514b25c2592f72500bf9a443d56ab9342e43127e36dde5",
+    "payload.py": "a770481263ed87b94d82ba928f8a4b67790049b3c812b8b6a4ff11968b64467e",
+    "ledger.py": "eb2488abd4b00fce1a2345005ab91d650f5de840c809f73354a02b2ee7622718"
+  }
+}

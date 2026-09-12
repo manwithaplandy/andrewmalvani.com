@@ -1,0 +1,392 @@
+[
+  {
+    "text": "through infrastructure-as-code with Terraform/Terragrunt and GitHub Actions CI/CD.",
+    "tag": "LI",
+    "class": "",
+    "rect": {
+      "x": 72,
+      "y": 9316.5,
+      "width": 320.921875,
+      "height": 39,
+      "top": 9316.5,
+      "right": 392.921875,
+      "bottom": 9355.5,
+      "left": 72
+    },
+    "parent": {
+      "x": 72,
+      "y": 8894.5,
+      "width": 216,
+      "height": 624,
+      "top": 8894.5,
+      "right": 288,
+      "bottom": 9518.5,
+      "left": 72
+    },
+    "style": {
+      "font": "32px / 52px __Inter_f367f3, __Inter_Fallback_f367f3, system-ui, -apple-system, \"Segoe UI\", Roboto, Ubuntu, Cantarell, \"Noto Sans\", sans-serif, \"system-ui\", \"Segoe UI\", sans-serif",
+      "letterSpacing": "normal",
+      "overflowWrap": "normal"
+    }
+  },
+  {
+    "text": "AWS Solutions Architect Associate",
+    "tag": "H3",
+    "class": "text-lg font-semibold text-neutral-100",
+    "rect": {
+      "x": 225,
+      "y": 24468.5,
+      "width": 162.640625,
+      "height": 44,
+      "top": 24468.5,
+      "right": 387.640625,
+      "bottom": 24512.5,
+      "left": 225
+    },
+    "parent": {
+      "x": 225,
+      "y": 24406.5,
+      "width": 30,
+      "height": 224,
+      "top": 24406.5,
+      "right": 255,
+      "bottom": 24630.5,
+      "left": 225
+    },
+    "style": {
+      "font": "600 36px / 56px __Inter_f367f3, __Inter_Fallback_f367f3, system-ui, -apple-system, \"Segoe UI\", Roboto, Ubuntu, Cantarell, \"Noto Sans\", sans-serif, \"system-ui\", \"Segoe UI\", sans-serif",
+      "letterSpacing": "normal",
+      "overflowWrap": "normal"
+    }
+  },
+  {
+    "text": "AWS Solutions Architect Associate",
+    "tag": "H3",
+    "class": "text-lg font-semibold text-neutral-100",
+    "rect": {
+      "x": 225,
+      "y": 24524.5,
+      "width": 159.484375,
+      "height": 44,
+      "top": 24524.5,
+      "right": 384.484375,
+      "bottom": 24568.5,
+      "left": 225
+    },
+    "parent": {
+      "x": 225,
+      "y": 24406.5,
+      "width": 30,
+      "height": 224,
+      "top": 24406.5,
+      "right": 255,
+      "bottom": 24630.5,
+      "left": 225
+    },
+    "style": {
+      "font": "600 36px / 56px __Inter_f367f3, __Inter_Fallback_f367f3, system-ui, -apple-system, \"Segoe UI\", Roboto, Ubuntu, Cantarell, \"Noto Sans\", sans-serif, \"system-ui\", \"Segoe UI\", sans-serif",
+      "letterSpacing": "normal",
+      "overflowWrap": "normal"
+    }
+  },
+  {
+    "text": "AWS Solutions Architect Associate",
+    "tag": "H3",
+    "class": "text-lg font-semibold text-neutral-100",
+    "rect": {
+      "x": 225,
+      "y": 24580.5,
+      "width": 172.125,
+      "height": 44,
+      "top": 24580.5,
+      "right": 397.125,
+      "bottom": 24624.5,
+      "left": 225
+    },
+    "parent": {
+      "x": 225,
+      "y": 24406.5,
+      "width": 30,
+      "height": 224,
+      "top": 24406.5,
+      "right": 255,
+      "bottom": 24630.5,
+      "left": 225
+    },
+    "style": {
+      "font": "600 36px / 56px __Inter_f367f3, __Inter_Fallback_f367f3, system-ui, -apple-system, \"Segoe UI\", Roboto, Ubuntu, Cantarell, \"Noto Sans\", sans-serif, \"system-ui\", \"Segoe UI\", sans-serif",
+      "letterSpacing": "normal",
+      "overflowWrap": "normal"
+    }
+  },
+  {
+    "text": "Amazon Web Services",
+    "tag": "P",
+    "class": "text-sm font-medium text-neutral-400",
+    "rect": {
+      "x": 225,
+      "y": 24633.5,
+      "width": 109.5625,
+      "height": 34,
+      "top": 24633.5,
+      "right": 334.5625,
+      "bottom": 24667.5,
+      "left": 225
+    },
+    "parent": {
+      "x": 225,
+      "y": 24630.5,
+      "width": 30,
+      "height": 120,
+      "top": 24630.5,
+      "right": 255,
+      "bottom": 24750.5,
+      "left": 225
+    },
+    "style": {
+      "font": "500 28px / 40px __Inter_f367f3, __Inter_Fallback_f367f3, system-ui, -apple-system, \"Segoe UI\", Roboto, Ubuntu, Cantarell, \"Noto Sans\", sans-serif, \"system-ui\", \"Segoe UI\", sans-serif",
+      "letterSpacing": "normal",
+      "overflowWrap": "normal"
+    }
+  },
+  {
+    "text": "Amazon Web Services",
+    "tag": "P",
+    "class": "text-sm font-medium text-neutral-400",
+    "rect": {
+      "x": 225,
+      "y": 24713.5,
+      "width": 116.625,
+      "height": 34,
+      "top": 24713.5,
+      "right": 341.625,
+      "bottom": 24747.5,
+      "left": 225
+    },
+    "parent": {
+      "x": 225,
+      "y": 24630.5,
+      "width": 30,
+      "height": 120,
+      "top": 24630.5,
+      "right": 255,
+      "bottom": 24750.5,
+      "left": 225
+    },
+    "style": {
+      "font": "500 28px / 40px __Inter_f367f3, __Inter_Fallback_f367f3, system-ui, -apple-system, \"Segoe UI\", Roboto, Ubuntu, Cantarell, \"Noto Sans\", sans-serif, \"system-ui\", \"Segoe UI\", sans-serif",
+      "letterSpacing": "normal",
+      "overflowWrap": "normal"
+    }
+  },
+  {
+    "text": "HashiCorp Terraform Associate",
+    "tag": "H3",
+    "class": "text-lg font-semibold text-neutral-100",
+    "rect": {
+      "x": 225,
+      "y": 24974.5,
+      "width": 184.3125,
+      "height": 44,
+      "top": 24974.5,
+      "right": 409.3125,
+      "bottom": 25018.5,
+      "left": 225
+    },
+    "parent": {
+      "x": 225,
+      "y": 24968.5,
+      "width": 30,
+      "height": 168,
+      "top": 24968.5,
+      "right": 255,
+      "bottom": 25136.5,
+      "left": 225
+    },
+    "style": {
+      "font": "600 36px / 56px __Inter_f367f3, __Inter_Fallback_f367f3, system-ui, -apple-system, \"Segoe UI\", Roboto, Ubuntu, Cantarell, \"Noto Sans\", sans-serif, \"system-ui\", \"Segoe UI\", sans-serif",
+      "letterSpacing": "normal",
+      "overflowWrap": "normal"
+    }
+  },
+  {
+    "text": "HashiCorp Terraform Associate",
+    "tag": "H3",
+    "class": "text-lg font-semibold text-neutral-100",
+    "rect": {
+      "x": 225,
+      "y": 25030.5,
+      "width": 173.65625,
+      "height": 44,
+      "top": 25030.5,
+      "right": 398.65625,
+      "bottom": 25074.5,
+      "left": 225
+    },
+    "parent": {
+      "x": 225,
+      "y": 24968.5,
+      "width": 30,
+      "height": 168,
+      "top": 24968.5,
+      "right": 255,
+      "bottom": 25136.5,
+      "left": 225
+    },
+    "style": {
+      "font": "600 36px / 56px __Inter_f367f3, __Inter_Fallback_f367f3, system-ui, -apple-system, \"Segoe UI\", Roboto, Ubuntu, Cantarell, \"Noto Sans\", sans-serif, \"system-ui\", \"Segoe UI\", sans-serif",
+      "letterSpacing": "normal",
+      "overflowWrap": "normal"
+    }
+  },
+  {
+    "text": "HashiCorp Terraform Associate",
+    "tag": "H3",
+    "class": "text-lg font-semibold text-neutral-100",
+    "rect": {
+      "x": 225,
+      "y": 25086.5,
+      "width": 172.125,
+      "height": 44,
+      "top": 25086.5,
+      "right": 397.125,
+      "bottom": 25130.5,
+      "left": 225
+    },
+    "parent": {
+      "x": 225,
+      "y": 24968.5,
+      "width": 30,
+      "height": 168,
+      "top": 24968.5,
+      "right": 255,
+      "bottom": 25136.5,
+      "left": 225
+    },
+    "style": {
+      "font": "600 36px / 56px __Inter_f367f3, __Inter_Fallback_f367f3, system-ui, -apple-system, \"Segoe UI\", Roboto, Ubuntu, Cantarell, \"Noto Sans\", sans-serif, \"system-ui\", \"Segoe UI\", sans-serif",
+      "letterSpacing": "normal",
+      "overflowWrap": "normal"
+    }
+  },
+  {
+    "text": "HashiCorp",
+    "tag": "P",
+    "class": "text-sm font-medium text-neutral-400",
+    "rect": {
+      "x": 225,
+      "y": 25139.5,
+      "width": 141.6875,
+      "height": 34,
+      "top": 25139.5,
+      "right": 366.6875,
+      "bottom": 25173.5,
+      "left": 225
+    },
+    "parent": {
+      "x": 225,
+      "y": 25136.5,
+      "width": 30,
+      "height": 40,
+      "top": 25136.5,
+      "right": 255,
+      "bottom": 25176.5,
+      "left": 225
+    },
+    "style": {
+      "font": "500 28px / 40px __Inter_f367f3, __Inter_Fallback_f367f3, system-ui, -apple-system, \"Segoe UI\", Roboto, Ubuntu, Cantarell, \"Noto Sans\", sans-serif, \"system-ui\", \"Segoe UI\", sans-serif",
+      "letterSpacing": "normal",
+      "overflowWrap": "normal"
+    }
+  },
+  {
+    "text": "Azure AI Engineer",
+    "tag": "H3",
+    "class": "text-lg font-semibold text-neutral-100",
+    "rect": {
+      "x": 225,
+      "y": 25400.5,
+      "width": 103.40625,
+      "height": 44,
+      "top": 25400.5,
+      "right": 328.40625,
+      "bottom": 25444.5,
+      "left": 225
+    },
+    "parent": {
+      "x": 225,
+      "y": 25394.5,
+      "width": 30,
+      "height": 168,
+      "top": 25394.5,
+      "right": 255,
+      "bottom": 25562.5,
+      "left": 225
+    },
+    "style": {
+      "font": "600 36px / 56px __Inter_f367f3, __Inter_Fallback_f367f3, system-ui, -apple-system, \"Segoe UI\", Roboto, Ubuntu, Cantarell, \"Noto Sans\", sans-serif, \"system-ui\", \"Segoe UI\", sans-serif",
+      "letterSpacing": "normal",
+      "overflowWrap": "normal"
+    }
+  },
+  {
+    "text": "Azure AI Engineer",
+    "tag": "H3",
+    "class": "text-lg font-semibold text-neutral-100",
+    "rect": {
+      "x": 225,
+      "y": 25512.5,
+      "width": 154.671875,
+      "height": 44,
+      "top": 25512.5,
+      "right": 379.671875,
+      "bottom": 25556.5,
+      "left": 225
+    },
+    "parent": {
+      "x": 225,
+      "y": 25394.5,
+      "width": 30,
+      "height": 168,
+      "top": 25394.5,
+      "right": 255,
+      "bottom": 25562.5,
+      "left": 225
+    },
+    "style": {
+      "font": "600 36px / 56px __Inter_f367f3, __Inter_Fallback_f367f3, system-ui, -apple-system, \"Segoe UI\", Roboto, Ubuntu, Cantarell, \"Noto Sans\", sans-serif, \"system-ui\", \"Segoe UI\", sans-serif",
+      "letterSpacing": "normal",
+      "overflowWrap": "normal"
+    }
+  },
+  {
+    "text": "Microsoft",
+    "tag": "P",
+    "class": "text-sm font-medium text-neutral-400",
+    "rect": {
+      "x": 225,
+      "y": 25565.5,
+      "width": 127.125,
+      "height": 34,
+      "top": 25565.5,
+      "right": 352.125,
+      "bottom": 25599.5,
+      "left": 225
+    },
+    "parent": {
+      "x": 225,
+      "y": 25562.5,
+      "width": 30,
+      "height": 40,
+      "top": 25562.5,
+      "right": 255,
+      "bottom": 25602.5,
+      "left": 225
+    },
+    "style": {
+      "font": "500 28px / 40px __Inter_f367f3, __Inter_Fallback_f367f3, system-ui, -apple-system, \"Segoe UI\", Roboto, Ubuntu, Cantarell, \"Noto Sans\", sans-serif, \"system-ui\", \"Segoe UI\", sans-serif",
+      "letterSpacing": "normal",
+      "overflowWrap": "normal"
+    }
+  }
+]

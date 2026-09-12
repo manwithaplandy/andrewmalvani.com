@@ -1,0 +1,13 @@
+yarn run v1.22.22
+$ /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/node_modules/.bin/playwright test tests/e2e/stats-producer.spec.ts --project=chromium
+
+Running 5 tests using 1 worker
+
+  ✓  1 [chromium] › tests/e2e/stats-producer.spec.ts:8:7 › actual producer output is compatible with the reader: stale (851ms)
+  ✓  2 [chromium] › tests/e2e/stats-producer.spec.ts:8:7 › actual producer output is compatible with the reader: current (419ms)
+  ✓  3 [chromium] › tests/e2e/stats-producer.spec.ts:8:7 › actual producer output is compatible with the reader: zero (428ms)
+  ✓  4 [chromium] › tests/e2e/stats-producer.spec.ts:49:7 › partial source storage keeps the accepted dataset: partial-prior (313ms)
+  ✓  5 [chromium] › tests/e2e/stats-producer.spec.ts:49:7 › partial source storage keeps the accepted dataset: partial-empty (290ms)
+
+  5 passed (4.0s)
+Done in 4.58s.

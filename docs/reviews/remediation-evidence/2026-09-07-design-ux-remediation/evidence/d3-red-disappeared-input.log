@@ -1,0 +1,15 @@
+test_disappeared_partial_input_still_blocks_later_publication (test_ingestion.IngestionTests.test_disappeared_partial_input_still_blocks_later_publication) ... FAIL
+
+======================================================================
+FAIL: test_disappeared_partial_input_still_blocks_later_publication (test_ingestion.IngestionTests.test_disappeared_partial_input_still_blocks_later_publication)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/stats/test_ingestion.py", line 159, in test_disappeared_partial_input_still_blocks_later_publication
+    with self.assertRaises(RuntimeError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: RuntimeError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.174s
+
+FAILED (failures=1)

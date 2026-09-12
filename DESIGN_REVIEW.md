@@ -1,3 +1,5 @@
+> **Historical review — June 9, 2026.** This document preserves the original observations; it is not a current completion record. See the [September 7 review](reports/design-ux-review-2026-09-07.md), [remediation status and remaining criteria](docs/reviews/design-ux-remediation-status.md), and [current repository orientation](README.md). Findings below are retained unchanged.
+
 # Design & UX Review — andrewmalvani.com (2026-06-09)
 
 Consolidated findings from a five-dimension review (visual design, UX/IA, accessibility,

@@ -1,0 +1,17 @@
+A3 320px browser evidence - 2026-09-07
+
+Homepage: documentElement.clientWidth=320, documentElement.scrollWidth=320.
+Longest skill label checked: "Javascript & Typescript (Node, React)"; bounding box x=37, width=246, height=40. Complete Coding Languages card captured after computed opacity reached 1.
+Longest credential checked: "AWS Solutions Architect Associate"; bounding box x=113, width=174, height=56. Complete credential card captured after computed opacity reached 1.
+Graph: documentElement.clientWidth=320, documentElement.scrollWidth=320.
+Graph introduction: "Lead AI/ML Engineer, General Atomics · since June 2024".
+Person JSON-LD: alumniOf contains only University of California, Santa Barbara; memberOf contains Georgia Institute of Technology with "M.S. Computer Science student, expected 2028"; existing addressLocality remains Arizona pending owner confirmation.
+
+Images:
+- a3-homepage-320.png
+- a3-skills-320.png
+- a3-credentials-320.png
+- a3-graph-320.png
+
+Capture source: capture-a3.mjs
+

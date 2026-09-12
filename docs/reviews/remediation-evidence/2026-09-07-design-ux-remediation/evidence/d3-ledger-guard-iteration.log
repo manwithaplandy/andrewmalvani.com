@@ -1,0 +1,37 @@
+test_active_guard_write_failure_and_lost_response_recover_with_strong_proof (test_ledger.LedgerTests.test_active_guard_write_failure_and_lost_response_recover_with_strong_proof) ... ok
+test_bucket_is_part_of_identity_and_empty_input_has_durable_completion (test_ledger.LedgerTests.test_bucket_is_part_of_identity_and_empty_input_has_durable_completion) ... ok
+test_budget_exhaustion_before_or_inside_input_preserves_recovery (test_ledger.LedgerTests.test_budget_exhaustion_before_or_inside_input_preserves_recovery) ... ok
+test_changed_mapping_rejected_after_partial_or_complete_input (test_ledger.LedgerTests.test_changed_mapping_rejected_after_partial_or_complete_input) ... 
+  test_changed_mapping_rejected_after_partial_or_complete_input (test_ledger.LedgerTests.test_changed_mapping_rejected_after_partial_or_complete_input) (complete=False) ... ERROR
+test_committed_chunk_with_lost_response_is_verified_without_double_add (test_ledger.LedgerTests.test_committed_chunk_with_lost_response_is_verified_without_double_add) ... ok
+test_completion_commit_with_lost_response_is_verified (test_ledger.LedgerTests.test_completion_commit_with_lost_response_is_verified) ... ok
+test_completion_record_before_commit_failure_then_recovery (test_ledger.LedgerTests.test_completion_record_before_commit_failure_then_recovery) ... ok
+test_conditional_record_conflict_cannot_commit_counter_updates (test_ledger.LedgerTests.test_conditional_record_conflict_cannot_commit_counter_updates) ... ok
+test_corrupt_chunk_record_never_counts_as_matching_commit (test_ledger.LedgerTests.test_corrupt_chunk_record_never_counts_as_matching_commit) ... ok
+test_counter_key_number_and_request_bounds_rejected_before_writes (test_ledger.LedgerTests.test_counter_key_number_and_request_bounds_rejected_before_writes) ... ok
+test_failure_before_any_commit_then_exact_recovery (test_ledger.LedgerTests.test_failure_before_any_commit_then_exact_recovery) ... ok
+test_failure_between_chunks_then_exact_recovery (test_ledger.LedgerTests.test_failure_between_chunks_then_exact_recovery) ... ok
+test_legacy_marker_is_never_replayed (test_ledger.LedgerTests.test_legacy_marker_is_never_replayed) ... ok
+test_normal_processing_and_replay_more_than_180_counters (test_ledger.LedgerTests.test_normal_processing_and_replay_more_than_180_counters) ... ok
+test_supplied_digest_is_verified_before_any_write (test_ledger.LedgerTests.test_supplied_digest_is_verified_before_any_write) ... ok
+test_unresolved_other_input_cannot_replace_active_guard (test_ledger.LedgerTests.test_unresolved_other_input_cannot_replace_active_guard) ... ok
+
+======================================================================
+ERROR: test_changed_mapping_rejected_after_partial_or_complete_input (test_ledger.LedgerTests.test_changed_mapping_rejected_after_partial_or_complete_input) (complete=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/stats/test_ledger.py", line 98, in test_changed_mapping_rejected_after_partial_or_complete_input
+    self.apply(client, changed)
+  File "/Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/stats/test_ledger.py", line 26, in apply
+    return ledger.apply_log_counts(client, 'test-stats', key or self.key, digest(counts), counts, remaining)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/stats_aggregator/ledger.py", line 166, in apply_log_counts
+    _activate(client, table_name, complete)
+  File "/Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/stats_aggregator/ledger.py", line 100, in _activate
+    raise RuntimeError('Another input remains incomplete; cannot advance')
+RuntimeError: Another input remains incomplete; cannot advance
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.676s
+
+FAILED (errors=1)

@@ -1,0 +1,3919 @@
+{
+  "source": ".superpowers/sdd/2026-09-07-design-ux-remediation/review-whole-branch.diff",
+  "sha256": "7d3e376d59121e1f8d3a72833eba208bd62ca78f3dbb996bfcf5dcbe26c3a598",
+  "line_count": 100861,
+  "sections": [
+    {
+      "path": ".github/workflows/checks.yml",
+      "category": "runtime-and-configuration",
+      "start_line": 690,
+      "end_line": 843
+    },
+    {
+      "path": ".github/workflows/main.yml",
+      "category": "runtime-and-configuration",
+      "start_line": 844,
+      "end_line": 1346
+    },
+    {
+      "path": ".gitignore",
+      "category": "runtime-and-configuration",
+      "start_line": 1347,
+      "end_line": 1393
+    },
+    {
+      "path": ".superpowers/sdd/2026-09-07-design-ux-remediation/evidence/c1-browser-evidence.txt",
+      "category": "historical-evidence",
+      "start_line": 1394,
+      "end_line": 1424
+    },
+    {
+      "path": ".superpowers/sdd/2026-09-07-design-ux-remediation/evidence/c1-contact-summary-320.png",
+      "category": "historical-evidence",
+      "start_line": 1425,
+      "end_line": 1428
+    },
+    {
+      "path": ".superpowers/sdd/2026-09-07-design-ux-remediation/evidence/c1-counter-near-limit.png",
+      "category": "historical-evidence",
+      "start_line": 1429,
+      "end_line": 1432
+    },
+    {
+      "path": ".superpowers/sdd/2026-09-07-design-ux-remediation/evidence/c1-counter-ordinary.png",
+      "category": "historical-evidence",
+      "start_line": 1433,
+      "end_line": 1436
+    },
+    {
+      "path": ".superpowers/sdd/2026-09-07-design-ux-remediation/task-A2-report.md",
+      "category": "historical-evidence",
+      "start_line": 1437,
+      "end_line": 1558
+    },
+    {
+      "path": ".superpowers/sdd/2026-09-07-design-ux-remediation/task-C1-report.md",
+      "category": "historical-evidence",
+      "start_line": 1559,
+      "end_line": 1689
+    },
+    {
+      "path": "DESIGN_REVIEW.md",
+      "category": "documentation",
+      "start_line": 1690,
+      "end_line": 1706
+    },
+    {
+      "path": "README.md",
+      "category": "documentation",
+      "start_line": 1707,
+      "end_line": 1832
+    },
+    {
+      "path": "docs/content/pdf-maintenance.md",
+      "category": "documentation",
+      "start_line": 1833,
+      "end_line": 1882
+    },
+    {
+      "path": "docs/content/professional-facts.md",
+      "category": "documentation",
+      "start_line": 1883,
+      "end_line": 1923
+    },
+    {
+      "path": "docs/content/project-evidence.md",
+      "category": "documentation",
+      "start_line": 1924,
+      "end_line": 1959
+    },
+    {
+      "path": "docs/content/resume-source.md",
+      "category": "documentation",
+      "start_line": 1960,
+      "end_line": 2030
+    },
+    {
+      "path": "docs/operations/analytics.md",
+      "category": "documentation",
+      "start_line": 2031,
+      "end_line": 2183
+    },
+    {
+      "path": "docs/operations/delivery.md",
+      "category": "documentation",
+      "start_line": 2184,
+      "end_line": 2365
+    },
+    {
+      "path": "docs/reviews/design-ux-remediation-status.md",
+      "category": "documentation",
+      "start_line": 2366,
+      "end_line": 2421
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/README.md",
+      "category": "historical-evidence",
+      "start_line": 2422,
+      "end_line": 2466
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/archive-e6-evidence.py",
+      "category": "historical-evidence",
+      "start_line": 2467,
+      "end_line": 2515
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/archive-manifest.json",
+      "category": "historical-evidence",
+      "start_line": 2516,
+      "end_line": 6764
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/b1-3d.png",
+      "category": "historical-evidence",
+      "start_line": 6765,
+      "end_line": 6768
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/b1-text-final.png",
+      "category": "historical-evidence",
+      "start_line": 6769,
+      "end_line": 6772
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers",
+      "category": "historical-evidence",
+      "start_line": 6773,
+      "end_line": 6804
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.json",
+      "category": "historical-evidence",
+      "start_line": 6805,
+      "end_line": 6812
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/constraints.md",
+      "category": "historical-evidence",
+      "start_line": 6813,
+      "end_line": 6831
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/e6-browser-audit.mjs",
+      "category": "historical-evidence",
+      "start_line": 6832,
+      "end_line": 6953
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/e6-browser-pdf-acceptance.md",
+      "category": "historical-evidence",
+      "start_line": 6954,
+      "end_line": 7059
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/e6-closure-preparation.md",
+      "category": "historical-evidence",
+      "start_line": 7060,
+      "end_line": 7119
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/e6-contrast-summary.mjs",
+      "category": "historical-evidence",
+      "start_line": 7120,
+      "end_line": 7134
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/e6-final-detail.mjs",
+      "category": "historical-evidence",
+      "start_line": 7135,
+      "end_line": 7143
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/e6-final-navigation.mjs",
+      "category": "historical-evidence",
+      "start_line": 7144,
+      "end_line": 7195
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/e6-final-timeline-body.mjs",
+      "category": "historical-evidence",
+      "start_line": 7196,
+      "end_line": 7203
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/e6-final-ui-acceptance.md",
+      "category": "historical-evidence",
+      "start_line": 7204,
+      "end_line": 7242
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/e6-final-visual.mjs",
+      "category": "historical-evidence",
+      "start_line": 7243,
+      "end_line": 7295
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/e6-fix1-overflow.mjs",
+      "category": "historical-evidence",
+      "start_line": 7296,
+      "end_line": 7307
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/e6-fonts.conf",
+      "category": "historical-evidence",
+      "start_line": 7308,
+      "end_line": 7315
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/e6-graph-instrumented.mjs",
+      "category": "historical-evidence",
+      "start_line": 7316,
+      "end_line": 7345
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/e6-graph-render.mjs",
+      "category": "historical-evidence",
+      "start_line": 7346,
+      "end_line": 7375
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/e6-hero-background.mjs",
+      "category": "historical-evidence",
+      "start_line": 7376,
+      "end_line": 7383
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/e6-hero-contrast.py",
+      "category": "historical-evidence",
+      "start_line": 7384,
+      "end_line": 7410
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/e6-overflow-check.mjs",
+      "category": "historical-evidence",
+      "start_line": 7411,
+      "end_line": 7421
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/e6-overflow-detail.mjs",
+      "category": "historical-evidence",
+      "start_line": 7422,
+      "end_line": 7432
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/e6-overflow-matrix.mjs",
+      "category": "historical-evidence",
+      "start_line": 7433,
+      "end_line": 7444
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/e6-residual-text.mjs",
+      "category": "historical-evidence",
+      "start_line": 7445,
+      "end_line": 7453
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/e6-supplement-remaining.mjs",
+      "category": "historical-evidence",
+      "start_line": 7454,
+      "end_line": 7512
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/e6-supplement.mjs",
+      "category": "historical-evidence",
+      "start_line": 7513,
+      "end_line": 7586
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/environment-notes.md",
+      "category": "historical-evidence",
+      "start_line": 7587,
+      "end_line": 7672
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a1-text-200.png",
+      "category": "historical-evidence",
+      "start_line": 7673,
+      "end_line": 7676
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a1-zoomed-320.png",
+      "category": "historical-evidence",
+      "start_line": 7677,
+      "end_line": 7680
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a3-browser-evidence.txt",
+      "category": "historical-evidence",
+      "start_line": 7681,
+      "end_line": 7703
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a3-credentials-320.png",
+      "category": "historical-evidence",
+      "start_line": 7704,
+      "end_line": 7707
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a3-graph-320.png",
+      "category": "historical-evidence",
+      "start_line": 7708,
+      "end_line": 7711
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a3-homepage-320.png",
+      "category": "historical-evidence",
+      "start_line": 7712,
+      "end_line": 7715
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a3-pdf-content-check.txt",
+      "category": "historical-evidence",
+      "start_line": 7716,
+      "end_line": 7747
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a3-resume-candidate.pdf",
+      "category": "historical-evidence",
+      "start_line": 7748,
+      "end_line": 7843
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a3-resume-candidate.png",
+      "category": "historical-evidence",
+      "start_line": 7844,
+      "end_line": 7847
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a3-resume-final.png",
+      "category": "historical-evidence",
+      "start_line": 7848,
+      "end_line": 7851
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a3-skills-320.png",
+      "category": "historical-evidence",
+      "start_line": 7852,
+      "end_line": 7855
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a4-browser-evidence.txt",
+      "category": "historical-evidence",
+      "start_line": 7856,
+      "end_line": 7877
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a4-portfolio-320.png",
+      "category": "historical-evidence",
+      "start_line": 7878,
+      "end_line": 7881
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a4-portfolio-desktop.png",
+      "category": "historical-evidence",
+      "start_line": 7882,
+      "end_line": 7885
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a5-combined.log",
+      "category": "historical-evidence",
+      "start_line": 7886,
+      "end_line": 7941
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a5-green-build.log",
+      "category": "historical-evidence",
+      "start_line": 7942,
+      "end_line": 8005
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a5-green-motion.log",
+      "category": "historical-evidence",
+      "start_line": 8006,
+      "end_line": 8023
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a5-red-build.log",
+      "category": "historical-evidence",
+      "start_line": 8024,
+      "end_line": 8087
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a5-red-motion.log",
+      "category": "historical-evidence",
+      "start_line": 8088,
+      "end_line": 8214
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a5-typecheck-tests.log",
+      "category": "historical-evidence",
+      "start_line": 8215,
+      "end_line": 8223
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/analytics-async-retry-before.json",
+      "category": "historical-evidence",
+      "start_line": 8224,
+      "end_line": 8257
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/analytics-private-baseline-summary.json",
+      "category": "historical-evidence",
+      "start_line": 8258,
+      "end_line": 8312
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b1-final-focused.log",
+      "category": "historical-evidence",
+      "start_line": 8313,
+      "end_line": 8346
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b1-fix1-build.log",
+      "category": "historical-evidence",
+      "start_line": 8347,
+      "end_line": 8423
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b1-fix1-graph.log",
+      "category": "historical-evidence",
+      "start_line": 8424,
+      "end_line": 8465
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b1-fix1-green.log",
+      "category": "historical-evidence",
+      "start_line": 8466,
+      "end_line": 8489
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b1-full-suite.log",
+      "category": "historical-evidence",
+      "start_line": 8490,
+      "end_line": 8527
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b2-after-1280x900.png",
+      "category": "historical-evidence",
+      "start_line": 8528,
+      "end_line": 8531
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b2-after-320x720-canvas.png",
+      "category": "historical-evidence",
+      "start_line": 8532,
+      "end_line": 8535
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b2-after-320x720.png",
+      "category": "historical-evidence",
+      "start_line": 8536,
+      "end_line": 8539
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b2-after-390x844-canvas.png",
+      "category": "historical-evidence",
+      "start_line": 8540,
+      "end_line": 8543
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b2-after-390x844.png",
+      "category": "historical-evidence",
+      "start_line": 8544,
+      "end_line": 8547
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b2-after-844x390.png",
+      "category": "historical-evidence",
+      "start_line": 8548,
+      "end_line": 8551
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b2-before-1280x900.png",
+      "category": "historical-evidence",
+      "start_line": 8552,
+      "end_line": 8555
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b2-before-320x720.png",
+      "category": "historical-evidence",
+      "start_line": 8556,
+      "end_line": 8559
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b2-before-390x844.png",
+      "category": "historical-evidence",
+      "start_line": 8560,
+      "end_line": 8563
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b2-before-844x390.png",
+      "category": "historical-evidence",
+      "start_line": 8564,
+      "end_line": 8567
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b2-rendered-contrast.json",
+      "category": "historical-evidence",
+      "start_line": 8568,
+      "end_line": 8616
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-desktop-overview.png",
+      "category": "historical-evidence",
+      "start_line": 8617,
+      "end_line": 8620
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-final-build.log",
+      "category": "historical-evidence",
+      "start_line": 8621,
+      "end_line": 8684
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-final-combined.log",
+      "category": "historical-evidence",
+      "start_line": 8685,
+      "end_line": 8743
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-build.log",
+      "category": "historical-evidence",
+      "start_line": 8744,
+      "end_line": 8807
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-desktop-label-rendering.json",
+      "category": "historical-evidence",
+      "start_line": 8808,
+      "end_line": 8913
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-desktop-overview.png",
+      "category": "historical-evidence",
+      "start_line": 8914,
+      "end_line": 8917
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-final-build.log",
+      "category": "historical-evidence",
+      "start_line": 8918,
+      "end_line": 8981
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-final-hover-tests.log",
+      "category": "historical-evidence",
+      "start_line": 8982,
+      "end_line": 8998
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-final-tests.log",
+      "category": "historical-evidence",
+      "start_line": 8999,
+      "end_line": 9018
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-green-labels.log",
+      "category": "historical-evidence",
+      "start_line": 9019,
+      "end_line": 9034
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-lint.log",
+      "category": "historical-evidence",
+      "start_line": 9035,
+      "end_line": 9043
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-phone-label-rendering.json",
+      "category": "historical-evidence",
+      "start_line": 9044,
+      "end_line": 9149
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-phone-overview.png",
+      "category": "historical-evidence",
+      "start_line": 9150,
+      "end_line": 9153
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-phone-selected-education.png",
+      "category": "historical-evidence",
+      "start_line": 9154,
+      "end_line": 9157
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-red-compositor.log",
+      "category": "historical-evidence",
+      "start_line": 9158,
+      "end_line": 9205
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-red-hover.log",
+      "category": "historical-evidence",
+      "start_line": 9206,
+      "end_line": 9253
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-red.log",
+      "category": "historical-evidence",
+      "start_line": 9254,
+      "end_line": 9333
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-types.log",
+      "category": "historical-evidence",
+      "start_line": 9334,
+      "end_line": 9342
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-phone-overview.png",
+      "category": "historical-evidence",
+      "start_line": 9343,
+      "end_line": 9346
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-phone-selected-education.png",
+      "category": "historical-evidence",
+      "start_line": 9347,
+      "end_line": 9350
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-red-build.log",
+      "category": "historical-evidence",
+      "start_line": 9351,
+      "end_line": 9414
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-red-tests.log",
+      "category": "historical-evidence",
+      "start_line": 9415,
+      "end_line": 9532
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-repair-focused.log",
+      "category": "historical-evidence",
+      "start_line": 9533,
+      "end_line": 9550
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/c1-browser-evidence.txt",
+      "category": "historical-evidence",
+      "start_line": 9551,
+      "end_line": 9581
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/c1-contact-summary-320.png",
+      "category": "historical-evidence",
+      "start_line": 9582,
+      "end_line": 9585
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/c1-counter-near-limit.png",
+      "category": "historical-evidence",
+      "start_line": 9586,
+      "end_line": 9589
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/c1-counter-ordinary.png",
+      "category": "historical-evidence",
+      "start_line": 9590,
+      "end_line": 9593
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/c2-browser-evidence.txt",
+      "category": "historical-evidence",
+      "start_line": 9594,
+      "end_line": 9619
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/c2-contact-pending-320.png",
+      "category": "historical-evidence",
+      "start_line": 9620,
+      "end_line": 9623
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/c2-contact-uncertainty-320.png",
+      "category": "historical-evidence",
+      "start_line": 9624,
+      "end_line": 9627
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/capture-a3.mjs",
+      "category": "historical-evidence",
+      "start_line": 9628,
+      "end_line": 9697
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/capture-a4.mjs",
+      "category": "historical-evidence",
+      "start_line": 9698,
+      "end_line": 9787
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/capture-c1.mjs",
+      "category": "historical-evidence",
+      "start_line": 9788,
+      "end_line": 9836
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/capture-c2.mjs",
+      "category": "historical-evidence",
+      "start_line": 9837,
+      "end_line": 9972
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/capture-d1.mjs",
+      "category": "historical-evidence",
+      "start_line": 9973,
+      "end_line": 10153
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/capture-e6-mobile-overlap-preflight.mjs",
+      "category": "historical-evidence",
+      "start_line": 10154,
+      "end_line": 10202
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d1-current-320.png",
+      "category": "historical-evidence",
+      "start_line": 10203,
+      "end_line": 10206
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d1-current-disclosure-320.png",
+      "category": "historical-evidence",
+      "start_line": 10207,
+      "end_line": 10210
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d1-error-320.png",
+      "category": "historical-evidence",
+      "start_line": 10211,
+      "end_line": 10214
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d1-rendered-evidence.json",
+      "category": "historical-evidence",
+      "start_line": 10215,
+      "end_line": 10266
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d1-sparse-calendar-320.png",
+      "category": "historical-evidence",
+      "start_line": 10267,
+      "end_line": 10270
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d1-stale-320.png",
+      "category": "historical-evidence",
+      "start_line": 10271,
+      "end_line": 10274
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d1-zero-unavailable-320.png",
+      "category": "historical-evidence",
+      "start_line": 10275,
+      "end_line": 10278
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-build.log",
+      "category": "historical-evidence",
+      "start_line": 10279,
+      "end_line": 10342
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-client.log",
+      "category": "historical-evidence",
+      "start_line": 10343,
+      "end_line": 10369
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-fix1-browser.log",
+      "category": "historical-evidence",
+      "start_line": 10370,
+      "end_line": 10388
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-fix1-partial-empty.png",
+      "category": "historical-evidence",
+      "start_line": 10389,
+      "end_line": 10392
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-fix1-partial-prior.json",
+      "category": "historical-evidence",
+      "start_line": 10393,
+      "end_line": 10399
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-fix1-partial-prior.png",
+      "category": "historical-evidence",
+      "start_line": 10400,
+      "end_line": 10403
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-fix1-python.log",
+      "category": "historical-evidence",
+      "start_line": 10404,
+      "end_line": 10443
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-fix1-red.log",
+      "category": "historical-evidence",
+      "start_line": 10444,
+      "end_line": 10473
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-fix1-types.log",
+      "category": "historical-evidence",
+      "start_line": 10474,
+      "end_line": 10482
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-green-python.log",
+      "category": "historical-evidence",
+      "start_line": 10483,
+      "end_line": 10517
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-produced-stale.json",
+      "category": "historical-evidence",
+      "start_line": 10518,
+      "end_line": 10524
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-producer-current.png",
+      "category": "historical-evidence",
+      "start_line": 10525,
+      "end_line": 10528
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-producer-stale.png",
+      "category": "historical-evidence",
+      "start_line": 10529,
+      "end_line": 10532
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-producer-zero.png",
+      "category": "historical-evidence",
+      "start_line": 10533,
+      "end_line": 10536
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-red-normalizer.log",
+      "category": "historical-evidence",
+      "start_line": 10537,
+      "end_line": 10580
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-red-python.log",
+      "category": "historical-evidence",
+      "start_line": 10581,
+      "end_line": 10821
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-static-checks.txt",
+      "category": "historical-evidence",
+      "start_line": 10822,
+      "end_line": 10846
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d3-backend-final.log",
+      "category": "historical-evidence",
+      "start_line": 10847,
+      "end_line": 10922
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d3-config-checks.txt",
+      "category": "historical-evidence",
+      "start_line": 10923,
+      "end_line": 10940
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d3-ingestion-matrix.log",
+      "category": "historical-evidence",
+      "start_line": 10941,
+      "end_line": 10963
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d3-ledger-guard-iteration.log",
+      "category": "historical-evidence",
+      "start_line": 10964,
+      "end_line": 11006
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d3-orchestrator-green.log",
+      "category": "historical-evidence",
+      "start_line": 11007,
+      "end_line": 11018
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d3-packaging-green.log",
+      "category": "historical-evidence",
+      "start_line": 11019,
+      "end_line": 11038
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d3-red-disappeared-input.log",
+      "category": "historical-evidence",
+      "start_line": 11039,
+      "end_line": 11059
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d3-red-ledger.log",
+      "category": "historical-evidence",
+      "start_line": 11060,
+      "end_line": 11093
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d3-red-observation-validation.log",
+      "category": "historical-evidence",
+      "start_line": 11094,
+      "end_line": 11115
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d3-red-orchestrator.log",
+      "category": "historical-evidence",
+      "start_line": 11116,
+      "end_line": 11141
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d3-red-packaging.log",
+      "category": "historical-evidence",
+      "start_line": 11142,
+      "end_line": 11178
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d3-terraform-validate.log",
+      "category": "historical-evidence",
+      "start_line": 11179,
+      "end_line": 11186
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d4-candidate-import.log",
+      "category": "historical-evidence",
+      "start_line": 11187,
+      "end_line": 11193
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d4-candidate-package.json",
+      "category": "historical-evidence",
+      "start_line": 11194,
+      "end_line": 11211
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d4-gate-script-iteration.log",
+      "category": "historical-evidence",
+      "start_line": 11212,
+      "end_line": 11270
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d4-red-release-gate.log",
+      "category": "historical-evidence",
+      "start_line": 11271,
+      "end_line": 11314
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d4-release-gate-tests.log",
+      "category": "historical-evidence",
+      "start_line": 11315,
+      "end_line": 11360
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/delivery-cache-before.json",
+      "category": "historical-evidence",
+      "start_line": 11361,
+      "end_line": 11516
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/delivery-entry-paths-before.json",
+      "category": "historical-evidence",
+      "start_line": 11517,
+      "end_line": 11675
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/delivery-origin-access-control.json",
+      "category": "historical-evidence",
+      "start_line": 11676,
+      "end_line": 11693
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/deployed-analytics-package-before.json",
+      "category": "historical-evidence",
+      "start_line": 11694,
+      "end_line": 11729
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e1-tdd-transcript.md",
+      "category": "historical-evidence",
+      "start_line": 11730,
+      "end_line": 11871
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e1-terraform-transcript.md",
+      "category": "historical-evidence",
+      "start_line": 11872,
+      "end_line": 11950
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e1-validation-transcript.md",
+      "category": "historical-evidence",
+      "start_line": 11951,
+      "end_line": 12027
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e2-validation-transcript.md",
+      "category": "historical-evidence",
+      "start_line": 12028,
+      "end_line": 12110
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e3-validation-transcript.md",
+      "category": "historical-evidence",
+      "start_line": 12111,
+      "end_line": 12173
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e4-actionlint.log",
+      "category": "historical-evidence",
+      "start_line": 12174,
+      "end_line": 12176
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e4-candidate-manifest-final.log",
+      "category": "historical-evidence",
+      "start_line": 12177,
+      "end_line": 12183
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e4-candidate-manifest.json",
+      "category": "historical-evidence",
+      "start_line": 12184,
+      "end_line": 12867
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e4-candidate-manifest.log",
+      "category": "historical-evidence",
+      "start_line": 12868,
+      "end_line": 12874
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e4-candidate-summary.json",
+      "category": "historical-evidence",
+      "start_line": 12875,
+      "end_line": 12894
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e4-diff-check.log",
+      "category": "historical-evidence",
+      "start_line": 12895,
+      "end_line": 12897
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e4-empty-recovery-red.log",
+      "category": "historical-evidence",
+      "start_line": 12898,
+      "end_line": 12932
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e4-lock-check.log",
+      "category": "historical-evidence",
+      "start_line": 12933,
+      "end_line": 12935
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e4-manifest-final.log",
+      "category": "historical-evidence",
+      "start_line": 12936,
+      "end_line": 12987
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e4-manifest-green.log",
+      "category": "historical-evidence",
+      "start_line": 12988,
+      "end_line": 13033
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e4-manifest-guard-iteration.log",
+      "category": "historical-evidence",
+      "start_line": 13034,
+      "end_line": 13117
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e4-manifest-red-node22.log",
+      "category": "historical-evidence",
+      "start_line": 13118,
+      "end_line": 13161
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e4-manifest-red.log",
+      "category": "historical-evidence",
+      "start_line": 13162,
+      "end_line": 13202
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e4-producer-green.log",
+      "category": "historical-evidence",
+      "start_line": 13203,
+      "end_line": 13214
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e4-producer-red.log",
+      "category": "historical-evidence",
+      "start_line": 13215,
+      "end_line": 13237
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e4-terraform-fmt.log",
+      "category": "historical-evidence",
+      "start_line": 13238,
+      "end_line": 13240
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e4-terraform-validate.log",
+      "category": "historical-evidence",
+      "start_line": 13241,
+      "end_line": 13248
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-actionlint-fix.log",
+      "category": "historical-evidence",
+      "start_line": 13249,
+      "end_line": 13251
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-checked-site-manifest.json",
+      "category": "historical-evidence",
+      "start_line": 13252,
+      "end_line": 13935
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-fix1-green-release-gates-final.log",
+      "category": "historical-evidence",
+      "start_line": 13936,
+      "end_line": 14023
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-fix1-green-release-gates.log",
+      "category": "historical-evidence",
+      "start_line": 14024,
+      "end_line": 14111
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-fix1-input-preservation.txt",
+      "category": "historical-evidence",
+      "start_line": 14112,
+      "end_line": 14145
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-fix1-red-schedule-gate.log",
+      "category": "historical-evidence",
+      "start_line": 14146,
+      "end_line": 14181
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-full-release-check.log",
+      "category": "historical-evidence",
+      "start_line": 14182,
+      "end_line": 14602
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-green-workflow-extractor-iteration.log",
+      "category": "historical-evidence",
+      "start_line": 14603,
+      "end_line": 14672
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-green-workflow-pipefail.log",
+      "category": "historical-evidence",
+      "start_line": 14673,
+      "end_line": 14700
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-real-plan-classification.txt",
+      "category": "historical-evidence",
+      "start_line": 14701,
+      "end_line": 14708
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-red-analytics-plan-gate.log",
+      "category": "historical-evidence",
+      "start_line": 14709,
+      "end_line": 14745
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-red-publication-bucket.log",
+      "category": "historical-evidence",
+      "start_line": 14746,
+      "end_line": 14781
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-red-release-packaging.log",
+      "category": "historical-evidence",
+      "start_line": 14782,
+      "end_line": 14846
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-red-workflow-extractor-iteration.log",
+      "category": "historical-evidence",
+      "start_line": 14847,
+      "end_line": 14883
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-red-workflow-pipefail.log",
+      "category": "historical-evidence",
+      "start_line": 14884,
+      "end_line": 14925
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-release-artifact-manifest.json",
+      "category": "historical-evidence",
+      "start_line": 14926,
+      "end_line": 14960
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-shared-logging-plan-shape.json",
+      "category": "historical-evidence",
+      "start_line": 14961,
+      "end_line": 15004
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-terraform-init-focused.log",
+      "category": "historical-evidence",
+      "start_line": 15005,
+      "end_line": 15027
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-terraform-init-sandbox-network-failure.log",
+      "category": "historical-evidence",
+      "start_line": 15028,
+      "end_line": 15072
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-terraform-validate-focused.log",
+      "category": "historical-evidence",
+      "start_line": 15073,
+      "end_line": 15080
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-workflow-fix-final.log",
+      "category": "historical-evidence",
+      "start_line": 15081,
+      "end_line": 15108
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-404-320.png",
+      "category": "historical-evidence",
+      "start_line": 15109,
+      "end_line": 15112
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-404-hover.png",
+      "category": "historical-evidence",
+      "start_line": 15113,
+      "end_line": 15116
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-arbitrary-contact-320.png",
+      "category": "historical-evidence",
+      "start_line": 15117,
+      "end_line": 15120
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-arbitrary-portfolio-320.png",
+      "category": "historical-evidence",
+      "start_line": 15121,
+      "end_line": 15124
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-arbitrary-resume-320.png",
+      "category": "historical-evidence",
+      "start_line": 15125,
+      "end_line": 15128
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-architecture-open.png",
+      "category": "historical-evidence",
+      "start_line": 15129,
+      "end_line": 15132
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-archive-identity-verify.log",
+      "category": "historical-evidence",
+      "start_line": 15133,
+      "end_line": 15139
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-browser-acceptance.json",
+      "category": "historical-evidence",
+      "start_line": 15140,
+      "end_line": 40358
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-browser-audit.log",
+      "category": "historical-evidence",
+      "start_line": 40359,
+      "end_line": 40408
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-browser-harness-iteration.log",
+      "category": "historical-evidence",
+      "start_line": 40409,
+      "end_line": 40626
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-checked-manifest.log",
+      "category": "historical-evidence",
+      "start_line": 40627,
+      "end_line": 40633
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-checked-site-manifest.json",
+      "category": "historical-evidence",
+      "start_line": 40634,
+      "end_line": 41317
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-contact-1280.png",
+      "category": "historical-evidence",
+      "start_line": 41318,
+      "end_line": 41321
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-contact-320.png",
+      "category": "historical-evidence",
+      "start_line": 41322,
+      "end_line": 41325
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-contact-390.png",
+      "category": "historical-evidence",
+      "start_line": 41326,
+      "end_line": 41329
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-contact-430.png",
+      "category": "historical-evidence",
+      "start_line": 41330,
+      "end_line": 41333
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-contact-844.png",
+      "category": "historical-evidence",
+      "start_line": 41334,
+      "end_line": 41337
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-contact-anchor-320.png",
+      "category": "historical-evidence",
+      "start_line": 41338,
+      "end_line": 41341
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-contact-counter-warning.png",
+      "category": "historical-evidence",
+      "start_line": 41342,
+      "end_line": 41345
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-contact-invalid-320.png",
+      "category": "historical-evidence",
+      "start_line": 41346,
+      "end_line": 41349
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-contact-pending-320.png",
+      "category": "historical-evidence",
+      "start_line": 41350,
+      "end_line": 41353
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-contact-uncertain-320.png",
+      "category": "historical-evidence",
+      "start_line": 41354,
+      "end_line": 41357
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-contrast-summary.json",
+      "category": "historical-evidence",
+      "start_line": 41358,
+      "end_line": 49213
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-contrast-summary.log",
+      "category": "historical-evidence",
+      "start_line": 49214,
+      "end_line": 49313
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-credential-hover.png",
+      "category": "historical-evidence",
+      "start_line": 49314,
+      "end_line": 49317
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-credential-normal.png",
+      "category": "historical-evidence",
+      "start_line": 49318,
+      "end_line": 49321
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-documentation-integrity.json",
+      "category": "historical-evidence",
+      "start_line": 49322,
+      "end_line": 49345
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-evidence-inventory.json",
+      "category": "historical-evidence",
+      "start_line": 49346,
+      "end_line": 49967
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-export-verification.json",
+      "category": "historical-evidence",
+      "start_line": 49968,
+      "end_line": 49981
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-404.png",
+      "category": "historical-evidence",
+      "start_line": 49982,
+      "end_line": 49985
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-about-1280.png",
+      "category": "historical-evidence",
+      "start_line": 49986,
+      "end_line": 49989
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-about-320.png",
+      "category": "historical-evidence",
+      "start_line": 49990,
+      "end_line": 49993
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-about-390.png",
+      "category": "historical-evidence",
+      "start_line": 49994,
+      "end_line": 49997
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-about-430.png",
+      "category": "historical-evidence",
+      "start_line": 49998,
+      "end_line": 50001
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-about-844.png",
+      "category": "historical-evidence",
+      "start_line": 50002,
+      "end_line": 50005
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-browser-suite.log",
+      "category": "historical-evidence",
+      "start_line": 50006,
+      "end_line": 50141
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-contact-1280.png",
+      "category": "historical-evidence",
+      "start_line": 50142,
+      "end_line": 50145
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-contact-320.png",
+      "category": "historical-evidence",
+      "start_line": 50146,
+      "end_line": 50149
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-contact-390.png",
+      "category": "historical-evidence",
+      "start_line": 50150,
+      "end_line": 50153
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-contact-430.png",
+      "category": "historical-evidence",
+      "start_line": 50154,
+      "end_line": 50157
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-contact-844.png",
+      "category": "historical-evidence",
+      "start_line": 50158,
+      "end_line": 50161
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-credential-hover.png",
+      "category": "historical-evidence",
+      "start_line": 50162,
+      "end_line": 50165
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-detail.json",
+      "category": "historical-evidence",
+      "start_line": 50166,
+      "end_line": 50177
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-detail.log",
+      "category": "historical-evidence",
+      "start_line": 50178,
+      "end_line": 50184
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-graph-python-3d.png",
+      "category": "historical-evidence",
+      "start_line": 50185,
+      "end_line": 50188
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-graph-python-details.png",
+      "category": "historical-evidence",
+      "start_line": 50189,
+      "end_line": 50192
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-graph-real-clock-overview.png",
+      "category": "historical-evidence",
+      "start_line": 50193,
+      "end_line": 50196
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-graph-real-clock-python.png",
+      "category": "historical-evidence",
+      "start_line": 50197,
+      "end_line": 50200
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-home-1280.png",
+      "category": "historical-evidence",
+      "start_line": 50201,
+      "end_line": 50204
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-home-320.png",
+      "category": "historical-evidence",
+      "start_line": 50205,
+      "end_line": 50208
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-home-390.png",
+      "category": "historical-evidence",
+      "start_line": 50209,
+      "end_line": 50212
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-home-430.png",
+      "category": "historical-evidence",
+      "start_line": 50213,
+      "end_line": 50216
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-home-844.png",
+      "category": "historical-evidence",
+      "start_line": 50217,
+      "end_line": 50220
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-navigation.log",
+      "category": "historical-evidence",
+      "start_line": 50221,
+      "end_line": 50228
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-portfolio-1280.png",
+      "category": "historical-evidence",
+      "start_line": 50229,
+      "end_line": 50232
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-portfolio-320.png",
+      "category": "historical-evidence",
+      "start_line": 50233,
+      "end_line": 50236
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-portfolio-390.png",
+      "category": "historical-evidence",
+      "start_line": 50237,
+      "end_line": 50240
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-portfolio-430.png",
+      "category": "historical-evidence",
+      "start_line": 50241,
+      "end_line": 50244
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-portfolio-844.png",
+      "category": "historical-evidence",
+      "start_line": 50245,
+      "end_line": 50248
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-resume-1280.png",
+      "category": "historical-evidence",
+      "start_line": 50249,
+      "end_line": 50252
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-resume-320.png",
+      "category": "historical-evidence",
+      "start_line": 50253,
+      "end_line": 50256
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-resume-390.png",
+      "category": "historical-evidence",
+      "start_line": 50257,
+      "end_line": 50260
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-resume-430.png",
+      "category": "historical-evidence",
+      "start_line": 50261,
+      "end_line": 50264
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-resume-844.png",
+      "category": "historical-evidence",
+      "start_line": 50265,
+      "end_line": 50268
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-static.log",
+      "category": "historical-evidence",
+      "start_line": 50269,
+      "end_line": 50283
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-stats-table.png",
+      "category": "historical-evidence",
+      "start_line": 50284,
+      "end_line": 50287
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-stats.png",
+      "category": "historical-evidence",
+      "start_line": 50288,
+      "end_line": 50291
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-test-artifacts/e2e-graph-discovery-a-phon-8c45a--views-and-recover-overview-chromium/phone-selected-education.png",
+      "category": "historical-evidence",
+      "start_line": 50292,
+      "end_line": 50295
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-test-artifacts/e2e-graph-discovery-animat-f7d6b-camera-after-orbit-and-zoom-chromium/overview.png",
+      "category": "historical-evidence",
+      "start_line": 50296,
+      "end_line": 50299
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-test-artifacts/e2e-graph-discovery-canoni-258b6-al-labels-readable-at-390px-chromium/label-rendering.json",
+      "category": "historical-evidence",
+      "start_line": 50300,
+      "end_line": 50405
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-test-artifacts/e2e-graph-discovery-canoni-258b6-al-labels-readable-at-390px-chromium/overview-readable-390.png",
+      "category": "historical-evidence",
+      "start_line": 50406,
+      "end_line": 50409
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-test-artifacts/e2e-graph-discovery-canoni-943c6-l-labels-readable-at-1280px-chromium/label-rendering.json",
+      "category": "historical-evidence",
+      "start_line": 50410,
+      "end_line": 50515
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-test-artifacts/e2e-graph-discovery-canoni-943c6-l-labels-readable-at-1280px-chromium/overview-readable-1280.png",
+      "category": "historical-evidence",
+      "start_line": 50516,
+      "end_line": 50519
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-test-artifacts/e2e-graph-discovery-manual-e6e53-camera-after-orbit-and-zoom-chromium/overview.png",
+      "category": "historical-evidence",
+      "start_line": 50520,
+      "end_line": 50523
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-test-artifacts/e2e-graph-discovery-system-c8657-camera-after-orbit-and-zoom-chromium/overview.png",
+      "category": "historical-evidence",
+      "start_line": 50524,
+      "end_line": 50527
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-test-artifacts/e2e-graph-layout-graph-con-3ccdc-s-remain-usable-at-1280x900-chromium/settled.png",
+      "category": "historical-evidence",
+      "start_line": 50528,
+      "end_line": 50531
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-test-artifacts/e2e-graph-layout-graph-con-421d6-ls-remain-usable-at-390x844-chromium/settled-canvas.png",
+      "category": "historical-evidence",
+      "start_line": 50532,
+      "end_line": 50535
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-test-artifacts/e2e-graph-layout-graph-con-421d6-ls-remain-usable-at-390x844-chromium/settled.png",
+      "category": "historical-evidence",
+      "start_line": 50536,
+      "end_line": 50539
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-test-artifacts/e2e-graph-layout-graph-con-803d6-ls-remain-usable-at-320x720-chromium/settled-canvas.png",
+      "category": "historical-evidence",
+      "start_line": 50540,
+      "end_line": 50543
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-test-artifacts/e2e-graph-layout-graph-con-803d6-ls-remain-usable-at-320x720-chromium/settled.png",
+      "category": "historical-evidence",
+      "start_line": 50544,
+      "end_line": 50547
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-test-artifacts/e2e-graph-layout-graph-con-f89eb-ls-remain-usable-at-844x390-chromium/settled.png",
+      "category": "historical-evidence",
+      "start_line": 50548,
+      "end_line": 50551
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-test-artifacts/e2e-graph-layout-small-gra-75bc3-st-on-its-rendered-surfaces-chromium/attachments/rendered-contrast-json-6b64dd7f764f830306ba073b80236fc1cda92ee8.json",
+      "category": "historical-evidence",
+      "start_line": 50552,
+      "end_line": 50600
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-test-artifacts/e2e-graph-layout-small-gra-75bc3-st-on-its-rendered-surfaces-chromium/rendered-contrast.json",
+      "category": "historical-evidence",
+      "start_line": 50601,
+      "end_line": 50649
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-test-artifacts/e2e-stats-producer-actual--5ac1e-atible-with-the-reader-zero-chromium/producer-zero.png",
+      "category": "historical-evidence",
+      "start_line": 50650,
+      "end_line": 50653
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-test-artifacts/e2e-stats-producer-actual--5b076-tible-with-the-reader-stale-chromium/producer-stale.png",
+      "category": "historical-evidence",
+      "start_line": 50654,
+      "end_line": 50657
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-test-artifacts/e2e-stats-producer-actual--7bd48-ble-with-the-reader-current-chromium/producer-current.png",
+      "category": "historical-evidence",
+      "start_line": 50658,
+      "end_line": 50661
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-test-artifacts/e2e-stats-producer-partial-10145-epted-dataset-partial-empty-chromium/partial-empty.png",
+      "category": "historical-evidence",
+      "start_line": 50662,
+      "end_line": 50665
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-test-artifacts/e2e-stats-producer-partial-ba2c7-epted-dataset-partial-prior-chromium/partial-prior.png",
+      "category": "historical-evidence",
+      "start_line": 50666,
+      "end_line": 50669
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-text200-320-about.png",
+      "category": "historical-evidence",
+      "start_line": 50670,
+      "end_line": 50673
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-text200-320-contact.png",
+      "category": "historical-evidence",
+      "start_line": 50674,
+      "end_line": 50677
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-text200-320-credential.png",
+      "category": "historical-evidence",
+      "start_line": 50678,
+      "end_line": 50681
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-text200-320-date.png",
+      "category": "historical-evidence",
+      "start_line": 50682,
+      "end_line": 50685
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-text200-320-skills.png",
+      "category": "historical-evidence",
+      "start_line": 50686,
+      "end_line": 50689
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-text200-390-about.png",
+      "category": "historical-evidence",
+      "start_line": 50690,
+      "end_line": 50693
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-text200-390-contact.png",
+      "category": "historical-evidence",
+      "start_line": 50694,
+      "end_line": 50697
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-text200-390-credential.png",
+      "category": "historical-evidence",
+      "start_line": 50698,
+      "end_line": 50701
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-text200-390-date.png",
+      "category": "historical-evidence",
+      "start_line": 50702,
+      "end_line": 50705
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-text200-390-skills.png",
+      "category": "historical-evidence",
+      "start_line": 50706,
+      "end_line": 50709
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-text200-430-about.png",
+      "category": "historical-evidence",
+      "start_line": 50710,
+      "end_line": 50713
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-text200-430-contact.png",
+      "category": "historical-evidence",
+      "start_line": 50714,
+      "end_line": 50717
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-text200-430-credential.png",
+      "category": "historical-evidence",
+      "start_line": 50718,
+      "end_line": 50721
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-text200-430-date.png",
+      "category": "historical-evidence",
+      "start_line": 50722,
+      "end_line": 50725
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-text200-430-skills.png",
+      "category": "historical-evidence",
+      "start_line": 50726,
+      "end_line": 50729
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-text200-email-320.png",
+      "category": "historical-evidence",
+      "start_line": 50730,
+      "end_line": 50733
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-text200-email-390.png",
+      "category": "historical-evidence",
+      "start_line": 50734,
+      "end_line": 50737
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-text200-email-430.png",
+      "category": "historical-evidence",
+      "start_line": 50738,
+      "end_line": 50741
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-text200-timeline-body-320.png",
+      "category": "historical-evidence",
+      "start_line": 50742,
+      "end_line": 50745
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-timeline-body.log",
+      "category": "historical-evidence",
+      "start_line": 50746,
+      "end_line": 50752
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-validation-identity.json",
+      "category": "historical-evidence",
+      "start_line": 50753,
+      "end_line": 50768
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-visual-summary.json",
+      "category": "historical-evidence",
+      "start_line": 50769,
+      "end_line": 50784
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-visual.json",
+      "category": "historical-evidence",
+      "start_line": 50785,
+      "end_line": 64283
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-visual.log",
+      "category": "historical-evidence",
+      "start_line": 64284,
+      "end_line": 64336
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-web-build-residual-fix.log",
+      "category": "historical-evidence",
+      "start_line": 64337,
+      "end_line": 64400
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-web-build.log",
+      "category": "historical-evidence",
+      "start_line": 64401,
+      "end_line": 64464
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-fix-preview.log",
+      "category": "historical-evidence",
+      "start_line": 64465,
+      "end_line": 65303
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-fix1-overflow-matrix.json",
+      "category": "historical-evidence",
+      "start_line": 65304,
+      "end_line": 65327
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-fix1-overflow.log",
+      "category": "historical-evidence",
+      "start_line": 65328,
+      "end_line": 65348
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-fix1-text200-contact-320-viewport.png",
+      "category": "historical-evidence",
+      "start_line": 65349,
+      "end_line": 65352
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-fix1-text200-contact-390-viewport.png",
+      "category": "historical-evidence",
+      "start_line": 65353,
+      "end_line": 65356
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-fix1-text200-contact-430-viewport.png",
+      "category": "historical-evidence",
+      "start_line": 65357,
+      "end_line": 65360
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-format-check.log",
+      "category": "historical-evidence",
+      "start_line": 65361,
+      "end_line": 65369
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-instrumented.json",
+      "category": "historical-evidence",
+      "start_line": 65370,
+      "end_line": 66003
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-instrumented.log",
+      "category": "historical-evidence",
+      "start_line": 66004,
+      "end_line": 66011
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-legend.png",
+      "category": "historical-evidence",
+      "start_line": 66012,
+      "end_line": 66015
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-list-1280.png",
+      "category": "historical-evidence",
+      "start_line": 66016,
+      "end_line": 66019
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-list-320.png",
+      "category": "historical-evidence",
+      "start_line": 66020,
+      "end_line": 66023
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-list-390.png",
+      "category": "historical-evidence",
+      "start_line": 66024,
+      "end_line": 66027
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-list-430.png",
+      "category": "historical-evidence",
+      "start_line": 66028,
+      "end_line": 66031
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-list-844.png",
+      "category": "historical-evidence",
+      "start_line": 66032,
+      "end_line": 66035
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-list-direct-keyboard-focus.png",
+      "category": "historical-evidence",
+      "start_line": 66036,
+      "end_line": 66039
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-overview-1280.png",
+      "category": "historical-evidence",
+      "start_line": 66040,
+      "end_line": 66043
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-overview-320.png",
+      "category": "historical-evidence",
+      "start_line": 66044,
+      "end_line": 66047
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-overview-390.png",
+      "category": "historical-evidence",
+      "start_line": 66048,
+      "end_line": 66051
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-overview-430.png",
+      "category": "historical-evidence",
+      "start_line": 66052,
+      "end_line": 66055
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-overview-844.png",
+      "category": "historical-evidence",
+      "start_line": 66056,
+      "end_line": 66059
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-render.json",
+      "category": "historical-evidence",
+      "start_line": 66060,
+      "end_line": 66101
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-render.log",
+      "category": "historical-evidence",
+      "start_line": 66102,
+      "end_line": 66112
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-selected-1280.png",
+      "category": "historical-evidence",
+      "start_line": 66113,
+      "end_line": 66116
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-selected-320.png",
+      "category": "historical-evidence",
+      "start_line": 66117,
+      "end_line": 66120
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-selected-390.png",
+      "category": "historical-evidence",
+      "start_line": 66121,
+      "end_line": 66124
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-selected-430.png",
+      "category": "historical-evidence",
+      "start_line": 66125,
+      "end_line": 66128
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-selected-844.png",
+      "category": "historical-evidence",
+      "start_line": 66129,
+      "end_line": 66132
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-settled-canvas-1280.png",
+      "category": "historical-evidence",
+      "start_line": 66133,
+      "end_line": 66136
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-settled-canvas-320.png",
+      "category": "historical-evidence",
+      "start_line": 66137,
+      "end_line": 66140
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-settled-canvas-390.png",
+      "category": "historical-evidence",
+      "start_line": 66141,
+      "end_line": 66144
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-settled-canvas-430.png",
+      "category": "historical-evidence",
+      "start_line": 66145,
+      "end_line": 66148
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-settled-canvas-844.png",
+      "category": "historical-evidence",
+      "start_line": 66149,
+      "end_line": 66152
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-settled-page-1280.png",
+      "category": "historical-evidence",
+      "start_line": 66153,
+      "end_line": 66156
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-settled-page-320.png",
+      "category": "historical-evidence",
+      "start_line": 66157,
+      "end_line": 66160
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-settled-page-390.png",
+      "category": "historical-evidence",
+      "start_line": 66161,
+      "end_line": 66164
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-settled-page-430.png",
+      "category": "historical-evidence",
+      "start_line": 66165,
+      "end_line": 66168
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-settled-page-844.png",
+      "category": "historical-evidence",
+      "start_line": 66169,
+      "end_line": 66172
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-settled-selected-1280.png",
+      "category": "historical-evidence",
+      "start_line": 66173,
+      "end_line": 66176
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-settled-selected-320.png",
+      "category": "historical-evidence",
+      "start_line": 66177,
+      "end_line": 66180
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-settled-selected-390.png",
+      "category": "historical-evidence",
+      "start_line": 66181,
+      "end_line": 66184
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-settled-selected-430.png",
+      "category": "historical-evidence",
+      "start_line": 66185,
+      "end_line": 66188
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-settled-selected-844.png",
+      "category": "historical-evidence",
+      "start_line": 66189,
+      "end_line": 66192
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-graph-text200.png",
+      "category": "historical-evidence",
+      "start_line": 66193,
+      "end_line": 66196
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-green-enlarged-rows-final.log",
+      "category": "historical-evidence",
+      "start_line": 66197,
+      "end_line": 66217
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-green-enlarged-rows.log",
+      "category": "historical-evidence",
+      "start_line": 66218,
+      "end_line": 66303
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-hero-background.json",
+      "category": "historical-evidence",
+      "start_line": 66304,
+      "end_line": 66826
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-hero-background.log",
+      "category": "historical-evidence",
+      "start_line": 66827,
+      "end_line": 66829
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-hero-contrast.json",
+      "category": "historical-evidence",
+      "start_line": 66830,
+      "end_line": 67382
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-hero-contrast.log",
+      "category": "historical-evidence",
+      "start_line": 67383,
+      "end_line": 67936
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-hero-textless-background-1280.png",
+      "category": "historical-evidence",
+      "start_line": 67937,
+      "end_line": 67940
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-hero-textless-background-320.png",
+      "category": "historical-evidence",
+      "start_line": 67941,
+      "end_line": 67944
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-home-1280.png",
+      "category": "historical-evidence",
+      "start_line": 67945,
+      "end_line": 67948
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-home-320.png",
+      "category": "historical-evidence",
+      "start_line": 67949,
+      "end_line": 67952
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-home-390.png",
+      "category": "historical-evidence",
+      "start_line": 67953,
+      "end_line": 67956
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-home-430.png",
+      "category": "historical-evidence",
+      "start_line": 67957,
+      "end_line": 67960
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-home-844.png",
+      "category": "historical-evidence",
+      "start_line": 67961,
+      "end_line": 67964
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-home-text200.png",
+      "category": "historical-evidence",
+      "start_line": 67965,
+      "end_line": 67968
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-menu-320.png",
+      "category": "historical-evidence",
+      "start_line": 67969,
+      "end_line": 67972
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-mobile-overlap-contact-anchor.png",
+      "category": "historical-evidence",
+      "start_line": 67973,
+      "end_line": 67976
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-mobile-overlap-contact-invalid-focus.png",
+      "category": "historical-evidence",
+      "start_line": 67977,
+      "end_line": 67980
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-mobile-overlap-portfolio-anchor.png",
+      "category": "historical-evidence",
+      "start_line": 67981,
+      "end_line": 67984
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-mobile-overlap-portfolio-section.png",
+      "category": "historical-evidence",
+      "start_line": 67985,
+      "end_line": 67988
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-mobile-overlap-preflight.json",
+      "category": "historical-evidence",
+      "start_line": 67989,
+      "end_line": 68046
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-overflow-200-matrix.json",
+      "category": "historical-evidence",
+      "start_line": 68047,
+      "end_line": 68777
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-overflow-200.json",
+      "category": "historical-evidence",
+      "start_line": 68778,
+      "end_line": 68822
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-overflow-320-layout.json",
+      "category": "historical-evidence",
+      "start_line": 68823,
+      "end_line": 69020
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-overflow-check.log",
+      "category": "historical-evidence",
+      "start_line": 69021,
+      "end_line": 69064
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-overflow-detail.log",
+      "category": "historical-evidence",
+      "start_line": 69065,
+      "end_line": 69261
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-overflow-matrix.log",
+      "category": "historical-evidence",
+      "start_line": 69262,
+      "end_line": 69989
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-pdf-acceptance.json",
+      "category": "historical-evidence",
+      "start_line": 69990,
+      "end_line": 70014
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-pdf-dependency-and-link-check.log",
+      "category": "historical-evidence",
+      "start_line": 70015,
+      "end_line": 70023
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-pdf-render.log",
+      "category": "historical-evidence",
+      "start_line": 70024,
+      "end_line": 70026
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-portfolio-1280.png",
+      "category": "historical-evidence",
+      "start_line": 70027,
+      "end_line": 70030
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-portfolio-320.png",
+      "category": "historical-evidence",
+      "start_line": 70031,
+      "end_line": 70034
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-portfolio-390.png",
+      "category": "historical-evidence",
+      "start_line": 70035,
+      "end_line": 70038
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-portfolio-430.png",
+      "category": "historical-evidence",
+      "start_line": 70039,
+      "end_line": 70042
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-portfolio-844.png",
+      "category": "historical-evidence",
+      "start_line": 70043,
+      "end_line": 70046
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-red-enlarged-rows-content.log",
+      "category": "historical-evidence",
+      "start_line": 70047,
+      "end_line": 70265
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-red-enlarged-rows.log",
+      "category": "historical-evidence",
+      "start_line": 70266,
+      "end_line": 70482
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-red-residual-text.log",
+      "category": "historical-evidence",
+      "start_line": 70483,
+      "end_line": 70683
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-residual-text-overflow.json",
+      "category": "historical-evidence",
+      "start_line": 70684,
+      "end_line": 71082
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-residual-text.log",
+      "category": "historical-evidence",
+      "start_line": 71083,
+      "end_line": 71496
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-resume-1280.png",
+      "category": "historical-evidence",
+      "start_line": 71497,
+      "end_line": 71500
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-resume-320.png",
+      "category": "historical-evidence",
+      "start_line": 71501,
+      "end_line": 71504
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-resume-390.png",
+      "category": "historical-evidence",
+      "start_line": 71505,
+      "end_line": 71508
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-resume-430.png",
+      "category": "historical-evidence",
+      "start_line": 71509,
+      "end_line": 71512
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-resume-844.png",
+      "category": "historical-evidence",
+      "start_line": 71513,
+      "end_line": 71516
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-resume-page.png",
+      "category": "historical-evidence",
+      "start_line": 71517,
+      "end_line": 71520
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-staged-diff-check-summary.json",
+      "category": "historical-evidence",
+      "start_line": 71521,
+      "end_line": 71533
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-staged-historical-whitespace.log",
+      "category": "historical-evidence",
+      "start_line": 71534,
+      "end_line": 72223
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-stats-1280.png",
+      "category": "historical-evidence",
+      "start_line": 72224,
+      "end_line": 72227
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-stats-320.png",
+      "category": "historical-evidence",
+      "start_line": 72228,
+      "end_line": 72231
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-stats-390.png",
+      "category": "historical-evidence",
+      "start_line": 72232,
+      "end_line": 72235
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-stats-844.png",
+      "category": "historical-evidence",
+      "start_line": 72236,
+      "end_line": 72239
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-stats-table-1280.png",
+      "category": "historical-evidence",
+      "start_line": 72240,
+      "end_line": 72243
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-stats-table-320.png",
+      "category": "historical-evidence",
+      "start_line": 72244,
+      "end_line": 72247
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-stats-table-390.png",
+      "category": "historical-evidence",
+      "start_line": 72248,
+      "end_line": 72251
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-stats-table-844.png",
+      "category": "historical-evidence",
+      "start_line": 72252,
+      "end_line": 72255
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-stats-table-actual320.png",
+      "category": "historical-evidence",
+      "start_line": 72256,
+      "end_line": 72259
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-stats-table-expanded-320.png",
+      "category": "historical-evidence",
+      "start_line": 72260,
+      "end_line": 72263
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-supplement-remaining.log",
+      "category": "historical-evidence",
+      "start_line": 72264,
+      "end_line": 72273
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-supplement.json",
+      "category": "historical-evidence",
+      "start_line": 72274,
+      "end_line": 79277
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-supplement.log",
+      "category": "historical-evidence",
+      "start_line": 79278,
+      "end_line": 79305
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-test-format.log",
+      "category": "historical-evidence",
+      "start_line": 79306,
+      "end_line": 79312
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-text200-320-about.png",
+      "category": "historical-evidence",
+      "start_line": 79313,
+      "end_line": 79316
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-text200-320-skills.png",
+      "category": "historical-evidence",
+      "start_line": 79317,
+      "end_line": 79320
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-text200-320-timeline.png",
+      "category": "historical-evidence",
+      "start_line": 79321,
+      "end_line": 79324
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-text200-contact-320-viewport.png",
+      "category": "historical-evidence",
+      "start_line": 79325,
+      "end_line": 79328
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-text200-contact-390-viewport.png",
+      "category": "historical-evidence",
+      "start_line": 79329,
+      "end_line": 79332
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-text200-contact-430-viewport.png",
+      "category": "historical-evidence",
+      "start_line": 79333,
+      "end_line": 79336
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-text200-contact-settled.png",
+      "category": "historical-evidence",
+      "start_line": 79337,
+      "end_line": 79340
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-text200-contact-viewport.png",
+      "category": "historical-evidence",
+      "start_line": 79341,
+      "end_line": 79344
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-text200-resume-viewport.png",
+      "category": "historical-evidence",
+      "start_line": 79345,
+      "end_line": 79348
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-text200-top-viewport.png",
+      "category": "historical-evidence",
+      "start_line": 79349,
+      "end_line": 79352
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-unchanged-backend-plan-inputs.json",
+      "category": "historical-evidence",
+      "start_line": 79353,
+      "end_line": 79384
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-validation-inputs-before.json",
+      "category": "historical-evidence",
+      "start_line": 79385,
+      "end_line": 79543
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/evidence-preservation-preflight.json",
+      "category": "historical-evidence",
+      "start_line": 79544,
+      "end_line": 79553
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/final-terraform-checked-archive-inputs.json",
+      "category": "historical-evidence",
+      "start_line": 79554,
+      "end_line": 79573
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/github-check-enforcement-before.json",
+      "category": "historical-evidence",
+      "start_line": 79574,
+      "end_line": 79591
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/live-log-retention.json",
+      "category": "historical-evidence",
+      "start_line": 79592,
+      "end_line": 79626
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/log-availability-summary.json",
+      "category": "historical-evidence",
+      "start_line": 79627,
+      "end_line": 79667
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/log-prefix-baseline.json",
+      "category": "historical-evidence",
+      "start_line": 79668,
+      "end_line": 79704
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/original-checkout-preservation-final.json",
+      "category": "historical-evidence",
+      "start_line": 79705,
+      "end_line": 79855
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/original-deliverable-preservation-preflight.json",
+      "category": "historical-evidence",
+      "start_line": 79856,
+      "end_line": 79890
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/original-resume.png",
+      "category": "historical-evidence",
+      "start_line": 79891,
+      "end_line": 79894
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/terraform-final-read-only-plan-summary.json",
+      "category": "historical-evidence",
+      "start_line": 79895,
+      "end_line": 80219
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/terraform-state-provider-preflight.json",
+      "category": "historical-evidence",
+      "start_line": 80220,
+      "end_line": 80247
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/execution-tasks.md",
+      "category": "historical-evidence",
+      "start_line": 80248,
+      "end_line": 81009
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/final-review-preparation.md",
+      "category": "historical-evidence",
+      "start_line": 81010,
+      "end_line": 81057
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/index-review.py",
+      "category": "historical-evidence",
+      "start_line": 81058,
+      "end_line": 81094
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt",
+      "category": "historical-evidence",
+      "start_line": 81095,
+      "end_line": 81373
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/progress.md",
+      "category": "historical-evidence",
+      "start_line": 81374,
+      "end_line": 81851
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-A1.diff.gz",
+      "category": "historical-evidence",
+      "start_line": 81852,
+      "end_line": 81855
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-A2.diff.gz",
+      "category": "historical-evidence",
+      "start_line": 81856,
+      "end_line": 81859
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-A3.diff.gz",
+      "category": "historical-evidence",
+      "start_line": 81860,
+      "end_line": 81863
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-A4.diff.gz",
+      "category": "historical-evidence",
+      "start_line": 81864,
+      "end_line": 81867
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-A5.diff.gz",
+      "category": "historical-evidence",
+      "start_line": 81868,
+      "end_line": 81871
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-B1-fix1.diff.gz",
+      "category": "historical-evidence",
+      "start_line": 81872,
+      "end_line": 81875
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-B1.diff.gz",
+      "category": "historical-evidence",
+      "start_line": 81876,
+      "end_line": 81879
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-B2.diff.gz",
+      "category": "historical-evidence",
+      "start_line": 81880,
+      "end_line": 81883
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-B3-fix1.diff.gz",
+      "category": "historical-evidence",
+      "start_line": 81884,
+      "end_line": 81887
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-B3.diff.gz",
+      "category": "historical-evidence",
+      "start_line": 81888,
+      "end_line": 81891
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-C1.diff.gz",
+      "category": "historical-evidence",
+      "start_line": 81892,
+      "end_line": 81895
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-C2-fix1.diff.gz",
+      "category": "historical-evidence",
+      "start_line": 81896,
+      "end_line": 81899
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-C2.diff.gz",
+      "category": "historical-evidence",
+      "start_line": 81900,
+      "end_line": 81903
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-D1-fix1.diff.gz",
+      "category": "historical-evidence",
+      "start_line": 81904,
+      "end_line": 81907
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-D1.diff.gz",
+      "category": "historical-evidence",
+      "start_line": 81908,
+      "end_line": 81911
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-D2-fix1.diff.gz",
+      "category": "historical-evidence",
+      "start_line": 81912,
+      "end_line": 81915
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-D2.diff.gz",
+      "category": "historical-evidence",
+      "start_line": 81916,
+      "end_line": 81919
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-D3.diff.gz",
+      "category": "historical-evidence",
+      "start_line": 81920,
+      "end_line": 81923
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-D4.diff.gz",
+      "category": "historical-evidence",
+      "start_line": 81924,
+      "end_line": 81927
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-E1.diff.gz",
+      "category": "historical-evidence",
+      "start_line": 81928,
+      "end_line": 81931
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-E2.diff.gz",
+      "category": "historical-evidence",
+      "start_line": 81932,
+      "end_line": 81935
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-E3.diff.gz",
+      "category": "historical-evidence",
+      "start_line": 81936,
+      "end_line": 81939
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-E4-report.md",
+      "category": "historical-evidence",
+      "start_line": 81940,
+      "end_line": 81972
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-E4.diff.gz",
+      "category": "historical-evidence",
+      "start_line": 81973,
+      "end_line": 81976
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-E5-fix1-report.md",
+      "category": "historical-evidence",
+      "start_line": 81977,
+      "end_line": 82003
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-E5-fix1.diff.gz",
+      "category": "historical-evidence",
+      "start_line": 82004,
+      "end_line": 82007
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-E5-report.md",
+      "category": "historical-evidence",
+      "start_line": 82008,
+      "end_line": 82043
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-E5.diff.gz",
+      "category": "historical-evidence",
+      "start_line": 82044,
+      "end_line": 82047
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/review-handoff.md",
+      "category": "historical-evidence",
+      "start_line": 82048,
+      "end_line": 82054
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/rulings.md",
+      "category": "historical-evidence",
+      "start_line": 82055,
+      "end_line": 82117
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-A1-brief.md",
+      "category": "historical-evidence",
+      "start_line": 82118,
+      "end_line": 82170
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-A1-context.md",
+      "category": "historical-evidence",
+      "start_line": 82171,
+      "end_line": 82228
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-A1-report.md",
+      "category": "historical-evidence",
+      "start_line": 82229,
+      "end_line": 82392
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-A2-brief.md",
+      "category": "historical-evidence",
+      "start_line": 82393,
+      "end_line": 82450
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-A2-context.md",
+      "category": "historical-evidence",
+      "start_line": 82451,
+      "end_line": 82506
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-A2-report.md",
+      "category": "historical-evidence",
+      "start_line": 82507,
+      "end_line": 82628
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-A3-brief.md",
+      "category": "historical-evidence",
+      "start_line": 82629,
+      "end_line": 82657
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-A3-context.md",
+      "category": "historical-evidence",
+      "start_line": 82658,
+      "end_line": 82727
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-A3-report.md",
+      "category": "historical-evidence",
+      "start_line": 82728,
+      "end_line": 82825
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-A4-brief.md",
+      "category": "historical-evidence",
+      "start_line": 82826,
+      "end_line": 82852
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-A4-context.md",
+      "category": "historical-evidence",
+      "start_line": 82853,
+      "end_line": 82916
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-A4-report.md",
+      "category": "historical-evidence",
+      "start_line": 82917,
+      "end_line": 83032
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-A5-brief.md",
+      "category": "historical-evidence",
+      "start_line": 83033,
+      "end_line": 83081
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-A5-context.md",
+      "category": "historical-evidence",
+      "start_line": 83082,
+      "end_line": 83139
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-A5-report.md",
+      "category": "historical-evidence",
+      "start_line": 83140,
+      "end_line": 83259
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-B1-brief.md",
+      "category": "historical-evidence",
+      "start_line": 83260,
+      "end_line": 83308
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-B1-context.md",
+      "category": "historical-evidence",
+      "start_line": 83309,
+      "end_line": 83364
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-B1-report.md",
+      "category": "historical-evidence",
+      "start_line": 83365,
+      "end_line": 83534
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-B2-brief.md",
+      "category": "historical-evidence",
+      "start_line": 83535,
+      "end_line": 83587
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-B2-context.md",
+      "category": "historical-evidence",
+      "start_line": 83588,
+      "end_line": 83651
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-B2-report.md",
+      "category": "historical-evidence",
+      "start_line": 83652,
+      "end_line": 83765
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-B3-brief.md",
+      "category": "historical-evidence",
+      "start_line": 83766,
+      "end_line": 83812
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-B3-context.md",
+      "category": "historical-evidence",
+      "start_line": 83813,
+      "end_line": 83870
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-B3-report.md",
+      "category": "historical-evidence",
+      "start_line": 83871,
+      "end_line": 83974
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-C1-brief.md",
+      "category": "historical-evidence",
+      "start_line": 83975,
+      "end_line": 84017
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-C1-context.md",
+      "category": "historical-evidence",
+      "start_line": 84018,
+      "end_line": 84067
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-C1-report.md",
+      "category": "historical-evidence",
+      "start_line": 84068,
+      "end_line": 84198
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-C2-brief.md",
+      "category": "historical-evidence",
+      "start_line": 84199,
+      "end_line": 84268
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-C2-context.md",
+      "category": "historical-evidence",
+      "start_line": 84269,
+      "end_line": 84323
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-C2-report.md",
+      "category": "historical-evidence",
+      "start_line": 84324,
+      "end_line": 84434
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-D1-brief.md",
+      "category": "historical-evidence",
+      "start_line": 84435,
+      "end_line": 84482
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-D1-context.md",
+      "category": "historical-evidence",
+      "start_line": 84483,
+      "end_line": 84570
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-D1-report.md",
+      "category": "historical-evidence",
+      "start_line": 84571,
+      "end_line": 84735
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-D2-brief.md",
+      "category": "historical-evidence",
+      "start_line": 84736,
+      "end_line": 84796
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-D2-context.md",
+      "category": "historical-evidence",
+      "start_line": 84797,
+      "end_line": 84883
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-D2-report.md",
+      "category": "historical-evidence",
+      "start_line": 84884,
+      "end_line": 84964
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-D3-brief.md",
+      "category": "historical-evidence",
+      "start_line": 84965,
+      "end_line": 85029
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-D3-context.md",
+      "category": "historical-evidence",
+      "start_line": 85030,
+      "end_line": 85126
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-D3-report.md",
+      "category": "historical-evidence",
+      "start_line": 85127,
+      "end_line": 85195
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-D4-brief.md",
+      "category": "historical-evidence",
+      "start_line": 85196,
+      "end_line": 85219
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-D4-context.md",
+      "category": "historical-evidence",
+      "start_line": 85220,
+      "end_line": 85335
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-D4-report.md",
+      "category": "historical-evidence",
+      "start_line": 85336,
+      "end_line": 85441
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-E1-brief.md",
+      "category": "historical-evidence",
+      "start_line": 85442,
+      "end_line": 85498
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-E1-context.md",
+      "category": "historical-evidence",
+      "start_line": 85499,
+      "end_line": 85572
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-E1-report.md",
+      "category": "historical-evidence",
+      "start_line": 85573,
+      "end_line": 85643
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-E2-brief.md",
+      "category": "historical-evidence",
+      "start_line": 85644,
+      "end_line": 85666
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-E2-context.md",
+      "category": "historical-evidence",
+      "start_line": 85667,
+      "end_line": 85733
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-E2-report.md",
+      "category": "historical-evidence",
+      "start_line": 85734,
+      "end_line": 85782
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-E3-brief.md",
+      "category": "historical-evidence",
+      "start_line": 85783,
+      "end_line": 85805
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-E3-context.md",
+      "category": "historical-evidence",
+      "start_line": 85806,
+      "end_line": 85878
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-E3-report.md",
+      "category": "historical-evidence",
+      "start_line": 85879,
+      "end_line": 85940
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-E4-brief.md",
+      "category": "historical-evidence",
+      "start_line": 85941,
+      "end_line": 85968
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-E4-context.md",
+      "category": "historical-evidence",
+      "start_line": 85969,
+      "end_line": 86042
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-E4-report.md",
+      "category": "historical-evidence",
+      "start_line": 86043,
+      "end_line": 86147
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-E5-brief.md",
+      "category": "historical-evidence",
+      "start_line": 86148,
+      "end_line": 86176
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-E5-context.md",
+      "category": "historical-evidence",
+      "start_line": 86177,
+      "end_line": 86271
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-E5-report.md",
+      "category": "historical-evidence",
+      "start_line": 86272,
+      "end_line": 86496
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-E6-brief.md",
+      "category": "historical-evidence",
+      "start_line": 86497,
+      "end_line": 86536
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-E6-context.md",
+      "category": "historical-evidence",
+      "start_line": 86537,
+      "end_line": 86666
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-E6-report.md",
+      "category": "historical-evidence",
+      "start_line": 86667,
+      "end_line": 86753
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/terraform-final-read-only-plan-report.md",
+      "category": "historical-evidence",
+      "start_line": 86754,
+      "end_line": 86793
+    },
+    {
+      "path": "docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/verify-e6-docs.py",
+      "category": "historical-evidence",
+      "start_line": 86794,
+      "end_line": 86840
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-07-analytics-integrity.md",
+      "category": "documentation",
+      "start_line": 86841,
+      "end_line": 87074
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-07-career-graph.md",
+      "category": "documentation",
+      "start_line": 87075,
+      "end_line": 87241
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-07-contact-reliability.md",
+      "category": "documentation",
+      "start_line": 87242,
+      "end_line": 87374
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-07-delivery-quality.md",
+      "category": "documentation",
+      "start_line": 87375,
+      "end_line": 87567
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-07-design-ux-remediation.md",
+      "category": "documentation",
+      "start_line": 87568,
+      "end_line": 87703
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-07-homepage-content.md",
+      "category": "documentation",
+      "start_line": 87704,
+      "end_line": 87921
+    },
+    {
+      "path": "package.json",
+      "category": "runtime-and-configuration",
+      "start_line": 87922,
+      "end_line": 87997
+    },
+    {
+      "path": "playwright.config.ts",
+      "category": "runtime-and-configuration",
+      "start_line": 87998,
+      "end_line": 88025
+    },
+    {
+      "path": "public/assets/resume.pdf",
+      "category": "runtime-and-configuration",
+      "start_line": 88026,
+      "end_line": 88028
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07.md",
+      "category": "documentation",
+      "start_line": 88029,
+      "end_line": 88515
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/analytics-live.png",
+      "category": "documentation",
+      "start_line": 88516,
+      "end_line": 88519
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/analytics-local-unavailable.png",
+      "category": "documentation",
+      "start_line": 88520,
+      "end_line": 88523
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/graph-desktop.png",
+      "category": "documentation",
+      "start_line": 88524,
+      "end_line": 88527
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/graph-invisible-focus.png",
+      "category": "documentation",
+      "start_line": 88528,
+      "end_line": 88531
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/graph-keyboard-evidence.json",
+      "category": "documentation",
+      "start_line": 88532,
+      "end_line": 88543
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/graph-malformed-link.png",
+      "category": "documentation",
+      "start_line": 88544,
+      "end_line": 88547
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/graph-mobile-legend.png",
+      "category": "documentation",
+      "start_line": 88548,
+      "end_line": 88551
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/graph-mobile-overlap.png",
+      "category": "documentation",
+      "start_line": 88552,
+      "end_line": 88555
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/graph-short-expanded.png",
+      "category": "documentation",
+      "start_line": 88556,
+      "end_line": 88559
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/homepage-desktop.png",
+      "category": "documentation",
+      "start_line": 88560,
+      "end_line": 88563
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/homepage-mobile-320.png",
+      "category": "documentation",
+      "start_line": 88564,
+      "end_line": 88567
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/homepage-mobile-390.png",
+      "category": "documentation",
+      "start_line": 88568,
+      "end_line": 88571
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/mobile-reading.png",
+      "category": "documentation",
+      "start_line": 88572,
+      "end_line": 88575
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/portfolio-desktop.png",
+      "category": "documentation",
+      "start_line": 88576,
+      "end_line": 88579
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/resume-pdf.png",
+      "category": "documentation",
+      "start_line": 88580,
+      "end_line": 88583
+    },
+    {
+      "path": "scripts/generate_resume_pdf.py",
+      "category": "runtime-and-configuration",
+      "start_line": 88584,
+      "end_line": 88808
+    },
+    {
+      "path": "scripts/package_release_artifacts.py",
+      "category": "runtime-and-configuration",
+      "start_line": 88809,
+      "end_line": 88927
+    },
+    {
+      "path": "scripts/publish_static_site.mjs",
+      "category": "runtime-and-configuration",
+      "start_line": 88928,
+      "end_line": 89056
+    },
+    {
+      "path": "scripts/requirements-pdf.txt",
+      "category": "runtime-and-configuration",
+      "start_line": 89057,
+      "end_line": 89065
+    },
+    {
+      "path": "scripts/tests/analytics-release.test.mjs",
+      "category": "tests",
+      "start_line": 89066,
+      "end_line": 89229
+    },
+    {
+      "path": "scripts/tests/static-publication.test.mjs",
+      "category": "tests",
+      "start_line": 89230,
+      "end_line": 89374
+    },
+    {
+      "path": "scripts/tests/workflow-pipelines.test.mjs",
+      "category": "tests",
+      "start_line": 89375,
+      "end_line": 89504
+    },
+    {
+      "path": "scripts/verify_public_stats_reader.mjs",
+      "category": "runtime-and-configuration",
+      "start_line": 89505,
+      "end_line": 89708
+    },
+    {
+      "path": "src/components/Graph/FocusPanel.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 89709,
+      "end_line": 89866
+    },
+    {
+      "path": "src/components/Graph/GraphExplorer.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 89867,
+      "end_line": 90393
+    },
+    {
+      "path": "src/components/Graph/GraphListFallback.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 90394,
+      "end_line": 90585
+    },
+    {
+      "path": "src/components/Graph/GraphSearch.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 90586,
+      "end_line": 90654
+    },
+    {
+      "path": "src/components/Graph/ResumeGraphCanvas.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 90655,
+      "end_line": 91160
+    },
+    {
+      "path": "src/components/Graph/graphReducer.ts",
+      "category": "runtime-and-configuration",
+      "start_line": 91161,
+      "end_line": 91207
+    },
+    {
+      "path": "src/components/Layout/Page.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 91208,
+      "end_line": 91272
+    },
+    {
+      "path": "src/components/ParticleField.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 91273,
+      "end_line": 91359
+    },
+    {
+      "path": "src/components/Reveal.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 91360,
+      "end_line": 91435
+    },
+    {
+      "path": "src/components/Sections/About.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 91436,
+      "end_line": 91467
+    },
+    {
+      "path": "src/components/Sections/Contact/ContactForm.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 91468,
+      "end_line": 91894
+    },
+    {
+      "path": "src/components/Sections/Contact/index.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 91895,
+      "end_line": 91929
+    },
+    {
+      "path": "src/components/Sections/Footer.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 91930,
+      "end_line": 91963
+    },
+    {
+      "path": "src/components/Sections/Header.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 91964,
+      "end_line": 92091
+    },
+    {
+      "path": "src/components/Sections/Hero.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 92092,
+      "end_line": 92146
+    },
+    {
+      "path": "src/components/Sections/Portfolio.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 92147,
+      "end_line": 92210
+    },
+    {
+      "path": "src/components/Sections/PortfolioCard.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 92211,
+      "end_line": 92290
+    },
+    {
+      "path": "src/components/Sections/Resume/CertificationItem.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 92291,
+      "end_line": 92352
+    },
+    {
+      "path": "src/components/Sections/Resume/Skills.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 92353,
+      "end_line": 92402
+    },
+    {
+      "path": "src/components/Sections/Resume/TimelineItem.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 92403,
+      "end_line": 92436
+    },
+    {
+      "path": "src/components/Sections/Stats/BarList.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 92437,
+      "end_line": 92475
+    },
+    {
+      "path": "src/components/Sections/Stats/Sparkline.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 92476,
+      "end_line": 92700
+    },
+    {
+      "path": "src/components/Sections/Stats/StatCard.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 92701,
+      "end_line": 92745
+    },
+    {
+      "path": "src/data/data.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 92746,
+      "end_line": 92867
+    },
+    {
+      "path": "src/data/dataDef.ts",
+      "category": "runtime-and-configuration",
+      "start_line": 92868,
+      "end_line": 93028
+    },
+    {
+      "path": "src/data/graphData.ts",
+      "category": "runtime-and-configuration",
+      "start_line": 93029,
+      "end_line": 93157
+    },
+    {
+      "path": "src/data/siteConfig.ts",
+      "category": "runtime-and-configuration",
+      "start_line": 93158,
+      "end_line": 93191
+    },
+    {
+      "path": "src/hooks/useReducedMotion.ts",
+      "category": "runtime-and-configuration",
+      "start_line": 93192,
+      "end_line": 93213
+    },
+    {
+      "path": "src/hooks/useStats.ts",
+      "category": "runtime-and-configuration",
+      "start_line": 93214,
+      "end_line": 93351
+    },
+    {
+      "path": "src/pages/404.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 93352,
+      "end_line": 93406
+    },
+    {
+      "path": "src/pages/graph.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 93407,
+      "end_line": 93490
+    },
+    {
+      "path": "src/pages/stats.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 93491,
+      "end_line": 93793
+    },
+    {
+      "path": "src/types.d.ts",
+      "category": "runtime-and-configuration",
+      "start_line": 93794,
+      "end_line": 93830
+    },
+    {
+      "path": "src/utils/statsPayload.ts",
+      "category": "runtime-and-configuration",
+      "start_line": 93831,
+      "end_line": 94055
+    },
+    {
+      "path": "stats_aggregator/lambda_function.py",
+      "category": "runtime-and-configuration",
+      "start_line": 94056,
+      "end_line": 94740
+    },
+    {
+      "path": "stats_aggregator/ledger.py",
+      "category": "runtime-and-configuration",
+      "start_line": 94741,
+      "end_line": 94939
+    },
+    {
+      "path": "stats_aggregator/payload.py",
+      "category": "runtime-and-configuration",
+      "start_line": 94940,
+      "end_line": 95137
+    },
+    {
+      "path": "terraform/.terraform.lock.hcl",
+      "category": "runtime-and-configuration",
+      "start_line": 95138,
+      "end_line": 95181
+    },
+    {
+      "path": "terraform/contactLambda.tf",
+      "category": "runtime-and-configuration",
+      "start_line": 95182,
+      "end_line": 95212
+    },
+    {
+      "path": "terraform/functions/rewrite-extensionless.js",
+      "category": "runtime-and-configuration",
+      "start_line": 95213,
+      "end_line": 95263
+    },
+    {
+      "path": "terraform/main.tf",
+      "category": "runtime-and-configuration",
+      "start_line": 95264,
+      "end_line": 95514
+    },
+    {
+      "path": "terraform/providers.tf",
+      "category": "runtime-and-configuration",
+      "start_line": 95515,
+      "end_line": 95549
+    },
+    {
+      "path": "terraform/statsLambda.tf",
+      "category": "runtime-and-configuration",
+      "start_line": 95550,
+      "end_line": 95669
+    },
+    {
+      "path": "tests/e2e/contact-submission.spec.ts",
+      "category": "tests",
+      "start_line": 95670,
+      "end_line": 95932
+    },
+    {
+      "path": "tests/e2e/contact-validation.spec.ts",
+      "category": "tests",
+      "start_line": 95933,
+      "end_line": 96060
+    },
+    {
+      "path": "tests/e2e/fixtures.ts",
+      "category": "tests",
+      "start_line": 96061,
+      "end_line": 96092
+    },
+    {
+      "path": "tests/e2e/graph-access.spec.ts",
+      "category": "tests",
+      "start_line": 96093,
+      "end_line": 96400
+    },
+    {
+      "path": "tests/e2e/graph-discovery.spec.ts",
+      "category": "tests",
+      "start_line": 96401,
+      "end_line": 96739
+    },
+    {
+      "path": "tests/e2e/graph-layout.spec.ts",
+      "category": "tests",
+      "start_line": 96740,
+      "end_line": 97069
+    },
+    {
+      "path": "tests/e2e/homepage.spec.ts",
+      "category": "tests",
+      "start_line": 97070,
+      "end_line": 97182
+    },
+    {
+      "path": "tests/e2e/motion.spec.ts",
+      "category": "tests",
+      "start_line": 97183,
+      "end_line": 97353
+    },
+    {
+      "path": "tests/e2e/navigation.spec.ts",
+      "category": "tests",
+      "start_line": 97354,
+      "end_line": 97440
+    },
+    {
+      "path": "tests/e2e/not-found.spec.ts",
+      "category": "tests",
+      "start_line": 97441,
+      "end_line": 97467
+    },
+    {
+      "path": "tests/e2e/stats-producer.spec.ts",
+      "category": "tests",
+      "start_line": 97468,
+      "end_line": 97555
+    },
+    {
+      "path": "tests/e2e/stats.spec.ts",
+      "category": "tests",
+      "start_line": 97556,
+      "end_line": 97807
+    },
+    {
+      "path": "tests/fixtures/stats-v1.json",
+      "category": "tests",
+      "start_line": 97808,
+      "end_line": 97833
+    },
+    {
+      "path": "tests/fixtures/stats-v2-current.json",
+      "category": "tests",
+      "start_line": 97834,
+      "end_line": 97908
+    },
+    {
+      "path": "tests/infra/edge-routing.test.mjs",
+      "category": "tests",
+      "start_line": 97909,
+      "end_line": 97991
+    },
+    {
+      "path": "tests/requirements.txt",
+      "category": "tests",
+      "start_line": 97992,
+      "end_line": 98004
+    },
+    {
+      "path": "tests/stats/export_fixture.py",
+      "category": "tests",
+      "start_line": 98005,
+      "end_line": 98065
+    },
+    {
+      "path": "tests/stats/fakes.py",
+      "category": "tests",
+      "start_line": 98066,
+      "end_line": 98314
+    },
+    {
+      "path": "tests/stats/test_cache_metadata.py",
+      "category": "tests",
+      "start_line": 98315,
+      "end_line": 98346
+    },
+    {
+      "path": "tests/stats/test_ingestion.py",
+      "category": "tests",
+      "start_line": 98347,
+      "end_line": 98567
+    },
+    {
+      "path": "tests/stats/test_ledger.py",
+      "category": "tests",
+      "start_line": 98568,
+      "end_line": 98762
+    },
+    {
+      "path": "tests/stats/test_packaging.py",
+      "category": "tests",
+      "start_line": 98763,
+      "end_line": 98892
+    },
+    {
+      "path": "tests/stats/test_payload.py",
+      "category": "tests",
+      "start_line": 98893,
+      "end_line": 98990
+    },
+    {
+      "path": "tests/stats/test_source_failures.py",
+      "category": "tests",
+      "start_line": 98991,
+      "end_line": 99262
+    },
+    {
+      "path": "tests/unit/statsPayload.spec.ts",
+      "category": "tests",
+      "start_line": 99263,
+      "end_line": 99424
+    },
+    {
+      "path": "tsconfig.tests.json",
+      "category": "runtime-and-configuration",
+      "start_line": 99425,
+      "end_line": 99434
+    },
+    {
+      "path": "yarn.lock",
+      "category": "runtime-and-configuration",
+      "start_line": 99435,
+      "end_line": 100861
+    }
+  ]
+}

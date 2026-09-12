@@ -9,10 +9,11 @@ resource "aws_lambda_function" "stats_aggregator" {
   handler       = "lambda_function.lambda_handler"
   # python3.12 (not 3.13): the locked AWS provider (5.50.0) predates the 3.13
   # runtime enum. Bump both together when the provider is next upgraded.
-  runtime     = "python3.12"
-  role        = aws_iam_role.stats_aggregator_exec.arn
-  memory_size = 512
-  timeout     = 300
+  runtime                        = "python3.12"
+  role                           = aws_iam_role.stats_aggregator_exec.arn
+  memory_size                    = 512
+  timeout                        = 300
+  reserved_concurrent_executions = 1
 
   # Intentionally no source_code_hash: like formSubmission, the zip here only
   # bootstraps the function. CI pushes code updates via
@@ -31,12 +32,6 @@ resource "aws_lambda_function" "stats_aggregator" {
   }
 
   depends_on = [aws_cloudwatch_log_group.stats_aggregator]
-}
-
-data "archive_file" "stats_aggregator_function" {
-  type        = "zip"
-  source_file = "../stats_aggregator/lambda_function.py"
-  output_path = "stats_aggregator.zip"
 }
 
 locals {
@@ -109,9 +104,11 @@ resource "aws_iam_policy" "stats_aggregator_access" {
           "dynamodb:PutItem",
           "dynamodb:UpdateItem",
           "dynamodb:Query",
+          # Transactions use the existing PutItem/UpdateItem permissions; there
+          # is no separate TransactWriteItems IAM action.
           # Scan is required to collect the page#/referrer#/cf#daily# item
-          # families for rendering stats.json (hash-key-only table; the item
-          # count is tiny).
+          # families for rendering stats.json. Filtering excludes ledger rows
+          # from response memory, but scan read cost still grows with the table.
           "dynamodb:Scan",
         ]
         Resource = aws_dynamodb_table.data_table.arn
@@ -182,13 +179,12 @@ resource "aws_cloudwatch_log_group" "form_submission" {
   retention_in_days = 30
 }
 
-# Cloudflare-fetch guard: the aggregator publishes stats.json from CloudFront
-# data before raising on a Cloudflare failure, so an error here means the
-# Cloudflare uniques/countries are lagging — not that stats.json stopped
-# updating. Page the owner via the existing contact-us SNS email topic.
+# Any invocation failure needs investigation. Recoverable source failures
+# publish independent available data first; storage/ingestion/publication
+# failures can prevent that. Alert through the existing contact-us topic.
 resource "aws_cloudwatch_metric_alarm" "stats_aggregator_errors" {
   alarm_name          = "stats-aggregator-errors"
-  alarm_description   = "The stats aggregator Lambda's Cloudflare analytics fetch failed. stats.json still publishes on schedule with CloudFront-derived stats; only Cloudflare uniques/countries lag until a successful run. Usually transient - if the alarm self-cleared, Lambda's async auto-retry already recovered."
+  alarm_description   = "The stats aggregator invocation failed or a source refresh was incomplete. Recoverable source failures publish independently available data before raising; storage or publication failures can prevent an update. Check per-source freshness in stats.json and the invocation logs. A cleared alarm alone does not prove every source recovered."
   namespace           = "AWS/Lambda"
   metric_name         = "Errors"
   statistic           = "Sum"

@@ -1,0 +1,12 @@
+yarn run v1.22.22
+$ playwright test tests/e2e/motion.spec.ts --project=chromium
+
+Running 4 tests using 1 worker
+
+  ✓  1 [chromium] › tests/e2e/motion.spec.ts:40:5 › particles clear on live reduction and resume with one draw per frame (2.1s)
+  ✓  2 [chromium] › tests/e2e/motion.spec.ts:82:5 › an initially reduced visit keeps particles clear and menu usable without sliding (630ms)
+  ✓  3 [chromium] › tests/e2e/motion.spec.ts:97:5 › live reduction immediately exposes pending reveals and disables menu movement (613ms)
+  ✓  4 [chromium] › tests/e2e/motion.spec.ts:117:5 › particles retain offscreen and background visibility gates across preference changes (1.3s)
+
+  4 passed (6.3s)
+Done in 6.87s.

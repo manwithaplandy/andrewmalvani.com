@@ -1,0 +1,130 @@
+yarn run v1.22.22
+$ playwright test tests/e2e/graph-access.spec.ts --project=chromium --grep 'cross-page history'
+
+Running 3 tests using 1 worker
+
+  ✘  1 [chromium] › tests/e2e/graph-access.spec.ts:305:7 › cross-page history restores graph after initial selection (6.2s)
+  ✘  2 [chromium] › tests/e2e/graph-access.spec.ts:305:7 › cross-page history restores graph after changed selection (5.7s)
+  ✘  3 [chromium] › tests/e2e/graph-access.spec.ts:305:7 › cross-page history restores graph after changed view (6.6s)
+
+
+  1) [chromium] › tests/e2e/graph-access.spec.ts:305:7 › cross-page history restores graph after initial selection 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('navigation', { name: 'Career graph, list view' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('navigation', { name: 'Career graph, list view' }) with timeout 5000ms
+      - waiting for getByRole('navigation', { name: 'Career graph, list view' })
+
+
+      323 |     const expectRestoredGraph = async () => {
+      324 |       await expect(page).toHaveURL(graphUrl);
+    > 325 |       await expect(list(page)).toBeVisible();
+          |                                ^
+      326 |       await expect(textView(page)).toHaveAttribute('aria-pressed', 'true');
+      327 |       await expect(list(page).getByRole('button', {name: selectedName, exact: true})).toHaveAttribute(
+      328 |         'aria-expanded',
+        at expectRestoredGraph (/Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/graph-access.spec.ts:325:32)
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/graph-access.spec.ts:342:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-graph-access-cross-pag-dbddb-aph-after-initial-selection-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-graph-access-cross-pag-dbddb-aph-after-initial-selection-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-graph-access-cross-pag-dbddb-aph-after-initial-selection-chromium/trace.zip
+    Usage:
+
+        yarn playwright show-trace test-results/e2e-graph-access-cross-pag-dbddb-aph-after-initial-selection-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/e2e/graph-access.spec.ts:305:7 › cross-page history restores graph after changed selection 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('navigation', { name: 'Career graph, list view' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('navigation', { name: 'Career graph, list view' }) with timeout 5000ms
+      - waiting for getByRole('navigation', { name: 'Career graph, list view' })
+
+
+      323 |     const expectRestoredGraph = async () => {
+      324 |       await expect(page).toHaveURL(graphUrl);
+    > 325 |       await expect(list(page)).toBeVisible();
+          |                                ^
+      326 |       await expect(textView(page)).toHaveAttribute('aria-pressed', 'true');
+      327 |       await expect(list(page).getByRole('button', {name: selectedName, exact: true})).toHaveAttribute(
+      328 |         'aria-expanded',
+        at expectRestoredGraph (/Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/graph-access.spec.ts:325:32)
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/graph-access.spec.ts:342:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-graph-access-cross-pag-40b0b-aph-after-changed-selection-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-graph-access-cross-pag-40b0b-aph-after-changed-selection-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-graph-access-cross-pag-40b0b-aph-after-changed-selection-chromium/trace.zip
+    Usage:
+
+        yarn playwright show-trace test-results/e2e-graph-access-cross-pag-40b0b-aph-after-changed-selection-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/e2e/graph-access.spec.ts:305:7 › cross-page history restores graph after changed view 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('navigation', { name: 'Career graph, list view' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('navigation', { name: 'Career graph, list view' }) with timeout 5000ms
+      - waiting for getByRole('navigation', { name: 'Career graph, list view' })
+
+
+      323 |     const expectRestoredGraph = async () => {
+      324 |       await expect(page).toHaveURL(graphUrl);
+    > 325 |       await expect(list(page)).toBeVisible();
+          |                                ^
+      326 |       await expect(textView(page)).toHaveAttribute('aria-pressed', 'true');
+      327 |       await expect(list(page).getByRole('button', {name: selectedName, exact: true})).toHaveAttribute(
+      328 |         'aria-expanded',
+        at expectRestoredGraph (/Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/graph-access.spec.ts:325:32)
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/graph-access.spec.ts:342:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-graph-access-cross-pag-fcd12-es-graph-after-changed-view-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-graph-access-cross-pag-fcd12-es-graph-after-changed-view-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-graph-access-cross-pag-fcd12-es-graph-after-changed-view-chromium/trace.zip
+    Usage:
+
+        yarn playwright show-trace test-results/e2e-graph-access-cross-pag-fcd12-es-graph-after-changed-view-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    [chromium] › tests/e2e/graph-access.spec.ts:305:7 › cross-page history restores graph after initial selection 
+    [chromium] › tests/e2e/graph-access.spec.ts:305:7 › cross-page history restores graph after changed selection 
+    [chromium] › tests/e2e/graph-access.spec.ts:305:7 › cross-page history restores graph after changed view 
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

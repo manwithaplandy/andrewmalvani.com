@@ -28,7 +28,8 @@ export type GraphNavAction =
   | {type: 'back'}
   | {type: 'expand'}
   | {type: 'escape'}
-  | {type: 'deselect'};
+  | {type: 'deselect'}
+  | {type: 'reset'};
 
 export const initialGraphNavState = (focusedId: string | null): GraphNavState => ({
   expanded: false,
@@ -127,6 +128,9 @@ export const graphNavReducer = (state: GraphNavState, action: GraphNavAction): G
       }
       // Nothing narrower to dismiss — same as a deselect.
       return graphNavReducer(state, {type: 'deselect'});
+    }
+    case 'reset': {
+      return initialGraphNavState(null);
     }
     case 'deselect': {
       return {...state, expanded: false, focusedId: null, highlightedId: null, wrapped: false};

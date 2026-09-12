@@ -1,0 +1,28 @@
+E5 fix round 1 input-preservation transcript
+2026-09-08
+
+Command:
+git diff --name-only c9a2a6f -- terraform scripts/package_release_artifacts.py sns-to-ses-lambda stats-aggregator-lambda .github/workflows
+
+Output: empty. The fix changes no Terraform, Lambda source, packager, or workflow file.
+
+Command:
+shasum -a 256 release-artifacts/contact-lambda.zip release-artifacts/stats-aggregator.zip release-artifacts/manifest.json .superpowers/sdd/2026-09-07-design-ux-remediation/evidence/e5-checked-site-manifest.json
+
+Output:
+3998f18a127c13ab8292af7100ab5fc36e84c5a069c2b9b16e7b0d7da3b80ce3  release-artifacts/contact-lambda.zip
+b68c47a7774b1d575b910a60d7ceded54cf9d2b9a398334f00476113cbc945ca  release-artifacts/stats-aggregator.zip
+fc2e288739ffa842e0acb49ad169b1bf50fa91be5fa2dffd63bdeb823f5318f4  release-artifacts/manifest.json
+573adcb914353bd5def8961b255297d65d8658f29362f373195518832d704526  .superpowers/sdd/2026-09-07-design-ux-remediation/evidence/e5-checked-site-manifest.json
+
+These equal the commit 3408657 full-check identities recorded in task-E5-report.md.
+
+
+Controller evidence correction (2026-09-08T14:11:29.614016+00:00)
+The earlier command names sns-to-ses-lambda and stats-aggregator-lambda, which do not exist in this repository; those two arguments did not establish Lambda-source preservation. The original text is retained as a historical diagnostic, not corrected retroactively.
+Executed the actual repository paths after reviewer notice:
+git diff --exit-code c9a2a6f 7eb35b4 -- terraform stats_aggregator sns_publish_lambda scripts/package_release_artifacts.py .github/workflows
+Exit code: 0
+stdout: empty
+stderr: empty
+This confirms all Terraform, actual Lambda-source, packager and workflow inputs are unchanged from the real-plan commit through fix1. No application test or cloud plan was rerun.

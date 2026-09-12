@@ -1,0 +1,24 @@
+test_partial_second_write_and_repeated_failure_keep_prior_dataset (test_source_failures.SourceFailureTests.test_partial_second_write_and_repeated_failure_keep_prior_dataset) ... 
+  test_partial_second_write_and_repeated_failure_keep_prior_dataset (test_source_failures.SourceFailureTests.test_partial_second_write_and_repeated_failure_keep_prior_dataset) (prior=False) ... FAIL
+  test_partial_second_write_and_repeated_failure_keep_prior_dataset (test_source_failures.SourceFailureTests.test_partial_second_write_and_repeated_failure_keep_prior_dataset) (prior=True) ... FAIL
+
+======================================================================
+FAIL: test_partial_second_write_and_repeated_failure_keep_prior_dataset (test_source_failures.SourceFailureTests.test_partial_second_write_and_repeated_failure_keep_prior_dataset) (prior=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/stats/test_source_failures.py", line 188, in test_partial_second_write_and_repeated_failure_keep_prior_dataset
+    self.assertEqual(result['uniqueVisitors'], 1 if prior else 0)
+AssertionError: 100 != 0
+
+======================================================================
+FAIL: test_partial_second_write_and_repeated_failure_keep_prior_dataset (test_source_failures.SourceFailureTests.test_partial_second_write_and_repeated_failure_keep_prior_dataset) (prior=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/stats/test_source_failures.py", line 188, in test_partial_second_write_and_repeated_failure_keep_prior_dataset
+    self.assertEqual(result['uniqueVisitors'], 1 if prior else 0)
+AssertionError: 101 != 1
+
+----------------------------------------------------------------------
+Ran 1 test in 0.119s
+
+FAILED (failures=2)

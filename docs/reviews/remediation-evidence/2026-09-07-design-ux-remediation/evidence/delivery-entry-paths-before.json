@@ -1,0 +1,153 @@
+{
+  "started_utc": "2026-09-08T09:46:52.770106+00:00",
+  "finished_utc": "2026-09-08T09:46:53.998809+00:00",
+  "method": "Public unauthenticated HEAD requests, at most5redirects, normal certificate validation. One www origin connection uses --connect-to while retaining hostname/Host/SNI. No account settings changed.",
+  "boundary": "Observed redirects and successful HTTPS responses do not identify Cloudflare SSL mode, proxy settings or cache rules. Timings are tiny full-request samples, not performance benchmarks.",
+  "probes": [
+    {
+      "name": "http_apex_home",
+      "requested_url": "http://andrewmalvani.com/",
+      "origin_override": null,
+      "exit_code": 0,
+      "status": 200,
+      "effective_url": "https://andrewmalvani.com/",
+      "redirects": 1,
+      "tls_verify_result": 0,
+      "elapsed_seconds": 0.774888,
+      "chain": [
+        {
+          "status_line": "HTTP/1.1 301 Moved Permanently",
+          "content-type": "text/html; charset=UTF-8",
+          "location": "https://andrewmalvani.com/",
+          "server": "cloudflare"
+        },
+        {
+          "status_line": "HTTP/2 200 ",
+          "content-type": "text/html",
+          "server": "cloudflare"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "http_www_home",
+      "requested_url": "http://www.andrewmalvani.com/",
+      "origin_override": null,
+      "exit_code": 0,
+      "status": 200,
+      "effective_url": "https://www.andrewmalvani.com/",
+      "redirects": 1,
+      "tls_verify_result": 0,
+      "elapsed_seconds": 0.66223,
+      "chain": [
+        {
+          "status_line": "HTTP/1.1 301 Moved Permanently",
+          "content-type": "text/html; charset=UTF-8",
+          "location": "https://www.andrewmalvani.com/",
+          "server": "cloudflare"
+        },
+        {
+          "status_line": "HTTP/2 200 ",
+          "content-type": "text/html",
+          "server": "cloudflare"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "https_www_home",
+      "requested_url": "https://www.andrewmalvani.com/",
+      "origin_override": null,
+      "exit_code": 0,
+      "status": 200,
+      "effective_url": "https://www.andrewmalvani.com/",
+      "redirects": 0,
+      "tls_verify_result": 0,
+      "elapsed_seconds": 0.50051,
+      "chain": [
+        {
+          "status_line": "HTTP/2 200 ",
+          "content-type": "text/html",
+          "server": "cloudflare"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "https_www_graph",
+      "requested_url": "https://www.andrewmalvani.com/graph",
+      "origin_override": null,
+      "exit_code": 0,
+      "status": 200,
+      "effective_url": "https://www.andrewmalvani.com/graph",
+      "redirects": 0,
+      "tls_verify_result": 0,
+      "elapsed_seconds": 0.334587,
+      "chain": [
+        {
+          "status_line": "HTTP/2 200 ",
+          "content-type": "text/html",
+          "server": "cloudflare"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "https_apex_graph",
+      "requested_url": "https://andrewmalvani.com/graph",
+      "origin_override": null,
+      "exit_code": 0,
+      "status": 200,
+      "effective_url": "https://andrewmalvani.com/graph",
+      "redirects": 0,
+      "tls_verify_result": 0,
+      "elapsed_seconds": 0.305679,
+      "chain": [
+        {
+          "status_line": "HTTP/2 200 ",
+          "content-type": "text/html",
+          "server": "cloudflare"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "https_apex_stats",
+      "requested_url": "https://andrewmalvani.com/stats",
+      "origin_override": null,
+      "exit_code": 0,
+      "status": 200,
+      "effective_url": "https://andrewmalvani.com/stats",
+      "redirects": 0,
+      "tls_verify_result": 0,
+      "elapsed_seconds": 0.256902,
+      "chain": [
+        {
+          "status_line": "HTTP/2 200 ",
+          "content-type": "text/html",
+          "server": "cloudflare"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "https_www_origin",
+      "requested_url": "https://www.andrewmalvani.com/",
+      "origin_override": "www.andrewmalvani.com:443:d2v6o77xftr5if.cloudfront.net:443",
+      "exit_code": 0,
+      "status": 200,
+      "effective_url": "https://www.andrewmalvani.com/",
+      "redirects": 0,
+      "tls_verify_result": 0,
+      "elapsed_seconds": 0.324538,
+      "chain": [
+        {
+          "status_line": "HTTP/2 200 ",
+          "content-type": "text/html",
+          "server": "AmazonS3"
+        }
+      ],
+      "error": null
+    }
+  ]
+}

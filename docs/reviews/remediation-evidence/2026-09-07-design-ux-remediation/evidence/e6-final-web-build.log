@@ -1,0 +1,58 @@
+yarn run v1.22.22
+$ yarn compile && yarn next build
+$ tsc --noEmit --incremental false
+$ /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/node_modules/.bin/next build
+   Linting and checking validity of types ...
+   ▲ Next.js 14.0.3
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Collecting page data ...
+   Generating static pages (0/5) ...
+   Generating static pages (1/5) 
+   Generating static pages (2/5) 
+   Generating static pages (3/5) 
+ ✓ Generating static pages (5/5) 
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (pages)                              Size     First Load JS
+┌ ○ /                                      49 kB           140 kB
+├   /_app                                  0 B            79.3 kB
+├ ○ /404                                   1.99 kB        92.6 kB
+├ ○ /graph                                 24.1 kB         115 kB
+└ ○ /stats                                 8.28 kB        98.9 kB
++ First Load JS shared by all              91.7 kB
+  ├ chunks/framework-66d32731bdd20e83.js   45.2 kB
+  ├ chunks/main-5d77cecfe18a5947.js        31.8 kB
+  ├ chunks/pages/_app-45be56fe50b3f6bb.js  463 B
+  ├ chunks/webpack-a64457ed7099ea9f.js     1.89 kB
+  └ css/ccca05f628764c6b.css               12.4 kB
+
+○  (Static)  prerendered as static content
+
+$ yarn next-sitemap
+$ /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/node_modules/.bin/next-sitemap
+✨ [next-sitemap] Loading next-sitemap config: file:///Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/next-sitemap.config.js
+✅ [next-sitemap] Generation completed
+┌───────────────┬────────┐
+│ (index)       │ Values │
+├───────────────┼────────┤
+│ indexSitemaps │ 1      │
+│ sitemaps      │ 1      │
+└───────────────┴────────┘
+-----------------------------------------------------
+ SITEMAP INDICES 
+-----------------------------------------------------
+
+   ○ https://andrewmalvani.com/sitemap.xml
+
+
+-----------------------------------------------------
+ SITEMAPS 
+-----------------------------------------------------
+
+   ○ https://andrewmalvani.com/sitemap-0.xml
+
+
+Done in 12.50s.

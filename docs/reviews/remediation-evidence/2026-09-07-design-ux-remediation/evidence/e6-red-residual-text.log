@@ -1,0 +1,195 @@
+yarn run v1.22.22
+$ playwright test tests/e2e/homepage.spec.ts --project=chromium --grep 'rows remain readable'
+
+Running 3 tests using 1 worker
+
+  ✘  1 [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 320px with 200% text (603ms)
+  ✘  2 [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 390px with 200% text (357ms)
+  ✘  3 [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 430px with 200% text (381ms)
+
+
+  1) [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 320px with 200% text 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 30
+
+    - Array []
+    + Array [
+    +   "through infrastructure-as-code with Terraform/Terragrunt and GitHub Actions CI/CD.",
+    +   "through infrastructure-as-code with Terraform/Terragrunt and GitHub Actions CI/CD.",
+    +   "by rolling out AI development tools and integrating them into the SDLC while maintaining security and trustworthiness.",
+    +   "Implemented a centralized MuleSoft API management system, improving API discoverability, security, and auditability.",
+    +   "AWS Solutions Architect Associate",
+    +   "AWS Solutions Architect Associate",
+    +   "AWS Solutions Architect Associate",
+    +   "AWS Solutions Architect Associate",
+    +   "Amazon Web Services",
+    +   "Amazon Web Services",
+    +   "Amazon Web Services",
+    +   "Year listed:",
+    +   "Year listed:",
+    +   "2024",
+    +   "HashiCorp Terraform Associate",
+    +   "HashiCorp Terraform Associate",
+    +   "HashiCorp Terraform Associate",
+    +   "HashiCorp",
+    +   "Year listed:",
+    +   "Year listed:",
+    +   "2023",
+    +   "Azure AI Engineer",
+    +   "Azure AI Engineer",
+    +   "Azure AI Engineer",
+    +   "Microsoft",
+    +   "Year listed:",
+    +   "Year listed:",
+    +   "2025",
+    + ]
+
+       98 |     expect(layout.fontSize).toBe('32px');
+       99 |     expect(await page.locator('#about, #resume, #contact').allTextContents()).toEqual(originalText);
+    > 100 |     expect.soft(layout.failures).toEqual([]);
+          |                                  ^
+      101 |     expect(layout.scrollWidth).toBeLessThanOrEqual(layout.viewport + 1);
+      102 |     await expect(page.locator('#contact a[href="mailto:andrewrmalvani@gmail.com"]')).toBeVisible();
+      103 |   });
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/homepage.spec.ts:100:34
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 321
+    Received:    393
+
+       99 |     expect(await page.locator('#about, #resume, #contact').allTextContents()).toEqual(originalText);
+      100 |     expect.soft(layout.failures).toEqual([]);
+    > 101 |     expect(layout.scrollWidth).toBeLessThanOrEqual(layout.viewport + 1);
+          |                                ^
+      102 |     await expect(page.locator('#contact a[href="mailto:andrewrmalvani@gmail.com"]')).toBeVisible();
+      103 |   });
+      104 | }
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/homepage.spec.ts:101:32
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-homepage-homepage-rows-db8c1-able-at-320px-with-200-text-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-homepage-homepage-rows-db8c1-able-at-320px-with-200-text-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-homepage-homepage-rows-db8c1-able-at-320px-with-200-text-chromium/trace.zip
+    Usage:
+
+        yarn playwright show-trace test-results/e2e-homepage-homepage-rows-db8c1-able-at-320px-with-200-text-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 390px with 200% text 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 15
+
+    - Array []
+    + Array [
+    +   "through infrastructure-as-code with Terraform/Terragrunt and GitHub Actions CI/CD.",
+    +   "AWS Solutions Architect Associate",
+    +   "AWS Solutions Architect Associate",
+    +   "AWS Solutions Architect Associate",
+    +   "Amazon Web Services",
+    +   "Amazon Web Services",
+    +   "HashiCorp Terraform Associate",
+    +   "HashiCorp Terraform Associate",
+    +   "HashiCorp Terraform Associate",
+    +   "HashiCorp",
+    +   "Azure AI Engineer",
+    +   "Azure AI Engineer",
+    +   "Microsoft",
+    + ]
+
+       98 |     expect(layout.fontSize).toBe('32px');
+       99 |     expect(await page.locator('#about, #resume, #contact').allTextContents()).toEqual(originalText);
+    > 100 |     expect.soft(layout.failures).toEqual([]);
+          |                                  ^
+      101 |     expect(layout.scrollWidth).toBeLessThanOrEqual(layout.viewport + 1);
+      102 |     await expect(page.locator('#contact a[href="mailto:andrewrmalvani@gmail.com"]')).toBeVisible();
+      103 |   });
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/homepage.spec.ts:100:34
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 391
+    Received:    393
+
+       99 |     expect(await page.locator('#about, #resume, #contact').allTextContents()).toEqual(originalText);
+      100 |     expect.soft(layout.failures).toEqual([]);
+    > 101 |     expect(layout.scrollWidth).toBeLessThanOrEqual(layout.viewport + 1);
+          |                                ^
+      102 |     await expect(page.locator('#contact a[href="mailto:andrewrmalvani@gmail.com"]')).toBeVisible();
+      103 |   });
+      104 | }
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/homepage.spec.ts:101:32
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-homepage-homepage-rows-76b52-able-at-390px-with-200-text-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-homepage-homepage-rows-76b52-able-at-390px-with-200-text-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-homepage-homepage-rows-76b52-able-at-390px-with-200-text-chromium/trace.zip
+    Usage:
+
+        yarn playwright show-trace test-results/e2e-homepage-homepage-rows-76b52-able-at-390px-with-200-text-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 430px with 200% text 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 10
+
+    - Array []
+    + Array [
+    +   "AWS Solutions Architect Associate",
+    +   "AWS Solutions Architect Associate",
+    +   "AWS Solutions Architect Associate",
+    +   "HashiCorp Terraform Associate",
+    +   "HashiCorp Terraform Associate",
+    +   "HashiCorp Terraform Associate",
+    +   "HashiCorp",
+    +   "Azure AI Engineer",
+    + ]
+
+       98 |     expect(layout.fontSize).toBe('32px');
+       99 |     expect(await page.locator('#about, #resume, #contact').allTextContents()).toEqual(originalText);
+    > 100 |     expect.soft(layout.failures).toEqual([]);
+          |                                  ^
+      101 |     expect(layout.scrollWidth).toBeLessThanOrEqual(layout.viewport + 1);
+      102 |     await expect(page.locator('#contact a[href="mailto:andrewrmalvani@gmail.com"]')).toBeVisible();
+      103 |   });
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/homepage.spec.ts:100:34
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-homepage-homepage-rows-67e1a-able-at-430px-with-200-text-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-homepage-homepage-rows-67e1a-able-at-430px-with-200-text-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-homepage-homepage-rows-67e1a-able-at-430px-with-200-text-chromium/trace.zip
+    Usage:
+
+        yarn playwright show-trace test-results/e2e-homepage-homepage-rows-67e1a-able-at-430px-with-200-text-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 320px with 200% text 
+    [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 390px with 200% text 
+    [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 430px with 200% text 
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

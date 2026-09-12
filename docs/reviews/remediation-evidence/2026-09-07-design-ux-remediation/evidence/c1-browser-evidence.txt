@@ -1,0 +1,25 @@
+C1 browser evidence, 2026-09-07
+
+Browser: Playwright Chromium, production static preview at 127.0.0.1:3100
+Viewport: 320 x 844 CSS pixels
+All external HTTP(S) traffic: aborted by the capture route
+
+Invalid/partially corrected submission:
+- Active element after repeated invalid submission: #contact-name
+- Summary: "There are 2 errors to fix. Name: Please enter your name. Email: Please enter your email address."
+- Screenshot: c1-contact-summary-320.png
+
+Message counter:
+- Ordinary state: "0/2000", computed foreground rgb(163, 163, 163)
+- Near-limit state: "200 characters left", computed foreground rgb(253, 186, 116)
+- Rendered background sampled from the saved counter crops: rgb(10, 10, 10)
+- WCAG relative-luminance contrast, ordinary: 7.85:1
+- WCAG relative-luminance contrast, near limit: 11.74:1
+- Threshold required for small informational text: 4.5:1
+- Counter crops: c1-counter-ordinary.png, c1-counter-near-limit.png
+
+Accessibility verification boundary:
+- Keyboard focus, link targets, roles, accessible names, aria-describedby, aria-invalid,
+  polite status semantics, and assertive summary semantics were inspected in Chromium.
+- No dedicated screen-reader application was available in this environment, so this is
+  DOM/accessibility and keyboard evidence rather than an actual spoken-output test.

@@ -1,0 +1,80 @@
+yarn run v1.22.22
+$ playwright test tests/e2e/homepage.spec.ts --project=chromium
+
+Running 7 tests using 1 worker
+
+  ✓  1 [chromium] › tests/e2e/homepage.spec.ts:4:7 › homepage fits 320px (547ms)
+  ✓  2 [chromium] › tests/e2e/homepage.spec.ts:4:7 › homepage fits 390px (343ms)
+  ✓  3 [chromium] › tests/e2e/homepage.spec.ts:4:7 › homepage fits 430px (347ms)
+  ✓  4 [chromium] › tests/e2e/homepage.spec.ts:20:5 › homepage fits with 200% text (397ms)
+  ✘  5 [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 320px with 200% text (306ms)
+  ✘  6 [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 390px with 200% text (304ms)
+  ✓  7 [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 430px with 200% text (303ms)
+
+
+  1) [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 320px with 200% text 
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 321
+    Received:    393
+
+      81 |     expect(await page.locator('#about, #resume, #contact').allTextContents()).toEqual(originalText);
+      82 |     expect.soft(layout.failures).toEqual([]);
+    > 83 |     expect(layout.scrollWidth).toBeLessThanOrEqual(layout.viewport + 1);
+         |                                ^
+      84 |     await expect(page.locator('#contact a[href="mailto:andrewrmalvani@gmail.com"]')).toBeVisible();
+      85 |   });
+      86 | }
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/homepage.spec.ts:83:32
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-homepage-homepage-rows-db8c1-able-at-320px-with-200-text-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-homepage-homepage-rows-db8c1-able-at-320px-with-200-text-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-homepage-homepage-rows-db8c1-able-at-320px-with-200-text-chromium/trace.zip
+    Usage:
+
+        yarn playwright show-trace test-results/e2e-homepage-homepage-rows-db8c1-able-at-320px-with-200-text-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 390px with 200% text 
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 391
+    Received:    393
+
+      81 |     expect(await page.locator('#about, #resume, #contact').allTextContents()).toEqual(originalText);
+      82 |     expect.soft(layout.failures).toEqual([]);
+    > 83 |     expect(layout.scrollWidth).toBeLessThanOrEqual(layout.viewport + 1);
+         |                                ^
+      84 |     await expect(page.locator('#contact a[href="mailto:andrewrmalvani@gmail.com"]')).toBeVisible();
+      85 |   });
+      86 | }
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/homepage.spec.ts:83:32
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-homepage-homepage-rows-76b52-able-at-390px-with-200-text-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-homepage-homepage-rows-76b52-able-at-390px-with-200-text-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-homepage-homepage-rows-76b52-able-at-390px-with-200-text-chromium/trace.zip
+    Usage:
+
+        yarn playwright show-trace test-results/e2e-homepage-homepage-rows-76b52-able-at-390px-with-200-text-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 320px with 200% text 
+    [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 390px with 200% text 
+  5 passed (4.7s)
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

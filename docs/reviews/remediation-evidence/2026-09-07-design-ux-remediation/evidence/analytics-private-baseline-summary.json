@@ -1,0 +1,49 @@
+{
+  "aggregate_family_sums": {
+    "daily#": "57535",
+    "page#": "57535",
+    "referrer#": "1062",
+    "total#": "57535"
+  },
+  "approximate_table_bytes": 4712681,
+  "approximate_table_item_count": 59207,
+  "complete_scan": true,
+  "consistency_limit": "Strongly consistent per-item reads are not an atomic table snapshot. Writer was not paused; this is a preflight baseline, not the quiesced cutover backup.",
+  "consumed_read_capacity_units": 1156.0,
+  "export_sha256": "4768498f9b999faedd04a60f7a680cd7c63b1ba4494a267c1619849deea20ee5",
+  "exported_known_family_items": 59207,
+  "family_counts": {
+    "cf#daily#": 102,
+    "cursor#": 1,
+    "daily#": 869,
+    "marker#": 58187,
+    "page#": 2,
+    "referrer#": 45,
+    "total#": 1
+  },
+  "finished_utc": "2026-09-08T09:07:17.392224+00:00",
+  "payload_last_updated": "2026-09-08",
+  "payload_sha256": "4cf83c94e6abd745b29707a665d381b6ee8d3fbd74e79daaf55cec69a6b2a24c",
+  "payload_total_views": 57535,
+  "privacy": "Only known aggregate and processing families exported. No raw S3 logs or unrelated table item families retrieved. Export stays private and is not committed.",
+  "private_export_directory": "/private/tmp/react-resume-analytics-baseline-i9e9w4oa",
+  "scan_pages": 5,
+  "scanned_items": 59207,
+  "started_utc": "2026-09-08T09:07:13.667993+00:00",
+  "stored_document_days": {
+    "absence_interpretation": "No stored daily item is not evidence of zero traffic; baseline cannot distinguish absent observations from no visits.",
+    "absent_item_days_in_span": 20,
+    "calendar_days_in_span": 889,
+    "count": 869,
+    "since": "2024-04-02",
+    "through": "2026-09-07"
+  },
+  "stored_edge_days": {
+    "count": 102,
+    "country_request_sum": 450316,
+    "daily_unique_sum": 37253,
+    "since": "2026-05-29",
+    "through": "2026-09-07"
+  },
+  "table": "mostly-upward-lion-data-table"
+}

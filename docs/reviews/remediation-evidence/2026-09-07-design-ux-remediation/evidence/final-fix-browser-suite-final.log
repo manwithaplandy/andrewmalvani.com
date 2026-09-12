@@ -1,0 +1,133 @@
+yarn run v1.22.22
+$ playwright test --project=chromium
+TAP version 13
+# Subtest: the actual edge handler maps public pages and leaves static extensions unchanged
+ok 1 - the actual edge handler maps public pages and leaves static extensions unchanged
+  ---
+  duration_ms: 2.542792
+  type: 'test'
+  ...
+# Subtest: non-root trailing slashes redirect to the extensionless canonical path
+ok 2 - non-root trailing slashes redirect to the extensionless canonical path
+  ---
+  duration_ms: 1.104709
+  type: 'test'
+  ...
+# Subtest: the slash redirect emits each multi-value once and preserves encoded event fields
+ok 3 - the slash redirect emits each multi-value once and preserves encoded event fields
+  ---
+  duration_ms: 1.044667
+  type: 'test'
+  ...
+# Subtest: unusual slash and backslash paths cannot produce an external Location
+ok 4 - unusual slash and backslash paths cannot produce an external Location
+  ---
+  duration_ms: 1.651125
+  type: 'test'
+  ...
+
+Running 100 tests using 1 worker
+
+  ✓    1 [chromium] › tests/e2e/contact-submission.spec.ts:62:5 › pending submission is read-only and sends one trimmed snapshot (901ms)
+  ✓    2 [chromium] › tests/e2e/contact-submission.spec.ts:104:5 › non-2xx response preserves the exact draft and restores editing (417ms)
+  ✓    3 [chromium] › tests/e2e/contact-submission.spec.ts:127:5 › network failure preserves the exact draft and explains delivery uncertainty (483ms)
+  ✓    4 [chromium] › tests/e2e/contact-submission.spec.ts:150:5 › timeout preserves the draft and only a deliberate retry starts another request (15.9s)
+  ✓    5 [chromium] › tests/e2e/contact-submission.spec.ts:191:5 › navigating away aborts pending local work without stale feedback (3.7s)
+  ✓    6 [chromium] › tests/e2e/contact-validation.spec.ts:19:5 › invalid send explains errors and focuses the first field (432ms)
+  ✓    7 [chromium] › tests/e2e/contact-validation.spec.ts:32:5 › whitespace-only fields and an invalid email remain invalid (365ms)
+  ✓    8 [chromium] › tests/e2e/contact-validation.spec.ts:47:5 › correction preserves other errors and repeated submit announces the remainder (1.9s)
+  ✓    9 [chromium] › tests/e2e/contact-validation.spec.ts:72:5 › client bounds and message limit feedback match the contact service (431ms)
+  ✓   10 [chromium] › tests/e2e/graph-access.spec.ts:44:7 › invalid graph link remains usable: #node=% (1.0s)
+  ✓   11 [chromium] › tests/e2e/graph-access.spec.ts:44:7 › invalid graph link remains usable: #node=%E0%A4%A (1.0s)
+  ✓   12 [chromium] › tests/e2e/graph-access.spec.ts:44:7 › invalid graph link remains usable: #node=unknown (1.0s)
+  ✓   13 [chromium] › tests/e2e/graph-access.spec.ts:44:7 › invalid graph link remains usable: #other (997ms)
+  ✓   14 [chromium] › tests/e2e/graph-access.spec.ts:56:5 › valid deep link survives view switches without mount history entries (3.5s)
+  ✓   15 [chromium] › tests/e2e/graph-access.spec.ts:82:5 › chosen text view exposes ordinary keyboard-operable disclosures and connection navigation (646ms)
+  ✓   16 [chromium] › tests/e2e/graph-access.spec.ts:109:5 › 3D tab order contains visible entry and connection controls, with no hidden list (2.2s)
+  ✓   17 [chromium] › tests/e2e/graph-access.spec.ts:135:7 › denied hint storage getItem remains recoverable (1.3s)
+  ✓   18 [chromium] › tests/e2e/graph-access.spec.ts:135:7 › denied hint storage setItem remains recoverable (1.3s)
+  ✓   19 [chromium] › tests/e2e/graph-access.spec.ts:135:7 › denied hint storage removeItem remains recoverable (1.4s)
+  ✓   20 [chromium] › tests/e2e/graph-access.spec.ts:135:7 › denied hint storage getter remains recoverable (1.4s)
+  ✓   21 [chromium] › tests/e2e/graph-access.spec.ts:168:5 › unavailable WebGL overrides an explicit 3D request and preserves selection (215ms)
+  ✓   22 [chromium] › tests/e2e/graph-access.spec.ts:186:5 › unknown view values use the supported default (1.0s)
+  ✓   23 [chromium] › tests/e2e/graph-access.spec.ts:193:5 › browser mode navigation moves focus out of the view being removed (1.9s)
+  ✓   24 [chromium] › tests/e2e/graph-access.spec.ts:210:7 › mobile graphics › slow graphics falls back to text with the selected content and persistent focus (3.7s)
+  ✓   25 [chromium] › tests/e2e/graph-access.spec.ts:232:5 › unescaped valid deep links do not add a history entry during mount (552ms)
+  ✓   26 [chromium] › tests/e2e/graph-access.spec.ts:244:7 › text view preserves selected detail: skill:python (147ms)
+  ✓   27 [chromium] › tests/e2e/graph-access.spec.ts:244:7 › text view preserves selected detail: job:tillster-it-strategic-analyst (163ms)
+  ✓   28 [chromium] › tests/e2e/graph-access.spec.ts:250:5 › selection-only history recovers focus from disappearing text connections (277ms)
+  ✓   29 [chromium] › tests/e2e/graph-access.spec.ts:271:5 › selection-only history recovers text connection focus when deselecting (1.4s)
+  ✓   30 [chromium] › tests/e2e/graph-access.spec.ts:288:7 › selection-only history keeps focus on a persistent entry control (243ms)
+  ✓   31 [chromium] › tests/e2e/graph-access.spec.ts:288:7 › selection-only history keeps focus on a persistent mode control (225ms)
+  ✓   32 [chromium] › tests/e2e/graph-access.spec.ts:305:7 › cross-page history restores graph after initial selection (630ms)
+  ✓   33 [chromium] › tests/e2e/graph-access.spec.ts:305:7 › cross-page history restores graph after changed selection (631ms)
+  ✓   34 [chromium] › tests/e2e/graph-access.spec.ts:305:7 › cross-page history restores graph after changed view (2.5s)
+  ✓   35 [chromium] › tests/e2e/graph-discovery.spec.ts:11:7 › direct search preserves evidence, focus and native input keys in list (757ms)
+  ✓   36 [chromium] › tests/e2e/graph-discovery.spec.ts:11:7 › direct search preserves evidence, focus and native input keys in 3d (2.8s)
+  ✓   37 [chromium] › tests/e2e/graph-discovery.spec.ts:59:7 › system overview clears the trail and repeated requests recover the real camera after orbit and zoom (16.3s)
+  ✓   38 [chromium] › tests/e2e/graph-discovery.spec.ts:59:7 › manual overview clears the trail and repeated requests recover the real camera after orbit and zoom (19.3s)
+  ✓   39 [chromium] › tests/e2e/graph-discovery.spec.ts:59:7 › animated overview clears the trail and repeated requests recover the real camera after orbit and zoom (22.5s)
+  ✓   40 [chromium] › tests/e2e/graph-discovery.spec.ts:149:5 › search counts the full graph, matches normalized descriptions, and every existing node remains deep-linkable (645ms)
+  ✓   41 [chromium] › tests/e2e/graph-discovery.spec.ts:173:5 › a phone visitor can follow skill evidence across views and recover overview (3.7s)
+  ✓   42 [chromium] › tests/e2e/graph-discovery.spec.ts:202:7 › canonical overview keeps informational labels readable at 1280px (15.1s)
+  ✓   43 [chromium] › tests/e2e/graph-discovery.spec.ts:202:7 › canonical overview keeps informational labels readable at 390px (15.1s)
+  ✓   44 [chromium] › tests/e2e/graph-layout.spec.ts:109:7 › graph controls and selected details remain usable at 320x720 (4.0s)
+  ✓   45 [chromium] › tests/e2e/graph-layout.spec.ts:109:7 › graph controls and selected details remain usable at 390x844 (4.1s)
+  ✓   46 [chromium] › tests/e2e/graph-layout.spec.ts:109:7 › graph controls and selected details remain usable at 844x390 (2.3s)
+  ✓   47 [chromium] › tests/e2e/graph-layout.spec.ts:109:7 › graph controls and selected details remain usable at 1280x900 (2.7s)
+  ✓   48 [chromium] › tests/e2e/graph-layout.spec.ts:157:5 › a long achievement heading wraps completely in phone 3D view (965ms)
+  ✓   49 [chromium] › tests/e2e/graph-layout.spec.ts:169:5 › the real canvas follows the space left by disclosures and viewport changes (2.6s)
+  ✓   50 [chromium] › tests/e2e/graph-layout.spec.ts:189:5 › 200% text keeps graph navigation readable and reachable at 320 CSS pixels (1.1s)
+  ✓   51 [chromium] › tests/e2e/graph-layout.spec.ts:215:5 › small graph information meets contrast on its rendered surfaces (4.0s)
+  ✓   52 [chromium] › tests/e2e/graph-layout.spec.ts:263:7 › system reduced motion reveals selected details without panel translation (1.6s)
+  ✓   53 [chromium] › tests/e2e/graph-layout.spec.ts:263:7 › manual reduced motion reveals selected details without panel translation (1.8s)
+  ✓   54 [chromium] › tests/e2e/graph-layout.spec.ts:289:7 › mobile performance focus recovery › performance fallback preserves focus outside the disappearing graph experience (3.6s)
+  ✓   55 [chromium] › tests/e2e/graph-layout.spec.ts:303:7 › mobile performance focus recovery › vertical scrolling on selected details does not scan connections (1.1s)
+  ✓   56 [chromium] › tests/e2e/homepage.spec.ts:4:7 › homepage fits 320px (287ms)
+  ✓   57 [chromium] › tests/e2e/homepage.spec.ts:4:7 › homepage fits 390px (327ms)
+  ✓   58 [chromium] › tests/e2e/homepage.spec.ts:4:7 › homepage fits 430px (316ms)
+  ✓   59 [chromium] › tests/e2e/homepage.spec.ts:20:5 › homepage fits with 200% text (454ms)
+  ✓   60 [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 320px with 200% text (268ms)
+  ✓   61 [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 390px with 200% text (285ms)
+  ✓   62 [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 430px with 200% text (291ms)
+  ✓   63 [chromium] › tests/e2e/motion.spec.ts:40:5 › particles clear on live reduction and resume with one draw per frame (1.8s)
+  ✓   64 [chromium] › tests/e2e/motion.spec.ts:95:5 › an initially reduced visit keeps particles clear and menu usable without sliding (663ms)
+  ✓   65 [chromium] › tests/e2e/motion.spec.ts:110:5 › live reduction immediately exposes pending reveals and disables menu movement (831ms)
+  ✓   66 [chromium] › tests/e2e/motion.spec.ts:135:5 › particles retain offscreen and background visibility gates across preference changes (1.3s)
+  ✓   67 [chromium] › tests/e2e/navigation.spec.ts:3:5 › campaign links retain one homepage identity (374ms)
+  ✓   68 [chromium] › tests/e2e/navigation.spec.ts:10:5 › graph state retains one graph page identity (146ms)
+  ✓   69 [chromium] › tests/e2e/navigation.spec.ts:17:5 › the architecture card opens a real local image (1.9s)
+  ✓   70 [chromium] › tests/e2e/navigation.spec.ts:36:5 › portfolio keeps project destinations usable without publishing unapproved disclosures (384ms)
+  ✓   71 [chromium] › tests/e2e/navigation.spec.ts:48:5 › homepage separates experience navigation from the PDF download (432ms)
+  ✓   72 [chromium] › tests/e2e/navigation.spec.ts:59:5 › graph offers the same named PDF download (181ms)
+  ✓   73 [chromium] › tests/e2e/navigation.spec.ts:69:7 › / footer returns to the current page's top (2.4s)
+  ✓   74 [chromium] › tests/e2e/navigation.spec.ts:69:7 › /stats footer returns to the current page's top (611ms)
+  ✓   75 [chromium] › tests/e2e/not-found.spec.ts:3:5 › an unknown static path returns a useful non-indexed 404 page (126ms)
+  ✓   76 [chromium] › tests/e2e/not-found.spec.ts:14:5 › the missing-page recovery fits a 320-pixel viewport (123ms)
+  ✓   77 [chromium] › tests/e2e/stats-producer.spec.ts:8:7 › actual producer output is compatible with the reader: stale (542ms)
+  ✓   78 [chromium] › tests/e2e/stats-producer.spec.ts:8:7 › actual producer output is compatible with the reader: current (442ms)
+  ✓   79 [chromium] › tests/e2e/stats-producer.spec.ts:8:7 › actual producer output is compatible with the reader: zero (392ms)
+  ✓   80 [chromium] › tests/e2e/stats-producer.spec.ts:49:7 › partial source storage keeps the accepted dataset: partial-prior (323ms)
+  ✓   81 [chromium] › tests/e2e/stats-producer.spec.ts:49:7 › partial source storage keeps the accepted dataset: partial-empty (319ms)
+  ✓   82 [chromium] › tests/e2e/stats.spec.ts:33:5 › legacy payload keeps its uncertainty visible and excludes today (213ms)
+  ✓   83 [chromium] › tests/e2e/stats.spec.ts:51:5 › v2 payload shows measured zero, separate periods, gaps and provisional data (230ms)
+  ✓   84 [chromium] › tests/e2e/stats.spec.ts:71:5 › valid document zero remains visible while an unavailable edge source does not become zero (131ms)
+  ✓   85 [chromium] › tests/e2e/stats.spec.ts:105:5 › frozen sources become visibly stale on a later fixed calendar day (152ms)
+  ✓   86 [chromium] › tests/e2e/stats.spec.ts:114:5 › malformed data offers Retry and a valid retry recovers (251ms)
+  ✓   87 [chromium] › tests/e2e/stats.spec.ts:130:5 › a stalled request times out and a deliberate retry recovers (10.6s)
+  ✓   88 [chromium] › tests/e2e/stats.spec.ts:161:5 › SPA navigation cancels a pending stats request on unmount (1.0s)
+  ✓   89 [chromium] › tests/e2e/stats.spec.ts:203:5 › sparse calendar dates use real spacing and break paths across absent days (225ms)
+  ✓   90 [chromium] › tests/e2e/stats.spec.ts:234:5 › stats presentation reflows at 320 pixels (205ms)
+  ✓   91 [chromium] › tests/unit/statsPayload.spec.ts:7:5 › legacy uniques are relabeled without inventing coverage (0ms)
+  ✓   92 [chromium] › tests/unit/statsPayload.spec.ts:14:5 › legacy zeros remain distinct from measured v2 zeros (1ms)
+  ✓   93 [chromium] › tests/unit/statsPayload.spec.ts:28:5 › invalid required and optional dates fail at their documented boundaries (0ms)
+  ✓   94 [chromium] › tests/unit/statsPayload.spec.ts:45:5 › duplicate or unsorted v2 observations reject the payload (0ms)
+  ✓   95 [chromium] › tests/unit/statsPayload.spec.ts:58:5 › unknown payload versions are not guessed as version 2 (0ms)
+  ✓   96 [chromium] › tests/unit/statsPayload.spec.ts:62:5 › invalid labels and counts cannot reach normalized public lists (0ms)
+  ✓   97 [chromium] › tests/unit/statsPayload.spec.ts:87:5 › named buckets below five join a bounded preexisting Other bucket (0ms)
+  ✓   98 [chromium] › tests/unit/statsPayload.spec.ts:125:5 › public lists and observations remain bounded (0ms)
+  ✓   99 [chromium] › tests/unit/statsPayload.spec.ts:135:5 › a frozen payload eventually looks stale (0ms)
+  ✓  100 [chromium] › tests/unit/statsPayload.spec.ts:141:5 › stale migrated measurements may have unknown success timing while current requires a success date (0ms)
+
+  100 passed (3.5m)
+Done in 211.82s.

@@ -1,0 +1,12 @@
+{
+  "observedAt": "2026-09-12T15:59:08Z",
+  "restApiId": "vs7dthj3vb",
+  "stages": [
+    {
+      "stageName": "api",
+      "deploymentId": "xpyhk9"
+    }
+  ],
+  "oldDeploymentId": "11hxml",
+  "oldDeploymentReferenced": false
+}

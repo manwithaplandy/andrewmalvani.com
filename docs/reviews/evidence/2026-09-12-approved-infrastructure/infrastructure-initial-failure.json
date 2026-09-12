@@ -1,0 +1,11 @@
+{
+  "analyticsMigrationComplete": false,
+  "evidenceLimit": "selected read-only configuration after approved infra apply; no analytics invocation, quota mutation, environment output, logs or table rows",
+  "failures": [
+    "EDGE_RUNTIME_OR_STATUS_MISMATCH",
+    "API_CONTACT_INTEGRATION_MISMATCH"
+  ],
+  "scope": "approved-partial-infrastructure",
+  "status": "FAIL",
+  "verifiedAt": "2026-09-12T16:09:57.011405+00:00"
+}

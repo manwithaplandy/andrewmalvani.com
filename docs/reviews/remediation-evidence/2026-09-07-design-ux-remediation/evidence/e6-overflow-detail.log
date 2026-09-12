@@ -1,0 +1,191 @@
+[
+  {
+    "text": "American (US Citizen)",
+    "rect": {
+      "x": 193.578125,
+      "y": 361.5,
+      "width": 126.3125,
+      "height": 120,
+      "top": 361.5,
+      "right": 319.890625,
+      "bottom": 481.5,
+      "left": 193.578125
+    },
+    "ancestors": [
+      {
+        "class": "col-span-1 flex items-start gap-x-2",
+        "rect": {
+          "x": 3,
+          "y": 361.5,
+          "width": 256,
+          "height": 120,
+          "top": 361.5,
+          "right": 259,
+          "bottom": 481.5,
+          "left": 3
+        },
+        "overflow": "visible",
+        "minWidth": "auto",
+        "flexWrap": "nowrap"
+      },
+      {
+        "class": "grid grid-cols-1 gap-4 sm:grid-cols-2",
+        "rect": {
+          "x": 3,
+          "y": 289.5,
+          "width": 256,
+          "height": 768,
+          "top": 289.5,
+          "right": 259,
+          "bottom": 1057.5,
+          "left": 3
+        },
+        "overflow": "visible",
+        "minWidth": "auto",
+        "flexWrap": "nowrap"
+      },
+      {
+        "class": "col-span-1 flex flex-col gap-y-6 md:col-span-3",
+        "rect": {
+          "x": 3,
+          "y": -799,
+          "width": 256,
+          "height": 1856.5,
+          "top": -799,
+          "right": 259,
+          "bottom": 1057.5,
+          "left": 3
+        },
+        "overflow": "visible",
+        "minWidth": "auto",
+        "flexWrap": "nowrap"
+      }
+    ]
+  },
+  {
+    "text": "September 2017",
+    "rect": {
+      "x": 158.640625,
+      "y": 381.5,
+      "width": 145.1875,
+      "height": 80,
+      "top": 381.5,
+      "right": 303.828125,
+      "bottom": 461.5,
+      "left": 158.640625
+    },
+    "ancestors": [
+      {
+        "class": "flex items-center gap-x-2 text-neutral-400",
+        "rect": {
+          "x": 3,
+          "y": 361.5,
+          "width": 256,
+          "height": 120,
+          "top": 361.5,
+          "right": 259,
+          "bottom": 481.5,
+          "left": 3
+        },
+        "overflow": "visible",
+        "minWidth": "auto",
+        "flexWrap": "nowrap"
+      },
+      {
+        "class": "flex flex-col",
+        "rect": {
+          "x": 3,
+          "y": 249.5,
+          "width": 256,
+          "height": 232,
+          "top": 249.5,
+          "right": 259,
+          "bottom": 481.5,
+          "left": 3
+        },
+        "overflow": "visible",
+        "minWidth": "auto",
+        "flexWrap": "nowrap"
+      },
+      {
+        "class": "flex flex-col pb-10 text-left last:pb-0",
+        "rect": {
+          "x": 3,
+          "y": 249.5,
+          "width": 256,
+          "height": 232,
+          "top": 249.5,
+          "right": 259,
+          "bottom": 481.5,
+          "left": 3
+        },
+        "overflow": "visible",
+        "minWidth": "auto",
+        "flexWrap": "nowrap"
+      }
+    ]
+  },
+  {
+    "text": "Proficient",
+    "rect": {
+      "x": 44,
+      "y": 405.5,
+      "width": 155.25,
+      "height": 32,
+      "top": 405.5,
+      "right": 199.25,
+      "bottom": 437.5,
+      "left": 44
+    },
+    "ancestors": [
+      {
+        "class": "flex shrink-0 items-center gap-x-2",
+        "rect": {
+          "x": 44,
+          "y": 405.5,
+          "width": 283.25,
+          "height": 32,
+          "top": 405.5,
+          "right": 327.25,
+          "bottom": 437.5,
+          "left": 44
+        },
+        "overflow": "visible",
+        "minWidth": "auto",
+        "flexWrap": "nowrap"
+      },
+      {
+        "class": "flex min-w-0 flex-wrap items-center justify-between gap-x-3 gap-y-2",
+        "rect": {
+          "x": 44,
+          "y": 349.5,
+          "width": 174,
+          "height": 88,
+          "top": 349.5,
+          "right": 218,
+          "bottom": 437.5,
+          "left": 44
+        },
+        "overflow": "visible",
+        "minWidth": "0px",
+        "flexWrap": "wrap"
+      },
+      {
+        "class": "flex flex-col gap-y-3",
+        "rect": {
+          "x": 44,
+          "y": -98.5,
+          "width": 174,
+          "height": 536,
+          "top": -98.5,
+          "right": 218,
+          "bottom": 437.5,
+          "left": 44
+        },
+        "overflow": "visible",
+        "minWidth": "auto",
+        "flexWrap": "nowrap"
+      }
+    ]
+  }
+]

@@ -1,0 +1,11 @@
+yarn run v1.22.22
+$ playwright test tests/e2e/graph-discovery.spec.ts --project=chromium --grep 'phone visitor|informational labels'
+
+Running 3 tests using 1 worker
+
+  ✓  1 [chromium] › tests/e2e/graph-discovery.spec.ts:173:5 › a phone visitor can follow skill evidence across views and recover overview (3.9s)
+  ✓  2 [chromium] › tests/e2e/graph-discovery.spec.ts:202:7 › canonical overview keeps informational labels readable at 1280px (14.9s)
+  ✓  3 [chromium] › tests/e2e/graph-discovery.spec.ts:202:7 › canonical overview keeps informational labels readable at 390px (14.6s)
+
+  3 passed (34.9s)
+Done in 35.45s.

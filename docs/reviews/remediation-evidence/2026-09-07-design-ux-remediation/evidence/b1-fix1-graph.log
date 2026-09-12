@@ -1,0 +1,36 @@
+yarn run v1.22.22
+$ playwright test tests/e2e/graph-access.spec.ts --project=chromium
+[WebServer] (node:74018) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:74019) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 22 tests using 1 worker
+
+(node:74020) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/e2e/graph-access.spec.ts:44:7 › invalid graph link remains usable: #node=% (1.8s)
+  ✓   2 [chromium] › tests/e2e/graph-access.spec.ts:44:7 › invalid graph link remains usable: #node=%E0%A4%A (1.3s)
+  ✓   3 [chromium] › tests/e2e/graph-access.spec.ts:44:7 › invalid graph link remains usable: #node=unknown (1.2s)
+  ✓   4 [chromium] › tests/e2e/graph-access.spec.ts:44:7 › invalid graph link remains usable: #other (1.2s)
+  ✓   5 [chromium] › tests/e2e/graph-access.spec.ts:56:5 › valid deep link survives view switches without mount history entries (4.0s)
+  ✓   6 [chromium] › tests/e2e/graph-access.spec.ts:82:5 › chosen text view exposes ordinary keyboard-operable disclosures and connection navigation (637ms)
+  ✓   7 [chromium] › tests/e2e/graph-access.spec.ts:109:5 › 3D tab order contains visible entry and connection controls, with no hidden list (6.7s)
+  ✓   8 [chromium] › tests/e2e/graph-access.spec.ts:135:7 › denied hint storage getItem remains recoverable (1.9s)
+  ✓   9 [chromium] › tests/e2e/graph-access.spec.ts:135:7 › denied hint storage setItem remains recoverable (1.8s)
+  ✓  10 [chromium] › tests/e2e/graph-access.spec.ts:135:7 › denied hint storage removeItem remains recoverable (2.1s)
+  ✓  11 [chromium] › tests/e2e/graph-access.spec.ts:135:7 › denied hint storage getter remains recoverable (2.0s)
+  ✓  12 [chromium] › tests/e2e/graph-access.spec.ts:166:5 › unavailable WebGL overrides an explicit 3D request and preserves selection (177ms)
+  ✓  13 [chromium] › tests/e2e/graph-access.spec.ts:184:5 › unknown view values use the supported default (1.1s)
+  ✓  14 [chromium] › tests/e2e/graph-access.spec.ts:191:5 › browser mode navigation moves focus out of the view being removed (2.2s)
+  ✓  15 [chromium] › tests/e2e/graph-access.spec.ts:208:7 › mobile graphics › slow graphics falls back to text with the selected content and persistent focus (3.7s)
+  ✓  16 [chromium] › tests/e2e/graph-access.spec.ts:230:5 › unescaped valid deep links do not add a history entry during mount (526ms)
+  ✓  17 [chromium] › tests/e2e/graph-access.spec.ts:242:7 › text view preserves selected detail: skill:python (148ms)
+  ✓  18 [chromium] › tests/e2e/graph-access.spec.ts:242:7 › text view preserves selected detail: job:tillster-it-strategic-analyst (144ms)
+  ✓  19 [chromium] › tests/e2e/graph-access.spec.ts:248:5 › selection-only history recovers focus from disappearing text connections (258ms)
+  ✓  20 [chromium] › tests/e2e/graph-access.spec.ts:269:5 › selection-only history recovers text connection focus when deselecting (1.7s)
+  ✓  21 [chromium] › tests/e2e/graph-access.spec.ts:286:7 › selection-only history keeps focus on a persistent entry control (246ms)
+  ✓  22 [chromium] › tests/e2e/graph-access.spec.ts:286:7 › selection-only history keeps focus on a persistent mode control (228ms)
+
+  22 passed (36.5s)
+Done in 37.01s.

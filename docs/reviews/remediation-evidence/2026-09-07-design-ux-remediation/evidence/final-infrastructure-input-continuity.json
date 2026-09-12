@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-09-08T15:12:31.926313+00:00",
+  "realPlanSource": "c9a2a6fe4891e5cdc0775604848298c0ca2f1b7e",
+  "reviewCandidate": "288a6c58a50f76fdf14ea56d5a80e444979efbcd",
+  "configurationPathsCompared": [
+    "terraform",
+    "stats_aggregator",
+    "sns_publish_lambda",
+    "scripts/package_release_artifacts.py"
+  ],
+  "comparisonExit": 0,
+  "comparisonStdoutEmpty": true,
+  "comparisonStderrEmpty": true,
+  "archives": [
+    {
+      "name": "contact-lambda.zip",
+      "sha256": "3998f18a127c13ab8292af7100ab5fc36e84c5a069c2b9b16e7b0d7da3b80ce3",
+      "matchesCheckedPlanInput": true
+    },
+    {
+      "name": "stats-aggregator.zip",
+      "sha256": "b68c47a7774b1d575b910a60d7ceded54cf9d2b9a398334f00476113cbc945ca",
+      "matchesCheckedPlanInput": true
+    }
+  ],
+  "limits": "File/artifact continuity only. No new cloud query or plan. The real nonlocking plan remains its original 2026-09-08 13:51 UTC observation and must be recreated/reviewed for a later approved apply."
+}

@@ -1,0 +1,54 @@
+{
+  "observations": [
+    {
+      "label": "list entry",
+      "path": "/graph?view=list#node=skill%3Apython",
+      "graph": true,
+      "contact": false,
+      "routerOwned": true,
+      "sameDocument": true
+    },
+    {
+      "label": "classic resume",
+      "path": "/",
+      "graph": false,
+      "contact": true,
+      "routerOwned": true,
+      "sameDocument": true
+    },
+    {
+      "label": "Back restores list/Python",
+      "path": "/graph?view=list#node=skill%3Apython",
+      "graph": true,
+      "contact": false,
+      "routerOwned": true,
+      "sameDocument": true
+    },
+    {
+      "label": "Back restores 3D/Python",
+      "path": "/graph?view=3d#node=skill%3Apython",
+      "graph": true,
+      "contact": false,
+      "routerOwned": true,
+      "sameDocument": true
+    },
+    {
+      "label": "Forward restores list/Python",
+      "path": "/graph?view=list#node=skill%3Apython",
+      "graph": true,
+      "contact": false,
+      "routerOwned": true,
+      "sameDocument": true
+    },
+    {
+      "label": "Forward restores classic resume",
+      "path": "/",
+      "graph": false,
+      "contact": true,
+      "routerOwned": true,
+      "sameDocument": true
+    }
+  ],
+  "errors": [],
+  "clock": "real progressing time; no Date override"
+}

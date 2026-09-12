@@ -1,6 +1,8 @@
 import classNames from 'classnames';
 import {CSSProperties, FC, memo, PropsWithChildren, useEffect, useRef, useState} from 'react';
 
+import useReducedMotion from '../hooks/useReducedMotion';
+
 /**
  * Fades and slides its children up when they enter the viewport.
  * Renders children visible immediately when prefers-reduced-motion is set
@@ -8,6 +10,7 @@ import {CSSProperties, FC, memo, PropsWithChildren, useEffect, useRef, useState}
  */
 const Reveal: FC<PropsWithChildren<{className?: string; delayMs?: number}>> = memo(
   ({children, className, delayMs = 0}) => {
+    const reducedMotion = useReducedMotion();
     const ref = useRef<HTMLDivElement>(null);
     const [isVisible, setIsVisible] = useState(true);
     const [isAnimated, setIsAnimated] = useState(false);
@@ -15,7 +18,11 @@ const Reveal: FC<PropsWithChildren<{className?: string; delayMs?: number}>> = me
     useEffect(() => {
       const node = ref.current;
       if (!node) return;
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      if (reducedMotion) {
+        setIsVisible(true);
+        setIsAnimated(false);
+        return;
+      }
 
       // Already in view on mount (e.g. hero-adjacent content): skip the animation.
       const rect = node.getBoundingClientRect();
@@ -49,16 +56,16 @@ const Reveal: FC<PropsWithChildren<{className?: string; delayMs?: number}>> = me
         observer.disconnect();
         window.clearTimeout(safety);
       };
-    }, []);
+    }, [reducedMotion]);
 
-    const style: CSSProperties | undefined = delayMs ? {transitionDelay: `${delayMs}ms`} : undefined;
+    const style: CSSProperties | undefined = !reducedMotion && delayMs ? {transitionDelay: `${delayMs}ms`} : undefined;
 
     return (
       <div
         className={classNames(
           className,
-          isAnimated && 'transition-all duration-700 ease-out',
-          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0',
+          !reducedMotion && isAnimated && 'transition-all duration-700 ease-out',
+          reducedMotion || isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0',
         )}
         ref={ref}
         style={style}>

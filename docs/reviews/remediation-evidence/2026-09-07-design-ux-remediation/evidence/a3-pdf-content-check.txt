@@ -1,0 +1,26 @@
+A3 PDF content check - 2026-09-07
+
+PASS: 1 page; 19/19 source list items present; 2902 selectable characters; email and LinkedIn URI annotations present.
+
+SHA-256 for both inspected candidate and promoted public/assets/resume.pdf:
+246239dc0c28c26121734ad9780ecb1caad83e1f6564c549b51b89db4a024fa5
+
+Explicit extracted-text checks passed for:
+- June 2024 - Present
+- February 2023 - June 2024
+- $15M in annual spend
+- $50M ROI from labor-efficiency gains
+- Reduced deployment time by 90%
+- In progress, expected 2028
+- Azure AI Engineer Associate
+- AWS Solutions Architect Associate
+
+URI annotations:
+- mailto:andrewrmalvani@gmail.com
+- https://www.linkedin.com/in/andrewmalvani
+
+Visual evidence:
+- a3-resume-candidate.pdf
+- a3-resume-candidate.png
+- a3-resume-final.png
+

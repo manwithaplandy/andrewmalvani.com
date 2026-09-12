@@ -1,0 +1,16 @@
+{
+  "base": "288a6c58a50f76fdf14ea56d5a80e444979efbcd",
+  "changedTrackedPaths": [
+    "src/components/Graph/GraphExplorer.tsx",
+    "tests/e2e/graph-access.spec.ts"
+  ],
+  "allOtherTrackedInputsUnchanged": true,
+  "unchangedEvidence": "E6 layout/color/font/content/PDF and E5 backend/ZIP/Terraform inputs unchanged; reuse original reports rather than label new runs",
+  "siteManifestSha256": "9adc540eeb85bdd1fd822f82efd8e2668cc931f587b4861d5623fdb926ad36c7",
+  "pdfSourceAndExportMatch": true,
+  "pdfSha256": "246239dc0c28c26121734ad9780ecb1caad83e1f6564c549b51b89db4a024fa5",
+  "archives": {
+    "stats-aggregator.zip": "b68c47a7774b1d575b910a60d7ceded54cf9d2b9a398334f00476113cbc945ca",
+    "contact-lambda.zip": "3998f18a127c13ab8292af7100ab5fc36e84c5a069c2b9b16e7b0d7da3b80ce3"
+  }
+}

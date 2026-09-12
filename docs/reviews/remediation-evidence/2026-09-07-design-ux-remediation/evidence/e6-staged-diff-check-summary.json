@@ -1,0 +1,7 @@
+{
+  "fullStagedCheckExit": 2,
+  "preservedHistoricalWhitespaceWarnings": 333,
+  "allWarningsInArchive": true,
+  "authoredFilesExcludingArchiveCheck": "pass",
+  "policy": "Preserve exact historical bytes; do not normalize CRLF/trailing whitespace/EOF blanks in evidence."
+}

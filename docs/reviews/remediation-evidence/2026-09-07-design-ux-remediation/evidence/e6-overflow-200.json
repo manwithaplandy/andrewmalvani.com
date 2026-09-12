@@ -1,0 +1,38 @@
+{
+  "width": 390,
+  "scrollWidth": 478,
+  "elements": [
+    {
+      "tag": "A",
+      "classes": "-m-2 flex rounded-md p-2 text-neutral-300 transition-colors duration-300 hover:text-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400 hover:text-white",
+      "text": "andrewrmalvani@gmail.com",
+      "rect": {
+        "x": 16,
+        "y": 26856.25,
+        "width": 462.421875,
+        "height": 72,
+        "top": 26856.25,
+        "right": 478.421875,
+        "bottom": 26928.25,
+        "left": 16
+      },
+      "font": "32px"
+    },
+    {
+      "tag": "SPAN",
+      "classes": "ml-3 text-sm sm:text-base",
+      "text": "andrewrmalvani@gmail.com",
+      "rect": {
+        "x": 88,
+        "y": 26872.25,
+        "width": 374.421875,
+        "height": 40,
+        "top": 26872.25,
+        "right": 462.421875,
+        "bottom": 26912.25,
+        "left": 88
+      },
+      "font": "28px"
+    }
+  ]
+}

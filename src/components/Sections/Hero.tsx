@@ -13,7 +13,7 @@ const Hero: FC = memo(() => {
 
   return (
     <Section noPadding sectionId={SectionId.Hero}>
-      <div className="relative flex min-h-[100svh] w-full items-center justify-center">
+      <div className="relative flex min-h-[100svh] w-full items-center justify-center py-20 sm:py-24">
         <Image alt="" className="absolute z-0 h-full w-full object-cover" placeholder="blur" priority src={imageSrc} />
         {/* Scrim: harmonizes the photo with the dark base and dissolves the bottom edge into the page background */}
         <div
@@ -21,8 +21,8 @@ const Hero: FC = memo(() => {
           className="absolute z-0 h-full w-full bg-gradient-to-b from-neutral-950/70 via-neutral-950/40 to-[#0a0a0a]"
         />
         <ParticleField className="absolute z-0 h-full w-full" />
-        <div className="z-10 max-w-screen-lg px-4 lg:px-0">
-          <div className="flex flex-col items-center gap-y-6 rounded-2xl border border-neutral-700/40 bg-neutral-950/50 p-8 text-center shadow-2xl shadow-black/40 backdrop-blur-md">
+        <div className="z-10 w-full min-w-0 max-w-screen-lg px-4 lg:px-0">
+          <div className="flex flex-col items-center gap-y-6 rounded-2xl border border-neutral-700/40 bg-neutral-950/50 p-6 text-center shadow-2xl shadow-black/40 backdrop-blur-md sm:p-8">
             <span className="text-sm font-semibold uppercase tracking-[0.3em] text-orange-400">
               Lead AI/ML Engineer
             </span>
@@ -33,11 +33,11 @@ const Hero: FC = memo(() => {
             <div className="flex gap-x-4 text-neutral-100">
               <Socials />
             </div>
-            <div className="flex w-full justify-center gap-x-4">
+            <div className="flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4">
               {actions.map(({href, text, primary, download, Icon}) => (
                 <a
                   className={classNames(
-                    'flex gap-x-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-neutral-950 sm:text-base',
+                    'flex w-full justify-center gap-x-2 rounded-full px-4 py-2.5 text-sm font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-neutral-950 sm:w-auto sm:px-5 sm:text-base',
                     primary
                       ? 'bg-orange-500 text-neutral-950 ring-orange-400 hover:bg-orange-400 hover:shadow-[0_0_28px_rgba(251,146,60,0.45)]'
                       : 'border border-neutral-500 text-white ring-white hover:border-white hover:bg-white/10',

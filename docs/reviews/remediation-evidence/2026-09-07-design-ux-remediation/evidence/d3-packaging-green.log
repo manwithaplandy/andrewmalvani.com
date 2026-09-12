@@ -1,0 +1,14 @@
+test_extracted_archive_runs_all_recovery_tests (test_packaging.PackagingTests.test_extracted_archive_runs_all_recovery_tests) ... ok
+test_payload_import_does_not_load_the_sdk (test_packaging.PackagingTests.test_payload_import_does_not_load_the_sdk) ... ok
+test_terraform_explicit_sources_form_an_importable_archive (test_packaging.PackagingTests.test_terraform_explicit_sources_form_an_importable_archive) ... ok
+test_workflow_bootstrap_and_code_update_include_only_runtime_modules (test_packaging.PackagingTests.test_workflow_bootstrap_and_code_update_include_only_runtime_modules) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.326s
+
+OK
+Extracted archive recovery matrix: ..........................................
+----------------------------------------------------------------------
+Ran 42 tests in 0.808s
+
+OK

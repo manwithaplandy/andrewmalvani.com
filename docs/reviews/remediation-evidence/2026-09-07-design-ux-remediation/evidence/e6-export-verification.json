@@ -1,0 +1,7 @@
+{
+  "checkedExportSource": "3408657",
+  "subsequentWorkflowTestOnlySource": "c9a2a6f",
+  "files": 54,
+  "manifestSha256": "573adcb914353bd5def8961b255297d65d8658f29362f373195518832d704526",
+  "result": "Exact current export match to E5 checked manifest; no rebuild"
+}

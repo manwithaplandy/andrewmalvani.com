@@ -1,0 +1,152 @@
+{
+  "observedAt": "2026-09-08T15:54:03.107535+00:00",
+  "implementationHead": "f8ab5340c66e0d56f94d3837bdb681fb2e873e31",
+  "sourceFilesCompared": 144,
+  "sourceWorkingAndCommittedMatches": true,
+  "exportFilesCompared": 54,
+  "exportTotalBytes": 3042497,
+  "exportManifestSha256": "9adc540eeb85bdd1fd822f82efd8e2668cc931f587b4861d5623fdb926ad36c7",
+  "realPlanSource": "c9a2a6fe4891e5cdc0775604848298c0ca2f1b7e",
+  "realPlanObservedAt": "2026-09-08 13:51 UTC",
+  "infrastructurePaths": [
+    "terraform",
+    "stats_aggregator",
+    "sns_publish_lambda",
+    "scripts/package_release_artifacts.py"
+  ],
+  "infrastructureComparisonExit": 0,
+  "archives": [
+    {
+      "name": "contact-lambda.zip",
+      "bytes": 4277,
+      "sha256": "3998f18a127c13ab8292af7100ab5fc36e84c5a069c2b9b16e7b0d7da3b80ce3",
+      "matchesCheckedPlanInput": true
+    },
+    {
+      "name": "stats-aggregator.zip",
+      "bytes": 40351,
+      "sha256": "b68c47a7774b1d575b910a60d7ceded54cf9d2b9a398334f00476113cbc945ca",
+      "matchesCheckedPlanInput": true
+    }
+  ],
+  "originalHead": "9b7f6fe20e30784b21ee39fb5f328aafb8e713b8",
+  "originalStatus": [
+    "?? docs/",
+    "?? reports/"
+  ],
+  "originalDeliverables": [
+    {
+      "path": "docs/superpowers/plans/2026-09-07-analytics-integrity.md",
+      "sha256": "add7052c18bf6e7a73af88c57270c204ba3258ffa4f0c5d2f1ec2bc456cb0f38",
+      "matchesPriorAndBranch": true
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-07-career-graph.md",
+      "sha256": "bc52f5011258b2dc67e82cc9248b79343bdcbb97b6341d998fab9b208997e0a2",
+      "matchesPriorAndBranch": true
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-07-contact-reliability.md",
+      "sha256": "3036f7e1895e8084ae9307e31d6554ed2ed475268eb60e3f36d9855e18092625",
+      "matchesPriorAndBranch": true
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-07-delivery-quality.md",
+      "sha256": "16b807a0c08be41b887e2bd696957df7e5cda0d691f7301a2ebbd84d00d65073",
+      "matchesPriorAndBranch": true
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-07-design-ux-remediation.md",
+      "sha256": "a4656777026e19b846ea48acdaad69ab3f0b2eef68592ac7658fed93ec3b96fa",
+      "matchesPriorAndBranch": true
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-07-homepage-content.md",
+      "sha256": "b957ac842ebed2d0aff6050e78aeb37307d505e8e999007a144388db34677633",
+      "matchesPriorAndBranch": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07.md",
+      "sha256": "044f0ecd5b7005057618bb7c2f7434899f10cff76f996bbd1ceccfa35cdff138",
+      "matchesPriorAndBranch": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/analytics-live.png",
+      "sha256": "1a1fbad7a3cd92521ec7cd426597f4d2b0b93061e5bf1fab948454554f07037b",
+      "matchesPriorAndBranch": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/analytics-local-unavailable.png",
+      "sha256": "93a30fa6356ea4ed7e17469d32e2c98cfa311c3a1b97e257b948c465206b00bb",
+      "matchesPriorAndBranch": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/graph-desktop.png",
+      "sha256": "1063fd33f63ec9c1a19d8088d3b9a81e35f08d173a65b0c604b2f1db3e22364b",
+      "matchesPriorAndBranch": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/graph-invisible-focus.png",
+      "sha256": "1782b3c9d55b05a031ec5795dc11c4f51d3f6a7f61c54e18446f498e18278d8b",
+      "matchesPriorAndBranch": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/graph-keyboard-evidence.json",
+      "sha256": "b945a1881cf59b45e8dd5f7e9baad5bbe6e7951c9986bf4e5e78564cdbcbe53f",
+      "matchesPriorAndBranch": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/graph-malformed-link.png",
+      "sha256": "4da6a7c672fdcdac1f9a0bd23eec5552511e4f74b89c210adebb6a7c712e8dc8",
+      "matchesPriorAndBranch": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/graph-mobile-legend.png",
+      "sha256": "c76283366b6ba55df43887b712a335061154706dd7e2fe24b81c025830c6da3f",
+      "matchesPriorAndBranch": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/graph-mobile-overlap.png",
+      "sha256": "acf3c63ee5a63c5470faf5ba6f73055f73206ed211497d93a78930f1d05848e1",
+      "matchesPriorAndBranch": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/graph-short-expanded.png",
+      "sha256": "fab8198ad9bb12c5c8cdbd3635833a065a1394af1342eb25376efab549f2912a",
+      "matchesPriorAndBranch": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/homepage-desktop.png",
+      "sha256": "fa3b6a2af4366420237d278a8caefba341937996af7de4282074206e86ec73f6",
+      "matchesPriorAndBranch": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/homepage-mobile-320.png",
+      "sha256": "b7b8d616558fecc04dbfaa72e210158f6b40028ff548c961923e154e0037822f",
+      "matchesPriorAndBranch": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/homepage-mobile-390.png",
+      "sha256": "b45892b7d0045d7a940c866e2d4f84dff1b5abeb9823a02f427a2d9207c831f8",
+      "matchesPriorAndBranch": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/mobile-reading.png",
+      "sha256": "0e460fd03b98467c4d62979efb4df76736846f1be84831fcde3a238c399e3b1c",
+      "matchesPriorAndBranch": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/portfolio-desktop.png",
+      "sha256": "8c63289cc1a5b6bbdba4eb75eb5f8805e4d922a65ebfd2bc013dc525d25207dd",
+      "matchesPriorAndBranch": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/resume-pdf.png",
+      "sha256": "fbd1db14b45d19b2e41b8d02719a96d1d84de366b005bfb0e9984043ea0fe1a3",
+      "matchesPriorAndBranch": true
+    }
+  ],
+  "originalInventoryMatches": true,
+  "failures": [],
+  "limits": "Local source/artifact/original-checkout continuity only. No new test, build, cloud query, plan, merge or release. The real nonlocking plan must be recreated and reviewed for an approved apply."
+}

@@ -1,0 +1,112 @@
+yarn run v1.22.22
+$ playwright test tests/e2e/graph-discovery.spec.ts --project=chromium
+
+Running 3 tests using 1 worker
+
+  ✘  1 [chromium] › tests/e2e/graph-discovery.spec.ts:10:7 › direct search preserves evidence, focus and native input keys in list (30.1s)
+  ✘  2 [chromium] › tests/e2e/graph-discovery.spec.ts:10:7 › direct search preserves evidence, focus and native input keys in 3d (30.7s)
+  ✘  3 [chromium] › tests/e2e/graph-discovery.spec.ts:52:5 › overview clears the trail and repeated requests recover the real camera after orbit and zoom (45.5s)
+
+
+  1) [chromium] › tests/e2e/graph-discovery.spec.ts:10:7 › direct search preserves evidence, focus and native input keys in list 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('search', { name: 'Career search' }).getByRole('textbox', { name: 'Find a role, skill, or achievement' })
+
+
+      10 |   test(`direct search preserves evidence, focus and native input keys in ${mode}`, async ({page}) => {
+      11 |     await page.goto(`/graph?view=${mode}`);
+    > 12 |     await input(page).fill('  pYtHoN  ');
+         |                       ^
+      13 |     await expect(input(page)).toBeFocused();
+      14 |     const result = search(page).getByRole('button', {name: 'Python', exact: true});
+      15 |     await result.click();
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/graph-discovery.spec.ts:12:23
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-graph-discovery-direct-abbd7-d-native-input-keys-in-list-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-graph-discovery-direct-abbd7-d-native-input-keys-in-list-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-graph-discovery-direct-abbd7-d-native-input-keys-in-list-chromium/trace.zip
+    Usage:
+
+        yarn playwright show-trace test-results/e2e-graph-discovery-direct-abbd7-d-native-input-keys-in-list-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/e2e/graph-discovery.spec.ts:10:7 › direct search preserves evidence, focus and native input keys in 3d 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('search', { name: 'Career search' }).getByRole('textbox', { name: 'Find a role, skill, or achievement' })
+
+
+      10 |   test(`direct search preserves evidence, focus and native input keys in ${mode}`, async ({page}) => {
+      11 |     await page.goto(`/graph?view=${mode}`);
+    > 12 |     await input(page).fill('  pYtHoN  ');
+         |                       ^
+      13 |     await expect(input(page)).toBeFocused();
+      14 |     const result = search(page).getByRole('button', {name: 'Python', exact: true});
+      15 |     await result.click();
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/graph-discovery.spec.ts:12:23
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-graph-discovery-direct-ce632-and-native-input-keys-in-3d-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-graph-discovery-direct-ce632-and-native-input-keys-in-3d-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-graph-discovery-direct-ce632-and-native-input-keys-in-3d-chromium/trace.zip
+    Usage:
+
+        yarn playwright show-trace test-results/e2e-graph-discovery-direct-ce632-and-native-input-keys-in-3d-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/e2e/graph-discovery.spec.ts:52:5 › overview clears the trail and repeated requests recover the real camera after orbit and zoom 
+
+    Test timeout of 45000ms exceeded.
+
+    Error: locator.click: Test timeout of 45000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Show overview', exact: true })
+
+
+      78 |   await panel.getByRole('button', {name: /^Go to /}).click();
+      79 |   await panel.getByRole('button', {name: 'Show more', exact: true}).click();
+    > 80 |   await overview(page).click();
+         |                        ^
+      81 |   await expect(panel).toHaveCount(0);
+      82 |   await expect(page.getByRole('navigation', {name: 'Focus history'})).toHaveCount(0);
+      83 |   await expect.poll(() => page.evaluate(() => location.hash)).toBe('');
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/graph-discovery.spec.ts:80:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-graph-discovery-overvi-f4e2b-camera-after-orbit-and-zoom-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-graph-discovery-overvi-f4e2b-camera-after-orbit-and-zoom-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-graph-discovery-overvi-f4e2b-camera-after-orbit-and-zoom-chromium/trace.zip
+    Usage:
+
+        yarn playwright show-trace test-results/e2e-graph-discovery-overvi-f4e2b-camera-after-orbit-and-zoom-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    [chromium] › tests/e2e/graph-discovery.spec.ts:10:7 › direct search preserves evidence, focus and native input keys in list 
+    [chromium] › tests/e2e/graph-discovery.spec.ts:10:7 › direct search preserves evidence, focus and native input keys in 3d 
+    [chromium] › tests/e2e/graph-discovery.spec.ts:52:5 › overview clears the trail and repeated requests recover the real camera after orbit and zoom 
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

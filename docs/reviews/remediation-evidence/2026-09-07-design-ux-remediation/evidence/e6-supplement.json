@@ -1,0 +1,6997 @@
+{
+  "views": [
+    {
+      "name": "credential-normal",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "scrollY": 5393
+    },
+    {
+      "name": "credential-hover",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "scrollY": 5393
+    },
+    {
+      "name": "contact-counter-warning",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "scrollY": 8477
+    },
+    {
+      "name": "text200-contact-settled",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 478,
+      "scrollY": 26160
+    },
+    {
+      "name": "arbitrary-resume-320",
+      "width": 320,
+      "height": 844,
+      "scrollWidth": 320,
+      "scrollY": 1675
+    },
+    {
+      "name": "arbitrary-portfolio-320",
+      "width": 320,
+      "height": 844,
+      "scrollWidth": 320,
+      "scrollY": 6918
+    },
+    {
+      "name": "arbitrary-contact-320",
+      "width": 320,
+      "height": 844,
+      "scrollWidth": 320,
+      "scrollY": 8969
+    },
+    {
+      "name": "graph-list-direct-keyboard-focus",
+      "width": 320,
+      "height": 844,
+      "scrollWidth": 320,
+      "scrollY": 0
+    },
+    {
+      "name": "graph-legend",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "scrollY": 0
+    },
+    {
+      "name": "stats-table-expanded-320",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "scrollY": 1073
+    },
+    {
+      "name": "404-hover",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "scrollY": 0
+    },
+    {
+      "name": "stats-table-actual320",
+      "width": 320,
+      "height": 844,
+      "scrollWidth": 320,
+      "scrollY": 1197
+    }
+  ],
+  "contrast": [
+    {
+      "state": "credential-normal",
+      "rows": [
+        {
+          "text": "AWS",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(229, 229, 229)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            229,
+            229,
+            229,
+            1
+          ],
+          "ratio": 14.2319,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "min-w-0 break-words text-sm font-medium text-neutral-200"
+        },
+        {
+          "text": "Proficient",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(251, 146, 60)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            251,
+            146,
+            60,
+            1
+          ],
+          "ratio": 7.9212,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-xs font-semibold uppercase tracking-wider text-orange-400"
+        },
+        {
+          "text": "Azure",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(229, 229, 229)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            229,
+            229,
+            229,
+            1
+          ],
+          "ratio": 14.2319,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "min-w-0 break-words text-sm font-medium text-neutral-200"
+        },
+        {
+          "text": "Expert",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(251, 146, 60)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            251,
+            146,
+            60,
+            1
+          ],
+          "ratio": 7.9212,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-xs font-semibold uppercase tracking-wider text-orange-400"
+        },
+        {
+          "text": "AWS Bedrock",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(229, 229, 229)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            229,
+            229,
+            229,
+            1
+          ],
+          "ratio": 14.2319,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "min-w-0 break-words text-sm font-medium text-neutral-200"
+        },
+        {
+          "text": "Expert",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(251, 146, 60)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            251,
+            146,
+            60,
+            1
+          ],
+          "ratio": 7.9212,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-xs font-semibold uppercase tracking-wider text-orange-400"
+        },
+        {
+          "text": "Azure AI Foundry",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(229, 229, 229)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            229,
+            229,
+            229,
+            1
+          ],
+          "ratio": 14.2319,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "min-w-0 break-words text-sm font-medium text-neutral-200"
+        },
+        {
+          "text": "Expert",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(251, 146, 60)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            251,
+            146,
+            60,
+            1
+          ],
+          "ratio": 7.9212,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-xs font-semibold uppercase tracking-wider text-orange-400"
+        },
+        {
+          "text": "GCP",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(229, 229, 229)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            229,
+            229,
+            229,
+            1
+          ],
+          "ratio": 14.2319,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "min-w-0 break-words text-sm font-medium text-neutral-200"
+        },
+        {
+          "text": "Familiar",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(251, 146, 60)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            251,
+            146,
+            60,
+            1
+          ],
+          "ratio": 7.9212,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-xs font-semibold uppercase tracking-wider text-orange-400"
+        },
+        {
+          "text": "Cloudflare",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(229, 229, 229)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            229,
+            229,
+            229,
+            1
+          ],
+          "ratio": 14.2319,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "min-w-0 break-words text-sm font-medium text-neutral-200"
+        },
+        {
+          "text": "Familiar",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(251, 146, 60)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            251,
+            146,
+            60,
+            1
+          ],
+          "ratio": 7.9212,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-xs font-semibold uppercase tracking-wider text-orange-400"
+        },
+        {
+          "text": "Certifications",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(251, 146, 60)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            251,
+            146,
+            60,
+            1
+          ],
+          "ratio": 8.7476,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-sm font-semibold uppercase tracking-[0.2em] text-orange-400"
+        },
+        {
+          "text": "AWS Solutions Architect Associate",
+          "tag": "H3",
+          "kind": "text",
+          "color": "rgb(245, 245, 245)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            245,
+            245,
+            245,
+            1
+          ],
+          "ratio": 16.4441,
+          "fontSize": "18px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-lg font-semibold text-neutral-100"
+        },
+        {
+          "text": "Amazon Web Services",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.1072,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-sm font-medium text-neutral-400"
+        },
+        {
+          "text": "Year listed: 2024",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.1072,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-sm text-neutral-400"
+        },
+        {
+          "text": "HashiCorp Terraform Associate",
+          "tag": "H3",
+          "kind": "text",
+          "color": "rgb(245, 245, 245)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            245,
+            245,
+            245,
+            1
+          ],
+          "ratio": 16.4441,
+          "fontSize": "18px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-lg font-semibold text-neutral-100"
+        },
+        {
+          "text": "HashiCorp",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.1072,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-sm font-medium text-neutral-400"
+        },
+        {
+          "text": "Year listed: 2023",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.1072,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-sm text-neutral-400"
+        },
+        {
+          "text": "Azure AI Engineer",
+          "tag": "H3",
+          "kind": "text",
+          "color": "rgb(245, 245, 245)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            245,
+            245,
+            245,
+            1
+          ],
+          "ratio": 16.4441,
+          "fontSize": "18px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-lg font-semibold text-neutral-100"
+        },
+        {
+          "text": "Microsoft",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.1072,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-sm font-medium text-neutral-400"
+        },
+        {
+          "text": "Year listed: 2025",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.1072,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-sm text-neutral-400"
+        },
+        {
+          "text": "Portfolio",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(251, 146, 60)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            251,
+            146,
+            60,
+            1
+          ],
+          "ratio": 8.7476,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-sm font-semibold uppercase tracking-[0.2em] text-orange-400"
+        }
+      ]
+    },
+    {
+      "state": "credential-hover",
+      "rows": [
+        {
+          "text": "AWS",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(229, 229, 229)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            229,
+            229,
+            229,
+            1
+          ],
+          "ratio": 14.2319,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "min-w-0 break-words text-sm font-medium text-neutral-200"
+        },
+        {
+          "text": "Proficient",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(251, 146, 60)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            251,
+            146,
+            60,
+            1
+          ],
+          "ratio": 7.9212,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-xs font-semibold uppercase tracking-wider text-orange-400"
+        },
+        {
+          "text": "Azure",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(229, 229, 229)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            229,
+            229,
+            229,
+            1
+          ],
+          "ratio": 14.2319,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "min-w-0 break-words text-sm font-medium text-neutral-200"
+        },
+        {
+          "text": "Expert",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(251, 146, 60)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            251,
+            146,
+            60,
+            1
+          ],
+          "ratio": 7.9212,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-xs font-semibold uppercase tracking-wider text-orange-400"
+        },
+        {
+          "text": "AWS Bedrock",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(229, 229, 229)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            229,
+            229,
+            229,
+            1
+          ],
+          "ratio": 14.2319,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "min-w-0 break-words text-sm font-medium text-neutral-200"
+        },
+        {
+          "text": "Expert",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(251, 146, 60)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            251,
+            146,
+            60,
+            1
+          ],
+          "ratio": 7.9212,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-xs font-semibold uppercase tracking-wider text-orange-400"
+        },
+        {
+          "text": "Azure AI Foundry",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(229, 229, 229)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            229,
+            229,
+            229,
+            1
+          ],
+          "ratio": 14.2319,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "min-w-0 break-words text-sm font-medium text-neutral-200"
+        },
+        {
+          "text": "Expert",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(251, 146, 60)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            251,
+            146,
+            60,
+            1
+          ],
+          "ratio": 7.9212,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-xs font-semibold uppercase tracking-wider text-orange-400"
+        },
+        {
+          "text": "GCP",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(229, 229, 229)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            229,
+            229,
+            229,
+            1
+          ],
+          "ratio": 14.2319,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "min-w-0 break-words text-sm font-medium text-neutral-200"
+        },
+        {
+          "text": "Familiar",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(251, 146, 60)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            251,
+            146,
+            60,
+            1
+          ],
+          "ratio": 7.9212,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-xs font-semibold uppercase tracking-wider text-orange-400"
+        },
+        {
+          "text": "Cloudflare",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(229, 229, 229)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            229,
+            229,
+            229,
+            1
+          ],
+          "ratio": 14.2319,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "min-w-0 break-words text-sm font-medium text-neutral-200"
+        },
+        {
+          "text": "Familiar",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(251, 146, 60)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            251,
+            146,
+            60,
+            1
+          ],
+          "ratio": 7.9212,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-xs font-semibold uppercase tracking-wider text-orange-400"
+        },
+        {
+          "text": "Certifications",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(251, 146, 60)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            251,
+            146,
+            60,
+            1
+          ],
+          "ratio": 8.7476,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-sm font-semibold uppercase tracking-[0.2em] text-orange-400"
+        },
+        {
+          "text": "AWS Solutions Architect Associate",
+          "tag": "H3",
+          "kind": "text",
+          "color": "rgb(245, 245, 245)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            245,
+            245,
+            245,
+            1
+          ],
+          "ratio": 16.4441,
+          "fontSize": "18px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-lg font-semibold text-neutral-100"
+        },
+        {
+          "text": "Amazon Web Services",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.1072,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-sm font-medium text-neutral-400"
+        },
+        {
+          "text": "Year listed: 2024",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.1072,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-sm text-neutral-400"
+        },
+        {
+          "text": "HashiCorp Terraform Associate",
+          "tag": "H3",
+          "kind": "text",
+          "color": "rgb(245, 245, 245)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            245,
+            245,
+            245,
+            1
+          ],
+          "ratio": 16.4441,
+          "fontSize": "18px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-lg font-semibold text-neutral-100"
+        },
+        {
+          "text": "HashiCorp",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.1072,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-sm font-medium text-neutral-400"
+        },
+        {
+          "text": "Year listed: 2023",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.1072,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-sm text-neutral-400"
+        },
+        {
+          "text": "Azure AI Engineer",
+          "tag": "H3",
+          "kind": "text",
+          "color": "rgb(245, 245, 245)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            245,
+            245,
+            245,
+            1
+          ],
+          "ratio": 16.4441,
+          "fontSize": "18px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-lg font-semibold text-neutral-100"
+        },
+        {
+          "text": "Microsoft",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.1072,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-sm font-medium text-neutral-400"
+        },
+        {
+          "text": "Year listed: 2025",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.1072,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-sm text-neutral-400"
+        },
+        {
+          "text": "Portfolio",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(251, 146, 60)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            251,
+            146,
+            60,
+            1
+          ],
+          "ratio": 8.7476,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-sm font-semibold uppercase tracking-[0.2em] text-orange-400"
+        }
+      ]
+    },
+    {
+      "state": "contact-counter-warning",
+      "rows": [
+        {
+          "text": "Name",
+          "tag": "LABEL",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.8486,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-xs font-medium uppercase tracking-wide text-neutral-400"
+        },
+        {
+          "text": "",
+          "tag": "INPUT",
+          "kind": "text",
+          "color": "rgb(229, 229, 229)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            229,
+            229,
+            229,
+            1
+          ],
+          "ratio": 14.2319,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "contact-name",
+          "className": "bg-neutral-900 border border-neutral-800 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400/30 rounded-lg placeholder:text-neutral-400 placeholder:text-sm text-neutral-200 text-sm transition-colors"
+        },
+        {
+          "text": "Your name",
+          "tag": "INPUT",
+          "kind": "placeholder",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.1072,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "contact-name",
+          "className": "bg-neutral-900 border border-neutral-800 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400/30 rounded-lg placeholder:text-neutral-400 placeholder:text-sm text-neutral-200 text-sm transition-colors"
+        },
+        {
+          "text": "Email",
+          "tag": "LABEL",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.8486,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-xs font-medium uppercase tracking-wide text-neutral-400"
+        },
+        {
+          "text": "",
+          "tag": "INPUT",
+          "kind": "text",
+          "color": "rgb(229, 229, 229)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            229,
+            229,
+            229,
+            1
+          ],
+          "ratio": 14.2319,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "contact-email",
+          "className": "bg-neutral-900 border border-neutral-800 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400/30 rounded-lg placeholder:text-neutral-400 placeholder:text-sm text-neutral-200 text-sm transition-colors"
+        },
+        {
+          "text": "you@example.com",
+          "tag": "INPUT",
+          "kind": "placeholder",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.1072,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "contact-email",
+          "className": "bg-neutral-900 border border-neutral-800 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400/30 rounded-lg placeholder:text-neutral-400 placeholder:text-sm text-neutral-200 text-sm transition-colors"
+        },
+        {
+          "text": "Message",
+          "tag": "LABEL",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.8486,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-xs font-medium uppercase tracking-wide text-neutral-400"
+        },
+        {
+          "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+          "tag": "TEXTAREA",
+          "kind": "text",
+          "color": "rgb(229, 229, 229)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            229,
+            229,
+            229,
+            1
+          ],
+          "ratio": 14.2319,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "contact-message",
+          "className": "bg-neutral-900 border border-neutral-800 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400/30 rounded-lg placeholder:text-neutral-400 placeholder:text-sm text-neutral-200 text-sm transition-colors"
+        },
+        {
+          "text": "What can I help you with?",
+          "tag": "TEXTAREA",
+          "kind": "placeholder",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.1072,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "contact-message",
+          "className": "bg-neutral-900 border border-neutral-800 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400/30 rounded-lg placeholder:text-neutral-400 placeholder:text-sm text-neutral-200 text-sm transition-colors"
+        },
+        {
+          "text": "50 characters left",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(253, 186, 116)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            253,
+            186,
+            116,
+            1
+          ],
+          "ratio": 11.7396,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "contact-message-counter",
+          "className": "text-xs text-orange-300"
+        },
+        {
+          "text": "Send Message",
+          "tag": "BUTTON",
+          "kind": "text",
+          "color": "rgb(10, 10, 10)",
+          "background": [
+            249,
+            115,
+            22,
+            1
+          ],
+          "foreground": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "ratio": 7.0631,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "w-max rounded-full bg-orange-500 px-5 py-2.5 text-sm font-semibold text-neutral-950 shadow-md outline-none transition-all duration-300 hover:bg-orange-400 hover:shadow-[0_0_24px_rgba(251,146,60,0.35)] focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-neutral-950 disabled:cursor-not-allowed disabled:opacity-60"
+        },
+        {
+          "text": "Open to interesting problems in AI and infrastructure — reach out through the form or directly by email.",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 13.3567,
+          "fontSize": "16px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "prose leading-6 text-neutral-300"
+        },
+        {
+          "text": "andrewrmalvani@gmail.com",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 13.3567,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "ml-3 text-sm sm:text-base"
+        },
+        {
+          "text": "manwithaplandy",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 13.3567,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "ml-3 text-sm sm:text-base"
+        },
+        {
+          "text": "Designed & built by  — Next.js · AWS · Terraform",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.8486,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-sm text-neutral-400"
+        },
+        {
+          "text": "Andrew Malvani",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(229, 229, 229)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            229,
+            229,
+            229,
+            1
+          ],
+          "ratio": 15.7167,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-neutral-200"
+        },
+        {
+          "text": "Site analytics",
+          "tag": "A",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.8486,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-sm text-neutral-400 underline underline-offset-4 transition-colors duration-300 hover:text-orange-400"
+        }
+      ]
+    },
+    {
+      "state": "graph-list-direct-keyboard-focus",
+      "rows": [
+        {
+          "text": "Andrew Malvani",
+          "tag": "H1",
+          "kind": "text",
+          "color": "rgb(255, 255, 255)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            255,
+            255,
+            255,
+            1
+          ],
+          "ratio": 17.9278,
+          "fontSize": "18px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-lg font-bold leading-tight sm:text-xl"
+        },
+        {
+          "text": "Lead AI/ML Engineer, General Atomics · since June 2024",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.1072,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-xs text-neutral-400 sm:text-sm"
+        },
+        {
+          "text": "Each node is a role, skill, or certification — explore how they connect.",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.1072,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-xs text-neutral-400 sm:text-sm"
+        },
+        {
+          "text": "Classic resume",
+          "tag": "A",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "flex items-center gap-x-1 text-neutral-300 hover:text-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+        },
+        {
+          "text": "Download résumé PDF",
+          "tag": "A",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "flex items-center gap-x-1 text-neutral-300 hover:text-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+        },
+        {
+          "text": "Find a role, skill, or achievement",
+          "tag": "LABEL",
+          "kind": "text",
+          "color": "rgb(229, 229, 229)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            229,
+            229,
+            229,
+            1
+          ],
+          "ratio": 15.7167,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "block text-sm font-medium text-neutral-200"
+        },
+        {
+          "text": "",
+          "tag": "INPUT",
+          "kind": "text",
+          "color": "rgb(245, 245, 245)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            245,
+            245,
+            245,
+            1
+          ],
+          "ratio": 16.4441,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": ":R556:",
+          "className": "mt-1 w-full rounded-lg border-neutral-600 bg-neutral-900 text-sm text-neutral-100 focus:border-orange-400 focus:ring-orange-400"
+        },
+        {
+          "text": "53 career items. Enter a role, skill, or achievement to find a match.",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.8486,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "mt-2 text-xs text-neutral-400"
+        },
+        {
+          "text": "Text view",
+          "tag": "BUTTON",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            19.099999999999998,
+            19.099999999999998,
+            19.099999999999998,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.5244,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "pointer-events-auto rounded-full border border-neutral-700 bg-neutral-900/70 px-3 py-1 text-xs text-neutral-300 backdrop-blur-md hover:border-orange-500 hover:text-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+        },
+        {
+          "text": "3D view",
+          "tag": "BUTTON",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            19.099999999999998,
+            19.099999999999998,
+            19.099999999999998,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.5244,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "pointer-events-auto rounded-full border border-neutral-700 bg-neutral-900/70 px-3 py-1 text-xs text-neutral-300 backdrop-blur-md hover:border-orange-500 hover:text-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+        },
+        {
+          "text": "Show overview",
+          "tag": "BUTTON",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            19.099999999999998,
+            19.099999999999998,
+            19.099999999999998,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.5244,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "pointer-events-auto rounded-full border border-neutral-700 bg-neutral-900/70 px-3 py-1 text-xs text-neutral-300 backdrop-blur-md hover:border-orange-500 hover:text-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+        },
+        {
+          "text": "How to explore",
+          "tag": "SUMMARY",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            19.099999999999998,
+            19.099999999999998,
+            19.099999999999998,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.5244,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "pointer-events-auto rounded-full border border-neutral-700 bg-neutral-900/70 px-3 py-1 text-xs text-neutral-300 backdrop-blur-md hover:border-orange-500 hover:text-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 cursor-pointer select-none"
+        },
+        {
+          "text": "Click or tap a node to select it. Drag the graph to orbit.",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": ""
+        },
+        {
+          "text": "Use ←/→ to scan connections, ↑ to dive in, and ↓ to go back.",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "mt-2"
+        },
+        {
+          "text": "Close help",
+          "tag": "BUTTON",
+          "kind": "text",
+          "color": "rgb(229, 229, 229)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            229,
+            229,
+            229,
+            1
+          ],
+          "ratio": 14.2319,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "mt-3 rounded-md border border-neutral-600 px-3 py-1 text-xs text-neutral-200 hover:border-orange-500 hover:text-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+        },
+        {
+          "text": "Legend",
+          "tag": "SUMMARY",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            19.099999999999998,
+            19.099999999999998,
+            19.099999999999998,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.5244,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "pointer-events-auto rounded-full border border-neutral-700 bg-neutral-900/70 px-3 py-1 text-xs text-neutral-300 backdrop-blur-md hover:border-orange-500 hover:text-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 cursor-pointer select-none"
+        },
+        {
+          "text": "Role (large sphere) · warm = recent",
+          "tag": "DD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": ""
+        },
+        {
+          "text": "Certification (octahedron, yellow)",
+          "tag": "DD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": ""
+        },
+        {
+          "text": "Skill area (wireframe orb)",
+          "tag": "DD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": ""
+        },
+        {
+          "text": "Skill / tool (small sphere) · brighter = deeper",
+          "tag": "DD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": ""
+        },
+        {
+          "text": "Motion: reduced",
+          "tag": "BUTTON",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            19.099999999999998,
+            19.099999999999998,
+            19.099999999999998,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.5244,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "pointer-events-auto rounded-full border border-neutral-700 bg-neutral-900/70 px-3 py-1 text-xs text-neutral-300 backdrop-blur-md hover:border-orange-500 hover:text-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+        },
+        {
+          "text": "Text view shows the complete career graph. Pick any entry to see its details and connections.",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.8486,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-sm text-neutral-400"
+        },
+        {
+          "text": "Roles",
+          "tag": "H2",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.8486,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "pb-2 pt-6 text-xs font-bold uppercase tracking-wider text-neutral-400"
+        },
+        {
+          "text": "Lead AI/ML Engineer",
+          "tag": "BUTTON",
+          "kind": "text",
+          "color": "rgb(251, 146, 60)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            251,
+            146,
+            60,
+            1
+          ],
+          "ratio": 8.7476,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "graph-entry-job:ga-lead-ai-ml-engineer",
+          "className": "block w-full rounded-md px-2 py-2 text-left text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 font-bold text-orange-400"
+        },
+        {
+          "text": "General Atomics · June 2024 - Present",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.8486,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-2 text-xs text-neutral-400"
+        },
+        {
+          "text": "Leads General Atomics' enterprise AI program as the organization's LLM SME: a DoD-compliant enterprise AI chat",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.8486,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-2 text-sm text-neutral-400"
+        }
+      ]
+    },
+    {
+      "state": "graph-legend",
+      "rows": [
+        {
+          "text": "Andrew Malvani",
+          "tag": "H1",
+          "kind": "text",
+          "color": "rgb(255, 255, 255)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            255,
+            255,
+            255,
+            1
+          ],
+          "ratio": 17.9278,
+          "fontSize": "18px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-lg font-bold leading-tight sm:text-xl"
+        },
+        {
+          "text": "Lead AI/ML Engineer, General Atomics · since June 2024",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.1072,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-xs text-neutral-400 sm:text-sm"
+        },
+        {
+          "text": "Each node is a role, skill, or certification — explore how they connect.",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.1072,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-xs text-neutral-400 sm:text-sm"
+        },
+        {
+          "text": "Classic resume",
+          "tag": "A",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "flex items-center gap-x-1 text-neutral-300 hover:text-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+        },
+        {
+          "text": "Download résumé PDF",
+          "tag": "A",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "flex items-center gap-x-1 text-neutral-300 hover:text-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+        },
+        {
+          "text": "Find a role, skill, or achievement",
+          "tag": "LABEL",
+          "kind": "text",
+          "color": "rgb(229, 229, 229)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            229,
+            229,
+            229,
+            1
+          ],
+          "ratio": 15.7167,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "block text-sm font-medium text-neutral-200"
+        },
+        {
+          "text": "",
+          "tag": "INPUT",
+          "kind": "text",
+          "color": "rgb(245, 245, 245)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            245,
+            245,
+            245,
+            1
+          ],
+          "ratio": 16.4441,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": ":R556:",
+          "className": "mt-1 w-full rounded-lg border-neutral-600 bg-neutral-900 text-sm text-neutral-100 focus:border-orange-400 focus:ring-orange-400"
+        },
+        {
+          "text": "53 career items. Enter a role, skill, or achievement to find a match.",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.8486,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "mt-2 text-xs text-neutral-400"
+        },
+        {
+          "text": "Text view",
+          "tag": "BUTTON",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            19.099999999999998,
+            19.099999999999998,
+            19.099999999999998,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.5244,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "pointer-events-auto rounded-full border border-neutral-700 bg-neutral-900/70 px-3 py-1 text-xs text-neutral-300 backdrop-blur-md hover:border-orange-500 hover:text-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+        },
+        {
+          "text": "3D view",
+          "tag": "BUTTON",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            19.099999999999998,
+            19.099999999999998,
+            19.099999999999998,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.5244,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "pointer-events-auto rounded-full border border-neutral-700 bg-neutral-900/70 px-3 py-1 text-xs text-neutral-300 backdrop-blur-md hover:border-orange-500 hover:text-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+        },
+        {
+          "text": "Show overview",
+          "tag": "BUTTON",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            19.099999999999998,
+            19.099999999999998,
+            19.099999999999998,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.5244,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "pointer-events-auto rounded-full border border-neutral-700 bg-neutral-900/70 px-3 py-1 text-xs text-neutral-300 backdrop-blur-md hover:border-orange-500 hover:text-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+        },
+        {
+          "text": "How to explore",
+          "tag": "SUMMARY",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            19.099999999999998,
+            19.099999999999998,
+            19.099999999999998,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.5244,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "pointer-events-auto rounded-full border border-neutral-700 bg-neutral-900/70 px-3 py-1 text-xs text-neutral-300 backdrop-blur-md hover:border-orange-500 hover:text-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 cursor-pointer select-none"
+        },
+        {
+          "text": "Click or tap a node to select it. Drag the graph to orbit.",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": ""
+        },
+        {
+          "text": "Use ←/→ to scan connections, ↑ to dive in, and ↓ to go back.",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "mt-2"
+        },
+        {
+          "text": "Close help",
+          "tag": "BUTTON",
+          "kind": "text",
+          "color": "rgb(229, 229, 229)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            229,
+            229,
+            229,
+            1
+          ],
+          "ratio": 14.2319,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "mt-3 rounded-md border border-neutral-600 px-3 py-1 text-xs text-neutral-200 hover:border-orange-500 hover:text-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+        },
+        {
+          "text": "Legend",
+          "tag": "SUMMARY",
+          "kind": "text",
+          "color": "rgb(251, 146, 60)",
+          "background": [
+            19.099999999999998,
+            19.099999999999998,
+            19.099999999999998,
+            1
+          ],
+          "foreground": [
+            251,
+            146,
+            60,
+            1
+          ],
+          "ratio": 8.2026,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "pointer-events-auto rounded-full border border-neutral-700 bg-neutral-900/70 px-3 py-1 text-xs text-neutral-300 backdrop-blur-md hover:border-orange-500 hover:text-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 cursor-pointer select-none"
+        },
+        {
+          "text": "Role (large sphere) · warm = recent",
+          "tag": "DD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": ""
+        },
+        {
+          "text": "Certification (octahedron, yellow)",
+          "tag": "DD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": ""
+        },
+        {
+          "text": "Skill area (wireframe orb)",
+          "tag": "DD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": ""
+        },
+        {
+          "text": "Skill / tool (small sphere) · brighter = deeper",
+          "tag": "DD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": ""
+        },
+        {
+          "text": "Highlight / achievement (cube)",
+          "tag": "DD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": ""
+        },
+        {
+          "text": "Education (icosahedron)",
+          "tag": "DD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": ""
+        },
+        {
+          "text": "Orange = selected path · white ring = next (←/→)",
+          "tag": "DD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": ""
+        },
+        {
+          "text": "Motion: reduced",
+          "tag": "BUTTON",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            19.099999999999998,
+            19.099999999999998,
+            19.099999999999998,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.5244,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "pointer-events-auto rounded-full border border-neutral-700 bg-neutral-900/70 px-3 py-1 text-xs text-neutral-300 backdrop-blur-md hover:border-orange-500 hover:text-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+        },
+        {
+          "text": "Text view shows the complete career graph. Pick any entry to see its details and connections.",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.8486,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-sm text-neutral-400"
+        }
+      ]
+    },
+    {
+      "state": "stats-table-expanded-320",
+      "rows": [
+        {
+          "text": "Date",
+          "tag": "TH",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "w-[46%] py-2 pr-1 font-medium"
+        },
+        {
+          "text": "Requests",
+          "tag": "TH",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "w-[24%] px-1 py-2 text-right font-medium"
+        },
+        {
+          "text": "Status",
+          "tag": "TH",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "w-[30%] py-2 pl-1 font-medium"
+        },
+        {
+          "text": "Aug 9, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 10, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 11, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 12, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 13, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 14, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 15, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 16, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 17, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 18, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 19, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 20, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 21, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 22, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 23, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 24, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 25, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 26, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 27, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 28, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 29, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 30, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 31, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Sep 1, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "0",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Observed",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Sep 2, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "0",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Observed",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        }
+      ]
+    },
+    {
+      "state": "404-hover",
+      "rows": [
+        {
+          "text": "404",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(251, 146, 60)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            251,
+            146,
+            60,
+            1
+          ],
+          "ratio": 7.9212,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-sm font-medium uppercase tracking-widest text-orange-400"
+        },
+        {
+          "text": "This address does not point to a page on the site. You can return to the résumé or contact Andrew directly.",
+          "tag": "P",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.1072,
+          "fontSize": "16px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-neutral-400"
+        },
+        {
+          "text": "Return to the résumé",
+          "tag": "A",
+          "kind": "text",
+          "color": "rgb(10, 10, 10)",
+          "background": [
+            251,
+            146,
+            60,
+            1
+          ],
+          "foreground": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "ratio": 8.7476,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "inline-flex items-center justify-center gap-x-2 rounded-md bg-orange-500 px-4 py-2 text-sm font-semibold text-neutral-950 hover:bg-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-300"
+        },
+        {
+          "text": "Contact Andrew",
+          "tag": "A",
+          "kind": "text",
+          "color": "rgb(229, 229, 229)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            229,
+            229,
+            229,
+            1
+          ],
+          "ratio": 14.2319,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "inline-flex items-center justify-center gap-x-2 rounded-md border border-neutral-700 px-4 py-2 text-sm font-semibold text-neutral-200 hover:border-orange-400 hover:text-orange-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-300"
+        },
+        {
+          "text": "Designed & built by  — Next.js · AWS · Terraform",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.8486,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-sm text-neutral-400"
+        },
+        {
+          "text": "Andrew Malvani",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(229, 229, 229)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            229,
+            229,
+            229,
+            1
+          ],
+          "ratio": 15.7167,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-neutral-200"
+        },
+        {
+          "text": "Site analytics",
+          "tag": "A",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.8486,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-sm text-neutral-400 underline underline-offset-4 transition-colors duration-300 hover:text-orange-400"
+        },
+        {
+          "text": "© 2026 Andrew Malvani",
+          "tag": "SPAN",
+          "kind": "text",
+          "color": "rgb(163, 163, 163)",
+          "background": [
+            10,
+            10,
+            10,
+            1
+          ],
+          "foreground": [
+            163,
+            163,
+            163,
+            1
+          ],
+          "ratio": 7.8486,
+          "fontSize": "14px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "text-sm text-neutral-400"
+        }
+      ]
+    },
+    {
+      "state": "stats-table-actual320",
+      "rows": [
+        {
+          "text": "Date",
+          "tag": "TH",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "w-[46%] py-2 pr-1 font-medium"
+        },
+        {
+          "text": "Requests",
+          "tag": "TH",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "w-[24%] px-1 py-2 text-right font-medium"
+        },
+        {
+          "text": "Status",
+          "tag": "TH",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "w-[30%] py-2 pl-1 font-medium"
+        },
+        {
+          "text": "Aug 9, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 10, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 11, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 12, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 13, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 14, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 15, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 16, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 17, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 18, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 19, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 20, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 21, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 22, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 23, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 24, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 25, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 26, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 27, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 28, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 29, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 30, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Aug 31, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "—",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Missing",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Sep 1, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "0",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Observed",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        },
+        {
+          "text": "Sep 2, 2026",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pr-1"
+        },
+        {
+          "text": "0",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "px-1 py-2 text-right tabular-nums"
+        },
+        {
+          "text": "Observed",
+          "tag": "TD",
+          "kind": "text",
+          "color": "rgb(212, 212, 212)",
+          "background": [
+            23,
+            23,
+            23,
+            1
+          ],
+          "foreground": [
+            212,
+            212,
+            212,
+            1
+          ],
+          "ratio": 12.0949,
+          "fontSize": "12px",
+          "imageLayer": false,
+          "disabled": false,
+          "id": "",
+          "className": "whitespace-nowrap py-2 pl-1"
+        }
+      ]
+    }
+  ],
+  "journeys": [
+    {
+      "download": "resume.pdf",
+      "failure": null,
+      "sha256": "246239dc0c28c26121734ad9780ecb1caad83e1f6564c549b51b89db4a024fa5"
+    },
+    {
+      "architecture": "http://127.0.0.1:3104/_next/static/media/website-diagram.8738b5b9.webp",
+      "image": {
+        "complete": true,
+        "naturalWidth": 1324,
+        "naturalHeight": 922
+      }
+    },
+    {
+      "spotlight": {
+        "textColor": "rgb(163, 163, 163)",
+        "background": "rgb(23, 23, 23)",
+        "overlay": "radial-gradient(400px at 219px 102.5px, rgba(251, 146, 60, 0.1), rgba(0, 0, 0, 0) 70%)",
+        "overlayOpacity": "1"
+      }
+    },
+    {
+      "overflowAfterFontsAnd3s": {
+        "scrollWidth": 478,
+        "innerWidth": 390,
+        "rect": {
+          "x": 16,
+          "y": 26856.25,
+          "width": 462.421875,
+          "height": 72,
+          "top": 26856.25,
+          "right": 478.421875,
+          "bottom": 26928.25,
+          "left": 16
+        },
+        "link": {
+          "minWidth": "auto",
+          "display": "flex"
+        },
+        "text": {
+          "fontFamily": "__Inter_f367f3, __Inter_Fallback_f367f3, system-ui, -apple-system, \"Segoe UI\", Roboto, Ubuntu, Cantarell, \"Noto Sans\", sans-serif, \"system-ui\", \"Segoe UI\", sans-serif",
+          "fontSize": "28px",
+          "whiteSpace": "normal",
+          "overflowWrap": "normal",
+          "wordBreak": "normal",
+          "minWidth": "auto"
+        }
+      }
+    },
+    {
+      "overflow200Desktop": {
+        "width": 1280,
+        "scrollWidth": 1280
+      }
+    },
+    {
+      "arbitraryReading": [
+        {
+          "scrollY": 1675,
+          "menu": {
+            "x": 264,
+            "y": 8,
+            "width": 48,
+            "height": 48,
+            "top": 8,
+            "right": 312,
+            "bottom": 56,
+            "left": 264
+          },
+          "behind": [
+            {
+              "tag": "path",
+              "text": ""
+            },
+            {
+              "tag": "svg",
+              "text": ""
+            },
+            {
+              "tag": "BUTTON",
+              "text": ""
+            },
+            {
+              "tag": "SPAN",
+              "text": "June 2024 - Present"
+            },
+            {
+              "tag": "DIV",
+              "text": "General Atomics•June 2024 - Present"
+            }
+          ]
+        },
+        {
+          "scrollY": 6918,
+          "menu": {
+            "x": 264,
+            "y": 8,
+            "width": 48,
+            "height": 48,
+            "top": 8,
+            "right": 312,
+            "bottom": 56,
+            "left": 264
+          },
+          "behind": [
+            {
+              "tag": "path",
+              "text": ""
+            },
+            {
+              "tag": "svg",
+              "text": ""
+            },
+            {
+              "tag": "BUTTON",
+              "text": ""
+            },
+            {
+              "tag": "H2",
+              "text": "Check out some of my work"
+            },
+            {
+              "tag": "DIV",
+              "text": "PortfolioCheck out some of my work"
+            }
+          ]
+        },
+        {
+          "scrollY": 8969,
+          "menu": {
+            "x": 264,
+            "y": 8,
+            "width": 48,
+            "height": 48,
+            "top": 8,
+            "right": 312,
+            "bottom": 56,
+            "left": 264
+          },
+          "behind": [
+            {
+              "tag": "path",
+              "text": ""
+            },
+            {
+              "tag": "svg",
+              "text": ""
+            },
+            {
+              "tag": "BUTTON",
+              "text": ""
+            },
+            {
+              "tag": "DIV",
+              "text": "ContactGet in touch.NameEmailMessage0/2000Send MessageOpen to interesting problems in AI and infrastructure — reach out through the form or directly b"
+            },
+            {
+              "tag": "DIV",
+              "text": "ContactGet in touch.NameEmailMessage0/2000Send MessageOpen to interesting problems in AI and infrastructure — reach out through the form or directly b"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "listKeyboardFocus": {
+        "tag": "BUTTON",
+        "text": "Lead AI/ML Engineer",
+        "outline": "rgba(0, 0, 0, 0) solid 2px",
+        "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 0px, rgb(249, 115, 22) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px"
+      }
+    },
+    {
+      "leadDetailsCount": 0
+    },
+    {
+      "manualReduction": true
+    },
+    {
+      "backToTopY": 2598
+    },
+    {
+      "notFoundTitle": "Page not found | Andrew Malvani",
+      "robots": "noindex, nofollow"
+    },
+    {
+      "notFoundRecovery": "http://127.0.0.1:3104/",
+      "pdfAttribute": "Andrew-Malvani-Resume.pdf"
+    },
+    {
+      "settledBackToTopY": 0,
+      "hash": "#top"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "baseFileAlreadyHasPrettierDifferences": true,
+  "currentFileHasPrettierDifferences": true,
+  "formatAttemptChangedSource": false,
+  "decision": "Do not normalize the inherited whole-file formatting; source remains exactly as tested. The attempted raw emitted-JavaScript byte comparison failed on preserved line wrapping before its write. Typechecks and nonmutating lint pass; optional formatter warning is disclosed."
+}

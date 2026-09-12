@@ -1,0 +1,46 @@
+{
+  "contrast": [
+    {
+      "background": "rgb(23, 23, 23)",
+      "contrastRatio": 7.11,
+      "fontSize": "12px",
+      "foreground": "rgb(163, 163, 163)",
+      "label": "source coverage caption",
+      "opacity": 1,
+      "sample": "CloudFront coverage: September 1–7, 2026 · CurrentLast successful update: September 8, 2026"
+    },
+    {
+      "background": "rgb(23, 23, 23)",
+      "contrastRatio": 7.11,
+      "fontSize": "12px",
+      "foreground": "rgb(163, 163, 163)",
+      "label": "observation date range",
+      "opacity": 1,
+      "sample": "Observation dates: August 9, 2026 – September 7, 2026"
+    },
+    {
+      "background": "rgb(23, 23, 23)",
+      "contrastRatio": 10.63,
+      "fontSize": "14px",
+      "foreground": "rgb(253, 186, 116)",
+      "label": "daily disclosure summary",
+      "opacity": 1,
+      "sample": "Daily values and status"
+    },
+    {
+      "background": "rgb(10, 10, 10)",
+      "contrastRatio": 7.85,
+      "fontSize": "14px",
+      "foreground": "rgb(163, 163, 163)",
+      "label": "methodology text",
+      "opacity": 1,
+      "sample": "CloudFront access logs provide filtered document requests. They omit some client-side route transitions, so the total does not represent every page change. Cloudflare reports daily"
+    }
+  ],
+  "externalTrafficPolicy": "all non-local HTTP requests blocked; stats payloads fulfilled with synthetic fixtures",
+  "fixedCalendar": "2026-09-08T12:00:00.000Z with elapsed real time preserved",
+  "viewport": {
+    "height": 844,
+    "width": 320
+  }
+}

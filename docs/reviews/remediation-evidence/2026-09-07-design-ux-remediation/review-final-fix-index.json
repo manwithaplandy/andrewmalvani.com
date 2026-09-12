@@ -1,0 +1,25 @@
+{
+  "source": ".superpowers/sdd/2026-09-07-design-ux-remediation/review-final-fix.diff",
+  "sha256": "c32372ec4522c9192adbb64862f585037b071307eeaafaf83164e6e706e34465",
+  "line_count": 261,
+  "sections": [
+    {
+      "path": "src/components/Graph/GraphExplorer.tsx",
+      "category": "runtime-and-configuration",
+      "start_line": 13,
+      "end_line": 133
+    },
+    {
+      "path": "tests/e2e/contact-submission.spec.ts",
+      "category": "tests",
+      "start_line": 134,
+      "end_line": 176
+    },
+    {
+      "path": "tests/e2e/graph-access.spec.ts",
+      "category": "tests",
+      "start_line": 177,
+      "end_line": 261
+    }
+  ]
+}

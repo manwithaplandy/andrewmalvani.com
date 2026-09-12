@@ -1,0 +1,145 @@
+{
+  "observedAt": "2026-09-08T14:41:31.902239+00:00",
+  "scope": "Read-only preservation check of the original checkout and all 22 pre-existing untracked deliverables; no copy/delete/merge.",
+  "originalHead": "9b7f6fe20e30784b21ee39fb5f328aafb8e713b8",
+  "originalStatus": [
+    "?? docs/",
+    "?? reports/"
+  ],
+  "files": [
+    {
+      "path": "docs/superpowers/plans/2026-09-07-analytics-integrity.md",
+      "originalSha256": "add7052c18bf6e7a73af88c57270c204ba3258ffa4f0c5d2f1ec2bc456cb0f38",
+      "branchSha256": "add7052c18bf6e7a73af88c57270c204ba3258ffa4f0c5d2f1ec2bc456cb0f38",
+      "equal": true
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-07-career-graph.md",
+      "originalSha256": "bc52f5011258b2dc67e82cc9248b79343bdcbb97b6341d998fab9b208997e0a2",
+      "branchSha256": "bc52f5011258b2dc67e82cc9248b79343bdcbb97b6341d998fab9b208997e0a2",
+      "equal": true
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-07-contact-reliability.md",
+      "originalSha256": "3036f7e1895e8084ae9307e31d6554ed2ed475268eb60e3f36d9855e18092625",
+      "branchSha256": "3036f7e1895e8084ae9307e31d6554ed2ed475268eb60e3f36d9855e18092625",
+      "equal": true
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-07-delivery-quality.md",
+      "originalSha256": "16b807a0c08be41b887e2bd696957df7e5cda0d691f7301a2ebbd84d00d65073",
+      "branchSha256": "16b807a0c08be41b887e2bd696957df7e5cda0d691f7301a2ebbd84d00d65073",
+      "equal": true
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-07-design-ux-remediation.md",
+      "originalSha256": "a4656777026e19b846ea48acdaad69ab3f0b2eef68592ac7658fed93ec3b96fa",
+      "branchSha256": "a4656777026e19b846ea48acdaad69ab3f0b2eef68592ac7658fed93ec3b96fa",
+      "equal": true
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-07-homepage-content.md",
+      "originalSha256": "b957ac842ebed2d0aff6050e78aeb37307d505e8e999007a144388db34677633",
+      "branchSha256": "b957ac842ebed2d0aff6050e78aeb37307d505e8e999007a144388db34677633",
+      "equal": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07.md",
+      "originalSha256": "044f0ecd5b7005057618bb7c2f7434899f10cff76f996bbd1ceccfa35cdff138",
+      "branchSha256": "044f0ecd5b7005057618bb7c2f7434899f10cff76f996bbd1ceccfa35cdff138",
+      "equal": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/analytics-live.png",
+      "originalSha256": "1a1fbad7a3cd92521ec7cd426597f4d2b0b93061e5bf1fab948454554f07037b",
+      "branchSha256": "1a1fbad7a3cd92521ec7cd426597f4d2b0b93061e5bf1fab948454554f07037b",
+      "equal": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/analytics-local-unavailable.png",
+      "originalSha256": "93a30fa6356ea4ed7e17469d32e2c98cfa311c3a1b97e257b948c465206b00bb",
+      "branchSha256": "93a30fa6356ea4ed7e17469d32e2c98cfa311c3a1b97e257b948c465206b00bb",
+      "equal": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/graph-desktop.png",
+      "originalSha256": "1063fd33f63ec9c1a19d8088d3b9a81e35f08d173a65b0c604b2f1db3e22364b",
+      "branchSha256": "1063fd33f63ec9c1a19d8088d3b9a81e35f08d173a65b0c604b2f1db3e22364b",
+      "equal": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/graph-invisible-focus.png",
+      "originalSha256": "1782b3c9d55b05a031ec5795dc11c4f51d3f6a7f61c54e18446f498e18278d8b",
+      "branchSha256": "1782b3c9d55b05a031ec5795dc11c4f51d3f6a7f61c54e18446f498e18278d8b",
+      "equal": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/graph-keyboard-evidence.json",
+      "originalSha256": "b945a1881cf59b45e8dd5f7e9baad5bbe6e7951c9986bf4e5e78564cdbcbe53f",
+      "branchSha256": "b945a1881cf59b45e8dd5f7e9baad5bbe6e7951c9986bf4e5e78564cdbcbe53f",
+      "equal": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/graph-malformed-link.png",
+      "originalSha256": "4da6a7c672fdcdac1f9a0bd23eec5552511e4f74b89c210adebb6a7c712e8dc8",
+      "branchSha256": "4da6a7c672fdcdac1f9a0bd23eec5552511e4f74b89c210adebb6a7c712e8dc8",
+      "equal": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/graph-mobile-legend.png",
+      "originalSha256": "c76283366b6ba55df43887b712a335061154706dd7e2fe24b81c025830c6da3f",
+      "branchSha256": "c76283366b6ba55df43887b712a335061154706dd7e2fe24b81c025830c6da3f",
+      "equal": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/graph-mobile-overlap.png",
+      "originalSha256": "acf3c63ee5a63c5470faf5ba6f73055f73206ed211497d93a78930f1d05848e1",
+      "branchSha256": "acf3c63ee5a63c5470faf5ba6f73055f73206ed211497d93a78930f1d05848e1",
+      "equal": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/graph-short-expanded.png",
+      "originalSha256": "fab8198ad9bb12c5c8cdbd3635833a065a1394af1342eb25376efab549f2912a",
+      "branchSha256": "fab8198ad9bb12c5c8cdbd3635833a065a1394af1342eb25376efab549f2912a",
+      "equal": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/homepage-desktop.png",
+      "originalSha256": "fa3b6a2af4366420237d278a8caefba341937996af7de4282074206e86ec73f6",
+      "branchSha256": "fa3b6a2af4366420237d278a8caefba341937996af7de4282074206e86ec73f6",
+      "equal": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/homepage-mobile-320.png",
+      "originalSha256": "b7b8d616558fecc04dbfaa72e210158f6b40028ff548c961923e154e0037822f",
+      "branchSha256": "b7b8d616558fecc04dbfaa72e210158f6b40028ff548c961923e154e0037822f",
+      "equal": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/homepage-mobile-390.png",
+      "originalSha256": "b45892b7d0045d7a940c866e2d4f84dff1b5abeb9823a02f427a2d9207c831f8",
+      "branchSha256": "b45892b7d0045d7a940c866e2d4f84dff1b5abeb9823a02f427a2d9207c831f8",
+      "equal": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/mobile-reading.png",
+      "originalSha256": "0e460fd03b98467c4d62979efb4df76736846f1be84831fcde3a238c399e3b1c",
+      "branchSha256": "0e460fd03b98467c4d62979efb4df76736846f1be84831fcde3a238c399e3b1c",
+      "equal": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/portfolio-desktop.png",
+      "originalSha256": "8c63289cc1a5b6bbdba4eb75eb5f8805e4d922a65ebfd2bc013dc525d25207dd",
+      "branchSha256": "8c63289cc1a5b6bbdba4eb75eb5f8805e4d922a65ebfd2bc013dc525d25207dd",
+      "equal": true
+    },
+    {
+      "path": "reports/design-ux-review-2026-09-07/resume-pdf.png",
+      "originalSha256": "fbd1db14b45d19b2e41b8d02719a96d1d84de366b005bfb0e9984043ea0fe1a3",
+      "branchSha256": "fbd1db14b45d19b2e41b8d02719a96d1d84de366b005bfb0e9984043ea0fe1a3",
+      "equal": true
+    }
+  ],
+  "inventoryMatchesPreflight": true,
+  "countCorrection": "Earlier prose said 23 files; the actual preflight equal[] inventory and current git enumeration both contain 22. No file is missing or different."
+}

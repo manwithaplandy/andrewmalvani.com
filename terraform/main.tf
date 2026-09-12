@@ -24,9 +24,12 @@ locals {
   build_trigger = sha1("${path.module}/../src")
   file_paths    = { for f in fileset("${path.module}/../../out/", "**") : f => f }
 
-  # Single source of truth for the CORS origin: consumed by the Lambda (env
-  # var) and the API Gateway POST/OPTIONS responses in contactLambda.tf.
-  allowed_cors_origin = "https://andrewmalvani.com"
+  # One exact browser allow-list, consumed by the contact Lambda for both
+  # POST responses and OPTIONS preflight. CORS is not authentication.
+  allowed_cors_origins = [
+    "https://andrewmalvani.com",
+    "https://www.andrewmalvani.com",
+  ]
 }
 
 # S3 bucket for static website hosting
@@ -114,13 +117,6 @@ resource "aws_s3_bucket" "log_bucket" {
   bucket = "${random_pet.bucket_name.id}-log-bucket"
 }
 
-resource "aws_s3_bucket_logging" "log_bucket_logs" {
-  bucket = aws_s3_bucket.log_bucket.id
-
-  target_bucket = "${random_pet.bucket_name.id}-log-bucket"
-  target_prefix = "this-bucket-log/"
-}
-
 resource "aws_s3_bucket_versioning" "log_bucket_versioning" {
   bucket = aws_s3_bucket.log_bucket.id
   versioning_configuration {
@@ -170,10 +166,10 @@ resource "aws_s3_bucket_policy" "allow_cloudfront_logs" {
   })
 }
 
-# Lifecycle rules for the log bucket: access logs accumulate forever
-# otherwise (they had been since 2024). 90 days is plenty — the stats
-# aggregator folds each log object into DynamoDB within a day of delivery,
-# and its marker# items prevent any reprocessing window issues.
+# Lifecycle rules keep current access-log objects eligible for expiration after
+# 90 days and noncurrent versions eligible after 30 noncurrent days. Eligibility
+# does not guarantee exact deletion timing or establish that history can be
+# reconstructed after objects expire.
 resource "aws_s3_bucket_lifecycle_configuration" "log_bucket_lifecycle" {
   bucket = aws_s3_bucket.log_bucket.id
 
@@ -232,6 +228,33 @@ resource "aws_cloudfront_origin_access_control" "oac" {
   signing_protocol                  = "sigv4"
 }
 
+# Origin metadata sets browser TTL separately from shared TTL. MinTTL stays zero
+# in BOTH policies: a long immutable minimum would also extend missing-asset errors.
+resource "aws_cloudfront_cache_policy" "site" {
+  for_each = {
+    stable    = 300
+    immutable = 31536000
+  }
+  name        = "${random_pet.bucket_name.id}-${each.key}"
+  min_ttl     = 0
+  default_ttl = each.value
+  max_ttl     = each.value
+
+  parameters_in_cache_key_and_forwarded_to_origin {
+    enable_accept_encoding_brotli = true
+    enable_accept_encoding_gzip   = true
+    cookies_config {
+      cookie_behavior = "none"
+    }
+    headers_config {
+      header_behavior = "none"
+    }
+    query_strings_config {
+      query_string_behavior = "none"
+    }
+  }
+}
+
 # CloudFront distribution for HTTPS
 resource "aws_cloudfront_distribution" "website_distribution" {
   depends_on = [aws_s3_bucket_policy.allow_cloudfront_logs]
@@ -278,32 +301,57 @@ resource "aws_cloudfront_distribution" "website_distribution" {
   enabled             = true
   default_root_object = "index.html"
 
+  custom_error_response {
+    error_caching_min_ttl = 10
+    error_code            = 403
+    response_code         = 404
+    response_page_path    = "/404.html"
+  }
+
+  custom_error_response {
+    error_caching_min_ttl = 10
+    error_code            = 404
+    response_code         = 404
+    response_page_path    = "/404.html"
+  }
+
   default_cache_behavior {
     # F7: a static read-only site only needs read methods.
     allowed_methods            = ["GET", "HEAD", "OPTIONS"]
     cached_methods             = ["GET", "HEAD"]
     target_origin_id           = "S3-${aws_s3_bucket.website.id}"
-    cache_policy_id            = "4135ea2d-6df8-44a3-9df3-4b5a84be39ad"
+    cache_policy_id            = aws_cloudfront_cache_policy.site["stable"].id
     origin_request_policy_id   = "88a5eaf4-2fd4-4709-b370-b4c650ea3fcf"
     response_headers_policy_id = aws_cloudfront_response_headers_policy.security_headers.id
+    compress                   = true
 
-    # Must stay "allow-all" — do NOT change to "redirect-to-https".
-    # Cloudflare proxies in front of this distribution in "Flexible" SSL mode, so
-    # the Cloudflare -> CloudFront hop is plain HTTP. With redirect-to-https,
-    # CloudFront 301-redirects that HTTP request to https://andrewmalvani.com/,
-    # Cloudflare re-fetches over HTTP, and you get an infinite redirect loop
-    # (ERR_TOO_MANY_REDIRECTS — the whole site goes down). HTTPS for viewers is
-    # enforced at the Cloudflare edge ("Always Use HTTPS") instead.
-    # Only revisit this if Cloudflare's SSL/TLS mode is moved to Full (strict),
-    # which makes the Cloudflare -> CloudFront hop HTTPS and breaks the loop.
+    # Keep allow-all until the account's Cloudflare SSL mode and proxy status are
+    # authenticated and a coordinated rollout has verified HTTPS to this origin.
+    # Public redirects show current viewer behavior, not Cloudflare's origin mode.
+    # Tightening this setting alone can create a loop if the upstream still uses
+    # HTTP; docs/operations/delivery.md records the required branches and rollback.
     viewer_protocol_policy = "allow-all"
-    # min_ttl                = 0
-    # default_ttl            = 3600
-    # max_ttl                = 86400
 
     # OAC-to-S3 origins do not resolve index documents, so extensionless
     # paths like /stats would 404 (only default_root_object covers "/").
     # Rewrite them to their .html objects at the viewer-request edge.
+    function_association {
+      event_type   = "viewer-request"
+      function_arn = aws_cloudfront_function.rewrite_extensionless.arn
+    }
+  }
+
+  ordered_cache_behavior {
+    path_pattern               = "_next/static/*"
+    allowed_methods            = ["GET", "HEAD", "OPTIONS"]
+    cached_methods             = ["GET", "HEAD"]
+    target_origin_id           = "S3-${aws_s3_bucket.website.id}"
+    cache_policy_id            = aws_cloudfront_cache_policy.site["immutable"].id
+    origin_request_policy_id   = "88a5eaf4-2fd4-4709-b370-b4c650ea3fcf"
+    response_headers_policy_id = aws_cloudfront_response_headers_policy.security_headers.id
+    compress                   = true
+    # Same working viewer policy and route normalization as the default behavior.
+    viewer_protocol_policy = "allow-all"
     function_association {
       event_type   = "viewer-request"
       function_arn = aws_cloudfront_function.rewrite_extensionless.arn
@@ -340,20 +388,9 @@ resource "aws_cloudfront_distribution" "website_distribution" {
 resource "aws_cloudfront_function" "rewrite_extensionless" {
   name    = "rewrite-extensionless-to-html"
   runtime = "cloudfront-js-2.0"
-  comment = "Map / -> /index.html and extensionless paths -> .html for the S3 origin"
+  comment = "Normalize public page paths for the S3 origin"
   publish = true
-  code    = <<-EOT
-    function handler(event) {
-      var request = event.request;
-      var uri = request.uri;
-      if (uri.endsWith('/')) {
-        request.uri = uri + 'index.html';
-      } else if (!uri.split('/').pop().includes('.')) {
-        request.uri = uri + '.html';
-      }
-      return request;
-    }
-  EOT
+  code    = file("${path.module}/functions/rewrite-extensionless.js")
 }
 
 # F6: response-headers policy adding HSTS (and a few hardening headers) to every

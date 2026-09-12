@@ -1,0 +1,319 @@
+{
+  "sourceCommit": "c9a2a6fe4891e5cdc0775604848298c0ca2f1b7e",
+  "startedAt": "2026-09-08T13:51:18.843556+00:00",
+  "scope": "Read-only nonlocking refresh-inclusive Terraform plan, no apply or standalone refresh. Shared state/resources can change after this observation.",
+  "privateReviewDirectory": "/private/tmp/react-resume-infra-review-vu595k01/review-bhg0ymrr",
+  "checkedArchives": {
+    "contact": {
+      "sha256": "3998f18a127c13ab8292af7100ab5fc36e84c5a069c2b9b16e7b0d7da3b80ce3",
+      "bytes": 4277
+    },
+    "stats": {
+      "sha256": "b68c47a7774b1d575b910a60d7ceded54cf9d2b9a398334f00476113cbc945ca",
+      "bytes": 40351
+    }
+  },
+  "provider-copyExitCode": 0,
+  "initExitCode": 0,
+  "planExitCode": 2,
+  "showExitCode": 0,
+  "resourceActions": [
+    {
+      "address": "aws_cloudfront_cache_policy.site[\"immutable\"]",
+      "mode": "managed",
+      "type": "aws_cloudfront_cache_policy",
+      "actions": [
+        "create"
+      ],
+      "changedTopLevelFields": [
+        "default_ttl",
+        "max_ttl",
+        "min_ttl",
+        "name",
+        "parameters_in_cache_key_and_forwarded_to_origin"
+      ],
+      "actionReason": null
+    },
+    {
+      "address": "aws_cloudfront_cache_policy.site[\"stable\"]",
+      "mode": "managed",
+      "type": "aws_cloudfront_cache_policy",
+      "actions": [
+        "create"
+      ],
+      "changedTopLevelFields": [
+        "default_ttl",
+        "max_ttl",
+        "min_ttl",
+        "name",
+        "parameters_in_cache_key_and_forwarded_to_origin"
+      ],
+      "actionReason": null
+    },
+    {
+      "address": "aws_cloudfront_distribution.website_distribution",
+      "mode": "managed",
+      "type": "aws_cloudfront_distribution",
+      "actions": [
+        "update"
+      ],
+      "changedTopLevelFields": [
+        "custom_error_response",
+        "default_cache_behavior",
+        "ordered_cache_behavior"
+      ],
+      "actionReason": null
+    },
+    {
+      "address": "aws_cloudfront_function.rewrite_extensionless",
+      "mode": "managed",
+      "type": "aws_cloudfront_function",
+      "actions": [
+        "update"
+      ],
+      "changedTopLevelFields": [
+        "code",
+        "comment"
+      ],
+      "actionReason": null
+    },
+    {
+      "address": "aws_cloudwatch_metric_alarm.stats_aggregator_errors",
+      "mode": "managed",
+      "type": "aws_cloudwatch_metric_alarm",
+      "actions": [
+        "update"
+      ],
+      "changedTopLevelFields": [
+        "alarm_description"
+      ],
+      "actionReason": null
+    },
+    {
+      "address": "aws_lambda_function.stats_aggregator",
+      "mode": "managed",
+      "type": "aws_lambda_function",
+      "actions": [
+        "update"
+      ],
+      "changedTopLevelFields": [
+        "reserved_concurrent_executions"
+      ],
+      "actionReason": null
+    },
+    {
+      "address": "aws_s3_bucket_logging.log_bucket_logs",
+      "mode": "managed",
+      "type": "aws_s3_bucket_logging",
+      "actions": [
+        "delete"
+      ],
+      "changedTopLevelFields": [
+        "bucket",
+        "expected_bucket_owner",
+        "id",
+        "target_bucket",
+        "target_grant",
+        "target_object_key_format",
+        "target_prefix"
+      ],
+      "actionReason": "delete_because_no_resource_config"
+    }
+  ],
+  "driftAddresses": [
+    {
+      "address": "aws_cloudfront_distribution.website_distribution",
+      "actions": [
+        "update"
+      ]
+    },
+    {
+      "address": "aws_cloudfront_origin_access_identity.oai",
+      "actions": [
+        "update"
+      ]
+    },
+    {
+      "address": "aws_lambda_function.form_submission",
+      "actions": [
+        "update"
+      ]
+    },
+    {
+      "address": "aws_lambda_function.stats_aggregator",
+      "actions": [
+        "update"
+      ]
+    }
+  ],
+  "outputNamesChanged": [],
+  "lockUnchanged": true,
+  "archiveBytesUnchanged": true,
+  "finishedAt": "2026-09-08T13:51:42.874883+00:00",
+  "reviewPlanSha256": "92c45ded486489e99bad287bbc363253829f7721a641c3b01573f09906e43b25",
+  "deployedStatsStillMatchesPreflightZip": true,
+  "classification": "Seven expected managed actions only: E4 cache policies/behaviors, E1 errors/routing, D2 alarm description, D3 concurrency, E2 self-logging relationship removal. No replacement or unrelated managed action.",
+  "counts": {
+    "create": 2,
+    "update": 4,
+    "deleteLoggingRelationship": 1,
+    "replace": 0
+  },
+  "planContractChecksPassed": true,
+  "details": {
+    "driftFields": [
+      {
+        "address": "aws_cloudfront_distribution.website_distribution",
+        "paths": [
+          "etag"
+        ]
+      },
+      {
+        "address": "aws_cloudfront_origin_access_identity.oai",
+        "paths": [
+          "etag"
+        ]
+      },
+      {
+        "address": "aws_lambda_function.form_submission",
+        "paths": [
+          "last_modified",
+          "source_code_hash"
+        ]
+      },
+      {
+        "address": "aws_lambda_function.stats_aggregator",
+        "paths": [
+          "last_modified",
+          "source_code_hash"
+        ]
+      }
+    ],
+    "changedManagedFields": [
+      {
+        "address": "aws_cloudfront_cache_policy.site[\"immutable\"]",
+        "paths": [
+          ""
+        ]
+      },
+      {
+        "address": "aws_cloudfront_cache_policy.site[\"stable\"]",
+        "paths": [
+          ""
+        ]
+      },
+      {
+        "address": "aws_cloudfront_distribution.website_distribution",
+        "paths": [
+          "custom_error_response.length",
+          "default_cache_behavior[0].cache_policy_id",
+          "default_cache_behavior[0].compress",
+          "ordered_cache_behavior.length"
+        ]
+      },
+      {
+        "address": "aws_cloudfront_function.rewrite_extensionless",
+        "paths": [
+          "code",
+          "comment"
+        ]
+      },
+      {
+        "address": "aws_cloudwatch_metric_alarm.stats_aggregator_errors",
+        "paths": [
+          "alarm_description"
+        ]
+      },
+      {
+        "address": "aws_lambda_function.stats_aggregator",
+        "paths": [
+          "reserved_concurrent_executions"
+        ]
+      },
+      {
+        "address": "aws_s3_bucket_logging.log_bucket_logs",
+        "paths": [
+          ""
+        ]
+      }
+    ],
+    "preservationChecks": {
+      "aws_lambda_function.form_submission": {
+        "actions": [
+          "no-op"
+        ],
+        "sameIdentityFilenameRuntimeRoleEnvironment": true
+      },
+      "aws_lambda_function.stats_aggregator": {
+        "actions": [
+          "update"
+        ],
+        "sameIdentityFilenameRuntimeRoleEnvironment": true,
+        "cloudflareZonePresent": true,
+        "concurrency": {
+          "before": -1,
+          "after": 1
+        },
+        "cloudflareZoneUnchanged": true,
+        "checkedEnvironmentKey": "CF_ZONE_ID"
+      },
+      "aws_dynamodb_table.data_table": {
+        "actions": [
+          "no-op"
+        ]
+      },
+      "aws_s3_bucket.website": {
+        "actions": [
+          "no-op"
+        ]
+      },
+      "aws_s3_bucket.log_bucket": {
+        "actions": [
+          "no-op"
+        ]
+      },
+      "aws_s3_bucket_lifecycle_configuration.log_bucket_lifecycle": {
+        "actions": [
+          "no-op"
+        ]
+      },
+      "aws_s3_bucket_logging.website_logs": {
+        "actions": [
+          "no-op"
+        ]
+      },
+      "aws_cloudfront_origin_access_control.oac": {
+        "actions": [
+          "no-op"
+        ]
+      },
+      "aws_cloudfront_origin_access_identity.oai": {
+        "actions": [
+          "no-op"
+        ]
+      },
+      "aws_sns_topic_subscription.email_subscription": {
+        "actions": [
+          "no-op"
+        ]
+      },
+      "aws_cloudfront_distribution.website_distribution": {
+        "sameIdentityOriginsAliasesCertificateLogging": true,
+        "viewerPolicyPreserved": true
+      }
+    },
+    "alarmDescriptionChange": {
+      "before": "The stats aggregator Lambda's Cloudflare analytics fetch failed. stats.json still publishes on schedule with CloudFront-derived stats; only Cloudflare uniques/countries lag until a successful run. Usually transient - if the alarm self-cleared, Lambda's async auto-retry already recovered.",
+      "after": "The stats aggregator invocation failed or a source refresh was incomplete. Recoverable source failures publish independently available data before raising; storage or publication failures can prevent an update. Check per-source freshness in stats.json and the invocation logs. A cleared alarm alone does not prove every source recovered."
+    },
+    "checkerCorrection": "Initial presence-only checker used the GitHub input label CLOUDFLARE_ZONE_ID rather than the actual Lambda environment key CF_ZONE_ID; corrected here. Whole environment equality was true in both checks."
+  },
+  "reviewStatus": "Controller scope review accepted after E5 independent fix1 approval at7eb35b4; actual-path comparison confirms Terraform/Lambda/packager inputs unchanged fromc9a2a6f. No deployment authorization; revalidate/replan for any later approved apply.",
+  "limits": [
+    "No apply, standalone refresh, backend state write or production upload/invocation was performed.",
+    "Nonlocking refresh-inclusive observation is not an atomic or permanently current apply authorization; regenerate/review before any later approved apply.",
+    "No resource/action values from private inputs/full state/plan are included; full records remain private.",
+    "Authenticated Cloudflare settings, D4 actual cutover evidence, public reader/producer/route/cache/old-tab release checks remain required."
+  ],
+  "sourceCompatibilityVerifiedThrough": "7eb35b4"
+}

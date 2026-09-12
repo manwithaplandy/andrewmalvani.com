@@ -1,0 +1,627 @@
+{
+  "results": [
+    {
+      "width": 1280,
+      "height": 900,
+      "draws": [
+        {
+          "fog": false,
+          "height": 18.199999243594732,
+          "x": 361.16164617087054,
+          "y": 97.85967534195028
+        },
+        {
+          "fog": false,
+          "height": 18.199999968061604,
+          "x": 276.534067521731,
+          "y": 266.01029772898556
+        },
+        {
+          "fog": false,
+          "height": 18.200001449470168,
+          "x": 545.2675565527373,
+          "y": 180.35243320341476
+        },
+        {
+          "fog": false,
+          "height": 18.199999547325366,
+          "x": 503.5989655155974,
+          "y": 34.792064236580856
+        },
+        {
+          "fog": false,
+          "height": 18.199999196821842,
+          "x": 417.04307217422354,
+          "y": 325.9624228289619
+        },
+        {
+          "fog": false,
+          "height": 18.199999243594732,
+          "x": 361.16164617087054,
+          "y": 97.85967534195028
+        },
+        {
+          "fog": false,
+          "height": 18.199999968061604,
+          "x": 276.534067521731,
+          "y": 266.01029772898556
+        },
+        {
+          "fog": false,
+          "height": 18.200001449470168,
+          "x": 545.2675565527373,
+          "y": 180.35243320341476
+        },
+        {
+          "fog": false,
+          "height": 18.199999547325366,
+          "x": 503.5989655155974,
+          "y": 34.792064236580856
+        },
+        {
+          "fog": false,
+          "height": 18.199999196821842,
+          "x": 417.04307217422354,
+          "y": 325.9624228289619
+        },
+        {
+          "fog": false,
+          "height": 18.199999243594732,
+          "x": 361.16164617087054,
+          "y": 97.85967534195028
+        },
+        {
+          "fog": false,
+          "height": 18.199999968061604,
+          "x": 276.534067521731,
+          "y": 266.01029772898556
+        },
+        {
+          "fog": false,
+          "height": 18.200001449470168,
+          "x": 545.2675565527373,
+          "y": 180.35243320341476
+        },
+        {
+          "fog": false,
+          "height": 18.199999547325366,
+          "x": 503.5989655155974,
+          "y": 34.792064236580856
+        },
+        {
+          "fog": false,
+          "height": 18.199999196821842,
+          "x": 417.04307217422354,
+          "y": 325.9624228289619
+        }
+      ],
+      "paints": [
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        }
+      ],
+      "gradient": "radial-gradient(rgba(13, 13, 13, 0) 55%, rgba(13, 13, 13, 0.25) 100%)"
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "draws": [
+        {
+          "fog": false,
+          "height": 18.20000124773738,
+          "x": 145.99947340836215,
+          "y": 107.46302941103119
+        },
+        {
+          "fog": false,
+          "height": 18.20000021704705,
+          "x": 117.78990926270109,
+          "y": 165.64045286195184
+        },
+        {
+          "fog": false,
+          "height": 18.200000530629346,
+          "x": 204.1330003618335,
+          "y": 137.53257755311034
+        },
+        {
+          "fog": false,
+          "height": 18.19999926410189,
+          "x": 186.5310138635079,
+          "y": 97.16323944724263
+        },
+        {
+          "fog": false,
+          "height": 18.200000248675536,
+          "x": 161.84287664805146,
+          "y": 179.216866037017
+        },
+        {
+          "fog": false,
+          "height": 18.20000124773738,
+          "x": 145.99947340836215,
+          "y": 107.46302941103119
+        },
+        {
+          "fog": false,
+          "height": 18.20000021704705,
+          "x": 117.78990926270109,
+          "y": 165.64045286195184
+        },
+        {
+          "fog": false,
+          "height": 18.200000530629346,
+          "x": 204.1330003618335,
+          "y": 137.53257755311034
+        },
+        {
+          "fog": false,
+          "height": 18.19999926410189,
+          "x": 186.5310138635079,
+          "y": 97.16323944724263
+        },
+        {
+          "fog": false,
+          "height": 18.200000248675536,
+          "x": 161.84287664805146,
+          "y": 179.216866037017
+        },
+        {
+          "fog": false,
+          "height": 18.20000124773738,
+          "x": 145.99947340836215,
+          "y": 107.46302941103119
+        },
+        {
+          "fog": false,
+          "height": 18.20000021704705,
+          "x": 117.78990926270109,
+          "y": 165.64045286195184
+        },
+        {
+          "fog": false,
+          "height": 18.200000530629346,
+          "x": 204.1330003618335,
+          "y": 137.53257755311034
+        },
+        {
+          "fog": false,
+          "height": 18.19999926410189,
+          "x": 186.5310138635079,
+          "y": 97.16323944724263
+        },
+        {
+          "fog": false,
+          "height": 18.200000248675536,
+          "x": 161.84287664805146,
+          "y": 179.216866037017
+        }
+      ],
+      "paints": [
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        },
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        }
+      ],
+      "gradient": "radial-gradient(rgba(13, 13, 13, 0) 55%, rgba(13, 13, 13, 0.25) 100%)"
+    }
+  ],
+  "errors": []
+}

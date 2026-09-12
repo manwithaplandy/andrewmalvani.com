@@ -1,0 +1,14 @@
+{
+  "checkedSourceCommit": "3408657",
+  "scope": "Private byte-preserving copies after complete local check pass; not a deployed artifact or rollback approval.",
+  "archives": {
+    "contact-lambda.zip": {
+      "bytes": 4277,
+      "sha256": "3998f18a127c13ab8292af7100ab5fc36e84c5a069c2b9b16e7b0d7da3b80ce3"
+    },
+    "stats-aggregator.zip": {
+      "bytes": 40351,
+      "sha256": "b68c47a7774b1d575b910a60d7ceded54cf9d2b9a398334f00476113cbc945ca"
+    }
+  }
+}

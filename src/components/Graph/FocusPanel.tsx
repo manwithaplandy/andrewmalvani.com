@@ -13,18 +13,24 @@ const SWIPE_THRESHOLD_PX = 40;
 const ARROW_BUTTON_CLASS =
   'rounded-md border border-neutral-600 p-2 text-neutral-200 hover:border-orange-500 hover:text-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500';
 
+interface FocusPanelProps {
+  state: GraphNavState;
+  dispatch: Dispatch<GraphNavAction>;
+  reducedMotion: boolean;
+}
+
 /**
- * Screen-pinned glass card for the focused node: name, evidence copy, meta,
+ * In-flow detail card for the focused node: name, evidence copy, meta,
  * the ←/→ connection cursor and (on touch) the Prev/Next/Dive controls the
- * bottom sheet provides instead of a keyboard. Swiping the card horizontally
+ * in-flow card provides instead of a keyboard. Swiping the card horizontally
  * cycles connections — the canvas itself only ever orbits.
  */
-const FocusPanel: FC<{state: GraphNavState; dispatch: Dispatch<GraphNavAction>}> = memo(({state, dispatch}) => {
+const FocusPanel: FC<FocusPanelProps> = memo(({state, dispatch, reducedMotion}) => {
   const node = state.focusedId ? resumeGraph.nodeById.get(state.focusedId) : undefined;
   const neighbors = state.focusedId ? resumeGraph.adjacency.get(state.focusedId) ?? [] : [];
   const highlighted = state.highlightedId ? resumeGraph.nodeById.get(state.highlightedId) : undefined;
   const highlightIndex = state.highlightedId ? neighbors.indexOf(state.highlightedId) : -1;
-  const touchStartX = useRef<number | null>(null);
+  const touchStart = useRef<{x: number; y: number} | null>(null);
 
   const handlePrev = useCallback(() => dispatch({direction: -1, type: 'cycleSibling'}), [dispatch]);
   const handleNext = useCallback(() => dispatch({direction: 1, type: 'cycleSibling'}), [dispatch]);
@@ -37,18 +43,20 @@ const FocusPanel: FC<{state: GraphNavState; dispatch: Dispatch<GraphNavAction>}>
   );
 
   const handleTouchStart = useCallback((event: TouchEvent<HTMLDivElement>) => {
-    touchStartX.current = event.touches[0]?.clientX ?? null;
+    const touch = event.touches[0];
+    touchStart.current = touch ? {x: touch.clientX, y: touch.clientY} : null;
   }, []);
   const handleTouchEnd = useCallback(
     (event: TouchEvent<HTMLDivElement>) => {
-      const startX = touchStartX.current;
-      touchStartX.current = null;
-      const endX = event.changedTouches[0]?.clientX;
-      if (startX === null || endX === undefined) {
+      const start = touchStart.current;
+      touchStart.current = null;
+      const end = event.changedTouches[0];
+      if (!start || !end) {
         return;
       }
-      const deltaX = endX - startX;
-      if (Math.abs(deltaX) >= SWIPE_THRESHOLD_PX) {
+      const deltaX = end.clientX - start.x;
+      const deltaY = end.clientY - start.y;
+      if (Math.abs(deltaX) >= SWIPE_THRESHOLD_PX && Math.abs(deltaX) > Math.abs(deltaY)) {
         dispatch({direction: deltaX < 0 ? 1 : -1, type: 'cycleSibling'});
       }
     },
@@ -63,27 +71,25 @@ const FocusPanel: FC<{state: GraphNavState; dispatch: Dispatch<GraphNavAction>}>
   return (
     <Transition
       appear
-      className={classNames(
-        // Inset from screen edges so the swipe never fights browser back-swipe.
-        'pointer-events-auto absolute inset-x-3 bottom-3 z-20 sm:inset-x-auto sm:bottom-6 sm:left-6 sm:w-full sm:max-w-sm',
-        'pb-[env(safe-area-inset-bottom)]',
-      )}
-      enter="transition duration-200 ease-out"
-      enterFrom="translate-y-4 opacity-0"
-      enterTo="translate-y-0 opacity-100"
-      leave="transition duration-150 ease-in"
-      leaveFrom="opacity-100"
-      leaveTo="opacity-0"
+      aria-label="Selected career item"
+      className="pointer-events-auto h-fit min-w-0 pb-[env(safe-area-inset-bottom)]"
+      enter={reducedMotion ? '' : 'transition duration-200 ease-out'}
+      enterFrom={reducedMotion ? '' : 'translate-y-4 opacity-0'}
+      enterTo={reducedMotion ? '' : 'translate-y-0 opacity-100'}
+      leave={reducedMotion ? '' : 'transition duration-150 ease-in'}
+      leaveFrom={reducedMotion ? '' : 'opacity-100'}
+      leaveTo={reducedMotion ? '' : 'opacity-0'}
+      role="region"
       show={!!node}>
       {node && (
         <div
-          className="rounded-xl border border-neutral-700 border-t-2 border-t-orange-500 bg-neutral-900/70 p-4 shadow-lg backdrop-blur-md sm:p-6"
+          className="touch-pan-y rounded-xl border border-neutral-700 border-t-2 border-t-orange-500 bg-neutral-900 p-4 shadow-lg sm:p-6"
           onTouchEnd={handleTouchEnd}
           onTouchStart={handleTouchStart}>
           <div className="flex items-start justify-between gap-x-3">
             <div className="min-w-0">
               <p className="text-xs font-medium uppercase tracking-wider text-orange-400">{KIND_LABELS[node.kind]}</p>
-              <h2 className="truncate text-lg font-bold text-white">{node.label}</h2>
+              <h2 className="break-words text-lg font-bold text-white [overflow-wrap:anywhere]">{node.label}</h2>
               {(node.meta?.date || node.meta?.location || node.meta?.issuer) && (
                 <p className="text-xs text-neutral-400">
                   {[node.meta?.issuer, node.meta?.location, node.meta?.date].filter(Boolean).join(' · ')}
@@ -122,7 +128,7 @@ const FocusPanel: FC<{state: GraphNavState; dispatch: Dispatch<GraphNavAction>}>
                   <>
                     Connection {highlightIndex + 1} of {neighbors.length}:{' '}
                     <span className="font-medium text-orange-400">{highlighted.label}</span>
-                    {state.wrapped && <span className="text-neutral-500"> · wrapped</span>}
+                    {state.wrapped && <span className="text-neutral-400"> · wrapped</span>}
                   </>
                 ) : (
                   <>
@@ -130,7 +136,7 @@ const FocusPanel: FC<{state: GraphNavState; dispatch: Dispatch<GraphNavAction>}>
                   </>
                 )}
               </p>
-              <div className="mt-2 flex items-center gap-x-2">
+              <div className="mt-2 flex flex-wrap items-center gap-2">
                 <button
                   aria-label="Previous connection"
                   className={ARROW_BUTTON_CLASS}

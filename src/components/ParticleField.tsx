@@ -1,5 +1,7 @@
 import {FC, memo, useEffect, useRef} from 'react';
 
+import useReducedMotion from '../hooks/useReducedMotion';
+
 interface Particle {
   x: number;
   y: number;
@@ -20,12 +22,13 @@ const RESIZE_HEIGHT_THRESHOLD = 120;
  * prefers-reduced-motion. Pointer-events are never captured.
  */
 const ParticleField: FC<{className?: string}> = memo(({className}) => {
+  const reducedMotion = useReducedMotion();
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (reducedMotion) return;
     const context = canvas.getContext('2d');
     if (!context) return;
 
@@ -35,7 +38,7 @@ const ParticleField: FC<{className?: string}> = memo(({className}) => {
     let lastHeight = 0;
     // Pause gating: the loop only runs when both visible (tab + on-screen).
     let documentVisible = !document.hidden;
-    let onScreen = true;
+    let onScreen = false;
     const pointer = {active: false, x: 0, y: 0};
     const dpr = Math.min(window.devicePixelRatio || 1, MAX_DPR);
 
@@ -170,13 +173,17 @@ const ParticleField: FC<{className?: string}> = memo(({className}) => {
     start();
     return () => {
       stop();
+      context.save();
+      context.setTransform(1, 0, 0, 1, 0, 0);
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.restore();
       observer.disconnect();
       document.removeEventListener('visibilitychange', onVisibilityChange);
       window.removeEventListener('resize', resize);
       window.removeEventListener('pointermove', onPointerMove);
       window.removeEventListener('pointerleave', onPointerLeave);
     };
-  }, []);
+  }, [reducedMotion]);
 
   return <canvas aria-hidden="true" className={className} ref={canvasRef} />;
 });

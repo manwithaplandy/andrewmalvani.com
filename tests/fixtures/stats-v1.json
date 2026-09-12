@@ -1,0 +1,20 @@
+{
+  "totalViews": 10,
+  "uniqueVisitors": 2,
+  "lastUpdated": "2026-09-08",
+  "since": "2026-09-01",
+  "dailySeries": [
+    {"date": "2026-09-06", "views": 10},
+    {"date": "2026-09-07", "views": 0},
+    {"date": "2026-09-08", "views": 0}
+  ],
+  "topPages": [
+    {"label": "/", "value": 5},
+    {"label": "Other", "value": 5}
+  ],
+  "topReferrers": [
+    {"label": "example.com", "value": 5},
+    {"label": "Other", "value": 5}
+  ],
+  "countries": [{"label": "US", "value": 12}]
+}

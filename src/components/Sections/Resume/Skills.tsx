@@ -26,9 +26,9 @@ interface Tier {
 }
 
 /**
- * Maps the numeric proficiency from the data into a discrete tier. Levels run
- * 3-10 on a /10 scale; the bands keep the previous bar's intent without the
- * progress-bar language: 8-10 = Expert, 6-7 = Proficient, ≤5 = Familiar.
+ * Maps the stored numeric self-ratings into their existing display tiers.
+ * These thresholds preserve the earlier bar's presentation; they do not define
+ * what each tier means. The definitions and current ratings await owner review.
  */
 const tierForLevel = (level: number, max: number): Tier => {
   const scaled = (level / max) * 10;
@@ -42,9 +42,9 @@ export const Skill: FC<{skill: SkillType}> = memo(({skill}) => {
   const tier = tierForLevel(level, max);
 
   return (
-    <div className="flex items-center justify-between gap-x-3">
-      <span className="text-sm font-medium text-neutral-200">{name}</span>
-      <div className="flex shrink-0 items-center gap-x-2">
+    <div className="flex min-w-0 flex-wrap items-center justify-between gap-x-3 gap-y-2">
+      <span className="min-w-0 break-words text-sm font-medium text-neutral-200">{name}</span>
+      <div className="flex min-w-0 max-w-full flex-wrap items-center gap-x-2 gap-y-1">
         <span className="text-xs font-semibold uppercase tracking-wider text-orange-400">{tier.label}</span>
         <div aria-hidden="true" className="flex gap-x-1">
           {[0, 1, 2].map(index => (

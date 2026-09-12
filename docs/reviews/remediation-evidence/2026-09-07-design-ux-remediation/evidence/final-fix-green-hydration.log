@@ -1,0 +1,11 @@
+yarn run v1.22.22
+$ playwright test tests/e2e/graph-access.spec.ts --project=chromium --grep 'cross-page history'
+
+Running 3 tests using 1 worker
+
+  ✓  1 [chromium] › tests/e2e/graph-access.spec.ts:305:7 › cross-page history restores graph after initial selection (1.1s)
+  ✓  2 [chromium] › tests/e2e/graph-access.spec.ts:305:7 › cross-page history restores graph after changed selection (713ms)
+  ✓  3 [chromium] › tests/e2e/graph-access.spec.ts:305:7 › cross-page history restores graph after changed view (2.6s)
+
+  3 passed (5.9s)
+Done in 6.43s.

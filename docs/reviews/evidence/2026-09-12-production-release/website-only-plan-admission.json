@@ -1,0 +1,56 @@
+{
+  "scope": "website, API convergence, and recursive log self-logging removal only; analytics execution fence preserved",
+  "timestamp": "2026-09-12T08:26:45Z",
+  "terraformVersion": "1.14.7",
+  "applyable": true,
+  "complete": false,
+  "planSha256": "6781bf0245f5e046f1057606dc4e70feeeded009cade8b967340eddecb9dd492",
+  "planJsonSha256": "76cd7f86412d2fe49b7164f1a5fda118d574cfdd7cadd83d8ea3f05177ece68a",
+  "actions": [
+    {
+      "address": "aws_api_gateway_deployment.api",
+      "actions": [
+        "create",
+        "delete"
+      ]
+    },
+    {
+      "address": "aws_api_gateway_stage.api",
+      "actions": [
+        "update"
+      ]
+    },
+    {
+      "address": "aws_cloudfront_cache_policy.site[\"immutable\"]",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_cloudfront_cache_policy.site[\"stable\"]",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_cloudfront_distribution.website_distribution",
+      "actions": [
+        "update"
+      ]
+    },
+    {
+      "address": "aws_cloudfront_function.rewrite_extensionless",
+      "actions": [
+        "update"
+      ]
+    },
+    {
+      "address": "aws_s3_bucket_logging.log_bucket_logs",
+      "actions": [
+        "delete"
+      ]
+    }
+  ],
+  "analyticsChangedAddresses": [],
+  "review": "website-only-plan-review.md"
+}

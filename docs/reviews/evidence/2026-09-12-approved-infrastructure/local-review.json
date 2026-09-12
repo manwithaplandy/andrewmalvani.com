@@ -1,0 +1,9 @@
+{
+  "observedAt": "2026-09-12T16:14:49.587829+00:00",
+  "url": "http://127.0.0.1:3100/__review",
+  "status": 200,
+  "contentType": "text/html; charset=utf-8",
+  "cacheControl": "no-store",
+  "contentSecurityPolicy": "connect-src 'self'; form-action 'self'",
+  "robots": "noindex, nofollow"
+}

@@ -5,11 +5,17 @@
   "scripts": {
     "build": "yarn compile && yarn next build",
     "clean": "rm -rf build-tsc .next",
-    "compile": "yarn run -T tsc --build --verbose",
+    "compile": "tsc --noEmit --incremental false",
     "dev": "yarn compile && yarn next dev",
-    "lint": "yarn run -T prettier --write './src/**/*.{js,jsx,json,ts,tsx}' && eslint './src/**/*.{js,jsx,ts,tsx}' --fix --max-warnings=0",
+    "format": "prettier --write './src/**/*.{js,jsx,json,ts,tsx}'",
+    "lint": "eslint './src/**/*.{js,jsx,ts,tsx}' --max-warnings=0",
+    "lint:fix": "eslint './src/**/*.{js,jsx,ts,tsx}' --fix --max-warnings=0",
     "postbuild": "yarn next-sitemap",
-    "start": "yarn next start"
+    "preview": "serve out --listen tcp://127.0.0.1:3100",
+    "start": "yarn next start",
+    "test:e2e": "playwright test",
+    "typecheck": "tsc --noEmit --incremental false",
+    "typecheck:tests": "tsc -p tsconfig.tests.json --noEmit --incremental false"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.16",
@@ -27,6 +33,7 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.0.3",
+    "@playwright/test": "1.63.0",
     "@tailwindcss/forms": "^0.5.4",
     "@tailwindcss/typography": "^0.5.9",
     "@types/node": "^20.4.5",
@@ -55,6 +62,7 @@
     "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.5.7",
     "sass": "^1.64.2",
+    "serve": "14.2.6",
     "sort-package-json": "^2.5.1",
     "stylelint": "^15.10.2",
     "stylelint-config-recommended": "^13.0.0",

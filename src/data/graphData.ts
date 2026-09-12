@@ -76,7 +76,7 @@ const EDUCATION_DETAILS: Record<string, DerivedDetails> = {
 const GROUP_DETAILS: Record<string, GroupDetails> = {
   'Cloud Services': {
     description:
-      'Certified on AWS and Azure, with real workloads shipped on both — plus Cloudflare at the edge for analytics and side projects.',
+      'Production workloads shipped on AWS and Azure, plus Cloudflare at the edge for analytics and side projects.',
     id: 'skillGroup:cloud-services',
     label: 'Cloud Services',
   },
@@ -104,7 +104,7 @@ const GROUP_DETAILS: Record<string, GroupDetails> = {
 const SKILL_DETAILS: Record<string, DerivedDetails> = {
   AWS: {
     description:
-      'Solutions Architect Associate certified. This site runs entirely on AWS — S3, CloudFront, Lambda, DynamoDB — every piece defined in Terraform.',
+      'This site runs entirely on AWS — S3, CloudFront, Lambda, DynamoDB — with every piece defined in Terraform.',
     id: 'skill:aws',
     label: 'AWS',
   },
@@ -122,7 +122,7 @@ const SKILL_DETAILS: Record<string, DerivedDetails> = {
   },
   Azure: {
     description:
-      'Azure AI Engineer certified. Deployed Azure-hosted AI services as part of the enterprise generative-AI rollout at General Atomics.',
+      'Deployed Azure-hosted AI services as part of the enterprise generative-AI rollout at General Atomics.',
     id: 'skill:azure',
     label: 'Azure',
   },
@@ -226,7 +226,7 @@ const SKILL_DETAILS: Record<string, DerivedDetails> = {
   },
   Terraform: {
     description:
-      "HashiCorp-certified. Defines this site's entire AWS footprint — CloudFront, Lambda, DynamoDB, IAM — as reviewable code in the site's public repo.",
+      "Defines this site's entire AWS footprint — CloudFront, Lambda, DynamoDB, IAM — as reviewable code in the site's public repo.",
     id: 'tool:terraform',
     label: 'Terraform',
   },
@@ -246,21 +246,21 @@ interface CertDetails extends DerivedDetails {
 const CERT_DETAILS: Record<string, CertDetails> = {
   'AWS Solutions Architect Associate': {
     description:
-      'Amazon Web Services, 2024. Backed by production evidence: this site is an all-AWS stack (S3, CloudFront, Lambda, DynamoDB) designed and operated end to end.',
+      'Amazon Web Services; year listed: 2024. Verification evidence, date meaning, and current status have not been supplied.',
     id: 'certification:aws-saa',
     label: 'AWS Solutions Architect Associate',
     validates: 'skill:aws',
   },
   'Azure AI Engineer': {
     description:
-      'Microsoft, 2025. Validates the Azure AI services work behind the enterprise generative-AI rollout at General Atomics.',
+      'Microsoft; year listed: 2025. Verification evidence, date meaning, and current status have not been supplied.',
     id: 'certification:azure-ai-engineer',
     label: 'Azure AI Engineer',
     validates: 'skill:azure',
   },
   'HashiCorp Terraform Associate': {
     description:
-      "HashiCorp, 2023. Backed by production IaC: this site's entire AWS pipeline — including the stats aggregator — is defined in Terraform.",
+      'HashiCorp; year listed: 2023. Verification evidence, date meaning, and current status have not been supplied.',
     id: 'certification:terraform-associate',
     label: 'HashiCorp Terraform Associate',
     validates: 'tool:terraform',

@@ -1,0 +1,18 @@
+yarn run v1.22.22
+$ playwright test tests/e2e/graph-access.spec.ts --project=chromium --grep 'selection-only history'
+[WebServer] (node:73812) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:73813) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:73814) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/e2e/graph-access.spec.ts:248:5 › selection-only history recovers focus from disappearing text connections (610ms)
+  ✓  2 [chromium] › tests/e2e/graph-access.spec.ts:269:5 › selection-only history recovers text connection focus when deselecting (1.8s)
+  ✓  3 [chromium] › tests/e2e/graph-access.spec.ts:286:7 › selection-only history keeps focus on a persistent entry control (245ms)
+  ✓  4 [chromium] › tests/e2e/graph-access.spec.ts:286:7 › selection-only history keeps focus on a persistent mode control (225ms)
+
+  4 passed (4.4s)
+Done in 4.89s.

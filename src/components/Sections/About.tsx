@@ -25,10 +25,10 @@ const About: FC = memo(() => {
           </div>
           <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {aboutItems.map(({label, text, Icon}, idx) => (
-              <li className="col-span-1 flex items-start gap-x-2" key={idx}>
-                {Icon && <Icon className="h-5 w-5 text-orange-400" />}
+              <li className="col-span-1 flex flex-wrap items-start gap-x-2 gap-y-1" key={idx}>
+                {Icon && <Icon className="h-5 w-5 shrink-0 text-orange-400" />}
                 <span className="text-sm font-bold text-neutral-100">{label}:</span>
-                <span className="text-sm text-neutral-400">{text}</span>
+                <span className="min-w-0 max-w-full break-words text-sm text-neutral-400">{text}</span>
               </li>
             ))}
           </ul>

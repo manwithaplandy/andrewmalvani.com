@@ -1,0 +1,415 @@
+checked_commit=340865733af3918400de062288a26a7b17516f02
+yarn install v1.22.22
+[1/4] Resolving packages...
+warning Resolution field "autoprefixer@10.4.5" is incompatible with requested version "autoprefixer@^10.4.16"
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+Done in 23.04s.
+No broken requirements found.
+Verified release archives: contact-lambda.zip=4277B sha256:3998f18a127c13ab8292af7100ab5fc36e84c5a069c2b9b16e7b0d7da3b80ce3, stats-aggregator.zip=40351B sha256:b68c47a7774b1d575b910a60d7ceded54cf9d2b9a398334f00476113cbc945ca
+test_published_stats_uses_short_browser_and_shared_cache_without_changing_ownership (test_cache_metadata.CacheMetadataTests.test_published_stats_uses_short_browser_and_shared_cache_without_changing_ownership) ... ok
+test_active_input_resumes_before_newly_arrived_earlier_key (test_ingestion.IngestionTests.test_active_input_resumes_before_newly_arrived_earlier_key) ... ok
+test_between_complete_inputs_keeps_progress_without_partial_pass_publication (test_ingestion.IngestionTests.test_between_complete_inputs_keeps_progress_without_partial_pass_publication) ... ok
+test_changed_completed_object_fails_without_second_publication (test_ingestion.IngestionTests.test_changed_completed_object_fails_without_second_publication) ... ok
+test_consistent_filtered_scan_keeps_ledger_out_and_latest_counts_in (test_ingestion.IngestionTests.test_consistent_filtered_scan_keeps_ledger_out_and_latest_counts_in) ... ok
+test_cursor_rewind_never_moves_checkpoint_backwards (test_ingestion.IngestionTests.test_cursor_rewind_never_moves_checkpoint_backwards) ... ok
+test_disappeared_partial_input_still_blocks_later_publication (test_ingestion.IngestionTests.test_disappeared_partial_input_still_blocks_later_publication) ... ok
+test_final_record_failure_prohibits_publication_and_cursor_then_retry_recovers (test_ingestion.IngestionTests.test_final_record_failure_prohibits_publication_and_cursor_then_retry_recovers) ... ok
+test_later_legacy_or_completed_keys_cannot_skip_missing_active_input (test_ingestion.IngestionTests.test_later_legacy_or_completed_keys_cannot_skip_missing_active_input) ... ok
+test_legacy_marked_objects_never_reparse_or_change_historical_counts (test_ingestion.IngestionTests.test_legacy_marked_objects_never_reparse_or_change_historical_counts) ... ok
+test_malformed_records_do_not_establish_zero_and_oversized_referrer_is_dropped (test_ingestion.IngestionTests.test_malformed_records_do_not_establish_zero_and_oversized_referrer_is_dropped) ... ok
+test_real_handler_budget_inside_input_keeps_checkpoint_and_resumes (test_ingestion.IngestionTests.test_real_handler_budget_inside_input_keeps_checkpoint_and_resumes) ... ok
+test_real_handler_interruption_preserves_public_payload_then_recovers_once (test_ingestion.IngestionTests.test_real_handler_interruption_preserves_public_payload_then_recovers_once) ... ok
+test_real_handler_only_actual_dated_records_establish_zero (test_ingestion.IngestionTests.test_real_handler_only_actual_dated_records_establish_zero) ... ok
+test_active_guard_write_failure_and_lost_response_recover_with_strong_proof (test_ledger.LedgerTests.test_active_guard_write_failure_and_lost_response_recover_with_strong_proof) ... ok
+test_bucket_is_part_of_identity_and_empty_input_has_durable_completion (test_ledger.LedgerTests.test_bucket_is_part_of_identity_and_empty_input_has_durable_completion) ... ok
+test_budget_exhaustion_before_or_inside_input_preserves_recovery (test_ledger.LedgerTests.test_budget_exhaustion_before_or_inside_input_preserves_recovery) ... ok
+test_changed_mapping_rejected_after_partial_or_complete_input (test_ledger.LedgerTests.test_changed_mapping_rejected_after_partial_or_complete_input) ... ok
+test_committed_chunk_with_lost_response_is_verified_without_double_add (test_ledger.LedgerTests.test_committed_chunk_with_lost_response_is_verified_without_double_add) ... ok
+test_completion_commit_with_lost_response_is_verified (test_ledger.LedgerTests.test_completion_commit_with_lost_response_is_verified) ... ok
+test_completion_record_before_commit_failure_then_recovery (test_ledger.LedgerTests.test_completion_record_before_commit_failure_then_recovery) ... ok
+test_conditional_record_conflict_cannot_commit_counter_updates (test_ledger.LedgerTests.test_conditional_record_conflict_cannot_commit_counter_updates) ... ok
+test_corrupt_active_guard_blocks_publication_instead_of_disappearing (test_ledger.LedgerTests.test_corrupt_active_guard_blocks_publication_instead_of_disappearing) ... ok
+test_corrupt_chunk_record_never_counts_as_matching_commit (test_ledger.LedgerTests.test_corrupt_chunk_record_never_counts_as_matching_commit) ... ok
+test_counter_key_number_and_request_bounds_rejected_before_writes (test_ledger.LedgerTests.test_counter_key_number_and_request_bounds_rejected_before_writes) ... ok
+test_failure_before_any_commit_then_exact_recovery (test_ledger.LedgerTests.test_failure_before_any_commit_then_exact_recovery) ... ok
+test_failure_between_chunks_then_exact_recovery (test_ledger.LedgerTests.test_failure_between_chunks_then_exact_recovery) ... ok
+test_legacy_marker_is_never_replayed (test_ledger.LedgerTests.test_legacy_marker_is_never_replayed) ... ok
+test_normal_processing_and_replay_more_than_180_counters (test_ledger.LedgerTests.test_normal_processing_and_replay_more_than_180_counters) ... ok
+test_supplied_digest_is_verified_before_any_write (test_ledger.LedgerTests.test_supplied_digest_is_verified_before_any_write) ... ok
+test_unresolved_other_input_cannot_replace_active_guard (test_ledger.LedgerTests.test_unresolved_other_input_cannot_replace_active_guard) ... ok
+test_checked_archives_have_exact_members_and_importable_handlers (test_packaging.PackagingTests.test_checked_archives_have_exact_members_and_importable_handlers) ... ok
+test_extracted_checked_archive_runs_all_recovery_tests (test_packaging.PackagingTests.test_extracted_checked_archive_runs_all_recovery_tests) ... ok
+test_packager_produces_deterministic_bounded_archives_and_manifest (test_packaging.PackagingTests.test_packager_produces_deterministic_bounded_archives_and_manifest) ... ok
+test_payload_import_does_not_load_the_sdk (test_packaging.PackagingTests.test_payload_import_does_not_load_the_sdk) ... ok
+test_terraform_preserves_bootstrap_filenames_without_archive_generators (test_packaging.PackagingTests.test_terraform_preserves_bootstrap_filenames_without_archive_generators) ... ok
+test_workflow_reuses_checked_archives_without_repackaging (test_packaging.PackagingTests.test_workflow_reuses_checked_archives_without_repackaging) ... ok
+test_absent_observations_do_not_become_zero_traffic (test_payload.PayloadTests.test_absent_observations_do_not_become_zero_traffic) ... ok
+test_bad_optional_aggregate_counts_do_not_fabricate_daily_zero (test_payload.PayloadTests.test_bad_optional_aggregate_counts_do_not_fabricate_daily_zero) ... ok
+test_checkpoint_validation_enforces_private_record_and_public_bounds (test_payload.PayloadTests.test_checkpoint_validation_enforces_private_record_and_public_bounds) ... ok
+test_daily_uniques_are_summed_and_country_requests_keep_zone_units (test_payload.PayloadTests.test_daily_uniques_are_summed_and_country_requests_keep_zone_units) ... ok
+test_explicit_zero_and_yesterday_are_measurements_but_today_is_excluded (test_payload.PayloadTests.test_explicit_zero_and_yesterday_are_measurements_but_today_is_excluded) ... ok
+test_legacy_types_and_source_metadata_are_preserved_without_invented_bounds (test_payload.PayloadTests.test_legacy_types_and_source_metadata_are_preserved_without_invented_bounds) ... ok
+test_public_labels_floor_and_counts_remain_bounded (test_payload.PayloadTests.test_public_labels_floor_and_counts_remain_bounded) ... ok
+test_absent_configuration_is_unavailable_not_successful_zero (test_source_failures.SourceFailureTests.test_absent_configuration_is_unavailable_not_successful_zero) ... ok
+test_api_error_and_malformed_or_empty_results_are_source_failures (test_source_failures.SourceFailureTests.test_api_error_and_malformed_or_empty_results_are_source_failures) ... ok
+test_checkpoint_acceptance_failure_keeps_projection_and_metadata_atomic (test_source_failures.SourceFailureTests.test_checkpoint_acceptance_failure_keeps_projection_and_metadata_atomic) ... ok
+test_checkpoint_bootstrap_failure_prevents_daily_writes_even_if_committed (test_source_failures.SourceFailureTests.test_checkpoint_bootstrap_failure_prevents_daily_writes_even_if_committed) ... ok
+test_cloudfront_failure_preserves_prior_publication_and_does_not_query_cloudflare (test_source_failures.SourceFailureTests.test_cloudfront_failure_preserves_prior_publication_and_does_not_query_cloudflare) ... ok
+test_daily_storage_failure_preserves_publishable_independent_data (test_source_failures.SourceFailureTests.test_daily_storage_failure_preserves_publishable_independent_data) ... ok
+test_denied_token_read_still_publishes_documents_before_alarm (test_source_failures.SourceFailureTests.test_denied_token_read_still_publishes_documents_before_alarm) ... ok
+test_failure_preserves_prior_success_and_coverage (test_source_failures.SourceFailureTests.test_failure_preserves_prior_success_and_coverage) ... ok
+test_incomplete_cloudfront_pass_does_not_advance_any_source_or_publish (test_source_failures.SourceFailureTests.test_incomplete_cloudfront_pass_does_not_advance_any_source_or_publish) ... ok
+test_legacy_measurements_keep_actual_coverage_without_invented_success_date (test_source_failures.SourceFailureTests.test_legacy_measurements_keep_actual_coverage_without_invented_success_date) ... ok
+test_malformed_or_missing_projection_does_not_promote_partial_rows (test_source_failures.SourceFailureTests.test_malformed_or_missing_projection_does_not_promote_partial_rows) ... ok
+test_malformed_token_and_response_bytes_are_recoverable (test_source_failures.SourceFailureTests.test_malformed_token_and_response_bytes_are_recoverable) ... ok
+test_missing_total_does_not_present_daily_subset_as_zero_total (test_source_failures.SourceFailureTests.test_missing_total_does_not_present_daily_subset_as_zero_total) ... ok
+test_partial_configuration_is_alarm_worthy_but_recoverable (test_source_failures.SourceFailureTests.test_partial_configuration_is_alarm_worthy_but_recoverable) ... ok
+test_partial_second_write_and_repeated_failure_keep_prior_dataset (test_source_failures.SourceFailureTests.test_partial_second_write_and_repeated_failure_keep_prior_dataset) ... ok
+test_recovery_after_failure_keeps_actual_earliest_measurement (test_source_failures.SourceFailureTests.test_recovery_after_failure_keeps_actual_earliest_measurement) ... ok
+test_recovery_and_genuine_zero_advance_only_the_successful_source (test_source_failures.SourceFailureTests.test_recovery_and_genuine_zero_advance_only_the_successful_source) ... ok
+test_transport_timeout_still_publishes_documents (test_source_failures.SourceFailureTests.test_transport_timeout_still_publishes_documents) ... ok
+test_valid_day_is_not_written_before_later_malformed_day_is_rejected (test_source_failures.SourceFailureTests.test_valid_day_is_not_written_before_later_malformed_day_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 63 tests in 2.607s
+
+OK
+Extracted checked archive recovery matrix: .................................................
+----------------------------------------------------------------------
+Ran 49 tests in 1.000s
+
+OK
+yarn run v1.22.22
+$ tsc --noEmit --incremental false
+Done in 2.78s.
+yarn run v1.22.22
+$ tsc -p tsconfig.tests.json --noEmit --incremental false
+Done in 1.18s.
+yarn run v1.22.22
+$ eslint './src/**/*.{js,jsx,ts,tsx}' --max-warnings=0
+Done in 1.53s.
+yarn run v1.22.22
+$ yarn compile && yarn next build
+$ tsc --noEmit --incremental false
+$ /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/node_modules/.bin/next build
+   Linting and checking validity of types ...
+   ▲ Next.js 14.0.3
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Collecting page data ...
+   Generating static pages (0/5) ...
+   Generating static pages (1/5) 
+   Generating static pages (2/5) 
+   Generating static pages (3/5) 
+ ✓ Generating static pages (5/5) 
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (pages)                              Size     First Load JS
+┌ ○ /                                      49 kB           140 kB
+├   /_app                                  0 B            79.3 kB
+├ ○ /404                                   1.99 kB        92.6 kB
+├ ○ /graph                                 24.1 kB         115 kB
+└ ○ /stats                                 8.28 kB        98.9 kB
++ First Load JS shared by all              91.7 kB
+  ├ chunks/framework-66d32731bdd20e83.js   45.2 kB
+  ├ chunks/main-5d77cecfe18a5947.js        31.8 kB
+  ├ chunks/pages/_app-45be56fe50b3f6bb.js  463 B
+  ├ chunks/webpack-a64457ed7099ea9f.js     1.89 kB
+  └ css/ccca05f628764c6b.css               12.4 kB
+
+○  (Static)  prerendered as static content
+
+$ yarn next-sitemap
+$ /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/node_modules/.bin/next-sitemap
+✨ [next-sitemap] Loading next-sitemap config: file:///Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/next-sitemap.config.js
+✅ [next-sitemap] Generation completed
+┌───────────────┬────────┐
+│ (index)       │ Values │
+├───────────────┼────────┤
+│ indexSitemaps │ 1      │
+│ sitemaps      │ 1      │
+└───────────────┴────────┘
+-----------------------------------------------------
+ SITEMAP INDICES 
+-----------------------------------------------------
+
+   ○ https://andrewmalvani.com/sitemap.xml
+
+
+-----------------------------------------------------
+ SITEMAPS 
+-----------------------------------------------------
+
+   ○ https://andrewmalvani.com/sitemap-0.xml
+
+
+Done in 11.36s.
+yarn run v1.22.22
+$ /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/node_modules/.bin/playwright test --project=chromium
+TAP version 13
+# Subtest: the actual edge handler maps public pages and leaves static extensions unchanged
+ok 1 - the actual edge handler maps public pages and leaves static extensions unchanged
+  ---
+  duration_ms: 1.703667
+  type: 'test'
+  ...
+# Subtest: non-root trailing slashes redirect to the extensionless canonical path
+ok 2 - non-root trailing slashes redirect to the extensionless canonical path
+  ---
+  duration_ms: 0.806875
+  type: 'test'
+  ...
+# Subtest: the slash redirect emits each multi-value once and preserves encoded event fields
+ok 3 - the slash redirect emits each multi-value once and preserves encoded event fields
+  ---
+  duration_ms: 0.594083
+  type: 'test'
+  ...
+# Subtest: unusual slash and backslash paths cannot produce an external Location
+ok 4 - unusual slash and backslash paths cannot produce an external Location
+  ---
+  duration_ms: 0.824209
+  type: 'test'
+  ...
+
+Running 94 tests using 1 worker
+
+  ✓   1 [chromium] › tests/e2e/contact-submission.spec.ts:62:5 › pending submission is read-only and sends one trimmed snapshot (753ms)
+  ✓   2 [chromium] › tests/e2e/contact-submission.spec.ts:104:5 › non-2xx response preserves the exact draft and restores editing (415ms)
+  ✓   3 [chromium] › tests/e2e/contact-submission.spec.ts:127:5 › network failure preserves the exact draft and explains delivery uncertainty (398ms)
+  ✓   4 [chromium] › tests/e2e/contact-submission.spec.ts:150:5 › timeout preserves the draft and only a deliberate retry starts another request (15.9s)
+  ✓   5 [chromium] › tests/e2e/contact-submission.spec.ts:191:5 › navigating away aborts pending local work without stale feedback (1.7s)
+  ✓   6 [chromium] › tests/e2e/contact-validation.spec.ts:19:5 › invalid send explains errors and focuses the first field (354ms)
+  ✓   7 [chromium] › tests/e2e/contact-validation.spec.ts:32:5 › whitespace-only fields and an invalid email remain invalid (382ms)
+  ✓   8 [chromium] › tests/e2e/contact-validation.spec.ts:47:5 › correction preserves other errors and repeated submit announces the remainder (1.9s)
+  ✓   9 [chromium] › tests/e2e/contact-validation.spec.ts:72:5 › client bounds and message limit feedback match the contact service (417ms)
+  ✓  10 [chromium] › tests/e2e/graph-access.spec.ts:44:7 › invalid graph link remains usable: #node=% (948ms)
+  ✓  11 [chromium] › tests/e2e/graph-access.spec.ts:44:7 › invalid graph link remains usable: #node=%E0%A4%A (1.0s)
+  ✓  12 [chromium] › tests/e2e/graph-access.spec.ts:44:7 › invalid graph link remains usable: #node=unknown (978ms)
+  ✓  13 [chromium] › tests/e2e/graph-access.spec.ts:44:7 › invalid graph link remains usable: #other (996ms)
+  ✓  14 [chromium] › tests/e2e/graph-access.spec.ts:56:5 › valid deep link survives view switches without mount history entries (3.2s)
+  ✓  15 [chromium] › tests/e2e/graph-access.spec.ts:82:5 › chosen text view exposes ordinary keyboard-operable disclosures and connection navigation (618ms)
+  ✓  16 [chromium] › tests/e2e/graph-access.spec.ts:109:5 › 3D tab order contains visible entry and connection controls, with no hidden list (2.2s)
+  ✓  17 [chromium] › tests/e2e/graph-access.spec.ts:135:7 › denied hint storage getItem remains recoverable (1.3s)
+  ✓  18 [chromium] › tests/e2e/graph-access.spec.ts:135:7 › denied hint storage setItem remains recoverable (1.3s)
+  ✓  19 [chromium] › tests/e2e/graph-access.spec.ts:135:7 › denied hint storage removeItem remains recoverable (1.3s)
+  ✓  20 [chromium] › tests/e2e/graph-access.spec.ts:135:7 › denied hint storage getter remains recoverable (1.3s)
+  ✓  21 [chromium] › tests/e2e/graph-access.spec.ts:168:5 › unavailable WebGL overrides an explicit 3D request and preserves selection (195ms)
+  ✓  22 [chromium] › tests/e2e/graph-access.spec.ts:186:5 › unknown view values use the supported default (932ms)
+  ✓  23 [chromium] › tests/e2e/graph-access.spec.ts:193:5 › browser mode navigation moves focus out of the view being removed (1.8s)
+  ✓  24 [chromium] › tests/e2e/graph-access.spec.ts:210:7 › mobile graphics › slow graphics falls back to text with the selected content and persistent focus (3.6s)
+  ✓  25 [chromium] › tests/e2e/graph-access.spec.ts:232:5 › unescaped valid deep links do not add a history entry during mount (562ms)
+  ✓  26 [chromium] › tests/e2e/graph-access.spec.ts:244:7 › text view preserves selected detail: skill:python (167ms)
+  ✓  27 [chromium] › tests/e2e/graph-access.spec.ts:244:7 › text view preserves selected detail: job:tillster-it-strategic-analyst (163ms)
+  ✓  28 [chromium] › tests/e2e/graph-access.spec.ts:250:5 › selection-only history recovers focus from disappearing text connections (261ms)
+  ✓  29 [chromium] › tests/e2e/graph-access.spec.ts:271:5 › selection-only history recovers text connection focus when deselecting (1.4s)
+  ✓  30 [chromium] › tests/e2e/graph-access.spec.ts:288:7 › selection-only history keeps focus on a persistent entry control (242ms)
+  ✓  31 [chromium] › tests/e2e/graph-access.spec.ts:288:7 › selection-only history keeps focus on a persistent mode control (222ms)
+  ✓  32 [chromium] › tests/e2e/graph-discovery.spec.ts:11:7 › direct search preserves evidence, focus and native input keys in list (735ms)
+  ✓  33 [chromium] › tests/e2e/graph-discovery.spec.ts:11:7 › direct search preserves evidence, focus and native input keys in 3d (2.4s)
+  ✓  34 [chromium] › tests/e2e/graph-discovery.spec.ts:59:7 › system overview clears the trail and repeated requests recover the real camera after orbit and zoom (16.7s)
+  ✓  35 [chromium] › tests/e2e/graph-discovery.spec.ts:59:7 › manual overview clears the trail and repeated requests recover the real camera after orbit and zoom (17.1s)
+  ✓  36 [chromium] › tests/e2e/graph-discovery.spec.ts:59:7 › animated overview clears the trail and repeated requests recover the real camera after orbit and zoom (20.9s)
+  ✓  37 [chromium] › tests/e2e/graph-discovery.spec.ts:149:5 › search counts the full graph, matches normalized descriptions, and every existing node remains deep-linkable (573ms)
+  ✓  38 [chromium] › tests/e2e/graph-discovery.spec.ts:173:5 › a phone visitor can follow skill evidence across views and recover overview (3.3s)
+  ✓  39 [chromium] › tests/e2e/graph-discovery.spec.ts:202:7 › canonical overview keeps informational labels readable at 1280px (14.4s)
+  ✓  40 [chromium] › tests/e2e/graph-discovery.spec.ts:202:7 › canonical overview keeps informational labels readable at 390px (14.7s)
+  ✓  41 [chromium] › tests/e2e/graph-layout.spec.ts:109:7 › graph controls and selected details remain usable at 320x720 (3.8s)
+  ✓  42 [chromium] › tests/e2e/graph-layout.spec.ts:109:7 › graph controls and selected details remain usable at 390x844 (3.9s)
+  ✓  43 [chromium] › tests/e2e/graph-layout.spec.ts:109:7 › graph controls and selected details remain usable at 844x390 (2.2s)
+  ✓  44 [chromium] › tests/e2e/graph-layout.spec.ts:109:7 › graph controls and selected details remain usable at 1280x900 (2.9s)
+  ✓  45 [chromium] › tests/e2e/graph-layout.spec.ts:157:5 › a long achievement heading wraps completely in phone 3D view (966ms)
+  ✓  46 [chromium] › tests/e2e/graph-layout.spec.ts:169:5 › the real canvas follows the space left by disclosures and viewport changes (1.3s)
+  ✓  47 [chromium] › tests/e2e/graph-layout.spec.ts:189:5 › 200% text keeps graph navigation readable and reachable at 320 CSS pixels (977ms)
+  ✓  48 [chromium] › tests/e2e/graph-layout.spec.ts:215:5 › small graph information meets contrast on its rendered surfaces (2.8s)
+  ✓  49 [chromium] › tests/e2e/graph-layout.spec.ts:263:7 › system reduced motion reveals selected details without panel translation (1.6s)
+  ✓  50 [chromium] › tests/e2e/graph-layout.spec.ts:263:7 › manual reduced motion reveals selected details without panel translation (1.9s)
+  ✓  51 [chromium] › tests/e2e/graph-layout.spec.ts:289:7 › mobile performance focus recovery › performance fallback preserves focus outside the disappearing graph experience (3.5s)
+  ✓  52 [chromium] › tests/e2e/graph-layout.spec.ts:303:7 › mobile performance focus recovery › vertical scrolling on selected details does not scan connections (958ms)
+  ✓  53 [chromium] › tests/e2e/homepage.spec.ts:4:7 › homepage fits 320px (316ms)
+  ✓  54 [chromium] › tests/e2e/homepage.spec.ts:4:7 › homepage fits 390px (311ms)
+  ✓  55 [chromium] › tests/e2e/homepage.spec.ts:4:7 › homepage fits 430px (331ms)
+  ✓  56 [chromium] › tests/e2e/homepage.spec.ts:20:5 › homepage fits with 200% text (416ms)
+  ✓  57 [chromium] › tests/e2e/motion.spec.ts:40:5 › particles clear on live reduction and resume with one draw per frame (1.7s)
+  ✓  58 [chromium] › tests/e2e/motion.spec.ts:95:5 › an initially reduced visit keeps particles clear and menu usable without sliding (650ms)
+  ✓  59 [chromium] › tests/e2e/motion.spec.ts:110:5 › live reduction immediately exposes pending reveals and disables menu movement (791ms)
+  ✓  60 [chromium] › tests/e2e/motion.spec.ts:135:5 › particles retain offscreen and background visibility gates across preference changes (1.3s)
+  ✓  61 [chromium] › tests/e2e/navigation.spec.ts:3:5 › campaign links retain one homepage identity (352ms)
+  ✓  62 [chromium] › tests/e2e/navigation.spec.ts:10:5 › graph state retains one graph page identity (164ms)
+  ✓  63 [chromium] › tests/e2e/navigation.spec.ts:17:5 › the architecture card opens a real local image (1.9s)
+  ✓  64 [chromium] › tests/e2e/navigation.spec.ts:36:5 › portfolio keeps project destinations usable without publishing unapproved disclosures (403ms)
+  ✓  65 [chromium] › tests/e2e/navigation.spec.ts:48:5 › homepage separates experience navigation from the PDF download (432ms)
+  ✓  66 [chromium] › tests/e2e/navigation.spec.ts:59:5 › graph offers the same named PDF download (183ms)
+  ✓  67 [chromium] › tests/e2e/navigation.spec.ts:69:7 › / footer returns to the current page's top (2.3s)
+  ✓  68 [chromium] › tests/e2e/navigation.spec.ts:69:7 › /stats footer returns to the current page's top (567ms)
+  ✓  69 [chromium] › tests/e2e/not-found.spec.ts:3:5 › an unknown static path returns a useful non-indexed 404 page (123ms)
+  ✓  70 [chromium] › tests/e2e/not-found.spec.ts:14:5 › the missing-page recovery fits a 320-pixel viewport (117ms)
+  ✓  71 [chromium] › tests/e2e/stats-producer.spec.ts:8:7 › actual producer output is compatible with the reader: stale (511ms)
+  ✓  72 [chromium] › tests/e2e/stats-producer.spec.ts:8:7 › actual producer output is compatible with the reader: current (469ms)
+  ✓  73 [chromium] › tests/e2e/stats-producer.spec.ts:8:7 › actual producer output is compatible with the reader: zero (484ms)
+  ✓  74 [chromium] › tests/e2e/stats-producer.spec.ts:49:7 › partial source storage keeps the accepted dataset: partial-prior (319ms)
+  ✓  75 [chromium] › tests/e2e/stats-producer.spec.ts:49:7 › partial source storage keeps the accepted dataset: partial-empty (311ms)
+  ✓  76 [chromium] › tests/e2e/stats.spec.ts:33:5 › legacy payload keeps its uncertainty visible and excludes today (223ms)
+  ✓  77 [chromium] › tests/e2e/stats.spec.ts:51:5 › v2 payload shows measured zero, separate periods, gaps and provisional data (228ms)
+  ✓  78 [chromium] › tests/e2e/stats.spec.ts:71:5 › valid document zero remains visible while an unavailable edge source does not become zero (128ms)
+  ✓  79 [chromium] › tests/e2e/stats.spec.ts:105:5 › frozen sources become visibly stale on a later fixed calendar day (149ms)
+  ✓  80 [chromium] › tests/e2e/stats.spec.ts:114:5 › malformed data offers Retry and a valid retry recovers (294ms)
+  ✓  81 [chromium] › tests/e2e/stats.spec.ts:130:5 › a stalled request times out and a deliberate retry recovers (10.7s)
+  ✓  82 [chromium] › tests/e2e/stats.spec.ts:161:5 › SPA navigation cancels a pending stats request on unmount (999ms)
+  ✓  83 [chromium] › tests/e2e/stats.spec.ts:203:5 › sparse calendar dates use real spacing and break paths across absent days (220ms)
+  ✓  84 [chromium] › tests/e2e/stats.spec.ts:234:5 › stats presentation reflows at 320 pixels (188ms)
+  ✓  85 [chromium] › tests/unit/statsPayload.spec.ts:7:5 › legacy uniques are relabeled without inventing coverage (0ms)
+  ✓  86 [chromium] › tests/unit/statsPayload.spec.ts:14:5 › legacy zeros remain distinct from measured v2 zeros (0ms)
+  ✓  87 [chromium] › tests/unit/statsPayload.spec.ts:28:5 › invalid required and optional dates fail at their documented boundaries (0ms)
+  ✓  88 [chromium] › tests/unit/statsPayload.spec.ts:45:5 › duplicate or unsorted v2 observations reject the payload (0ms)
+  ✓  89 [chromium] › tests/unit/statsPayload.spec.ts:58:5 › unknown payload versions are not guessed as version 2 (0ms)
+  ✓  90 [chromium] › tests/unit/statsPayload.spec.ts:62:5 › invalid labels and counts cannot reach normalized public lists (0ms)
+  ✓  91 [chromium] › tests/unit/statsPayload.spec.ts:87:5 › named buckets below five join a bounded preexisting Other bucket (0ms)
+  ✓  92 [chromium] › tests/unit/statsPayload.spec.ts:125:5 › public lists and observations remain bounded (0ms)
+  ✓  93 [chromium] › tests/unit/statsPayload.spec.ts:135:5 › a frozen payload eventually looks stale (0ms)
+  ✓  94 [chromium] › tests/unit/statsPayload.spec.ts:141:5 › stale migrated measurements may have unknown success timing while current requires a success date (0ms)
+
+  94 passed (3.3m)
+Done in 196.12s.
+TAP version 13
+# Subtest: served candidate reader passes actual legacy and synthetic v1/v2 behavior
+ok 1 - served candidate reader passes actual legacy and synthetic v1/v2 behavior
+  ---
+  duration_ms: 2203.577167
+  type: 'test'
+  ...
+# Subtest: stale cached HTML blocks release before reader behavior can pass
+ok 2 - stale cached HTML blocks release before reader behavior can pass
+  ---
+  duration_ms: 70.429041
+  type: 'test'
+  ...
+# Subtest: stale asset bytes block release even if appended bytes still render correctly
+ok 3 - stale asset bytes block release even if appended bytes still render correctly
+  ---
+  duration_ms: 621.46525
+  type: 'test'
+  ...
+# Subtest: release endpoints require HTTPS and an origin without path/query/credentials
+ok 4 - release endpoints require HTTPS and an origin without path/query/credentials
+  ---
+  duration_ms: 1.612208
+  type: 'test'
+  ...
+# Subtest: create and replace require pre-apply reader proof; update does not bypass later verification
+ok 5 - create and replace require pre-apply reader proof; update does not bypass later verification
+  ---
+  duration_ms: 0.6845
+  type: 'test'
+  ...
+# Subtest: analytics plan changes are identified for the migration approval gate
+ok 6 - analytics plan changes are identified for the migration approval gate
+  ---
+  duration_ms: 0.500958
+  type: 'test'
+  ...
+# Subtest: manifest classifies candidate bytes, includes HTML/CSS dependencies and excludes stats ownership
+ok 7 - manifest classifies candidate bytes, includes HTML/CSS dependencies and excludes stats ownership
+  ---
+  duration_ms: 13.10075
+  type: 'test'
+  ...
+# Subtest: missing direct or CSS dependency rejects before publication
+ok 8 - missing direct or CSS dependency rejects before publication
+  ---
+  duration_ms: 7.140416
+  type: 'test'
+  ...
+# Subtest: empty recovery HTML cannot replace the checked recovery document
+ok 9 - empty recovery HTML cannot replace the checked recovery document
+  ---
+  duration_ms: 2.695583
+  type: 'test'
+  ...
+# Subtest: symlink and mutated or forged manifest reject before the first AWS operation
+ok 10 - symlink and mutated or forged manifest reject before the first AWS operation
+  ---
+  duration_ms: 6.479792
+  type: 'test'
+  ...
+# Subtest: actual CLI refreshes unchanged metadata, preserves old hashes/stats/unrelated keys and stages assets before 404
+ok 11 - actual CLI refreshes unchanged metadata, preserves old hashes/stats/unrelated keys and stages assets before 404
+  ---
+  duration_ms: 777.621375
+  type: 'test'
+  ...
+# Subtest: failed asset upload stops before publishing recovery HTML
+ok 12 - failed asset upload stops before publishing recovery HTML
+  ---
+  duration_ms: 3.570208
+  type: 'test'
+  ...
+# Subtest: missing or invalid bucket blocks the CLI before any AWS subprocess
+ok 13 - missing or invalid bucket blocks the CLI before any AWS subprocess
+  ---
+  duration_ms: 62.532334
+  type: 'test'
+  ...
+# Subtest: the actual edge handler maps public pages and leaves static extensions unchanged
+ok 14 - the actual edge handler maps public pages and leaves static extensions unchanged
+  ---
+  duration_ms: 2.094334
+  type: 'test'
+  ...
+# Subtest: non-root trailing slashes redirect to the extensionless canonical path
+ok 15 - non-root trailing slashes redirect to the extensionless canonical path
+  ---
+  duration_ms: 0.825875
+  type: 'test'
+  ...
+# Subtest: the slash redirect emits each multi-value once and preserves encoded event fields
+ok 16 - the slash redirect emits each multi-value once and preserves encoded event fields
+  ---
+  duration_ms: 0.687208
+  type: 'test'
+  ...
+# Subtest: unusual slash and backslash paths cannot produce an external Location
+ok 17 - unusual slash and backslash paths cannot produce an external Location
+  ---
+  duration_ms: 0.82275
+  type: 'test'
+  ...
+1..17
+# tests 17
+# suites 0
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3145.775541
+Verified 54 candidate files and 73 static references; stats.json excluded.
+Initializing provider plugins...
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Reusing previous version of hashicorp/archive from the dependency lock file
+- Using previously-installed hashicorp/aws v5.50.0
+- Using previously-installed hashicorp/random v3.6.2
+- Using previously-installed hashicorp/archive v2.4.2
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+Verified release archives: contact-lambda.zip=4277B sha256:3998f18a127c13ab8292af7100ab5fc36e84c5a069c2b9b16e7b0d7da3b80ce3, stats-aggregator.zip=40351B sha256:b68c47a7774b1d575b910a60d7ceded54cf9d2b9a398334f00476113cbc945ca
+Verified 54 candidate files and 73 static references; stats.json excluded.
+3998f18a127c13ab8292af7100ab5fc36e84c5a069c2b9b16e7b0d7da3b80ce3  release-artifacts/contact-lambda.zip
+b68c47a7774b1d575b910a60d7ceded54cf9d2b9a398334f00476113cbc945ca  release-artifacts/stats-aggregator.zip
+fc2e288739ffa842e0acb49ad169b1bf50fa91be5fa2dffd63bdeb823f5318f4  release-artifacts/manifest.json
+573adcb914353bd5def8961b255297d65d8658f29362f373195518832d704526  .superpowers/sdd/2026-09-07-design-ux-remediation/evidence/e5-checked-site-manifest.json

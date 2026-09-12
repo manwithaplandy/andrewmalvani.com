@@ -22,6 +22,7 @@ import {
   MeshBasicMaterial,
   MeshLambertMaterial,
   OctahedronGeometry,
+  PerspectiveCamera,
   Points,
   PointsMaterial,
   SphereGeometry,
@@ -60,6 +61,10 @@ interface NodeVisual {
   baseColor: Color;
   baseOpacity: number;
   kind: GraphNodeKind;
+  overviewLabeled: boolean;
+  baseLabelScale: Vector3;
+  overviewLabelScale?: Vector3;
+  overviewLabelY?: number;
 }
 
 const NODE_RADIUS: Record<GraphNodeKind, number> = {
@@ -84,7 +89,10 @@ const NODE_COLOR: Record<GraphNodeKind, string> = {
   tool: '#979ea8',
 };
 
-const ALWAYS_LABELED: ReadonlySet<GraphNodeKind> = new Set<GraphNodeKind>(['job', 'skillGroup', 'education']);
+// A few readable anchors orient the overview; every other identity remains
+// available on hover/selection and through the direct search.
+const OVERVIEW_TEXT_PIXELS = 14;
+const isOverviewLabeled = (node: FGNode): boolean => node.kind === 'skillGroup' || node.id === initialFocusId;
 
 const LINK_DISTANCE: Record<GraphEdgeKind, number> = {
   'earned-via': 45,
@@ -231,6 +239,21 @@ const UNIT_SPHERE = new SphereGeometry(1, 16, 16);
 const UNIT_SPHERE_COARSE = new SphereGeometry(1, 8, 8);
 const SHARED_GEOMETRIES = new Set<BufferGeometry>([UNIT_SPHERE, UNIT_SPHERE_COARSE]);
 
+// Full identities remain intact, but long names use shorter sprite lines so
+// the selected item can be framed on a narrow stage without excessive zoom.
+const wrapLabel = (text: string): string => {
+  const lines = [''];
+  for (const word of text.split(' ')) {
+    const last = lines.length - 1;
+    if (lines[last] && lines[last].length + word.length + 1 > 28) {
+      lines.push(word);
+    } else {
+      lines[last] += `${lines[last] ? ' ' : ''}${word}`;
+    }
+  }
+  return lines.join('\n');
+};
+
 const buildNodeVisual = (node: FGNode): {visual: NodeVisual; object: Group} => {
   const radius = NODE_RADIUS[node.kind];
   const level = node.level ?? 6;
@@ -271,20 +294,41 @@ const buildNodeVisual = (node: FGNode): {visual: NodeVisual; object: Group} => {
   const pick = new Mesh(UNIT_SPHERE_COARSE, pickMaterial);
   pick.scale.setScalar(Math.max(radius * 1.25, 8));
 
-  const label = new SpriteText(node.label, node.kind === 'skillGroup' ? 6 : node.kind === 'job' ? 5.5 : 4, '#d4d4d4');
+  const label = new SpriteText(
+    wrapLabel(node.label),
+    node.kind === 'skillGroup' ? 6 : node.kind === 'job' ? 5.5 : 4,
+    '#d4d4d4',
+  );
+  // Information keeps its contrast independently of the atmospheric geometry.
+  label.backgroundColor = '#171717';
+  label.padding = label.textHeight * 0.15;
+  label.material.fog = false;
+  label.material.toneMapped = false;
+  label.material.depthTest = false;
   label.material.depthWrite = false;
+  label.renderOrder = 1;
   label.position.y = radius + 7;
-  label.visible = ALWAYS_LABELED.has(node.kind);
+  label.visible = isOverviewLabeled(node);
 
   const group = new Group();
   group.add(mesh, halo, pick, label);
   return {
     object: group,
-    visual: {baseColor, baseOpacity, group, haloMaterial, kind: node.kind, label, material},
+    visual: {
+      baseColor,
+      baseLabelScale: label.scale.clone(),
+      baseOpacity,
+      group,
+      haloMaterial,
+      kind: node.kind,
+      label,
+      material,
+      overviewLabeled: isOverviewLabeled(node),
+    },
   };
 };
 
-const applyVisualState = (visual: NodeVisual, state: NodeVisualState): void => {
+const applyVisualState = (visual: NodeVisual, state: NodeVisualState, overview = false): void => {
   const {material, haloMaterial, label, baseColor, baseOpacity, kind} = visual;
   // Emphasized states stay fully opaque except for the translucent skill
   // groups, which fade to the given fraction instead.
@@ -318,23 +362,24 @@ const applyVisualState = (visual: NodeVisual, state: NodeVisualState): void => {
     case 'linked':
       material.opacity = baseOpacity * 0.85;
       haloMaterial.opacity = 0;
-      label.visible = true;
+      label.visible = false;
       label.color = '#d4d4d4';
       break;
     case 'dimmed':
       material.opacity = baseOpacity * 0.18;
       haloMaterial.opacity = 0;
-      // Far tier keeps its labels readable (≥4.5:1 on #171717), others hide.
-      label.visible = ALWAYS_LABELED.has(kind);
+      label.visible = false;
       label.color = '#9ca3af';
       break;
     case 'normal':
       material.opacity = baseOpacity;
       haloMaterial.opacity = 0;
-      label.visible = ALWAYS_LABELED.has(kind);
+      label.visible = visual.overviewLabeled;
       label.color = '#d4d4d4';
       break;
   }
+  label.scale.copy(overview && visual.overviewLabelScale ? visual.overviewLabelScale : visual.baseLabelScale);
+  label.position.y = overview && visual.overviewLabelY !== undefined ? visual.overviewLabelY : NODE_RADIUS[kind] + 7;
   visual.haloMaterial.visible = haloMaterial.opacity > 0;
 };
 
@@ -398,9 +443,10 @@ const ResumeGraphCanvas: FC<{
   state: GraphNavState;
   dispatch: Dispatch<GraphNavAction>;
   reducedMotion: boolean;
+  overviewRequest: number;
   /** Called when the FPS probe finds the device too slow for the 3D view at all. */
   onPerformanceFallback: () => void;
-}> = memo(({state, dispatch, reducedMotion, onPerformanceFallback}) => {
+}> = memo(({state, dispatch, reducedMotion, overviewRequest, onPerformanceFallback}) => {
   const fgRef = useRef<FGMethods>();
   const containerRef = useRef<HTMLDivElement>(null);
   const objectsRef = useRef(new Map<string, NodeVisual>());
@@ -411,6 +457,7 @@ const ResumeGraphCanvas: FC<{
   // First flight (initial load / deep link / context-loss remount) uses the
   // per-kind framing; later flights preserve the user's zoom distance.
   const hasFlownRef = useRef(false);
+  const cameraFocusRef = useRef<string | null>(null);
   const [size, setSize] = useState({height: 0, width: 0});
   const [contextLost, setContextLost] = useState(false);
   const [canvasKey, setCanvasKey] = useState(0);
@@ -618,81 +665,138 @@ const ResumeGraphCanvas: FC<{
       applyVisualState(
         visual,
         resolveVisualState(id, state.focusedId, state.highlightedId, hoveredId, focusNeighbors.has(id)),
+        state.focusedId === null,
       );
     }
   }, [state.focusedId, state.highlightedId, hoveredId, focusNeighbors, ready, canvasKey]);
 
-  // --- camera: fly to focus (600–800ms expo-out; instant under reduced motion)
+  // --- camera: selection and explicit overview share one cancellable flight --
   useEffect(() => {
     const fg = fgRef.current;
-    if (!ready || !fg || !state.focusedId) {
+    if (!ready || !fg || contextLost || size.height <= 0) {
       return;
     }
-    const node = canvasNodeById.get(state.focusedId);
-    if (!node) {
-      return;
-    }
-    let cancelled = false;
+    let pending: number | undefined;
     let attempts = 0;
-    const fly = () => {
-      if (cancelled) {
-        return;
-      }
-      // Layout not warmed up yet — keep retrying until the focus changes or
-      // we unmount (a slow device must still get its flight, just later).
-      // Exact (0,0,0) is almost certainly the same pre-layout transient, but
-      // a node could legitimately settle there, so it only gets a short grace
-      // period rather than being unframeable forever.
-      if (!hasLayoutCoords(node) || (node.x === 0 && node.y === 0 && node.z === 0 && attempts < 5)) {
+    const frame = () => {
+      const nodes = canvasData.nodes;
+      if (nodes.some(node => !hasLayoutCoords(node)) || attempts === 0) {
         attempts++;
-        window.setTimeout(fly, 150);
+        pending = window.setTimeout(frame, 150);
         return;
       }
-      const {x, y, z} = node;
-      // First flight frames per-kind; afterwards preserve the user's zoom,
-      // lightly clamped.
-      let distance = CAMERA_DISTANCE[node.kind] ?? DEFAULT_CAMERA_DISTANCE;
-      if (hasFlownRef.current) {
-        const controls = fg.controls() as {target: Vector3};
-        const currentDistance = fg.camera().position.distanceTo(controls.target);
-        distance = Math.min(Math.max(currentDistance, MIN_FLIGHT_DISTANCE), MAX_FLIGHT_DISTANCE);
+      const camera = fg.camera() as PerspectiveCamera;
+      const controls = fg.controls() as {
+        target: Vector3;
+        autoRotate: boolean;
+        dynamicDampingFactor: number;
+        update: () => void;
+      };
+      const verticalTangent = Math.tan((camera.fov * Math.PI) / 360);
+      const horizontalTangent = verticalTangent * (size.width / size.height);
+      const duration = reducedMotion ? 0 : 700;
+      const node = state.focusedId ? canvasNodeById.get(state.focusedId) : undefined;
+      if (node && hasLayoutCoords(node)) {
+        const {x, y, z} = node;
+        let distance = CAMERA_DISTANCE[node.kind] ?? DEFAULT_CAMERA_DISTANCE;
+        if (hasFlownRef.current) {
+          distance = Math.min(
+            Math.max(camera.position.distanceTo(controls.target), MIN_FLIGHT_DISTANCE),
+            MAX_FLIGHT_DISTANCE,
+          );
+        }
+        const visual = objectsRef.current.get(String(node.id));
+        if (visual) {
+          // Fit the complete selected sprite at the destination, including its
+          // vertical offset. User-directed orbit/zoom can still move it outside.
+          distance = Math.max(
+            distance,
+            (visual.label.scale.x * 0.65) / horizontalTangent,
+            ((visual.label.position.y + visual.label.scale.y / 2) * 1.3) / verticalTangent,
+          );
+        }
+        const norm = Math.hypot(x, y, z);
+        const ratio = 1 + distance / (norm || 1);
+        const position = norm === 0 ? {x: 0, y: 0, z: distance} : {x: x * ratio, y: y * ratio, z: z * ratio};
+        const candidate = state.highlightedId ? canvasNodeById.get(state.highlightedId) : undefined;
+        const target =
+          candidate && hasLayoutCoords(candidate)
+            ? {
+                x: x + (candidate.x - x) * 0.35,
+                y: y + (candidate.y - y) * 0.35,
+                z: z + (candidate.z - z) * 0.35,
+              }
+            : {x, y, z};
+        const scanning = cameraFocusRef.current === state.focusedId && Boolean(candidate);
+        fg.cameraPosition(
+          scanning ? camera.position.clone() : position,
+          target,
+          reducedMotion ? 0 : scanning ? 300 : duration,
+        );
+        cameraFocusRef.current = state.focusedId;
+        hasFlownRef.current = true;
+      } else {
+        // Reserve readable screen-space label margins, then fit all geometry.
+        // Sizing labels only in world units makes a whole-graph fit unreadable.
+        const min = new Vector3(Infinity, Infinity, Infinity);
+        const max = new Vector3(-Infinity, -Infinity, -Infinity);
+        let labelWidth = 0;
+        let labelHeight = 0;
+        for (const item of nodes) {
+          if (!hasLayoutCoords(item)) continue;
+          const visual = objectsRef.current.get(String(item.id));
+          const radius = NODE_RADIUS[item.kind];
+          min.min(new Vector3(item.x - radius, item.y - radius, item.z - radius));
+          max.max(new Vector3(item.x + radius, item.y + radius, item.z + radius));
+          if (visual?.overviewLabeled) {
+            const pixelsPerUnit = OVERVIEW_TEXT_PIXELS / visual.label.textHeight;
+            labelWidth = Math.max(labelWidth, visual.baseLabelScale.x * pixelsPerUnit);
+            labelHeight = Math.max(labelHeight, visual.baseLabelScale.y * pixelsPerUnit);
+          }
+        }
+        const center = min.clone().add(max).multiplyScalar(0.5);
+        const usableWidth = Math.max(1, size.width - labelWidth - 24);
+        const usableHeight = Math.max(1, size.height - (labelHeight + 8) * 2);
+        const distance =
+          Math.max(
+            ((max.x - min.x) * size.width) / (2 * horizontalTangent * usableWidth),
+            ((max.y - min.y) * size.height) / (2 * verticalTangent * usableHeight),
+          ) * 1.05;
+        const cameraZ = max.z + distance;
+        for (const item of nodes) {
+          const visual = objectsRef.current.get(String(item.id));
+          if (!hasLayoutCoords(item) || !visual?.overviewLabeled) continue;
+          const unitsPerPixel = ((cameraZ - item.z) * 2 * verticalTangent) / size.height;
+          visual.overviewLabelScale = visual.baseLabelScale
+            .clone()
+            .multiplyScalar((OVERVIEW_TEXT_PIXELS * unitsPerPixel) / visual.label.textHeight);
+          visual.overviewLabelY = NODE_RADIUS[item.kind] + visual.overviewLabelScale.y / 2 + 4 * unitsPerPixel;
+          applyVisualState(visual, resolveVisualState(String(item.id), null, null, hoveredIdRef.current, false), true);
+        }
+        controls.autoRotate = false;
+        // Trackball orbit retains both roll (camera.up) and inertial deltas.
+        // Consume those deltas before framing, or the next controls update
+        // drifts away from the requested overview even with a zero-duration fit.
+        const damping = controls.dynamicDampingFactor;
+        controls.dynamicDampingFactor = 1;
+        controls.update();
+        controls.dynamicDampingFactor = damping;
+        camera.up.set(0, 1, 0);
+        fg.cameraPosition({x: center.x, y: center.y, z: cameraZ}, center, duration);
+        hasFlownRef.current = false;
+        cameraFocusRef.current = null;
       }
-      const norm = Math.hypot(x, y, z);
-      const ratio = 1 + distance / (norm || 1);
-      // A node at the exact origin has no outward direction — pick one.
-      const position = norm === 0 ? {x: 0, y: 0, z: distance} : {x: x * ratio, y: y * ratio, z: z * ratio};
-      fg.cameraPosition(position, {x, y, z}, reducedMotionRef.current ? 0 : 700);
-      hasFlownRef.current = true;
     };
-    fly();
+    frame();
     return () => {
-      cancelled = true;
+      if (pending !== undefined) window.clearTimeout(pending);
+      // cameraPosition cancels the library's pending camera tweens. Copy both
+      // values first because cancellation completes their prior destination.
+      const position = fg.camera().position.clone();
+      const target = (fg.controls() as {target: Vector3}).target.clone();
+      fg.cameraPosition(position, target, 0);
     };
-  }, [state.focusedId, ready, canvasKey]);
-
-  // --- camera: small ~300ms nudge toward the ←/→ candidate -------------------
-  useEffect(() => {
-    const fg = fgRef.current;
-    if (!ready || !fg || !state.focusedId || !state.highlightedId) {
-      return;
-    }
-    const focused = canvasNodeById.get(state.focusedId);
-    const candidate = canvasNodeById.get(state.highlightedId);
-    if (!focused || !candidate || !hasLayoutCoords(focused) || !hasLayoutCoords(candidate)) {
-      return;
-    }
-    const camera = fg.camera();
-    const lookAt = {
-      x: focused.x + (candidate.x - focused.x) * 0.35,
-      y: focused.y + (candidate.y - focused.y) * 0.35,
-      z: focused.z + (candidate.z - focused.z) * 0.35,
-    };
-    fg.cameraPosition(
-      {x: camera.position.x, y: camera.position.y, z: camera.position.z},
-      lookAt,
-      reducedMotionRef.current ? 0 : 300,
-    );
-  }, [state.highlightedId, state.focusedId, ready, canvasKey]);
+  }, [state.focusedId, state.highlightedId, overviewRequest, ready, canvasKey, contextLost, size, reducedMotion]);
 
   // --- hover preview: open after ~1s dwell on a non-focused node -------------
   useEffect(() => {
@@ -744,6 +848,7 @@ const ResumeGraphCanvas: FC<{
         hoveredIdRef.current,
         focusNeighborsRef.current.has(id),
       ),
+      current.focusedId === null,
     );
     return object;
   }, []);
@@ -895,7 +1000,9 @@ const ResumeGraphCanvas: FC<{
 });
 
 const vignetteStyle = {
-  background: 'radial-gradient(ellipse at center, rgba(13,13,13,0) 55%, rgba(13,13,13,0.55) 100%)',
+  // The overlay also composites over labels: cap it so even orange text on
+  // its opaque backing retains >4.5:1 contrast at the darkest edge.
+  background: 'radial-gradient(ellipse at center, rgba(13,13,13,0) 55%, rgba(13,13,13,0.25) 100%)',
 } as const;
 
 ResumeGraphCanvas.displayName = 'ResumeGraphCanvas';

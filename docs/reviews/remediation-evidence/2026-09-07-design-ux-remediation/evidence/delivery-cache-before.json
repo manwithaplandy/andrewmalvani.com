@@ -1,0 +1,150 @@
+{
+  "observed_utc": "2026-09-08T07:12:56.391922+00:00",
+  "method": "Two unauthenticated sequential GET requests per public resource; elapsed includes body download. No cache-busting query. Ordinary certificate validation. Small sample, not performance benchmark.",
+  "samples": [
+    {
+      "url": "https://andrewmalvani.com/",
+      "final_url": "https://andrewmalvani.com/",
+      "sample": 1,
+      "status": 200,
+      "elapsed_seconds": 0.704,
+      "bytes": 75401,
+      "headers": {
+        "Date": "Tue, 08 Sep 2026 07:12:53 GMT",
+        "Cache-Control": null,
+        "Age": null,
+        "CF-Cache-Status": "DYNAMIC",
+        "X-Cache": "Miss from cloudfront",
+        "Content-Type": "text/html",
+        "Content-Encoding": null,
+        "Last-Modified": "Thu, 23 Jul 2026 21:57:40 GMT"
+      }
+    },
+    {
+      "url": "https://andrewmalvani.com/",
+      "final_url": "https://andrewmalvani.com/",
+      "sample": 2,
+      "status": 200,
+      "elapsed_seconds": 0.368,
+      "bytes": 75401,
+      "headers": {
+        "Date": "Tue, 08 Sep 2026 07:12:54 GMT",
+        "Cache-Control": null,
+        "Age": null,
+        "CF-Cache-Status": "DYNAMIC",
+        "X-Cache": "Miss from cloudfront",
+        "Content-Type": "text/html",
+        "Content-Encoding": null,
+        "Last-Modified": "Thu, 23 Jul 2026 21:57:40 GMT"
+      }
+    },
+    {
+      "url": "https://andrewmalvani.com/assets/resume.pdf",
+      "final_url": "https://andrewmalvani.com/assets/resume.pdf",
+      "sample": 1,
+      "status": 200,
+      "elapsed_seconds": 0.382,
+      "bytes": 87391,
+      "headers": {
+        "Date": "Tue, 08 Sep 2026 07:12:54 GMT",
+        "Cache-Control": "max-age=14400",
+        "Age": null,
+        "CF-Cache-Status": "MISS",
+        "X-Cache": "Miss from cloudfront",
+        "Content-Type": "application/pdf",
+        "Content-Encoding": null,
+        "Last-Modified": "Thu, 23 Jul 2026 21:57:40 GMT"
+      }
+    },
+    {
+      "url": "https://andrewmalvani.com/assets/resume.pdf",
+      "final_url": "https://andrewmalvani.com/assets/resume.pdf",
+      "sample": 2,
+      "status": 200,
+      "elapsed_seconds": 0.18,
+      "bytes": 87391,
+      "headers": {
+        "Date": "Tue, 08 Sep 2026 07:12:54 GMT",
+        "Cache-Control": "max-age=14400",
+        "Age": "0",
+        "CF-Cache-Status": "HIT",
+        "X-Cache": "Miss from cloudfront",
+        "Content-Type": "application/pdf",
+        "Content-Encoding": null,
+        "Last-Modified": "Thu, 23 Jul 2026 21:57:40 GMT"
+      }
+    },
+    {
+      "url": "https://andrewmalvani.com/stats.json",
+      "final_url": "https://andrewmalvani.com/stats.json",
+      "sample": 1,
+      "status": 200,
+      "elapsed_seconds": 0.34,
+      "bytes": 1622,
+      "headers": {
+        "Date": "Tue, 08 Sep 2026 07:12:55 GMT",
+        "Cache-Control": "max-age=3600",
+        "Age": null,
+        "CF-Cache-Status": "DYNAMIC",
+        "X-Cache": "Miss from cloudfront",
+        "Content-Type": "application/json",
+        "Content-Encoding": null,
+        "Last-Modified": "Tue, 08 Sep 2026 00:00:36 GMT"
+      }
+    },
+    {
+      "url": "https://andrewmalvani.com/stats.json",
+      "final_url": "https://andrewmalvani.com/stats.json",
+      "sample": 2,
+      "status": 200,
+      "elapsed_seconds": 0.406,
+      "bytes": 1622,
+      "headers": {
+        "Date": "Tue, 08 Sep 2026 07:12:55 GMT",
+        "Cache-Control": "max-age=3600",
+        "Age": null,
+        "CF-Cache-Status": "DYNAMIC",
+        "X-Cache": "Miss from cloudfront",
+        "Content-Type": "application/json",
+        "Content-Encoding": null,
+        "Last-Modified": "Tue, 08 Sep 2026 00:00:36 GMT"
+      }
+    },
+    {
+      "url": "https://andrewmalvani.com/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
+      "final_url": "https://andrewmalvani.com/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
+      "sample": 1,
+      "status": 200,
+      "elapsed_seconds": 0.504,
+      "bytes": 91460,
+      "headers": {
+        "Date": "Tue, 08 Sep 2026 07:12:56 GMT",
+        "Cache-Control": "max-age=14400",
+        "Age": null,
+        "CF-Cache-Status": "MISS",
+        "X-Cache": "Miss from cloudfront",
+        "Content-Type": "text/javascript",
+        "Content-Encoding": null,
+        "Last-Modified": "Thu, 23 Jul 2026 21:57:40 GMT"
+      }
+    },
+    {
+      "url": "https://andrewmalvani.com/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
+      "final_url": "https://andrewmalvani.com/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
+      "sample": 2,
+      "status": 200,
+      "elapsed_seconds": 0.198,
+      "bytes": 91460,
+      "headers": {
+        "Date": "Tue, 08 Sep 2026 07:12:56 GMT",
+        "Cache-Control": "max-age=14400",
+        "Age": "0",
+        "CF-Cache-Status": "HIT",
+        "X-Cache": "Miss from cloudfront",
+        "Content-Type": "text/javascript",
+        "Content-Encoding": null,
+        "Last-Modified": "Thu, 23 Jul 2026 21:57:40 GMT"
+      }
+    }
+  ]
+}

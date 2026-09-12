@@ -1,0 +1,52 @@
+{
+  "build": "Copied static export after D1 fix4180436; no rebuild or production edit",
+  "traffic": "All non-local requests blocked; empty invalid contact form never submitted",
+  "viewport": {
+    "width": 320,
+    "height": 844
+  },
+  "observations": [
+    {
+      "label": "contact-anchor",
+      "url": "/#contact",
+      "scrollY": 8872,
+      "menuBounds": {
+        "x": 264,
+        "y": 8,
+        "width": 48,
+        "height": 48
+      },
+      "overlappingText": [],
+      "overlappingControls": [],
+      "focused": ""
+    },
+    {
+      "label": "contact-invalid-focus",
+      "url": "/#contact",
+      "scrollY": 8872,
+      "menuBounds": {
+        "x": 264,
+        "y": 8,
+        "width": 48,
+        "height": 48
+      },
+      "overlappingText": [],
+      "overlappingControls": [],
+      "focused": "contact-name"
+    },
+    {
+      "label": "portfolio-anchor",
+      "url": "/#portfolio",
+      "scrollY": 6821,
+      "menuBounds": {
+        "x": 264,
+        "y": 8,
+        "width": 48,
+        "height": 48
+      },
+      "overlappingText": [],
+      "overlappingControls": [],
+      "focused": ""
+    }
+  ]
+}

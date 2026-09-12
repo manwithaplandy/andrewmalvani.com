@@ -1,0 +1,15 @@
+yarn run v1.22.22
+$ playwright test tests/e2e/homepage.spec.ts --project=chromium
+
+Running 7 tests using 1 worker
+
+  ✓  1 [chromium] › tests/e2e/homepage.spec.ts:4:7 › homepage fits 320px (541ms)
+  ✓  2 [chromium] › tests/e2e/homepage.spec.ts:4:7 › homepage fits 390px (327ms)
+  ✓  3 [chromium] › tests/e2e/homepage.spec.ts:4:7 › homepage fits 430px (345ms)
+  ✓  4 [chromium] › tests/e2e/homepage.spec.ts:20:5 › homepage fits with 200% text (454ms)
+  ✓  5 [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 320px with 200% text (264ms)
+  ✓  6 [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 390px with 200% text (268ms)
+  ✓  7 [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 430px with 200% text (254ms)
+
+  7 passed (4.0s)
+Done in 4.61s.

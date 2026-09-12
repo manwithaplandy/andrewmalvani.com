@@ -1,0 +1,17 @@
+test_published_stats_uses_short_browser_and_shared_cache_without_changing_ownership (test_cache_metadata.CacheMetadataTests.test_published_stats_uses_short_browser_and_shared_cache_without_changing_ownership) ... FAIL
+
+======================================================================
+FAIL: test_published_stats_uses_short_browser_and_shared_cache_without_changing_ownership (test_cache_metadata.CacheMetadataTests.test_published_stats_uses_short_browser_and_shared_cache_without_changing_ownership)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/stats/test_cache_metadata.py", line 24, in test_published_stats_uses_short_browser_and_shared_cache_without_changing_ownership
+    self.assertEqual(put.call_args.kwargs['CacheControl'], 'public, max-age=60, s-maxage=300')
+AssertionError: 'max-age=3600' != 'public, max-age=60, s-maxage=300'
+- max-age=3600
++ public, max-age=60, s-maxage=300
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.124s
+
+FAILED (failures=1)

@@ -1,4 +1,4 @@
-import {StaticImageData} from 'next/image';
+import type {StaticImageData} from 'next/image';
 import {FC, ForwardRefExoticComponent, SVGProps} from 'react';
 
 import {IconProps} from '../components/Icon/Icon';
@@ -21,7 +21,7 @@ export interface HomepageMeta {
  * Hero section
  */
 export interface Hero {
-  imageSrc: string;
+  imageSrc: StaticImageData | string;
   name: string;
   description: JSX.Element;
   actions: HeroActionItem[];
@@ -39,7 +39,7 @@ interface HeroActionItem {
  * About section
  */
 export interface About {
-  profileImageSrc?: string;
+  profileImageSrc?: StaticImageData | string;
   description: string;
   aboutItems: AboutItem[];
 }
@@ -74,6 +74,32 @@ export interface StatsDailyPoint {
   views: number;
 }
 
+export interface StatsSource {
+  status: 'current' | 'stale' | 'unavailable' | 'unknown';
+  since: string | null;
+  through: string | null;
+  lastSuccessfulUpdate: string | null;
+  scope: 'site-document-requests' | 'zone-requests';
+}
+
+export interface StatsObservation {
+  date: string;
+  views: number | null;
+  status: 'observed' | 'provisional' | 'missing';
+}
+
+export interface StatsViewModel {
+  generatedOn: string;
+  documentRequests: number | null;
+  dailyUniqueVisits: number | null;
+  documentSource: StatsSource;
+  edgeSource: StatsSource;
+  observations: StatsObservation[];
+  topPages: StatsDatum[];
+  topReferrers: StatsDatum[];
+  countries: StatsDatum[];
+}
+
 export interface StatsPayload {
   totalViews: number;
   lastUpdated: string;
@@ -103,11 +129,21 @@ export interface SkillGroup {
 /**
  * Portfolio section
  */
+export interface PortfolioCaseStudy {
+  problem: string;
+  contribution: string;
+  decision: string;
+  outcome: string;
+}
+
 export interface PortfolioItem {
   title: string;
   description: string;
   url: string;
   image: string | StaticImageData;
+  imageAlt: string;
+  imageFit?: 'cover' | 'contain';
+  caseStudy?: PortfolioCaseStudy;
 }
 
 /**
@@ -125,6 +161,8 @@ export interface Certification {
   issuer: string;
   date: string;
   credentialId?: string;
+  verificationUrl?: string;
+  status?: 'current' | 'historical';
   image?: string | StaticImageData;
 }
 

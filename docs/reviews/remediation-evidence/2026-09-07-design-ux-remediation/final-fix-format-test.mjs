@@ -1,0 +1,13 @@
+import {readFileSync,writeFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import assert from 'node:assert/strict';
+import * as prettier from '../../../node_modules/prettier/index.mjs';
+import ts from '../../../node_modules/typescript/lib/typescript.js';
+const file='tests/e2e/contact-submission.spec.ts';
+const before=readFileSync(file,'utf8');
+const after=await prettier.format(before,{...await prettier.resolveConfig(file),filepath:file});
+const emit=source=>ts.transpileModule(source,{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ESNext,sourceMap:false}}).outputText;
+assert.equal(emit(before),emit(after),'Formatting must not change emitted test JavaScript');
+writeFileSync(file,after);
+const sha=s=>createHash('sha256').update(s).digest('hex');
+console.log(JSON.stringify({file,beforeSha256:sha(before),afterSha256:sha(after),emittedJavaScriptIdentical:true,action:'Explicit Prettier formatting after final browser run; no behavior change'}));

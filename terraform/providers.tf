@@ -1,4 +1,13 @@
 terraform {
+  required_providers {
+    # Transitional until the first reviewed plan removes the two former
+    # archive_file data objects from state. Keep the existing locked version.
+    archive = {
+      source  = "hashicorp/archive"
+      version = "= 2.4.2"
+    }
+  }
+
   backend "s3" {
     bucket       = "terraform-backend-bucket-blindly-joint-moth"
     key          = "terraform.tfstate"

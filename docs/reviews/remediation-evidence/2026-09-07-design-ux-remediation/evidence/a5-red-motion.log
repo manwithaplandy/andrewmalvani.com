@@ -1,0 +1,121 @@
+yarn run v1.22.22
+$ playwright test tests/e2e/motion.spec.ts --project=chromium
+
+Running 4 tests using 1 worker
+
+  ✘  1 [chromium] › tests/e2e/motion.spec.ts:37:5 › particles clear on live reduction and resume with one draw per frame (6.2s)
+  ✘  2 [chromium] › tests/e2e/motion.spec.ts:74:5 › an initially reduced visit keeps particles clear and menu usable without sliding (530ms)
+  ✘  3 [chromium] › tests/e2e/motion.spec.ts:89:5 › live reduction immediately exposes pending reveals and disables menu movement (896ms)
+  ✓  4 [chromium] › tests/e2e/motion.spec.ts:107:5 › particles retain offscreen and background visibility gates across preference changes (1.3s)
+
+
+  1) [chromium] › tests/e2e/motion.spec.ts:37:5 › particles clear on live reduction and resume with one draw per frame 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      63 |   for (let toggle = 0; toggle < 3; toggle += 1) {
+      64 |     await page.emulateMedia({reducedMotion: 'reduce'});
+    > 65 |     await expect.poll(() => isClear(canvas)).toBe(true);
+         |                                              ^
+      66 |     const still = await captureAfterFrames(canvas);
+      67 |     expect(await captureAfterFrames(canvas)).toBe(still);
+      68 |     await page.emulateMedia({reducedMotion: 'no-preference'});
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/motion.spec.ts:65:46
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-motion-particles-clear-bf02b-ume-with-one-draw-per-frame-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-motion-particles-clear-bf02b-ume-with-one-draw-per-frame-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-motion-particles-clear-bf02b-ume-with-one-draw-per-frame-chromium/trace.zip
+    Usage:
+
+        yarn playwright show-trace test-results/e2e-motion-particles-clear-bf02b-ume-with-one-draw-per-frame-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/e2e/motion.spec.ts:74:5 › an initially reduced visit keeps particles clear and menu usable without sliding 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      29 |     return samples;
+      30 |   });
+    > 31 |   expect(frames.every(sample => sample.x === 0 && sample.duration === '0s')).toBe(true);
+         |                                                                              ^
+      32 |   await expect(menu.getByRole('link', {name: 'Experience', exact: true})).toBeVisible();
+      33 |   await page.getByRole('button', {name: 'Close menu', exact: true}).click();
+      34 |   await expect(menu).toBeHidden();
+        at expectInstantMenu (/Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/motion.spec.ts:31:78)
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/motion.spec.ts:81:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-motion-an-initially-re-7344c-menu-usable-without-sliding-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-motion-an-initially-re-7344c-menu-usable-without-sliding-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-motion-an-initially-re-7344c-menu-usable-without-sliding-chromium/trace.zip
+    Usage:
+
+        yarn playwright show-trace test-results/e2e-motion-an-initially-re-7344c-menu-usable-without-sliding-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/e2e/motion.spec.ts:89:5 › live reduction immediately exposes pending reveals and disables menu movement 
+
+    Error: expect(locator).toHaveCSS(expected) failed
+
+    Locator:  locator('#portfolio .grid > div').first()
+    Expected: "1"
+    Received: "0"
+    Timeout:  500ms
+
+    Call log:
+      - Expect "toHaveCSS" locator('#portfolio .grid > div').first() with timeout 500ms
+      - waiting for locator('#portfolio .grid > div').first()
+        7 × locator resolved to <div class="translate-y-8 opacity-0">…</div>
+          - unexpected value "0"
+
+
+      94 |   await expect(reveal).toHaveCSS('opacity', '0');
+      95 |   await page.emulateMedia({reducedMotion: 'reduce'});
+    > 96 |   await expect(reveal).toHaveCSS('opacity', '1', {timeout: 500});
+         |                        ^
+      97 |   await expect(reveal).toHaveCSS('transition-duration', '0s');
+      98 |   await expect(reveal).toHaveCSS('transition-delay', '0s');
+      99 |   const transform = await reveal.evaluate(node => new DOMMatrix(getComputedStyle(node).transform).m42);
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/motion.spec.ts:96:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-motion-live-reduction--a5c72--and-disables-menu-movement-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-motion-live-reduction--a5c72--and-disables-menu-movement-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-motion-live-reduction--a5c72--and-disables-menu-movement-chromium/trace.zip
+    Usage:
+
+        yarn playwright show-trace test-results/e2e-motion-live-reduction--a5c72--and-disables-menu-movement-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    [chromium] › tests/e2e/motion.spec.ts:37:5 › particles clear on live reduction and resume with one draw per frame 
+    [chromium] › tests/e2e/motion.spec.ts:74:5 › an initially reduced visit keeps particles clear and menu usable without sliding 
+    [chromium] › tests/e2e/motion.spec.ts:89:5 › live reduction immediately exposes pending reveals and disables menu movement 
+  1 passed (12.0s)
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

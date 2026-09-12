@@ -1,0 +1,18 @@
+{
+  "currentDocumentLinksChecked": 145,
+  "missingLinks": [],
+  "originalFindingIdsAndSeverities": 30,
+  "statusCounts": {
+    "verified": 11,
+    "implemented": 14,
+    "blocked": 5,
+    "open": 0
+  },
+  "historicalReviewBodyUnchanged": true,
+  "licenseUnchanged": true,
+  "visiblePdfSourceUnchanged": true,
+  "archiveEntriesVerified": 525,
+  "gzipRoundTrips": 25,
+  "sixTrackedScratchCopiesIdentical": true,
+  "gitDiffCheck": "pass"
+}

@@ -1,0 +1,12 @@
+Completed local checks (recorded from tool output, no unchanged reruns):
+$ terraform -chdir=terraform fmt statsLambda.tf
+statsLambda.tf
+$ terraform -chdir=terraform fmt -check
+[no output; exit 0]
+$ /private/tmp/react-resume-actionlint-1.7.12/actionlint .github/workflows/main.yml
+[no output; exit 0]
+$ terraform -chdir=terraform validate -no-color
+Success! The configuration is valid.
+[exit 0; existing cached/locked providers; no remote state/apply]
+$ git diff --check
+[no output; exit 0]

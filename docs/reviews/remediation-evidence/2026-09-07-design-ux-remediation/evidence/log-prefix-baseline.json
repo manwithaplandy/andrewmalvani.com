@@ -1,0 +1,31 @@
+{
+  "observed_utc": "2026-09-08T07:17:28.219871+00:00",
+  "bucket": "mostly-upward-lion-log-bucket",
+  "method": "Read-only ListObjectsV2 metadata aggregation. No object body or raw request records retrieved; object keys are not retained.",
+  "prefixes": [
+    {
+      "prefix": "cloudfront-logs/",
+      "current_objects": 11894,
+      "current_bytes": 15127314,
+      "pages": 12,
+      "complete_listing": true,
+      "note": "Current visible objects only; versions/delete markers excluded. Listing is not an atomic snapshot. Capped at 100 pages per prefix."
+    },
+    {
+      "prefix": "website-log/",
+      "current_objects": 71198,
+      "current_bytes": 58489829,
+      "pages": 72,
+      "complete_listing": true,
+      "note": "Current visible objects only; versions/delete markers excluded. Listing is not an atomic snapshot. Capped at 100 pages per prefix."
+    },
+    {
+      "prefix": "this-bucket-log/",
+      "current_objects": 100000,
+      "current_bytes": 113812996,
+      "pages": 100,
+      "complete_listing": false,
+      "note": "Current visible objects only; versions/delete markers excluded. Listing is not an atomic snapshot. Capped at 100 pages per prefix."
+    }
+  ]
+}

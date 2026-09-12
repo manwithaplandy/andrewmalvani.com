@@ -1,0 +1,22 @@
+{
+  "observedAt": "2026-09-08T13:05:43.241748+00:00",
+  "providers": {
+    "provider[\"registry.terraform.io/hashicorp/archive\"]": 2,
+    "provider[\"registry.terraform.io/hashicorp/aws\"].us_east_1": 1,
+    "provider[\"registry.terraform.io/hashicorp/aws\"]": 56,
+    "provider[\"registry.terraform.io/hashicorp/random\"]": 1
+  },
+  "nullOrArchiveResources": [
+    {
+      "mode": "data",
+      "type": "archive_file",
+      "name": "sns_publish_lambda_function"
+    },
+    {
+      "mode": "data",
+      "type": "archive_file",
+      "name": "stats_aggregator_function"
+    }
+  ],
+  "scope": "Read-only state provider inventory; not a Terraform plan or live-resource refresh."
+}

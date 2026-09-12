@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-09-08T15:07:00.805149+00:00",
+  "reviewedHead": "288a6c58a50f76fdf14ea56d5a80e444979efbcd",
+  "filesVerified": 529,
+  "gzipDiffs": 25,
+  "integrityFailures": [],
+  "sourceWorkspaceChangedSinceSnapshot": [
+    "index-review.py",
+    "progress.md"
+  ],
+  "secretSignatureCandidates": [],
+  "rawStateOrPlanStructureCandidates": [],
+  "nonUtf8HistoricalText": [],
+  "limits": "Independent byte/hash/safe-path/round-trip verification. Signature/structure checks cannot prove secret absence; controlled provenance and private-file exclusion remain required. Source workspace gained controller review records after the committed archive snapshot."
+}

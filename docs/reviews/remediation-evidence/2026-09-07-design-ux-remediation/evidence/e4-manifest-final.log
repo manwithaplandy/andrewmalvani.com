@@ -1,0 +1,46 @@
+TAP version 13
+# Subtest: manifest classifies candidate bytes, includes HTML/CSS dependencies and excludes stats ownership
+ok 1 - manifest classifies candidate bytes, includes HTML/CSS dependencies and excludes stats ownership
+  ---
+  duration_ms: 13.067958
+  type: 'test'
+  ...
+# Subtest: missing direct or CSS dependency rejects before publication
+ok 2 - missing direct or CSS dependency rejects before publication
+  ---
+  duration_ms: 7.066584
+  type: 'test'
+  ...
+# Subtest: empty recovery HTML cannot replace the checked recovery document
+ok 3 - empty recovery HTML cannot replace the checked recovery document
+  ---
+  duration_ms: 2.678417
+  type: 'test'
+  ...
+# Subtest: symlink and mutated or forged manifest reject before the first AWS operation
+ok 4 - symlink and mutated or forged manifest reject before the first AWS operation
+  ---
+  duration_ms: 7.461292
+  type: 'test'
+  ...
+# Subtest: actual CLI refreshes unchanged metadata, preserves old hashes/stats/unrelated keys and stages assets before 404
+ok 5 - actual CLI refreshes unchanged metadata, preserves old hashes/stats/unrelated keys and stages assets before 404
+  ---
+  duration_ms: 654.274041
+  type: 'test'
+  ...
+# Subtest: failed asset upload stops before publishing recovery HTML
+ok 6 - failed asset upload stops before publishing recovery HTML
+  ---
+  duration_ms: 4.691458
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 738.98075

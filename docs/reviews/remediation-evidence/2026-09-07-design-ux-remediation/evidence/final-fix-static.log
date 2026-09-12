@@ -1,0 +1,11 @@
+yarn run v1.22.22
+$ tsc --noEmit --incremental false
+Done in 2.14s.
+yarn run v1.22.22
+$ tsc -p tsconfig.tests.json --noEmit --incremental false
+Done in 1.13s.
+yarn run v1.22.22
+$ eslint './src/**/*.{js,jsx,ts,tsx}' --max-warnings=0
+Done in 1.35s.
+Checking formatting...
+All matched files use Prettier code style!

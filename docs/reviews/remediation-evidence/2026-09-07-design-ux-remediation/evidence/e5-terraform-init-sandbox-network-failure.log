@@ -1,0 +1,39 @@
+Initializing provider plugins...
+- Reusing previous version of hashicorp/archive from the dependency lock file
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Reusing previous version of hashicorp/random from the dependency lock file
+
+Error: Failed to query available provider packages
+
+Could not retrieve the list of available versions for provider
+hashicorp/archive: could not connect to registry.terraform.io: failed to
+request discovery document: Get
+"https://registry.terraform.io/.well-known/terraform.json": dial tcp: lookup
+registry.terraform.io: no such host
+
+To see which modules are currently depending on hashicorp/archive and what
+versions are specified, run the following command:
+    terraform providers
+
+Error: Failed to query available provider packages
+
+Could not retrieve the list of available versions for provider hashicorp/aws:
+could not connect to registry.terraform.io: failed to request discovery
+document: Get "https://registry.terraform.io/.well-known/terraform.json":
+dial tcp: lookup registry.terraform.io: no such host
+
+To see which modules are currently depending on hashicorp/aws and what
+versions are specified, run the following command:
+    terraform providers
+
+Error: Failed to query available provider packages
+
+Could not retrieve the list of available versions for provider
+hashicorp/random: could not connect to registry.terraform.io: failed to
+request discovery document: Get
+"https://registry.terraform.io/.well-known/terraform.json": dial tcp: lookup
+registry.terraform.io: no such host
+
+To see which modules are currently depending on hashicorp/random and what
+versions are specified, run the following command:
+    terraform providers

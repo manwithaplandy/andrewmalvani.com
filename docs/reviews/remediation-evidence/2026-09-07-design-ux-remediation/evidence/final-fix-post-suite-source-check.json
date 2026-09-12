@@ -1,0 +1,32 @@
+{
+  "comparedSourceConfigContentFiles": 144,
+  "changedFiles": [],
+  "browserResult": "100/100 pass, no skips; 3.5m",
+  "preservedArtifacts": [
+    "evidence/final-fix-final-run-artifacts/.last-run.json",
+    "evidence/final-fix-final-run-artifacts/e2e-graph-layout-graph-con-421d6-ls-remain-usable-at-390x844-chromium/settled-canvas.png",
+    "evidence/final-fix-final-run-artifacts/e2e-graph-layout-graph-con-421d6-ls-remain-usable-at-390x844-chromium/settled.png",
+    "evidence/final-fix-final-run-artifacts/e2e-stats-producer-actual--5ac1e-atible-with-the-reader-zero-chromium/producer-zero.png",
+    "evidence/final-fix-final-run-artifacts/e2e-stats-producer-actual--7bd48-ble-with-the-reader-current-chromium/producer-current.png",
+    "evidence/final-fix-final-run-artifacts/e2e-stats-producer-actual--5b076-tible-with-the-reader-stale-chromium/producer-stale.png",
+    "evidence/final-fix-final-run-artifacts/e2e-graph-discovery-canoni-943c6-l-labels-readable-at-1280px-chromium/label-rendering.json",
+    "evidence/final-fix-final-run-artifacts/e2e-graph-discovery-canoni-943c6-l-labels-readable-at-1280px-chromium/overview-readable-1280.png",
+    "evidence/final-fix-final-run-artifacts/e2e-graph-discovery-canoni-258b6-al-labels-readable-at-390px-chromium/label-rendering.json",
+    "evidence/final-fix-final-run-artifacts/e2e-graph-discovery-canoni-258b6-al-labels-readable-at-390px-chromium/overview-readable-390.png",
+    "evidence/final-fix-final-run-artifacts/e2e-graph-discovery-a-phon-8c45a--views-and-recover-overview-chromium/phone-selected-education.png",
+    "evidence/final-fix-final-run-artifacts/e2e-graph-access-cross-pag-dbddb-aph-after-initial-selection-chromium/graph-restored-after-resume.png",
+    "evidence/final-fix-final-run-artifacts/e2e-graph-layout-graph-con-3ccdc-s-remain-usable-at-1280x900-chromium/settled.png",
+    "evidence/final-fix-final-run-artifacts/e2e-graph-access-cross-pag-40b0b-aph-after-changed-selection-chromium/graph-restored-after-resume.png",
+    "evidence/final-fix-final-run-artifacts/e2e-graph-access-cross-pag-fcd12-es-graph-after-changed-view-chromium/graph-restored-after-resume.png",
+    "evidence/final-fix-final-run-artifacts/e2e-stats-producer-partial-10145-epted-dataset-partial-empty-chromium/partial-empty.png",
+    "evidence/final-fix-final-run-artifacts/e2e-graph-layout-graph-con-f89eb-ls-remain-usable-at-844x390-chromium/settled.png",
+    "evidence/final-fix-final-run-artifacts/e2e-graph-layout-small-gra-75bc3-st-on-its-rendered-surfaces-chromium/rendered-contrast.json",
+    "evidence/final-fix-final-run-artifacts/e2e-graph-layout-small-gra-75bc3-st-on-its-rendered-surfaces-chromium/attachments/rendered-contrast-json-6b64dd7f764f830306ba073b80236fc1cda92ee8.json",
+    "evidence/final-fix-final-run-artifacts/e2e-graph-discovery-animat-f7d6b-camera-after-orbit-and-zoom-chromium/overview.png",
+    "evidence/final-fix-final-run-artifacts/e2e-graph-layout-graph-con-803d6-ls-remain-usable-at-320x720-chromium/settled-canvas.png",
+    "evidence/final-fix-final-run-artifacts/e2e-graph-layout-graph-con-803d6-ls-remain-usable-at-320x720-chromium/settled.png",
+    "evidence/final-fix-final-run-artifacts/e2e-graph-discovery-manual-e6e53-camera-after-orbit-and-zoom-chromium/overview.png",
+    "evidence/final-fix-final-run-artifacts/e2e-stats-producer-partial-ba2c7-epted-dataset-partial-prior-chromium/partial-prior.png",
+    "evidence/final-fix-final-run-artifacts/e2e-graph-discovery-system-c8657-camera-after-orbit-and-zoom-chromium/overview.png"
+  ]
+}

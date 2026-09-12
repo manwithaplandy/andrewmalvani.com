@@ -1,0 +1,38 @@
+yarn run v1.22.22
+$ /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/node_modules/.bin/playwright test tests/unit/statsPayload.spec.ts --project=chromium -g 'stale migrated'
+
+Running 1 test using 1 worker
+
+  ✘  1 [chromium] › tests/unit/statsPayload.spec.ts:141:5 › stale migrated measurements may have unknown success timing while current requires a success date (6ms)
+
+
+  1) [chromium] › tests/unit/statsPayload.spec.ts:141:5 › stale migrated measurements may have unknown success timing while current requires a success date 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 2
+    Received: null
+
+      144 |   migrated.sources.cloudflare.lastSuccessfulUpdate = null;
+      145 |   const stale = normalizeStatsPayload(migrated, '2026-09-08');
+    > 146 |   expect(stale?.dailyUniqueVisits).toBe(2);
+          |                                    ^
+      147 |   expect(stale?.edgeSource.status).toBe('stale');
+      148 |   expect(stale?.edgeSource.lastSuccessfulUpdate).toBeNull();
+      149 |   expect(stale?.edgeSource.since).toBe('2026-09-02');
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/unit/statsPayload.spec.ts:146:36
+
+    Error Context: test-results/unit-statsPayload-stale-mi-bfff5-ent-requires-a-success-date-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/unit-statsPayload-stale-mi-bfff5-ent-requires-a-success-date-chromium/trace.zip
+    Usage:
+
+        yarn playwright show-trace test-results/unit-statsPayload-stale-mi-bfff5-ent-requires-a-success-date-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/unit/statsPayload.spec.ts:141:5 › stale migrated measurements may have unknown success timing while current requires a success date 
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

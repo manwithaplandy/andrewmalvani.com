@@ -1,0 +1,20 @@
+C2 contact browser evidence, 2026-09-08
+
+Viewport: 320 x 844 CSS pixels
+External traffic policy: all non-local traffic blocked; contact OPTIONS and POST intercepted
+Synthetic POST requests captured: 2
+
+Placeholder measurement (#contact-message::placeholder):
+- Foreground: rgb(163, 163, 163)
+- Background: rgb(23, 23, 23)
+- Opacity: 1
+- Rendered foreground: rgb(163, 163, 163)
+- WCAG contrast ratio: 7.11:1
+
+Captured states:
+- c2-contact-pending-320.png: settled pending state with readable, read-only synthetic fields and sending announcement above the fields
+- c2-contact-uncertainty-320.png: network-abort uncertainty state above the preserved synthetic draft, with enabled retry and direct-email link
+- Pending live-status busy ancestor: none
+- Uncertainty feedback precedes the first preserved field in DOM order: true
+
+OS screen-reader speech was unavailable. Browser semantics were verified separately by the automated form tests: read-only fields remain focusable, the button is disabled, the pending message has status semantics, and no `aria-busy="true"` ancestor can defer that live update.

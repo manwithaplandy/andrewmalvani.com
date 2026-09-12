@@ -15,7 +15,14 @@ export const siteConfig = {
     jobTitle: experience[0].title,
     location: aboutItem('Location'),
     email: contactItem(ContactType.Email)?.text ?? '',
-    alumniOf: ['Georgia Institute of Technology', 'University of California, Santa Barbara'],
+    alumniOf: ['University of California, Santa Barbara'],
+    studiesAt: [
+      {
+        name: 'Georgia Institute of Technology',
+        program: 'M.S. Computer Science',
+        expectedCompletion: '2028',
+      },
+    ],
     worksFor: aboutItem('Employment'),
     worksForUrl: 'https://www.ga.com',
     sameAs: socialLinks.map(s => s.href),

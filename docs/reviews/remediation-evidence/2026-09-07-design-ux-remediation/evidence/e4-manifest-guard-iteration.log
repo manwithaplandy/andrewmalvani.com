@@ -1,0 +1,78 @@
+TAP version 13
+# Subtest: manifest classifies candidate bytes, includes HTML/CSS dependencies and excludes stats ownership
+ok 1 - manifest classifies candidate bytes, includes HTML/CSS dependencies and excludes stats ownership
+  ---
+  duration_ms: 13.219166
+  type: 'test'
+  ...
+# Subtest: missing direct or CSS dependency rejects before publication
+ok 2 - missing direct or CSS dependency rejects before publication
+  ---
+  duration_ms: 7.561709
+  type: 'test'
+  ...
+# Subtest: empty recovery HTML cannot replace the checked recovery document
+ok 3 - empty recovery HTML cannot replace the checked recovery document
+  ---
+  duration_ms: 3.503584
+  type: 'test'
+  ...
+# Subtest: symlink and mutated or forged manifest reject before the first AWS operation
+not ok 4 - symlink and mutated or forged manifest reject before the first AWS operation
+  ---
+  duration_ms: 7.107625
+  type: 'test'
+  location: '/Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/scripts/tests/static-publication.test.mjs:58:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /manifest/. Input:
+    
+    'AssertionError [ERR_ASSERTION]: Candidate page has no static references: index.html'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual:
+  error: 'Candidate page has no static references: index.html'
+  stack: |-
+    createManifest (file:///Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/scripts/publish_static_site.mjs:65:12)
+    publishManifest (file:///Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/scripts/publish_static_site.mjs:86:30)
+    file:///Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/scripts/tests/static-publication.test.mjs:65:23
+    getActual (node:assert:531:5)
+    Function.throws (node:assert:677:24)
+    TestContext.<anonymous> (file:///Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/scripts/tests/static-publication.test.mjs:65:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/scripts/tests/static-publication.test.mjs:65:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: actual CLI refreshes unchanged metadata, preserves old hashes/stats/unrelated keys and stages assets before 404
+ok 5 - actual CLI refreshes unchanged metadata, preserves old hashes/stats/unrelated keys and stages assets before 404
+  ---
+  duration_ms: 724.292959
+  type: 'test'
+  ...
+# Subtest: failed asset upload stops before publishing recovery HTML
+ok 6 - failed asset upload stops before publishing recovery HTML
+  ---
+  duration_ms: 4.427542
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 5
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 807.793667

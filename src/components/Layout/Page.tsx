@@ -20,6 +20,11 @@ const personSchemaJson = JSON.stringify({
   email: `mailto:${person.email}`,
   worksFor: {'@type': 'Organization', name: person.worksFor, url: person.worksForUrl},
   alumniOf: person.alumniOf.map(name => ({'@type': 'CollegeOrUniversity', name})),
+  memberOf: person.studiesAt.map(study => ({
+    '@type': 'CollegeOrUniversity',
+    name: study.name,
+    description: `${study.program} student, expected ${study.expectedCompletion}`,
+  })),
   address: {'@type': 'PostalAddress', addressLocality: person.location},
   knowsAbout: person.knowsAbout,
   sameAs: person.sameAs,
@@ -34,7 +39,7 @@ const websiteSchemaJson = JSON.stringify({
 });
 
 const Page: NextPage<PropsWithChildren<HomepageMeta>> = memo(({children, title, description}) => {
-  const {asPath: pathname} = useRouter();
+  const {pathname} = useRouter();
   const canonical = `${siteUrl}${pathname}`;
 
   return (
@@ -74,7 +79,7 @@ const Page: NextPage<PropsWithChildren<HomepageMeta>> = memo(({children, title, 
         <script dangerouslySetInnerHTML={{__html: personSchemaJson}} key="ld-person" type="application/ld+json" />
         <script dangerouslySetInnerHTML={{__html: websiteSchemaJson}} key="ld-website" type="application/ld+json" />
       </Head>
-      {children}
+      <div id="top">{children}</div>
     </>
   );
 });

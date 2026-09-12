@@ -1,0 +1,211 @@
+yarn run v1.22.22
+$ playwright test tests/e2e/homepage.spec.ts --project=chromium --grep 'rows remain readable'
+
+Running 3 tests using 1 worker
+
+  ✘  1 [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 320px with 200% text (545ms)
+  ✘  2 [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 390px with 200% text (357ms)
+  ✘  3 [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 430px with 200% text (388ms)
+
+
+  1) [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 320px with 200% text 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 37
+
+    - Array []
+    + Array [
+    +   "Location:Arizona: SPAN",
+    +   "Nationality:American (US Citizen): SPAN",
+    +   "Interests:Camping, Motorsports, Golf: SPAN",
+    +   "Employment:General Atomics: SPAN",
+    +   "General Atomics•June 2024 - Present: SPAN",
+    +   "General Atomics•February 2023 - June 2024: SPAN",
+    +   "Tillster, Inc.•October 2021 - February 2023: SPAN",
+    +   "Reynolds & Reynolds•April 2018 - October 2021: SPAN",
+    +   "Georgia Tech•Expected 2028: SPAN",
+    +   "UC Santa Barbara•September 2017: SPAN",
+    +   "andrewrmalvani@gmail.com: A",
+    +   "manwithaplandy: A",
+    +   "DockerExpertDocker: Expert: tier and indicators",
+    +   "TerraformExpertTerraform: Expert: tier and indicators",
+    +   "KubernetesFamiliarKubernetes: Familiar: tier and indicators",
+    +   "CI/CDExpertCI/CD: Expert: tier and indicators",
+    +   "TerragruntProficientTerragrunt: Proficient: tier and indicators",
+    +   "PythonExpertPython: Expert: tier and indicators",
+    +   "Javascript & Typescript (Node, React)ProficientJavascript & Typescript (Node, React): Proficient: tier and indicators",
+    +   "BashProficientBash: Proficient: tier and indicators",
+    +   "PowershellFamiliarPowershell: Familiar: tier and indicators",
+    +   "RAGExpertRAG: Expert: tier and indicators",
+    +   "AgentsExpertAgents: Expert: tier and indicators",
+    +   "LangChain & LangGraphProficientLangChain & LangGraph: Proficient: tier and indicators",
+    +   "MCPExpertMCP: Expert: tier and indicators",
+    +   "GraphRAGProficientGraphRAG: Proficient: tier and indicators",
+    +   "Semantic KernelProficientSemantic Kernel: Proficient: tier and indicators",
+    +   "LiteLLMExpertLiteLLM: Expert: tier and indicators",
+    +   "Claude Code & SDKExpertClaude Code & SDK: Expert: tier and indicators",
+    +   "AWSProficientAWS: Proficient: tier and indicators",
+    +   "AzureExpertAzure: Expert: tier and indicators",
+    +   "AWS BedrockExpertAWS Bedrock: Expert: tier and indicators",
+    +   "Azure AI FoundryExpertAzure AI Foundry: Expert: tier and indicators",
+    +   "GCPFamiliarGCP: Familiar: tier and indicators",
+    +   "CloudflareFamiliarCloudflare: Familiar: tier and indicators",
+    + ]
+
+      70 |     expect(layout.fontSize).toBe('32px');
+      71 |     expect(await page.locator('#about, #resume, #contact').allTextContents()).toEqual(originalText);
+    > 72 |     expect.soft(layout.failures).toEqual([]);
+         |                                  ^
+      73 |     expect(layout.scrollWidth).toBeLessThanOrEqual(layout.viewport + 1);
+      74 |     await expect(page.locator('#contact a[href="mailto:andrewrmalvani@gmail.com"]')).toBeVisible();
+      75 |   });
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/homepage.spec.ts:72:34
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 321
+    Received:    478
+
+      71 |     expect(await page.locator('#about, #resume, #contact').allTextContents()).toEqual(originalText);
+      72 |     expect.soft(layout.failures).toEqual([]);
+    > 73 |     expect(layout.scrollWidth).toBeLessThanOrEqual(layout.viewport + 1);
+         |                                ^
+      74 |     await expect(page.locator('#contact a[href="mailto:andrewrmalvani@gmail.com"]')).toBeVisible();
+      75 |   });
+      76 | }
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/homepage.spec.ts:73:32
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-homepage-homepage-rows-db8c1-able-at-320px-with-200-text-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-homepage-homepage-rows-db8c1-able-at-320px-with-200-text-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-homepage-homepage-rows-db8c1-able-at-320px-with-200-text-chromium/trace.zip
+    Usage:
+
+        yarn playwright show-trace test-results/e2e-homepage-homepage-rows-db8c1-able-at-320px-with-200-text-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 390px with 200% text 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 16
+
+    - Array []
+    + Array [
+    +   "Interests:Camping, Motorsports, Golf: SPAN",
+    +   "andrewrmalvani@gmail.com: A",
+    +   "manwithaplandy: A",
+    +   "KubernetesFamiliarKubernetes: Familiar: tier and indicators",
+    +   "TerragruntProficientTerragrunt: Proficient: tier and indicators",
+    +   "Javascript & Typescript (Node, React)ProficientJavascript & Typescript (Node, React): Proficient: tier and indicators",
+    +   "BashProficientBash: Proficient: tier and indicators",
+    +   "PowershellFamiliarPowershell: Familiar: tier and indicators",
+    +   "LangChain & LangGraphProficientLangChain & LangGraph: Proficient: tier and indicators",
+    +   "GraphRAGProficientGraphRAG: Proficient: tier and indicators",
+    +   "Semantic KernelProficientSemantic Kernel: Proficient: tier and indicators",
+    +   "AWSProficientAWS: Proficient: tier and indicators",
+    +   "GCPFamiliarGCP: Familiar: tier and indicators",
+    +   "CloudflareFamiliarCloudflare: Familiar: tier and indicators",
+    + ]
+
+      70 |     expect(layout.fontSize).toBe('32px');
+      71 |     expect(await page.locator('#about, #resume, #contact').allTextContents()).toEqual(originalText);
+    > 72 |     expect.soft(layout.failures).toEqual([]);
+         |                                  ^
+      73 |     expect(layout.scrollWidth).toBeLessThanOrEqual(layout.viewport + 1);
+      74 |     await expect(page.locator('#contact a[href="mailto:andrewrmalvani@gmail.com"]')).toBeVisible();
+      75 |   });
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/homepage.spec.ts:72:34
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 391
+    Received:    478
+
+      71 |     expect(await page.locator('#about, #resume, #contact').allTextContents()).toEqual(originalText);
+      72 |     expect.soft(layout.failures).toEqual([]);
+    > 73 |     expect(layout.scrollWidth).toBeLessThanOrEqual(layout.viewport + 1);
+         |                                ^
+      74 |     await expect(page.locator('#contact a[href="mailto:andrewrmalvani@gmail.com"]')).toBeVisible();
+      75 |   });
+      76 | }
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/homepage.spec.ts:73:32
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-homepage-homepage-rows-76b52-able-at-390px-with-200-text-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-homepage-homepage-rows-76b52-able-at-390px-with-200-text-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-homepage-homepage-rows-76b52-able-at-390px-with-200-text-chromium/trace.zip
+    Usage:
+
+        yarn playwright show-trace test-results/e2e-homepage-homepage-rows-76b52-able-at-390px-with-200-text-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 430px with 200% text 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 4
+
+    - Array []
+    + Array [
+    +   "andrewrmalvani@gmail.com: A",
+    +   "manwithaplandy: A",
+    + ]
+
+      70 |     expect(layout.fontSize).toBe('32px');
+      71 |     expect(await page.locator('#about, #resume, #contact').allTextContents()).toEqual(originalText);
+    > 72 |     expect.soft(layout.failures).toEqual([]);
+         |                                  ^
+      73 |     expect(layout.scrollWidth).toBeLessThanOrEqual(layout.viewport + 1);
+      74 |     await expect(page.locator('#contact a[href="mailto:andrewrmalvani@gmail.com"]')).toBeVisible();
+      75 |   });
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/homepage.spec.ts:72:34
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 431
+    Received:    478
+
+      71 |     expect(await page.locator('#about, #resume, #contact').allTextContents()).toEqual(originalText);
+      72 |     expect.soft(layout.failures).toEqual([]);
+    > 73 |     expect(layout.scrollWidth).toBeLessThanOrEqual(layout.viewport + 1);
+         |                                ^
+      74 |     await expect(page.locator('#contact a[href="mailto:andrewrmalvani@gmail.com"]')).toBeVisible();
+      75 |   });
+      76 | }
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/homepage.spec.ts:73:32
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-homepage-homepage-rows-67e1a-able-at-430px-with-200-text-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-homepage-homepage-rows-67e1a-able-at-430px-with-200-text-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-homepage-homepage-rows-67e1a-able-at-430px-with-200-text-chromium/trace.zip
+    Usage:
+
+        yarn playwright show-trace test-results/e2e-homepage-homepage-rows-67e1a-able-at-430px-with-200-text-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 320px with 200% text 
+    [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 390px with 200% text 
+    [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 430px with 200% text 
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

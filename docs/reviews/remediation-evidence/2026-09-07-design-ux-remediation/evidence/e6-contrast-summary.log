@@ -1,0 +1,94 @@
+{
+  "states": 61,
+  "below45": 0,
+  "overlays": {
+    "spotlight": {
+      "foreground": [
+        163,
+        163,
+        163
+      ],
+      "background": [
+        23,
+        23,
+        23
+      ],
+      "overlay": [
+        251,
+        146,
+        60
+      ],
+      "alpha": 0.1,
+      "compositedForeground": [
+        171.8,
+        161.3,
+        152.70000000000002
+      ],
+      "compositedBackground": [
+        45.8,
+        35.3,
+        26.7
+      ],
+      "nominalContrast": 7.107152417908661,
+      "compositedContrast": 6.056775398887907
+    },
+    "graphVignette": {
+      "foreground": [
+        212,
+        212,
+        212
+      ],
+      "background": [
+        23,
+        23,
+        23
+      ],
+      "overlay": [
+        13,
+        13,
+        13
+      ],
+      "alpha": 0.25,
+      "compositedForeground": [
+        162.25,
+        162.25,
+        162.25
+      ],
+      "compositedBackground": [
+        20.5,
+        20.5,
+        20.5
+      ],
+      "nominalContrast": 12.09488625090816,
+      "compositedContrast": 7.20660226514781
+    }
+  },
+  "graph": [
+    {
+      "width": 1280,
+      "draws": 15,
+      "minimumProjectedSpriteHeight": 18.199999196821842,
+      "fogPresent": false,
+      "uniquePaints": [
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        }
+      ],
+      "gradient": "radial-gradient(rgba(13, 13, 13, 0) 55%, rgba(13, 13, 13, 0.25) 100%)"
+    },
+    {
+      "width": 320,
+      "draws": 15,
+      "minimumProjectedSpriteHeight": 18.19999926410189,
+      "fogPresent": false,
+      "uniquePaints": [
+        {
+          "background": "#171717",
+          "foreground": "#d4d4d4"
+        }
+      ],
+      "gradient": "radial-gradient(rgba(13, 13, 13, 0) 55%, rgba(13, 13, 13, 0.25) 100%)"
+    }
+  ]
+}

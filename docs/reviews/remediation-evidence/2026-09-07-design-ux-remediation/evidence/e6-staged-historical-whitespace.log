@@ -1,0 +1,684 @@
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:1: trailing whitespace.
++HTTP/2 200 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:2: trailing whitespace.
++date: Tue, 08 Sep 2026 04:22:03 GMT
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:3: trailing whitespace.
++content-type: application/json
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:4: trailing whitespace.
++content-length: 1622
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:5: trailing whitespace.
++last-modified: Tue, 08 Sep 2026 00:00:36 GMT
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:6: trailing whitespace.
++etag: "343db9bfa19b62f6c8592d7a41743886"
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:7: trailing whitespace.
++x-amz-server-side-encryption: AES256
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:8: trailing whitespace.
++cache-control: max-age=3600
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:9: trailing whitespace.
++x-amz-version-id: RmlGfotyfuW9E8fqQGzT2FdvwC7KZNf7
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:10: trailing whitespace.
++accept-ranges: bytes
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:11: trailing whitespace.
++server: cloudflare
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:12: trailing whitespace.
++x-cache: Miss from cloudfront
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:13: trailing whitespace.
++via: 1.1 0c387c49a68a0638a07ea76c5853a28e.cloudfront.net (CloudFront)
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:14: trailing whitespace.
++x-amz-cf-pop: SEA900-P2
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:15: trailing whitespace.
++x-amz-cf-id: ukBCUTd6Ra6IILz1WnxImjSuyzvpGFrXxFc26LuSxRUHc90N0sH5eA==
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:16: trailing whitespace.
++x-frame-options: DENY
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:17: trailing whitespace.
++referrer-policy: strict-origin-when-cross-origin
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:18: trailing whitespace.
++x-content-type-options: nosniff
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:19: trailing whitespace.
++strict-transport-security: max-age=63072000; includeSubDomains; preload
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:20: trailing whitespace.
++cf-cache-status: DYNAMIC
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:21: trailing whitespace.
++speculation-rules: "/cdn-cgi/speculation"
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:22: trailing whitespace.
++report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=BkzyBhFF8BTDLhFtfoE4ZFkzqk9XZJLraHY1ktw0rmq2j2hQJbE0dZb1c8viTwMUU7zWhWOVP3RYZGlzBO3qWXJXkFjO%2FwJ5fuAz3zBWmWywwwA3AUKp2%2BcB1C0EKuRMn%2FOxIQ%3D%3D"}]}
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:23: trailing whitespace.
++nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:24: trailing whitespace.
++cf-ray: a37b2b7dabdcc56d-PHX
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:25: trailing whitespace.
++alt-svc: h3=":443"; ma=86400
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:26: trailing whitespace.
++
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/baseline-stats.headers:26: new blank line at EOF.
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a3-browser-evidence.txt:17: new blank line at EOF.
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a3-pdf-content-check.txt:26: new blank line at EOF.
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a3-resume-candidate.pdf:36: trailing whitespace.
++>> /Rotate 0 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a3-resume-candidate.pdf:49: trailing whitespace.
++/Author (Andrew Malvani) /CreationDate (D:20260907231538-07'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20260907231538-07'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a3-resume-candidate.pdf:67: trailing whitespace.
++0000000000 65535 f 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a3-resume-candidate.pdf:68: trailing whitespace.
++0000000061 00000 n 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a3-resume-candidate.pdf:69: trailing whitespace.
++0000000102 00000 n 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a3-resume-candidate.pdf:70: trailing whitespace.
++0000000209 00000 n 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a3-resume-candidate.pdf:71: trailing whitespace.
++0000000321 00000 n 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a3-resume-candidate.pdf:72: trailing whitespace.
++0000000496 00000 n 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a3-resume-candidate.pdf:73: trailing whitespace.
++0000000684 00000 n 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a3-resume-candidate.pdf:74: trailing whitespace.
++0000000902 00000 n 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a3-resume-candidate.pdf:75: trailing whitespace.
++0000000970 00000 n 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a3-resume-candidate.pdf:76: trailing whitespace.
++0000001263 00000 n 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a3-resume-candidate.pdf:77: trailing whitespace.
++0000001322 00000 n 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a3-resume-candidate.pdf:80: trailing whitespace.
++/ID 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a5-green-build.log:12: trailing whitespace.
++
+   Generating static pages (1/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a5-green-build.log:13: trailing whitespace.
++
+   Generating static pages (2/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a5-green-build.log:14: trailing whitespace.
++
+   Generating static pages (3/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a5-green-build.log:15: trailing whitespace.
++
+ ✓ Generating static pages (5/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a5-green-build.log:45: trailing whitespace.
++ SITEMAP INDICES 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a5-green-build.log:52: trailing whitespace.
++ SITEMAPS 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a5-red-build.log:12: trailing whitespace.
++
+   Generating static pages (1/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a5-red-build.log:13: trailing whitespace.
++
+   Generating static pages (2/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a5-red-build.log:14: trailing whitespace.
++
+   Generating static pages (3/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a5-red-build.log:15: trailing whitespace.
++
+ ✓ Generating static pages (5/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a5-red-build.log:45: trailing whitespace.
++ SITEMAP INDICES 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a5-red-build.log:52: trailing whitespace.
++ SITEMAPS 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a5-red-motion.log:12: trailing whitespace.
++  1) [chromium] › tests/e2e/motion.spec.ts:37:5 › particles clear on live reduction and resume with one draw per frame 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a5-red-motion.log:45: trailing whitespace.
++  2) [chromium] › tests/e2e/motion.spec.ts:74:5 › an initially reduced visit keeps particles clear and menu usable without sliding 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a5-red-motion.log:76: trailing whitespace.
++  3) [chromium] › tests/e2e/motion.spec.ts:89:5 › live reduction immediately exposes pending reveals and disables menu movement 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a5-red-motion.log:116: trailing whitespace.
++    [chromium] › tests/e2e/motion.spec.ts:37:5 › particles clear on live reduction and resume with one draw per frame 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a5-red-motion.log:117: trailing whitespace.
++    [chromium] › tests/e2e/motion.spec.ts:74:5 › an initially reduced visit keeps particles clear and menu usable without sliding 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/a5-red-motion.log:118: trailing whitespace.
++    [chromium] › tests/e2e/motion.spec.ts:89:5 › live reduction immediately exposes pending reveals and disables menu movement 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b1-fix1-build.log:21: trailing whitespace.
++
+   Generating static pages (1/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b1-fix1-build.log:22: trailing whitespace.
++
+   Generating static pages (2/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b1-fix1-build.log:23: trailing whitespace.
++
+   Generating static pages (3/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b1-fix1-build.log:24: trailing whitespace.
++
+ ✓ Generating static pages (5/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b1-fix1-build.log:58: trailing whitespace.
++ SITEMAP INDICES 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b1-fix1-build.log:65: trailing whitespace.
++ SITEMAPS 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-final-build.log:12: trailing whitespace.
++
+   Generating static pages (1/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-final-build.log:13: trailing whitespace.
++
+   Generating static pages (2/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-final-build.log:14: trailing whitespace.
++
+   Generating static pages (3/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-final-build.log:15: trailing whitespace.
++
+ ✓ Generating static pages (5/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-final-build.log:45: trailing whitespace.
++ SITEMAP INDICES 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-final-build.log:52: trailing whitespace.
++ SITEMAPS 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-build.log:12: trailing whitespace.
++
+   Generating static pages (1/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-build.log:13: trailing whitespace.
++
+   Generating static pages (2/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-build.log:14: trailing whitespace.
++
+   Generating static pages (3/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-build.log:15: trailing whitespace.
++
+ ✓ Generating static pages (5/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-build.log:45: trailing whitespace.
++ SITEMAP INDICES 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-build.log:52: trailing whitespace.
++ SITEMAPS 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-final-build.log:12: trailing whitespace.
++
+   Generating static pages (1/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-final-build.log:13: trailing whitespace.
++
+   Generating static pages (2/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-final-build.log:14: trailing whitespace.
++
+   Generating static pages (3/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-final-build.log:15: trailing whitespace.
++
+ ✓ Generating static pages (5/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-final-build.log:45: trailing whitespace.
++ SITEMAP INDICES 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-final-build.log:52: trailing whitespace.
++ SITEMAPS 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-red-compositor.log:9: trailing whitespace.
++  1) [chromium] › tests/e2e/graph-discovery.spec.ts:201:7 › canonical overview keeps informational labels readable at 1280px 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-red-compositor.log:40: trailing whitespace.
++    [chromium] › tests/e2e/graph-discovery.spec.ts:201:7 › canonical overview keeps informational labels readable at 1280px 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-red-hover.log:9: trailing whitespace.
++  1) [chromium] › tests/e2e/graph-discovery.spec.ts:202:7 › canonical overview keeps informational labels readable at 1280px 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-red-hover.log:40: trailing whitespace.
++    [chromium] › tests/e2e/graph-discovery.spec.ts:202:7 › canonical overview keeps informational labels readable at 1280px 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-red.log:10: trailing whitespace.
++  1) [chromium] › tests/e2e/graph-discovery.spec.ts:201:7 › canonical overview keeps informational labels readable at 1280px 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-red.log:40: trailing whitespace.
++  2) [chromium] › tests/e2e/graph-discovery.spec.ts:201:7 › canonical overview keeps informational labels readable at 390px 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-red.log:71: trailing whitespace.
++    [chromium] › tests/e2e/graph-discovery.spec.ts:201:7 › canonical overview keeps informational labels readable at 1280px 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-fix1-red.log:72: trailing whitespace.
++    [chromium] › tests/e2e/graph-discovery.spec.ts:201:7 › canonical overview keeps informational labels readable at 390px 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-red-build.log:12: trailing whitespace.
++
+   Generating static pages (1/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-red-build.log:13: trailing whitespace.
++
+   Generating static pages (2/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-red-build.log:14: trailing whitespace.
++
+   Generating static pages (3/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-red-build.log:15: trailing whitespace.
++
+ ✓ Generating static pages (5/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-red-build.log:45: trailing whitespace.
++ SITEMAP INDICES 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-red-build.log:52: trailing whitespace.
++ SITEMAPS 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-red-tests.log:11: trailing whitespace.
++  1) [chromium] › tests/e2e/graph-discovery.spec.ts:10:7 › direct search preserves evidence, focus and native input keys in list 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-red-tests.log:43: trailing whitespace.
++  2) [chromium] › tests/e2e/graph-discovery.spec.ts:10:7 › direct search preserves evidence, focus and native input keys in 3d 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-red-tests.log:75: trailing whitespace.
++  3) [chromium] › tests/e2e/graph-discovery.spec.ts:52:5 › overview clears the trail and repeated requests recover the real camera after orbit and zoom 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-red-tests.log:108: trailing whitespace.
++    [chromium] › tests/e2e/graph-discovery.spec.ts:10:7 › direct search preserves evidence, focus and native input keys in list 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-red-tests.log:109: trailing whitespace.
++    [chromium] › tests/e2e/graph-discovery.spec.ts:10:7 › direct search preserves evidence, focus and native input keys in 3d 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/b3-red-tests.log:110: trailing whitespace.
++    [chromium] › tests/e2e/graph-discovery.spec.ts:52:5 › overview clears the trail and repeated requests recover the real camera after orbit and zoom 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-build.log:12: trailing whitespace.
++
+   Generating static pages (1/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-build.log:13: trailing whitespace.
++
+   Generating static pages (2/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-build.log:14: trailing whitespace.
++
+   Generating static pages (3/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-build.log:15: trailing whitespace.
++
+ ✓ Generating static pages (5/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-build.log:45: trailing whitespace.
++ SITEMAP INDICES 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-build.log:52: trailing whitespace.
++ SITEMAPS 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-fix1-red.log:1: trailing whitespace.
++test_partial_second_write_and_repeated_failure_keep_prior_dataset (test_source_failures.SourceFailureTests.test_partial_second_write_and_repeated_failure_keep_prior_dataset) ... 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-red-normalizer.log:9: trailing whitespace.
++  1) [chromium] › tests/unit/statsPayload.spec.ts:141:5 › stale migrated measurements may have unknown success timing while current requires a success date 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-red-normalizer.log:36: trailing whitespace.
++    [chromium] › tests/unit/statsPayload.spec.ts:141:5 › stale migrated measurements may have unknown success timing while current requires a success date 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d2-red-python.log:3: trailing whitespace.
++test_api_error_and_malformed_or_empty_results_are_source_failures (test_source_failures.SourceFailureTests.test_api_error_and_malformed_or_empty_results_are_source_failures) ... 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d3-ledger-guard-iteration.log:4: trailing whitespace.
++test_changed_mapping_rejected_after_partial_or_complete_input (test_ledger.LedgerTests.test_changed_mapping_rejected_after_partial_or_complete_input) ... 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/d3-terraform-validate.log:2: new blank line at EOF.
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e4-manifest-guard-iteration.log:29: trailing whitespace.
++    
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e4-manifest-guard-iteration.log:31: trailing whitespace.
++    
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e4-terraform-validate.log:2: new blank line at EOF.
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-full-release-check.log:104: trailing whitespace.
++
+   Generating static pages (1/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-full-release-check.log:105: trailing whitespace.
++
+   Generating static pages (2/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-full-release-check.log:106: trailing whitespace.
++
+   Generating static pages (3/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-full-release-check.log:107: trailing whitespace.
++
+ ✓ Generating static pages (5/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-full-release-check.log:137: trailing whitespace.
++ SITEMAP INDICES 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-full-release-check.log:144: trailing whitespace.
++ SITEMAPS 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-green-workflow-extractor-iteration.log:12: trailing whitespace.
++    
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-green-workflow-extractor-iteration.log:13: trailing whitespace.
++    
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-green-workflow-extractor-iteration.log:15: trailing whitespace.
++    
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-green-workflow-extractor-iteration.log:38: trailing whitespace.
++    
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-green-workflow-extractor-iteration.log:39: trailing whitespace.
++    
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-green-workflow-extractor-iteration.log:41: trailing whitespace.
++    
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-red-workflow-pipefail.log:12: trailing whitespace.
++    
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-red-workflow-pipefail.log:13: trailing whitespace.
++    
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-red-workflow-pipefail.log:15: trailing whitespace.
++    
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e5-terraform-validate-focused.log:2: new blank line at EOF.
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-web-build-residual-fix.log:12: trailing whitespace.
++
+   Generating static pages (1/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-web-build-residual-fix.log:13: trailing whitespace.
++
+   Generating static pages (2/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-web-build-residual-fix.log:14: trailing whitespace.
++
+   Generating static pages (3/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-web-build-residual-fix.log:15: trailing whitespace.
++
+ ✓ Generating static pages (5/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-web-build-residual-fix.log:45: trailing whitespace.
++ SITEMAP INDICES 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-web-build-residual-fix.log:52: trailing whitespace.
++ SITEMAPS 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-web-build.log:12: trailing whitespace.
++
+   Generating static pages (1/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-web-build.log:13: trailing whitespace.
++
+   Generating static pages (2/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-web-build.log:14: trailing whitespace.
++
+   Generating static pages (3/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-web-build.log:15: trailing whitespace.
++
+ ✓ Generating static pages (5/5) 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-web-build.log:45: trailing whitespace.
++ SITEMAP INDICES 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-final-web-build.log:52: trailing whitespace.
++ SITEMAPS 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-green-enlarged-rows.log:15: trailing whitespace.
++  1) [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 320px with 200% text 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-green-enlarged-rows.log:45: trailing whitespace.
++  2) [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 390px with 200% text 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-green-enlarged-rows.log:76: trailing whitespace.
++    [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 320px with 200% text 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-green-enlarged-rows.log:77: trailing whitespace.
++    [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 390px with 200% text 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-red-enlarged-rows-content.log:11: trailing whitespace.
++  1) [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 320px with 200% text 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-red-enlarged-rows-content.log:98: trailing whitespace.
++  2) [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 390px with 200% text 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-red-enlarged-rows-content.log:159: trailing whitespace.
++  3) [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 430px with 200% text 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-red-enlarged-rows-content.log:209: trailing whitespace.
++    [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 320px with 200% text 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-red-enlarged-rows-content.log:210: trailing whitespace.
++    [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 390px with 200% text 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-red-enlarged-rows-content.log:211: trailing whitespace.
++    [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 430px with 200% text 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-red-enlarged-rows.log:11: trailing whitespace.
++  1) [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 320px with 200% text 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-red-enlarged-rows.log:94: trailing whitespace.
++  2) [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 390px with 200% text 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-red-enlarged-rows.log:156: trailing whitespace.
++  3) [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 430px with 200% text 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-red-enlarged-rows.log:207: trailing whitespace.
++    [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 320px with 200% text 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-red-enlarged-rows.log:208: trailing whitespace.
++    [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 390px with 200% text 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-red-enlarged-rows.log:209: trailing whitespace.
++    [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 430px with 200% text 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-red-residual-text.log:11: trailing whitespace.
++  1) [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 320px with 200% text 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-red-residual-text.log:87: trailing whitespace.
++  2) [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 390px with 200% text 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-red-residual-text.log:148: trailing whitespace.
++  3) [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 430px with 200% text 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-red-residual-text.log:191: trailing whitespace.
++    [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 320px with 200% text 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-red-residual-text.log:192: trailing whitespace.
++    [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 390px with 200% text 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/evidence/e6-red-residual-text.log:193: trailing whitespace.
++    [chromium] › tests/e2e/homepage.spec.ts:33:7 › homepage rows remain readable at 430px with 200% text 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:1: trailing whitespace.
++Andrew  Malvani  
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:2: trailing whitespace.
++andrewrmalvani@gmail.com |  818-422-8819  |  San  Diego,  CA  92131  |  https://linkedin.com/in/andrewmalvani 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:3: trailing whitespace.
++Experience  February  2023  -  PRESENT  
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:4: trailing whitespace.
++General  Atomics,  San  Diego,  CA  Systems  Administrator  ->  Lead  AI/ML  Engineer 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:5: trailing whitespace.
++●  Avoided  $15m  of  spend  annually  by  developing  an  in-house  enterprise  AI  chatbot  solution  that  is  
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:7: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:9: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:11: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:13: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:15: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:17: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:19: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:21: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:23: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:25: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:27: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:29: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:31: trailing whitespace.
++ ●  Increased  user  workﬂow  efﬁciency  by  4x  by  developing  a  self-service  RAG  platform  and  deploying  to  
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:33: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:35: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:37: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:39: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:41: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:43: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:45: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:47: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:49: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:51: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:53: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:55: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:57: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:59: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:61: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:63: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:65: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:67: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:69: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:71: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:73: trailing whitespace.
++ ●  Achieved  $50m  ROI  from  labor  efﬁciency  gains  by  developing  a  platform  for  self-service  agents  for  
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:75: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:77: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:79: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:81: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:83: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:85: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:87: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:89: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:91: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:93: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:95: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:97: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:99: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:101: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:103: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:105: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:107: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:109: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:111: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:113: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:115: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:117: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:119: trailing whitespace.
++ ●  Reduced  development  time  for  engineering  technical  orders  by  40%  by  implementing  agentic  search  
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:121: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:123: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:125: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:127: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:129: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:131: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:133: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:135: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:137: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:139: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:141: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:143: trailing whitespace.
++ ●  Reduced  deployment  time  by  90%  by  implementing  cloud  infrastructure  with  Terraform/Terragrunt  
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:145: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:147: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:149: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:151: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:153: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:155: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:157: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:159: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:161: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:163: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:165: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:167: trailing whitespace.
++ ●  Achieved  90%  reduction  in  manual  processing  time  across  key  business  workﬂows  by  architecting  and  
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:169: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:171: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:173: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:175: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:177: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:179: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:181: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:183: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:185: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:187: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:189: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:191: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:193: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:195: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:197: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:199: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:201: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:203: trailing whitespace.
++ ●  Increased  developer  productivity  by  30%  by  rolling  out  AI  software  development  tools  and  supporting  
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:205: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:207: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:209: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:211: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:213: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:215: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:217: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:219: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:221: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:223: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:224: trailing whitespace.
++October  2021  -  February  2023  
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:226: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:227: trailing whitespace.
++●  Reduced  onboarding/offboarding  time  by  90%  and  enhanced  security  through  automated  user  account  
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:229: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:231: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:233: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:235: trailing whitespace.
++ ●  Developed  centralized  API  management  system  using  MuleSoft  to  enable  API  discoverability  and  
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:237: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:239: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:241: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:243: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:245: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:247: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:249: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:251: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:253: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:255: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:256: trailing whitespace.
++April  2018  -  October  2021  
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:258: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:259: trailing whitespace.
++●  Managed  a  territory  of  over  100  clients  and  over  $1m  in  annual  sales,  ensuring  compliance  with  
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:261: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:263: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:265: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:267: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:268: trailing whitespace.
++Skills  Certiﬁcations Education 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:269: trailing whitespace.
++Python,  Javascript,  Typescript,  Node  SQL,  AWS,  Azure,  CI/CD,  Git,  REST  APIs,TDD,  OOP,  Claude  Code,  LLMs,  Agents   
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:270: trailing whitespace.
++Azure  AI  Engineer  Associate  AWS  Solutions  Architect  Associate  
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:271: trailing whitespace.
++UC  Santa  Barbara  -  BA,  Psychology  Georgia  Tech  -  MS,  Computer  Science  (In  Progress)  
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:272: trailing whitespace.
++ 
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/original-resume-text.txt:272: new blank line at EOF.
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-A1-brief.md:45: new blank line at EOF.
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-A2-brief.md:50: new blank line at EOF.
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-A3-brief.md:21: new blank line at EOF.
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-A4-brief.md:19: new blank line at EOF.
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-A5-brief.md:42: new blank line at EOF.
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-B1-brief.md:41: new blank line at EOF.
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-B2-brief.md:45: new blank line at EOF.
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-B3-brief.md:40: new blank line at EOF.
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-C1-brief.md:35: new blank line at EOF.
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-C2-brief.md:63: new blank line at EOF.
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-D1-brief.md:40: new blank line at EOF.
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-D2-brief.md:53: new blank line at EOF.
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-D3-brief.md:57: new blank line at EOF.
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-D4-brief.md:17: new blank line at EOF.
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-E1-brief.md:49: new blank line at EOF.
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-E2-brief.md:15: new blank line at EOF.
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-E3-brief.md:15: new blank line at EOF.
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-E4-brief.md:20: new blank line at EOF.
+docs/reviews/remediation-evidence/2026-09-07-design-ux-remediation/task-E5-brief.md:21: new blank line at EOF.

@@ -8,10 +8,13 @@
 
 # testing
 /coverage
+/playwright-report/
+/test-results/
 
 # next.js
 /.next/
 /out/
+/release-artifacts/
 
 # production
 /build
@@ -46,3 +49,7 @@ yarn-error.log*
 
 # Python
 __pycache__/
+/.venv-stats/
+
+# Isolated development checkouts
+/.worktrees/

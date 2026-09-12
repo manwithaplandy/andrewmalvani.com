@@ -1,0 +1,16 @@
+{
+  "account": "870140981796",
+  "region": "us-west-1",
+  "accountConcurrentExecutions": 10,
+  "unreservedConcurrentExecutions": 10,
+  "functionReservedConcurrency": 0,
+  "schedule": "DISABLED",
+  "newCodeInstalled": true,
+  "newCodeInvocations": 0,
+  "quotaCode": "L-B99A9384",
+  "request101": "AWS rejected: must request greater than default1000",
+  "request1001": "Not submitted; automatic approval review rejected account-wide increase. Explicit user approval requested.",
+  "supportCaseOpened": false,
+  "risk": "Regional quota increase would permit greater aggregate concurrency across functions; analytics would still be limited1, and quota alone is not paid provisioned capacity.",
+  "recordScope": "Intermediate blocked activation checkpoint; superseded by restore-previous.json and restored-service-readback.json. Not final live state."
+}

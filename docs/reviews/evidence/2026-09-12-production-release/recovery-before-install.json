@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "observedAt": "2026-09-12T08:44:59.923510Z",
+  "snapshotUnchanged": true,
+  "snapshotSha256": "757c4951dbf4c22965271e2caefefa0a3cbbe95699fc1b281b63ec0f2e8da6ce",
+  "publicUnchanged": true,
+  "nativeBackup": "AVAILABLE",
+  "durableManifestVerified": true,
+  "rule": "DISABLED",
+  "concurrency": 0
+}

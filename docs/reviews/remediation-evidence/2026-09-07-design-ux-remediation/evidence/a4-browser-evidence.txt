@@ -1,0 +1,16 @@
+A4 portfolio browser evidence - 2026-09-08
+
+Final source state (after removal of the temporary synthetic case-study fixture):
+
+- Desktop viewport: 1440 x 1000; documentElement clientWidth=1440 and scrollWidth=1440.
+- Phone viewport: 320 x 844; documentElement clientWidth=320 and scrollWidth=320.
+- Five portfolio cards rendered in the unchanged order: Source for this site, Site architecture, Retirement Simulations, Polyscannr, Rolefit.
+- No `details` element rendered at either viewport because no approved project narrative was supplied.
+- All five card reveal ancestor chains reached computed opacity 1 before capture at both viewports.
+- No page errors or console errors were observed at either viewport.
+- Product and source images render with `object-fit: cover`. The Site architecture image renders with `object-fit: contain`, showing the complete supplied diagram.
+- Final screenshots: `a4-portfolio-desktop.png` and `a4-portfolio-320.png`.
+
+Positive disclosure verification used the real `PortfolioCard` in an isolated local test build with a temporary synthetic `caseStudy` attached to the Site architecture card. The focused Playwright check opened `Project details` with Enter, displayed all four labeled fields, verified the `details` element was outside the project link, focused the separate project link, opened its local image with Enter, closed the popup and returned to the still-open disclosure. Result: 1 passed. The fixture and positive test were removed before the final build; they were never committed, pushed or deployed.
+
+Capture implementation: `capture-a4.mjs`. The optional `agent-browser` executable was unavailable (`command not found`), so the established repository Playwright capture approach was used.

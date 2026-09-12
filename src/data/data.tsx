@@ -85,7 +85,7 @@ export const heroData: Hero = {
   actions: [
     {
       href: '/assets/resume.pdf',
-      text: 'Resume',
+      text: 'Download résumé PDF',
       primary: true,
       download: true,
       Icon: ArrowDownTrayIcon,
@@ -109,7 +109,7 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `I'm an Arizona-based Lead AI/ML Engineer at General Atomics, where I lead the enterprise AI program for a defense company — a long way from the psychology degree I started with at UC Santa Barbara. Over the past five years I've worked across technology and infrastructure, and I'm finishing a Master's in Computer Science at Georgia Tech along the way. Today I design and ship secure, cost-effective LLM agent platforms on AWS and Azure (certified in both), using orchestration frameworks like LangGraph and Semantic Kernel and agent protocols like MCP and A2A.`,
+  description: `My route into engineering started with psychology at UC Santa Barbara and moved through compliance, IT operations, automation, and enterprise AI. I now focus on secure, cost-effective LLM agent platforms while pursuing a Master's in Computer Science at Georgia Tech, expected in 2028.`,
   aboutItems: [
     {label: 'Location', text: 'Arizona', Icon: MapIcon},
     // {label: 'Age', text: '29', Icon: CalendarIcon},
@@ -243,17 +243,19 @@ export const skills: SkillGroup[] = [
  */
 export const portfolioItems: PortfolioItem[] = [
   {
-    title: 'GitHub',
-    description:
-      'Where my code lives, including the source for this site. A look at how I build and ship things in the open.',
+    title: 'Source for this site',
+    description: 'Browse the React and Next.js source that powers this résumé site.',
     url: 'https://github.com/manwithaplandy/react-resume',
     image: porfolioImage1,
+    imageAlt: 'GitHub mark on a blue and purple space background',
   },
   {
-    title: 'andrewmalvani.com',
-    description: 'This site — a Next.js static export on AWS. Click for the architecture diagram.',
-    url: porfolioImage2,
+    title: 'Site architecture',
+    description: 'An AWS architecture diagram for this site, showing WAF, CloudFront, S3, DynamoDB, and SNS.',
+    url: porfolioImage2.src,
     image: porfolioImage2,
+    imageAlt: 'AWS architecture diagram showing WAF and CloudFront connected to S3, DynamoDB, and SNS',
+    imageFit: 'contain',
   },
   // {
   //   title: 'A funny domain I registered',
@@ -267,6 +269,7 @@ export const portfolioItems: PortfolioItem[] = [
       'A retirement planner that runs Monte Carlo simulations so people can stress-test their savings — React, Node.js, and Cloudflare.',
     url: 'https://retire.andrewmalvani.com',
     image: porfolioImage4,
+    imageAlt: 'Retirement simulation results with a success probability and percentile projection chart',
   },
   {
     title: 'Polyscannr',
@@ -274,13 +277,15 @@ export const portfolioItems: PortfolioItem[] = [
       'An AI-powered analysis platform for Polymarket prediction markets, with real-time monitoring, sentiment analysis, and trading signals backed by a transparent track record.',
     url: 'https://polyscannr.com',
     image: porfolioImage5,
+    imageAlt: 'Polyscannr dashboard showing a track record and active prediction market signals',
   },
   {
-    title: 'Personalized AI-driven job board',
+    title: 'Rolefit',
     description:
-      'Rolefit — an AI-powered job search that scores every role against your background, explains the fit, and generates a résumé tailored to each posting.',
+      'An AI-powered job search that scores every role against your background, explains the fit, and generates a résumé tailored to each posting.',
     url: 'https://jobs.andrewmalvani.com',
     image: rolefitImage,
+    imageAlt: 'Rolefit job matching dashboard with ranked roles, fit analysis, and a tailored résumé action',
   },
 ];
 

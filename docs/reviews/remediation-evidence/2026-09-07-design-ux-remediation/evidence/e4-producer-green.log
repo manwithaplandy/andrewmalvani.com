@@ -1,0 +1,6 @@
+test_published_stats_uses_short_browser_and_shared_cache_without_changing_ownership (test_cache_metadata.CacheMetadataTests.test_published_stats_uses_short_browser_and_shared_cache_without_changing_ownership) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.112s
+
+OK

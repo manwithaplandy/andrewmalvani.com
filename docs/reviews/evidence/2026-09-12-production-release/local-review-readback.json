@@ -1,0 +1,19 @@
+{
+  "observedAt": "2026-09-12T14:14:02.449593+00:00",
+  "url": "http://127.0.0.1:3100/__review",
+  "status": 200,
+  "headers": {
+    "Content-Length": "1274",
+    "Content-Disposition": "inline; filename=\"__review.html\"",
+    "Accept-Ranges": "bytes",
+    "ETag": "\"b973fe3644e8a2267dd9c085619c99f561809f1d\"",
+    "Content-Type": "text/html; charset=utf-8",
+    "Content-Security-Policy": "connect-src 'self'; form-action 'self'",
+    "X-Robots-Tag": "noindex, nofollow",
+    "Cache-Control": "no-store",
+    "X-Local-Review": "PR-5-04facf5; statistics=synthetic; contact=blocked",
+    "Vary": "Accept-Encoding",
+    "Date": "Sat, 12 Sep 2026 14:14:02 GMT",
+    "Connection": "close"
+  }
+}

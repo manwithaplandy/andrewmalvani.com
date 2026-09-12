@@ -1,0 +1,53 @@
+TAP version 13
+# Subtest: served candidate reader passes actual legacy and synthetic v1/v2 behavior
+not ok 1 - served candidate reader passes actual legacy and synthetic v1/v2 behavior
+  ---
+  duration_ms: 1166.347792
+  type: 'test'
+  location: '/Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/scripts/tests/analytics-release.test.mjs:42:1'
+  failureType: 'testCodeFailure'
+  error: 'Candidate reader script was not loaded and verified'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    verifyPublicReader (file:///Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/scripts/verify_public_stats_reader.mjs:105:14)
+    async TestContext.<anonymous> (file:///Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/scripts/tests/analytics-release.test.mjs:44:18)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: stale cached HTML blocks release before reader behavior can pass
+ok 2 - stale cached HTML blocks release before reader behavior can pass
+  ---
+  duration_ms: 69.003041
+  type: 'test'
+  ...
+# Subtest: stale asset bytes block release even if appended bytes still render correctly
+ok 3 - stale asset bytes block release even if appended bytes still render correctly
+  ---
+  duration_ms: 629.935958
+  type: 'test'
+  ...
+# Subtest: release endpoints require HTTPS and an origin without path/query/credentials
+ok 4 - release endpoints require HTTPS and an origin without path/query/credentials
+  ---
+  duration_ms: 0.852458
+  type: 'test'
+  ...
+# Subtest: create and replace require pre-apply reader proof; update does not bypass later verification
+ok 5 - create and replace require pre-apply reader proof; update does not bypass later verification
+  ---
+  duration_ms: 0.574667
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 4
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2139.749792

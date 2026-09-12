@@ -1,0 +1,546 @@
+{
+  "method": "Real rendered backdrop screenshot with hero text color temporarily transparent; unchanged layout/photo/scrim/card. Compare computed original text color against every backdrop pixel in each visible text box. No antialiased glyph pixels used. Reduced-motion local browser.",
+  "rows": [
+    {
+      "width": 1280,
+      "text": "Lead AI/ML Engineer",
+      "computedForeground": [
+        251.0,
+        146.0,
+        60.0
+      ],
+      "worstActualBackground": [
+        8,
+        30,
+        36
+      ],
+      "minimumContrast": 7.596053866429369
+    },
+    {
+      "width": 1280,
+      "text": "I'm an",
+      "computedForeground": [
+        231.0,
+        229.0,
+        228.0
+      ],
+      "worstActualBackground": [
+        16,
+        31,
+        35
+      ],
+      "minimumContrast": 13.463613547123474
+    },
+    {
+      "width": 1280,
+      "text": "at",
+      "computedForeground": [
+        231.0,
+        229.0,
+        228.0
+      ],
+      "worstActualBackground": [
+        10,
+        37,
+        43
+      ],
+      "minimumContrast": 12.744272622984662
+    },
+    {
+      "width": 1280,
+      "text": ", where I lead the enterprise AI program \u2014 building secure LLM and agent platforms used by 10,000+ employees.",
+      "computedForeground": [
+        231.0,
+        229.0,
+        228.0
+      ],
+      "worstActualBackground": [
+        8,
+        46,
+        55
+      ],
+      "minimumContrast": 11.48521078136623
+    },
+    {
+      "width": 1280,
+      "text": ", where I lead the enterprise AI program \u2014 building secure LLM and agent platforms used by 10,000+ employees.",
+      "computedForeground": [
+        231.0,
+        229.0,
+        228.0
+      ],
+      "worstActualBackground": [
+        8,
+        50,
+        58
+      ],
+      "minimumContrast": 10.948614533677837
+    },
+    {
+      "width": 1280,
+      "text": "Arizona based Lead AI/ML Engineer",
+      "computedForeground": [
+        245.0,
+        245.0,
+        244.0
+      ],
+      "worstActualBackground": [
+        10,
+        37,
+        43
+      ],
+      "minimumContrast": 14.667436623765198
+    },
+    {
+      "width": 1280,
+      "text": "General Atomics",
+      "computedForeground": [
+        245.0,
+        245.0,
+        244.0
+      ],
+      "worstActualBackground": [
+        8,
+        45,
+        54
+      ],
+      "minimumContrast": 13.37768631022972
+    },
+    {
+      "width": 1280,
+      "text": "In my free time, you can catch me playing with my",
+      "computedForeground": [
+        231.0,
+        229.0,
+        228.0
+      ],
+      "worstActualBackground": [
+        20,
+        38,
+        41
+      ],
+      "minimumContrast": 12.491176969693464
+    },
+    {
+      "width": 1280,
+      "text": ", exploring nature, or",
+      "computedForeground": [
+        231.0,
+        229.0,
+        228.0
+      ],
+      "worstActualBackground": [
+        32,
+        49,
+        52
+      ],
+      "minimumContrast": 10.788560517359596
+    },
+    {
+      "width": 1280,
+      "text": ".",
+      "computedForeground": [
+        231.0,
+        229.0,
+        228.0
+      ],
+      "worstActualBackground": [
+        39,
+        48,
+        50
+      ],
+      "minimumContrast": 10.7554075595933
+    },
+    {
+      "width": 1280,
+      "text": "cats",
+      "computedForeground": [
+        245.0,
+        245.0,
+        244.0
+      ],
+      "worstActualBackground": [
+        17,
+        41,
+        45
+      ],
+      "minimumContrast": 13.960233242725796
+    },
+    {
+      "width": 1280,
+      "text": "golfing",
+      "computedForeground": [
+        245.0,
+        245.0,
+        244.0
+      ],
+      "worstActualBackground": [
+        39,
+        50,
+        52
+      ],
+      "minimumContrast": 12.090858437770146
+    },
+    {
+      "width": 1280,
+      "text": "Download r\u00e9sum\u00e9 PDF",
+      "computedForeground": [
+        10.0,
+        10.0,
+        10.0
+      ],
+      "worstActualBackground": [
+        249,
+        115,
+        22
+      ],
+      "minimumContrast": 7.063060500099148
+    },
+    {
+      "width": 1280,
+      "text": "Career Graph",
+      "computedForeground": [
+        255.0,
+        255.0,
+        255.0
+      ],
+      "worstActualBackground": [
+        9,
+        12,
+        14
+      ],
+      "minimumContrast": 19.616169960154465
+    },
+    {
+      "width": 1280,
+      "text": "Contact",
+      "computedForeground": [
+        255.0,
+        255.0,
+        255.0
+      ],
+      "worstActualBackground": [
+        8,
+        13,
+        15
+      ],
+      "minimumContrast": 19.538659736300094
+    },
+    {
+      "width": 320,
+      "text": "Lead AI/ML Engineer",
+      "computedForeground": [
+        251.0,
+        146.0,
+        60.0
+      ],
+      "worstActualBackground": [
+        8,
+        24,
+        29
+      ],
+      "minimumContrast": 8.007670738261247
+    },
+    {
+      "width": 320,
+      "text": "I'm an",
+      "computedForeground": [
+        231.0,
+        229.0,
+        228.0
+      ],
+      "worstActualBackground": [
+        8,
+        29,
+        34
+      ],
+      "minimumContrast": 13.832468282581033
+    },
+    {
+      "width": 320,
+      "text": "at",
+      "computedForeground": [
+        231.0,
+        229.0,
+        228.0
+      ],
+      "worstActualBackground": [
+        8,
+        31,
+        37
+      ],
+      "minimumContrast": 13.564752417435479
+    },
+    {
+      "width": 320,
+      "text": ", where I lead the enterprise AI program \u2014 building secure LLM and agent platforms used by 10,000+ employees.",
+      "computedForeground": [
+        231.0,
+        229.0,
+        228.0
+      ],
+      "worstActualBackground": [
+        8,
+        32,
+        39
+      ],
+      "minimumContrast": 13.421156388635794
+    },
+    {
+      "width": 320,
+      "text": ", where I lead the enterprise AI program \u2014 building secure LLM and agent platforms used by 10,000+ employees.",
+      "computedForeground": [
+        231.0,
+        229.0,
+        228.0
+      ],
+      "worstActualBackground": [
+        8,
+        35,
+        42
+      ],
+      "minimumContrast": 13.024587465828022
+    },
+    {
+      "width": 320,
+      "text": ", where I lead the enterprise AI program \u2014 building secure LLM and agent platforms used by 10,000+ employees.",
+      "computedForeground": [
+        231.0,
+        229.0,
+        228.0
+      ],
+      "worstActualBackground": [
+        8,
+        39,
+        47
+      ],
+      "minimumContrast": 12.467241551423946
+    },
+    {
+      "width": 320,
+      "text": ", where I lead the enterprise AI program \u2014 building secure LLM and agent platforms used by 10,000+ employees.",
+      "computedForeground": [
+        231.0,
+        229.0,
+        228.0
+      ],
+      "worstActualBackground": [
+        8,
+        43,
+        52
+      ],
+      "minimumContrast": 11.90056647901012
+    },
+    {
+      "width": 320,
+      "text": ", where I lead the enterprise AI program \u2014 building secure LLM and agent platforms used by 10,000+ employees.",
+      "computedForeground": [
+        231.0,
+        229.0,
+        228.0
+      ],
+      "worstActualBackground": [
+        8,
+        44,
+        52
+      ],
+      "minimumContrast": 11.777201560389328
+    },
+    {
+      "width": 320,
+      "text": "Arizona based Lead AI/ML Engineer",
+      "computedForeground": [
+        245.0,
+        245.0,
+        244.0
+      ],
+      "worstActualBackground": [
+        8,
+        31,
+        37
+      ],
+      "minimumContrast": 15.611730248219136
+    },
+    {
+      "width": 320,
+      "text": "Arizona based Lead AI/ML Engineer",
+      "computedForeground": [
+        245.0,
+        245.0,
+        244.0
+      ],
+      "worstActualBackground": [
+        8,
+        31,
+        36
+      ],
+      "minimumContrast": 15.62743755585083
+    },
+    {
+      "width": 320,
+      "text": "General Atomics",
+      "computedForeground": [
+        245.0,
+        245.0,
+        244.0
+      ],
+      "worstActualBackground": [
+        8,
+        32,
+        39
+      ],
+      "minimumContrast": 15.446464978544569
+    },
+    {
+      "width": 320,
+      "text": "In my free time, you can catch me playing with my",
+      "computedForeground": [
+        231.0,
+        229.0,
+        228.0
+      ],
+      "worstActualBackground": [
+        8,
+        44,
+        50
+      ],
+      "minimumContrast": 11.806537908224106
+    },
+    {
+      "width": 320,
+      "text": "In my free time, you can catch me playing with my",
+      "computedForeground": [
+        231.0,
+        229.0,
+        228.0
+      ],
+      "worstActualBackground": [
+        20,
+        38,
+        42
+      ],
+      "minimumContrast": 12.477996684929344
+    },
+    {
+      "width": 320,
+      "text": ", exploring nature, or",
+      "computedForeground": [
+        231.0,
+        229.0,
+        228.0
+      ],
+      "worstActualBackground": [
+        9,
+        44,
+        49
+      ],
+      "minimumContrast": 11.810014767384201
+    },
+    {
+      "width": 320,
+      "text": ", exploring nature, or",
+      "computedForeground": [
+        231.0,
+        229.0,
+        228.0
+      ],
+      "worstActualBackground": [
+        22,
+        37,
+        40
+      ],
+      "minimumContrast": 12.581633037407988
+    },
+    {
+      "width": 320,
+      "text": ".",
+      "computedForeground": [
+        231.0,
+        229.0,
+        228.0
+      ],
+      "worstActualBackground": [
+        21,
+        36,
+        40
+      ],
+      "minimumContrast": 12.720430214407381
+    },
+    {
+      "width": 320,
+      "text": "cats",
+      "computedForeground": [
+        245.0,
+        245.0,
+        244.0
+      ],
+      "worstActualBackground": [
+        19,
+        39,
+        43
+      ],
+      "minimumContrast": 14.229793647382298
+    },
+    {
+      "width": 320,
+      "text": "golfing",
+      "computedForeground": [
+        245.0,
+        245.0,
+        244.0
+      ],
+      "worstActualBackground": [
+        21,
+        36,
+        39
+      ],
+      "minimumContrast": 14.654971023738995
+    },
+    {
+      "width": 320,
+      "text": "Download r\u00e9sum\u00e9 PDF",
+      "computedForeground": [
+        10.0,
+        10.0,
+        10.0
+      ],
+      "worstActualBackground": [
+        249,
+        115,
+        22
+      ],
+      "minimumContrast": 7.063060500099148
+    },
+    {
+      "width": 320,
+      "text": "Career Graph",
+      "computedForeground": [
+        255.0,
+        255.0,
+        255.0
+      ],
+      "worstActualBackground": [
+        9,
+        11,
+        12
+      ],
+      "minimumContrast": 19.72214142217612
+    },
+    {
+      "width": 320,
+      "text": "Contact",
+      "computedForeground": [
+        255.0,
+        255.0,
+        255.0
+      ],
+      "worstActualBackground": [
+        10,
+        11,
+        12
+      ],
+      "minimumContrast": 19.698265875151744
+    }
+  ],
+  "minimum": 7.063060500099148
+}

@@ -1,0 +1,156 @@
+name: Verify release candidate
+
+on:
+  pull_request:
+  workflow_call:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    # GitHub's explicit bash template enables -e and -o pipefail, so tee never
+    # converts a failing check into a passing step.
+    shell: bash
+
+jobs:
+  verify:
+    name: Verify release candidate
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: testing
+      AWS_SECRET_ACCESS_KEY: testing
+      AWS_DEFAULT_REGION: us-west-1
+      AWS_EC2_METADATA_DISABLED: 'true'
+      AWS_CONFIG_FILE: /dev/null
+      AWS_SHARED_CREDENTIALS_FILE: /dev/null
+      RELEASE_ARTIFACT_DIR: release-artifacts
+      STATS_TEST_PYTHON: python
+    steps:
+      - name: Checkout reviewed source
+        uses: actions/checkout@v6
+
+      - name: Record reviewed source state
+        run: |
+          git status --porcelain --untracked-files=no > "$RUNNER_TEMP/source-before.txt"
+          test ! -s "$RUNNER_TEMP/source-before.txt"
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: yarn
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: tests/requirements.txt
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v4
+
+      - name: Install locked dependencies
+        run: |
+          mkdir -p check-logs
+          npm install --global yarn@1.22.22 2>&1 | tee check-logs/yarn-tool.log
+          yarn install --frozen-lockfile 2>&1 | tee check-logs/yarn-install.log
+          python -m pip install -r tests/requirements.txt 2>&1 | tee check-logs/python-install.log
+          python -m pip check 2>&1 | tee check-logs/python-check.log
+
+      - name: Build deterministic Lambda archives
+        run: python scripts/package_release_artifacts.py build --output-dir release-artifacts 2>&1 | tee check-logs/release-packaging.log
+
+      - name: Run backend tests against checked archives
+        run: python -m unittest discover -s tests/stats -p 'test_*.py' -v 2>&1 | tee check-logs/backend-tests.log
+
+      - name: Run isolated contact tests against checked archive
+        run: python -m unittest discover -s tests/contact -p 'test_*.py' -v 2>&1 | tee check-logs/contact-tests.log
+
+      - name: Run contact Terraform contract with native mocks
+        env:
+          CONTACT_TEST_EVIDENCE_DIR: check-logs/contact-infra
+        run: python -m unittest discover -s tests/infra -p 'test_contact_api.py' -v 2>&1 | tee check-logs/contact-infra-tests.log
+
+      - name: Run nonmutating static checks
+        run: |
+          yarn typecheck 2>&1 | tee check-logs/typecheck.log
+          yarn typecheck:tests 2>&1 | tee check-logs/test-typecheck.log
+          yarn lint 2>&1 | tee check-logs/lint.log
+
+      - name: Build website once
+        run: yarn build 2>&1 | tee check-logs/build.log
+
+      - name: Install Chromium
+        run: yarn playwright install --with-deps chromium 2>&1 | tee check-logs/chromium-install.log
+
+      - name: Run browser journeys on checked export
+        run: yarn playwright test --project=chromium 2>&1 | tee check-logs/browser-tests.log
+
+      - name: Run release, edge and publication tests
+        run: |
+          node --test scripts/tests/analytics-release.test.mjs scripts/tests/static-publication.test.mjs \
+            scripts/tests/workflow-pipelines.test.mjs tests/infra/edge-routing.test.mjs \
+            2>&1 | tee check-logs/node-release-tests.log
+
+      - name: Create checked website manifest
+        run: |
+          node scripts/publish_static_site.mjs manifest --artifact-dir out --manifest checked-site-manifest.json \
+            2>&1 | tee check-logs/site-manifest.log
+
+      - name: Validate Terraform without backend access
+        env:
+          TF_DATA_DIR: ${{ runner.temp }}/terraform-data
+        run: |
+          cp release-artifacts/contact-lambda.zip terraform/lambda_function.zip
+          cp release-artifacts/stats-aggregator.zip terraform/stats_aggregator.zip
+          terraform -chdir=terraform fmt -check -no-color 2>&1 | tee check-logs/terraform-fmt.log
+          terraform -chdir=terraform init -backend=false -input=false -lockfile=readonly -no-color 2>&1 | tee check-logs/terraform-init.log
+          terraform -chdir=terraform validate -no-color 2>&1 | tee check-logs/terraform-validate.log
+
+      - name: Verify exact artifacts and unchanged reviewed source
+        run: |
+          python scripts/package_release_artifacts.py verify --output-dir release-artifacts 2>&1 | tee check-logs/release-verify.log
+          node scripts/publish_static_site.mjs manifest --artifact-dir out --manifest "$RUNNER_TEMP/site-manifest-after.json"
+          cmp checked-site-manifest.json "$RUNNER_TEMP/site-manifest-after.json"
+          git status --porcelain --untracked-files=no > "$RUNNER_TEMP/source-after.txt"
+          cmp "$RUNNER_TEMP/source-before.txt" "$RUNNER_TEMP/source-after.txt"
+          git diff --exit-code
+          git diff --cached --exit-code
+
+      - name: Preserve checked website
+        uses: actions/upload-artifact@v7
+        with:
+          name: checked-web
+          path: out
+          if-no-files-found: error
+          retention-days: 3
+
+      - name: Preserve checked Lambda archives
+        uses: actions/upload-artifact@v7
+        with:
+          name: checked-lambda-archives
+          path: release-artifacts
+          if-no-files-found: error
+          retention-days: 3
+
+      - name: Preserve checked website manifest
+        uses: actions/upload-artifact@v7
+        with:
+          name: checked-site-manifest
+          path: checked-site-manifest.json
+          if-no-files-found: error
+          retention-days: 3
+
+      - name: Preserve actionable failure evidence
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: verification-failure-evidence
+          path: |
+            check-logs
+            test-results
+            playwright-report
+          if-no-files-found: warn
+          retention-days: 3

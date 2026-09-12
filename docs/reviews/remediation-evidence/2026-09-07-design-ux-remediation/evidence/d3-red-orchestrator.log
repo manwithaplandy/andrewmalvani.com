@@ -1,0 +1,20 @@
+test_real_handler_interruption_preserves_public_payload_then_recovers_once (test_ingestion.IngestionTests.test_real_handler_interruption_preserves_public_payload_then_recovers_once) ... FAIL
+
+======================================================================
+FAIL: test_real_handler_interruption_preserves_public_payload_then_recovers_once (test_ingestion.IngestionTests.test_real_handler_interruption_preserves_public_payload_then_recovers_once)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/stats/test_ingestion.py", line 27, in test_real_handler_interruption_preserves_public_payload_then_recovers_once
+    self.assertEqual(s3.published, [], 'partially applied input must preserve last public payload')
+AssertionError: Lists differ: [{'schemaVersion': 2, 'sources': {'cloudfr[2236 chars] []}] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+{'schemaVersion': 2, 'sources': {'cloudfront': {'status': 'stale', 'since': None, 'through': None, 'lastSuccessfulUpdate': None, 'scope': 'site-document-requests'}, 'cloudflare': {'status': 'unavailable', 'since': None, 'through': None, 'lastSuccessfulUpdate': None, 'scope': 'zone-requests'}}, 'dailyObservations': [{'date': '2026-08-09', 'views': None, 'status': 'missing'}, {'date': '2026-08-10', 'views': None, 'status': 'missing'}, {'date': '2026-08-11', 'views': None, 'status': 'missing'}, {'date': '2026-08-12', 'views': None, 'status': 'missing'}, {'date': '2026-08-13', 'views': None, 'status': 'missing'}, {'date': '2026-08-14', 'views': None, 'status': 'missing'}, {'date': '2026-08-15', 'views': None, 'status': 'missing'}, {'date': '2026-08-16', 'views': None, 'status': 'missing'}, {'date': '2026-08-17', 'views': None, 'status': 'missing'}, {'date': '2026-08-18', 'views': None, 'status': 'missing'}, {'date': '2026-08-19', 'views': None, 'status': 'missing'}, {'date': '2026-08-20', 'views': None, 'status': 'missing'}, {'date': '2026-08-21', 'views': None, 'status': 'missing'}, {'date': '2026-08-22', 'views': None, 'status': 'missing'}, {'date': '2026-08-23', 'views': None, 'status': 'missing'}, {'date': '2026-08-24', 'views': None, 'status': 'missing'}, {'date': '2026-08-25', 'views': None, 'status': 'missing'}, {'date': '2026-08-26', 'views': None, 'status': 'missing'}, {'date': '2026-08-27', 'views': None, 'status': 'missing'}, {'date': '2026-08-28', 'views': None, 'status': 'missing'}, {'date': '2026-08-29', 'views': None, 'status': 'missing'}, {'date': '2026-08-30', 'views': None, 'status': 'missing'}, {'date': '2026-08-31', 'views': None, 'status': 'missing'}, {'date': '2026-09-01', 'views': None, 'status': 'missing'}, {'date': '2026-09-02', 'views': None, 'status': 'missing'}, {'date': '2026-09-03', 'views': None, 'status': 'missing'}, {'date': '2026-09-04', 'views': None, 'status': 'missing'}, {'date': '2026-09-05', 'views': None, 'status': 'missing'}, {'date': '2026-09-06', 'views': None, 'status': 'missing'}, {'date': '2026-09-07', 'views': None, 'status': 'missing'}], 'totalViews': 181, 'uniqueVisitors': 0, 'lastUpdated': '2026-09-08', 'since': '2026-09-08', 'dailySeries': [], 'topPages': [], 'topReferrers': [], 'countries': []}
+
+Diff is 4969 characters long. Set self.maxDiff to None to see it. : partially applied input must preserve last public payload
+
+----------------------------------------------------------------------
+Ran 1 test in 0.173s
+
+FAILED (failures=1)

@@ -1,0 +1,21 @@
+yarn run v1.22.22
+$ /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/node_modules/.bin/playwright test tests/unit/statsPayload.spec.ts tests/e2e/stats-producer.spec.ts --project=chromium
+
+Running 13 tests using 1 worker
+
+  ✓   1 [chromium] › tests/e2e/stats-producer.spec.ts:8:7 › actual producer output is compatible with the reader: stale (967ms)
+  ✓   2 [chromium] › tests/e2e/stats-producer.spec.ts:8:7 › actual producer output is compatible with the reader: current (441ms)
+  ✓   3 [chromium] › tests/e2e/stats-producer.spec.ts:8:7 › actual producer output is compatible with the reader: zero (432ms)
+  ✓   4 [chromium] › tests/unit/statsPayload.spec.ts:7:5 › legacy uniques are relabeled without inventing coverage (1ms)
+  ✓   5 [chromium] › tests/unit/statsPayload.spec.ts:14:5 › legacy zeros remain distinct from measured v2 zeros (1ms)
+  ✓   6 [chromium] › tests/unit/statsPayload.spec.ts:28:5 › invalid required and optional dates fail at their documented boundaries (2ms)
+  ✓   7 [chromium] › tests/unit/statsPayload.spec.ts:45:5 › duplicate or unsorted v2 observations reject the payload (0ms)
+  ✓   8 [chromium] › tests/unit/statsPayload.spec.ts:58:5 › unknown payload versions are not guessed as version 2 (0ms)
+  ✓   9 [chromium] › tests/unit/statsPayload.spec.ts:62:5 › invalid labels and counts cannot reach normalized public lists (1ms)
+  ✓  10 [chromium] › tests/unit/statsPayload.spec.ts:87:5 › named buckets below five join a bounded preexisting Other bucket (0ms)
+  ✓  11 [chromium] › tests/unit/statsPayload.spec.ts:125:5 › public lists and observations remain bounded (0ms)
+  ✓  12 [chromium] › tests/unit/statsPayload.spec.ts:135:5 › a frozen payload eventually looks stale (0ms)
+  ✓  13 [chromium] › tests/unit/statsPayload.spec.ts:141:5 › stale migrated measurements may have unknown success timing while current requires a success date (0ms)
+
+  13 passed (4.9s)
+Done in 5.82s.

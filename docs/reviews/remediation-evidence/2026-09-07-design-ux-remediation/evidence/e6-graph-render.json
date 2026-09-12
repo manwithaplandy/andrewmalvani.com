@@ -1,0 +1,35 @@
+{
+  "results": [
+    {
+      "width": 1280,
+      "height": 900,
+      "draws": [],
+      "gradient": "radial-gradient(rgba(13, 13, 13, 0) 55%, rgba(13, 13, 13, 0.25) 100%)"
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "draws": [],
+      "gradient": "radial-gradient(rgba(13, 13, 13, 0) 55%, rgba(13, 13, 13, 0.25) 100%)"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "draws": [],
+      "gradient": "radial-gradient(rgba(13, 13, 13, 0) 55%, rgba(13, 13, 13, 0.25) 100%)"
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "draws": [],
+      "gradient": "radial-gradient(rgba(13, 13, 13, 0) 55%, rgba(13, 13, 13, 0.25) 100%)"
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "draws": [],
+      "gradient": "radial-gradient(rgba(13, 13, 13, 0) 55%, rgba(13, 13, 13, 0.25) 100%)"
+    }
+  ],
+  "errors": []
+}

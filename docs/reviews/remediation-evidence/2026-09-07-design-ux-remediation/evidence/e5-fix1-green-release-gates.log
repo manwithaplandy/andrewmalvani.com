@@ -1,0 +1,82 @@
+TAP version 13
+# Subtest: served candidate reader passes actual legacy and synthetic v1/v2 behavior
+ok 1 - served candidate reader passes actual legacy and synthetic v1/v2 behavior
+  ---
+  duration_ms: 2241.992833
+  type: 'test'
+  ...
+# Subtest: stale cached HTML blocks release before reader behavior can pass
+ok 2 - stale cached HTML blocks release before reader behavior can pass
+  ---
+  duration_ms: 50.712209
+  type: 'test'
+  ...
+# Subtest: stale asset bytes block release even if appended bytes still render correctly
+ok 3 - stale asset bytes block release even if appended bytes still render correctly
+  ---
+  duration_ms: 619.885583
+  type: 'test'
+  ...
+# Subtest: release endpoints require HTTPS and an origin without path/query/credentials
+ok 4 - release endpoints require HTTPS and an origin without path/query/credentials
+  ---
+  duration_ms: 0.583791
+  type: 'test'
+  ...
+# Subtest: create and replace require pre-apply reader proof; update does not bypass later verification
+ok 5 - create and replace require pre-apply reader proof; update does not bypass later verification
+  ---
+  duration_ms: 0.325917
+  type: 'test'
+  ...
+# Subtest: analytics plan changes are identified for the migration approval gate
+ok 6 - analytics plan changes are identified for the migration approval gate
+  ---
+  duration_ms: 0.222083
+  type: 'test'
+  ...
+# Subtest: schedule-only admission changes require migration approval without bootstrap reader proof
+ok 7 - schedule-only admission changes require migration approval without bootstrap reader proof
+  ---
+  duration_ms: 0.061208
+  type: 'test'
+  ...
+# Subtest: analytics dependencies and recoverable website storage require migration approval
+ok 8 - analytics dependencies and recoverable website storage require migration approval
+  ---
+  duration_ms: 0.262417
+  type: 'test'
+  ...
+# Subtest: only CloudFront logging changes and real unknown logging leaves require approval
+ok 9 - only CloudFront logging changes and real unknown logging leaves require approval
+  ---
+  duration_ms: 0.317833
+  type: 'test'
+  ...
+# Subtest: a failed command piped to tee fails the actual archive-build workflow step
+ok 10 - a failed command piped to tee fails the actual archive-build workflow step
+  ---
+  duration_ms: 416.867833
+  type: 'test'
+  ...
+# Subtest: a failed producer in the actual deployment digest pipeline stops the step
+ok 11 - a failed producer in the actual deployment digest pipeline stops the step
+  ---
+  duration_ms: 458.737667
+  type: 'test'
+  ...
+# Subtest: a schedule-only plan with unchanged code rejects push and requires manual attestation
+ok 12 - a schedule-only plan with unchanged code rejects push and requires manual attestation
+  ---
+  duration_ms: 225.440625
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3179.937833

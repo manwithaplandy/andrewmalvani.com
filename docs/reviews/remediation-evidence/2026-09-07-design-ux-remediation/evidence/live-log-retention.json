@@ -1,0 +1,29 @@
+{
+  "recorded_utc": "2026-09-08T09:24:26.252304+00:00",
+  "method": "Read-only AWS S3 GetBucketLifecycleConfiguration; normal authorized AWS CLI; no settings changed or objects read.",
+  "bucket": "mostly-upward-lion-log-bucket",
+  "rules": [
+    {
+      "id": "expire-cloudfront-logs",
+      "prefix": "cloudfront-logs/",
+      "status": "Enabled",
+      "current_expiration_days": 90,
+      "noncurrent_expiration_days": 30
+    },
+    {
+      "id": "expire-website-access-logs",
+      "prefix": "website-log/",
+      "status": "Enabled",
+      "current_expiration_days": 90,
+      "noncurrent_expiration_days": 30
+    },
+    {
+      "id": "expire-self-logs",
+      "prefix": "this-bucket-log/",
+      "status": "Enabled",
+      "current_expiration_days": 90,
+      "noncurrent_expiration_days": 30
+    }
+  ],
+  "boundary": "Configured lifecycle eligibility is not a raw-data audit or exact physical-deletion-time guarantee. Noncurrent version age is distinct from original object age."
+}

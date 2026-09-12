@@ -1,0 +1,12 @@
+{
+  "observed_on": "2026-09-08T10:25:41Z",
+  "repository": "manwithaplandy/andrewmalvani.com",
+  "branch": "main",
+  "required_status_checks": null,
+  "enforce_admins": false,
+  "required_approving_review_count": 0,
+  "allow_force_pushes": false,
+  "allow_deletions": false,
+  "rulesets_list_returned": [],
+  "scope": "Read-only branch protection and repository rulesets GETs. No settings changed. Adding workflow jobs does not itself make them required merge checks."
+}

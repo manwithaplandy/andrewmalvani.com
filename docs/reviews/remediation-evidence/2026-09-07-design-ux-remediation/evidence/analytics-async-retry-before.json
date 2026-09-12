@@ -1,0 +1,28 @@
+{
+  "observedAt": "2026-09-08T11:51:00Z/2026-09-08T11:52:05Z",
+  "method": "Read-only Lambda GetFunctionEventInvokeConfig and EventBridge ListTargetsByRule; no invocation or settings change",
+  "function": "statsAggregator:$LATEST",
+  "eventInvokeConfig": "ResourceNotFoundException: no configured override",
+  "schedule": "stats-aggregator-daily",
+  "targetRetryPolicy": null,
+  "targetDeadLetterConfig": null,
+  "documentedDefaults": {
+    "lambdaMaximumEventAgeInSeconds": 21600,
+    "lambdaFunctionErrorRetries": 2,
+    "eventBridgeMaximumEventAgeInSeconds": 86400,
+    "eventBridgeMaximumRetryAttempts": 185
+  },
+  "boundaries": [
+    "Defaults are inferred from absent overrides and official documentation; these calls do not observe actual queue contents.",
+    "Setting reserved concurrency to zero stops future execution and sends new asynchronous events to a configured DLQ/on-failure destination without retries; do not describe all new zero-concurrency events as queued for six hours.",
+    "Previously queued events and upstream delivery retries still matter when concurrency is reopened before code update.",
+    "DisableRule documentation allows an unspecified short propagation interval; API success alone is not proof that admission has ceased.",
+    "A quiescent cutover must freeze other invokers, cover any upstream retry and internal queue retention plus running function timeout, and substantiate an effective no-writer interval before backup. No such freeze, queue drain, durable backup, or cutover occurred here."
+  ],
+  "sources": [
+    "https://docs.aws.amazon.com/lambda/latest/api/API_PutFunctionEventInvokeConfig.html",
+    "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-rule-retry-policy.html",
+    "https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html",
+    "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DisableRule.html"
+  ]
+}

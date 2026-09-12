@@ -1,0 +1,10 @@
+{
+  "phase": "install",
+  "observedAt": "2026-09-12T08:08:48.869098+00:00",
+  "codeSha256": "b68c47a7774b1d575b910a60d7ceded54cf9d2b9a398334f00476113cbc945ca",
+  "codeBytes": 40351,
+  "revisionId": "10f36c56-8223-4a99-9493-bca38a00945f",
+  "configurationPreserved": true,
+  "reservedConcurrency": 0,
+  "rule": "DISABLED"
+}

@@ -1,0 +1,14 @@
+yarn run v1.22.22
+$ playwright test tests/e2e/graph-discovery.spec.ts --project=chromium --grep 'overview clears|phone visitor|informational labels'
+
+Running 6 tests using 1 worker
+
+  ✓  1 [chromium] › tests/e2e/graph-discovery.spec.ts:59:7 › system overview clears the trail and repeated requests recover the real camera after orbit and zoom (16.9s)
+  ✓  2 [chromium] › tests/e2e/graph-discovery.spec.ts:59:7 › manual overview clears the trail and repeated requests recover the real camera after orbit and zoom (17.2s)
+  ✓  3 [chromium] › tests/e2e/graph-discovery.spec.ts:59:7 › animated overview clears the trail and repeated requests recover the real camera after orbit and zoom (21.0s)
+  ✓  4 [chromium] › tests/e2e/graph-discovery.spec.ts:173:5 › a phone visitor can follow skill evidence across views and recover overview (3.3s)
+  ✓  5 [chromium] › tests/e2e/graph-discovery.spec.ts:202:7 › canonical overview keeps informational labels readable at 1280px (12.9s)
+  ✓  6 [chromium] › tests/e2e/graph-discovery.spec.ts:202:7 › canonical overview keeps informational labels readable at 390px (12.7s)
+
+  6 passed (1.4m)
+Done in 86.32s.

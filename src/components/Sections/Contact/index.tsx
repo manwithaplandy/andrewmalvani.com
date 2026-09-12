@@ -45,14 +45,14 @@ const Contact: FC = memo(() => {
                     <dd className="flex items-center">
                       <a
                         className={classNames(
-                          '-m-2 flex rounded-md p-2 text-neutral-300 transition-colors duration-300 hover:text-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400',
+                          '-m-2 flex min-w-0 max-w-full rounded-md p-2 text-neutral-300 transition-colors duration-300 hover:text-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400',
                           {'hover:text-white': href},
                         )}
                         href={href}
                         rel="noopener noreferrer"
                         target="_blank">
                         <Icon aria-hidden="true" className="h-4 w-4 flex-shrink-0 text-neutral-100 sm:h-5 sm:w-5" />
-                        <span className="ml-3 text-sm sm:text-base">{text}</span>
+                        <span className="ml-3 min-w-0 text-sm [overflow-wrap:anywhere] sm:text-base">{text}</span>
                       </a>
                     </dd>
                   </div>

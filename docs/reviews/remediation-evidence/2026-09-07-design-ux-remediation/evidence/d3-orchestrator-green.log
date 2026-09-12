@@ -1,0 +1,6 @@
+test_real_handler_interruption_preserves_public_payload_then_recovers_once (test_ingestion.IngestionTests.test_real_handler_interruption_preserves_public_payload_then_recovers_once) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.181s
+
+OK

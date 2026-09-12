@@ -1,0 +1,25 @@
+{
+  "base": "7eb35b4",
+  "current": "02ec761",
+  "paths": [
+    "terraform",
+    "stats_aggregator",
+    "sns_publish_lambda",
+    "scripts/package_release_artifacts.py",
+    ".github",
+    "tests/stats",
+    "tests/requirements.txt"
+  ],
+  "comparisonExit": 0,
+  "stdout": "",
+  "stderr": "",
+  "pdfSha256": "246239dc0c28c26121734ad9780ecb1caad83e1f6564c549b51b89db4a024fa5",
+  "exportPdfMatches": true,
+  "alsoUnchangedNodePaths": [
+    "scripts/verify_public_stats_reader.mjs",
+    "scripts/publish_static_site.mjs",
+    "scripts/tests",
+    "tests/infra"
+  ],
+  "nodeComparisonExit": 0
+}

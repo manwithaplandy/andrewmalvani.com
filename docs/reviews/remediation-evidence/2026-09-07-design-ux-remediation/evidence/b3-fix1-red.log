@@ -1,0 +1,74 @@
+yarn run v1.22.22
+$ playwright test tests/e2e/graph-discovery.spec.ts --project=chromium --grep 'informational labels'
+
+Running 2 tests using 1 worker
+
+  ✘  1 [chromium] › tests/e2e/graph-discovery.spec.ts:201:7 › canonical overview keeps informational labels readable at 1280px (13.6s)
+  ✘  2 [chromium] › tests/e2e/graph-discovery.spec.ts:201:7 › canonical overview keeps informational labels readable at 390px (12.9s)
+
+
+  1) [chromium] › tests/e2e/graph-discovery.spec.ts:201:7 › canonical overview keeps informational labels readable at 1280px 
+
+    Error: expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 12
+    Received:    3.4772829192390775
+
+      262 |     await page.locator('canvas').screenshot({path: testInfo.outputPath(`overview-readable-${width}.png`)});
+      263 |     expect(draws.length).toBeGreaterThan(0);
+    > 264 |     expect(Math.min(...draws.map(draw => draw.height))).toBeGreaterThanOrEqual(12);
+          |                                                         ^
+      265 |     expect(draws.every(draw => !draw.fog)).toBe(true);
+      266 |   });
+      267 | }
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/graph-discovery.spec.ts:264:57
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-graph-discovery-canoni-943c6-l-labels-readable-at-1280px-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-graph-discovery-canoni-943c6-l-labels-readable-at-1280px-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-graph-discovery-canoni-943c6-l-labels-readable-at-1280px-chromium/trace.zip
+    Usage:
+
+        yarn playwright show-trace test-results/e2e-graph-discovery-canoni-943c6-l-labels-readable-at-1280px-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/e2e/graph-discovery.spec.ts:201:7 › canonical overview keeps informational labels readable at 390px 
+
+    Error: expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 12
+    Received:    2.589347221105326
+
+      262 |     await page.locator('canvas').screenshot({path: testInfo.outputPath(`overview-readable-${width}.png`)});
+      263 |     expect(draws.length).toBeGreaterThan(0);
+    > 264 |     expect(Math.min(...draws.map(draw => draw.height))).toBeGreaterThanOrEqual(12);
+          |                                                         ^
+      265 |     expect(draws.every(draw => !draw.fog)).toBe(true);
+      266 |   });
+      267 | }
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/graph-discovery.spec.ts:264:57
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-graph-discovery-canoni-258b6-al-labels-readable-at-390px-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-graph-discovery-canoni-258b6-al-labels-readable-at-390px-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-graph-discovery-canoni-258b6-al-labels-readable-at-390px-chromium/trace.zip
+    Usage:
+
+        yarn playwright show-trace test-results/e2e-graph-discovery-canoni-258b6-al-labels-readable-at-390px-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [chromium] › tests/e2e/graph-discovery.spec.ts:201:7 › canonical overview keeps informational labels readable at 1280px 
+    [chromium] › tests/e2e/graph-discovery.spec.ts:201:7 › canonical overview keeps informational labels readable at 390px 
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

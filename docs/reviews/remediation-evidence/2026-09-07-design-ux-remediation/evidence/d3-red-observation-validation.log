@@ -1,0 +1,16 @@
+test_malformed_records_do_not_establish_zero_and_oversized_referrer_is_dropped (test_ingestion.IngestionTests.test_malformed_records_do_not_establish_zero_and_oversized_referrer_is_dropped) ... FAIL
+
+======================================================================
+FAIL: test_malformed_records_do_not_establish_zero_and_oversized_referrer_is_dropped (test_ingestion.IngestionTests.test_malformed_records_do_not_establish_zero_and_oversized_referrer_is_dropped)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/stats/test_ingestion.py", line 210, in test_malformed_records_do_not_establish_zero_and_oversized_referrer_is_dropped
+    self.assertEqual(dict(counts), {})
+AssertionError: {'daily#2026-09-07': 0, 'total#views': 0} != {}
+- {'daily#2026-09-07': 0, 'total#views': 0}
++ {}
+
+----------------------------------------------------------------------
+Ran 1 test in 0.123s
+
+FAILED (failures=1)

@@ -1,11 +1,10 @@
-// Modules
-
 declare module '*.jpg' {
-  const value: string;
+  const value: import('next/image').StaticImageData;
   export default value;
 }
+
 declare module '*.webp' {
-  const value: string;
+  const value: import('next/image').StaticImageData;
   export default value;
 }
 
@@ -15,7 +14,7 @@ declare module '*.svg' {
 }
 
 declare module '*.png' {
-  const value: string;
+  const value: import('next/image').StaticImageData;
   export default value;
 }
 

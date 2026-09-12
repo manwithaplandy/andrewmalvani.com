@@ -1,0 +1,29 @@
+{
+  "scope": "Original checkout untracked docs/reports collision comparison; nothing copied/deleted.",
+  "equal": [
+    "docs/superpowers/plans/2026-09-07-analytics-integrity.md",
+    "docs/superpowers/plans/2026-09-07-career-graph.md",
+    "docs/superpowers/plans/2026-09-07-contact-reliability.md",
+    "docs/superpowers/plans/2026-09-07-delivery-quality.md",
+    "docs/superpowers/plans/2026-09-07-design-ux-remediation.md",
+    "docs/superpowers/plans/2026-09-07-homepage-content.md",
+    "reports/design-ux-review-2026-09-07.md",
+    "reports/design-ux-review-2026-09-07/analytics-live.png",
+    "reports/design-ux-review-2026-09-07/analytics-local-unavailable.png",
+    "reports/design-ux-review-2026-09-07/graph-desktop.png",
+    "reports/design-ux-review-2026-09-07/graph-invisible-focus.png",
+    "reports/design-ux-review-2026-09-07/graph-keyboard-evidence.json",
+    "reports/design-ux-review-2026-09-07/graph-malformed-link.png",
+    "reports/design-ux-review-2026-09-07/graph-mobile-legend.png",
+    "reports/design-ux-review-2026-09-07/graph-mobile-overlap.png",
+    "reports/design-ux-review-2026-09-07/graph-short-expanded.png",
+    "reports/design-ux-review-2026-09-07/homepage-desktop.png",
+    "reports/design-ux-review-2026-09-07/homepage-mobile-320.png",
+    "reports/design-ux-review-2026-09-07/homepage-mobile-390.png",
+    "reports/design-ux-review-2026-09-07/mobile-reading.png",
+    "reports/design-ux-review-2026-09-07/portfolio-desktop.png",
+    "reports/design-ux-review-2026-09-07/resume-pdf.png"
+  ],
+  "different": [],
+  "absentInBranch": []
+}

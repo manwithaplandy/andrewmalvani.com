@@ -1,0 +1,12 @@
+{
+  "recorded_on": "2026-09-08T11:35:27.767051+00:00",
+  "origin_access_control_id": "E3Q6QZXOS9AMQ8",
+  "origin_type": "s3",
+  "signing_behavior": "always",
+  "signing_protocol": "sigv4",
+  "attached_default_origin": "mostly-upward-lion-website-bucket.s3.us-west-1.amazonaws.com",
+  "distribution": "EDHU4C51HW4BG",
+  "transport_conclusion": "The observed always-sign S3 OAC configuration entails HTTPS between CloudFront and S3 per AWS documentation. This is configuration evidence, not a captured origin packet trace. It does not establish Cloudflare-to-CloudFront transport or Cloudflare SSL mode.",
+  "source": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html",
+  "action_boundary": "Read-only GetOriginAccessControl. No setting or delivery change."
+}

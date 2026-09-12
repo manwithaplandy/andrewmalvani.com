@@ -1,0 +1,42 @@
+yarn run v1.22.22
+$ playwright test tests/e2e/graph-discovery.spec.ts --project=chromium --grep 'informational labels readable at 1280'
+
+Running 1 test using 1 worker
+
+  ✘  1 [chromium] › tests/e2e/graph-discovery.spec.ts:201:7 › canonical overview keeps informational labels readable at 1280px (13.8s)
+
+
+  1) [chromium] › tests/e2e/graph-discovery.spec.ts:201:7 › canonical overview keeps informational labels readable at 1280px 
+
+    Error: expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 4.5
+    Received:    3.3029309124973674
+
+      312 |     });
+      313 |     expect(contrast.count).toBeGreaterThan(0);
+    > 314 |     expect(contrast.minimum).toBeGreaterThanOrEqual(4.5);
+          |                              ^
+      315 |   });
+      316 | }
+      317 |
+        at /Users/andrew/Scripts/react-resume/.worktrees/design-ux-remediation/tests/e2e/graph-discovery.spec.ts:314:30
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-graph-discovery-canoni-943c6-l-labels-readable-at-1280px-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-graph-discovery-canoni-943c6-l-labels-readable-at-1280px-chromium/error-context.md
+
+    attachment #5: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-graph-discovery-canoni-943c6-l-labels-readable-at-1280px-chromium/trace.zip
+    Usage:
+
+        yarn playwright show-trace test-results/e2e-graph-discovery-canoni-943c6-l-labels-readable-at-1280px-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/e2e/graph-discovery.spec.ts:201:7 › canonical overview keeps informational labels readable at 1280px 
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

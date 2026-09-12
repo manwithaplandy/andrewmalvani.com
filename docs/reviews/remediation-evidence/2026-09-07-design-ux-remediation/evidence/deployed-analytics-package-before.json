@@ -1,0 +1,30 @@
+{
+  "observed_on": "2026-09-08T10:27:43.386561+00:00",
+  "function": "statsAggregator",
+  "region": "us-west-1",
+  "runtime": "python3.12",
+  "handler": "lambda_function.lambda_handler",
+  "last_modified": "2026-07-23T21:57:35.000+0000",
+  "revision_id": "9159ce97-a7ef-4dbb-b687-d71f75c18f63",
+  "code_sha256_hex": "e3f30b13d0335aa5d898d2c21f71ef9153d769f96e07510e9be137f2254eee51",
+  "code_sha256_base64": "4/MLE9AzWqXYmNLCH3HvkVPXafluB1EOm+E38iVO7lE=",
+  "package_bytes": 6761,
+  "archive_members": [
+    "lambda_function.py"
+  ],
+  "reserved_concurrency": null,
+  "function_state": "Active",
+  "last_update_status": "Successful",
+  "schedule": {
+    "name": "stats-aggregator-daily",
+    "state": "ENABLED",
+    "expression": "cron(0 0 * * ? *)",
+    "target_count": 1,
+    "targets_include_this_function": true
+  },
+  "private_backup_path": "/private/tmp/react-resume-analytics-baseline-i9e9w4oa/statsAggregator-before.zip",
+  "boundary": "Read-only preflight. No invocation, schedule change, concurrency update or deployment. Old marker-first package is retained for investigation, not a safe post-ledger rollback. Environment, credentials and temporary download URL were not printed or saved.",
+  "deployed_handler_sha256": "b94f5f17fe568954b0b32a2bdaeb24194efac5738c87a72512e61936d7239706",
+  "original_checkout_handler_sha256": "b94f5f17fe568954b0b32a2bdaeb24194efac5738c87a72512e61936d7239706",
+  "deployed_handler_matches_original_checkout": true
+}

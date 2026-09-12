@@ -1,0 +1,28 @@
+yarn run v1.22.22
+$ playwright test tests/e2e/graph-access.spec.ts --project=chromium
+
+Running 18 tests using 1 worker
+
+(node:68538) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/e2e/graph-access.spec.ts:44:7 › invalid graph link remains usable: #node=% (1.7s)
+  ✓   2 [chromium] › tests/e2e/graph-access.spec.ts:44:7 › invalid graph link remains usable: #node=%E0%A4%A (1.3s)
+  ✓   3 [chromium] › tests/e2e/graph-access.spec.ts:44:7 › invalid graph link remains usable: #node=unknown (1.2s)
+  ✓   4 [chromium] › tests/e2e/graph-access.spec.ts:44:7 › invalid graph link remains usable: #other (1.3s)
+  ✓   5 [chromium] › tests/e2e/graph-access.spec.ts:56:5 › valid deep link survives view switches without mount history entries (4.1s)
+  ✓   6 [chromium] › tests/e2e/graph-access.spec.ts:82:5 › chosen text view exposes ordinary keyboard-operable disclosures and connection navigation (621ms)
+  ✓   7 [chromium] › tests/e2e/graph-access.spec.ts:109:5 › 3D tab order contains visible entry and connection controls, with no hidden list (7.3s)
+  ✓   8 [chromium] › tests/e2e/graph-access.spec.ts:135:7 › denied hint storage getItem remains recoverable (2.0s)
+  ✓   9 [chromium] › tests/e2e/graph-access.spec.ts:135:7 › denied hint storage setItem remains recoverable (1.9s)
+  ✓  10 [chromium] › tests/e2e/graph-access.spec.ts:135:7 › denied hint storage removeItem remains recoverable (1.9s)
+  ✓  11 [chromium] › tests/e2e/graph-access.spec.ts:135:7 › denied hint storage getter remains recoverable (1.9s)
+  ✓  12 [chromium] › tests/e2e/graph-access.spec.ts:166:5 › unavailable WebGL overrides an explicit 3D request and preserves selection (333ms)
+  ✓  13 [chromium] › tests/e2e/graph-access.spec.ts:184:5 › unknown view values use the supported default (1.3s)
+  ✓  14 [chromium] › tests/e2e/graph-access.spec.ts:191:5 › browser mode navigation moves focus out of the view being removed (2.4s)
+  ✓  15 [chromium] › tests/e2e/graph-access.spec.ts:208:7 › mobile graphics › slow graphics falls back to text with the selected content and persistent focus (3.7s)
+  ✓  16 [chromium] › tests/e2e/graph-access.spec.ts:230:5 › unescaped valid deep links do not add a history entry during mount (549ms)
+  ✓  17 [chromium] › tests/e2e/graph-access.spec.ts:242:7 › text view preserves selected detail: skill:python (153ms)
+  ✓  18 [chromium] › tests/e2e/graph-access.spec.ts:242:7 › text view preserves selected detail: job:tillster-it-strategic-analyst (150ms)
+
+  18 passed (34.6s)
+Done in 35.15s.

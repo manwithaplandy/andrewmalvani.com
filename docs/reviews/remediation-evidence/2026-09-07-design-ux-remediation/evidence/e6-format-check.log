@@ -1,0 +1,3 @@
+Checking formatting...
+[warn] tests/e2e/homepage.spec.ts
+[warn] Code style issues found in the above file. Run Prettier to fix.

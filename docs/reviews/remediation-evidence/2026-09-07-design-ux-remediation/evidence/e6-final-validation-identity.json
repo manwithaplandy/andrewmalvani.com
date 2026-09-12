@@ -1,0 +1,9 @@
+{
+  "commit": "02ec7611030be8b82d49257c96d2bc8393768ad8",
+  "runtimeFilesCompared": 147,
+  "changedFiles": [],
+  "siteManifestSha256": "98dcf560ecafa71245f9a3d30ab28a101440b699998d9a15e5f11bf8c01e446d",
+  "siteManifestBytes": 23250,
+  "browserResult": "97/97 pass; no skips",
+  "staticResult": "typecheck, test typecheck, lint pass"
+}

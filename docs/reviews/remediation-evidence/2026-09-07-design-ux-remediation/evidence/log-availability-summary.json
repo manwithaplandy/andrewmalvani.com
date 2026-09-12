@@ -1,0 +1,34 @@
+{
+  "all_listed_version_bytes": 19203721,
+  "any_version_key_dates": {
+    "since": "2026-05-09",
+    "through": "2026-09-08"
+  },
+  "any_version_keys": 15118,
+  "boundary": "Paginated listing is not an atomic snapshot and is later than the private table export. Listed versions establish metadata availability, not body integrity or replay safety. Keys without listed versions have no identified copy in this scoped bucket listing; external backups were not inspected. Legacy markers do not prove all counter effects succeeded. No automatic replay or historical correction is authorized.",
+  "bucket": "mostly-upward-lion-log-bucket",
+  "complete_listing": true,
+  "current_key_dates": {
+    "since": "2026-06-09",
+    "through": "2026-09-08"
+  },
+  "current_keys_without_exported_marker": 49,
+  "current_object_bytes": 15133962,
+  "current_version_keys": 11902,
+  "exported_legacy_markers": 58187,
+  "finished_utc": "2026-09-08T09:35:32.710047+00:00",
+  "legacy_marked_current_keys": 11853,
+  "legacy_marked_keys_not_listed": 43118,
+  "legacy_marked_noncurrent_only_keys": 3216,
+  "listed_delete_markers": 9643,
+  "listed_versions": 15118,
+  "metadata_sha256": "ce5bacf1c3b1cc4f181a67ae6e84eef0c0b0c25ed3916aa3b7eefa5dd26be516",
+  "method": "Read-only ListObjectVersions metadata; no object bodies or restore/replay actions.",
+  "noncurrent_only_keys": 3216,
+  "page_cap": 100,
+  "pages": 25,
+  "prefix": "cloudfront-logs/",
+  "primary_reference": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectVersions.html",
+  "private_metadata_file": "/private/tmp/react-resume-analytics-baseline-i9e9w4oa/cloudfront-log-version-metadata.json",
+  "started_utc": "2026-09-08T09:35:25.606887+00:00"
+}

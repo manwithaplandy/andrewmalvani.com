@@ -1,0 +1,26 @@
+HTTP/2 200 
+date: Tue, 08 Sep 2026 04:22:03 GMT
+content-type: application/json
+content-length: 1622
+last-modified: Tue, 08 Sep 2026 00:00:36 GMT
+etag: "343db9bfa19b62f6c8592d7a41743886"
+x-amz-server-side-encryption: AES256
+cache-control: max-age=3600
+x-amz-version-id: RmlGfotyfuW9E8fqQGzT2FdvwC7KZNf7
+accept-ranges: bytes
+server: cloudflare
+x-cache: Miss from cloudfront
+via: 1.1 0c387c49a68a0638a07ea76c5853a28e.cloudfront.net (CloudFront)
+x-amz-cf-pop: SEA900-P2
+x-amz-cf-id: ukBCUTd6Ra6IILz1WnxImjSuyzvpGFrXxFc26LuSxRUHc90N0sH5eA==
+x-frame-options: DENY
+referrer-policy: strict-origin-when-cross-origin
+x-content-type-options: nosniff
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+cf-cache-status: DYNAMIC
+speculation-rules: "/cdn-cgi/speculation"
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=BkzyBhFF8BTDLhFtfoE4ZFkzqk9XZJLraHY1ktw0rmq2j2hQJbE0dZb1c8viTwMUU7zWhWOVP3RYZGlzBO3qWXJXkFjO%2FwJ5fuAz3zBWmWywwwA3AUKp2%2BcB1C0EKuRMn%2FOxIQ%3D%3D"}]}
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+cf-ray: a37b2b7dabdcc56d-PHX
+alt-svc: h3=":443"; ma=86400
+

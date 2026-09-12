@@ -1,0 +1,64 @@
+{
+  "scope": "One already-executed focused local browser check; observations transcribed from the tool result without rerunning. Replay helper is semantically equivalent and separately identified, not represented as the exact original stdin script.",
+  "reviewedHead": "288a6c58a50f76fdf14ea56d5a80e444979efbcd",
+  "uiRuntimeSource": "02ec7611030be8b82d49257c96d2bc8393768ad8",
+  "checkedManifestSha256": "98dcf560ecafa71245f9a3d30ab28a101440b699998d9a15e5f11bf8c01e446d",
+  "htmlIdentity": [
+    {
+      "key": "graph.html",
+      "sha256": "f5da5d125315e5bbfd40cecbc97a6df8f9b08680c659b6d6e4f90f4b99a7356d",
+      "matchesCheckedManifest": true
+    },
+    {
+      "key": "index.html",
+      "sha256": "5bec53cf167414732a594d7052bb3c89dbee583091627bec898eda00c328bcb9",
+      "matchesCheckedManifest": true
+    }
+  ],
+  "graphExplorerSha256": "5f84ad8623ae8df62b640a350b419c461137af01596dac299f2a341ec2c7af42",
+  "rootInputIdentityRecord": "evidence/e6-final-validation-identity.json",
+  "observations": [
+    {
+      "label": "graph ready",
+      "url": "http://127.0.0.1:3100/graph?view=list#node=job%3Aga-lead-ai-ml-engineer",
+      "state": null,
+      "graph": 1,
+      "contact": 0,
+      "marker": "same-document"
+    },
+    {
+      "label": "after Classic resume",
+      "url": "http://127.0.0.1:3100/",
+      "state": {
+        "url": "/",
+        "as": "/",
+        "options": {
+          "scroll": true,
+          "_shouldResolveHref": true
+        },
+        "__N": true,
+        "key": "0za0c07x"
+      },
+      "graph": 0,
+      "contact": 1,
+      "marker": "same-document"
+    },
+    {
+      "label": "after browser Back settled",
+      "url": "http://127.0.0.1:3100/graph?view=list#node=job%3Aga-lead-ai-ml-engineer",
+      "state": {
+        "url": "/",
+        "as": "/graph?view=list#node=job%3Aga-lead-ai-ml-engineer",
+        "options": {},
+        "__N": true,
+        "key": "0za0c07x"
+      },
+      "graph": 0,
+      "contact": 1,
+      "marker": "same-document"
+    }
+  ],
+  "expected": "After Back, graph URL and graph page must both be restored, with the graph selection/view coherent.",
+  "actual": "After Back the URL is graph, but homepage/contact remains rendered in the same document.",
+  "limits": "Chromium on existing static export; no rebuild, full suite, cloud query, contact POST or external network traffic. Null hash-state writes predate this branch; new view-mode write extends the same incompatible state pattern. Backend/infra behavior not exercised."
+}

@@ -1,0 +1,10 @@
+yarn run v1.22.22
+$ playwright test tests/e2e/graph-discovery.spec.ts --project=chromium --grep 'informational labels'
+
+Running 2 tests using 1 worker
+
+  ✓  1 [chromium] › tests/e2e/graph-discovery.spec.ts:201:7 › canonical overview keeps informational labels readable at 1280px (13.4s)
+  ✓  2 [chromium] › tests/e2e/graph-discovery.spec.ts:201:7 › canonical overview keeps informational labels readable at 390px (12.7s)
+
+  2 passed (27.6s)
+Done in 28.26s.

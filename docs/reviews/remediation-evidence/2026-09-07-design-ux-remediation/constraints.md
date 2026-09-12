@@ -1,0 +1,13 @@
+
+- Preserve the report’s direction: “No architectural rewrite is warranted by the reviewed evidence.”
+- Preserve the graph requirement: “Preserve access to the graph’s complete information.”
+- Preserve the data requirement: “Data absence and staleness remain visible; successful updates from one source do not imply that all sources are current.”
+- Preserve the content requirement: “Each section contributes something distinct.”
+- Keep the dark/orange visual identity, conventional résumé homepage, direct email, static export, and separately loaded graph. A light theme, new CMS, new analytics tracking script, and framework upgrade are outside this plan.
+- For F17, verify at least 4.5:1 contrast for small informational text against its actual rendered background, including translucent states. A Tailwind color name alone is not acceptance evidence; check the relevant text across all three pages during E6.
+- This is a plan-only deliverable. It contains test examples, contracts, and commands, but no fix implementations, honoring the earlier request against fix-code/end-state snippets.
+- Keep all 30 finding IDs stable. A finding closes only when its acceptance checks pass; source inspection or compilation alone does not close a browser finding.
+- Do not fabricate residence, credential validity, project ownership, private work details, or performance results. Content-specific evidence requests do not block unrelated work.
+- Preserve existing messages, statistics, raw-log retention, resource identities, and historical artifacts unless a particular task explicitly describes a reviewed migration. Do not reset the statistics table to repair historical uncertainty.
+- Use intercepted requests and synthetic data for tests. Sending a real contact message is not part of verification.
+- Each task ends with focused verification, a reviewable diff, and one cohesive commit. Use an isolated execution checkout via `superpowers:using-git-worktrees`; carry the report and these currently untracked plan artifacts into it before starting.

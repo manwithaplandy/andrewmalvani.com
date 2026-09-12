@@ -1,0 +1,41 @@
+{
+  "observedAt": "2026-09-12T11:04:05.998Z",
+  "origins": [
+    {
+      "origin": "https://andrewmalvani.com",
+      "errors": [],
+      "cspViolations": [],
+      "checks": [
+        "homepage and client validation",
+        "real browser preflight and invalid POST readable without sending notification",
+        "direct graph route, fragment, text search and mobile width",
+        "statistics route and display"
+      ],
+      "statsPayloadSha256": "6efd7283d1cd8b5969acfad78552e84ed368b10b427604b2a77a293a0b6dd973",
+      "pendingInfrastructure": {
+        "missingRouteObservedStatus": 403,
+        "missingRouteHeading": [],
+        "desiredStatus": 404,
+        "acceptance": "PENDING; CloudFront recovery/routing plan requires approval"
+      }
+    },
+    {
+      "origin": "https://www.andrewmalvani.com",
+      "errors": [],
+      "cspViolations": [],
+      "checks": [
+        "homepage and client validation",
+        "real browser preflight and invalid POST readable without sending notification",
+        "direct graph route, fragment, text search and mobile width",
+        "statistics route and display"
+      ],
+      "statsPayloadSha256": "6efd7283d1cd8b5969acfad78552e84ed368b10b427604b2a77a293a0b6dd973",
+      "pendingInfrastructure": {
+        "missingRouteObservedStatus": 403,
+        "missingRouteHeading": [],
+        "desiredStatus": 404,
+        "acceptance": "PENDING; CloudFront recovery/routing plan requires approval"
+      }
+    }
+  ]
+}

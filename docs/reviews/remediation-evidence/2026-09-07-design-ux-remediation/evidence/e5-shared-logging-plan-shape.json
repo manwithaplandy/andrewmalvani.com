@@ -1,0 +1,38 @@
+{
+  "source": "Minimal shape derived from real c9a2a6f review plan. Bucket hostname anonymized; no other plan/input fields retained. Logging is unchanged while cache/error behavior changes.",
+  "resource_changes": [
+    {
+      "address": "aws_cloudfront_distribution.website_distribution",
+      "mode": "managed",
+      "type": "aws_cloudfront_distribution",
+      "change": {
+        "actions": [
+          "update"
+        ],
+        "before": {
+          "logging_config": [
+            {
+              "bucket": "example-log-bucket.s3.example.invalid",
+              "include_cookies": false,
+              "prefix": "cloudfront-logs/"
+            }
+          ]
+        },
+        "after": {
+          "logging_config": [
+            {
+              "bucket": "example-log-bucket.s3.example.invalid",
+              "include_cookies": false,
+              "prefix": "cloudfront-logs/"
+            }
+          ]
+        },
+        "after_unknown": {
+          "logging_config": [
+            {}
+          ]
+        }
+      }
+    }
+  ]
+}

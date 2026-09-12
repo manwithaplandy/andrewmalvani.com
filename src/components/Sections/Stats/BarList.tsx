@@ -2,14 +2,22 @@ import {FC, memo, useMemo} from 'react';
 
 import {StatsDatum} from '../../../data/dataDef';
 
-const BarList: FC<{items: StatsDatum[]; title: string}> = memo(({items, title}) => {
+interface BarListProps {
+  items: StatsDatum[];
+  title: string;
+  unavailable?: boolean;
+  unavailableText?: string;
+}
+
+const BarList: FC<BarListProps> = memo(({items, title, unavailable = false, unavailableText = 'Data unavailable.'}) => {
   const max = useMemo(() => Math.max(1, ...items.map(item => item.value)), [items]);
 
   return (
     <div className="flex flex-col gap-y-2">
-      <span className="text-lg font-bold text-white">{title}</span>
-      {items.length === 0 && <span className="ml-2 text-sm text-neutral-400">Not enough data yet.</span>}
-      {items.map(({label, value}) => (
+      <h2 className="text-lg font-bold text-white">{title}</h2>
+      {unavailable && <span className="ml-2 text-sm text-neutral-400">{unavailableText}</span>}
+      {!unavailable && items.length === 0 && <span className="ml-2 text-sm text-neutral-400">No observations available.</span>}
+      {!unavailable && items.map(({label, value}) => (
         <BarListRow key={label} label={label} max={max} value={value} />
       ))}
     </div>

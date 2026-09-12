@@ -1,0 +1,18 @@
+{
+  "source": "3408657 export",
+  "sha256": "246239dc0c28c26121734ad9780ecb1caad83e1f6564c549b51b89db4a024fa5",
+  "matchesSourcePdf": true,
+  "pageCount": 1,
+  "pageBox": [
+    0,
+    0,
+    612,
+    792
+  ],
+  "uris": [
+    "mailto:andrewrmalvani@gmail.com",
+    "https://www.linkedin.com/in/andrewmalvani"
+  ],
+  "text": "Andrew Malvani\nandrewrmalvani@gmail.com | 818-422-8819 | San Diego, CA 92131 | linkedin.com/in/andrewmalvani\nLead AI/ML Engineer building secure enterprise LLM, RAG, and agent platforms across AWS and Azure.\nExperience\nLead AI/ML Engineer | General Atomics\nJune 2024 - Present | San Diego, CA\n\u007f\nAvoided $15M in annual spend by developing an in-house, DoD-compliant enterprise AI chatbot using AWS Bedrock,\nAzure AI Foundry, and LiteLLM.\n\u007f\nIncreased workflow efficiency 4x for 10,000+ users by developing a self-service RAG platform with Azure AI Search,\nAWS RDS PostgreSQL, and Python.\n\u007f\nAchieved $50M ROI from labor-efficiency gains by developing a self-service agent platform using MCP and centralized\nauthentication and authorization integrations.\n\u007f\nReduced engineering technical-order development time by 40% with agentic search and generation using GraphRAG,\nAmazon OpenSearch, Amazon Neptune, and AWS Bedrock.\n\u007f\nReduced deployment time by 90% with Terraform, Terragrunt, and GitHub Actions CI/CD, making deployments\nconsistent, repeatable, and auditable.\n\u007f\nReduced manual processing time by 90% across key business workflows by deploying autonomous multi-agent\nsystems with Azure Durable Functions, Python, LangGraph, Semantic Kernel, and the Claude SDK.\n\u007f\nIncreased developer productivity by 30% by rolling out AI development tools and supporting integration into the software\ndevelopment lifecycle.\nSystems Administrator | General Atomics\nFebruary 2023 - June 2024 | San Diego, CA\n\u007f\nAutomated software request and endpoint deployment processes using JFrog Artifactory.\n\u007f\nReplaced a manual iOS build and signing process with GitLab CI/CD, cutting build and signing time from hours to\nminutes.\nIT Strategic Analyst | Tillster, Inc.\nOctober 2021 - February 2023 | San Diego, CA\n\u007f\nReduced onboarding and offboarding time by 90% and improved security through automated account provisioning\nacross company applications.\n\u007f\nDeveloped a centralized MuleSoft API management system to improve API discoverability, maintainability, security, and\nauditability.\nCompliance & Marketing Consultant | Reynolds & Reynolds\nApril 2018 - October 2021 | San Diego, CA\n\u007f\nManaged a territory of 100+ clients generating $1M+ in annual sales while ensuring compliance with government and\nmanufacturer regulations.\nSkills\nAI/ML: LLMs, RAG, agents, LangGraph,\nSemantic Kernel, MCP, GraphRAG,\nLiteLLM\nCloud and DevOps: AWS, Azure,\nTerraform, Terragrunt, Docker, CI/CD\nLanguages and frameworks: Python,\nJavaScript, TypeScript, Node.js, React,\nBash\nCredentials\nAzure AI Engineer Associate |\nMicrosoft\nAWS Solutions Architect Associate |\nAmazon Web Services\nEducation\nM.S. Computer Science | Georgia\nTech | In progress, expected 2028\nB.A. Psychology | UC Santa Barbara |\n2017\n",
+  "factBoundary": "Existing residence/metric/credential contexts preserved, not owner-confirmed."
+}

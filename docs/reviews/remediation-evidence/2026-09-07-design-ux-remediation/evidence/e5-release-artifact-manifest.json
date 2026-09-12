@@ -1,0 +1,29 @@
+{
+  "archives": {
+    "contact-lambda.zip": {
+      "bytes": 4277,
+      "members": [
+        "lambda_function.py"
+      ],
+      "sha256": "3998f18a127c13ab8292af7100ab5fc36e84c5a069c2b9b16e7b0d7da3b80ce3",
+      "sources": {
+        "lambda_function.py": "9c7adbb9bd0276c2294540a8ad8aa2294bee76513268bd363af74b6adb5e4216"
+      }
+    },
+    "stats-aggregator.zip": {
+      "bytes": 40351,
+      "members": [
+        "lambda_function.py",
+        "ledger.py",
+        "payload.py"
+      ],
+      "sha256": "b68c47a7774b1d575b910a60d7ceded54cf9d2b9a398334f00476113cbc945ca",
+      "sources": {
+        "lambda_function.py": "468c882dc2a1702955514b25c2592f72500bf9a443d56ab9342e43127e36dde5",
+        "ledger.py": "eb2488abd4b00fce1a2345005ab91d650f5de840c809f73354a02b2ee7622718",
+        "payload.py": "a770481263ed87b94d82ba928f8a4b67790049b3c812b8b6a4ff11968b64467e"
+      }
+    }
+  },
+  "version": 1
+}

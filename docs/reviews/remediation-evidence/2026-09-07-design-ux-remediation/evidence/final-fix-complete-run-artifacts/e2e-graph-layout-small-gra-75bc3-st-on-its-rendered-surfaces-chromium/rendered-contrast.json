@@ -1,0 +1,42 @@
+{
+  "introduction": {
+    "background": "rgb(23, 23, 23)",
+    "color": "rgb(163, 163, 163)",
+    "ratio": 7.11
+  },
+  "help": {
+    "background": "rgb(23, 23, 23)",
+    "color": "rgb(212, 212, 212)",
+    "ratio": 12.09
+  },
+  "legend": {
+    "background": "rgb(23, 23, 23)",
+    "color": "rgb(212, 212, 212)",
+    "ratio": 12.09
+  },
+  "text-view guidance": {
+    "background": "rgb(10, 10, 10)",
+    "color": "rgb(163, 163, 163)",
+    "ratio": 7.85
+  },
+  "text-view category": {
+    "background": "rgb(10, 10, 10)",
+    "color": "rgb(163, 163, 163)",
+    "ratio": 7.85
+  },
+  "text-view connection kind": {
+    "background": "rgb(10, 10, 10)",
+    "color": "rgb(163, 163, 163)",
+    "ratio": 7.85
+  },
+  "selected metadata": {
+    "background": "rgb(23, 23, 23)",
+    "color": "rgb(163, 163, 163)",
+    "ratio": 7.11
+  },
+  "selected wrapped state": {
+    "background": "rgb(23, 23, 23)",
+    "color": "rgb(163, 163, 163)",
+    "ratio": 7.11
+  }
+}

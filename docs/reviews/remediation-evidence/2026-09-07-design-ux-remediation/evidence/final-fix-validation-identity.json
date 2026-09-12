@@ -1,0 +1,20 @@
+{
+  "base": "288a6c58a50f76fdf14ea56d5a80e444979efbcd",
+  "changedPaths": [
+    "src/components/Graph/GraphExplorer.tsx",
+    "tests/e2e/contact-submission.spec.ts",
+    "tests/e2e/graph-access.spec.ts"
+  ],
+  "sourceConfigContentFilesComparedAfterFinalSuite": 144,
+  "changedAfterFinalSuite": [],
+  "browser": "100/100 pass; no skips; 3.5m",
+  "additionalDiscovery": "Four existing edge VM cases appear as passing TAP during Playwright discovery; no separate invocation",
+  "static": "Both typechecks and nonmutating lint pass; test typecheck repeated after synchronization repair",
+  "siteManifestSha256": "9adc540eeb85bdd1fd822f82efd8e2668cc931f587b4861d5623fdb926ad36c7",
+  "sourceSha256": {
+    "src/components/Graph/GraphExplorer.tsx": "1d9eb897a519533b3ed123b72f2c86e3d28ce9a0753efc3a70b0e774683d8ff2",
+    "tests/e2e/contact-submission.spec.ts": "c5db4b04c9a5b6ec036a5a106d7f8b125f1c81a71cc4e354b485a11d0068ef6a",
+    "tests/e2e/graph-access.spec.ts": "37d6069186e83eadb752237f4b2d10bf2b393c6b48cdd66440e5f8438e2ae0f2"
+  },
+  "commit": "f8ab5340c66e0d56f94d3837bdb681fb2e873e31"
+}

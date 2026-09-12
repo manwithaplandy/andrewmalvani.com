@@ -7,6 +7,7 @@ import {FC, Fragment, memo, useCallback, useMemo, useState} from 'react';
 
 import {SectionId} from '../../data/data';
 import {useNavObserver} from '../../hooks/useNavObserver';
+import useReducedMotion from '../../hooks/useReducedMotion';
 
 export const headerID = 'headerNav';
 const mobileMenuID = 'mobileMenu';
@@ -38,7 +39,7 @@ const Header: FC = memo(() => {
       ...navSections.map(section => ({
         current: section === currentSection,
         href: `/#${section}`,
-        label: section,
+        label: section === SectionId.Resume ? 'Experience' : section,
       })),
       {current: router.pathname === '/graph', href: '/graph', label: 'career graph'},
       {current: router.pathname === '/stats', href: '/stats', label: 'analytics'},
@@ -73,6 +74,7 @@ const DesktopNav: FC<{navEntries: NavEntry[]}> = memo(({navEntries}) => {
 });
 
 const MobileNav: FC<{navEntries: NavEntry[]}> = memo(({navEntries}) => {
+  const reducedMotion = useReducedMotion();
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toggleOpen = useCallback(() => {
@@ -97,23 +99,29 @@ const MobileNav: FC<{navEntries: NavEntry[]}> = memo(({navEntries}) => {
         <Dialog as="div" className="fixed inset-0 z-40 flex sm:hidden" onClose={toggleOpen}>
           <Transition.Child
             as={Fragment}
-            enter="transition-opacity ease-linear duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="transition-opacity ease-linear duration-300"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0">
-            <Dialog.Overlay className="fixed inset-0 bg-neutral-950 bg-opacity-75" />
+            enter={reducedMotion ? '' : 'transition-opacity ease-linear duration-300'}
+            enterFrom={reducedMotion ? '' : 'opacity-0'}
+            enterTo={reducedMotion ? '' : 'opacity-100'}
+            leave={reducedMotion ? '' : 'transition-opacity ease-linear duration-300'}
+            leaveFrom={reducedMotion ? '' : 'opacity-100'}
+            leaveTo={reducedMotion ? '' : 'opacity-0'}>
+            <Dialog.Overlay
+              className="fixed inset-0 bg-neutral-950 bg-opacity-75"
+              style={reducedMotion ? {opacity: 1, transitionDuration: '0s'} : undefined}
+            />
           </Transition.Child>
           <Transition.Child
             as={Fragment}
-            enter="transition ease-in-out duration-300 transform"
-            enterFrom="-translate-x-full"
-            enterTo="translate-x-0"
-            leave="transition ease-in-out duration-300 transform"
-            leaveFrom="translate-x-0"
-            leaveTo="-translate-x-full">
-            <div className="relative w-4/5 border-r border-neutral-800 bg-neutral-900" id={mobileMenuID}>
+            enter={reducedMotion ? '' : 'transition ease-in-out duration-300 transform'}
+            enterFrom={reducedMotion ? '' : '-translate-x-full'}
+            enterTo={reducedMotion ? '' : 'translate-x-0'}
+            leave={reducedMotion ? '' : 'transition ease-in-out duration-300 transform'}
+            leaveFrom={reducedMotion ? '' : 'translate-x-0'}
+            leaveTo={reducedMotion ? '' : '-translate-x-full'}>
+            <div
+              className="relative w-4/5 border-r border-neutral-800 bg-neutral-900"
+              id={mobileMenuID}
+              style={reducedMotion ? {transform: 'none', transitionDuration: '0s'} : undefined}>
               <button
                 aria-label="Close menu"
                 className="absolute right-2 top-2 rounded-md p-2 text-neutral-300 transition-colors duration-300 hover:text-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400"
