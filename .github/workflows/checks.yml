@@ -91,7 +91,7 @@ jobs:
       - name: Run release, edge and publication tests
         run: |
           node --test scripts/tests/analytics-release.test.mjs scripts/tests/static-publication.test.mjs \
-            scripts/tests/workflow-pipelines.test.mjs tests/infra/edge-routing.test.mjs \
+            scripts/tests/workflow-pipelines.test.mjs scripts/tests/website-contact-release.test.mjs tests/infra/edge-routing.test.mjs \
             2>&1 | tee check-logs/node-release-tests.log
 
       - name: Create checked website manifest

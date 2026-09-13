@@ -184,6 +184,62 @@ F19 remains open until authenticated Cloudflare mode/proxy evidence, the authori
 
 ## Release order and gates
 
+### Website/contact artifacts while analytics remains pending
+
+Pushes to `main` resolve explicitly to `website-contact`. Manual dispatch offers
+`website-contact` (default) or `analytics`; other events or mode values are rejected.
+Website/contact releases publish the same-run checked site/manifest and contact
+archive, invalidate the existing distribution, and verify ordinary public reader
+bytes and legacy/v1/v2 behavior. They **apply no Terraform and never install the
+checked analytics archive**, even when that archive differs from deployed code.
+
+This is a temporary exact admission signature, not a general ignore-drift rule.
+The privileged job still creates a complete, private, state-backed full plan.
+`scripts/verify_website_contact_release.mjs` requires exactly two updates: the
+existing `statsAggregator` reservation from `-1` (unreserved) to `1`, and the exact
+old/new `stats-aggregator-errors` description recorded in the helper. Every other
+field must stay identical, required managed resource identities must be present,
+and every other action, import, replacement, deferred/unknown value or missing
+drift blocks publication. New infrastructure work must stop normal release and
+receive its own review; do not target-plan, broaden the signature, or treat this
+mode as approval to apply those two changes. After analytics migration, replace
+this temporary admission policy through review rather than silently allowing a
+missing drift.
+
+Before publication, existing AWS CLI read permissions capture the restored
+legacy stats digest, absent function reservation, enabled daily rule, exact sole
+unqualified target, invocation permission and alarm configuration. Only canonical
+configuration digests and selected nonsecret facts cross jobs. The baseline and
+comparison receipts never contain raw Lambda environment or policy bodies. The
+publish bucket, distribution and contact function must match admitted identities;
+the contact package cannot target `statsAggregator`. After both contact install
+and site publication/invalidation/public-reader proof succeed, the workflow
+captures again and rejects any protected configuration change. Alarm runtime
+state/timestamps may change; its description/configuration may not. The active
+legacy daily producer owns `stats.json`, so before/after metadata is recorded
+without requiring equality. The publisher continues excluding that object.
+
+The CI role does not have or request `lambda:GetAccountSettings`. The controller
+separately verifies the regional quota remains 10 before/after deployment; no
+quota write or additional permission is part of this workflow. A failed snapshot,
+target check, plan admission or public reader check fails the release. A passing
+artifact-only receipt explicitly leaves analytics pending. This is operational
+configuration evidence, not an atomic cross-service snapshot or proof that a
+future daily invocation succeeded.
+
+Both paths retain the whole-release concurrency group and dispose of private
+binary/JSON plans and private output even after failure. Only the nonsecret
+protected-state receipts are uploaded. The original `analytics` mode below keeps
+manual attestation and bounded release-record validation, no-writer/durable-backup
+requirements, pre-apply reader bootstrap when needed, recovery staging before the
+saved full-plan apply, and checked producer installation after public reader proof.
+Website/contact mode skips recovery staging and apply; its normal complete site
+publication still uploads hashes before stable files, including the recovery page.
+
+The remaining apply/cutover order in this section describes **analytics mode**.
+It is not performed by an ordinary website/contact artifact release.
+
+
 Use one reviewed candidate `out` artifact, the two checked Lambda archives and one consolidated state-backed Terraform plan. The reusable verification workflow builds the website once and publishes those exact artifacts for the same workflow run. The privileged deployment job verifies their manifests before planning. The plan must show the intended edge-function source and the two custom error responses for this task, alongside only other independently reviewed release changes. Binary plan, JSON plan and full plan/apply output remain private in that job because they can contain private input and state values; they are never uploaded as workflow artifacts. The controller completed a consolidated read-only state-backed plan on September 8, 2026 at `c9a2a6f`: seven expected managed actions, no replacements, preserved resource/retention/zone/package identities. E5 fix `7eb35b4` changes no Terraform or package inputs. See the [sanitized plan report](../reviews/remediation-evidence/2026-09-07-design-ux-remediation/terraform-final-read-only-plan-report.md). This is a time-bounded scope review, not an apply artifact or release authorization; replan for an approved release.
 
 Before Terraform apply the workflow rechecks the bounded candidate manifest containing file digests, lengths, MIME types, cache metadata and verified HTML/CSS static references. It uploads all candidate `_next/static` objects without deletion, then uploads `404.html` last. This order retains old hashed assets and makes the complete recovery page available before CloudFront can enable the error mapping. It does not upload or delete `stats.json`, and the later full manifest publication also excludes that producer-owned object.
@@ -206,7 +262,7 @@ otherwise retain new code and stop admission.
 - Ordinary analytics code updates remain downstream of website publication, CloudFront invalidation, and the public reader check.
 - Follow the no-writer, durable-backup, and historical-preservation prerequisites in [analytics operations](./analytics.md) for an analytics cutover. Staging recovery assets does not satisfy or bypass them.
 
-The workflow classifies changes to the analytics producer, its schedule/target/invocation permission, producer IAM, data table, producer logging/alarms, source log-bucket controls, every website-versioning change, website-bucket create/delete, and CloudFront logging fields. A real unknown leaf in CloudFront logging also stops the automatic path; empty unknown-schema containers and unrelated cache/routing changes do not. The workflow also compares the checked analytics archive digest with the deployed code digest. Any caught infrastructure or code change blocks an automatic push release. A manual run must affirm that the no-writer window and durable quiesced backup are complete and supply a bounded nonsecret release-record identifier before any upload/apply. That input records operator authorization; the underlying private quiescence and backup evidence remains required. First analytics-Lambda create/replacement still adds the stronger pre-apply public-reader proof. One workflow-wide concurrency group prevents overlapping release runs from mixing artifacts or producer versions.
+The workflow classifies changes to the analytics producer, its schedule/target/invocation permission, producer IAM, data table, producer logging/alarms, source log-bucket controls, every website-versioning change, website-bucket create/delete, and CloudFront logging fields. A real unknown leaf in CloudFront logging also stops the automatic path; empty unknown-schema containers and unrelated cache/routing changes do not. The workflow also compares the checked analytics archive digest with the deployed code digest. In analytics mode, any caught infrastructure or code change requires the manual release boundary; website/contact mode uses the stricter two-drift admission above instead of entering this analytics gate. A manual run must affirm that the no-writer window and durable quiesced backup are complete and supply a bounded nonsecret release-record identifier before any upload/apply. That input records operator authorization; the underlying private quiescence and backup evidence remains required. First analytics-Lambda create/replacement still adds the stronger pre-apply public-reader proof. One workflow-wide concurrency group prevents overlapping release runs from mixing artifacts or producer versions.
 
 After apply, publish the complete same candidate manifest with `stats.json` excluded, then invalidate the distribution through the reviewed workflow. Both phases verify the manifest against the actual downloaded files before their first upload. The ordinary public-reader check must pass before the exact checked analytics archive can be installed.
 

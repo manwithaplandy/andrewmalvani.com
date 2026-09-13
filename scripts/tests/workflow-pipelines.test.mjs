@@ -122,3 +122,50 @@ test('a schedule-only plan with unchanged code rejects push and requires manual 
     rmSync(directory, {recursive: true, force: true});
   }
 });
+
+test('actual release mode step and mutation commands enforce the website/contact boundary', () => {
+  const workflow=readFileSync('.github/workflows/main.yml','utf8');
+  const directory=mkdtempSync(path.join(os.tmpdir(),'website-mode-'));
+  try {
+    const bin=path.join(directory,'bin');mkdirSync(bin);mkdirSync(path.join(directory,'private-plan'));
+    const calls=path.join(directory,'calls');
+    for(const name of ['aws','terraform'])writeFileSync(path.join(bin,name),'#!/bin/bash\necho "$*" >> "$CALLS"\n',{mode:0o755});
+    const run=(name,env={})=>{
+      const file=path.join(directory,'run.sh');writeFileSync(file,runStep(workflow,name));
+      const [shell,args]=githubRunShell(workflow,file);
+      return spawnSync(shell,args,{cwd:process.cwd(),encoding:'utf8',env:{PATH:`${bin}:${path.dirname(process.execPath)}:/usr/bin:/bin`,CALLS:calls,RUNNER_TEMP:directory,GITHUB_OUTPUT:path.join(directory,'output'),...env}});
+    };
+    assert.equal(run('Resolve explicit release mode',{EVENT_NAME:'push',REQUESTED_MODE:''}).status,0);
+    assert.match(readFileSync(path.join(directory,'output'),'utf8'),/mode=website-contact/);
+    assert.notEqual(run('Resolve explicit release mode',{EVENT_NAME:'workflow_dispatch',REQUESTED_MODE:'invalid'}).status,0);
+    for(const name of ['Apply the private checked plan','Update analytics Lambda with exact checked archive']) {
+      assert.equal(run(name,{RELEASE_MODE:'website-contact'}).status,0);
+      assert.notEqual(run(name,{RELEASE_MODE:'invalid'}).status,0);
+    }
+    assert.throws(()=>readFileSync(calls));
+    assert.equal(run('Apply the private checked plan',{RELEASE_MODE:'analytics'}).status,0);
+    assert.match(readFileSync(calls,'utf8'),/apply/);
+    const analyticsJob=workflow.slice(workflow.indexOf('  update-analytics-code:'));
+    assert.match(analyticsJob,/if: needs\.deploy-infrastructure\.outputs\.release_mode == 'analytics' && needs\.deploy-infrastructure\.outputs\.stats_code_change == 'true'/);
+    assert.match(workflow,/name: Discard private plans[\s\S]*?if: always\(\)/);
+    assert.match(workflow,/verify-protected-analytics:[\s\S]*?needs: \[deploy-infrastructure, update-contact-code, verify-analytics-reader\]/);
+  } finally {rmSync(directory,{recursive:true,force:true});}
+});
+
+test('actual publication/contact/invalidation steps reject target drift before any mutation', () => {
+  const workflow=readFileSync('.github/workflows/main.yml','utf8');
+  const tmp=mkdtempSync(path.join(os.tmpdir(),'website-target-'));
+  try {
+    const bin=path.join(tmp,'bin');mkdirSync(bin);
+    const calls=path.join(tmp,'calls');
+    for(const tool of ['aws','node'])writeFileSync(path.join(bin,tool),'#!/bin/bash\necho "$*" >> "$CALLS"\n',{mode:0o755});
+    for(const [name,key,good] of [['Publish verified candidate and cache metadata','S3_BUCKET_NAME','mostly-upward-lion-website-bucket'],['Update contact Lambda with exact checked archive','FUNCTION_NAME','formSubmission'],['Invalidate CloudFront cache','CF_DISTRIBUTION_ID','EDHU4C51HW4BG']]) {
+      const file=path.join(tmp,'step.sh');writeFileSync(file,runStep(workflow,name));const [shell,args]=githubRunShell(workflow,file);
+      const run=value=>spawnSync(shell,args,{cwd:tmp,encoding:'utf8',env:{PATH:`${bin}:/usr/bin:/bin`,CALLS:calls,[key]:value}});
+      assert.notEqual(run('statsAggregator').status,0);
+      assert.throws(()=>readFileSync(calls));
+      assert.equal(run(good).status,0);
+      assert.ok(readFileSync(calls,'utf8').length>0);rmSync(calls);
+    }
+  } finally {rmSync(tmp,{recursive:true,force:true});}
+});
