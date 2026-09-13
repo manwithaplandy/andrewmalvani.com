@@ -379,9 +379,21 @@ jobs:
           FUNCTION_NAME: ${{ vars.LAMBDA_FUNCTION_NAME }}
         run: |
           test "$FUNCTION_NAME" = "formSubmission"
+          checked="$(openssl dgst -sha256 -binary release-artifacts/contact-lambda.zip | openssl base64 -A)"
           aws lambda update-function-code --function-name "$FUNCTION_NAME" \
             --zip-file fileb://release-artifacts/contact-lambda.zip \
             --query '{FunctionName:FunctionName,CodeSha256:CodeSha256,LastModified:LastModified}'
+          # The bounded v2 waiter uses GetFunction, covered by the existing role.
+          aws lambda wait function-updated-v2 --function-name "$FUNCTION_NAME" \
+            --cli-connect-timeout 10 --cli-read-timeout 30
+          deployed="$(aws lambda get-function --function-name "$FUNCTION_NAME" \
+            --query '[Configuration.FunctionName,Configuration.State,Configuration.LastUpdateStatus,Configuration.CodeSha256]' \
+            --output text --cli-connect-timeout 10 --cli-read-timeout 30)"
+          expected="$(printf 'formSubmission\tActive\tSuccessful\t%s' "$checked")"
+          if [ "$deployed" != "$expected" ]; then
+            echo "Contact release blocked: active checked package was not confirmed."
+            exit 1
+          fi
 
   update-analytics-code:
     name: Install checked analytics package
