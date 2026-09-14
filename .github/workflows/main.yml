@@ -319,8 +319,8 @@ jobs:
           aws cloudfront create-invalidation --distribution-id "$CF_DISTRIBUTION_ID" --paths '/*'
 
   verify-analytics-reader:
-    name: Verify public analytics reader
-    needs: invalidate-cloudfront
+    name: Verify deployed analytics reader
+    needs: [deploy-infrastructure, invalidate-cloudfront]
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -342,10 +342,17 @@ jobs:
         with:
           name: checked-web
           path: out
-      - name: Verify ordinary public reader responses and behavior
+      - name: Verify deployed reader responses and behavior
+        env:
+          RELEASE_MODE: ${{ needs.deploy-infrastructure.outputs.release_mode }}
         run: |
+          case "$RELEASE_MODE" in
+            website-contact) origins=(--origin https://d2v6o77xftr5if.cloudfront.net) ;;
+            analytics) origins=(--origin https://andrewmalvani.com --origin https://www.andrewmalvani.com) ;;
+            *) echo "Reader verification blocked: unknown release mode."; exit 1 ;;
+          esac
           node scripts/verify_public_stats_reader.mjs --artifact-dir out \
-            --origin https://andrewmalvani.com --origin https://www.andrewmalvani.com \
+            "${origins[@]}" \
             --report public-reader-verification.json
       - name: Preserve reader release evidence
         uses: actions/upload-artifact@v7
