@@ -190,8 +190,21 @@ Pushes to `main` resolve explicitly to `website-contact`. Manual dispatch offers
 `website-contact` (default) or `analytics`; other events or mode values are rejected.
 Website/contact releases publish the same-run checked site/manifest and contact
 archive, invalidate the existing distribution, and verify ordinary public reader
-bytes and legacy/v1/v2 behavior. They **apply no Terraform and never install the
+bytes and live/legacy/v1/v2 behavior through the existing production CDN endpoint
+`https://d2v6o77xftr5if.cloudfront.net`. They **apply no Terraform and never install the
 checked analytics archive**, even when that archive differs from deployed code.
+
+This automated check covers CloudFront delivery: the unchanged verifier still
+requires the exact checked HTML, all required assets, and reader behavior. The
+`public-reader-verification` artifact retains its name and records the actual
+origin tested. Cloudflare Bot Fight Mode challenged GitHub-hosted `/stats`
+requests during the September 14 UTC release attempts; its settings remain enabled
+and unchanged. Verify apex and `www` through Cloudflare separately during each
+release. The CDN result does not prove Cloudflare-layer behavior on future
+unattended deployments. Analytics mode retains strict apex and `www` checks
+both before producer bootstrap and after publication, with no CDN fallback;
+those gates may still require an approved approach to the Bot Fight Mode
+challenge. Missing or unknown release modes stop before reader verification.
 
 This is a temporary exact admission signature, not a general ignore-drift rule.
 The privileged job still creates a complete, private, state-backed full plan.
@@ -213,7 +226,7 @@ configuration digests and selected nonsecret facts cross jobs. The baseline and
 comparison receipts never contain raw Lambda environment or policy bodies. The
 publish bucket, distribution and contact function must match admitted identities;
 the contact package cannot target `statsAggregator`. After both contact install
-and site publication/invalidation/public-reader proof succeed, the workflow
+and site publication/invalidation/CDN-reader proof succeed, the workflow
 captures again and rejects any protected configuration change. Alarm runtime
 state/timestamps may change; its description/configuration may not. The active
 legacy daily producer owns `stats.json`, so before/after metadata is recorded

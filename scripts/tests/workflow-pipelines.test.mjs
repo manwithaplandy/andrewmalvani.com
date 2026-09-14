@@ -29,6 +29,76 @@ function githubRunShell(workflow, script) {
     : ['/bin/bash', ['-e', script]];
 }
 
+function executeReaderStep(mode, verifierStatus = 0, bootstrap = false) {
+  const workflow = readFileSync('.github/workflows/main.yml', 'utf8');
+  const readerJob = workflow.slice(workflow.indexOf('  verify-analytics-reader:'), workflow.indexOf('  update-contact-code:'));
+  const stepName = bootstrap ? 'Verify public reader before producer bootstrap' : readerJob.match(/      - name: (Verify [^\n]+)\n/)[1];
+  const directory = mkdtempSync(path.join(os.tmpdir(), 'reader-origin-'));
+  try {
+    const bin = path.join(directory, 'bin');
+    mkdirSync(bin);
+    const calls = path.join(directory, 'calls');
+    writeFileSync(path.join(bin, 'node'), `#!${process.execPath}
+require('node:fs').appendFileSync(process.env.CALLS, JSON.stringify(process.argv.slice(2)) + '\\n');
+process.exit(Number(process.env.VERIFIER_STATUS));
+`, {mode: 0o755});
+    const script = path.join(directory, 'run.sh');
+    writeFileSync(script, runStep(workflow, stepName));
+    const [shell, args] = githubRunShell(workflow, script);
+    const result = spawnSync(shell, args, {
+      cwd: directory,
+      env: {PATH: `${bin}:/usr/bin:/bin`, CALLS: calls, VERIFIER_STATUS: String(verifierStatus), ...(mode === undefined ? {} : {RELEASE_MODE: mode})},
+      encoding: 'utf8',
+    });
+    let executed = [];
+    try { executed = readFileSync(calls, 'utf8').trim().split('\n').map(JSON.parse); }
+    catch (error) { if (error.code !== 'ENOENT') throw error; }
+    return {result, executed, readerJob};
+  } finally {
+    rmSync(directory, {recursive: true, force: true});
+  }
+}
+
+test('website/contact executes the unchanged reader verifier against only the existing production CDN', () => {
+  const {result, executed, readerJob} = executeReaderStep('website-contact');
+  assert.equal(result.status, 0, result.stdout + result.stderr);
+  assert.deepEqual(executed, [[
+    'scripts/verify_public_stats_reader.mjs', '--artifact-dir', 'out',
+    '--origin', 'https://d2v6o77xftr5if.cloudfront.net', '--report', 'public-reader-verification.json',
+  ]]);
+  assert.match(readerJob, /needs: \[deploy-infrastructure, invalidate-cloudfront\]/);
+  assert.match(readerJob, /RELEASE_MODE: \$\{\{ needs\.deploy-infrastructure\.outputs\.release_mode \}\}/);
+  assert.match(readerJob, /uses: actions\/download-artifact@v8\n        with:\n          name: checked-web\n          path: out/);
+});
+
+test('analytics reader verification requires both public domains before bootstrap and after publication', () => {
+  for (const bootstrap of [false, true]) {
+    const {result, executed} = executeReaderStep('analytics', 0, bootstrap);
+    assert.equal(result.status, 0, result.stdout + result.stderr);
+    assert.deepEqual(executed, [[
+      'scripts/verify_public_stats_reader.mjs', '--artifact-dir', 'out',
+      '--origin', 'https://andrewmalvani.com', '--origin', 'https://www.andrewmalvani.com',
+      '--report', bootstrap ? 'bootstrap-reader-verification.json' : 'public-reader-verification.json',
+    ]]);
+  }
+});
+
+test('missing or unknown release modes stop before executing the reader verifier', () => {
+  for (const mode of [undefined, '', 'invalid']) {
+    const {result, executed} = executeReaderStep(mode);
+    assert.notEqual(result.status, 0, `Reader verification accepted mode ${JSON.stringify(mode)}`);
+    assert.deepEqual(executed, [], 'Invalid release mode must not launch browser verification');
+  }
+});
+
+test('reader verifier failures propagate in both release modes without endpoint fallback', () => {
+  for (const mode of ['website-contact', 'analytics']) {
+    const {result, executed} = executeReaderStep(mode, 23);
+    assert.equal(result.status, 23, result.stdout + result.stderr);
+    assert.equal(executed.length, 1, 'A failed verification must not retry against another endpoint');
+  }
+});
+
 test('a failed command piped to tee fails the actual archive-build workflow step', () => {
   const workflow = readFileSync('.github/workflows/checks.yml', 'utf8');
   const directory = mkdtempSync(path.join(os.tmpdir(), 'e5-workflow-pipeline-'));
