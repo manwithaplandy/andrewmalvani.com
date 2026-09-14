@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
 import {mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync} from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -121,4 +122,98 @@ test('a schedule-only plan with unchanged code rejects push and requires manual 
   } finally {
     rmSync(directory, {recursive: true, force: true});
   }
+});
+
+test('actual release mode step and mutation commands enforce the website/contact boundary', () => {
+  const workflow=readFileSync('.github/workflows/main.yml','utf8');
+  const directory=mkdtempSync(path.join(os.tmpdir(),'website-mode-'));
+  try {
+    const bin=path.join(directory,'bin');mkdirSync(bin);mkdirSync(path.join(directory,'private-plan'));
+    const calls=path.join(directory,'calls');
+    for(const name of ['aws','terraform'])writeFileSync(path.join(bin,name),'#!/bin/bash\necho "$*" >> "$CALLS"\n',{mode:0o755});
+    const run=(name,env={})=>{
+      const file=path.join(directory,'run.sh');writeFileSync(file,runStep(workflow,name));
+      const [shell,args]=githubRunShell(workflow,file);
+      return spawnSync(shell,args,{cwd:process.cwd(),encoding:'utf8',env:{PATH:`${bin}:${path.dirname(process.execPath)}:/usr/bin:/bin`,CALLS:calls,RUNNER_TEMP:directory,GITHUB_OUTPUT:path.join(directory,'output'),...env}});
+    };
+    assert.equal(run('Resolve explicit release mode',{EVENT_NAME:'push',REQUESTED_MODE:''}).status,0);
+    assert.match(readFileSync(path.join(directory,'output'),'utf8'),/mode=website-contact/);
+    assert.notEqual(run('Resolve explicit release mode',{EVENT_NAME:'workflow_dispatch',REQUESTED_MODE:'invalid'}).status,0);
+    for(const name of ['Apply the private checked plan','Update analytics Lambda with exact checked archive']) {
+      assert.equal(run(name,{RELEASE_MODE:'website-contact'}).status,0);
+      assert.notEqual(run(name,{RELEASE_MODE:'invalid'}).status,0);
+    }
+    assert.throws(()=>readFileSync(calls));
+    assert.equal(run('Apply the private checked plan',{RELEASE_MODE:'analytics'}).status,0);
+    assert.match(readFileSync(calls,'utf8'),/apply/);
+    const analyticsJob=workflow.slice(workflow.indexOf('  update-analytics-code:'));
+    assert.match(analyticsJob,/if: needs\.deploy-infrastructure\.outputs\.release_mode == 'analytics' && needs\.deploy-infrastructure\.outputs\.stats_code_change == 'true'/);
+    assert.match(workflow,/name: Discard private plans[\s\S]*?if: always\(\)/);
+    assert.match(workflow,/verify-protected-analytics:[\s\S]*?needs: \[deploy-infrastructure, update-contact-code, verify-analytics-reader\]/);
+  } finally {rmSync(directory,{recursive:true,force:true});}
+});
+
+test('actual publication/invalidation steps reject target drift before any mutation', () => {
+  const workflow=readFileSync('.github/workflows/main.yml','utf8');
+  const tmp=mkdtempSync(path.join(os.tmpdir(),'website-target-'));
+  try {
+    const bin=path.join(tmp,'bin');mkdirSync(bin);
+    const calls=path.join(tmp,'calls');
+    for(const tool of ['aws','node'])writeFileSync(path.join(bin,tool),'#!/bin/bash\necho "$*" >> "$CALLS"\n',{mode:0o755});
+    for(const [name,key,good] of [['Publish verified candidate and cache metadata','S3_BUCKET_NAME','mostly-upward-lion-website-bucket'],['Invalidate CloudFront cache','CF_DISTRIBUTION_ID','EDHU4C51HW4BG']]) {
+      const file=path.join(tmp,'step.sh');writeFileSync(file,runStep(workflow,name));const [shell,args]=githubRunShell(workflow,file);
+      const run=value=>spawnSync(shell,args,{cwd:tmp,encoding:'utf8',env:{PATH:`${bin}:/usr/bin:/bin`,CALLS:calls,[key]:value}});
+      assert.notEqual(run('statsAggregator').status,0);
+      assert.throws(()=>readFileSync(calls));
+      assert.equal(run(good).status,0);
+      assert.ok(readFileSync(calls,'utf8').length>0);rmSync(calls);
+    }
+  } finally {rmSync(tmp,{recursive:true,force:true});}
+});
+
+
+test('contact install finishes only after the waiter and exact active checked-code readback', () => {
+  const workflow=readFileSync('.github/workflows/main.yml','utf8');
+  const tmp=mkdtempSync(path.join(os.tmpdir(),'contact-completion-'));
+  try {
+    const bin=path.join(tmp,'bin');mkdirSync(bin);mkdirSync(path.join(tmp,'release-artifacts'));
+    const archive=Buffer.from('checked contact archive fixture');
+    writeFileSync(path.join(tmp,'release-artifacts/contact-lambda.zip'),archive);
+    const digest=createHash('sha256').update(archive).digest('base64');
+    const calls=path.join(tmp,'calls'), script=path.join(tmp,'run.sh');
+    writeFileSync(script,runStep(workflow,'Update contact Lambda with exact checked archive'));
+    writeFileSync(path.join(bin,'aws'),`#!${process.execPath}
+const fs=require('node:fs');
+const args=process.argv.slice(2),mode=process.env.CASE;
+fs.appendFileSync(process.env.CALLS,JSON.stringify(args)+'\\n');
+if(args[0]!=='lambda' || args[args.indexOf('--function-name')+1]!=='formSubmission')process.exit(90);
+if(args[1]==='update-function-code'){if(mode==='update-failure')process.exit(21);console.log('{}');}
+else if(args[1]==='wait'){if(args[2]!=='function-updated-v2')process.exit(91);if(mode==='waiter-failure')process.exit(22);}
+else if(args[1]==='get-function'){
+ if(mode==='read-failure')process.exit(23);
+ const query=args[args.indexOf('--query')+1];
+ if(query!=='[Configuration.FunctionName,Configuration.State,Configuration.LastUpdateStatus,Configuration.CodeSha256]' || args[args.indexOf('--output')+1]!=='text'){console.log('PRIVATE_ENVIRONMENT_SENTINEL');process.exit(92);}
+ console.log([mode==='wrong-name'?'statsAggregator':'formSubmission',mode==='not-active'?'Pending':'Active',mode==='failed-update'?'Failed':'Successful',mode==='wrong-digest'?'wrong':process.env.CHECKED_DIGEST].join('\\t'));
+}else process.exit(93);
+`,{mode:0o755});
+    const [shell,args]=githubRunShell(workflow,script);
+    const run=(mode, functionName='formSubmission')=>{
+      rmSync(calls,{force:true});
+      const result=spawnSync(shell,args,{cwd:tmp,encoding:'utf8',env:{PATH:`${bin}:/usr/bin:/bin`,CALLS:calls,CASE:mode,CHECKED_DIGEST:digest,FUNCTION_NAME:functionName}});
+      assert.doesNotMatch(result.stdout+result.stderr,/PRIVATE_ENVIRONMENT_SENTINEL/);
+      return result;
+    };
+    const good=run('success');assert.equal(good.status,0,good.stdout+good.stderr);
+    const executed=readFileSync(calls,'utf8').trim().split('\n').map(JSON.parse);
+    assert.deepEqual(executed.map(a=>a[1]),['update-function-code','wait','get-function']);
+    for(const mode of ['update-failure','waiter-failure','read-failure','not-active','failed-update','wrong-name','wrong-digest']) {
+      const bad=run(mode);assert.notEqual(bad.status,0,mode+' must block release');
+      const methods=readFileSync(calls,'utf8').trim().split('\n').map(line=>JSON.parse(line)[1]);
+      if(mode==='update-failure')assert.deepEqual(methods,['update-function-code']);
+      if(mode==='waiter-failure')assert.deepEqual(methods,['update-function-code','wait']);
+    }
+    assert.notEqual(run('success','statsAggregator').status,0);assert.throws(()=>readFileSync(calls));
+    rmSync(path.join(tmp,'release-artifacts/contact-lambda.zip'));
+    assert.notEqual(run('success').status,0);assert.throws(()=>readFileSync(calls));
+  } finally {rmSync(tmp,{recursive:true,force:true});}
 });

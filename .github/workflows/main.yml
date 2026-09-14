@@ -6,6 +6,14 @@ on:
       - main
   workflow_dispatch:
     inputs:
+      release_mode:
+        description: Website/contact artifacts only, or the separately approved analytics migration
+        required: true
+        type: choice
+        default: website-contact
+        options:
+          - website-contact
+          - analytics
       analytics_release_approved:
         description: No-writer window and durable quiesced backup are verified for this analytics release
         required: true
@@ -38,7 +46,7 @@ jobs:
       contents: read
 
   deploy-infrastructure:
-    name: Plan and apply checked infrastructure
+    name: Admit checked release and conditionally apply infrastructure
     needs: verify-release
     runs-on: ubuntu-latest
     environment: AWS General
@@ -46,6 +54,7 @@ jobs:
       contents: read
       id-token: write
     outputs:
+      release_mode: ${{ steps.release-mode.outputs.mode }}
       stats_code_change: ${{ steps.stats-code.outputs.changed }}
     env:
       TF_VAR_email_address: ${{ secrets.EMAIL_ADDRESS }}
@@ -62,6 +71,15 @@ jobs:
         with:
           node-version: '22'
           cache: yarn
+
+      - name: Resolve explicit release mode
+        id: release-mode
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          REQUESTED_MODE: ${{ inputs.release_mode }}
+        run: |
+          node scripts/verify_website_contact_release.mjs mode \
+            --event "$EVENT_NAME" --mode "$REQUESTED_MODE" >> "$GITHUB_OUTPUT"
 
       - name: Install release gate dependencies
         run: |
@@ -118,13 +136,37 @@ jobs:
           terraform -chdir=terraform show -json "$RUNNER_TEMP/private-plan/release.tfplan" \
             > "$RUNNER_TEMP/private-plan/release.json"
 
+      - name: Admit website/contact plan and capture protected analytics
+        if: steps.release-mode.outputs.mode == 'website-contact'
+        env:
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+          CF_DISTRIBUTION_ID: ${{ vars.CF_DISTRIBUTION_ID }}
+          FUNCTION_NAME: ${{ vars.LAMBDA_FUNCTION_NAME }}
+        run: |
+          node scripts/verify_website_contact_release.mjs admit --plan "$RUNNER_TEMP/private-plan/release.json"
+          node scripts/verify_website_contact_release.mjs capture \
+            --plan "$RUNNER_TEMP/private-plan/release.json" \
+            --bucket "$S3_BUCKET_NAME" --distribution "$CF_DISTRIBUTION_ID" --contact "$FUNCTION_NAME" \
+            --output protected-analytics-before.json
+
+      - name: Preserve nonsecret protected analytics baseline
+        if: steps.release-mode.outputs.mode == 'website-contact'
+        uses: actions/upload-artifact@v7
+        with:
+          name: protected-analytics-before
+          path: protected-analytics-before.json
+          if-no-files-found: error
+          retention-days: 7
+
       - name: Identify analytics plan prerequisites
+        if: steps.release-mode.outputs.mode == 'analytics'
         id: analytics-plan
         run: |
           node scripts/verify_public_stats_reader.mjs \
             --plan "$RUNNER_TEMP/private-plan/release.json" >> "$GITHUB_OUTPUT"
 
       - name: Compare checked analytics package with deployed code
+        if: steps.release-mode.outputs.mode == 'analytics'
         id: stats-code
         env:
           FUNCTION_NAME: ${{ vars.STATS_AGGREGATOR_FUNCTION_NAME }}
@@ -143,6 +185,7 @@ jobs:
           fi
 
       - name: Require approved analytics migration boundary
+        if: steps.release-mode.outputs.mode == 'analytics'
         env:
           EVENT_NAME: ${{ github.event_name }}
           ANALYTICS_PLAN_CHANGE: ${{ steps.analytics-plan.outputs.analytics_change }}
@@ -163,11 +206,11 @@ jobs:
           fi
 
       - name: Install browser for producer bootstrap gate
-        if: steps.analytics-plan.outputs.requires_reader == 'true'
+        if: steps.release-mode.outputs.mode == 'analytics' && steps.analytics-plan.outputs.requires_reader == 'true'
         run: yarn playwright install --with-deps chromium
 
       - name: Verify public reader before producer bootstrap
-        if: steps.analytics-plan.outputs.requires_reader == 'true'
+        if: steps.release-mode.outputs.mode == 'analytics' && steps.analytics-plan.outputs.requires_reader == 'true'
         run: |
           node scripts/verify_public_stats_reader.mjs --artifact-dir out \
             --origin https://andrewmalvani.com --origin https://www.andrewmalvani.com \
@@ -175,7 +218,7 @@ jobs:
         # If unavailable or stale, stop for a separately reviewed reader bootstrap.
 
       - name: Preserve bootstrap reader evidence
-        if: steps.analytics-plan.outputs.requires_reader == 'true'
+        if: steps.release-mode.outputs.mode == 'analytics' && steps.analytics-plan.outputs.requires_reader == 'true'
         uses: actions/upload-artifact@v7
         with:
           name: bootstrap-reader-verification
@@ -186,6 +229,7 @@ jobs:
       # Upload complete checked static dependencies before 404.html. No key is
       # deleted and stats.json remains owned by the analytics producer.
       - name: Stage checked recovery page before CloudFront error policy
+        if: steps.release-mode.outputs.mode == 'analytics'
         env:
           S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
         run: |
@@ -194,14 +238,25 @@ jobs:
             --bucket "$S3_BUCKET_NAME" --phase recovery
 
       - name: Apply the private checked plan
+        if: steps.release-mode.outputs.mode == 'analytics'
+        env:
+          RELEASE_MODE: ${{ steps.release-mode.outputs.mode }}
         run: |
+          case "$RELEASE_MODE" in
+            website-contact) exit 0 ;;
+            analytics) ;;
+            *) echo "Invalid release mode"; exit 1 ;;
+          esac
           if ! terraform -chdir=terraform apply -input=false -no-color \
             "$RUNNER_TEMP/private-plan/release.tfplan" \
             > "$RUNNER_TEMP/private-plan/apply.log" 2>&1; then
             echo "Terraform apply failed; the private plan and output were not published."
             exit 1
           fi
-          rm -rf "$RUNNER_TEMP/private-plan"
+
+      - name: Discard private plans
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/private-plan"
 
   publish-site:
     name: Publish checked website
@@ -237,6 +292,7 @@ jobs:
         env:
           S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
         run: |
+          test "$S3_BUCKET_NAME" = "mostly-upward-lion-website-bucket"
           node scripts/publish_static_site.mjs upload --artifact-dir out \
             --manifest checked-manifest/checked-site-manifest.json \
             --bucket "$S3_BUCKET_NAME" --phase all
@@ -258,7 +314,9 @@ jobs:
       - name: Invalidate CloudFront cache
         env:
           CF_DISTRIBUTION_ID: ${{ vars.CF_DISTRIBUTION_ID }}
-        run: aws cloudfront create-invalidation --distribution-id "$CF_DISTRIBUTION_ID" --paths '/*'
+        run: |
+          test "$CF_DISTRIBUTION_ID" = "EDHU4C51HW4BG"
+          aws cloudfront create-invalidation --distribution-id "$CF_DISTRIBUTION_ID" --paths '/*'
 
   verify-analytics-reader:
     name: Verify public analytics reader
@@ -320,14 +378,27 @@ jobs:
         env:
           FUNCTION_NAME: ${{ vars.LAMBDA_FUNCTION_NAME }}
         run: |
+          test "$FUNCTION_NAME" = "formSubmission"
+          checked="$(openssl dgst -sha256 -binary release-artifacts/contact-lambda.zip | openssl base64 -A)"
           aws lambda update-function-code --function-name "$FUNCTION_NAME" \
             --zip-file fileb://release-artifacts/contact-lambda.zip \
             --query '{FunctionName:FunctionName,CodeSha256:CodeSha256,LastModified:LastModified}'
+          # The bounded v2 waiter uses GetFunction, covered by the existing role.
+          aws lambda wait function-updated-v2 --function-name "$FUNCTION_NAME" \
+            --cli-connect-timeout 10 --cli-read-timeout 30
+          deployed="$(aws lambda get-function --function-name "$FUNCTION_NAME" \
+            --query '[Configuration.FunctionName,Configuration.State,Configuration.LastUpdateStatus,Configuration.CodeSha256]' \
+            --output text --cli-connect-timeout 10 --cli-read-timeout 30)"
+          expected="$(printf 'formSubmission\tActive\tSuccessful\t%s' "$checked")"
+          if [ "$deployed" != "$expected" ]; then
+            echo "Contact release blocked: active checked package was not confirmed."
+            exit 1
+          fi
 
   update-analytics-code:
     name: Install checked analytics package
     needs: [deploy-infrastructure, verify-analytics-reader]
-    if: needs.deploy-infrastructure.outputs.stats_code_change == 'true'
+    if: needs.deploy-infrastructure.outputs.release_mode == 'analytics' && needs.deploy-infrastructure.outputs.stats_code_change == 'true'
     runs-on: ubuntu-latest
     environment: AWS General
     permissions:
@@ -346,8 +417,58 @@ jobs:
           aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
       - name: Update analytics Lambda with exact checked archive
         env:
+          RELEASE_MODE: ${{ needs.deploy-infrastructure.outputs.release_mode }}
           FUNCTION_NAME: ${{ vars.STATS_AGGREGATOR_FUNCTION_NAME }}
         run: |
+          case "$RELEASE_MODE" in
+            website-contact) exit 0 ;;
+            analytics) ;;
+            *) echo "Invalid release mode"; exit 1 ;;
+          esac
           aws lambda update-function-code --function-name "$FUNCTION_NAME" \
             --zip-file fileb://release-artifacts/stats-aggregator.zip \
             --query '{FunctionName:FunctionName,CodeSha256:CodeSha256,LastModified:LastModified}'
+
+  verify-protected-analytics:
+    name: Confirm website/contact release preserved analytics
+    needs: [deploy-infrastructure, update-contact-code, verify-analytics-reader]
+    if: needs.deploy-infrastructure.outputs.release_mode == 'website-contact'
+    runs-on: ubuntu-latest
+    environment: AWS General
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout reviewed source
+        uses: actions/checkout@v6
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: arn:aws:iam::870140981796:role/github-deploy
+          aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
+      - name: Download nonsecret protected analytics baseline
+        uses: actions/download-artifact@v8
+        with:
+          name: protected-analytics-before
+          path: protected-baseline
+      - name: Compare protected configuration after website/contact and public reader
+        env:
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+          CF_DISTRIBUTION_ID: ${{ vars.CF_DISTRIBUTION_ID }}
+          FUNCTION_NAME: ${{ vars.LAMBDA_FUNCTION_NAME }}
+        run: |
+          node scripts/verify_website_contact_release.mjs compare \
+            --before protected-baseline/protected-analytics-before.json \
+            --bucket "$S3_BUCKET_NAME" --distribution "$CF_DISTRIBUTION_ID" --contact "$FUNCTION_NAME" \
+            --output protected-analytics-comparison.json
+      - name: Preserve nonsecret analytics preservation receipt
+        uses: actions/upload-artifact@v7
+        with:
+          name: protected-analytics-comparison
+          path: protected-analytics-comparison.json
+          if-no-files-found: error
+          retention-days: 7
