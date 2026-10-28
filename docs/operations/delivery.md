@@ -36,6 +36,16 @@ validation, sanitization, name/email/message limits of 100/254/2000, clean error
 and the SNS destination remain in force. Tests use only synthetic clients and
 never send contact notifications.
 
+A daily cap bounds notification volume, which the stage throttle (5 rps, burst
+10) alone leaves at hundreds of thousands of emails a day. After validation the
+handler atomically counts each send per UTC day in the
+`website-contact-daily-sends` DynamoDB table and returns 429 once
+`DAILY_LIMIT` (Terraform `contact_daily_limit`, default 25) is spent. Rejected
+input never spends the cap. Without `DAILY_LIMIT_TABLE` the handler applies no
+cap, so the code and the infrastructure can ship in either order; once it is
+set, a counter failure returns 502 rather than sending uncapped. The cap is
+global, so a flood also blocks genuine messages until the next UTC day.
+
 The deployment trigger now fingerprints the evaluated route paths, methods,
 integrations, method responses, integration responses, and origin list instead
 of the unset REST API body. Required responses and Lambda invocation permission

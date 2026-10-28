@@ -1,5 +1,6 @@
 """Exercise loose source and the checked contact ZIP with isolated SNS clients."""
 import contextlib
+from datetime import datetime, timezone
 import importlib.util
 import io
 import json
@@ -34,18 +35,46 @@ class FakeSNS:
         return {'MessageId': 'synthetic'}
 
 
+class ConditionalCheckFailed(Exception):
+    pass
+
+
+class FakeDynamoDB:
+    exceptions = types.SimpleNamespace(ConditionalCheckFailedException=ConditionalCheckFailed)
+
+    def __init__(self):
+        self.requests = []
+        self.sends = {}
+        self.fail = False
+
+    def update_item(self, **request):
+        if self.fail:
+            raise RuntimeError('Synthetic private backend detail')
+        self.requests.append(request)
+        day = request['Key']['day']['S']
+        if self.sends.get(day, 0) >= int(request['ExpressionAttributeValues'][':limit']['N']):
+            raise ConditionalCheckFailed()
+        self.sends[day] = self.sends.get(day, 0) + 1
+
+
 class ContactContract:
     def setUp(self):
         self.sns = FakeSNS()
         self.env = patch.dict(os.environ, ENV, clear=True)
         self.env.start()
         self.addCleanup(self.env.stop)
-        self.clients = patch.dict('sys.modules', {'boto3': types.SimpleNamespace(client=lambda service: self.sns)})
+        self.dynamodb = FakeDynamoDB()
+        clients = {'sns': self.sns, 'dynamodb': self.dynamodb}
+        self.clients = patch.dict('sys.modules', {'boto3': types.SimpleNamespace(client=clients.__getitem__)})
         self.clients.start()
         self.addCleanup(self.clients.stop)
-        spec = importlib.util.spec_from_file_location('isolated_contact_handler', self.source())
-        self.handler = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(self.handler)
+        self.load()
+
+    def load(self, **env):
+        with patch.dict(os.environ, env):
+            spec = importlib.util.spec_from_file_location('isolated_contact_handler', self.source())
+            self.handler = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(self.handler)
 
     def invoke(self, origin=ORIGINS[0], body=DRAFT, method='POST', header='Origin'):
         event = {'httpMethod': method, 'headers': {} if origin is None else {header: origin},
@@ -131,6 +160,35 @@ class ContactContract:
         self.assertIn('Name: ' + 'n' * 100 + '\n', truncated)
         self.assertIn('Email: ' + 'a' * 249 + '@b.co\n', truncated)
         self.assertIn('Message: ' + 'm' * 2000 + '\n', truncated)
+
+
+    def test_no_daily_cap_without_configured_table(self):
+        self.assertEqual(self.invoke()['statusCode'], 200)
+        self.assertIsNone(self.handler.dynamodb)
+        self.assertEqual(self.dynamodb.requests, [])
+
+    def test_daily_cap_refuses_sends_once_spent(self):
+        self.load(DAILY_LIMIT_TABLE='synthetic-daily-sends', DAILY_LIMIT='2')
+        self.assertEqual(self.invoke(body={**DRAFT, 'email': 'invalid'})['statusCode'], 400)
+        self.assertEqual(self.dynamodb.requests, [], 'Rejected input must not spend the cap')
+        for _ in range(2):
+            self.assertEqual(self.invoke()['statusCode'], 200)
+        response = self.invoke(ORIGINS[1])
+        self.assertEqual(response['statusCode'], 429)
+        self.assertEqual(response['headers']['Access-Control-Allow-Origin'], ORIGINS[1])
+        self.assertEqual(len(self.sns.messages), 2)
+        request = self.dynamodb.requests[-1]
+        self.assertEqual(request['TableName'], 'synthetic-daily-sends')
+        self.assertEqual(request['Key'], {'day': {'S': datetime.now(timezone.utc).strftime('%Y-%m-%d')}})
+        self.assertEqual(request['ConditionExpression'], 'attribute_not_exists(sends) OR sends < :limit')
+
+    def test_daily_cap_counter_failure_refuses_send(self):
+        self.load(DAILY_LIMIT_TABLE='synthetic-daily-sends')
+        self.dynamodb.fail = True
+        response = self.invoke()
+        self.assertEqual(response['statusCode'], 502)
+        self.assertNotIn('private backend', response['body'])
+        self.assertEqual(self.sns.messages, [])
 
 
 class SourceContactTests(ContactContract, unittest.TestCase):
