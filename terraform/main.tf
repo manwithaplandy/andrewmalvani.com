@@ -54,38 +54,39 @@ resource "aws_s3_bucket_versioning" "website_versioning" {
 resource "aws_s3_bucket_policy" "allow_cloudfront_access" {
   bucket = aws_s3_bucket.website.id
 
+  # Only this distribution's OAC may read objects. Without the SourceArn
+  # condition any CloudFront distribution, in any account, could be pointed at
+  # the bucket. The former OAI grant is gone: the origin uses OAC only.
   policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
-      {
-        Sid       = "AllowCloudFrontAccess"
-        Effect    = "Allow"
-        Principal = { "AWS" : "${aws_cloudfront_origin_access_identity.oai.iam_arn}" }
-        Action    = ["s3:GetObject"]
-        Resource = [
-          "arn:aws:s3:::${aws_s3_bucket.website.bucket}",
-          "arn:aws:s3:::${aws_s3_bucket.website.bucket}/*"
-        ]
-      },
       {
         Sid    = "AllowCloudFrontServicePrincipalReadOnly",
         Effect = "Allow",
         Principal = {
           Service = "cloudfront.amazonaws.com"
         },
-        Action = "s3:GetObject",
-        Resource = [
-          "arn:aws:s3:::${aws_s3_bucket.website.bucket}",
-          "arn:aws:s3:::${aws_s3_bucket.website.bucket}/*"
-        ],
-        # Condition = {
-        #   StringEquals = {
-        #     "aws:SourceArn" = "${aws_cloudfront_distribution.website_distribution.arn}"
-        #   }
-        # }
+        Action   = "s3:GetObject",
+        Resource = "${aws_s3_bucket.website.arn}/*",
+        Condition = {
+          StringEquals = {
+            "aws:SourceArn" = aws_cloudfront_distribution.website_distribution.arn
+          }
+        }
       },
     ]
   })
+
+  depends_on = [aws_s3_bucket_public_access_block.website]
+}
+
+resource "aws_s3_bucket_public_access_block" "website" {
+  bucket = aws_s3_bucket.website.id
+
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
 }
 
 resource "aws_s3_bucket_cors_configuration" "example" {
@@ -93,7 +94,7 @@ resource "aws_s3_bucket_cors_configuration" "example" {
 
   cors_rule {
     allowed_methods = ["GET"]
-    allowed_origins = ["*"]
+    allowed_origins = local.allowed_cors_origins
   }
 }
 
@@ -122,6 +123,17 @@ resource "aws_s3_bucket_versioning" "log_bucket_versioning" {
   versioning_configuration {
     status = "Enabled"
   }
+}
+
+# CloudFront standard logging writes with an ACL grant to the log-delivery
+# account, which is not a public ACL, so blocking public access is compatible.
+resource "aws_s3_bucket_public_access_block" "log_bucket" {
+  bucket = aws_s3_bucket.log_bucket.id
+
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
 }
 
 resource "aws_s3_bucket_ownership_controls" "example" {
@@ -214,10 +226,6 @@ resource "aws_s3_bucket_lifecycle_configuration" "log_bucket_lifecycle" {
       noncurrent_days = 30
     }
   }
-}
-
-resource "aws_cloudfront_origin_access_identity" "oai" {
-  comment = "OAI for accessing S3 bucket from CloudFront"
 }
 
 resource "aws_cloudfront_origin_access_control" "oac" {
@@ -415,6 +423,20 @@ resource "aws_cloudfront_response_headers_policy" "security_headers" {
     referrer_policy {
       referrer_policy = "strict-origin-when-cross-origin"
       override        = true
+    }
+    # The page's own <meta> policy covers fetch directives; these are the ones
+    # a meta policy cannot enforce or that must hold for every response type.
+    content_security_policy {
+      content_security_policy = "frame-ancestors 'none'; object-src 'none'; base-uri 'self'"
+      override                = true
+    }
+  }
+
+  custom_headers_config {
+    items {
+      header   = "Permissions-Policy"
+      value    = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+      override = true
     }
   }
 }
