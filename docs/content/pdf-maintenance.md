@@ -12,7 +12,7 @@ python -m pip check
 python scripts/generate_resume_pdf.py
 ```
 
-The direct generator dependencies are pinned to the verified versions, ReportLab 4.4.9 and pypdf 6.10.0. The generator uses ReportLab’s standard Helvetica fonts; no workstation-specific font path is required. Use `--output /tmp/resume-candidate.pdf` to review a candidate before replacing the source artifact. Generation may update PDF metadata; do not claim byte reproducibility from the direct dependency pins alone.
+The direct generator dependencies are pinned to the verified versions, ReportLab 4.4.9 and pypdf 6.21.3. The generator uses ReportLab’s standard Helvetica fonts; no workstation-specific font path is required. Use `--output /tmp/resume-candidate.pdf` to review a candidate before replacing the source artifact. Generation may update PDF metadata; do not claim byte reproducibility from the direct dependency pins alone.
 
 After any change:
 

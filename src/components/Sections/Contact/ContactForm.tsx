@@ -2,6 +2,8 @@ import axios from 'axios';
 import classNames from 'classnames';
 import {FC, memo, useCallback, useEffect, useMemo, useRef, useState} from 'react';
 
+import {CONTACT_API_URL} from '../../../config';
+
 interface FormData {
   name: string;
   email: string;
@@ -11,11 +13,6 @@ interface FormData {
 type FieldName = keyof FormData;
 type FieldErrors = Partial<Record<FieldName, string>>;
 type FieldElement = HTMLInputElement | HTMLTextAreaElement;
-
-// Public contact API endpoint. Overridable via env for cleanliness; falls back
-// to the deployed endpoint so static builds work without extra config.
-const CONTACT_API_URL =
-  process.env.NEXT_PUBLIC_CONTACT_API_URL ?? 'https://vs7dthj3vb.execute-api.us-west-1.amazonaws.com/api/contact';
 
 // Client-side guard only — the Lambda performs authoritative validation
 // (MAX_MESSAGE_LEN = 2000 in sns_publish_lambda/lambda_function.py). We match
