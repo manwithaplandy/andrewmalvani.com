@@ -173,7 +173,9 @@ if(args[1]==='check')process.exit(Number(process.env.CHECK_STATUS));
     writeFileSync(path.join(bin, 'terraform'), `#!${process.execPath}
 require('node:fs').appendFileSync(process.env.CALLS,JSON.stringify(['terraform',...process.argv.slice(2)])+'\\n');
 if(process.argv.includes('show'))console.log('{}');
-process.exit(process.argv.includes('apply')?Number(process.env.APPLY_STATUS):0);
+const failed=process.argv.includes('apply')&&process.env.APPLY_STATUS!=='0';
+if(failed)console.log('\\u2577\\n\\u2502 Error: creating DynamoDB Table (example): AccessDeniedException\\n\\u2502 \\n\\u2502   with aws_dynamodb_table.contact_daily_sends,\\n\\u2502   on contactLambda.tf line 1:\\n\\u2502 PRIVATE_FIXTURE_SENTINEL\\n\\u2575');
+process.exit(failed?Number(process.env.APPLY_STATUS):0);
 `, {mode: 0o755});
     const script = path.join(directory, 'run.sh');
     writeFileSync(script, runStep(workflow, 'Apply non-analytics infrastructure changes'));
@@ -197,7 +199,10 @@ process.exit(process.argv.includes('apply')?Number(process.env.APPLY_STATUS):0);
     const mismatch = run({TARGETS: 'aws_dynamodb_table.contact_daily_sends\n', CHECK_STATUS: '1'});
     assert.notEqual(mismatch.result.status, 0); assert.ok(!mismatch.tools.includes('apply'));
     const failedApply = run({TARGETS: 'aws_dynamodb_table.contact_daily_sends\n', APPLY_STATUS: '1'});
-    assert.notEqual(failedApply.result.status, 0); assert.equal(failedApply.tools.at(-1), 'apply');
+    assert.notEqual(failedApply.result.status, 0); assert.equal(failedApply.tools.at(-1), 'apply', failedApply.result.stderr);
+    assert.match(failedApply.result.stdout, /^Error: creating DynamoDB Table \(example\): AccessDeniedException$/m);
+    assert.match(failedApply.result.stdout, /^with aws_dynamodb_table\.contact_daily_sends,$/m);
+    assert.ok(!failedApply.result.stdout.includes('PRIVATE_FIXTURE_SENTINEL') && !failedApply.result.stdout.includes('contactLambda.tf'));
 
     const ok = run({TARGETS: 'aws_dynamodb_table.contact_daily_sends\naws_cloudfront_cache_policy.site["stable"]\n', ALLOW_DESTROY: 'true'});
     assert.equal(ok.result.status, 0, ok.result.stdout + ok.result.stderr);
