@@ -15,3 +15,10 @@ variable "cloudflare_zone_id" {
   type        = string
   default     = ""
 }
+
+# Contact form notifications allowed per UTC day before the API returns 429.
+variable "contact_daily_limit" {
+  description = "Maximum contact form emails sent per UTC day"
+  type        = number
+  default     = 25
+}

@@ -36,6 +36,16 @@ validation, sanitization, name/email/message limits of 100/254/2000, clean error
 and the SNS destination remain in force. Tests use only synthetic clients and
 never send contact notifications.
 
+A daily cap bounds notification volume, which the stage throttle (5 rps, burst
+10) alone leaves at hundreds of thousands of emails a day. After validation the
+handler atomically counts each send per UTC day in the
+`website-contact-daily-sends` DynamoDB table and returns 429 once
+`DAILY_LIMIT` (Terraform `contact_daily_limit`, default 25) is spent. Rejected
+input never spends the cap. Without `DAILY_LIMIT_TABLE` the handler applies no
+cap, so the code and the infrastructure can ship in either order; once it is
+set, a counter failure returns 502 rather than sending uncapped. The cap is
+global, so a flood also blocks genuine messages until the next UTC day.
+
 The deployment trigger now fingerprints the evaluated route paths, methods,
 integrations, method responses, integration responses, and origin list instead
 of the unset REST API body. Required responses and Lambda invocation permission
@@ -191,8 +201,9 @@ Pushes to `main` resolve explicitly to `website-contact`. Manual dispatch offers
 Website/contact releases publish the same-run checked site/manifest and contact
 archive, invalidate the existing distribution, and verify ordinary public reader
 bytes and live/legacy/v1/v2 behavior through the existing production CDN endpoint
-`https://d2v6o77xftr5if.cloudfront.net`. They **apply no Terraform and never install the
-checked analytics archive**, even when that archive differs from deployed code.
+`https://d2v6o77xftr5if.cloudfront.net`. They apply pending Terraform outside the
+analytics boundary (see below) and **never install the checked analytics archive**,
+even when that archive differs from deployed code.
 
 This automated check covers CloudFront delivery: the unchanged verifier still
 requires the exact checked HTML, all required assets, and reader behavior. The
@@ -213,11 +224,39 @@ existing `statsAggregator` reservation from `-1` (unreserved) to `1`, and the ex
 old/new `stats-aggregator-errors` description recorded in the helper. Every other
 field must stay identical, required managed resource identities must be present,
 and every other action, import, replacement, deferred/unknown value or missing
-drift blocks publication. New infrastructure work must stop normal release and
-receive its own review; do not target-plan, broaden the signature, or treat this
-mode as approval to apply those two changes. After analytics migration, replace
+drift blocks publication. The signature is never broadened, and this mode is
+never approval to apply those two changes. After analytics migration, replace
 this temporary admission policy through review rather than silently allowing a
 missing drift.
+
+#### Non-analytics infrastructure applies on push
+
+Since October 2026, reviewed and merged infrastructure work outside the
+analytics boundary applies automatically; it no longer waits for a separate
+release. Before admission, `scripts/verify_infrastructure_release.mjs select`
+reads the full private plan and lists every changed address except the two
+deferred drifts above. It fails the release when any row is in the analytics
+boundary (the stats resources, the log bucket and its controls, website bucket
+create/delete, or distribution logging). A matching analytics change belongs to
+`analytics` mode, and no input opens that boundary here. It also fails when a
+row would destroy or replace a stateful resource (S3 buckets, objects and
+versioning, DynamoDB tables, log groups) or a required managed identity. The
+error names the address and actions; plan values stay private.
+
+When anything is selected, the job makes a `-target` plan of exactly those
+addresses. `check` requires the targeted plan to change exactly that set and
+re-applies the same rules. The job applies that saved plan, then makes a new
+full plan, and the unchanged admission check above must still find only the two
+drifts. That second plan doubles as post-apply verification. The step summary
+records addresses, actions, changed field names and a digest of the applied
+plan, never values. Unchanged infrastructure skips both apply and re-plan.
+
+To destroy or replace a stateful or required resource on purpose, merge the
+change, then dispatch **Plan and Deploy** manually in `website-contact` mode with
+`allow_destroy` checked. That run lifts only the destroy/replace guard. Pushes
+always run with it off, and it never lifts the analytics boundary. The source
+log bucket public access block is deferred to the analytics release because the
+log bucket is analytics-owned.
 
 Before publication, existing AWS CLI read permissions capture the restored
 legacy stats digest, absent function reservation, enabled daily rule, exact sole
@@ -246,7 +285,8 @@ protected-state receipts are uploaded. The original `analytics` mode below keeps
 manual attestation and bounded release-record validation, no-writer/durable-backup
 requirements, pre-apply reader bootstrap when needed, recovery staging before the
 saved full-plan apply, and checked producer installation after public reader proof.
-Website/contact mode skips recovery staging and apply; its normal complete site
+Website/contact mode skips recovery staging and the full-plan apply; it applies
+only the checked targeted plan described above. Its normal complete site
 publication still uploads hashes before stable files, including the recovery page.
 
 The remaining apply/cutover order in this section describes **analytics mode**.

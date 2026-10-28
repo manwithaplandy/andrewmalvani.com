@@ -1,12 +1,20 @@
 import json
 import os
 import re
+from datetime import datetime, timezone
 
 import boto3
 
 # SNS client created at module scope so it is reused across warm invocations
 # rather than rebuilt on every request.
 sns = boto3.client("sns")
+
+# Daily cap on sent notifications, counted in DynamoDB per UTC day. Unset table
+# means no cap, so code and infrastructure can ship in either order. Once set,
+# a counter failure refuses the send rather than silently dropping the cap.
+DAILY_LIMIT_TABLE = os.environ.get("DAILY_LIMIT_TABLE", "")
+DAILY_LIMIT = int(os.environ.get("DAILY_LIMIT", "25"))
+dynamodb = boto3.client("dynamodb") if DAILY_LIMIT_TABLE else None
 
 # Terraform supplies the exact browser allow-list for both POST and OPTIONS.
 # Missing configuration grants no browser origin; non-browser requests remain
@@ -84,6 +92,29 @@ def _validate(body):
     return {"name": name, "email": email, "message": message}, None
 
 
+def _claim_daily_send():
+    """Count one send against today's cap. Returns False once the cap is spent."""
+    if dynamodb is None:
+        return True
+    now = datetime.now(timezone.utc)
+    try:
+        dynamodb.update_item(
+            TableName=DAILY_LIMIT_TABLE,
+            Key={"day": {"S": now.strftime("%Y-%m-%d")}},
+            UpdateExpression="SET expires_at = if_not_exists(expires_at, :expiry) ADD sends :one",
+            ConditionExpression="attribute_not_exists(sends) OR sends < :limit",
+            ExpressionAttributeValues={
+                ":one": {"N": "1"},
+                ":limit": {"N": str(DAILY_LIMIT)},
+                # Let DynamoDB TTL drop old day rows.
+                ":expiry": {"N": str(int(now.timestamp()) + 2 * 86400)},
+            },
+        )
+    except dynamodb.exceptions.ConditionalCheckFailedException:
+        return False
+    return True
+
+
 def lambda_handler(event, context):
     origin = next((value for key, value in (event.get("headers") or {}).items()
                    if key.lower() == "origin"), None)
@@ -103,6 +134,13 @@ def lambda_handler(event, context):
     sanitized, error = _validate(eventbody)
     if error is not None:
         return _response(400, error, origin)
+
+    try:
+        allowed = _claim_daily_send()
+    except Exception:  # noqa: BLE001 — fail closed without leaking internals
+        return _response(502, "Failed to send message. Please try again later.", origin)
+    if not allowed:
+        return _response(429, "Too many messages today. Please try again tomorrow.", origin)
 
     email_body = (
         f"Name: {sanitized['name']}\n\n"

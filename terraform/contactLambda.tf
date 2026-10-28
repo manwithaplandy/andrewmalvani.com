@@ -13,15 +13,17 @@ resource "aws_sns_topic_subscription" "email_subscription" {
 resource "aws_lambda_function" "form_submission" {
   function_name = "formSubmission"
   handler       = "lambda_function.lambda_handler"
-  runtime       = "python3.10"
+  runtime       = "python3.12"
   role          = aws_iam_role.lambda_exec.arn
 
   filename = "lambda_function.zip"
 
   environment {
     variables = {
-      SNS_TOPIC_ARN   = aws_sns_topic.website-contact-us.arn
-      ALLOWED_ORIGINS = jsonencode(local.allowed_cors_origins)
+      SNS_TOPIC_ARN     = aws_sns_topic.website-contact-us.arn
+      ALLOWED_ORIGINS   = jsonencode(local.allowed_cors_origins)
+      DAILY_LIMIT_TABLE = aws_dynamodb_table.contact_daily_sends.name
+      DAILY_LIMIT       = tostring(var.contact_daily_limit)
     }
   }
 }
@@ -74,6 +76,45 @@ EOF
 resource "aws_iam_role_policy_attachment" "lambda_sns_publish_attach" {
   role       = aws_iam_role.lambda_exec.name
   policy_arn = aws_iam_policy.lambda_sns_publish.arn
+}
+
+# Per-UTC-day send counter behind the contact form's daily cap. The stage
+# throttle alone still allows hundreds of thousands of emails a day.
+resource "aws_dynamodb_table" "contact_daily_sends" {
+  name         = "website-contact-daily-sends"
+  billing_mode = "PAY_PER_REQUEST"
+  hash_key     = "day"
+
+  attribute {
+    name = "day"
+    type = "S"
+  }
+
+  ttl {
+    attribute_name = "expires_at"
+    enabled        = true
+  }
+}
+
+resource "aws_iam_policy" "lambda_contact_daily_sends" {
+  name        = "lambda_contact_daily_sends"
+  description = "Allows the contact Lambda to count sends against the daily cap"
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action   = ["dynamodb:UpdateItem"]
+        Effect   = "Allow"
+        Resource = aws_dynamodb_table.contact_daily_sends.arn
+      }
+    ]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "lambda_contact_daily_sends_attach" {
+  role       = aws_iam_role.lambda_exec.name
+  policy_arn = aws_iam_policy.lambda_contact_daily_sends.arn
 }
 
 # API Gateway resources

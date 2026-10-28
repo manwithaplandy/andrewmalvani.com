@@ -12,7 +12,7 @@ const ARN=`arn:aws:lambda:${REGION}:${ACCOUNT}:function:${STATS}`;
 const RULE_ARN=`arn:aws:events:${REGION}:${ACCOUNT}:rule/${RULE}`;
 const LEGACY='e3f30b13d0335aa5d898d2c21f71ef9153d769f96e07510e9be137f2254eee51';
 const TARGETS={bucket:'mostly-upward-lion-website-bucket',distribution:'EDHU4C51HW4BG',contact:'formSubmission'};
-const REQUIRED={
+export const REQUIRED={
   'aws_s3_bucket.website':{id:TARGETS.bucket,bucket:TARGETS.bucket},
   'aws_cloudfront_distribution.website_distribution':{id:TARGETS.distribution},
   'aws_lambda_function.form_submission':{id:TARGETS.contact,function_name:TARGETS.contact},
