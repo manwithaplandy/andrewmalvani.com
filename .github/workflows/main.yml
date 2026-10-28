@@ -157,6 +157,11 @@ jobs:
             *) echo "Invalid release mode"; exit 1 ;;
           esac
           umask 077
+          # Terraform's one-line error headlines and resource addresses only;
+          # diagnostic detail and plan values stay in the private log.
+          error_headlines() {
+            grep -E '^[│ ]*(Error: |  with )' "$1" | sed -E 's/^[│ ]*//' | cut -c1-1000 | head -n 20 || true
+          }
           node scripts/verify_infrastructure_release.mjs select --allow-destroy "$ALLOW_DESTROY" \
             --plan "$RUNNER_TEMP/private-plan/release.json" --output "$RUNNER_TEMP/private-plan/targets.txt"
           if [ ! -s "$RUNNER_TEMP/private-plan/targets.txt" ]; then
@@ -169,6 +174,7 @@ jobs:
             -out="$RUNNER_TEMP/private-plan/targeted.tfplan" \
             > "$RUNNER_TEMP/private-plan/targeted-plan.log" 2>&1; then
             echo "Targeted Terraform plan failed; inspect the privileged deployment job without publishing the private plan."
+            error_headlines "$RUNNER_TEMP/private-plan/targeted-plan.log"
             exit 1
           fi
           terraform -chdir=terraform show -json "$RUNNER_TEMP/private-plan/targeted.tfplan" \
@@ -180,12 +186,14 @@ jobs:
             "$RUNNER_TEMP/private-plan/targeted.tfplan" \
             > "$RUNNER_TEMP/private-plan/targeted-apply.log" 2>&1; then
             echo "Terraform apply failed; the private plan and output were not published."
+            error_headlines "$RUNNER_TEMP/private-plan/targeted-apply.log"
             exit 1
           fi
           if ! terraform -chdir=terraform plan -input=false -lock=false -no-color \
             -out="$RUNNER_TEMP/private-plan/release.tfplan" \
             > "$RUNNER_TEMP/private-plan/plan.log" 2>&1; then
             echo "Post-apply Terraform plan failed; inspect the privileged deployment job without publishing the private plan."
+            error_headlines "$RUNNER_TEMP/private-plan/plan.log"
             exit 1
           fi
           terraform -chdir=terraform show -json "$RUNNER_TEMP/private-plan/release.tfplan" \
