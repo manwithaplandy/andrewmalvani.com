@@ -106,6 +106,19 @@ test('targeted plan must match the selection exactly and its digest tracks value
   assert.equal(checkTargetedPlan(plan(replaced), targets, {allowDestroy: true}).summary[0].actions.join(), 'delete,create');
 });
 
+test('an incomplete targeted plan still faces every destroy and analytics guard', () => {
+  for (const [address, actions, code] of [
+    ['aws_dynamodb_table.contact_daily_sends', ['delete', 'create'], 'STATEFUL_RESOURCE_DESTROY'],
+    ['aws_s3_bucket.other', ['delete'], 'STATEFUL_RESOURCE_DESTROY'],
+    ['aws_lambda_function.form_submission', ['delete', 'create'], 'PROTECTED_IDENTITY_REPLACEMENT'],
+    ['aws_s3_bucket_policy.allow_cloudfront_logs', ['update'], 'ANALYTICS_RELEASE_REQUIRED'],
+  ]) {
+    const targeted = plan([row(address, actions, {name: 'x'}, actions.includes('create') || actions.includes('update') ? {name: 'y'} : null)]);
+    targeted.complete = false;
+    assert.throws(() => checkTargetedPlan(targeted, [address]), error => error.message.startsWith(`${code} ${address}`));
+  }
+});
+
 test('CLI requires an explicit override value and reports only codes', () => {
   const directory = mkdtempSync(path.join(os.tmpdir(), 'infrastructure-cli-'));
   const quiet = console.log, loud = console.error, lines = [];
