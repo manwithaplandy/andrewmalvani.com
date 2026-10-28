@@ -40,7 +40,7 @@ function hasUnknownLeaf(value) {
   return Object.values(value).some(hasUnknownLeaf);
 }
 
-function isAnalyticsBoundaryChange(resource, actions) {
+export function isAnalyticsBoundaryChange(resource, actions) {
   const key = `${resource.type}.${resource.name}`;
   if (ANALYTICS_RESOURCES.has(key)) return actions.some(action => action !== 'no-op');
   if (key === WEBSITE_BUCKET) return actions.includes('create') || actions.includes('delete');

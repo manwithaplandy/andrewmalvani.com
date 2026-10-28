@@ -125,17 +125,6 @@ resource "aws_s3_bucket_versioning" "log_bucket_versioning" {
   }
 }
 
-# CloudFront standard logging writes with an ACL grant to the log-delivery
-# account, which is not a public ACL, so blocking public access is compatible.
-resource "aws_s3_bucket_public_access_block" "log_bucket" {
-  bucket = aws_s3_bucket.log_bucket.id
-
-  block_public_acls       = true
-  block_public_policy     = true
-  ignore_public_acls      = true
-  restrict_public_buckets = true
-}
-
 resource "aws_s3_bucket_ownership_controls" "example" {
   bucket = aws_s3_bucket.log_bucket.id
 

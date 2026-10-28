@@ -23,6 +23,11 @@ on:
         description: Nonsecret approved analytics release record identifier
         required: false
         type: string
+      allow_destroy:
+        description: Let this website-contact run destroy or replace stateful or core resources outside analytics
+        required: true
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -131,6 +136,56 @@ jobs:
             -out="$RUNNER_TEMP/private-plan/release.tfplan" \
             > "$RUNNER_TEMP/private-plan/plan.log" 2>&1; then
             echo "Terraform plan failed; inspect the privileged deployment job without publishing the private plan."
+            exit 1
+          fi
+          terraform -chdir=terraform show -json "$RUNNER_TEMP/private-plan/release.tfplan" \
+            > "$RUNNER_TEMP/private-plan/release.json"
+
+      # Website/contact releases apply pending Terraform outside the analytics
+      # boundary, then re-plan so admission below sees post-apply production.
+      # Destroying or replacing stateful or core resources needs a manual run
+      # with allow_destroy; pushes never set it.
+      - name: Apply non-analytics infrastructure changes
+        if: steps.release-mode.outputs.mode == 'website-contact'
+        env:
+          RELEASE_MODE: ${{ steps.release-mode.outputs.mode }}
+          ALLOW_DESTROY: ${{ github.event_name == 'workflow_dispatch' && inputs.allow_destroy == true }}
+        run: |
+          case "$RELEASE_MODE" in
+            website-contact) ;;
+            analytics) exit 0 ;;
+            *) echo "Invalid release mode"; exit 1 ;;
+          esac
+          umask 077
+          node scripts/verify_infrastructure_release.mjs select --allow-destroy "$ALLOW_DESTROY" \
+            --plan "$RUNNER_TEMP/private-plan/release.json" --output "$RUNNER_TEMP/private-plan/targets.txt"
+          if [ ! -s "$RUNNER_TEMP/private-plan/targets.txt" ]; then
+            echo "No non-analytics infrastructure changes are pending." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          targets=()
+          while IFS= read -r address; do targets+=("-target=$address"); done < "$RUNNER_TEMP/private-plan/targets.txt"
+          if ! terraform -chdir=terraform plan -input=false -no-color "${targets[@]}" \
+            -out="$RUNNER_TEMP/private-plan/targeted.tfplan" \
+            > "$RUNNER_TEMP/private-plan/targeted-plan.log" 2>&1; then
+            echo "Targeted Terraform plan failed; inspect the privileged deployment job without publishing the private plan."
+            exit 1
+          fi
+          terraform -chdir=terraform show -json "$RUNNER_TEMP/private-plan/targeted.tfplan" \
+            > "$RUNNER_TEMP/private-plan/targeted.json"
+          node scripts/verify_infrastructure_release.mjs check --allow-destroy "$ALLOW_DESTROY" \
+            --plan "$RUNNER_TEMP/private-plan/targeted.json" --targets "$RUNNER_TEMP/private-plan/targets.txt" \
+            --summary "$GITHUB_STEP_SUMMARY"
+          if ! terraform -chdir=terraform apply -input=false -no-color \
+            "$RUNNER_TEMP/private-plan/targeted.tfplan" \
+            > "$RUNNER_TEMP/private-plan/targeted-apply.log" 2>&1; then
+            echo "Terraform apply failed; the private plan and output were not published."
+            exit 1
+          fi
+          if ! terraform -chdir=terraform plan -input=false -lock=false -no-color \
+            -out="$RUNNER_TEMP/private-plan/release.tfplan" \
+            > "$RUNNER_TEMP/private-plan/plan.log" 2>&1; then
+            echo "Post-apply Terraform plan failed; inspect the privileged deployment job without publishing the private plan."
             exit 1
           fi
           terraform -chdir=terraform show -json "$RUNNER_TEMP/private-plan/release.tfplan" \
