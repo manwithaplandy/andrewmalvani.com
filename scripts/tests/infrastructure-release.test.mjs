@@ -93,6 +93,14 @@ test('targeted plan must match the selection exactly and its digest tracks value
   assert.throws(() => checkTargetedPlan(plan(pending().slice(1)), targets), /TARGETED_PLAN_MISMATCH/);
   assert.throws(() => checkTargetedPlan(plan(drifts().slice(1)), ['aws_cloudwatch_metric_alarm.stats_aggregator_errors']), /ANALYTICS_RELEASE_REQUIRED/);
   assert.throws(() => checkTargetedPlan(plan(pending()), []), /INVALID_TARGETS/);
+  // Terraform reports every -target plan as incomplete; the full plan may not.
+  const targeted = plan(pending()); targeted.complete = false;
+  assert.equal(checkTargetedPlan(targeted, targets).digest, result.digest);
+  assert.throws(() => selectTargets(targeted), /INVALID_COMPLETE_PLAN/);
+  for (const complete of [undefined, 'false']) {
+    const odd = plan(pending()); odd.complete = complete;
+    assert.throws(() => checkTargetedPlan(odd, targets), /INVALID_COMPLETE_PLAN/);
+  }
   const replaced = pending(); replaced[0].change.actions = ['delete', 'create'];
   assert.throws(() => checkTargetedPlan(plan(replaced), targets), /STATEFUL_RESOURCE_DESTROY/);
   assert.equal(checkTargetedPlan(plan(replaced), targets, {allowDestroy: true}).summary[0].actions.join(), 'delete,create');

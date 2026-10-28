@@ -47,8 +47,11 @@ function deferredAnalyticsDrift(row) {
   return false;
 }
 
-function changedRows(plan) {
-  requireSafe(object(plan) && /^1\.\d+$/.test(plan.format_version) && plan.complete === true && plan.errored === false, 'INVALID_COMPLETE_PLAN');
+// Terraform marks every -target plan incomplete, so only a targeted plan may
+// report complete false; the exact target-set match stands in for it.
+function changedRows(plan, {targeted = false} = {}) {
+  requireSafe(object(plan) && /^1\.\d+$/.test(plan.format_version) && plan.errored === false &&
+    (plan.complete === true || (targeted && plan.complete === false)), 'INVALID_COMPLETE_PLAN');
   requireSafe(plan.deferred_changes === undefined || (Array.isArray(plan.deferred_changes) && plan.deferred_changes.length === 0), 'DEFERRED_PLAN');
   requireSafe(Array.isArray(plan.resource_changes) && plan.resource_changes.length <= 10000, 'INVALID_RESOURCES');
   const seen = new Set();
@@ -95,7 +98,7 @@ export function selectTargets(plan, {allowDestroy = false} = {}) {
 
 /** Targeted plan in: it must change exactly the selected addresses and nothing analytics-owned. */
 export function checkTargetedPlan(plan, targets, {allowDestroy = false} = {}) {
-  const rows = changedRows(plan);
+  const rows = changedRows(plan, {targeted: true});
   requireSafe(Array.isArray(targets) && targets.length > 0 && targets.every(target => ADDRESS.test(target)), 'INVALID_TARGETS');
   requireSafe(isDeepStrictEqual(rows.map(row => row.address).sort(), [...targets].sort()), 'TARGETED_PLAN_MISMATCH');
   for (const row of rows) {
