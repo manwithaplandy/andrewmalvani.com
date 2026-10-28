@@ -93,9 +93,30 @@ test('targeted plan must match the selection exactly and its digest tracks value
   assert.throws(() => checkTargetedPlan(plan(pending().slice(1)), targets), /TARGETED_PLAN_MISMATCH/);
   assert.throws(() => checkTargetedPlan(plan(drifts().slice(1)), ['aws_cloudwatch_metric_alarm.stats_aggregator_errors']), /ANALYTICS_RELEASE_REQUIRED/);
   assert.throws(() => checkTargetedPlan(plan(pending()), []), /INVALID_TARGETS/);
+  // Terraform reports every -target plan as incomplete; the full plan may not.
+  const targeted = plan(pending()); targeted.complete = false;
+  assert.equal(checkTargetedPlan(targeted, targets).digest, result.digest);
+  assert.throws(() => selectTargets(targeted), /INVALID_COMPLETE_PLAN/);
+  for (const complete of [undefined, 'false']) {
+    const odd = plan(pending()); odd.complete = complete;
+    assert.throws(() => checkTargetedPlan(odd, targets), /INVALID_COMPLETE_PLAN/);
+  }
   const replaced = pending(); replaced[0].change.actions = ['delete', 'create'];
   assert.throws(() => checkTargetedPlan(plan(replaced), targets), /STATEFUL_RESOURCE_DESTROY/);
   assert.equal(checkTargetedPlan(plan(replaced), targets, {allowDestroy: true}).summary[0].actions.join(), 'delete,create');
+});
+
+test('an incomplete targeted plan still faces every destroy and analytics guard', () => {
+  for (const [address, actions, code] of [
+    ['aws_dynamodb_table.contact_daily_sends', ['delete', 'create'], 'STATEFUL_RESOURCE_DESTROY'],
+    ['aws_s3_bucket.other', ['delete'], 'STATEFUL_RESOURCE_DESTROY'],
+    ['aws_lambda_function.form_submission', ['delete', 'create'], 'PROTECTED_IDENTITY_REPLACEMENT'],
+    ['aws_s3_bucket_policy.allow_cloudfront_logs', ['update'], 'ANALYTICS_RELEASE_REQUIRED'],
+  ]) {
+    const targeted = plan([row(address, actions, {name: 'x'}, actions.includes('create') || actions.includes('update') ? {name: 'y'} : null)]);
+    targeted.complete = false;
+    assert.throws(() => checkTargetedPlan(targeted, [address]), error => error.message.startsWith(`${code} ${address}`));
+  }
 });
 
 test('CLI requires an explicit override value and reports only codes', () => {
